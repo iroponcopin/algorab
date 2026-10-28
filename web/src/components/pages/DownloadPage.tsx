@@ -17,7 +17,7 @@ export function LauncherFiles({ d }: { d: LangData }) {
   const f = d.launcherFiles;
   const labels = fileLabels(d);
   return (
-    <div className="ac-grid-2">
+    <div className="cn-tiles">
       {f.native.map((n) => (
         <FileCard
           key={n.platform}
@@ -28,13 +28,35 @@ export function LauncherFiles({ d }: { d: LangData }) {
           labels={labels}
         />
       ))}
-      <FileCard
-        tag={`${d.chrome.launcherVersion} ${f.version} · .jar`}
-        file={f.jar}
-        note={d.launcher.jarNote}
-        cta={d.launcher.cta}
-        labels={labels}
-      />
+      <FileCard tag={`${d.chrome.launcherVersion} ${f.version} · .jar`} file={f.jar} note={d.launcher.jarNote} cta={d.launcher.cta} labels={labels} />
+    </div>
+  );
+}
+
+/** A model's download: its icon, its name as the hero, one line, then its file tile. */
+function ModelDownload({ id, heading, line, children, aside }: { id: string; heading: string; line?: string; children: React.ReactNode; aside?: React.ReactNode }) {
+  return (
+    <section className="ac-wrap cn-dl-block" aria-labelledby={id}>
+      <header className="cn-dl-head">
+        <h2 id={id} className="cn-dl-title">
+          {heading}
+        </h2>
+        {line ? <p className="cn-dl-line">{line}</p> : null}
+      </header>
+      <div className="cn-tiles cn-tiles--two">
+        {children}
+        {aside}
+      </div>
+    </section>
+  );
+}
+
+function Aside({ icon, children }: { icon: string; children: React.ReactNode }) {
+  return (
+    <div className="cn-aside cn-glass cn-glass--lite">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={asset(`icons/${icon}.png`)} alt="" width={72} height={72} className="cn-aside-icon" />
+      {children}
     </div>
   );
 }
@@ -43,26 +65,30 @@ export function DownloadPage({ lang }: { lang: Lang }) {
   const d = langData(lang);
   const w = wiki();
   const dl = d.download;
+  const f = FRESH[lang];
   const labels = fileLabels(d);
   const mc = w.versions.mc;
+  const mcLine = <p className="cn-aside-line ac-ltr">Minecraft {mc} · Fabric</p>;
   return (
-    <section>
-      <div className="ac-wrap ac-page-head">
+    <section className="cn-dl">
+      <div className="ac-wrap cn-dl-hero">
         <p className="ac-eyebrow">
           {d.chrome.launcher} <span className="ac-ltr">{d.launcherFiles.version}</span>
         </p>
-        <BuildTag className="ac-manifest-tag" />
-        <h1 className="ac-h1">{dl.heading}</h1>
+        <BuildTag />
+        <h1 className="cn-dl-h1">{dl.heading}</h1>
         <p className="ac-lead">{dl.body}</p>
       </div>
 
-      <section className="ac-wrap ac-dl-section" aria-labelledby="dl-store">
-        <h2 id="dl-store" className="ac-h3">
-          {dl.nativeHeading}
-        </h2>
-        <p className="ac-small ac-dl-note">{dl.nativeNote}</p>
+      <section className="ac-wrap cn-dl-block" aria-labelledby="dl-store">
+        <header className="cn-dl-head">
+          <h2 id="dl-store" className="cn-dl-title">
+            {dl.nativeHeading}
+          </h2>
+          <p className="cn-dl-line">{dl.nativeNote}</p>
+        </header>
         <LauncherFiles d={d} />
-        <p className="ac-dl-more">
+        <p className="cn-dl-more">
           <Link className="ac-link" href={pathOf(lang, "changelog/")}>
             {dl.changelogLink}
           </Link>
@@ -70,103 +96,59 @@ export function DownloadPage({ lang }: { lang: Lang }) {
       </section>
 
       {dl.halia ? (
-        <section className="ac-wrap ac-dl-section" aria-labelledby="dl-halia">
-          <h2 id="dl-halia" className="ac-h3">
-            Halia {d.products.halia?.jp ?? ""}
-          </h2>
-          <p className="ac-small ac-dl-note">{d.products.halia?.tagline}</p>
-          <div className="ac-grid-2">
-            <FileCard tag={`${d.chrome.version} ${dl.halia.version}`} file={dl.halia.file} cta={d.chrome.primaryCta} labels={labels} />
-            <div className="ac-card ac-file-aside">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset("icons/halia.png")} alt="" width={64} height={64} />
-              <p className="ac-small ac-ltr">Minecraft {mc} · Fabric</p>
-            </div>
-          </div>
-        </section>
+        <ModelDownload id="dl-halia" heading={`Halia ${d.products.halia?.jp ?? ""}`.trim()} line={d.products.halia?.tagline} aside={<Aside icon="halia">{mcLine}</Aside>}>
+          <FileCard tag={`${d.chrome.version} ${dl.halia.version}`} file={dl.halia.file} cta={d.chrome.primaryCta} labels={labels} />
+        </ModelDownload>
       ) : null}
 
       {d.products.astraea?.availability === "archived" ? (
-        <section className="ac-wrap ac-dl-section" aria-labelledby="astraea-ended-h">
+        <section className="ac-wrap cn-dl-block" aria-labelledby="astraea-ended-h">
           <AstraeaEnded lang={lang} />
         </section>
       ) : dl.astraea ? (
-        <section className="ac-wrap ac-dl-section" aria-labelledby="dl-astraea">
-          <h2 id="dl-astraea" className="ac-h3">
-            ASTRAEA
-          </h2>
-          <p className="ac-small ac-dl-note">{d.products.astraea?.tagline}</p>
-          <div className="ac-grid-2">
-            <FileCard tag={`${d.chrome.version} ${dl.astraea.version}`} file={dl.astraea.file} cta={d.chrome.primaryCta} labels={labels} />
-            <div className="ac-card ac-file-aside">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset("icons/astraea.png")} alt="" width={64} height={64} />
-              <p className="ac-small ac-ltr">Minecraft {mc} · Fabric</p>
-            </div>
-          </div>
-        </section>
+        <ModelDownload id="dl-astraea" heading="ASTRAEA" line={d.products.astraea?.tagline} aside={<Aside icon="astraea">{mcLine}</Aside>}>
+          <FileCard tag={`${d.chrome.version} ${dl.astraea.version}`} file={dl.astraea.file} cta={d.chrome.primaryCta} labels={labels} />
+        </ModelDownload>
       ) : null}
 
       {dl.tsubomi ? (
-        <section className="ac-wrap ac-dl-section" aria-labelledby="dl-tsubomi">
-          <h2 id="dl-tsubomi" className="ac-h3">
-            Tsubomi {d.products.tsubomi?.jp ?? ""}
-          </h2>
-          <p className="ac-small ac-dl-note">{d.products.tsubomi?.tagline}</p>
-          <div className="ac-grid-2">
-            <FileCard tag={`${d.chrome.version} ${dl.tsubomi.version}`} file={dl.tsubomi.file} cta={d.chrome.primaryCta} labels={labels} />
-            <div className="ac-card ac-file-aside">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset("icons/tsubomi.png")} alt="" width={64} height={64} />
-              <p className="ac-small ac-ltr">Minecraft {mc} · Fabric</p>
-            </div>
-          </div>
-        </section>
+        <ModelDownload id="dl-tsubomi" heading={`Tsubomi ${d.products.tsubomi?.jp ?? ""}`.trim()} line={d.products.tsubomi?.tagline} aside={<Aside icon="tsubomi">{mcLine}</Aside>}>
+          <FileCard tag={`${d.chrome.version} ${dl.tsubomi.version}`} file={dl.tsubomi.file} cta={d.chrome.primaryCta} labels={labels} />
+        </ModelDownload>
       ) : null}
 
-      <section className="ac-wrap ac-dl-section" aria-labelledby="dl-aureum">
-        <h2 id="dl-aureum" className="ac-h3">
-          {dl.aureum.heading}
-        </h2>
-        <p className="ac-small ac-dl-note">{dl.aureum.body}</p>
-        <div className="ac-grid-2">
-          <FileCard tag={`${d.chrome.version} ${dl.aureum.version}`} file={dl.aureum.file} cta={dl.aureum.cta} labels={labels} />
-          <div className="ac-card ac-file-aside">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={asset("icons/aureum.png")} alt="" width={64} height={64} />
-            <p className="ac-small">{dl.aureum.note}</p>
+      <ModelDownload
+        id="dl-aureum"
+        heading={dl.aureum.heading}
+        line={dl.aureum.body}
+        aside={
+          <Aside icon="aureum">
+            <p className="cn-aside-line">{dl.aureum.note}</p>
             <Link className="ac-link" href={pathOf(lang, "aureum/")}>
               Aureum <span className="ac-flip">{d.chrome.arrow}</span>
             </Link>
-          </div>
-        </div>
-      </section>
+          </Aside>
+        }
+      >
+        <FileCard tag={`${d.chrome.version} ${dl.aureum.version}`} file={dl.aureum.file} cta={dl.aureum.cta} labels={labels} />
+      </ModelDownload>
 
       {dl.agent ? (
-        <section className="ac-wrap ac-dl-section" aria-labelledby="dl-agent">
-          <h2 id="dl-agent" className="ac-h3">
-            {FRESH[lang].agent.title}
-          </h2>
-          <p className="ac-small ac-dl-note">{FRESH[lang].agent.body}</p>
-          <div className="ac-grid-2">
-            <FileCard tag={`${d.chrome.version} ${dl.agent.version}`} file={dl.agent.file} cta={d.chrome.primaryCta} labels={labels} />
-            <div className="ac-card ac-file-aside">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset("icons/store.png")} alt="" width={64} height={64} />
-              <p className="ac-small">{FRESH[lang].agent.note}</p>
-            </div>
-          </div>
-        </section>
+        <ModelDownload id="dl-agent" heading={f.agent.title} line={f.agent.body} aside={<Aside icon="store"><p className="cn-aside-line">{f.agent.note}</p></Aside>}>
+          <FileCard tag={`${d.chrome.version} ${dl.agent.version}`} file={dl.agent.file} cta={d.chrome.primaryCta} labels={labels} />
+        </ModelDownload>
       ) : null}
 
-      <section className="ac-wrap ac-dl-section" aria-labelledby="dl-discord">
-        <h2 id="dl-discord" className="ac-h3">
-          {dl.discord.heading}
-        </h2>
-        <p className="ac-small ac-dl-note">{dl.discord.body}</p>
-        <p className="ac-dl-actions">
+      <section className="ac-wrap cn-dl-block" aria-labelledby="dl-discord">
+        <header className="cn-dl-head">
+          <h2 id="dl-discord" className="cn-dl-title">
+            {dl.discord.heading}
+          </h2>
+          <p className="cn-dl-line">{dl.discord.body}</p>
+        </header>
+        <p className="cn-dl-actions">
           {w.discord.invite ? (
-            <a className="ac-btn" href={w.discord.invite} target="_blank" rel="noopener">
+            <a className="ac-btn ac-btn--primary" href={w.discord.invite} target="_blank" rel="noopener">
               {dl.discord.cta}
             </a>
           ) : null}
@@ -176,16 +158,18 @@ export function DownloadPage({ lang }: { lang: Lang }) {
         </p>
       </section>
 
-      <section className="ac-wrap ac-dl-section ac-dl-last" aria-labelledby="dl-alpha">
-        <h2 id="dl-alpha" className="ac-h3">
-          Alpha
-        </h2>
-        <p className="ac-small">
-          {dl.alphaNote}{" "}
-          <Link className="ac-link" href={pathOf(lang, "alpha/")}>
-            <span className="ac-ltr">{dl.alphaVersion}</span> <span className="ac-flip">{d.chrome.arrow}</span>
-          </Link>
-        </p>
+      <section className="ac-wrap cn-dl-block" aria-labelledby="dl-alpha">
+        <header className="cn-dl-head">
+          <h2 id="dl-alpha" className="cn-dl-title">
+            Alpha
+          </h2>
+          <p className="cn-dl-line">
+            {dl.alphaNote}{" "}
+            <Link className="ac-link" href={pathOf(lang, "alpha/")}>
+              <span className="ac-ltr">{dl.alphaVersion}</span> <span className="ac-flip">{d.chrome.arrow}</span>
+            </Link>
+          </p>
+        </header>
       </section>
     </section>
   );

@@ -461,7 +461,7 @@ html:lang(ar) .ac-facts dt {
 }
 
 .ac-eq,
-.ac-perch-eq {
+.ac-island-eq {
   display: inline-flex;
   align-items: flex-end;
   gap: 3px;
@@ -469,7 +469,7 @@ html:lang(ar) .ac-facts dt {
 }
 
 .ac-eq i,
-.ac-perch-eq i {
+.ac-island-eq i {
   width: 3px;
   height: 30%;
   border-radius: var(--cn-r-sm);
@@ -478,18 +478,18 @@ html:lang(ar) .ac-facts dt {
 }
 
 .ac-eq[data-on="true"] i,
-.ac-perch-eq[data-on="true"] i {
+.ac-island-eq[data-on="true"] i {
   opacity: 1;
   animation: ac-eq 0.9s ease-in-out infinite alternate;
 }
 
 .ac-eq i:nth-child(2),
-.ac-perch-eq i:nth-child(2) {
+.ac-island-eq i:nth-child(2) {
   animation-delay: -0.35s;
 }
 
 .ac-eq i:nth-child(3),
-.ac-perch-eq i:nth-child(3) {
+.ac-island-eq i:nth-child(3) {
   animation-delay: -0.6s;
 }
 
@@ -2913,7 +2913,7 @@ html:lang(ar) .ac-st-eyebrow {
   }
 }
 
-.ac-stp-perchdemo {
+.ac-stp-islanddemo {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -2921,17 +2921,17 @@ html:lang(ar) .ac-st-eyebrow {
   margin-top: 18px;
 }
 
-.ac-stp-perchdemo .ac-chip:disabled {
+.ac-stp-islanddemo .ac-chip:disabled {
   cursor: not-allowed;
   opacity: 0.4;
 }
 
-.ac-stp-perchnote {
+.ac-stp-islandnote {
   flex: 1 1 18em;
 }
 
 /* Perch: the capsule below the menu bar. */
-.ac-perch {
+.ac-island {
   position: absolute;
   top: 0;
   left: 50%;
@@ -2942,13 +2942,13 @@ html:lang(ar) .ac-st-eyebrow {
   transform: translateX(-50%);
 }
 
-.ac-perch[data-hidden="true"] {
+.ac-island[data-hidden="true"] {
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -120%) scale(0.86);
 }
 
-.ac-perch-pill {
+.ac-island-pill {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -2964,24 +2964,24 @@ html:lang(ar) .ac-st-eyebrow {
   cursor: pointer;
 }
 
-.ac-perch-pill:hover {
+.ac-island-pill:hover {
   transform: scale(1.04);
 }
 
-.ac-perch-pill img {
+.ac-island-pill img {
   border-radius: var(--cn-r-sm);
 }
 
-.ac-perch-eq {
+.ac-island-eq {
   height: 12px;
   gap: 2px;
 }
 
-.ac-perch-eq i {
+.ac-island-eq i {
   background: #ff9fc4;
 }
 
-.ac-perch-deck {
+.ac-island-deck {
   position: relative;
   display: grid;
   gap: 12px;
@@ -2993,10 +2993,10 @@ html:lang(ar) .ac-st-eyebrow {
   box-shadow:
     0 0 0 1px rgb(255 255 255 / 0.1),
     0 30px 80px -20px rgb(0 0 0 / 0.95);
-  animation: ac-perch-in 0.5s var(--ease-spring);
+  animation: ac-island-in 0.5s var(--ease-spring);
 }
 
-@keyframes ac-perch-in {
+@keyframes ac-island-in {
   from {
     opacity: 0;
     transform: scale(0.6) translate3d(0, -30px, 0);
@@ -3007,43 +3007,43 @@ html:lang(ar) .ac-st-eyebrow {
   }
 }
 
-.ac-perch-now {
+.ac-island-now {
   display: flex;
   align-items: center;
   gap: 12px;
   padding-inline-end: 26px;
 }
 
-.ac-perch-now > img {
+.ac-island-now > img {
   flex: none;
   border-radius: var(--cn-r-sm);
 }
 
-.ac-perch-meta {
+.ac-island-meta {
   display: flex;
   flex: 1;
   flex-direction: column;
   min-width: 0;
 }
 
-.ac-perch-meta small {
+.ac-island-meta small {
   color: var(--color-muted);
   font-size: 11px;
 }
 
-.ac-perch-meta b {
+.ac-island-meta b {
   overflow: hidden;
   font-size: 14px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.ac-perch-meta span {
+.ac-island-meta span {
   color: var(--color-soft);
   font-size: 12px;
 }
 
-.ac-perch-deck button {
+.ac-island-deck button {
   display: grid;
   place-items: center;
   padding: 0;
@@ -3054,62 +3054,62 @@ html:lang(ar) .ac-st-eyebrow {
   cursor: pointer;
 }
 
-.ac-perch-deck button:hover {
+.ac-island-deck button:hover {
   background: rgb(255 255 255 / 0.1);
 }
 
-.ac-perch-deck button:active {
+.ac-island-deck button:active {
   transform: scale(0.9);
 }
 
-.ac-perch-fav {
+.ac-island-fav {
   flex: none;
   width: 30px;
   height: 30px;
   color: var(--color-soft) !important;
 }
 
-.ac-perch-fav[aria-pressed="true"] {
+.ac-island-fav[aria-pressed="true"] {
   color: #ff375f !important;
 }
 
-.ac-perch-transport {
+.ac-island-transport {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.ac-perch-transport button {
+.ac-island-transport button {
   width: 36px;
   height: 36px;
   color: var(--color-soft);
 }
 
-.ac-perch-transport button[aria-pressed="true"] {
+.ac-island-transport button[aria-pressed="true"] {
   color: var(--color-link);
 }
 
-.ac-perch-transport .ac-perch-play,
-.ac-perch-transport .ac-perch-play[aria-pressed] {
+.ac-island-transport .ac-island-play,
+.ac-island-transport .ac-island-play[aria-pressed] {
   width: 44px;
   height: 44px;
   background: rgb(255 255 255 / 0.12);
   color: #fff;
 }
 
-.ac-perch-vol {
+.ac-island-vol {
   display: flex;
   align-items: center;
   gap: 10px;
   color: var(--color-soft);
 }
 
-.ac-perch-vol input {
+.ac-island-vol input {
   flex: 1;
   accent-color: #fff;
 }
 
-.ac-perch-close {
+.ac-island-close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -3119,7 +3119,7 @@ html:lang(ar) .ac-st-eyebrow {
   color: var(--color-soft) !important;
 }
 
-[dir="rtl"] .ac-perch-close {
+[dir="rtl"] .ac-island-close {
   right: auto;
   left: 10px;
 }
@@ -3660,7 +3660,7 @@ html:lang(tr) .ac-hub-hero h1 {
   width: min(100%, 560px);
 }
 
-.ac-perch--static {
+.ac-island--static {
   position: relative;
   top: auto;
   left: auto;
@@ -3669,7 +3669,7 @@ html:lang(tr) .ac-hub-hero h1 {
   transform: none;
 }
 
-.ac-perch--static .ac-perch-pill {
+.ac-island--static .ac-island-pill {
   cursor: default;
 }
 
@@ -3858,13 +3858,13 @@ html:lang(tr) .ac-hub-hero h1 {
 
 @media (prefers-reduced-motion: reduce) {
   .ac-hub-scroll,
-  .ac-perch-eq[data-on="true"] i,
+  .ac-island-eq[data-on="true"] i,
   .ac-eq[data-on="true"] i,
   .ac-term-cursor {
     animation: none;
   }
 
-  .ac-perch,
+  .ac-island,
   .ac-hub-hero,
   .ac-hub-ring {
   }

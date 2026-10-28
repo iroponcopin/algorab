@@ -1,0 +1,206 @@
+/* Pages built from the engine's glass components (hand-written, not re-skinned): download. */
+.cn-dl {
+  padding-bottom: 40px;
+}
+
+.cn-dl-hero {
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+  padding-top: calc(var(--header-h) + clamp(48px, 10vh, 120px));
+  padding-bottom: clamp(32px, 6vh, 64px);
+}
+
+.cn-dl-h1 {
+  margin: 0;
+  font-size: clamp(48px, 8vw, 112px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+}
+
+.cn-dl-block {
+  margin-bottom: clamp(44px, 7vh, 88px);
+}
+
+.cn-dl-head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.cn-dl-title {
+  margin: 0;
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 700;
+  letter-spacing: var(--cn-track);
+  line-height: 1.1;
+}
+
+.cn-dl-line {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--cn-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.cn-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 14px;
+}
+
+.cn-tiles--two {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+}
+
+.cn-tile {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-width: 0;
+  padding: 24px;
+  border-radius: var(--cn-r-lg);
+}
+
+.cn-tile-hero {
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: var(--cn-track);
+  overflow-wrap: anywhere;
+}
+
+.cn-tile-name {
+  color: var(--cn-muted);
+  font-family: var(--cn-mono);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.cn-tile-note {
+  margin: 0;
+  color: var(--cn-titanium);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.cn-facts {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.cn-facts dt {
+  color: var(--cn-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cn-facts dd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 4px 0 0;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+.cn-tile-dl {
+  justify-self: start;
+  margin-top: 4px;
+}
+
+.cn-aside {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 12px;
+  padding: 24px;
+  border-radius: var(--cn-r-lg);
+}
+
+.cn-aside-icon {
+  border-radius: 18px;
+}
+
+.cn-aside-line {
+  margin: 0;
+  color: var(--cn-titanium);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cn-dl-more,
+.cn-dl-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+  margin: 20px 0 0;
+}
+
+/* Announcement: films on glass tiles. */
+.cn-films {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cn-film {
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--cn-r-lg);
+}
+
+.cn-film-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.cn-film-body {
+  display: grid;
+  gap: 10px;
+  padding: 18px 20px 22px;
+}
+
+.cn-film-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 0;
+  color: var(--cn-muted);
+  font-size: 13px;
+}
+
+.cn-film-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.cn-pill {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgb(245 245 247 / 0.1);
+  color: var(--cn-ink);
+  font-size: 12px;
+  font-weight: 600;
+}

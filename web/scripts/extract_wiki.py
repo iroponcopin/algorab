@@ -180,7 +180,10 @@ def store_catalogue(manifest: dict) -> dict:
             props = parse_properties(z.read(name).decode("utf-8"))
         except KeyError:
             die(f"{jar.name} has no {name}")
-        out[lang] = {k: v for k, v in props.items()
+        # The jar's own text still names the capsule "Perch"; the site shows its NEXT name. The jar and the
+        # release notes are not touched: only these display strings are renamed on the way into the portal.
+        out[lang] = {k: re.sub(r"\bPerch(\u2019u)?", lambda m: "Corvus Island\u2019\u0131" if m.group(1) else "Corvus Island", v)
+                     for k, v in props.items()
                      if k.startswith(("store.", "perch.", "account.perch.", "account.title", "nav."))}
     return {"jar": jar.name, "version": manifest["launcher"]["latest"], "messages": out}
 

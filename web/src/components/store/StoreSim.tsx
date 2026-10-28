@@ -414,34 +414,34 @@ export function StoreSim({ products, labels, hrefs }: { products: Product[]; lab
     <div ref={root} className="ac-stp" data-mode={narrow ? "narrow" : "wide"} lang={t.lang} dir={t.dir} role="region" aria-label={t.region}>
       {/* Perch: the capsule below the menu bar; it steps aside while the player is in front. */}
       {perchOn ? (
-        <div className="ac-perch" data-hidden={playerFront} data-open={perchOpen} onMouseEnter={() => setPerchOpen(true)} onMouseLeave={() => setPerchOpen(false)}>
+        <div className="ac-island" data-hidden={playerFront} data-open={perchOpen} onMouseEnter={() => setPerchOpen(true)} onMouseLeave={() => setPerchOpen(false)}>
           <button
             type="button"
-            className="ac-perch-pill"
+            className="ac-island-pill"
             aria-expanded={perchOpen}
             aria-label={`${labels.fresh.perchDemo}: ${labels.fresh.nowPlaying} — ${labels.track}`}
             onClick={() => setPerchOpen((v) => !v)}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={asset("icons/ouka.png")} alt="" width={18} height={18} />
-            <span key={restart} className="ac-perch-eq" data-on={playing} aria-hidden="true">
+            <span key={restart} className="ac-island-eq" data-on={playing} aria-hidden="true">
               <i />
               <i />
               <i />
             </span>
           </button>
-          <div className="ac-perch-deck" hidden={!perchOpen}>
-            <div className="ac-perch-now">
+          <div className="ac-island-deck" hidden={!perchOpen}>
+            <div className="ac-island-now">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={asset("icons/ouka.png")} alt="" width={54} height={54} />
-              <div className="ac-perch-meta">
+              <div className="ac-island-meta">
                 <small>{labels.fresh.nowPlaying}</small>
                 <b lang="en">{labels.track}</b>
                 <span lang="en">OUKA</span>
               </div>
               <button
                 type="button"
-                className="ac-perch-fav"
+                className="ac-island-fav"
                 aria-label={pl.favourite}
                 title={pl.favourite}
                 aria-pressed={favourite}
@@ -453,14 +453,14 @@ export function StoreSim({ products, labels, hrefs }: { products: Product[]; lab
                 <Icon name="heart" size={15} fill={favourite ? "currentColor" : "none"} />
               </button>
             </div>
-            <div className="ac-perch-transport" dir="ltr">
+            <div className="ac-island-transport" dir="ltr">
               <button type="button" aria-label={pl.shuffle} title={pl.shuffle} aria-pressed={shuffle} onClick={() => setShuffle((v) => !v)}>
                 <Icon name="shuffle" size={14} />
               </button>
               <button type="button" aria-label={pl.previous} title={pl.previous} onClick={restartTrack}>
                 <Icon name="skipBack" size={14} />
               </button>
-              <button type="button" className="ac-perch-play" aria-label={pl.playPause} title={pl.playPause} aria-pressed={playing} onClick={() => setPlaying((v) => !v)}>
+              <button type="button" className="ac-island-play" aria-label={pl.playPause} title={pl.playPause} aria-pressed={playing} onClick={() => setPlaying((v) => !v)}>
                 <Icon name={playing ? "pause" : "play"} size={16} />
               </button>
               <button
@@ -479,11 +479,11 @@ export function StoreSim({ products, labels, hrefs }: { products: Product[]; lab
                 <Icon name="repeat" size={14} />
               </button>
             </div>
-            <label className="ac-perch-vol" dir="ltr">
+            <label className="ac-island-vol" dir="ltr">
               <Icon name={volume === 0 ? "mute" : "volume"} size={14} />
               <input type="range" min={0} max={100} value={volume} aria-label={pl.volume} onChange={(e) => setVolume(Number(e.target.value))} />
             </label>
-            <button type="button" className="ac-perch-close" aria-label={pl.close} title={pl.close} onClick={() => setPerchOpen(false)}>
+            <button type="button" className="ac-island-close" aria-label={pl.close} title={pl.close} onClick={() => setPerchOpen(false)}>
               <Icon name="x" size={13} />
             </button>
           </div>
@@ -754,7 +754,7 @@ export function StoreSim({ products, labels, hrefs }: { products: Product[]; lab
         </div>
       ) : null}
 
-      <div className="ac-stp-perchdemo">
+      <div className="ac-stp-islanddemo">
         <span className="ac-small">{labels.fresh.perchDemo}</span>
         <button
           type="button"
@@ -768,7 +768,7 @@ export function StoreSim({ products, labels, hrefs }: { products: Product[]; lab
         >
           {playerFront ? labels.fresh.perchLeave : labels.fresh.perchFront}
         </button>
-        <span className="ac-small ac-stp-perchnote">{perchOn ? (playerFront ? labels.fresh.perchHidden : labels.fresh.perchShown) : labels.perchToggle.description}</span>
+        <span className="ac-small ac-stp-islandnote">{perchOn ? (playerFront ? labels.fresh.perchHidden : labels.fresh.perchShown) : labels.perchToggle.description}</span>
       </div>
 
       <div className="sr-only" role="status" aria-live="polite">

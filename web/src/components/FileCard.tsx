@@ -9,8 +9,9 @@ export interface FileCardLabels {
 }
 
 /**
- * One downloadable file, as the wiki has always described it: name, size (MB/KB to one decimal,
- * then the exact byte count), SHA-256 with a copy button, and the download itself.
+ * One downloadable file as a glass tile: the platform or version is the hero, then the file's name, its size (MB/KB to
+ * one decimal, then the exact byte count), its SHA-256 with a copy button, and the download. The facts come from the
+ * data pipeline untouched.
  */
 export function FileCard({
   tag,
@@ -26,11 +27,11 @@ export function FileCard({
   labels: FileCardLabels;
 }) {
   return (
-    <div className="ac-file ac-card">
-      <span className="ac-tag">{tag}</span>
-      <h3 className="ac-ltr">{file.name}</h3>
-      {note ? <p className="ac-small">{note}</p> : null}
-      <dl className="ac-facts">
+    <div className="cn-tile cn-glass cn-glass--lite" data-glass="">
+      <span className="cn-tile-hero">{tag}</span>
+      <span className="cn-tile-name ac-ltr">{file.name}</span>
+      {note ? <p className="cn-tile-note">{note}</p> : null}
+      <dl className="cn-facts">
         <div>
           <dt>{labels.fileSize}</dt>
           <dd className="ac-ltr">
@@ -45,7 +46,7 @@ export function FileCard({
           </dd>
         </div>
       </dl>
-      <a className="ac-btn ac-file-dl" href={file.url} download>
+      <a className="ac-btn ac-btn--primary cn-tile-dl" href={file.url} download data-magnetic="">
         {cta}
       </a>
     </div>

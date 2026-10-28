@@ -21,21 +21,21 @@ export function AnnouncementPage({ lang }: { lang: Lang }) {
   const names = new Intl.DateTimeFormat(lang === "pt-br" ? "pt-BR" : lang, { dateStyle: "long", timeZone: "UTC" });
   return (
     <section id="ac-announcement">
-      <div className="ac-wrap ac-page-head">
-        <h1 className="ac-h1">{t.title}</h1>
+      <div className="ac-wrap cn-dl-hero">
+        <h1 className="cn-dl-h1">{t.title}</h1>
         <p className="ac-lead">{t.lede}</p>
       </div>
       <div className="ac-wrap">
-        <ul className="ac-film-grid">
+        <ul className="cn-films">
           {wiki().films.map((film) => {
             const notes =
               film.brand === "noctua"
                 ? pathOf(lang, "noctua/")
                 : `${pathOf(lang, "changelog/")}?model=${encodeURIComponent(film.brand)}`;
             return (
-              <li key={film.id} className="ac-card ac-film">
+              <li key={film.id} className="cn-film cn-glass cn-glass--lite" data-glass="">
                 <video
-                  className="ac-film-video"
+                  className="cn-film-video"
                   controls
                   playsInline
                   preload="none"
@@ -44,13 +44,13 @@ export function AnnouncementPage({ lang }: { lang: Lang }) {
                 >
                   <source src={asset(`wiki/announcement/${film.file}`)} type="video/mp4" />
                 </video>
-                <div className="ac-film-body">
-                  <p className="ac-small ac-film-meta">
-                    <span className="ac-tag">{t.kinds[film.kind]}</span>
+                <div className="cn-film-body">
+                  <p className="cn-film-meta">
+                    <span className="cn-pill">{t.kinds[film.kind]}</span>
                     <span className="ac-ltr">{clock(film.seconds)}</span>
                     <span>{fill(t.published, names.format(new Date(`${film.date}T00:00:00Z`)))}</span>
                   </p>
-                  <h2 className="ac-film-title ac-ltr">{film.title}</h2>
+                  <h2 className="cn-film-title ac-ltr">{film.title}</h2>
                   <Link className="ac-link" href={notes}>
                     {t.notes}
                   </Link>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { pathOf } from "@/lib/site";
+import { asset, pathOf } from "@/lib/site";
 import { langData } from "@/lib/wiki";
 import type { ControlToken, Lang, Requirement } from "@/lib/wiki-types";
 import { BrandStage } from "../BrandStage";
@@ -12,22 +12,22 @@ import { AstraeaEnded } from "./AstraeaEnded";
 export type ModelId = "ouka" | "cherry" | "aureum" | "astraea" | "tsubomi" | "noctua" | "halia";
 
 /**
- * A model page's frame: the page-wide ambient light in the model's own accents (one fixed-size layer, clipped so it
- * never widens the page), then the page. Accents come from globals.css (`--accent-<model>`), so no colour is set here.
+ * A model page's frame: the page-wide light in the model's own accent (one fixed-size layer, clipped so it never widens
+ * the page), then the page. Accents come from globals.css (`--accent-<model>`).
  */
 function ModelPage({ id, children }: { id: ModelId; children: ReactNode }) {
   return (
-    <div className="ac-model-page" data-model={id}>
-      <div className="ac-model-ambient" aria-hidden="true" />
+    <div className="cn-model" data-model={id}>
+      <div className="cn-model-light" aria-hidden="true" />
       {children}
     </div>
   );
 }
 
-/** A call to action as a text link with an arrow, in the template's style. `primary` is the download. */
+/** The download: the page's one primary action. */
 function CtaDownload({ href, label, arrow, primary = false }: { href: string; label: string; arrow: string; primary?: boolean }) {
   return (
-    <a className={`ac-model-cta${primary ? " ac-model-cta--primary" : ""}`} href={href} download>
+    <a className={`ac-btn${primary ? " ac-btn--primary" : ""}`} href={href} download data-magnetic="">
       {label} <span className="ac-flip">{arrow}</span>
     </a>
   );
@@ -35,15 +35,15 @@ function CtaDownload({ href, label, arrow, primary = false }: { href: string; la
 
 function CtaLink({ href, label, arrow }: { href: string; label: string; arrow: string }) {
   return (
-    <Link className="ac-model-cta" href={href}>
+    <Link className="ac-btn" href={href} data-magnetic="">
       {label} <span className="ac-flip">{arrow}</span>
     </Link>
   );
 }
 
 /**
- * The hero every model page shares: eyebrow, Syne name in the model's accent gradient, the version pill from the
- * manifest, the line and lead, the text CTAs, and the model's own icon art beside them.
+ * The hero every model page shares, hand-built: the name is the one hero value, with its version as a pill, one line, the
+ * actions, and the model's own icon on a glass tile. No decoration.
  */
 function ModelHero({
   eyebrow,
@@ -69,23 +69,26 @@ function ModelHero({
   dim?: boolean;
 }) {
   return (
-    <section className="ac-model-hero">
-      <div className="ac-wrap ac-model-grid">
-        <div className="ac-model-copy">
-          {eyebrow ? <p className="ac-eyebrow ac-reveal">{eyebrow}</p> : null}
-          <h1 className="ac-display ac-model-name ac-reveal">{title}</h1>
+    <section className="cn-model-hero">
+      <div className="ac-wrap cn-model-grid">
+        <div className="cn-model-copy">
+          {eyebrow ? <p className="ac-eyebrow">{eyebrow}</p> : null}
+          <h1 className="cn-model-name">{title}</h1>
           {version ? (
-            <p className="ac-model-version ac-reveal">
-              <span className="ac-model-pill ac-ltr">V{version}</span>
+            <p className="cn-model-version">
+              <span className="cn-pill ac-ltr">V{version}</span>
               {detail}
             </p>
           ) : null}
-          {line ? <p className="ac-model-line ac-reveal">{line}</p> : null}
-          {lead ? <p className="ac-lead ac-model-lead ac-reveal">{lead}</p> : null}
-          <div className="ac-model-actions ac-reveal">{actions}</div>
-          {footer ? <div className="ac-reveal">{footer}</div> : null}
+          {line ? <p className="cn-model-line">{line}</p> : null}
+          {lead ? <p className="cn-model-lead">{lead}</p> : null}
+          <div className="cn-model-actions">{actions}</div>
+          {footer ? <div>{footer}</div> : null}
         </div>
-        <BrandStage icon={icon} label={title} dim={dim} />
+        <div className="cn-model-icon cn-glass cn-glass--lite" data-glass="" role="img" aria-label={title}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={asset(icon)} alt="" width={320} height={320} data-dim={dim ? "true" : undefined} />
+        </div>
       </div>
     </section>
   );
@@ -102,9 +105,9 @@ function ReleaseCard({
 }) {
   const c = langData(lang).chrome;
   return (
-    <div className="ac-wrap ac-model-release">
-      <div className="ac-card ac-model-release-card ac-reveal" id="release">
-        <dl className="ac-facts">
+    <div className="ac-wrap cn-model-release">
+      <div className="cn-model-facts cn-glass cn-glass--lite" data-glass="" id="release">
+        <dl className="cn-facts">
           {requirements.map((r) => (
             <div key={r.label}>
               <dt>{r.label}</dt>
@@ -117,21 +120,15 @@ function ReleaseCard({
               {file.sizeDisplay} ({file.bytesDisplay} bytes)
             </dd>
           </div>
+          <div>
+            <dt>{c.sha256}</dt>
+            <dd>
+              <code className="ac-hash">{file.sha256}</code>
+              <CopyButton text={file.sha256} label={c.copy} done={c.copied} />
+            </dd>
+          </div>
         </dl>
-        <div className="ac-model-release-side">
-          <dl className="ac-facts">
-            <div>
-              <dt>{c.sha256}</dt>
-              <dd>
-                <code className="ac-hash">{file.sha256}</code>
-                <CopyButton text={file.sha256} label={c.copy} done={c.copied} />
-              </dd>
-            </div>
-          </dl>
-          <p className="ac-model-release-dl">
-            <CtaDownload href={file.url} label={c.primaryCta} arrow={c.arrow} primary />
-          </p>
-        </div>
+        <CtaDownload href={file.url} label={c.primaryCta} arrow={c.arrow} primary />
       </div>
     </div>
   );
@@ -147,7 +144,7 @@ export function OukaPage({ lang }: { lang: Lang }) {
         eyebrow={b.eyebrow}
         title={b.title}
         version={b.release.version}
-        detail={<span className="ac-model-codename ac-ltr" lang="en">{b.release.codename}</span>}
+        detail={<span className="cn-codename ac-ltr" lang="en">{b.release.codename}</span>}
         line={b.line}
         icon="icons/ouka.png"
         actions={
@@ -173,7 +170,7 @@ export function CherryPage({ lang }: { lang: Lang }) {
         eyebrow={b.eyebrow}
         title={b.title}
         version={b.release.version}
-        detail={<span className="ac-model-codename ac-ltr" lang="en">{b.release.codename}</span>}
+        detail={<span className="cn-codename ac-ltr" lang="en">{b.release.codename}</span>}
         line={b.line}
         icon="icons/cherry.png"
         actions={
@@ -275,7 +272,7 @@ export function CatalogueModelPage({ lang, id }: { lang: Lang; id: CatalogueMode
         eyebrow={p.badge ?? p.category}
         title={p.name}
         version={dl?.version ?? p.version}
-        detail={p.jp ? <span className="ac-model-codename" lang="ja">{p.jp}</span> : undefined}
+        detail={p.jp ? <span className="cn-codename" lang="ja">{p.jp}</span> : undefined}
         line={p.headline}
         lead={p.tagline !== p.headline ? p.tagline : undefined}
         icon={`icons/${id}.png`}

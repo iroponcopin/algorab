@@ -18,141 +18,39 @@
 .ac-model-page[data-model="halia"] { --accent: var(--accent-halia); --accent-2: var(--accent-halia-2); }
 
 /* One layer, clipped to the page: the light never widens the document, so there is no horizontal scroll at 375. */
-.ac-model-ambient {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-  background:
-    radial-gradient(60rem 42rem at 82% -6%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%),
-    radial-gradient(ellipse 78% 72% at 50% 47%, transparent 46%, rgb(0 0 0 / 0.5) 100%);
-}
+
 
 /* ———— Hero ———— */
 
-.ac-model-hero {
-  display: flex;
-  align-items: flex-end;
-  min-height: 100svh;
-  padding-block: calc(var(--header-h) + 48px) 64px;
-}
 
-.ac-model-hero > .ac-wrap,
-.ac-model-hero > .ac-wide {
-  width: calc(100% - 80px);
-  max-width: none;
-}
 
-@media (max-width: 800px) {
-  .ac-model-hero {
-    padding-bottom: 42px;
-  }
 
-  .ac-model-name {
-    font-size: clamp(40px, 13.5vw, 96px);
-  }
 
-  .ac-model-hero > .ac-wrap,
-  .ac-model-hero > .ac-wide {
-    width: calc(100% - 40px);
-  }
-}
 
-.ac-model-grid {
-  display: grid;
-  align-items: end;
-  gap: 32px;
-}
 
-@media (min-width: 900px) {
-  .ac-model-grid {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  }
-}
 
-.ac-model-copy {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0;
-}
 
-.ac-model-copy > * {
-  margin: 0;
-}
 
-.ac-model-name {
-  padding-block: 0.04em 0.06em;
-  color: #f5f5f7;
-  font-size: clamp(44px, min(7.4vw, 15vw), 132px);
-  line-height: 0.84;
-  letter-spacing: -0.035em;
-  text-transform: none;
-  white-space: nowrap;
-}
 
-html:lang(tr) .ac-model-name {
-  text-transform: none;
-}
 
-.ac-model-version {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 16px;
-  margin-top: 22px !important;
-  color: rgb(245 245 247 / 0.52);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
 
-.ac-model-pill {
-  display: inline-flex;
-  align-items: center;
-  min-height: 24px;
-  padding: 0 9px;
-  border: 1px solid rgb(245 245 247 / 0.72);
-  border-radius: var(--cn-r-sm);
-  background: transparent;
-  color: #f5f5f7;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  font-variant-numeric: tabular-nums;
-}
 
-.ac-model-codename {
-  color: rgb(245 245 247 / 0.52);
-}
 
-.ac-model-line {
-  max-width: 420px;
-  margin-top: 24px !important;
-  color: rgb(242 238 229 / 0.82);
-  font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.5;
-  letter-spacing: -0.01em;
-}
 
-.ac-model-lead {
-  max-width: 420px;
-  margin-top: 10px !important;
-  font-size: 13px;
-  color: rgb(242 238 229 / 0.6);
-}
 
-.ac-model-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin-top: 28px !important;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* A call to action: the template's square text CTA, arrow included. */
 .ac-model-cta {
@@ -176,12 +74,9 @@ html:lang(tr) .ac-model-cta {
   text-transform: none;
 }
 
-.ac-model-cta--primary {
-  border-color: rgb(245 245 247 / 0.72);
-}
 
-.ac-model-cta:hover,
-.ac-model-cta:focus-visible {
+
+.ac-model-cta:hover, .ac-model-cta:focus-visible {
   border-color: #f5f5f7;
   background: #f5f5f7;
   color: #0e0f13;
@@ -202,12 +97,10 @@ html:lang(ar) .ac-model-cta:hover .ac-flip {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ac-model-cta,
-  .ac-model-cta .ac-flip {
+  .ac-model-cta, .ac-model-cta .ac-flip {
   }
 
-  .ac-model-cta:hover .ac-flip,
-  html:lang(ar) .ac-model-cta:hover .ac-flip {
+  .ac-model-cta:hover .ac-flip, html:lang(ar) .ac-model-cta:hover .ac-flip {
     transform: none;
   }
 }
@@ -226,33 +119,15 @@ html:lang(ar) .ac-model-cta:hover .ac-flip {
 
 /* ———— Release card (file facts and the download) ———— */
 
-.ac-model-release {
-  padding-bottom: clamp(80px, 12vh, 140px);
-}
 
-.ac-model-release-card {
-  display: grid;
-  gap: 28px;
-  padding: clamp(22px, 3vw, 36px);
-  scroll-margin-top: calc(var(--header-h) + 24px);
-}
 
-@media (min-width: 900px) {
-  .ac-model-release-card {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  }
-}
 
-.ac-model-release-side {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  gap: 22px;
-}
 
-.ac-model-release-dl {
-  margin: 0;
-}
+
+
+
+
+
 
 /* ———— Aureum: the stats and sections, in the model's accents ———— */
 

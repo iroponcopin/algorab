@@ -54,7 +54,7 @@ export function NextHome({ c }: { c: HomeContent }) {
     <div className="cn-home">
       <section className="cn-hero" aria-label={c.heroLabel}>
         <BuildTag className="cn-hero-tag" />
-        <h1 className="cn-hero-title">
+        <h1 className="cn-hero-title" data-long={c.title.join(" ").length > 26 ? "true" : undefined}>
           <span>{c.title[0]}</span> <span>{c.title[1]}</span>
         </h1>
         <p className="cn-hero-lede">{c.lede}</p>

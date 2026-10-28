@@ -34,6 +34,10 @@
   filter: drop-shadow(0 6px 28px rgb(0 0 0 / 0.55));
 }
 
+.cn-hero-title[data-long="true"] {
+  font-size: clamp(38px, 6vw, 84px);
+}
+
 .cn-hero-title > span {
   display: inline-block;
 }

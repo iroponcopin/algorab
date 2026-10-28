@@ -56,13 +56,11 @@
   letter-spacing: 0;
 }
 
-/* The metaball layer: black droplets fused by the shared SVG filter. Hidden (and so not rasterised) while at rest. */
+/* The metaball layer: black droplets fused by the shared SVG filter (applied inline by IslandSim). Hidden (and so not rasterised) while at rest. */
 .cn-goo {
   position: absolute;
   inset: 0;
   visibility: hidden;
-  -webkit-filter: url("#corvus-liquid-metaball");
-  filter: url("#corvus-liquid-metaball");
   pointer-events: none;
 }
 

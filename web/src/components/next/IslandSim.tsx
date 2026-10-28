@@ -61,7 +61,7 @@ export function IslandSim({ text }: { text: IslandText }) {
           <span className="cn-menubar-clock">9:41</span>
         </div>
 
-        <div className="cn-goo" data-cn="goo" aria-hidden="true">
+        <div className="cn-goo" data-cn="goo" aria-hidden="true" style={{ filter: "url(#corvus-liquid-metaball)", WebkitFilter: "url(#corvus-liquid-metaball)" }}>
           <i className="cn-anchor" data-cn="anchor" />
           <i className="cn-sat" data-cn="sat" />
           <i className="cn-sat" data-cn="sat" />

@@ -824,3 +824,73 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-model-name {
 .cn-codename {
   color: var(--cn-muted);
 }
+
+/* Discord (and other fact grids): glass stat tiles. */
+.cn-stats,
+.cn-steps,
+.cn-posts,
+.cn-langs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cn-stat {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+  padding: 20px 22px;
+  border-radius: var(--cn-r-md);
+}
+
+.cn-stat dt {
+  color: var(--cn-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cn-stat dd {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+
+.cn-stat h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.cn-stat-p {
+  margin: 0;
+  color: var(--cn-titanium);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cn-step-n {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgb(245 245 247 / 0.12);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.cn-langs .cn-stat {
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cn-langs code {
+  color: var(--cn-muted);
+}

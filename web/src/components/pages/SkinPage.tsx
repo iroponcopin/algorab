@@ -20,8 +20,8 @@ export function SkinPage({ lang }: { lang: Lang }) {
       : { ...s.labels, lede: "", pinLabel: "", unlock: "", working: "", wrong: "", locked: "", lockedHint: "", unlocked: "", blobError: "" };
   return (
     <section>
-      <div className="ac-wrap ac-page-head">
-        <h1 className="ac-h1">{s.title}</h1>
+      <div className="ac-wrap cn-dl-hero">
+        <h1 className="cn-dl-h1">{s.title}</h1>
       </div>
       <div className="ac-wrap ac-sk-wrap">
         <Showroom

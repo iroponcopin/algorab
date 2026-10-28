@@ -1,7 +1,7 @@
 import { FRESH } from "@/i18n/fresh";
 import { langData, wiki } from "@/lib/wiki";
 import type { Lang } from "@/lib/wiki-types";
-import { BrandStage } from "../BrandStage";
+import { asset } from "@/lib/site";
 import { CommandBrowser } from "../discord/CommandBrowser";
 import { MissionControl } from "../home/MissionControl";
 import { HOME_V2 } from "@/i18n/home";
@@ -22,54 +22,55 @@ export function DiscordPage({ lang }: { lang: Lang }) {
   ];
   return (
     <>
-      <section className="ac-brand-hero">
-        <div className="ac-wrap ac-brand-grid">
-          <div className="ac-brand-copy">
-            <p className="ac-eyebrow ac-reveal">{k.eyebrow}</p>
-            <h1 className="ac-h1 ac-reveal">{k.title}</h1>
-            <p className="ac-lead ac-reveal" style={{ maxWidth: "40ch" }}>
-              {k.lede}
-            </p>
-            <div className="ac-brand-actions ac-reveal">
+      <section className="cn-model-hero">
+        <div className="ac-wrap cn-model-grid">
+          <div className="cn-model-copy">
+            <p className="ac-eyebrow">{k.eyebrow}</p>
+            <h1 className="cn-model-name">{k.title}</h1>
+            <p className="cn-model-line">{k.lede}</p>
+            <div className="cn-model-actions">
               {w.discord.invite ? (
-                <a className="ac-btn ac-btn--discord" href={w.discord.invite} target="_blank" rel="noopener noreferrer">
+                <a className="ac-btn ac-btn--primary" href={w.discord.invite} target="_blank" rel="noopener noreferrer" data-magnetic="">
                   {k.invite}
                 </a>
               ) : null}
             </div>
-            <p className="ac-small ac-reveal">{k.invite_note}</p>
+            <p className="cn-model-lead">{k.invite_note}</p>
           </div>
-          <BrandStage icon="icons/store.png" label="" />
+          <div className="cn-model-icon cn-glass cn-glass--lite" data-glass="" aria-hidden="true">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={asset("icons/store.png")} alt="" width={320} height={320} />
+          </div>
         </div>
       </section>
 
-      <section className="ac-wrap ac-dc-section" aria-labelledby="dc-status">
-        <h2 id="dc-status" className="ac-h3">
+      <section className="ac-wrap cn-dl-block" aria-labelledby="dc-status">
+        <h2 id="dc-status" className="cn-dl-title">
           {st.statusTitle}
         </h2>
-        <dl className="ac-status-grid">
-          <div className="ac-card ac-reveal">
+        <dl className="cn-tiles cn-stats">
+          <div className="cn-stat cn-glass cn-glass--lite" data-glass="">
             <dt>{st.statusInvite}</dt>
             <dd>{st.published}</dd>
           </div>
-          <div className="ac-card ac-reveal">
+          <div className="cn-stat cn-glass cn-glass--lite" data-glass="">
             <dt>{st.statusPermissions}</dt>
             <dd className="ac-ltr">{w.discord.permissions}</dd>
           </div>
-          <div className="ac-card ac-reveal">
+          <div className="cn-stat cn-glass cn-glass--lite" data-glass="">
             <dt>{st.statusLatest}</dt>
             <dd className="ac-ltr" lang="en">
               {w.discord.latest.title} · {w.discord.latest.date}
             </dd>
           </div>
-          <div className="ac-card ac-reveal">
+          <div className="cn-stat cn-glass cn-glass--lite" data-glass="">
             <dt>{st.statusFeed}</dt>
             <dd className="ac-ltr">
               {w.discord.feed.date} · {w.discord.feed.count}
             </dd>
           </div>
         </dl>
-        <p className="ac-small">{st.statusNote}</p>
+        <p className="cn-dl-line">{st.statusNote}</p>
         <MissionControl
           labels={{
             feeds: f.nexus.feeds,
@@ -88,18 +89,18 @@ export function DiscordPage({ lang }: { lang: Lang }) {
         />
       </section>
 
-      <section className="ac-wrap ac-dc-section" aria-labelledby="dc-setup">
-        <h2 id="dc-setup" className="ac-h2">
+      <section className="ac-wrap cn-dl-block" aria-labelledby="dc-setup">
+        <h2 id="dc-setup" className="cn-dl-title">
           {k.setup_title}
         </h2>
-        <ol className="ac-steps">
+        <ol className="cn-tiles cn-steps">
           {steps.map(([h, p], i) => (
-            <li key={h} className="ac-card ac-reveal">
-              <span className="ac-step-n" aria-hidden="true">
+            <li key={h} className="cn-stat cn-glass cn-glass--lite" data-glass="">
+              <span className="cn-step-n" aria-hidden="true">
                 {i + 1}
               </span>
               <h3>{h}</h3>
-              <TrustedHtml html={p} className="ac-small ac-dc-html" as="p" />
+              <TrustedHtml html={p} className="cn-stat-p" as="p" />
               {i === 3 ? (
                 <span className="ac-kinds ac-ltr">
                   {w.discord.routeKinds.map((kind) => (
@@ -112,20 +113,20 @@ export function DiscordPage({ lang }: { lang: Lang }) {
         </ol>
       </section>
 
-      <section className="ac-wrap ac-dc-section" aria-labelledby="dc-posts">
-        <h2 id="dc-posts" className="ac-h3">
+      <section className="ac-wrap cn-dl-block" aria-labelledby="dc-posts">
+        <h2 id="dc-posts" className="cn-dl-title">
           {k.posts_title}
         </h2>
-        <p className="ac-small">{k.posts_p}</p>
-        <ul className="ac-posts">
-          <li className="ac-card ac-reveal">{k.post_update}</li>
-          <li className="ac-card ac-reveal">{k.post_upcoming}</li>
-          <li className="ac-card ac-reveal">{k.post_intake}</li>
+        <p className="cn-dl-line">{k.posts_p}</p>
+        <ul className="cn-tiles cn-posts">
+          <li className="cn-stat cn-glass cn-glass--lite" data-glass="">{k.post_update}</li>
+          <li className="cn-stat cn-glass cn-glass--lite" data-glass="">{k.post_upcoming}</li>
+          <li className="cn-stat cn-glass cn-glass--lite" data-glass="">{k.post_intake}</li>
         </ul>
       </section>
 
-      <section className="ac-wrap ac-dc-section" aria-labelledby="dc-cmds">
-        <h2 id="dc-cmds" className="ac-h2">
+      <section className="ac-wrap cn-dl-block" aria-labelledby="dc-cmds">
+        <h2 id="dc-cmds" className="cn-dl-title">
           {k.cmds_title}
         </h2>
         <CommandBrowser
@@ -141,27 +142,27 @@ export function DiscordPage({ lang }: { lang: Lang }) {
             filter: f.nexus.filter,
           }}
         />
-        <p className="ac-small">{k.rate_note}</p>
+        <p className="cn-dl-line">{k.rate_note}</p>
       </section>
 
-      <section className="ac-wrap ac-dc-section" aria-labelledby="dc-lang">
-        <h2 id="dc-lang" className="ac-h3">
+      <section className="ac-wrap cn-dl-block" aria-labelledby="dc-lang">
+        <h2 id="dc-lang" className="cn-dl-title">
           {k.lang_title}
         </h2>
         <p>{k.lang_p}</p>
-        <ul className="ac-dc-langs">
+        <ul className="cn-tiles cn-langs">
           {w.discord.languages.map((code) => (
-            <li key={code} className="ac-card">
+            <li key={code} className="cn-stat cn-glass cn-glass--lite">
               <span lang={code}>{w.discord.languageNames[code] ?? code}</span>
               <code>{code}</code>
             </li>
           ))}
         </ul>
-        <p className="ac-small">{k.lang_note}</p>
+        <p className="cn-dl-line">{k.lang_note}</p>
       </section>
 
-      <section className="ac-wrap ac-dc-section ac-dc-last" aria-labelledby="dc-priv">
-        <h2 id="dc-priv" className="ac-h3">
+      <section className="ac-wrap cn-dl-block" aria-labelledby="dc-priv">
+        <h2 id="dc-priv" className="cn-dl-title">
           {k.privacy_title}
         </h2>
         <p>{k.privacy_p}</p>

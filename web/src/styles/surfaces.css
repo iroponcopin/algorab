@@ -100,3 +100,55 @@
   background: #fff;
   color: #030305;
 }
+
+/* Fallbacks for the chrome that the glass stylesheet cannot reach by cascade order. */
+@media (prefers-reduced-transparency: reduce) {
+  .ac-header-pill,
+  .ac-sheet,
+  .ac-pal {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .ac-header-pill {
+    background: #0e0f13;
+  }
+  .ac-sheet {
+    background: #030305;
+  }
+  .ac-pal-panel {
+    background: #0e0f13;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .ac-header-pill,
+  .ac-sheet,
+  .ac-pal {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .ac-header-pill {
+    background: #0a0b0f;
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.85);
+  }
+  .ac-sheet {
+    background: #030305;
+  }
+  .ac-pal-panel {
+    background: #0a0b0f;
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.85);
+  }
+  .ac-nav-link,
+  .ac-iconbtn,
+  .ac-footer a,
+  .cn-card-body,
+  .cn-card-eyebrow,
+  .ac-lead,
+  .ac-small,
+  .cn-hero-lede {
+    color: #fff;
+  }
+  .ac-header-pill::before {
+    display: none;
+  }
+}

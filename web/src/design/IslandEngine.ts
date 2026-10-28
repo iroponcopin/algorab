@@ -170,6 +170,32 @@ export class IslandEngine {
     this.attach();
     this.settleAll();
     this.wake();
+    this.prewarm();
+  }
+
+  /**
+   * The metaball filter is compiled and rasterised the first time a filtered layer has content. Doing that in the middle
+   * of the first drag costs a long frame, so it is done once, invisibly, shortly after the island mounts.
+   */
+  private prewarm(): void {
+    if (this.driver.reduced || !this.goo) return;
+    const goo = this.goo;
+    const sat = this.sats[0];
+    if (!sat) return;
+    const id = window.setTimeout(() => {
+      if (this.destroyed || this.gooShown) return;
+      goo.style.opacity = "0";
+      goo.style.visibility = "visible";
+      sat.style.transform = "translate3d(0px, 40px, 0) scale(0.5)";
+      window.requestAnimationFrame(() =>
+        window.requestAnimationFrame(() => {
+          if (!this.gooShown) goo.style.visibility = "hidden";
+          goo.style.removeProperty("opacity");
+          sat.style.removeProperty("transform");
+        }),
+      );
+    }, 600);
+    this.cleanup.push(() => window.clearTimeout(id));
   }
 
   /* ------------------------------------------------------------------------------------------------------- API */

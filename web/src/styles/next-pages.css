@@ -910,3 +910,9 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-model-name {
   text-transform: none;
   font-size: clamp(44px, 8vw, 112px);
 }
+
+/* Korean breaks at spaces, not inside a word. */
+html:lang(ko) body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}

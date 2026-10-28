@@ -1,6 +1,6 @@
 {
  "what": "Corvus portal 4.3.0, static export. Made by web/ (npm run build); nothing here is a contract file.",
- "wiki_commit": "045f1e849a4165eb200a675a048401769c30609e",
+ "wiki_commit": "7ea71f47daebe082f2f369a192a74edfd3b42978",
  "wiki_branch": "next-web",
  "wiki_dirty": false,
  "corvus_store": "5.5.1311",

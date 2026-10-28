@@ -27,6 +27,7 @@
   --cn-warn: #ffd60a;
   --cn-bad: #ff453a;
   --cn-shadow-rgb: 0 0 0;
+  --cn-brand-mix: 0%;
   --cn-selection-bg: #f5f5f7;
   --cn-selection-fg: #030305;
   --cn-hero-gradient: linear-gradient(180deg, #ffffff 0%, #c9c9d0 55%, #71717a 120%);
@@ -81,6 +82,7 @@
     --cn-warn: #8a5a00;
     --cn-bad: #c4281c;
     --cn-shadow-rgb: 30 30 50;
+    --cn-brand-mix: 55%;
     --cn-selection-bg: #111114;
     --cn-selection-fg: #f4f4f7;
     --cn-hero-gradient: linear-gradient(180deg, #0a0a0d 0%, #2a2a31 60%, #55555e 130%);
@@ -121,6 +123,7 @@
   --cn-warn: #8a5a00;
   --cn-bad: #c4281c;
   --cn-shadow-rgb: 30 30 50;
+  --cn-brand-mix: 55%;
   --cn-selection-bg: #111114;
   --cn-selection-fg: #f4f4f7;
   --cn-hero-gradient: linear-gradient(180deg, #0a0a0d 0%, #2a2a31 60%, #55555e 130%);

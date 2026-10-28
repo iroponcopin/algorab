@@ -60,7 +60,7 @@
   padding: 14px 17px 13px;
   border: 1px solid rgb(var(--cn-ink-rgb) / 0.32);
   border-radius: var(--cn-r-sm);
-  background: rgb(7 7 7 / 0.24);
+  background: rgb(var(--cn-surface-rgb) / 0.24);
   color: var(--cn-ink);
   font-size: 10px;
   font-weight: 700;

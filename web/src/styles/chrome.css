@@ -167,6 +167,8 @@
   min-width: 220px;
   padding: 8px;
   border-radius: 22px;
+  /* A popover inside the header sits in the header's own backdrop root, so it cannot refract the page: a denser tint. */
+  background: rgb(14 15 19 / 0.92);
   color: var(--cn-ink);
   font-size: 14px;
   font-weight: 500;

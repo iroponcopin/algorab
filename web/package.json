@@ -13,6 +13,7 @@
     "build": "npm run prepare:data && next build && node scripts/finalize-export.mjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
+    "test": "node --test src/design/*.test.ts",
     "check:export": "node scripts/check-export.mjs",
     "check:all": "npm run typecheck && npm run lint && npm run build && npm run check:export",
     "apply": "node scripts/apply-export.mjs"

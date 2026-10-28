@@ -5,9 +5,8 @@ import { DebugHud } from "@/components/DebugHud";
 import { Footer } from "@/components/Footer";
 import { Dock, type ModelLink, type UpdateLink } from "@/components/Dock";
 import { Palette } from "@/components/palette/Palette";
-import { LoadingScreen } from "@/components/shell/LoadingScreen";
 import { Reveal } from "@/components/Reveal";
-import { SmoothScroll } from "@/components/SmoothScroll";
+import { ScrollGate } from "@/components/next/ScrollGate";
 import { WorldGate } from "@/engine/WorldGate";
 import { FRESH } from "@/i18n/fresh";
 import { SHELL } from "@/i18n/shell";
@@ -43,9 +42,8 @@ export default async function SiteLayout({ children, params }: { children: React
           {c.skipLink}
         </a>
         <WorldGate dir={d.dir} />
-        <SmoothScroll />
+        <ScrollGate />
         <Reveal />
-        <LoadingScreen labels={SHELL[lang].loader} />
         <Dock
           lang={lang}
           models={models}

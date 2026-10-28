@@ -1,3 +1,4 @@
+import { BuildTag } from "@/components/next/BuildTag";
 import Link from "next/link";
 import { FRESH } from "@/i18n/fresh";
 import { asset, pathOf } from "@/lib/site";
@@ -62,6 +63,7 @@ export function LauncherPage({ lang }: { lang: Lang }) {
             <Stagger text={l.hub.title} lang="en" />
           </h1>
           <p className="ac-lead">{l.hub.tagline}</p>
+          <BuildTag className="ac-manifest-tag" />
         </div>
         <BrandRing items={ring} title={l.hub.brandsTitle} hint={l.hub.brandsHint} readMore={t.readMore} />
       </section>

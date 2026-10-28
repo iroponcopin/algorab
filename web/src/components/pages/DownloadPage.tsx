@@ -1,3 +1,4 @@
+import { BuildTag } from "@/components/next/BuildTag";
 import { FRESH } from "@/i18n/fresh";
 import Link from "next/link";
 import { asset, pathOf } from "@/lib/site";
@@ -50,6 +51,7 @@ export function DownloadPage({ lang }: { lang: Lang }) {
         <p className="ac-eyebrow">
           {d.chrome.launcher} <span className="ac-ltr">{d.launcherFiles.version}</span>
         </p>
+        <BuildTag className="ac-manifest-tag" />
         <h1 className="ac-h1">{dl.heading}</h1>
         <p className="ac-lead">{dl.body}</p>
       </div>

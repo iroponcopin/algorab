@@ -27,7 +27,9 @@ const config: NextConfig = {
   env: { NEXT_PUBLIC_BASE_PATH: BASE_PATH, NEXT_PUBLIC_ASSET_VERSIONS: ASSET_VERSIONS },
   ...(isDev
     ? {
+        // The Japanese-at-the-root rewrite is skipped with NEXT_NO_REWRITES=1; the pages are then reached at /ja/ and /en/.
         async rewrites() {
+          if (process.env.NEXT_NO_REWRITES === "1") return { beforeFiles: [], afterFiles: [], fallback: [] };
           const notPrefixed = `(?!${PREFIXED.join("|")}|_next|portal|downloads|data|assets)`;
           return {
             beforeFiles: [

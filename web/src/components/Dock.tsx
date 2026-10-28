@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
-import { getLenis } from "./SmoothScroll";
+import { BuildTag } from "./next/BuildTag";
+import { useSpringIn } from "@/design/useSpringIn";
 import { Icon } from "./Icon";
 import { SoundToggle } from "./SoundToggle";
 import { openPalette } from "./palette/event";
@@ -114,11 +115,16 @@ export function Dock({
   const sheetId = useId();
   const headerRef = useRef<HTMLElement>(null);
 
+  const sheetRef = useRef<HTMLDivElement>(null);
   const closeMenu = useCallback(() => setMenu(null), []);
   const closeLang = useCallback(() => {
     setLangOpen(false);
     langBtn.current?.focus();
   }, []);
+  useSpringIn(modelsPop, menu === "models");
+  useSpringIn(updatesPop, menu === "updates");
+  useSpringIn(langPop, langOpen);
+  useSpringIn(sheetRef, sheet);
   useDismiss(menu === "models", closeMenu, [modelsBtn, modelsPop]);
   useDismiss(menu === "updates", closeMenu, [updatesBtn, updatesPop]);
   useDismiss(langOpen, closeLang, [langBtn, langPop]);
@@ -143,46 +149,17 @@ export function Dock({
     const root = document.documentElement;
     const prev = root.style.overflow;
     root.style.overflow = "hidden";
-    getLenis()?.stop();
+    window.dispatchEvent(new CustomEvent("cn:scroll-lock", { detail: true }));
     const onKey = (e: KeyboardEvent): void => {
       if (e.key === "Escape") setSheet(false);
     };
     document.addEventListener("keydown", onKey);
     return () => {
       root.style.overflow = prev;
-      getLenis()?.start();
+      window.dispatchEvent(new CustomEvent("cn:scroll-lock", { detail: false }));
       document.removeEventListener("keydown", onKey);
     };
   }, [sheet]);
-
-  // Magnetic hover: an element marked data-magnetic leans a few pixels toward the pointer (fine pointers only).
-  useEffect(() => {
-    const root = headerRef.current;
-    if (!root || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const lean = (el: HTMLElement, x: number, y: number): void => {
-      el.style.setProperty("--mx", `${(x * 7).toFixed(2)}px`);
-      el.style.setProperty("--my", `${(y * 5).toFixed(2)}px`);
-    };
-    const onMove = (e: PointerEvent): void => {
-      const el = (e.target as Element | null)?.closest?.<HTMLElement>("[data-magnetic]");
-      if (!el) return;
-      const r = el.getBoundingClientRect();
-      lean(el, (e.clientX - (r.left + r.width / 2)) / Math.max(r.width, 1), (e.clientY - (r.top + r.height / 2)) / Math.max(r.height, 1));
-    };
-    const onOut = (e: PointerEvent): void => {
-      const el = (e.target as Element | null)?.closest?.<HTMLElement>("[data-magnetic]");
-      if (!el || (e.relatedTarget instanceof Node && el.contains(e.relatedTarget))) return;
-      el.style.removeProperty("--mx");
-      el.style.removeProperty("--my");
-    };
-    root.addEventListener("pointermove", onMove);
-    root.addEventListener("pointerout", onOut);
-    return () => {
-      root.removeEventListener("pointermove", onMove);
-      root.removeEventListener("pointerout", onOut);
-    };
-  }, []);
 
   // Footer links (and any other a[data-lang]) remember the choice too.
   useEffect(() => {
@@ -228,8 +205,8 @@ export function Dock({
     <header ref={headerRef} className="ac-header" data-compact={compact ? "true" : "false"}>
       <div className="ac-header-pill">
         <Link href={pathOf(lang, "")} className="ac-brand" aria-label={`${labels.siteTitle} · ${labels.home}`}>
-          {/* The template's wordmark: the name alone, set in the nav's tracked capitals. */}
           <span>{labels.siteTitle}</span>
+          <BuildTag />
         </Link>
 
         <nav className="ac-nav" aria-label={labels.primary}>
@@ -356,7 +333,7 @@ export function Dock({
           </div>
           <Link
             href={pathOf(lang, "download/")}
-            className="ac-btn ac-btn--small ac-cta" data-magnetic
+            className="ac-btn ac-btn--small ac-btn--primary ac-cta" data-magnetic
             aria-current={current("download")}
           >
             {labels.download}
@@ -375,8 +352,9 @@ export function Dock({
       </div>
 
       {sheet ? (
-        <div id={sheetId} className="ac-sheet" style={{ pointerEvents: "auto" }}>
+        <div ref={sheetRef} id={sheetId} className="ac-sheet" style={{ pointerEvents: "auto" }}>
           <nav aria-label={labels.primary} className="ac-sheet-nav">
+            <BuildTag className="ac-sheet-tag" />
             <Link href={pathOf(lang, "launcher/")} onClick={() => setSheet(false)} aria-current={current("launcher")}>
               {labels.launcher}
             </Link>

@@ -1,6 +1,8 @@
 import type { Viewport } from "next";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
+import { MetaballFilter } from "@/components/next/MetaballFilter";
+import { PointerField } from "@/components/next/PointerField";
 import { asset, BASE_PATH, isLang, LANG_CODES } from "@/lib/site";
 import { langData } from "@/lib/wiki";
 import type { Lang } from "@/lib/wiki-types";
@@ -14,7 +16,7 @@ export function generateStaticParams(): { lang: Lang }[] {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#000000",
+  themeColor: "#030305",
   colorScheme: "dark",
 };
 
@@ -23,17 +25,6 @@ export const viewport: Viewport = {
  * hide their resting state), and settle the cheap half of the WebGL verdict at once, so a page
  * that will never draw WebGL shows its posters from the first frame. Experience settles the rest.
  */
-/**
- * Before first paint, decide whether the loading screen shows: once per session (sessionStorage) and never under reduced
- * motion; ?loader=show or ?loader=skip overrides. The screen lifts in components/shell/LoadingScreen.tsx, and its guards
- * set the attribute to "done" whatever happens, so a page is never stranded behind it.
- */
-const LOADER_BOOT =
-  `(function(){var d=document.documentElement;try{var q=new URLSearchParams(location.search),m=q.get("loader"),s=sessionStorage;` +
-  `var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;var seen=s.getItem("corvus-intro")==="1";` +
-  `if(rm||m==="skip"||(seen&&m!=="show")){d.setAttribute("data-loader","skip");}` +
-  `else{d.setAttribute("data-loader","show");s.setItem("corvus-intro","1");}}catch(e){d.setAttribute("data-loader","skip")}})();`;
-
 const BOOT =
   `(function(){var d=document.documentElement;d.setAttribute("data-js","1");try{var q=new URLSearchParams(location.search),` +
   `n=navigator,c=n.connection;if(q.get("webgl")==="off"||q.get("stage")==="off"||(c&&c.saveData===true)||` +
@@ -74,9 +65,12 @@ export default async function LangLayout({ children, params }: { children: React
         <script src={asset("lang.js")} />
         <script dangerouslySetInnerHTML={{ __html: langInit(lang) }} />
         <script dangerouslySetInnerHTML={{ __html: BOOT }} />
-        <script dangerouslySetInnerHTML={{ __html: LOADER_BOOT }} />
       </head>
-      <body>{children}</body>
+      <body>
+        <MetaballFilter />
+        <PointerField />
+        {children}
+      </body>
     </html>
   );
 }

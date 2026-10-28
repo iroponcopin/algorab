@@ -39,7 +39,7 @@
   --brand: #d9b56a;
 }
 [data-brand="corvus"] {
-  --brand: #e8e5dc;
+  --brand: #f5f5f7;
 }
 [data-brand="noctua"] {
   --brand: #ffb340;
@@ -60,8 +60,8 @@
   margin: 0;
   font-size: clamp(40px, 6.4vw, 104px);
   line-height: 0.84;
-  letter-spacing: -0.075em;
-  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  text-transform: none;
 }
 
 html:lang(tr) .ac-page-head h1 {
@@ -130,7 +130,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar), :lang(ru)) .ac-page-head h1 
   align-self: flex-start;
   min-height: 24px;
   padding: 0 10px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.08);
   color: var(--color-soft);
   font-size: 12px;
@@ -211,7 +211,7 @@ html:lang(ar) .ac-facts dt {
   min-height: 28px;
   padding: 0 11px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.08);
   color: var(--color-soft);
   font-family: var(--font-sans);
@@ -220,10 +220,6 @@ html:lang(ar) .ac-facts dt {
   letter-spacing: 0;
   white-space: nowrap;
   cursor: pointer;
-  transition:
-    background-color 0.2s,
-    color 0.2s,
-    transform 0.35s var(--ease-spring);
 }
 
 .ac-copy:hover {
@@ -277,7 +273,7 @@ html:lang(ar) .ac-facts dt {
   padding-block: 0;
   padding-inline: 14px 38px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   appearance: none;
   background: rgb(28 28 30 / 0.8)
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")
@@ -297,7 +293,7 @@ html:lang(ar) .ac-facts dt {
   outline: none;
   box-shadow:
     inset 0 0 0 1px var(--color-link),
-    0 0 0 4px rgb(232 229 220 / 0.2);
+    0 0 0 4px rgb(245 245 247 / 0.2);
 }
 
 .ac-count {
@@ -318,7 +314,7 @@ html:lang(ar) .ac-facts dt {
   place-items: center;
   width: 32px;
   height: 32px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.06);
   color: var(--color-muted);
   font-size: 14px;
@@ -331,10 +327,9 @@ html:lang(ar) .ac-facts dt {
   height: 28px;
   padding: 0;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: var(--color-surface-3);
   cursor: pointer;
-  transition: background-color 0.25s;
 }
 
 .ac-switch::after {
@@ -347,7 +342,6 @@ html:lang(ar) .ac-facts dt {
   border-radius: 50%;
   background: #fff;
   box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
-  transition: transform 0.35s var(--ease-spring);
 }
 
 .ac-switch[aria-checked="true"] {
@@ -370,7 +364,7 @@ html:lang(ar) .ac-facts dt {
   height: 26px;
   margin: 0 2px;
   padding: 0 7px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: linear-gradient(#3a3a3c, #2c2c2e);
   box-shadow:
     inset 0 -2px 0 rgb(0 0 0 / 0.35),
@@ -387,7 +381,7 @@ html:lang(ar) .ac-facts dt {
 
 .ac-path-step {
   padding: 1px 6px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.07);
   font-weight: 500;
 }
@@ -478,7 +472,7 @@ html:lang(ar) .ac-facts dt {
 .ac-perch-eq i {
   width: 3px;
   height: 30%;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: var(--color-link);
   opacity: 0.45;
 }
@@ -726,7 +720,6 @@ html:lang(ar) .ac-facts dt {
 .ac-hub-product .ac-link .ac-flip,
 .ac-hub-get .ac-link .ac-flip {
   display: inline-block;
-  transition: transform 0.35s var(--ease-spring);
 }
 
 .ac-dl-more .ac-link:hover .ac-flip,
@@ -739,7 +732,6 @@ html:lang(ar) .ac-facts dt {
   .ac-dl-more .ac-link .ac-flip,
   .ac-hub-product .ac-link .ac-flip,
   .ac-hub-get .ac-link .ac-flip {
-    transition: none;
   }
 }
 
@@ -775,7 +767,7 @@ html:lang(ar) .ac-facts dt {
   gap: 14px;
   padding: clamp(14px, 2.2vw, 20px);
   border: 1px solid rgb(255 255 255 / 0.08);
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: linear-gradient(180deg, rgb(20 22 30 / 0.72), rgb(12 14 20 / 0.62));
   box-shadow: 0 24px 60px -36px rgb(0 0 0 / 0.8), inset 0 1px 0 rgb(255 255 255 / 0.04);
 }
@@ -792,11 +784,6 @@ html:lang(ar) .ac-facts dt {
 }
 
 .ac-cl-chip {
-  transition:
-    background-color 0.35s var(--ease-reveal),
-    color 0.35s var(--ease-reveal),
-    box-shadow 0.35s var(--ease-reveal),
-    transform 0.35s var(--ease-spring);
 }
 
 .ac-cl-chip[aria-pressed="true"] {
@@ -822,7 +809,6 @@ html:lang(ar) .ac-facts dt {
   .ac-cl-chip,
   ::view-transition-old(ac-cl-list),
   ::view-transition-new(ac-cl-list) {
-    transition: none;
     animation: none;
   }
 }
@@ -880,13 +866,13 @@ html:lang(ar) .ac-facts dt {
 
 .ac-cl-row {
   overflow: hidden;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
 }
 
 .ac-cl-row[data-open="true"] {
   box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--brand, #e8e5dc) 40%, transparent),
-    0 30px 80px -40px color-mix(in srgb, var(--brand, #e8e5dc) 50%, transparent);
+    inset 0 0 0 1px color-mix(in srgb, var(--brand, #f5f5f7) 40%, transparent),
+    0 30px 80px -40px color-mix(in srgb, var(--brand, #f5f5f7) 50%, transparent);
 }
 
 .ac-cl-h {
@@ -911,9 +897,9 @@ html:lang(ar) .ac-facts dt {
 
 .ac-cl-brand {
   padding: 3px 9px;
-  border-radius: 0;
-  background: color-mix(in srgb, var(--brand, #e8e5dc) 18%, transparent);
-  color: var(--brand, #e8e5dc);
+  border-radius: var(--cn-r-sm);
+  background: color-mix(in srgb, var(--brand, #f5f5f7) 18%, transparent);
+  color: var(--brand, #f5f5f7);
   font-size: 12px;
   font-weight: 700;
   white-space: nowrap;
@@ -943,7 +929,6 @@ html:lang(ar) .ac-facts dt {
 
 .ac-cl-chev {
   color: var(--color-muted);
-  transition: transform 0.35s var(--ease-apple);
 }
 
 .ac-cl-row[data-open="true"] .ac-cl-chev {
@@ -1136,16 +1121,13 @@ html:lang(ar) .ac-facts dt {
   height: 100%;
   padding: 10px 12px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   color: inherit;
   font: inherit;
   font-size: 14px;
   line-height: 1.25;
   text-align: start;
   cursor: pointer;
-  transition:
-    transform 0.35s var(--ease-spring),
-    box-shadow 0.25s;
 }
 
 .ac-item:hover {
@@ -1167,7 +1149,7 @@ html:lang(ar) .ac-facts dt {
 .ac-item[aria-pressed="true"] {
   box-shadow:
     inset 0 0 0 1.5px var(--color-link),
-    0 12px 30px -12px rgb(232 229 220 / 0.6);
+    0 12px 30px -12px rgb(245 245 247 / 0.6);
 }
 
 /* The detail panel frames a live 3D stage at its top: only the part below it is tinted. */
@@ -1184,7 +1166,7 @@ html:lang(ar) .ac-facts dt {
 
 .ac-synth {
   position: relative;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   box-shadow: inset 0 0 0 1px var(--color-hair);
   cursor: grab;
   touch-action: pan-y;
@@ -1230,7 +1212,7 @@ html:lang(ar) .ac-facts dt {
   justify-content: center;
   gap: 14px;
   padding: 16px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(0 0 0 / 0.38);
 }
 
@@ -1246,7 +1228,7 @@ html:lang(ar) .ac-facts dt {
   place-items: center;
   width: 44px;
   height: 44px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.05);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.07);
 }
@@ -1288,7 +1270,7 @@ html:lang(ar) .ac-facts dt {
   align-items: center;
   gap: 10px;
   padding: 6px 10px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.04);
   font-size: 14px;
 }
@@ -1337,7 +1319,7 @@ html:lang(ar) .ac-facts dt {
   gap: 8px;
   padding: 4px 9px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.05);
   color: inherit;
   font: inherit;
@@ -1398,7 +1380,7 @@ html:lang(ar) .ac-facts dt {
   position: relative;
   height: min(72vh, 640px);
   min-height: 420px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   box-shadow: inset 0 0 0 1px var(--color-hair);
   cursor: grab;
   touch-action: pan-y;
@@ -1432,7 +1414,7 @@ html:lang(ar) .ac-facts dt {
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(0 0 0 / 0.55);
   color: var(--color-soft);
   font-size: 12px;
@@ -1559,16 +1541,11 @@ html:lang(ar) .ac-facts dt {
   gap: 8px;
   padding: 12px;
   border: 1px solid rgb(255 255 255 / 0.08);
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: linear-gradient(180deg, rgb(20 22 30 / 0.7), rgb(12 14 20 / 0.6));
 }
 
 .ac-sk-controls .ac-chip {
-  transition:
-    background-color 0.35s var(--ease-reveal),
-    color 0.35s var(--ease-reveal),
-    box-shadow 0.35s var(--ease-reveal),
-    transform 0.35s var(--ease-spring);
 }
 
 .ac-sk-controls .ac-chip[aria-pressed="true"] {
@@ -1597,7 +1574,6 @@ html:lang(ar) .ac-facts dt {
   .ac-sk-controls .ac-chip,
   .ac-sk-open,
   .ac-sk-pin {
-    transition: none;
     animation: none;
   }
 }
@@ -1623,7 +1599,7 @@ html:lang(ar) .ac-facts dt {
 
 /* The Discord call to action is the template's text CTA like every other. */
 .ac-btn--discord {
-  border-color: #e8e5dc;
+  border-color: #f5f5f7;
 }
 
 .ac-dc-section {
@@ -1688,13 +1664,13 @@ html:lang(ar) .ac-facts dt {
   place-items: center;
   width: 30px;
   height: 30px;
-  border-radius: 0;
-  border: 1px solid rgb(232 229 220 / 0.72);
+  border-radius: var(--cn-r-sm);
+  border: 1px solid rgb(245 245 247 / 0.72);
   background: transparent;
-  color: #e8e5dc;
+  color: #f5f5f7;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 .ac-steps h3 {
@@ -1711,7 +1687,7 @@ html:lang(ar) .ac-facts dt {
 .ac-kinds code,
 .ac-hub-guide-body code {
   padding: 1px 6px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.08);
   font-size: 0.92em;
 }
@@ -1752,7 +1728,7 @@ html:lang(ar) .ac-facts dt {
   justify-content: space-between;
   gap: 8px;
   padding: 12px 14px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
 }
 
 .ac-dc-langs code {
@@ -1764,7 +1740,7 @@ html:lang(ar) .ac-facts dt {
 .ac-term {
   margin-top: 18px;
   overflow: hidden;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(10 10 12 / 0.86);
   font-family: var(--font-mono);
   font-size: 13px;
@@ -1937,7 +1913,7 @@ html:lang(ar) .ac-facts dt {
 .ac-who {
   display: inline-block;
   padding: 2px 8px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(48 209 88 / 0.14);
   color: var(--color-green);
   font-size: 11px;
@@ -1984,11 +1960,11 @@ html:lang(ar) .ac-facts dt {
   height: min(720px, 80vh);
   min-height: 520px;
   overflow: hidden;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: #1c1c1e;
   box-shadow:
     inset 0 0 0 1px rgb(255 255 255 / 0.1),
-    0 60px 140px -50px rgb(232 229 220 / 0.55),
+    0 60px 140px -50px rgb(245 245 247 / 0.55),
     0 40px 90px -40px rgb(0 0 0 / 0.95);
 }
 
@@ -2024,7 +2000,7 @@ html:lang(ar) .ac-facts dt {
 }
 
 .ac-stp-brand img {
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
 }
 
 .ac-stp-search {
@@ -2033,7 +2009,7 @@ html:lang(ar) .ac-facts dt {
   gap: 6px;
   height: 32px;
   padding: 0 10px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.07);
   color: var(--color-muted);
 }
@@ -2052,7 +2028,7 @@ html:lang(ar) .ac-facts dt {
 }
 
 .ac-stp-search:focus-within {
-  box-shadow: 0 0 0 3px rgb(232 229 220 / 0.35);
+  box-shadow: 0 0 0 3px rgb(245 245 247 / 0.35);
 }
 
 .ac-stp-nav {
@@ -2066,7 +2042,7 @@ html:lang(ar) .ac-facts dt {
   gap: 10px;
   padding: 8px 10px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: none;
   color: var(--color-soft);
   font: inherit;
@@ -2095,7 +2071,7 @@ html:lang(ar) .ac-facts dt {
   height: 18px;
   margin-inline-start: auto;
   padding: 0 5px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: var(--color-red);
   color: #fff;
   font-size: 11px;
@@ -2109,7 +2085,7 @@ html:lang(ar) .ac-facts dt {
   margin-top: auto;
   padding: 8px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: none;
   color: var(--color-fg);
   font: inherit;
@@ -2130,8 +2106,8 @@ html:lang(ar) .ac-facts dt {
   height: 28px;
   border: 0;
   border-radius: 50%;
-  background: #e8e5dc;
-  color: #0a0a0a;
+  background: #f5f5f7;
+  color: #0e0f13;
 }
 
 .ac-stp-avatar-btn {
@@ -2220,20 +2196,17 @@ html:lang(ar) .ac-facts dt {
   grid-template-rows: 1fr auto;
   min-height: 250px;
   overflow: hidden;
-  border-radius: 0;
-  background: radial-gradient(120% 90% at 50% 20%, color-mix(in srgb, var(--brand, #e8e5dc) 26%, #07090f), #07090f 72%);
+  border-radius: var(--cn-r-sm);
+  background: radial-gradient(120% 90% at 50% 20%, color-mix(in srgb, var(--brand, #f5f5f7) 26%, #07090f), #07090f 72%);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.08);
   isolation: isolate;
-  transition:
-    transform 0.5s var(--ease-spring),
-    box-shadow 0.3s;
 }
 
 .ac-st-card:hover {
   transform: translateY(-3px);
   box-shadow:
     inset 0 0 0 1px rgb(255 255 255 / 0.14),
-    0 30px 70px -36px color-mix(in srgb, var(--brand, #e8e5dc) 70%, transparent);
+    0 30px 70px -36px color-mix(in srgb, var(--brand, #f5f5f7) 70%, transparent);
 }
 
 .ac-st-card--big {
@@ -2275,7 +2248,7 @@ html:lang(ar) .ac-facts dt {
   height: 46%;
   border-radius: 22.37%;
   object-fit: contain;
-  box-shadow: 0 30px 70px -20px color-mix(in srgb, var(--brand, #e8e5dc) 70%, transparent);
+  box-shadow: 0 30px 70px -20px color-mix(in srgb, var(--brand, #f5f5f7) 70%, transparent);
 }
 
 .ac-st-card[data-dim="true"] .ac-st-card-art,
@@ -2294,7 +2267,7 @@ html:lang(ar) .ac-facts dt {
   color: rgb(255 255 255 / 0.72);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -2472,7 +2445,7 @@ html:lang(ar) .ac-st-eyebrow {
   height: 30px;
   padding: 0 16px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.12);
   color: var(--color-link);
   font: inherit;
@@ -2480,9 +2453,6 @@ html:lang(ar) .ac-st-eyebrow {
   font-weight: 700;
   white-space: nowrap;
   cursor: pointer;
-  transition:
-    background-color 0.2s,
-    transform 0.35s var(--ease-spring);
 }
 
 .ac-stb:hover {
@@ -2501,8 +2471,8 @@ html:lang(ar) .ac-st-eyebrow {
 }
 
 .ac-stb[data-phase="update"] {
-  background: #e8e5dc;
-  color: #0a0a0a;
+  background: #f5f5f7;
+  color: #0e0f13;
 }
 
 .ac-stb[data-phase="open"] {
@@ -2581,7 +2551,7 @@ html:lang(ar) .ac-st-eyebrow {
   place-items: center;
   height: 44%;
   min-height: 190px;
-  background: radial-gradient(120% 90% at 50% 20%, color-mix(in srgb, var(--brand, #e8e5dc) 26%, #07090f), #07090f 72%);
+  background: radial-gradient(120% 90% at 50% 20%, color-mix(in srgb, var(--brand, #f5f5f7) 26%, #07090f), #07090f 72%);
 }
 
 .ac-stp-article[data-brand="aureum"] .ac-stp-article-hero {
@@ -2760,7 +2730,7 @@ html:lang(ar) .ac-st-eyebrow {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   overflow: hidden;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: #1c1c1e;
   box-shadow:
     inset 0 1px 0 var(--color-hair),
@@ -2812,7 +2782,7 @@ html:lang(ar) .ac-st-eyebrow {
   gap: 14px;
   width: min(340px, calc(100% - 28px));
   padding: 18px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(44 44 46 / 0.97);
   box-shadow:
     inset 0 0 0 1px rgb(255 255 255 / 0.1),
@@ -2867,7 +2837,7 @@ html:lang(ar) .ac-st-eyebrow {
   z-index: 7;
   display: grid;
   place-items: center;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(0 0 0 / 0.5);
   animation: ac-fade 0.25s ease both;
 }
@@ -2878,7 +2848,7 @@ html:lang(ar) .ac-st-eyebrow {
   gap: 10px;
   width: min(360px, calc(100% - 40px));
   padding: 26px 24px 22px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: #2c2c2e;
   box-shadow: 0 40px 100px -30px rgb(0 0 0 / 0.95);
   text-align: center;
@@ -2906,7 +2876,7 @@ html:lang(ar) .ac-st-eyebrow {
   left: 50%;
   z-index: 8;
   padding: 10px 18px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(58 58 60 / 0.97);
   box-shadow: 0 20px 50px -20px rgb(0 0 0 / 0.9);
   font-size: 14px;
@@ -2970,9 +2940,6 @@ html:lang(ar) .ac-st-eyebrow {
   flex-direction: column;
   align-items: center;
   transform: translateX(-50%);
-  transition:
-    transform 0.6s var(--ease-spring),
-    opacity 0.3s;
 }
 
 .ac-perch[data-hidden="true"] {
@@ -2988,14 +2955,13 @@ html:lang(ar) .ac-st-eyebrow {
   height: 34px;
   padding: 0 14px 0 8px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: #000;
   box-shadow:
     0 0 0 1px rgb(255 255 255 / 0.12),
     0 12px 32px rgb(0 0 0 / 0.65);
   color: #fff;
   cursor: pointer;
-  transition: transform 0.4s var(--ease-spring);
 }
 
 .ac-perch-pill:hover {
@@ -3003,7 +2969,7 @@ html:lang(ar) .ac-st-eyebrow {
 }
 
 .ac-perch-pill img {
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
 }
 
 .ac-perch-eq {
@@ -3022,7 +2988,7 @@ html:lang(ar) .ac-st-eyebrow {
   width: 300px;
   margin-top: 8px;
   padding: 16px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(0 0 0 / 0.94);
   box-shadow:
     0 0 0 1px rgb(255 255 255 / 0.1),
@@ -3050,7 +3016,7 @@ html:lang(ar) .ac-st-eyebrow {
 
 .ac-perch-now > img {
   flex: none;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
 }
 
 .ac-perch-meta {
@@ -3086,10 +3052,6 @@ html:lang(ar) .ac-st-eyebrow {
   background: none;
   color: #fff;
   cursor: pointer;
-  transition:
-    background-color 0.2s,
-    color 0.2s,
-    transform 0.3s var(--ease-spring);
 }
 
 .ac-perch-deck button:hover {
@@ -3247,13 +3209,10 @@ html:lang(tr) .ac-hub-hero h1 {
   height: 52px;
   padding: 0;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.05);
   box-shadow: inset 0 0 0 1px var(--color-hair);
   cursor: pointer;
-  transition:
-    transform 0.45s var(--ease-spring),
-    box-shadow 0.3s;
 }
 
 .ac-hub-mark img {
@@ -3272,7 +3231,7 @@ html:lang(tr) .ac-hub-hero h1 {
 .ac-hub-mark[aria-pressed="true"] {
   box-shadow:
     inset 0 0 0 1.5px var(--color-link),
-    0 12px 30px -10px rgb(232 229 220 / 0.7);
+    0 12px 30px -10px rgb(245 245 247 / 0.7);
   transform: translateY(-3px) scale(1.06);
 }
 
@@ -3319,7 +3278,7 @@ html:lang(tr) .ac-hub-hero h1 {
 
 .ac-hub-badge {
   padding: 2px 8px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: color-mix(in srgb, var(--brand, #a68bff) 18%, transparent);
   color: var(--brand, #c9b8ff);
   font-size: 11px;
@@ -3440,7 +3399,7 @@ html:lang(tr) .ac-hub-hero h1 {
   inset-inline: 8%;
   z-index: 0;
   height: 140px;
-  background: radial-gradient(50% 60% at 50% 40%, rgb(232 229 220 / 0.38), transparent 72%);
+  background: radial-gradient(50% 60% at 50% 40%, rgb(245 245 247 / 0.38), transparent 72%);
   filter: blur(26px);
   pointer-events: none;
 }
@@ -3490,13 +3449,12 @@ html:lang(tr) .ac-hub-hero h1 {
   gap: 18px;
   padding: 22px;
   scroll-margin-top: calc(var(--header-h) + 24px);
-  transition: box-shadow 0.4s;
 }
 
 .ac-hub-product:target {
   box-shadow:
     inset 0 0 0 1.5px var(--color-link),
-    0 0 0 6px rgb(232 229 220 / 0.14);
+    0 0 0 6px rgb(245 245 247 / 0.14);
 }
 
 .ac-hub-product > img {
@@ -3557,7 +3515,7 @@ html:lang(tr) .ac-hub-hero h1 {
 }
 
 .ac-hub-guide-item {
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(28 28 30 / 0.72);
   box-shadow: inset 0 0 0 1px var(--color-hair);
   scroll-margin-top: calc(var(--header-h) + 24px);
@@ -3586,7 +3544,6 @@ html:lang(tr) .ac-hub-hero h1 {
   font-size: 22px;
   font-weight: 300;
   line-height: 1;
-  transition: transform 0.35s var(--ease-spring);
 }
 
 .ac-hub-guide-item[open] summary::after {
@@ -3635,7 +3592,7 @@ html:lang(tr) .ac-hub-hero h1 {
 .ac-preview-stage {
   position: relative;
   height: clamp(320px, 52vh, 520px);
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   box-shadow: inset 0 0 0 1px var(--color-hair);
   cursor: grab;
   touch-action: pan-y;
@@ -3665,7 +3622,7 @@ html:lang(tr) .ac-hub-hero h1 {
   color: var(--color-muted);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -3910,7 +3867,6 @@ html:lang(tr) .ac-hub-hero h1 {
   .ac-perch,
   .ac-hub-hero,
   .ac-hub-ring {
-    transition: none;
   }
 }
 
@@ -3923,7 +3879,7 @@ html:lang(tr) .ac-hub-hero h1 {
   display: flex;
   gap: 14px;
   padding: 8px 14px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(0 0 0 / 0.78);
   box-shadow: inset 0 0 0 1px var(--color-hair);
   color: var(--color-soft);
@@ -3946,7 +3902,7 @@ html:lang(tr) .ac-hub-hero h1 {
   gap: 18px;
   margin: 22px 0 6px;
   padding: 16px 18px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background:
     radial-gradient(120% 120% at 0% 0%, rgb(255 107 139 / 0.14), transparent 60%),
     rgb(28 28 30 / 0.62);
@@ -4004,7 +3960,7 @@ html:lang(tr) .ac-hub-hero h1 {
   z-index: 2;
   margin: 0;
   padding: 8px 10px 6px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(28 28 30 / 0.55);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
   pointer-events: none;
@@ -4040,7 +3996,7 @@ html:lang(tr) .ac-hub-hero h1 {
   max-height: 660px;
   padding: clamp(22px, 4vw, 44px);
   overflow: hidden;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   outline: none;
   background:
     radial-gradient(120% 90% at 85% 8%, color-mix(in srgb, var(--tint) 30%, transparent), transparent 62%),
@@ -4092,7 +4048,7 @@ html:lang(tr) .ac-hub-hero h1 {
   align-items: center;
   gap: 10px;
   padding: 6px 14px 6px 6px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.07);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
   font-size: 14px;
@@ -4100,7 +4056,7 @@ html:lang(tr) .ac-hub-hero h1 {
 }
 
 .ac-reel-brand img {
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
 }
 
 .ac-reel-date {
@@ -4120,20 +4076,12 @@ html:lang(tr) .ac-hub-hero h1 {
   opacity: 0;
   visibility: hidden;
   transform: translateY(16px) scale(0.985);
-  transition:
-    opacity 0.55s var(--ease-apple),
-    transform 0.8s var(--ease-apple),
-    visibility 0s 0.55s;
 }
 
 .ac-reel-scene[data-active="true"] {
   opacity: 1;
   visibility: visible;
   transform: none;
-  transition:
-    opacity 0.7s var(--ease-apple) 0.12s,
-    transform 0.9s var(--ease-apple) 0.12s,
-    visibility 0s;
 }
 
 .ac-reel-title h2 {
@@ -4187,7 +4135,7 @@ html:lang(tr) .ac-hub-hero h1 {
   margin-bottom: 14px;
   color: color-mix(in srgb, var(--tint) 80%, white);
   font: 600 13px/1 var(--font-mono);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 .ac-reel-target {
@@ -4202,7 +4150,7 @@ html:lang(tr) .ac-hub-hero h1 {
   /* inline-block, not flex: a flex box trims the space between "Shipped" and its date. */
   display: inline-block;
   line-height: 1.35;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 214 10 / 0.14);
   color: var(--color-amber);
   font-weight: 600;
@@ -4239,7 +4187,7 @@ html:lang(tr) .ac-hub-hero h1 {
   height: 4px;
   padding: 0;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.16);
   cursor: pointer;
   overflow: hidden;
@@ -4295,13 +4243,12 @@ html:lang(tr) .ac-hub-hero h1 {
   height: 44px;
   padding: 0 22px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: #fff;
   color: #000;
   font: inherit;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s var(--ease-spring);
 }
 
 .ac-reel-play:active {
@@ -4323,7 +4270,7 @@ html:lang(tr) .ac-hub-hero h1 {
   gap: 8px;
   height: 40px;
   padding: 0 14px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
   background: rgb(255 255 255 / 0.06);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
   color: var(--color-muted);
@@ -4358,7 +4305,7 @@ html:lang(tr) .ac-hub-hero h1 {
   align-content: start;
   gap: 14px;
   padding: 22px;
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
 }
 
 .ac-teaser-card[data-current="true"] {
@@ -4373,7 +4320,7 @@ html:lang(tr) .ac-hub-hero h1 {
 }
 
 .ac-teaser-top img {
-  border-radius: 0;
+  border-radius: var(--cn-r-sm);
 }
 
 .ac-teaser-top .ac-eyebrow {
@@ -4433,7 +4380,7 @@ html:lang(tr) .ac-hub-hero h1 {
     aspect-ratio: auto;
     min-height: 520px;
     max-height: none;
-    border-radius: 0;
+    border-radius: var(--cn-r-sm);
   }
 }
 
@@ -4452,7 +4399,6 @@ html:lang(tr) .ac-hub-hero h1 {
   .ac-reel-scene,
   .ac-reel-scene[data-active="true"] {
     transform: none;
-    transition: none;
   }
 
   .ac-reel-title[data-active="true"] .ac-reel-word {

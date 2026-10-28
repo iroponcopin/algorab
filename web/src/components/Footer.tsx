@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { FooterLanguages } from "./FooterLanguages";
+import { BuildTag } from "./next/BuildTag";
 import { FRESH } from "@/i18n/fresh";
 import { MODELS } from "@/lib/models";
 import { pathOf } from "@/lib/site";
 import type { Lang, LangData } from "@/lib/wiki-types";
 
 /**
- * The footer the pre-4.0 portal carried, column for column: Models (the header's six), Get
- * started, Reference, Status (with the Teasers); the thirteen languages; the legal block.
+ * The footer: Models, Get started, Reference, Status (with the Teasers); the thirteen languages; the legal block, on one
+ * glass panel with the build line.
  */
 export function Footer({ lang, d }: { lang: Lang; d: LangData }) {
   const c = d.chrome;
@@ -48,6 +49,11 @@ export function Footer({ lang, d }: { lang: Lang; d: LangData }) {
   return (
     <footer className="ac-footer">
       <div className="ac-wrap">
+       <div className="ac-footer-panel cn-glass cn-glass--lite" data-glass="">
+        <div className="ac-footer-top">
+          <span className="ac-footer-mark">{c.siteTitle}</span>
+          <BuildTag />
+        </div>
         <div className="ac-footer-cols">
           {cols.map((col) => (
             <div key={col.heading}>
@@ -69,6 +75,7 @@ export function Footer({ lang, d }: { lang: Lang; d: LangData }) {
           <p>{c.tagline}</p>
           <p>{c.footerNote}</p>
         </div>
+       </div>
       </div>
     </footer>
   );

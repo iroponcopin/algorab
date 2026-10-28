@@ -1,0 +1,46 @@
+/*
+ * Corvus NEXT design tokens (V10174). One abyssal canvas, brushed-titanium type, a single emissive accent per focal point.
+ * 90 % monochrome architecture, 10 % light: colour is spent on the hero of a card and nowhere else.
+ */
+:root {
+  color-scheme: dark;
+
+  --cn-void: #030305;
+  --cn-obsidian: #07090e;
+  --cn-surface: #0e0f13;
+  --cn-raised: #14151a;
+  --cn-ink: #f5f5f7;
+  --cn-titanium: #a1a1aa;
+  --cn-muted: #86868b;
+  --cn-faint: #5b5c63;
+  --cn-line: rgb(245 245 247 / 0.1);
+  --cn-line-strong: rgb(245 245 247 / 0.22);
+  --cn-accent: #8ab4ff;
+  --cn-ok: #30d158;
+
+  /* Optical Glass Stack, layers 1 to 4 (owner's specification). */
+  --cn-glass-filter: blur(44px) saturate(220%) contrast(106%) brightness(102%);
+  --cn-glass-tint: rgb(14 15 19 / 0.58);
+  --cn-rim: linear-gradient(135deg, rgb(255 255 255 / 0.48) 0%, rgb(255 255 255 / 0.08) 45%, rgb(255 255 255 / 0.02) 75%, rgb(255 255 255 / 0.22) 100%);
+  --cn-caustic-gradient: radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 0%), rgb(255 255 255 / 0.14), transparent 70%);
+  /* Three-tier elevation stack and the 0.5 px catchlight (Apple Aesthetic Apex, pillar 2). */
+  --cn-elevation:
+    0 1px 2px rgb(0 0 0 / 0.65), 0 12px 28px -4px rgb(0 0 0 / 0.55), 0 32px 64px -12px rgb(0 0 0 / 0.75), inset 0 0.5px 0 rgb(255 255 255 / 0.18);
+
+  /* Concentric radii: a child's radius is its parent's minus the padding between them. */
+  --cn-r-xl: 32px;
+  --cn-r-lg: 24px;
+  --cn-r-md: 16px;
+  --cn-r-sm: 10px;
+
+  --cn-font:
+    "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Inter Variable", "Inter", "Segoe UI Variable Display", "Segoe UI", system-ui,
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "PingFang SC", "Apple SD Gothic Neo", "Noto Sans CJK JP", "Noto Sans Arabic Variable", "Microsoft YaHei",
+    "Malgun Gothic", "Yu Gothic", Meiryo, Roboto, Arial, sans-serif;
+  --cn-mono: "SF Mono", ui-monospace, "JetBrains Mono Variable", Menlo, Consolas, monospace;
+  --cn-track: -0.035em;
+}
+
+html:lang(ar) {
+  --cn-font: -apple-system, BlinkMacSystemFont, "SF Arabic", "Noto Sans Arabic Variable", "Inter Variable", "Segoe UI", Tahoma, Arial, sans-serif;
+}

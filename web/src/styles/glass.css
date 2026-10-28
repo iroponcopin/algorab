@@ -1,0 +1,138 @@
+/*
+ * The four-layer Optical Glass Stack. Every glass surface of Corvus NEXT is built from this recipe:
+ *   L1  refractive substrate   backdrop-filter on the element
+ *   L2  tint and depth         the element's own background
+ *   L3  specular rim hairline  ::before, a 0.5 px ring cut out of a 135deg gradient with a mask
+ *   L4  cursor caustics        ::after, a radial light at --pointer-x / --pointer-y, faded in by --cn-caustic
+ * --pointer-x and --pointer-y are written by design/field.ts (two properties per pointer frame, no React state).
+ */
+.cn-glass {
+  position: relative;
+  isolation: isolate;
+  background: var(--cn-glass-tint);
+  -webkit-backdrop-filter: var(--cn-glass-filter);
+  backdrop-filter: var(--cn-glass-filter);
+  border-radius: var(--cn-r-lg);
+  box-shadow: var(--cn-elevation);
+}
+
+.cn-glass::before,
+.ac-card::before,
+.ac-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  corner-shape: inherit;
+  padding: 0.5px;
+  background:
+    radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 0%), rgb(255 255 255 / calc(0.62 * var(--cn-caustic, 0))), transparent 70%),
+    var(--cn-rim);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cn-glass::after,
+.ac-card::after,
+.ac-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  corner-shape: inherit;
+  background: var(--cn-caustic-gradient);
+  opacity: var(--cn-caustic, 0);
+  pointer-events: none;
+}
+
+/* Long lists sit on flat obsidian, where a backdrop filter has nothing to refract: they keep L2 to L4 and drop L1. */
+.cn-glass--lite {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background: rgb(16 17 22 / 0.72);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.55), 0 18px 36px -14px rgb(0 0 0 / 0.7), inset 0 0.5px 0 rgb(255 255 255 / 0.12);
+}
+
+/* G2 curvature-continuous corners where the engine draws them. */
+@supports (corner-shape: squircle) {
+  .cn-glass,
+  .cn-squircle {
+    corner-shape: squircle;
+  }
+  .cn-glass {
+    border-radius: calc(var(--cn-r-lg) * 1.45);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .cn-glass,
+  .cn-glass--lite,
+  .ac-glass,
+  .ac-card,
+  .ac-header-pill {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: #0e0f13;
+  }
+  .cn-glass::after {
+    display: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .cn-glass,
+  .cn-glass--lite,
+  .ac-glass,
+  .ac-card,
+  .ac-header-pill {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: #0a0b0f;
+  }
+  .cn-glass::before,
+  .ac-card::before,
+  .ac-glass::before,
+  .ac-header-pill::before {
+    padding: 1.5px;
+    background: rgb(255 255 255 / 0.85);
+  }
+  .cn-glass::after,
+  .ac-card::after,
+  .ac-glass::after,
+  .ac-header-pill::after {
+    display: none;
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .cn-glass {
+    background: rgb(14 15 19 / 0.94);
+  }
+}
+
+@media (forced-colors: active) {
+  .cn-glass,
+  .cn-glass--lite,
+  .ac-glass,
+  .ac-card,
+  .ac-header-pill {
+    background: Canvas;
+    border: 1px solid CanvasText;
+    box-shadow: none;
+  }
+  .cn-glass::before,
+  .cn-glass::after,
+  .ac-card::before,
+  .ac-card::after,
+  .ac-glass::before,
+  .ac-glass::after,
+  .ac-header-pill::before,
+  .ac-header-pill::after {
+    display: none;
+  }
+}

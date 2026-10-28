@@ -1,0 +1,591 @@
+/* The Corvus Island V10174 simulator. Geometry and motion are driven by design/IslandEngine.ts; this is the look. */
+.cn-sim {
+  text-align: start;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  width: min(100%, 980px);
+  margin-inline: auto;
+}
+
+.cn-stage {
+  position: relative;
+  width: 100%;
+  height: 276px;
+  overflow: hidden;
+  border-radius: 40px;
+  background: #050507;
+  box-shadow: 0 0 0 0.5px rgb(255 255 255 / 0.1), 0 40px 90px -30px rgb(0 0 0 / 0.9);
+  contain: layout paint;
+  touch-action: pan-y;
+}
+
+@supports (corner-shape: squircle) {
+  .cn-stage {
+    corner-shape: squircle;
+    border-radius: 64px;
+  }
+}
+
+/* Ambient volumetric light bleed: a cool key from above the notch, a faint titanium fill, nothing else. */
+.cn-wall {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 90% at 50% -10%, rgb(138 180 255 / 0.22), transparent 70%),
+    radial-gradient(40% 70% at 8% 110%, rgb(245 245 247 / 0.07), transparent 70%),
+    radial-gradient(40% 70% at 96% 105%, rgb(138 180 255 / 0.07), transparent 70%);
+}
+
+.cn-menubar {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-inline: 20px;
+  background: rgb(20 21 26 / 0.5);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: inset 0 -0.5px 0 rgb(255 255 255 / 0.1);
+  color: rgb(245 245 247 / 0.86);
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+/* The metaball layer: black droplets fused by the shared SVG filter. Hidden (and so not rasterised) while at rest. */
+.cn-goo {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  -webkit-filter: url("#corvus-liquid-metaball");
+  filter: url("#corvus-liquid-metaball");
+  pointer-events: none;
+}
+
+.cn-anchor,
+.cn-sat {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 50%;
+  display: block;
+  background: color-mix(in srgb, #0d0e13 calc(var(--cn-p, 0) * 100%), #000);
+}
+
+.cn-anchor {
+  width: 96px;
+  height: 22px;
+  margin-inline-start: 0;
+  border-radius: 12px;
+  transform-origin: 50% 0;
+}
+
+.cn-sat {
+  width: 30px;
+  height: 30px;
+  margin-inline-start: 0;
+  border-radius: 50%;
+}
+
+.cn-sathi {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cn-sathi-dot {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 50%;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: rgb(245 245 247 / 0.9);
+  background: radial-gradient(circle at 32% 24%, rgb(255 255 255 / 0.28), rgb(255 255 255 / 0) 55%);
+  box-shadow: inset 0 0 0 0.5px rgb(255 255 255 / 0.22);
+  opacity: 0;
+}
+
+/* The island. Its box is the largest open size; the shell is drawn at that size and only ever scaled. */
+.cn-island {
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  margin-inline: auto;
+  width: min(400px, calc(100% - 24px));
+  height: 168px;
+  transform-origin: 50% 0;
+  touch-action: none;
+  will-change: transform;
+}
+
+/* Inverse top-shoulder fillets (8 px) that hug the menu bar while the pill is docked. */
+.cn-island::before,
+.cn-island::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  opacity: max(0, calc(1 - var(--cn-p, 0) * 3));
+  pointer-events: none;
+}
+
+.cn-island::before {
+  inset-inline-start: calc(50% - 95px - 8px);
+  background: radial-gradient(circle at 0 100%, transparent 7.5px, #000 8px);
+}
+
+.cn-island::after {
+  inset-inline-start: calc(50% + 95px);
+  background: radial-gradient(circle at 100% 100%, transparent 7.5px, #000 8px);
+}
+
+.cn-shell {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 50%;
+  width: 190px;
+  height: 36px;
+  margin-inline-start: -95px;
+  border-radius: 0 0 18px 18px;
+  /* L2 runs from pure black on the notch to the glass tint as the island opens. */
+  background: color-mix(in srgb, var(--cn-glass-tint) calc(var(--cn-p, 0) * 100%), #000);
+  -webkit-backdrop-filter: var(--cn-glass-filter);
+  backdrop-filter: var(--cn-glass-filter);
+  isolation: isolate;
+}
+
+.cn-shell[data-live] {
+  inset: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  transform-origin: 50% 0;
+  will-change: transform;
+}
+
+.cn-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 0.5px;
+  background:
+    radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 0%), rgb(255 255 255 / calc(0.62 * var(--cn-caustic, 0))), transparent 70%),
+    var(--cn-rim);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: var(--cn-p, 0);
+  pointer-events: none;
+}
+
+.cn-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--cn-caustic-gradient);
+  opacity: calc(var(--cn-caustic, 0) * var(--cn-p, 0));
+  pointer-events: none;
+}
+
+.cn-toggle {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.cn-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Docked content. */
+.cn-compact,
+.cn-pane {
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  margin-inline: auto;
+  pointer-events: none;
+  color: var(--cn-ink);
+}
+
+.cn-compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 190px;
+  height: 36px;
+  padding-inline: 14px;
+  opacity: 0;
+}
+
+.cn-compact[data-state="media"] {
+  opacity: 1;
+}
+
+.cn-mini-art {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #cfd3ff, #5b6cff 60%, #1c1f4a);
+}
+
+.cn-bars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 18px;
+}
+
+.cn-bars i {
+  display: block;
+  width: 2.5px;
+  height: 18px;
+  border-radius: 2px;
+  background: #fff;
+  transform: scaleY(0.4);
+}
+
+.cn-orb {
+  position: relative;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, #fff 0, rgb(255 255 255 / 0) 34%),
+    radial-gradient(circle at 50% 60%, #8ab4ff, #3b4fd8 70%, #12154a);
+  box-shadow: 0 0 22px 2px rgb(138 180 255 / 0.4);
+}
+
+.cn-orb--mini {
+  width: 18px;
+  height: 18px;
+  box-shadow: 0 0 10px 1px rgb(138 180 255 / 0.5);
+}
+
+.cn-dots {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.cn-dots i {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.35;
+}
+
+.cn-mini-icon {
+  color: #fff;
+}
+
+.cn-ring {
+  display: block;
+}
+
+.cn-ring circle {
+  transition: none;
+}
+
+/* Open content. */
+.cn-pane {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  padding: 26px 24px 20px;
+  opacity: 0;
+  box-sizing: border-box;
+  width: min(400px, 100%);
+  height: 168px;
+}
+
+.cn-pane[data-state="ai"] {
+  width: min(360px, 100%);
+  height: 132px;
+}
+
+.cn-pane[data-state="download"] {
+  width: min(380px, 100%);
+  height: 124px;
+}
+
+.cn-pane > * {
+  pointer-events: none;
+}
+
+.cn-pane [data-cn="ctl"],
+.cn-pane [data-cn="ctl"] button {
+  pointer-events: auto;
+}
+
+.cn-tag {
+  position: absolute;
+  top: 8px;
+  inset-inline-end: 22px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgb(245 245 247 / 0.42);
+}
+
+.cn-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.cn-art {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #cfd3ff, #5b6cff 60%, #1c1f4a);
+  box-shadow: inset 0 0 0 0.5px rgb(255 255 255 / 0.3);
+}
+
+.cn-art--file {
+  background: rgb(255 255 255 / 0.1);
+  color: #fff;
+}
+
+.cn-meta {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.cn-meta b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.cn-meta > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  color: rgb(245 245 247 / 0.6);
+}
+
+.cn-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cn-pct {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.cn-timeline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgb(245 245 247 / 0.55);
+  font-variant-numeric: tabular-nums;
+}
+
+.cn-track,
+.cn-bar {
+  position: relative;
+  flex: 1;
+  display: block;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: rgb(255 255 255 / 0.16);
+}
+
+.cn-track i,
+.cn-bar i {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border-radius: inherit;
+  background: #fff;
+  transform: scaleX(0.38);
+  transform-origin: 0 50%;
+}
+
+[dir="rtl"] .cn-track i,
+[dir="rtl"] .cn-bar i {
+  transform-origin: 100% 50%;
+}
+
+.cn-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cn-ctl-btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cn-ctl-btn--main {
+  width: 40px;
+  height: 40px;
+  background: rgb(255 255 255 / 0.16);
+}
+
+.cn-ctl-btn:focus-visible,
+.cn-seg:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* State switch. */
+.cn-switch {
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.07);
+  box-shadow: inset 0 0 0 0.5px rgb(255 255 255 / 0.12);
+}
+
+.cn-seg {
+  min-height: 36px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cn-muted);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+}
+
+.cn-seg[aria-checked="true"] {
+  background: rgb(255 255 255 / 0.16);
+  color: var(--cn-ink);
+}
+
+.cn-hint {
+  margin: 0;
+  max-width: 52ch;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--cn-muted);
+  letter-spacing: 0;
+}
+
+@media (max-width: 520px) {
+  .cn-stage {
+    height: 250px;
+    border-radius: 32px;
+  }
+  .cn-seg {
+    padding: 0 12px;
+  }
+}
+
+/* With no pointer to approach the island, its controls are simply there. */
+@media (hover: none) {
+  .cn-pane [data-cn="ctl"] {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .cn-shell,
+  .cn-menubar {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .cn-shell {
+    background: color-mix(in srgb, #0e0f13 calc(var(--cn-p, 0) * 100%), #000);
+  }
+  .cn-menubar {
+    background: #14151a;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .cn-shell {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: color-mix(in srgb, #0a0b0f calc(var(--cn-p, 0) * 100%), #000);
+    box-shadow: 0 0 0 1px rgb(255 255 255 / calc(0.9 * var(--cn-p, 0)));
+  }
+  .cn-shell::before,
+  .cn-shell::after {
+    display: none;
+  }
+  .cn-tag,
+  .cn-meta > span,
+  .cn-timeline,
+  .cn-hint {
+    color: #fff;
+  }
+  .cn-seg {
+    color: #fff;
+  }
+  .cn-seg[aria-checked="true"] {
+    background: #fff;
+    color: #000;
+  }
+}
+
+@media (forced-colors: active) {
+  .cn-shell {
+    background: Canvas;
+    border: 1px solid CanvasText;
+  }
+  .cn-pane,
+  .cn-compact {
+    color: CanvasText;
+  }
+  .cn-seg[aria-checked="true"] {
+    background: Highlight;
+    color: HighlightText;
+  }
+}

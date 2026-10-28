@@ -3,7 +3,7 @@
  * Lays out web/public/portal/ before a build or a dev server: the portal's own brand art
  * (web/brand/, committed here because it has no other source) and byte copies of the wiki's
  * shared assets the pages use (favicons, OG image, recipe icons, the OUKA theme, the Sparxie
- * preview, the language detector, the Act I footage of the home page). public/ is generated and git-ignored; the wiki's own files
+ * preview, the language detector). public/ is generated and git-ignored; the wiki's own files
  * stay the only originals.
  *
  * It also writes the content hash of every file it lays out (web/.data/asset-versions.json, the
@@ -34,10 +34,8 @@ const copies = [
   [join(WIKI, "assets", "audio", "ouka", "silver-and-petals.mp3"), "wiki/audio/silver-and-petals.mp3"],
   [join(WIKI, "assets", "img", "recipes"), "wiki/recipes"],
   [join(WIKI, "assets", "video", "announcement"), "wiki/announcement"],
-  [join(WIKI, "assets", "cinema", "hero"), "cinema/hero"],
   [join(WIKI, "assets", "img", "sparxie-front.png"), "wiki/skin/sparxie-front.png"],
   [join(WIKI, "assets", "img", "sparxie-model.png"), "wiki/skin/sparxie-model.png"],
-  [join(WEB, "src", "app", "fonts", "OFL-Syne.txt"), "fonts/OFL-Syne.txt"],
 ];
 
 rmSync(OUT, { recursive: true, force: true });

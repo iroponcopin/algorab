@@ -75,6 +75,15 @@ export function SmoothScroll() {
   }, []);
 
   useEffect(() => {
+    const onLock = (e: Event): void => {
+      if ((e as CustomEvent<boolean>).detail) lenis?.stop();
+      else lenis?.start();
+    };
+    window.addEventListener("cn:scroll-lock", onLock);
+    return () => window.removeEventListener("cn:scroll-lock", onLock);
+  }, []);
+
+  useEffect(() => {
     // A new page: start at its top (or its #hash), re-measure everything the world follows.
     const hash = window.location.hash;
     if (lenis !== null && hash === "") lenis.scrollTo(0, { immediate: true, force: true });

@@ -85,11 +85,11 @@
 
 .ac-model-name {
   padding-block: 0.04em 0.06em;
-  color: #f2eee5;
+  color: #f5f5f7;
   font-size: clamp(44px, min(7.4vw, 15vw), 132px);
   line-height: 0.84;
-  letter-spacing: -0.075em;
-  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  text-transform: none;
   white-space: nowrap;
 }
 
@@ -103,10 +103,10 @@ html:lang(tr) .ac-model-name {
   align-items: center;
   gap: 10px 16px;
   margin-top: 22px !important;
-  color: rgb(232 229 220 / 0.52);
+  color: rgb(245 245 247 / 0.52);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -115,18 +115,18 @@ html:lang(tr) .ac-model-name {
   align-items: center;
   min-height: 24px;
   padding: 0 9px;
-  border: 1px solid rgb(232 229 220 / 0.72);
-  border-radius: 0;
+  border: 1px solid rgb(245 245 247 / 0.72);
+  border-radius: var(--cn-r-sm);
   background: transparent;
-  color: #e8e5dc;
+  color: #f5f5f7;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.06em;
   font-variant-numeric: tabular-nums;
 }
 
 .ac-model-codename {
-  color: rgb(232 229 220 / 0.52);
+  color: rgb(245 245 247 / 0.52);
 }
 
 .ac-model-line {
@@ -160,20 +160,16 @@ html:lang(tr) .ac-model-name {
   align-items: center;
   gap: 12px;
   padding: 14px 17px 13px;
-  border: 1px solid rgb(232 229 220 / 0.32);
-  border-radius: 0;
+  border: 1px solid rgb(245 245 247 / 0.32);
+  border-radius: var(--cn-r-sm);
   background: rgb(7 7 7 / 0.24);
-  color: #e8e5dc;
+  color: #f5f5f7;
   font-size: 10px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease;
 }
 
 html:lang(tr) .ac-model-cta {
@@ -181,21 +177,20 @@ html:lang(tr) .ac-model-cta {
 }
 
 .ac-model-cta--primary {
-  border-color: rgb(232 229 220 / 0.72);
+  border-color: rgb(245 245 247 / 0.72);
 }
 
 .ac-model-cta:hover,
 .ac-model-cta:focus-visible {
-  border-color: #e8e5dc;
-  background: #e8e5dc;
-  color: #0a0a0a;
+  border-color: #f5f5f7;
+  background: #f5f5f7;
+  color: #0e0f13;
 }
 
 .ac-model-cta .ac-flip {
   font-size: 16px;
   font-weight: 400;
   line-height: 0.6;
-  transition: transform 180ms ease;
 }
 
 .ac-model-cta:hover .ac-flip {
@@ -209,7 +204,6 @@ html:lang(ar) .ac-model-cta:hover .ac-flip {
 @media (prefers-reduced-motion: reduce) {
   .ac-model-cta,
   .ac-model-cta .ac-flip {
-    transition: none;
   }
 
   .ac-model-cta:hover .ac-flip,
@@ -221,7 +215,7 @@ html:lang(ar) .ac-model-cta:hover .ac-flip {
 /* ———— Glass panels ———— */
 
 .ac-model-page .ac-card {
-  background: rgb(10 10 10 / 0.88);
+  background: rgb(14 15 19 / 0.88);
   box-shadow: inset 0 0 0 1px var(--color-hair);
 }
 
@@ -263,7 +257,7 @@ html:lang(ar) .ac-model-cta:hover .ac-flip {
 /* ———— Aureum: the stats and sections, in the model's accents ———— */
 
 .ac-model-page .ac-stat b {
-  color: #f2eee5;
+  color: #f5f5f7;
 }
 
 .ac-model-page .ac-section-card {

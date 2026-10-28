@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import "./corvus.css";
-import Home, { type HomeCard, type HomeContent } from "@/components/home/TemplateHome";
+import { NextHome, type HomeCard, type HomeContent } from "@/components/home/NextHome";
 import { FRESH } from "@/i18n/fresh";
-import { SHELL } from "@/i18n/shell";
+import { ISLAND } from "@/i18n/island";
 import { THEATRE } from "@/i18n/theatre";
 import { BRAND_ICON } from "@/lib/brands";
 import { pageMeta } from "@/lib/meta";
 import { inModelOrder } from "@/lib/models";
-import { asset, BASE_PATH, isLang, LANGUAGES, pathOf } from "@/lib/site";
+import { asset, isLang, pathOf } from "@/lib/site";
 import { langData, lineupFor } from "@/lib/wiki";
 import type { Lang } from "@/lib/wiki-types";
 
@@ -23,9 +21,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 const HOME_MODELS = ["halia", "ouka", "cherry", "tsubomi"] as const;
 
 /**
- * The home: the home-theatre template's page (components/home/TemplateHome.tsx) with its own stylesheet, verbatim
- * (./globals.css), and Corvus content: the film, the Corvus wordmark and copy, the Corvus Store download, 13 languages.
- * The template's links are plain anchors, so every link here is a full URL with the base path.
+ * The home of Corvus NEXT: the Corvus Island simulator, the models, the rest of the site and the release manifest.
+ * Every string is the data pipeline's or an i18n file's; nothing here is hard-coded content.
  */
 export default async function Page({ params }: Params) {
   const { lang } = await params;
@@ -36,7 +33,7 @@ export default async function Page({ params }: Params) {
   const c = d.chrome;
   const p = d.products;
   const t = d.launcher.text;
-  const href = (section: string): string => `${BASE_PATH}${pathOf(lang, section)}`;
+  const href = (section: string): string => pathOf(lang, section);
   const status = (id: string): string =>
     p[id]?.availability === "soon" ? t.comingSoon : p[id]?.availability === "archived" ? t.archived : t.available;
   const line: Record<(typeof HOME_MODELS)[number], string> = {
@@ -48,7 +45,7 @@ export default async function Page({ params }: Params) {
   const models: HomeCard[] = inModelOrder([...HOME_MODELS]).map((id) => ({
     key: id,
     href: href(`${id}/`),
-    eyebrow: `${p[id]?.version ? `V${p[id]?.version} — ` : ""}${status(id)}`,
+    eyebrow: `${p[id]?.version ? `V${p[id]?.version} · ` : ""}${status(id)}`,
     title: p[id]?.name ?? id,
     body: line[id],
     icon: asset(BRAND_ICON[id] ?? `icons/${id}.png`),
@@ -61,29 +58,24 @@ export default async function Page({ params }: Params) {
     { key: "skin", href: href("skin/"), eyebrow: c.skin, title: d.skin.title, body: d.home.skinTile, icon: null },
     { key: "discord", href: href("discord/"), eyebrow: c.discord, title: d.discord.title, body: d.discord.description, icon: null },
   ];
+  const island = ISLAND[lang];
   const content: HomeContent = {
-    wordmark: "CORVUS",
-    homeLabel: c.home,
     heroLabel: th.label,
     title: th.title,
     lede: th.lede,
     cta: th.cta,
     ctaHref: href("download/"),
-    navLabel: c.primary,
-    nav: [
-      { key: "models", href: "#models", label: f.nav.models },
-      { key: "recipes", href: href("recipes/"), label: c.recipes },
-      { key: "changelog", href: href("changelog/"), label: c.changelog },
-      { key: "download", href: href("download/"), label: c.download },
-    ],
-    loader: SHELL[lang].loader,
-    models: { eyebrow: "CORVUS / 02", title: d.home.brandsTitle, lede: th.endLede, open: th.open, cards: models },
-    explore: { eyebrow: "CORVUS / 03", title: d.home.explore, open: th.open, cards: explore },
-    languages: {
-      label: c.language,
-      current: lang,
-      links: LANGUAGES.map((l) => ({ key: l.code, href: `${BASE_PATH}${pathOf(l.code, "")}`, label: l.name })),
+    island,
+    models: { id: "models", title: d.home.brandsTitle, open: th.open, cards: models },
+    explore: { id: "explore", title: d.home.explore, open: th.open, cards: explore },
+    manifest: {
+      title: island.manifest.title,
+      versionLabel: `${island.manifest.version} · ${d.launcher.title}`,
+      version: d.launcherFiles.version,
+      buildLabel: island.manifest.build,
+      href: href("download/"),
+      cta: th.cta,
     },
   };
-  return <Home content={content} />;
+  return <NextHome c={content} />;
 }

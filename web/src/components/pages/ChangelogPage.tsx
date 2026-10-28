@@ -8,8 +8,8 @@ export function ChangelogPage({ lang }: { lang: Lang }) {
   const c = d.changelog;
   return (
     <section id="ac-changelog">
-      <div className="ac-wrap ac-page-head">
-        <h1 className="ac-h1">{c.title}</h1>
+      <div className="ac-wrap cn-dl-hero">
+        <h1 className="cn-dl-h1">{c.title}</h1>
         <p className="ac-lead">{c.description}</p>
       </div>
       <div className="ac-wrap">

@@ -4,9 +4,9 @@ import { flushSync } from "react-dom";
 import { useEffect, useMemo, useState } from "react";
 import { chime } from "@/engine/audio";
 import type { ChangelogBrand, ChangelogLabels, Release } from "@/lib/wiki-types";
-import { BrandStage } from "../BrandStage";
 import { Icon } from "../Icon";
 import { Rich } from "../Rich";
+import { asset } from "@/lib/site";
 import { ENDED_MODELS, MODEL_ORDER } from "@/lib/models";
 
 /** The live models, in MODEL_ORDER (the order the chips show them). Corvus Store is the launcher's own feed. */
@@ -158,31 +158,30 @@ export function Changelog({
   const icon = filter === "all" || filter === "corvus" ? "icons/store.png" : filter === "ended" ? "icons/alpha.png" : `icons/${filter}.png`;
 
   const chip = (id: Filter, label: string, count: number, group?: string) => (
-    <button key={id} type="button" className="ac-chip ac-cl-chip" aria-pressed={filter === id} data-group={group} onClick={() => choose(id)}>
+    <button key={id} type="button" className="cn-seg cn-btn" aria-pressed={filter === id} data-group={group} onClick={() => choose(id)}>
       {label}
-      <span className="ac-count">{count}</span>
+      <span className="cn-seg-count">{count}</span>
     </button>
   );
 
   return (
-    <div className="ac-cl">
-      <div className="ac-cl-bar" role="region" aria-label={ui.filters}>
-        <div className="ac-cl-chips" role="group" aria-label={labels.brand}>
+    <div className="cn-cl">
+      <div className="cn-cl-bar cn-glass cn-glass--lite" role="region" aria-label={ui.filters}>
+        <div className="cn-cl-chips" role="group" aria-label={labels.brand}>
           {chip("all", labels.all, counts.all ?? 0)}
           {liveChips.map((id) => chip(id, names[id] ?? id, counts[id] ?? 0))}
           {endedChips.length > 0 ? chip("ended", ui.ended, counts.ended ?? 0, "ended") : null}
         </div>
         {endedActive ? (
-          <div className="ac-cl-chips ac-cl-chips--sub" role="group" aria-label={ui.ended}>
+          <div className="cn-cl-chips" role="group" aria-label={ui.ended}>
             {endedChips.map((id) => chip(id, names[id] ?? id, counts[id] ?? 0, "ended"))}
           </div>
         ) : null}
-        <div className="ac-cl-filters">
-          <label className="ac-search">
+        <div className="cn-cl-filters">
+          <label className="cn-cl-search">
             <Icon name="search" size={16} />
             <input
               type="search"
-              className="ac-input"
               placeholder={labels.search}
               aria-label={labels.search}
               value={query}
@@ -191,8 +190,8 @@ export function Changelog({
               spellCheck={false}
             />
           </label>
-          <label className="ac-select">
-            <span className="ac-small">{labels.series}</span>
+          <label className="cn-cl-select">
+            <span>{labels.series}</span>
             <select value={series} onChange={(e) => setSeries(e.target.value)}>
               <option value="">{labels.allSeries}</option>
               {seriesOptions.map((s) => (
@@ -205,29 +204,28 @@ export function Changelog({
         </div>
       </div>
 
-      <div className="ac-cl-head">
+      <div className="cn-cl-head">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img key={icon} src={asset(icon)} alt="" width={56} height={56} className="cn-cl-icon" data-dim={endedActive ? "true" : undefined} />
         <div>
-          <p className="ac-small ac-cl-updated" aria-live="polite">
+          <p className="cn-cl-updated" aria-live="polite">
             {newest ? labels.updated.replace("{date}", newest) : ""}
           </p>
-          {filter === "all" || noteBrands.includes(filter) ? <p className="ac-small ac-cl-note">{labels.note}</p> : null}
-          {filter === "ended" ? <p className="ac-small ac-cl-note">{ui.endedNote}</p> : null}
+          {filter === "all" || noteBrands.includes(filter) ? <p className="cn-cl-note">{labels.note}</p> : null}
+          {filter === "ended" ? <p className="cn-cl-note">{ui.endedNote}</p> : null}
           {filter === "corvus" ? (
-            <p className="ac-small ac-cl-note" lang="en" data-note-lang="en">
+            <p className="cn-cl-note" lang="en" data-note-lang="en">
               {labels.corvusNote}
             </p>
           ) : null}
         </div>
-        <div className="ac-cl-plate">
-          <BrandStage key={icon} icon={icon} label="" dim={endedActive} />
-        </div>
       </div>
 
-      <p className="ac-cl-empty" hidden={matches.length > 0}>
+      <p className="cn-cl-empty" hidden={matches.length > 0}>
         {labels.empty}
       </p>
 
-      <div className="ac-cl-list">
+      <div className="cn-cl-list">
         {all.map((r) => {
           const isOpen = open.has(r.id);
           const corvus = r.brand === "corvus";
@@ -238,39 +236,39 @@ export function Changelog({
             [labels.limits, r.limits, false],
           ];
           return (
-            <article key={r.id} className="ac-cl-row ac-card" data-brand={r.brand} hidden={!visible.has(r.id)} data-open={isOpen}>
-              <h3 className="ac-cl-h">
+            <article key={r.id} className="cn-rel cn-glass cn-glass--lite" data-glass="" data-brand={r.brand} hidden={!visible.has(r.id)} data-open={isOpen}>
+              <h3 className="cn-rel-h">
                 <button type="button" aria-expanded={isOpen} aria-controls={`cl-p-${r.id}`} onClick={() => toggle(r.id)}>
-                  <span className="ac-cl-brand" data-brand={r.brand}>
-                    {names[r.brand]}
+                  <span className="cn-rel-ver ac-ltr">{r.version}</span>
+                  <span className="cn-rel-main">
+                    <span className="cn-rel-brand">{names[r.brand]}</span>
+                    <span className="cn-rel-title" lang={corvus ? "en" : undefined}>
+                      <Rich text={r.title} />
+                    </span>
                   </span>
-                  <span className="ac-cl-ver ac-ltr">{r.version}</span>
-                  <span className="ac-cl-title" lang={corvus ? "en" : undefined}>
-                    <Rich text={r.title} />
-                  </span>
-                  <span className="ac-cl-date ac-ltr">{r.date ?? labels.none}</span>
-                  <Icon name="chevronDown" size={16} className="ac-cl-chev" />
+                  <span className="cn-rel-date ac-ltr">{r.date ?? labels.none}</span>
+                  <Icon name="chevronDown" size={16} className="cn-rel-chev" />
                 </button>
               </h3>
-              <div className="ac-cl-detail" id={`cl-p-${r.id}`} data-panel={r.id} hidden={!isOpen} lang={corvus ? "en" : undefined}>
-                <span className="ac-tag">{labels.types[r.type] ?? r.type}</span>
+              <div className="cn-rel-detail" id={`cl-p-${r.id}`} data-panel={r.id} hidden={!isOpen} lang={corvus ? "en" : undefined}>
+                <span className="cn-pill">{labels.types[r.type] ?? r.type}</span>
                 {r.summary ? (
-                  <p className="ac-cl-lede">
+                  <p className="cn-rel-lede">
                     <Rich text={r.summary} />
                   </p>
                 ) : null}
                 {(r.paragraphs ?? []).map((p, i) => (
-                  <p key={i} className="ac-cl-lede">
+                  <p key={i} className="cn-rel-lede">
                     <Rich text={p} />
                   </p>
                 ))}
                 {sections.map(([title, items, warn]) =>
                   items.length > 0 ? (
-                    <div key={title} className="ac-cl-section">
+                    <div key={title} className="cn-rel-section" data-warn={warn ? "true" : undefined}>
                       <h4>
                         {title} <span>({items.length})</span>
                       </h4>
-                      <ul className={warn ? "ac-cl-warn" : undefined}>
+                      <ul>
                         {items.map((it, i) => (
                           <li key={i}>
                             <Rich text={it} />
@@ -287,7 +285,7 @@ export function Changelog({
       </div>
 
       {matches.length > COLLAPSE_AFTER && q === "" && series === "" ? (
-        <button type="button" className="ac-btn ac-btn--ghost ac-cl-more" onClick={() => setExpanded((v) => !v)} data-more={labels.showMore} data-less={labels.showFewer}>
+        <button type="button" className="ac-btn cn-cl-more" onClick={() => setExpanded((v) => !v)} data-more={labels.showMore} data-less={labels.showFewer}>
           {expanded ? labels.showFewer : labels.showMore}
         </button>
       ) : null}

@@ -7,7 +7,7 @@ import type { Lang, Product } from "@/lib/wiki-types";
 import { TrustedHtml } from "../Rich";
 import { Stagger } from "../Stagger";
 import { BrandRing, type RingItem } from "../store/BrandRing";
-import { StoreSim } from "../store/StoreSim";
+import { NextStoreSim } from "../store/NextStoreSim";
 import { LauncherFiles } from "./DownloadPage";
 import { MODEL_ORDER } from "@/lib/models";
 
@@ -81,21 +81,12 @@ export function LauncherPage({ lang }: { lang: Lang }) {
         </div>
         <div className="ac-wide ac-deck">
           <div className="ac-deck-inner">
-            <StoreSim
+            <NextStoreSim
               products={products}
               hrefs={hrefs}
-              labels={{
-                text: t,
-                jar: l.storeStrings,
-                perch: l.perch,
-                perchToggle: l.perchToggle,
-                fresh: f.store,
-                ended: { title: f.astraeaEnded.title, body: f.astraeaEnded.archivedBody },
-                track: d.brands.ouka.player.track,
-              }}
+              labels={{ text: t, island: l.perchToggle, fresh: f.store, account: "Alex Morgan" }}
             />
           </div>
-          <div className="ac-deck-floor" aria-hidden="true" />
         </div>
       </section>
 

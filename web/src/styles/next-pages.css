@@ -445,3 +445,242 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
     order: 3;
   }
 }
+
+/* The NEXT Store simulation: a spatial bento, no sidebar. */
+.cn-store {
+  display: grid;
+  gap: 16px;
+  padding: clamp(16px, 2.4vw, 28px);
+  border-radius: var(--cn-r-xl);
+}
+
+.cn-store-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cn-store-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: var(--cn-track);
+}
+
+.cn-store-account {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 14px 4px 4px;
+  border-radius: 999px;
+  background: rgb(245 245 247 / 0.08);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cn-store-avatar {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #cfd3ff, #5b6cff);
+  color: #030305;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cn-store-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.cn-store-card {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+  padding: 18px;
+  border-radius: var(--cn-r-md);
+}
+
+.cn-store-card[data-feature="true"] {
+  grid-column: span 2;
+  grid-row: span 2;
+  padding: 24px;
+}
+
+.cn-store-icon {
+  border-radius: 14px;
+}
+
+.cn-store-icon[data-dim="true"] {
+  opacity: 0.5;
+}
+
+.cn-store-name {
+  margin: 4px 0 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: var(--cn-track);
+  line-height: 1.1;
+}
+
+.cn-store-card[data-feature="true"] .cn-store-name {
+  font-size: clamp(28px, 3vw, 40px);
+}
+
+.cn-store-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  color: var(--cn-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.cn-store-big {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+}
+
+.cn-store-act {
+  justify-self: start;
+  margin-top: 4px;
+}
+
+.cn-store-act[data-primary="true"] {
+  background: #f5f5f7;
+  box-shadow: none;
+  color: #030305;
+}
+
+.cn-store-more {
+  color: var(--cn-muted);
+  font-size: 13px;
+}
+
+.cn-store-more:hover {
+  color: var(--cn-ink);
+}
+
+.cn-store-progress {
+  display: grid;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.cn-store-bar {
+  display: block;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: rgb(245 245 247 / 0.16);
+}
+
+.cn-store-bar i {
+  display: block;
+  height: 100%;
+  background: #f5f5f7;
+  transform-origin: 0 50%;
+}
+
+[dir="rtl"] .cn-store-bar i {
+  transform-origin: 100% 50%;
+}
+
+.cn-store-meta {
+  color: var(--cn-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.cn-store-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cn-store-island {
+  display: block;
+  width: 96px;
+  height: 22px;
+  border-radius: 0 0 14px 14px;
+  background: #000;
+  box-shadow: 0 0 0 0.5px rgb(245 245 247 / 0.2);
+}
+
+.cn-store-island[data-on="false"] {
+  opacity: 0.12;
+}
+
+.cn-store-switch {
+  position: relative;
+  justify-self: start;
+  width: 52px;
+  height: 30px;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(245 245 247 / 0.18);
+  cursor: pointer;
+}
+
+.cn-store-switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  inset-inline-start: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f5f5f7;
+}
+
+.cn-store-switch[aria-checked="true"] {
+  background: var(--cn-ok);
+}
+
+.cn-store-switch[aria-checked="true"]::after {
+  inset-inline-start: 25px;
+}
+
+.cn-store-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+
+.cn-store-note {
+  margin: 0;
+  max-width: 70ch;
+  color: var(--cn-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .cn-store-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cn-store-card[data-feature="true"] {
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 520px) {
+  .cn-store-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cn-store-card[data-feature="true"] {
+    grid-column: span 1;
+  }
+}

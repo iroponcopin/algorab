@@ -8,8 +8,8 @@
   z-index: 100;
   padding: 12px 18px;
   border-radius: 999px;
-  background: #f5f5f7;
-  color: #030305;
+  background: var(--cn-ink);
+  color: var(--cn-void);
   font-size: 14px;
   font-weight: 600;
 }
@@ -66,7 +66,7 @@
   corner-shape: inherit;
   padding: 0.5px;
   background:
-    radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 0%), rgb(255 255 255 / calc(0.62 * var(--cn-caustic, 0))), transparent 70%),
+    radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 0%), var(--cn-caustic-rim), transparent 70%),
     var(--cn-rim);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -137,12 +137,12 @@
 }
 
 .ac-nav-link:hover {
-  background: rgb(245 245 247 / 0.08);
+  background: rgb(var(--cn-ink-rgb) / 0.08);
   color: var(--cn-ink);
 }
 
 .ac-nav-link[aria-current="page"] {
-  background: rgb(245 245 247 / 0.12);
+  background: rgb(var(--cn-ink-rgb) / 0.12);
   color: var(--cn-ink);
 }
 
@@ -168,7 +168,7 @@
   padding: 8px;
   border-radius: 22px;
   /* A popover inside the header sits in the header's own backdrop root, so it cannot refract the page: a denser tint. */
-  background: rgb(14 15 19 / 0.92);
+  background: rgb(var(--cn-surface-rgb) / 0.92);
   color: var(--cn-ink);
   font-size: 14px;
   font-weight: 500;
@@ -215,7 +215,7 @@
 }
 
 .ac-model:hover, .ac-model:focus-visible, .ac-mega-item:hover, .ac-mega-item:focus-visible, .ac-pop-item:hover, .ac-pop-item:focus-visible {
-  background: rgb(245 245 247 / 0.09);
+  background: rgb(var(--cn-ink-rgb) / 0.09);
   outline: none;
 }
 
@@ -247,7 +247,7 @@
 }
 
 .ac-model[aria-current="page"] b, .ac-mega-item[aria-current="page"] b {
-  color: #fff;
+  color: var(--cn-ink);
 }
 
 .ac-mega {
@@ -267,7 +267,7 @@
   width: 36px;
   height: 36px;
   border-radius: 11px;
-  background: rgb(245 245 247 / 0.09);
+  background: rgb(var(--cn-ink-rgb) / 0.09);
   color: var(--cn-ink);
 }
 
@@ -278,7 +278,7 @@
 }
 
 .ac-pop-item[aria-current] {
-  background: rgb(245 245 247 / 0.12);
+  background: rgb(var(--cn-ink-rgb) / 0.12);
 }
 
 .ac-pop-item small {
@@ -317,7 +317,7 @@
 }
 
 .ac-iconbtn:hover {
-  background: rgb(245 245 247 / 0.1);
+  background: rgb(var(--cn-ink-rgb) / 0.1);
   color: var(--cn-ink);
 }
 
@@ -452,8 +452,8 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar), :lang(ru)) .ac-sheet-nav > a
 .ac-sheet-cta {
   margin-top: 22px;
   min-height: 52px;
-  background: #f5f5f7;
-  color: #030305;
+  background: var(--cn-ink);
+  color: var(--cn-void);
   font-size: 17px;
 }
 
@@ -560,11 +560,11 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar), :lang(ru)) .ac-sheet-nav > a
 }
 
 .ac-footer-langs a:hover {
-  background: rgb(245 245 247 / 0.08);
+  background: rgb(var(--cn-ink-rgb) / 0.08);
 }
 
 .ac-footer-langs a[aria-current="true"] {
-  background: rgb(245 245 247 / 0.14);
+  background: rgb(var(--cn-ink-rgb) / 0.14);
   color: var(--cn-ink);
 }
 
@@ -584,7 +584,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar), :lang(ru)) .ac-sheet-nav > a
   min-height: 100svh;
   background:
     radial-gradient(1100px 560px at 60% -12%, rgb(138 180 255 / 0.16), transparent 62%),
-    radial-gradient(800px 460px at 6% 112%, rgb(245 245 247 / 0.05), transparent 60%), #030305;
+    radial-gradient(800px 460px at 6% 112%, rgb(var(--cn-ink-rgb) / 0.05), transparent 60%), var(--cn-void);
 }
 
 .ac-nf-brand {
@@ -693,7 +693,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar), :lang(ru)) .ac-sheet-nav > a
 .ac-pal-esc {
   padding: 3px 8px;
   border-radius: 7px;
-  background: rgb(245 245 247 / 0.1);
+  background: rgb(var(--cn-ink-rgb) / 0.1);
   color: var(--cn-muted);
   font-family: var(--cn-mono);
   font-size: 11px;
@@ -728,7 +728,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar), :lang(ru)) .ac-sheet-nav > a
 }
 
 .ac-pal-item[data-active="true"] {
-  background: rgb(245 245 247 / 0.11);
+  background: rgb(var(--cn-ink-rgb) / 0.11);
 }
 
 .ac-pal-dot {

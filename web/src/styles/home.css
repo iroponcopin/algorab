@@ -16,8 +16,8 @@
 .cn-hero-tag {
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgb(245 245 247 / 0.06);
-  box-shadow: inset 0 0 0 0.5px rgb(245 245 247 / 0.2);
+  background: rgb(var(--cn-ink-rgb) / 0.06);
+  box-shadow: inset 0 0 0 0.5px rgb(var(--cn-ink-rgb) / 0.2);
 }
 
 .cn-hero-title {
@@ -27,11 +27,11 @@
   line-height: 0.98;
   letter-spacing: -0.045em;
   text-wrap: balance;
-  background: linear-gradient(180deg, #ffffff 0%, #c9c9d0 55%, #71717a 120%);
+  background: var(--cn-hero-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 6px 28px rgb(0 0 0 / 0.55));
+  filter: drop-shadow(0 6px 28px rgb(var(--cn-shadow-rgb) / 0.25));
 }
 
 .cn-hero-title[data-long="true"] {

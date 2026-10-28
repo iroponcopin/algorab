@@ -58,10 +58,10 @@
   align-items: center;
   gap: 12px;
   padding: 14px 17px 13px;
-  border: 1px solid rgb(245 245 247 / 0.32);
+  border: 1px solid rgb(var(--cn-ink-rgb) / 0.32);
   border-radius: var(--cn-r-sm);
   background: rgb(7 7 7 / 0.24);
-  color: #f5f5f7;
+  color: var(--cn-ink);
   font-size: 10px;
   font-weight: 700;
   line-height: 1;
@@ -77,9 +77,9 @@ html:lang(tr) .ac-model-cta {
 
 
 .ac-model-cta:hover, .ac-model-cta:focus-visible {
-  border-color: #f5f5f7;
-  background: #f5f5f7;
-  color: #0e0f13;
+  border-color: var(--cn-ink);
+  background: var(--cn-ink);
+  color: var(--cn-surface);
 }
 
 .ac-model-cta .ac-flip {
@@ -108,7 +108,7 @@ html:lang(ar) .ac-model-cta:hover .ac-flip {
 /* ———— Glass panels ———— */
 
 .ac-model-page .ac-card {
-  background: rgb(14 15 19 / 0.88);
+  background: rgb(var(--cn-surface-rgb) / 0.88);
   box-shadow: inset 0 0 0 1px var(--color-hair);
 }
 
@@ -132,7 +132,7 @@ html:lang(ar) .ac-model-cta:hover .ac-flip {
 /* ———— Aureum: the stats and sections, in the model's accents ———— */
 
 .ac-model-page .ac-stat b {
-  color: #f5f5f7;
+  color: var(--cn-ink);
 }
 
 .ac-model-page .ac-section-card {

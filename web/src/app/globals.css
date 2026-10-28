@@ -16,7 +16,7 @@
 
 /*
  * Corvus NEXT (V10174): the design language of the whole site.
- * Abyssal #030305 canvas, brushed-titanium type in the SF Pro stack (Inter, self-hosted, where SF is absent),
+ * Abyssal var(--cn-void) canvas, brushed-titanium type in the SF Pro stack (Inter, self-hosted, where SF is absent),
  * tracking -0.035em on display, glass built from the four-layer Optical Glass Stack (styles/glass.css), and motion
  * from the spring solver (design/spring.ts). Nothing interactive uses a linear or eased CSS transition.
  *
@@ -24,28 +24,28 @@
  */
 
 @theme {
-  --color-ink: #030305;
-  --color-surface: #0e0f13;
-  --color-surface-2: #14151a;
+  --color-ink: var(--cn-void);
+  --color-surface: var(--cn-surface);
+  --color-surface-2: var(--cn-raised);
   --color-surface-3: #1b1c22;
-  --color-hair: rgb(245 245 247 / 0.1);
-  --color-hair-strong: rgb(245 245 247 / 0.28);
-  --color-fg: #f5f5f7;
-  --color-muted: #86868b;
-  --color-soft: rgb(245 245 247 / 0.8);
-  --color-blue: #8ab4ff;
+  --color-hair: var(--cn-line);
+  --color-hair-strong: var(--cn-line-strong);
+  --color-fg: var(--cn-ink);
+  --color-muted: var(--cn-muted);
+  --color-soft: rgb(var(--cn-ink-rgb) / 0.8);
+  --color-blue: var(--cn-accent);
   --color-blue-hover: #b3ceff;
-  --color-link: #f5f5f7;
-  --color-green: #30d158;
-  --color-amber: #ffd60a;
-  --color-red: #ff453a;
+  --color-link: var(--cn-ink);
+  --color-green: var(--cn-ok);
+  --color-amber: var(--cn-warn);
+  --color-red: var(--cn-bad);
   --color-discord: #5865f2;
 
-  --color-obsidian: #030305;
-  --color-glass: #0e0f13;
-  --color-hairline: rgb(245 245 247 / 0.1);
-  --color-ink-tpl: #030305;
-  --color-paper: #f5f5f7;
+  --color-obsidian: var(--cn-void);
+  --color-glass: var(--cn-surface);
+  --color-hairline: rgb(var(--cn-ink-rgb) / 0.1);
+  --color-ink-tpl: var(--cn-void);
+  --color-paper: var(--cn-ink);
 
   /* Per-model accents: the two stops of each model's gradient. */
   --accent-halia: #e11d48;
@@ -129,10 +129,7 @@
     z-index: 0;
     pointer-events: none;
     contain: strict;
-    background:
-      radial-gradient(70% 55% at 50% -12%, rgb(138 180 255 / 0.14), transparent 70%),
-      radial-gradient(50% 40% at 0% 100%, rgb(245 245 247 / 0.04), transparent 70%),
-      radial-gradient(50% 40% at 100% 108%, rgb(138 180 255 / 0.05), transparent 70%);
+    background: var(--cn-bleed);
   }
 
   html:is(:lang(ja), :lang(zh), :lang(ko)) body {
@@ -146,8 +143,8 @@
   }
 
   ::selection {
-    background: #f5f5f7;
-    color: #030305;
+    background: var(--cn-ink);
+    color: var(--cn-void);
   }
 
   a {
@@ -156,7 +153,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid #f5f5f7;
+    outline: 2px solid var(--cn-ink);
     outline-offset: 3px;
     border-radius: 8px;
   }
@@ -297,7 +294,7 @@
   }
 
   .ac-gradient-text {
-    background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 70%, #71717a 100%);
+    background: var(--cn-hero-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -314,8 +311,8 @@
     padding: 0 22px;
     border: 0;
     border-radius: 999px;
-    background: rgb(245 245 247 / 0.1);
-    box-shadow: inset 0 0 0 0.5px rgb(245 245 247 / 0.28);
+    background: rgb(var(--cn-ink-rgb) / 0.1);
+    box-shadow: inset 0 0 0 0.5px rgb(var(--cn-ink-rgb) / 0.28);
     color: var(--cn-ink);
     font-family: var(--cn-font);
     font-size: 15px;
@@ -327,11 +324,11 @@
   }
 
   .ac-btn:hover {
-    background: rgb(245 245 247 / 0.18);
+    background: rgb(var(--cn-ink-rgb) / 0.18);
   }
 
   .ac-btn:focus-visible {
-    outline: 2px solid #f5f5f7;
+    outline: 2px solid var(--cn-ink);
     outline-offset: 3px;
   }
 
@@ -343,14 +340,14 @@
 
   .ac-btn--primary,
   .ac-cta {
-    background: #f5f5f7;
+    background: var(--cn-ink);
     box-shadow: none;
-    color: #030305;
+    color: var(--cn-void);
   }
 
   .ac-btn--primary:hover,
   .ac-cta:hover {
-    background: #ffffff;
+    box-shadow: 0 0 0 3px rgb(var(--cn-ink-rgb) / 0.2);
   }
 
   .ac-btn--ghost {
@@ -366,7 +363,7 @@
   .ac-link {
     color: var(--cn-ink);
     text-decoration: underline;
-    text-decoration-color: rgb(245 245 247 / 0.3);
+    text-decoration-color: rgb(var(--cn-ink-rgb) / 0.3);
     text-underline-offset: 4px;
   }
 
@@ -380,8 +377,8 @@
     position: relative;
     isolation: isolate;
     border-radius: var(--cn-r-lg);
-    background: rgb(16 17 22 / 0.72);
-    box-shadow: 0 1px 2px rgb(0 0 0 / 0.55), 0 18px 36px -14px rgb(0 0 0 / 0.7), inset 0 0.5px 0 rgb(255 255 255 / 0.12);
+    background: rgb(var(--cn-lite-rgb) / 0.72);
+    box-shadow: 0 1px 2px rgb(var(--cn-shadow-rgb) / 0.55), 0 18px 36px -14px rgb(var(--cn-shadow-rgb) / 0.7), inset 0 0.5px 0 rgb(var(--cn-ink-rgb) / 0.12);
   }
 
   .ac-glass {
@@ -399,8 +396,8 @@
     min-height: 34px;
     padding: 0 14px;
     border-radius: 999px;
-    background: rgb(245 245 247 / 0.07);
-    box-shadow: inset 0 0 0 0.5px rgb(245 245 247 / 0.22);
+    background: rgb(var(--cn-ink-rgb) / 0.07);
+    box-shadow: inset 0 0 0 0.5px rgb(var(--cn-ink-rgb) / 0.22);
     color: var(--cn-ink);
     font-size: 13px;
     font-weight: 600;
@@ -410,13 +407,13 @@
   }
 
   .ac-chip:hover {
-    background: rgb(245 245 247 / 0.14);
+    background: rgb(var(--cn-ink-rgb) / 0.14);
   }
 
   .ac-chip[aria-pressed="true"],
   .ac-chip[aria-selected="true"] {
-    background: #f5f5f7;
-    color: #030305;
+    background: var(--cn-ink);
+    color: var(--cn-void);
     box-shadow: none;
   }
 
@@ -432,8 +429,8 @@
     padding: 0 18px;
     border-radius: 14px;
     border: 0;
-    background: rgb(245 245 247 / 0.07);
-    box-shadow: inset 0 0 0 0.5px rgb(245 245 247 / 0.22);
+    background: rgb(var(--cn-ink-rgb) / 0.07);
+    box-shadow: inset 0 0 0 0.5px rgb(var(--cn-ink-rgb) / 0.22);
     color: var(--cn-ink);
     font: inherit;
     font-size: 16px;
@@ -441,7 +438,7 @@
 
   .ac-input:focus {
     outline: none;
-    box-shadow: inset 0 0 0 1.5px #f5f5f7;
+    box-shadow: inset 0 0 0 1.5px var(--cn-ink);
   }
 
   .ac-input::placeholder {

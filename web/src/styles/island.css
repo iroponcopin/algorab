@@ -176,7 +176,7 @@
   border-radius: inherit;
   padding: 0.5px;
   background:
-    radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 0%), rgb(255 255 255 / calc(0.62 * var(--cn-caustic, 0))), transparent 70%),
+    radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 0%), var(--cn-caustic-rim), transparent 70%),
     var(--cn-rim);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -483,8 +483,8 @@
   gap: 2px;
   padding: 4px;
   border-radius: 999px;
-  background: rgb(255 255 255 / 0.07);
-  box-shadow: inset 0 0 0 0.5px rgb(255 255 255 / 0.12);
+  background: rgb(var(--cn-ink-rgb) / 0.07);
+  box-shadow: inset 0 0 0 0.5px rgb(var(--cn-ink-rgb) / 0.12);
 }
 
 .cn-seg {
@@ -502,7 +502,7 @@
 }
 
 .cn-seg[aria-checked="true"] {
-  background: rgb(255 255 255 / 0.16);
+  background: rgb(var(--cn-ink-rgb) / 0.12);
   color: var(--cn-ink);
 }
 
@@ -562,14 +562,14 @@
   .cn-meta > span,
   .cn-timeline,
   .cn-hint {
-    color: #fff;
+    color: var(--cn-ink);
   }
   .cn-seg {
-    color: #fff;
+    color: var(--cn-ink);
   }
   .cn-seg[aria-checked="true"] {
-    background: #fff;
-    color: #000;
+    background: var(--cn-ink);
+    color: var(--cn-void);
   }
 }
 

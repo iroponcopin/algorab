@@ -89,11 +89,13 @@ export function Dock({
   labels,
   models,
   updates,
+  themeSlot,
 }: {
   lang: Lang;
   labels: DockLabels;
   models: ModelLink[];
   updates: UpdateLink[];
+  themeSlot?: React.ReactNode;
 }) {
   const pathname = usePathname();
   const { section } = splitPath(pathname);
@@ -295,6 +297,7 @@ export function Dock({
           >
             <Icon name="search" size={17} />
           </button>
+          {themeSlot}
           <SoundToggle label={labels.sound} on={labels.soundOn} off={labels.soundOff} />
           <div className="ac-lang">
             <button

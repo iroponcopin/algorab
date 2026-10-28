@@ -8,6 +8,8 @@ import { Palette } from "@/components/palette/Palette";
 import { Reveal } from "@/components/Reveal";
 import { ScrollGate } from "@/components/next/ScrollGate";
 import { WorldGate } from "@/engine/WorldGate";
+import { ThemeToggle } from "@/components/next/ThemeToggle";
+import { THEME } from "@/i18n/theme";
 import { FRESH } from "@/i18n/fresh";
 import { SHELL } from "@/i18n/shell";
 import { MODELS } from "@/lib/models";
@@ -46,6 +48,7 @@ export default async function SiteLayout({ children, params }: { children: React
         <Reveal />
         <Dock
           lang={lang}
+          themeSlot={<ThemeToggle labels={THEME[lang]} />}
           models={models}
           updates={updates}
           labels={{

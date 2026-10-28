@@ -16,8 +16,11 @@ export function generateStaticParams(): { lang: Lang }[] {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#030305",
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f4f7" },
+    { media: "(prefers-color-scheme: dark)", color: "#030305" },
+  ],
+  colorScheme: "dark light",
 };
 
 /**
@@ -25,6 +28,9 @@ export const viewport: Viewport = {
  * hide their resting state), and settle the cheap half of the WebGL verdict at once, so a page
  * that will never draw WebGL shows its posters from the first frame. Experience settles the rest.
  */
+/** Before first paint: a saved Dark or Light choice is applied to <html>; with none (or no storage) the device's setting decides in CSS, so there is no flash of the wrong theme. */
+const THEME_BOOT = `(function(){try{var t=localStorage.getItem("corvus-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();`;
+
 const BOOT =
   `(function(){var d=document.documentElement;d.setAttribute("data-js","1");try{var q=new URLSearchParams(location.search),` +
   `n=navigator,c=n.connection;if(q.get("webgl")==="off"||q.get("stage")==="off"||(c&&c.saveData===true)||` +
@@ -64,6 +70,7 @@ export default async function LangLayout({ children, params }: { children: React
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src={asset("lang.js")} />
         <script dangerouslySetInnerHTML={{ __html: langInit(lang) }} />
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />
         <script dangerouslySetInnerHTML={{ __html: BOOT }} />
       </head>
       <body>

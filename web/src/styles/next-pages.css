@@ -199,7 +199,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
 .cn-pill {
   padding: 3px 10px;
   border-radius: 999px;
-  background: rgb(245 245 247 / 0.1);
+  background: rgb(var(--cn-ink-rgb) / 0.1);
   color: var(--cn-ink);
   font-size: 12px;
   font-weight: 600;
@@ -227,12 +227,12 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
 }
 
 .cn-cl-chips .cn-seg {
-  background: rgb(245 245 247 / 0.07);
+  background: rgb(var(--cn-ink-rgb) / 0.07);
 }
 
 .cn-cl-chips .cn-seg[aria-pressed="true"] {
-  background: #f5f5f7;
-  color: #030305;
+  background: var(--cn-ink);
+  color: var(--cn-void);
 }
 
 .cn-cl-filters {
@@ -250,8 +250,8 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
   min-height: 46px;
   padding: 0 16px;
   border-radius: 14px;
-  background: rgb(245 245 247 / 0.07);
-  box-shadow: inset 0 0 0 0.5px rgb(245 245 247 / 0.2);
+  background: rgb(var(--cn-ink-rgb) / 0.07);
+  box-shadow: inset 0 0 0 0.5px rgb(var(--cn-ink-rgb) / 0.2);
   color: var(--cn-muted);
 }
 
@@ -281,15 +281,15 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
   min-height: 46px;
   padding: 0 14px;
   border-radius: 14px;
-  background: rgb(245 245 247 / 0.07);
-  box-shadow: inset 0 0 0 0.5px rgb(245 245 247 / 0.2);
+  background: rgb(var(--cn-ink-rgb) / 0.07);
+  box-shadow: inset 0 0 0 0.5px rgb(var(--cn-ink-rgb) / 0.2);
   color: var(--cn-muted);
   font-size: 13px;
 }
 
 .cn-cl-select select option {
-  background: #14151a;
-  color: #f5f5f7;
+  background: var(--cn-raised);
+  color: var(--cn-ink);
 }
 
 .cn-cl-head {
@@ -473,7 +473,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
   gap: 10px;
   padding: 4px 14px 4px 4px;
   border-radius: 999px;
-  background: rgb(245 245 247 / 0.08);
+  background: rgb(var(--cn-ink-rgb) / 0.08);
   font-size: 14px;
   font-weight: 600;
 }
@@ -485,7 +485,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
   height: 28px;
   border-radius: 50%;
   background: linear-gradient(135deg, #cfd3ff, #5b6cff);
-  color: #030305;
+  color: var(--cn-void);
   font-size: 11px;
   font-weight: 700;
 }
@@ -557,9 +557,9 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
 }
 
 .cn-store-act[data-primary="true"] {
-  background: #f5f5f7;
+  background: var(--cn-ink);
   box-shadow: none;
-  color: #030305;
+  color: var(--cn-void);
 }
 
 .cn-store-more {
@@ -582,13 +582,13 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
   height: 4px;
   overflow: hidden;
   border-radius: 2px;
-  background: rgb(245 245 247 / 0.16);
+  background: rgb(var(--cn-ink-rgb) / 0.16);
 }
 
 .cn-store-bar i {
   display: block;
   height: 100%;
-  background: #f5f5f7;
+  background: var(--cn-ink);
   transform-origin: 0 50%;
 }
 
@@ -614,7 +614,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
   height: 22px;
   border-radius: 0 0 14px 14px;
   background: #000;
-  box-shadow: 0 0 0 0.5px rgb(245 245 247 / 0.2);
+  box-shadow: 0 0 0 0.5px rgb(var(--cn-ink-rgb) / 0.2);
 }
 
 .cn-store-island[data-on="false"] {
@@ -628,7 +628,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
   height: 30px;
   border: 0;
   border-radius: 999px;
-  background: rgb(245 245 247 / 0.18);
+  background: rgb(var(--cn-ink-rgb) / 0.18);
   cursor: pointer;
 }
 
@@ -640,7 +640,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #f5f5f7;
+  background: var(--cn-ink);
 }
 
 .cn-store-switch[aria-checked="true"] {
@@ -880,7 +880,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-model-name {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: rgb(245 245 247 / 0.12);
+  background: rgb(var(--cn-ink-rgb) / 0.12);
   font-size: 14px;
   font-weight: 700;
 }

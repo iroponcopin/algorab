@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { NextHome, type HomeCard, type HomeContent } from "@/components/home/NextHome";
 import { FRESH } from "@/i18n/fresh";
+import { NEXT_RELEASE } from "@/i18n/next-release";
 import { ISLAND } from "@/i18n/island";
 import { THEATRE } from "@/i18n/theatre";
 import { BRAND_ICON } from "@/lib/brands";
@@ -30,6 +31,7 @@ export default async function Page({ params }: Params) {
   const d = langData(lang);
   const f = FRESH[lang];
   const th = THEATRE[lang];
+  const n = NEXT_RELEASE[lang];
   const c = d.chrome;
   const p = d.products;
   const t = d.launcher.text;
@@ -63,18 +65,18 @@ export default async function Page({ params }: Params) {
     heroLabel: th.label,
     title: th.title,
     lede: th.lede,
-    cta: th.cta,
+    cta: n.homeCta,
     ctaHref: href("download/"),
     island,
     models: { id: "models", title: d.home.brandsTitle, open: th.open, cards: models },
     explore: { id: "explore", title: d.home.explore, open: th.open, cards: explore },
     manifest: {
       title: island.manifest.title,
-      versionLabel: `${island.manifest.version} · ${d.launcher.title}`,
-      version: d.launcherFiles.version,
+      versionLabel: n.manifestLabel,
+      version: n.manifestValue,
       buildLabel: island.manifest.build,
       href: href("download/"),
-      cta: th.cta,
+      cta: n.homeCta,
     },
   };
   return <NextHome c={content} />;

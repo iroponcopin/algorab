@@ -916,3 +916,22 @@ html:lang(ko) body {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+
+/* Corvus NEXT status: a plain pill, and a control that is shown but cannot be pressed (no file exists yet). */
+.cn-status {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--cn-muted);
+  background: color-mix(in srgb, currentColor 10%, transparent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cn-tile-dl--off {
+  cursor: default;
+  opacity: 0.55;
+  pointer-events: none;
+}

@@ -1,5 +1,6 @@
 import { BuildTag } from "@/components/next/BuildTag";
 import { FRESH } from "@/i18n/fresh";
+import { NEXT_RELEASE, type NextRelease } from "@/i18n/next-release";
 import Link from "next/link";
 import { asset, pathOf } from "@/lib/site";
 import { langData, wiki } from "@/lib/wiki";
@@ -61,6 +62,32 @@ function Aside({ icon, children }: { icon: string; children: React.ReactNode }) 
   );
 }
 
+/**
+ * A Corvus NEXT platform that has no build yet: its facts, and a control that is visibly not a download. It is not a
+ * link, so no address and no checksum can be shown for a file that does not exist.
+ */
+function NextPlatform({ name, system, stack, n }: { name: string; system: string; stack: string; n: NextRelease }) {
+  return (
+    <article className="cn-tile cn-glass cn-glass--lite" data-glass="">
+      <span className="cn-tile-hero">{name}</span>
+      <dl className="cn-facts">
+        <div>
+          <dt>{n.system}</dt>
+          <dd>{system}</dd>
+        </div>
+        <div>
+          <dt>{n.builtWith}</dt>
+          <dd>{stack}</dd>
+        </div>
+      </dl>
+      <span className="ac-btn cn-tile-dl cn-tile-dl--off" aria-disabled="true">
+        {n.notReady}
+      </span>
+      <p className="cn-tile-note">{n.notReadyNote}</p>
+    </article>
+  );
+}
+
 export function DownloadPage({ lang }: { lang: Lang }) {
   const d = langData(lang);
   const w = wiki();
@@ -69,16 +96,30 @@ export function DownloadPage({ lang }: { lang: Lang }) {
   const labels = fileLabels(d);
   const mc = w.versions.mc;
   const mcLine = <p className="cn-aside-line ac-ltr">Minecraft {mc} · Fabric</p>;
+  const n = NEXT_RELEASE[lang];
   return (
     <section className="cn-dl">
       <div className="ac-wrap cn-dl-hero">
-        <p className="ac-eyebrow">
-          {d.chrome.launcher} <span className="ac-ltr">{d.launcherFiles.version}</span>
-        </p>
         <BuildTag />
-        <h1 className="cn-dl-h1">{dl.heading}</h1>
-        <p className="ac-lead">{dl.body}</p>
+        <h1 className="cn-dl-h1">{n.title}</h1>
+        <p className="ac-lead">{n.lede}</p>
+        <p className="cn-status">{n.statusLabel}</p>
       </div>
+
+      <section className="ac-wrap cn-dl-block" aria-label={n.title}>
+        <div className="cn-tiles">
+          <NextPlatform name="macOS" system={n.macSystem} stack={n.macStack} n={n} />
+          <NextPlatform name="Windows" system={n.toBeSet} stack={n.qtStack} n={n} />
+          <NextPlatform name="Linux" system={n.toBeSet} stack={n.qtStack} n={n} />
+        </div>
+      </section>
+
+      <header className="ac-wrap cn-dl-head cn-dl-block">
+        <h2 id="dl-now" className="cn-dl-title">
+          {n.currentHeading}
+        </h2>
+        <p className="cn-dl-line">{n.currentLede}</p>
+      </header>
 
       <section className="ac-wrap cn-dl-block" aria-labelledby="dl-store">
         <header className="cn-dl-head">
@@ -158,19 +199,6 @@ export function DownloadPage({ lang }: { lang: Lang }) {
         </p>
       </section>
 
-      <section className="ac-wrap cn-dl-block" aria-labelledby="dl-alpha">
-        <header className="cn-dl-head">
-          <h2 id="dl-alpha" className="cn-dl-title">
-            Alpha
-          </h2>
-          <p className="cn-dl-line">
-            {dl.alphaNote}{" "}
-            <Link className="ac-link" href={pathOf(lang, "alpha/")}>
-              <span className="ac-ltr">{dl.alphaVersion}</span> <span className="ac-flip">{d.chrome.arrow}</span>
-            </Link>
-          </p>
-        </header>
-      </section>
     </section>
   );
 }

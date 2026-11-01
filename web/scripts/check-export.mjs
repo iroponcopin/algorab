@@ -237,11 +237,29 @@ function brandWords(where, text) {
     problem(where, `shows "${m[0]}" (say "model"): …${around.replace(/\s+/g, " ").trim()}…`);
   }
 }
+// Corvus Island is abolished on every OS (owner decision): the words "Island" and "Perch" are not in any Next page, in its
+// text, its attributes or its client data. "perché" and "perchlorate" are other words, so the rule takes whole words only.
+// The recipe book names the Halia relay block "Perch" (halia:perch, a game item in data/recipes*.json). That item name is the
+// one allowed use of the word, on the recipe pages only, until the owner decides whether the item is renamed. Island is never allowed.
+const ISLAND_WORD = /(?<!\p{L})islands?(?!\p{L})/giu;
+const PERCH_WORD = /(?<!\p{L})perch(?!\p{L})/giu;
+const PERCH_ITEM_PAGES = /(?:^|\/)recipes\//;
+function retiredWords(where, text) {
+  const words = PERCH_ITEM_PAGES.test(where) ? [ISLAND_WORD] : [ISLAND_WORD, PERCH_WORD];
+  for (const re of words) {
+    for (const m of text.matchAll(re)) {
+      const around = text.slice(Math.max(0, m.index - 60), m.index + 60);
+      problem(where, `shows "${m[0]}" (Corvus Island is abolished): …${around.replace(/\s+/g, " ").trim()}…`);
+    }
+  }
+}
 let brandChecked = 0;
 for (const f of pages) {
   const html = readFileSync(f, "utf8").replace(/<script\b[\s\S]*?<\/script>/g, " ").replace(/<style\b[\s\S]*?<\/style>/g, " ");
   const attrs = Array.from(html.matchAll(/\s(?:alt|title|aria-label|placeholder|content)="([^"]*)"/g), (m) => m[1]);
-  brandWords(rel(f), decode(`${html.replace(/<[^>]+>/g, " ")}\n${attrs.join("\n")}`));
+  const visible = decode(`${html.replace(/<[^>]+>/g, " ")}\n${attrs.join("\n")}`);
+  brandWords(rel(f), visible);
+  retiredWords(rel(f), visible);
   brandChecked += 1;
   // The client data: every string literal that reads as prose (identifiers, class names and paths are not text).
   const payload = join(dirname(f), "index.txt");
@@ -256,6 +274,7 @@ for (const f of pages) {
       if (/^[\w$.\/:#?=&%@+-]*$/.test(str)) continue;
       if (/^[\w-]+(?: [\w-]+)*$/.test(str) && /(?:^| )ac-/.test(str)) continue; // a className list
       brandWords(`${rel(payload)} (client data)`, str);
+      retiredWords(`${rel(payload)} (client data)`, str);
     }
   }
 }

@@ -180,11 +180,8 @@ def store_catalogue(manifest: dict) -> dict:
             props = parse_properties(z.read(name).decode("utf-8"))
         except KeyError:
             die(f"{jar.name} has no {name}")
-        # The jar's own text still names the capsule "Perch"; the site shows its NEXT name. The jar and the
-        # release notes are not touched: only these display strings are renamed on the way into the portal.
-        out[lang] = {k: re.sub(r"\bPerch(\u2019u)?", lambda m: "Corvus Island\u2019\u0131" if m.group(1) else "Corvus Island", v)
-                     for k, v in props.items()
-                     if k.startswith(("store.", "perch.", "account.perch.", "account.title", "nav."))}
+        # Corvus Island is abolished (owner decision): its strings are not carried into the portal.
+        out[lang] = {k: v for k, v in props.items() if k.startswith(("store.", "account.title", "nav."))}
     return {"jar": jar.name, "version": manifest["launcher"]["latest"], "messages": out}
 
 
@@ -813,9 +810,6 @@ def build_lang(lang: str, ctx: dict) -> dict:
         "nativeHeading": dl["launcher_native_heading"],
         "jarNote": dl["launcher_jar_note"],
         "cta": dl["launcher_cta"],
-        "perch": {k[len("perch."):]: v for k, v in store.items() if k.startswith("perch.")},
-        "perchToggle": {"title": store.get("account.perch.toggle.title", ""),
-                        "description": store.get("account.perch.toggle.description", "")},
         "storeStrings": {k: v for k, v in store.items() if k.startswith("store.")},
     }
 

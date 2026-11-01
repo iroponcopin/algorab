@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { BuildTag } from "@/components/next/BuildTag";
-import { IslandSim } from "@/components/next/IslandSim";
-import type { IslandText } from "@/i18n/island";
 
 export interface HomeCard {
   key: string;
@@ -18,10 +16,11 @@ export interface HomeContent {
   lede: string;
   cta: string;
   ctaHref: string;
-  island: IslandText;
+  /** One sentence: the Java version of Corvus Store ends and Corvus NEXT replaces it. */
+  javaNote: string;
   models: { id: string; title: string; open: string; cards: HomeCard[] };
   explore: { id: string; title: string; open: string; cards: HomeCard[] };
-  manifest: { title: string; versionLabel: string; version: string; buildLabel: string; href: string; cta: string };
+  manifest: { title: string; versionLabel: string; version: string; href: string; cta: string };
 }
 
 function Card({ card, open, span }: { card: HomeCard; open: string; span: string }) {
@@ -44,7 +43,7 @@ function Card({ card, open, span }: { card: HomeCard; open: string; span: string
 }
 
 /**
- * The home page of Corvus NEXT: the Corvus Island V10174 simulator as the hero, then a spatial bento of the models and of
+ * The home page of Corvus NEXT: the hero, then a spatial bento of the models and of
  * the rest of the site, then the release manifest. All content comes from the data pipeline and the i18n files.
  */
 export function NextHome({ c }: { c: HomeContent }) {
@@ -62,7 +61,7 @@ export function NextHome({ c }: { c: HomeContent }) {
           {c.cta}
           <span aria-hidden="true">→</span>
         </Link>
-        <IslandSim text={c.island} />
+        <p className="ac-small cn-hero-note">{c.javaNote}</p>
       </section>
 
       <section className="cn-band" id={c.models.id} aria-labelledby="cn-models-h">

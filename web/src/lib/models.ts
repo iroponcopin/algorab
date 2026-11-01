@@ -2,7 +2,8 @@
  * The one order every model list follows (the Models menu, the lineup, the Tome's chapters, the launcher ring):
  * the owner's order, Halia, OUKA, Cherry, Tsubomi, then the rest. A model not listed sorts last.
  */
-export const MODEL_ORDER: readonly string[] = ["halia", "ouka", "cherry", "tsubomi", "noctua", "aureum", "astraea"];
+// ASTRAEA is no longer offered (owner decision): it is not in any Next product list. Its retirement page stays.
+export const MODEL_ORDER: readonly string[] = ["halia", "ouka", "cherry", "tsubomi", "noctua", "aureum"];
 
 /** A model's place in MODEL_ORDER (unlisted models come after every listed one). */
 export function modelRank(id: string): number {

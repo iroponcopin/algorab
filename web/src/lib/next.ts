@@ -4,4 +4,3 @@
  */
 export const BUILD_TAG = "CORVUS NEXT // BUILD V10174";
 export const BUILD_NAME = "Corvus NEXT V10174";
-export const ISLAND_NAME = "Corvus Island";

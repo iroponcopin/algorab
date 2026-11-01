@@ -9,14 +9,13 @@ type Phase = "get" | "downloading" | "open" | "update" | "soon" | "archived";
 
 export interface NextStoreLabels {
   text: StoreText;
-  island: { title: string; description: string };
   fresh: { speed: string; timeLeft: string };
-  /** The sample account shown in the window. Invented; never a real person. */
+  /** The sample account shown in the window. A label, never a real person. */
   account: string;
 }
 
 /** The sizes (MB) of the real files, so the simulated speed reads like the real thing. */
-const SIZE_MB: Record<string, number> = { ouka: 4.7, cherry: 3.7, aureum: 0.03, astraea: 2.4, tsubomi: 1.9, halia: 10.2 };
+const SIZE_MB: Record<string, number> = { ouka: 4.7, cherry: 3.7, aureum: 0.03, tsubomi: 1.9, halia: 10.2 };
 const SECONDS = 3.6;
 
 function fill(t: string, ...v: (string | number)[]): string {
@@ -41,7 +40,6 @@ export function NextStoreSim({ products, hrefs, labels }: { products: Product[];
   );
   const [phase, setPhase] = useState<Record<string, Phase>>(start);
   const [progress, setProgress] = useState<Record<string, number>>({});
-  const [island, setIsland] = useState(true);
   const [note, setNote] = useState("");
   const timers = useRef<Map<string, number>>(new Map());
 
@@ -157,12 +155,6 @@ export function NextStoreSim({ products, hrefs, labels }: { products: Product[];
           </div>
         </article>
 
-        <article className="cn-store-card cn-glass cn-glass--lite" data-glass="">
-          <h3 className="cn-store-name">{labels.island.title}</h3>
-          <span className="cn-store-island" data-on={island} aria-hidden="true" />
-          <p className="cn-store-line">{labels.island.description}</p>
-          <button type="button" role="switch" aria-checked={island} className="cn-store-switch" onClick={() => setIsland((v) => !v)} aria-label={labels.island.title} />
-        </article>
       </div>
       <div className="cn-store-foot">
         <p className="cn-store-note" role="status">

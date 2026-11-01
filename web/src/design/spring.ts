@@ -19,7 +19,7 @@ export interface SpringConfig {
   restSpeed?: number;
 }
 
-/** The primary Island expansion spring (owner's specification, V10174). */
+/** The primary expansion spring (owner's specification, V10174). */
 export const SPRING_EXPANSION: Readonly<SpringConfig> = { stiffness: 380, damping: 28, mass: 0.8, restDelta: 0.001 };
 /** The micro-tactile press spring (water-droplet squish). */
 export const SPRING_PRESS: Readonly<SpringConfig> = { stiffness: 620, damping: 20, mass: 0.45 };

@@ -6,7 +6,6 @@ import { asset, pathOf } from "@/lib/site";
 import { langData, wiki } from "@/lib/wiki";
 import type { Lang, LangData } from "@/lib/wiki-types";
 import { FileCard, type FileCardLabels } from "../FileCard";
-import { AstraeaEnded } from "./AstraeaEnded";
 
 
 export function fileLabels(d: LangData): FileCardLabels {
@@ -114,11 +113,40 @@ export function DownloadPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
+      <section className="ac-wrap cn-dl-block" aria-labelledby="dl-open">
+        <header className="cn-dl-head">
+          <h2 id="dl-open" className="cn-dl-title">
+            {n.openTitle}
+          </h2>
+          <p className="cn-dl-line">{n.openLede}</p>
+        </header>
+        <div className="cn-tiles cn-tiles--two">
+          <article className="cn-tile cn-glass cn-glass--lite" data-glass="">
+            <span className="cn-tile-hero">macOS</span>
+            <ol className="cn-steps">
+              {n.macSteps.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
+          </article>
+          <article className="cn-tile cn-glass cn-glass--lite" data-glass="">
+            <span className="cn-tile-hero">Windows</span>
+            <ol className="cn-steps">
+              {n.winSteps.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
+            <p className="cn-tile-note">{n.linuxLine}</p>
+          </article>
+        </div>
+      </section>
+
       <header className="ac-wrap cn-dl-head cn-dl-block">
         <h2 id="dl-now" className="cn-dl-title">
           {n.currentHeading}
         </h2>
         <p className="cn-dl-line">{n.currentLede}</p>
+        <p className="cn-dl-line">{n.javaEnds}</p>
       </header>
 
       <section className="ac-wrap cn-dl-block" aria-labelledby="dl-store">
@@ -139,16 +167,6 @@ export function DownloadPage({ lang }: { lang: Lang }) {
       {dl.halia ? (
         <ModelDownload id="dl-halia" heading={`Halia ${d.products.halia?.jp ?? ""}`.trim()} line={d.products.halia?.tagline} aside={<Aside icon="halia">{mcLine}</Aside>}>
           <FileCard tag={`${d.chrome.version} ${dl.halia.version}`} file={dl.halia.file} cta={d.chrome.primaryCta} labels={labels} />
-        </ModelDownload>
-      ) : null}
-
-      {d.products.astraea?.availability === "archived" ? (
-        <section className="ac-wrap cn-dl-block" aria-labelledby="astraea-ended-h">
-          <AstraeaEnded lang={lang} />
-        </section>
-      ) : dl.astraea ? (
-        <ModelDownload id="dl-astraea" heading="ASTRAEA" line={d.products.astraea?.tagline} aside={<Aside icon="astraea">{mcLine}</Aside>}>
-          <FileCard tag={`${d.chrome.version} ${dl.astraea.version}`} file={dl.astraea.file} cta={d.chrome.primaryCta} labels={labels} />
         </ModelDownload>
       ) : null}
 

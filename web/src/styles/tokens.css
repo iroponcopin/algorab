@@ -151,7 +151,7 @@ html:lang(ar) {
   --cn-font: -apple-system, BlinkMacSystemFont, "SF Arabic", "Noto Sans Arabic Variable", "Inter Variable", "Segoe UI", Tahoma, Arial, sans-serif;
 }
 
-/* A device stays a device: the Corvus Island simulator's stage is black glass in both themes. */
+/* A device stays a device: a stage is black glass in both themes. */
 .cn-stage {
   color-scheme: dark;
   --cn-void: #030305;

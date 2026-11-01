@@ -15,7 +15,10 @@ function clock(seconds: number): string {
  * playable where it is and linked to the release notes it belongs to. The films are the very files
  * that went to the Discord servers, kept in assets/video/announcement/. A plain <video> element
  * with the browser's own controls: nothing loads until someone presses play (preload="none").
+ * ASTRAEA and Alpha are no longer offered (owner decision), so their films are not listed; the data file keeps them.
  */
+const NOT_OFFERED: ReadonlySet<string> = new Set(["astraea", "alpha"]);
+
 export function AnnouncementPage({ lang }: { lang: Lang }) {
   const t = FRESH[lang].announcement;
   const names = new Intl.DateTimeFormat(lang === "pt-br" ? "pt-BR" : lang, { dateStyle: "long", timeZone: "UTC" });
@@ -27,7 +30,7 @@ export function AnnouncementPage({ lang }: { lang: Lang }) {
       </div>
       <div className="ac-wrap">
         <ul className="cn-films">
-          {wiki().films.map((film) => {
+          {wiki().films.filter((film) => !NOT_OFFERED.has(film.brand)).map((film) => {
             const notes =
               film.brand === "noctua"
                 ? pathOf(lang, "noctua/")

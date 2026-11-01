@@ -13,10 +13,9 @@ import { MODEL_ORDER } from "@/lib/models";
 
 
 /** The Store's order of its products, and the hub ring's order of the six marks. */
-// ASTRAEA's service ended on 2026-10-16: it is the last model in both lists, before the archived Alpha.
-// Both derive from MODEL_ORDER; the ring keeps its six marks (the copy counts them), in that order.
-const PRODUCTS: readonly string[] = [...MODEL_ORDER, "alpha"];
-const RING_MARKS = new Set(["ouka", "cherry", "tsubomi", "noctua", "astraea", "alpha"]);
+// ASTRAEA and Alpha are no longer offered (owner decision): neither is in a Next product list. Both derive from MODEL_ORDER.
+const PRODUCTS: readonly string[] = [...MODEL_ORDER];
+const RING_MARKS = new Set(["ouka", "cherry", "tsubomi", "noctua"]);
 const RING: readonly string[] = PRODUCTS.filter((id) => RING_MARKS.has(id));
 
 /**
@@ -84,7 +83,7 @@ export function LauncherPage({ lang }: { lang: Lang }) {
             <NextStoreSim
               products={products}
               hrefs={hrefs}
-              labels={{ text: t, island: l.perchToggle, fresh: f.store, account: "Alex Morgan" }}
+              labels={{ text: t, fresh: f.store, account: "Sample account" }}
             />
           </div>
         </div>

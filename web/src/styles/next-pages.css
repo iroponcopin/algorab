@@ -608,19 +608,6 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar)) .cn-dl-h1 {
   gap: 8px;
 }
 
-.cn-store-island {
-  display: block;
-  width: 96px;
-  height: 22px;
-  border-radius: 0 0 14px 14px;
-  background: #000;
-  box-shadow: 0 0 0 0.5px rgb(var(--cn-ink-rgb) / 0.2);
-}
-
-.cn-store-island[data-on="false"] {
-  opacity: 0.12;
-}
-
 .cn-store-switch {
   position: relative;
   justify-self: start;
@@ -934,4 +921,18 @@ html:lang(ko) body {
   cursor: default;
   opacity: 0.55;
   pointer-events: none;
+}
+
+/* The unsigned-build steps on the download page: a plain numbered list, the button names kept as written. */
+.cn-steps {
+  margin: 0;
+  padding-inline-start: 1.25em;
+  display: grid;
+  gap: 6px;
+}
+
+.cn-hero-note {
+  margin: 14px auto 0;
+  max-width: 56ch;
+  opacity: 0.8;
 }

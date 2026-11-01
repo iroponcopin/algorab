@@ -312,8 +312,6 @@ export interface LangData {
     nativeHeading: string;
     jarNote: string;
     cta: string;
-    perch: Record<string, string>;
-    perchToggle: { title: string; description: string };
     storeStrings: Record<string, string>;
   };
   launcherFiles: { version: string; native: NativeFile[]; jar: FileFacts; notes: string[] };

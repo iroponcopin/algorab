@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { NextHome, type HomeCard, type HomeContent } from "@/components/home/NextHome";
 import { FRESH } from "@/i18n/fresh";
 import { NEXT_RELEASE } from "@/i18n/next-release";
-import { ISLAND } from "@/i18n/island";
 import { THEATRE } from "@/i18n/theatre";
 import { BRAND_ICON } from "@/lib/brands";
 import { pageMeta } from "@/lib/meta";
@@ -22,7 +21,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 const HOME_MODELS = ["halia", "ouka", "cherry", "tsubomi"] as const;
 
 /**
- * The home of Corvus NEXT: the Corvus Island simulator, the models, the rest of the site and the release manifest.
+ * The home of Corvus NEXT: the hero, the models, the rest of the site and the release manifest.
  * Every string is the data pipeline's or an i18n file's; nothing here is hard-coded content.
  */
 export default async function Page({ params }: Params) {
@@ -60,21 +59,19 @@ export default async function Page({ params }: Params) {
     { key: "skin", href: href("skin/"), eyebrow: c.skin, title: d.skin.title, body: d.home.skinTile, icon: null },
     { key: "discord", href: href("discord/"), eyebrow: c.discord, title: d.discord.title, body: d.discord.description, icon: null },
   ];
-  const island = ISLAND[lang];
   const content: HomeContent = {
     heroLabel: th.label,
     title: th.title,
     lede: th.lede,
     cta: n.homeCta,
     ctaHref: href("download/"),
-    island,
+    javaNote: n.javaEnds,
     models: { id: "models", title: d.home.brandsTitle, open: th.open, cards: models },
     explore: { id: "explore", title: d.home.explore, open: th.open, cards: explore },
     manifest: {
-      title: island.manifest.title,
+      title: n.manifestTitle,
       versionLabel: n.manifestLabel,
       version: n.manifestValue,
-      buildLabel: island.manifest.build,
       href: href("download/"),
       cta: n.homeCta,
     },

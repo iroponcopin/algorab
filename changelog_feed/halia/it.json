@@ -1,11 +1,155 @@
 {
  "lang": "it",
  "brand": "halia",
- "updated": "2026-10-26",
+ "updated": "2026-10-31",
  "title": "Changelog",
- "updated_label": "Aggiornato il 2026-10-26",
+ "updated_label": "Aggiornato il 2026-10-31",
  "note": "",
  "groups": [
+  {
+   "label": "V1.6",
+   "summary": "Halia V1.6 1217",
+   "releases": [
+    {
+     "version": "V1.6 1217",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.6 1217",
+     "summary": "Aggiunge Halia UltraFast: equipaggiamento tattico con scudo, granate, armi da mischia e materiale medico.",
+     "sections": [
+      {
+       "title": "Novità",
+       "items": [
+        "Nuovo: lo scudo flash. Ferma anche i proiettili frontali.",
+        "Nuovo: granata a frammentazione, carica abbagliante e carica fumogena. Tieni premuto per innescare, rilascia per lanciare.",
+        "Nuovo: lama da combattimento, mazza d'impatto e coltello da schermaglia, ognuno col suo ritmo.",
+        "Nuovo: dieci oggetti medici e alimentari.",
+        "Tutto si può fabbricare e si trova nella scheda Halia UltraFast.",
+        "Il fucile a dardi torna al progetto completo: portata illimitata, cratere all'impatto e un livello massimo di danno che abbatte tutto, predefinito."
+       ]
+      },
+      {
+       "title": "Avvertenze",
+       "items": [
+        "Il fucile a dardi è molto potente di base: un colpo può abbattere giocatori e creature su una vasta area e cambiare il terreno. Riduci Potenza e Danno nelle impostazioni.",
+        "Le armi da mischia vanno estratte prima di colpire.",
+        "Gli oggetti medici condividono i tempi di ricarica.",
+        "Verificato solo su un server e client di prova, non ancora in vero multigiocatore."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.6 211",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.6 211",
+     "summary": "Aggiunge Halia Avatar Engine: indossa il tuo avatar, con animazioni proprie e una ruota delle azioni.",
+     "sections": [
+      {
+       "title": "Novità",
+       "items": [
+        "Nuovo: avatar. Metti una cartella avatar in halia/avatars, premi il tasto virgola e sceglilo.",
+        "Gli avatar si muovono con animazioni e script propri e riproducono suoni propri.",
+        "Nuovo: la ruota delle azioni. Tieni premuto il tasto punto, indica un'azione e rilascia.",
+        "I giocatori vicini vedono il tuo avatar se il server ha Halia. Gli script non vengono mai condivisi."
+       ]
+      },
+      {
+       "title": "Avvertenze",
+       "items": [
+        "Gli script degli avatar girano in un ambiente isolato con limiti severi. Se uno li supera si ferma, e solo quell'avatar ne risente.",
+        "Nessuna connessione a servizi esterni; gli avatar restano sul tuo computer e sul tuo server.",
+        "Verificato solo su client e server di prova, non ancora con due veri giocatori."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "V1.5",
+   "summary": "Halia V1.5 8892",
+   "releases": [
+    {
+     "version": "V1.5 8892",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.5 8892",
+     "summary": "Aggiunge i lanci di rifornimenti: chiama un aereo o spara un razzo e una cassa arriverà da te.",
+     "sections": [
+      {
+       "title": "Novità",
+       "items": [
+        "Nuovo: lanci di rifornimenti. Il comando /supplydrop call invia un aereo che sgancia una cassa sopra di te.",
+        "Nuovo: tre lanciarazzi di segnalazione. Una cassa scende dove finisce il razzo. I livelli alti portano casse migliori.",
+        "Nuovo: la cassa di rifornimenti, con una schermata propria."
+       ]
+      },
+      {
+       "title": "Avvertenze",
+       "items": [
+        "Le chiamate hanno un tempo di ricarica e ogni mondo ammette un numero limitato di lanci alla volta.",
+        "I lanci periodici nel mondo sono disattivati per impostazione predefinita.",
+        "Verificato solo su un server e client di prova, non ancora in vero multigiocatore."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.5 1018",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Halia V1.5 1018",
+     "summary": "Corregge le impostazioni del fucile a dardi: potenza e danno scelti ora valgono per i tuoi colpi.",
+     "sections": [
+      {
+       "title": "Novità",
+       "items": [
+        "I cursori Potenza e Danno nelle impostazioni del fucile a dardi ora cambiano i tuoi colpi. Prima ogni colpo usava i valori standard."
+       ]
+      },
+      {
+       "title": "Avvertenze",
+       "items": [
+        "Il danno resta entro il massimo standard del fucile e la portata di esplosione e onda d'urto resta limitata, quindi una potenza alta cambia soprattutto l'aspetto.",
+        "Verificato solo su un server e client di prova, non ancora in vero multigiocatore."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.5 1017",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Halia V1.5 1017",
+     "summary": "Aggiunto il fucile a dardo: carica cerchi di formula, segna il bersaglio e spara un dardo che attraversa l'aria al rallentatore ed esplode dove colpisce.",
+     "sections": [
+      {
+       "title": "Novità",
+       "items": [
+        "Nuovo oggetto: il fucile a dardo. Tieni premuto il tasto destro per caricare e guardare nel mirino; il tasto sinistro segna il punto o la creatura da colpire, e accovacciarsi cancella il segno.",
+        "Durante la carica, cerchi di formula si impilano davanti alla canna. Più lunga la carica, più forte il colpo.",
+        "Rilascia per sparare: il dardo attraversa l'aria al rallentatore, dei sigilli scendono dove colpisce, esplode e un'onda d'urto si propaga sul terreno.",
+        "L'esplosione e l'onda d'urto feriscono creature e giocatori a portata. I giocatori in modalità creativa o spettatore non vengono mai feriti.",
+        "Si fabbrica con un occhio di Ender, lingotti di netherite, una balestra e un cannocchiale; si trova nella scheda Combattimento e nella scheda di Halia. Le impostazioni si aprono con un tasto (H per impostazione predefinita)."
+       ]
+      },
+      {
+       "title": "Avvertenze",
+       "items": [
+        "Sui server l'esplosione e l'onda d'urto hanno una portata limitata, più corta di ciò che si vede.",
+        "Per impostazione predefinita l'esplosione non rompe blocchi; un'impostazione del server può consentire un cratere.",
+        "Potenza e danno scelti nelle impostazioni valgono solo dove il server lo consente; altrimenti ogni colpo usa i valori standard.",
+        "Caricare a mezz'aria ti tiene sul posto; dopo il colpo scendi lentamente senza danni da caduta.",
+        "Chi spara vede un breve filmato del colpo; i filmati si possono disattivare nelle impostazioni.",
+        "Verificato solo su un server di prova e in client di prova, non ancora in vere partite multigiocatore."
+       ]
+      }
+     ]
+    }
+   ]
+  },
   {
    "label": "V1.4",
    "summary": "Halia V1.4 1143",

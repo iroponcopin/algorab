@@ -1,20 +1,239 @@
 {
  "lang": "id",
  "brand": "ouka",
- "updated": "2026-10-26",
+ "updated": "2026-10-31",
  "title": "Riwayat Pembaruan",
- "updated_label": "Diperbarui 2026-10-26",
+ "updated_label": "Diperbarui 2026-10-31",
  "note": "",
  "groups": [
   {
-   "label": "V1.7",
-   "summary": "Ouka JJK V1.7 71208 — OUKA Wonder, GUN MAX dihentikan",
+   "label": "V1.8",
+   "summary": "Ouka V1.8 5567 — Dua belas mesin generasi berikutnya dan Battery Charging Socket semudah peti",
    "releases": [
+    {
+     "version": "V1.8 5567",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Ouka V1.8 5567 — Dua belas mesin generasi berikutnya dan Battery Charging Socket semudah peti",
+     "summary": "V1.8 5567 menambahkan generasi berikutnya dari dua belas mesin, masing-masing berupa blok baru dengan gerakan dan layar baru, serta Battery Charging Socket yang semudah peti. Mesin sebelumnya tetap bekerja seperti biasa.",
+     "sections": [
+      {
+       "title": "Perubahan",
+       "items": [
+        "Setiap mesin adalah blok baru dengan tampilan, gerakan, dan layar baru. Mesin sebelumnya tetap bekerja seperti biasa.",
+        "Stasis Harvester (generasi ke-2 Kinetic Grinder): atur area dengan penggeser (lebar 3 sampai 9). Ia membunuh 4 kali lebih cepat dan dapat mengalahkan Wither.",
+        "Precision Assembly Cell (generasi ke-3 jalur perakitan): dua lengan robot bekerja di atas meja putar dalam sel kaca 3 × 3 × 3. Kecepatannya 4 kali Next-Generation Assembly Line.",
+        "Logistics Skyport (generasi ke-2 stasiun drone): tiga drone terbang secara mandiri, masing-masing membawa 9 tumpukan dan terbang 2 kali lebih cepat. Bekerja dengan stasiun sebelumnya di kedua arah.",
+        "Phase Resonance Miner (generasi ke-2 penambang resonan): pilih lebar 1 sampai 9 dan kedalaman 1 sampai 32 dengan penggeser. Ia menambang 4 kali lebih cepat.",
+        "Molten-Salt Solar Tower (generasi ke-2 menara surya): peringkat 80,000 J/t (4 kali). Ia menyimpan panas dalam garam cair dan menghasilkan listrik di malam hari. Saat dihancurkan, panasnya tetap ada di item.",
+        "Tracking Heliostat (generasi ke-2 heliostat): mengikuti matahari dan mengarahkan cahaya ke menara. Bersama Molten-Salt Solar Tower, ia memberi 2 kali panas dibanding cermin sebelumnya.",
+        "Tachyon Overdrive (generasi ke-2 akselerator): penggeser 100 sampai 1000%, dengan konsumsi daya 25% lebih rendah.",
+        "Isostatic Press (generasi ke-2 penghancur): 4 kali lebih cepat.",
+        "Dynamo Crank (generasi ke-2 engkol tangan): roda gila berat tetap berputar sekitar 3 detik setelah Anda berhenti. Output hingga 16,000 J/t.",
+        "Ultracentrifuge (generasi ke-2 sentrifus): memisahkan 4 kali lebih cepat, dengan peluang 1,5 kali dan 8 slot output.",
+        "Atomic Lattice Crafter (generasi ke-2 auto-crafter): membuat 4 kali lebih cepat.",
+        "OUKA Type-W2 “Hayate” (generasi ke-2 turbin angin): tinggi sekitar 48 blok, peringkat 200,000 J/t (4 kali). Bangun berjarak 31 blok atau lebih dari turbin lain.",
+        "Battery Charging Socket: buka dengan tangan kosong dan pindahkan baterai seperti peti. Hopper dan pipa juga terhubung. Soket yang sudah ada tetap menyimpan isinya.",
+        "Kode hadiah: masukkan /ouka code OUKA-5567 di dalam game dan hadiah muncul di depan Anda. Berfungsi di survival tanpa cheat, sekali per pemain per dunia."
+       ]
+      },
+      {
+       "title": "Catatan Penting",
+       "items": [
+        "Sebelum memasang V1.8 5567, hapus jar OUKA lama (1.8.3371 atau lebih lama) dari folder mods dan simpan hanya 1 salinan GeckoLib 5.5.6. Diperlukan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, dan Fabric API 0.161.0+26.3 atau lebih baru. Pasang di client dan server.",
+        "Mesin sebelumnya mempertahankan desain dan angkanya; mesin baru adalah blok terpisah.",
+        "Jika Next-Generation Assembly Line dihancurkan, isinya hilang; ini sudah berlaku sebelumnya dan tidak diubah di versi ini.",
+        "Hanya diperiksa dengan tes otomatis dan klien uji, bukan dalam permainan multipemain nyata.",
+        "README di dalam zip ini masih mengulang kalimat V1.7 88213 bahwa batas penyimpanan per sel telah dinaikkan. Kalimat itu keliru; lihat koreksinya di catatan V1.7 91209."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.8 3371",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Ouka V1.8 3371 — Halo Beacon, 173 TW Stellar Fusion Reactor, Combined-Cycle Gas Turbine, Subspace Silo, Echo Resonance Excavator, Helium-3 Regolith Refinery",
+     "summary": "V1.8 3371 menambahkan Halo Beacon, Stellar Fusion Reactor 173 TW, Combined-Cycle Gas Turbine 100 MW dan Subspace Silo, ditambah dua menara bundar dari V1.8 2033, yaitu Echo Resonance Excavator dan Helium-3 Regolith Refinery.",
+     "sections": [
+      {
+       "title": "Perubahan",
+       "items": [
+        "OUKA Halo Beacon adalah generasi kedua dari OUKA Beacon. Jangkauannya 4000 blok dan efeknya 1,25 kali lebih kuat pada level yang sama. Alasnya berbentuk sama dengan beacon lama, tetapi harus dibangun dari blok alloy OUKA tingkat Max atau lebih tinggi. Jika dua beacon tumpang tindih, nilai yang lebih kuat untuk tiap efek yang berlaku; nilainya tidak dijumlahkan. Beacon lama tidak berubah.",
+        "Stellar Fusion Reactor adalah Matahari Buatan generasi ketiga: 32 × 16 × 32 blok, 4 kali volume Sun V2, berdaya 173 TW. Reaktor ini membakar inti deuterium dan helium-3 yang sama dengan Sun V2, dan setiap inti bertahan selama di sana. Melalui kaca terlihat bintang emas dengan cincin yang berputar.",
+        "Combined-Cycle Gas Turbine adalah Generator Turbin Gas generasi kedua: 3 × 6 × 3 blok, berdaya 100 MW, 20 kali V1. Setiap 1 J bahan bakar menghasilkan 2 J listrik. Layarnya menampilkan output, status, dan sisa waktu bahan bakar. Pada 100 MW, satu kaleng minyak tanah bertahan sekitar 1,2 detik.",
+        "Subspace Silo adalah silo besar baru tanpa batas jumlah. Sentuh controller yang sudah dibentuk sekali dengan tangan kosong; setelah itu tombol bundar di samping inventaris membukanya, tanpa remote. Urutkan berdasarkan jumlah, nama, terbaru, atau urutan seret manual, naik atau turun. PDA yang terikat ke Quantum-Compression Vault lama, jika dipakai pada controller baru, menanyakan apakah semuanya dipindahkan; item hanya berpindah saat Move ditekan, dan silo lama tetap utuh.",
+        "V1.8 2033, yang tidak pernah dirilis sendiri, ikut disertakan: Echo Resonance Excavator (11 × 18 dan bundar; menambang satu pecahan gema setiap 100 tick dengan 1 GW) dan Helium-3 Regolith Refinery (7 × 12, bundar; mengubah 16 End Stone atau 1 regolith bulan menjadi kaleng helium-3), keduanya dibangun dari keluarga Resonance Casing putih yang baru. Memecahkan controller Sun V2 yang berisi bahan bakar kini menjatuhkan intinya. V1.8 2012 juga ikut disertakan.",
+        "Diperiksa pada build ini: 2404 tes JUnit LULUS, 1556 tes GameTest LULUS tiga kali berturut-turut, pemeriksaan crash server pada dunia yang sudah ada dan dunia baru bersih."
+       ]
+      },
+      {
+       "title": "Catatan Penting",
+       "items": [
+        "Sebelum memasang V1.8 3371, hapus jar OUKA lama (1.8.2012 atau lebih lama) dari folder mods dan simpan hanya 1 salinan GeckoLib 5.5.6. Diperlukan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, dan Fabric API 0.161.0+26.3 atau lebih baru. Pasang di client dan server.",
+        "Belum diperiksa: keseimbangan gameplay. Kekuatan Halo Beacon, Stellar Fusion Reactor 173 TW, dan turbin 100 MW yang menghabiskan bahan bakar sangat cepat belum diuji keseimbangannya.",
+        "Pemeriksaan client sungguhan dijalankan dalam 59 grup; 54 lulus. Tiga grup (tampilan Sun V1, pemeriksaan gear, dan pemeriksaan industri berat V1.6) gagal, persis seperti pada V1.7 1128612, dan belum diperbaiki. Dua lainnya gagal saat build rilis berjalan bersamaan, dan lulus ketika dijalankan sendiri. Jar yang dikemas sendiri hanya diuji oleh dua pemeriksaan crash server.",
+        "README di dalam zip ini masih mengulang kalimat V1.7 88213 bahwa batas penyimpanan per sel telah dinaikkan. Kalimat itu keliru; lihat koreksinya di catatan V1.7 91209."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.8 2012",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Ouka V1.8 2012 — Transceiver Ultra sampai Mythos, delapan tingkat corong, Bor Termal V2, jembatan pilon, Konveyor V2, Matahari V2 30 TW",
+     "summary": "V1.8 2012 menambahkan tujuh tingkat transceiver materi, delapan tingkat corong hiper-impuls, Bor Termal Sub-Kerak V2, jembatan pilon, Konveyor Maglev V2 yang empat kali lebih cepat, dan Matahari Buatan V2 30 TW.",
+     "sections": [
+      {
+       "title": "Perubahan",
+       "items": [
+        "Transceiver materi mendapat tujuh tingkat di atas Normal dan Max, dari Ultra sampai Mythos. Jangkauan: Ultra 2048 blok, UltraFast 8192, Ultracore 32768; Ultimate tanpa batas dalam dimensinya dan juga menghubungkan Overworld dan Nether dengan 1:8; Wonder Full, Premium, dan Mythos menghubungkan dimensi mana pun. Item per tick: 512, 1024, 2048, 4096, 8192, 16384, 65536. Di antara dua transceiver, jangkauan yang lebih kecil yang berlaku.",
+        "Corong ekstraktor hiper-impuls mendapat delapan tingkat, dari Max sampai Mythos, yang memindahkan 256, 512, 1024, 2048, 4096, 8192, 16384, dan 65536 item per tick (corong dasar memindahkan 64).",
+        "Bor Termal Sub-Kerak V2 adalah mesin 5 × 5 × 8. Ia menggali sekali tiap 10 tick (empat kali V1), mengambil dua item per galian, dan memakai daya 8 kali V1, yaitu daya per item yang sama.",
+        "Pilon Tesla nirkabel V2 dalam jarak 256 blok terhubung lewat jembatan, dan jaringan yang terhubung berbagi dayanya; jembatan tidak membuat maupun menghilangkan daya. Konveyor Maglev V2 memindahkan item empat kali lebih cepat, 20 blok per detik dibanding 5 pada V1.",
+        "Reaktor fusi Matahari Buatan V2 kini berdaya 30 TW, 6000 kali V1. Inti bahan bakar helium-3 yang dipakai Matahari V2 menyimpan energi 3000 kali lipat. Fusi V1 tidak berubah.",
+        "Diperiksa pada build ini: JUnit 2290 tes PASS, GameTest 1530 tes PASS tiga kali berturut-turut, pemeriksaan crash server pada dunia yang sudah ada dan dunia baru bersih."
+       ]
+      },
+      {
+       "title": "Catatan Penting",
+       "items": [
+        "Sebelum memasang V1.8 2012, hapus jar OUKA lama (1.7.1128612 atau lebih lama) dari folder mods dan sisakan hanya 1 salinan GeckoLib 5.5.6. Dibutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, dan Fabric API 0.161.0+26.3 atau lebih baru. Pasang di klien dan server.",
+        "Tidak diperiksa: keseimbangan permainan. Angka tiap tingkat, daya Bor Termal V2, dan Matahari V2 30 TW tidak diuji keseimbangannya.",
+        "Pemeriksaan klien sungguhan berjalan di 54 kelompok; 49 PASS sejak awal dan 2 lagi setelah dijalankan ulang dengan perbaikan. Tiga kelompok (tampilan Matahari V1, pemeriksaan perlengkapan, dan pemeriksaan industri berat V1.6) gagal persis seperti di V1.7 1128612 dan belum diperbaiki. Jar yang dikemas hanya dijalankan pada dua pemeriksaan crash server.",
+        "README di zip ini masih mengulang kalimat V1.7 88213 bahwa batas penyimpanan per sel dinaikkan. Kalimat itu keliru; lihat koreksi di catatan V1.7 91209."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "V1.7",
+   "summary": "Ouka V1.7 1128612 — Perakit sel kuantum, paduan Ouka 12 tingkat, ingot berbentuk vanilla",
+   "releases": [
+    {
+     "version": "V1.7 1128612",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Ouka V1.7 1128612 — Perakit sel kuantum, paduan Ouka 12 tingkat, ingot berbentuk vanilla",
+     "summary": "V1.7 1128612 menambahkan perakit sel kuantum, mesin 12 × 16 × 12 yang merakit baterai kuantum SMES dari Plus sampai Mythos, menjadikan paduan Ouka keluarga 12 tingkat, dan menggambar ulang semua ingot OUKA dalam bentuk ingot vanilla.",
+     "sections": [
+      {
+       "title": "Perubahan",
+       "items": [
+        "Perakit sel kuantum adalah mesin besar selebar 12 × setinggi 16 × sedalam 12, terdiri dari rangka, kaca lapis baja, dua port masukan, satu port keluaran, dan pengendali yang diletakkan di bagian atas salah satu sisi. Ia merakit baterai kuantum SMES semua tingkat, dari Lite sampai Mythos.",
+        "Setiap baterai memakan energi sebesar 5% kapasitasnya dan 10 detik × nomor tingkat (Lite 10 dtk, Mythos 120 dtk). Tanpa daya ia menunggu dan menyimpan kemajuannya. Lewat kaca terlihat meja putar, lift, mesin penggulung kumparan, empat lengan las, dan derek; layarnya memakai desain kaca yang sama dengan reaktor fusi Matahari Buatan V2, dan tingkat dipilih dengan dial.",
+        "Perubahan resep: baterai kuantum SMES dari Plus sampai Mythos kini hanya dibuat di perakit, dengan bahan yang sama seperti sebelumnya. Lite dan Standard tetap bisa dibuat di meja kerajinan.",
+        "Ingot dan blok paduan Ouka kini keluarga 12 tingkat, dari Lite sampai Mythos. Keduanya hanya bahan, tanpa listrik dan tanpa angka energi. Setiap tingkat mengubah 9 ingot menjadi 1 blok dan sebaliknya; setiap tingkat di atas Standard dipadukan dari 2 tingkat di bawahnya ditambah logam. Setiap blok bisa jadi dasar suar, tingkat yang lebih keras butuh beliung yang lebih baik, Max ke atas tahan api dan lava, dan tingkat tinggi bercahaya.",
+        "Semua ingot OUKA, termasuk ingot inti berat, titanium, titanium ultra-murni, tungsten, dan penghalang besi berat, digambar ulang dalam bentuk ingot vanilla. Nama Jepang ingot dan blok paduan kini «Ouka合金インゴット» dan «Ouka合金ブロック».",
+        "Diperiksa pada build ini: JUnit 2235 tes PASS, GameTest 1516 tes PASS tiga kali berturut-turut, pemeriksaan crash server pada dunia yang sudah ada dan dunia baru bersih."
+       ]
+      },
+      {
+       "title": "Catatan Penting",
+       "items": [
+        "Sebelum memasang V1.7 1128612, hapus jar OUKA lama (1.7.91209 atau lebih lama) dari folder mods dan sisakan hanya 1 salinan GeckoLib 5.5.6. Dibutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, dan Fabric API 0.161.0+26.3 atau lebih baru. Pasang di klien dan server.",
+        "Tidak diperiksa: keseimbangan permainan. Energi dan waktu perakit, serta resep dan sifat blok tingkat paduan, tidak diuji keseimbangannya.",
+        "Pemeriksaan klien sungguhan untuk aula dan layar perakit dilakukan pada build sebelum commit terakhir, yang hanya mengubah README dan daftar berkas pembuat rilis; tidak diulang pada commit akhir. Jar yang dikemas hanya dijalankan dalam dua pemeriksaan crash server.",
+        "README di zip ini masih mengulang kalimat V1.7 88213 bahwa batas penyimpanan per sel dinaikkan. Kalimat itu keliru; lihat koreksi di catatan V1.7 91209."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.7 91209",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Ouka V1.7 91209 — Industri es: kompresor kriogenik, sintesis kriogenik kuantum, dan lima es kuantum",
+     "summary": "V1.7 91209 menambahkan dua mesin pembuat es: kompresor kriogenik untuk keempat es vanilla dan sintesis kriogenik kuantum untuk lima es kuantum baru. Tingkat baterai kuantum SMES dari Plus ke atas kini membutuhkan es ini.",
+     "sections": [
+      {
+       "title": "Perubahan",
+       "items": [
+        "Kompresor kriogenik adalah mesin 2 × 2 × 2. Dari air ia membuat es, es beku (stabil), es padat, dan es biru; ia juga membuat es padat dari 2 es dan es biru dari 2 es padat. Ia memakai energi, dan satu kontrol memilih produknya. Es beku (stabil) tidak pernah mencair.",
+        "Sintesis kriogenik kuantum adalah mesin 3 × 3 × 3 yang membuat 5 es kuantum: es kisi kriogenik deuterium, es kaca amorf, es superionik XVIII, inti kriogenik kondensat Bose-Einstein, dan es kronos singularitas sakura. Semua es sangat licin.",
+        "Es kisi kriogenik deuterium melindungi blok dalam radius 4 dari ledakan. Es kaca amorf bening dan tidak pernah mencair. Es superionik XVIII menghubungkan tanpa kehilangan jaringan pilon terpisah yang disentuhnya; mesin tetap perlu berada dalam jangkauan pilon. Inti kriogenik kondensat Bose-Einstein mengubah air dan lava dalam radius 3 menjadi es biru dan obsidian.",
+        "Es kronos singularitas sakura menghentikan pelapukan (daun, es, salju, tanah bajak, tembaga, karang) dalam radius 8, membuat pendinginan inti fisi di sebelahnya 4 kali lebih cepat, dan membatasi kecepatan entitas hingga 32 blok per tick.",
+        "Item baru: katalis singularitas OUKA. Tingkat baterai kuantum SMES dari Plus ke atas kini membutuhkan es ini dalam resepnya.",
+        "Diperiksa pada build ini: JUnit 2183 tes PASS, GameTest 1505 tes PASS pada eksekusi terakhir, pemeriksaan crash server pada dunia yang sudah ada (diperbarui dari 88213) dan dunia baru bersih."
+       ]
+      },
+      {
+       "title": "Catatan Penting",
+       "items": [
+        "Sebelum memasang V1.7 91209, hapus jar OUKA lama (1.7.88213 atau lebih lama) dari folder mods dan sisakan hanya 1 salinan GeckoLib 5.5.6. Dibutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, dan Fabric API 0.161.0+26.3 atau lebih baru. Pasang di klien dan server.",
+        "Tidak diperiksa: keseimbangan permainan. Biaya energi, waktu, dan resep es serta kedua mesin tidak diuji keseimbangannya.",
+        "Satu eksekusi GameTest pernah gagal (tes es sakura, blok kontrol tidak mencair) dan lolos pada eksekusi berikutnya; penyebabnya tidak dipastikan, dan tes itu disesuaikan setelahnya. Mesin tidak dimainkan di klien sungguhan dalam pemeriksaan rilis, dan jar yang dikemas hanya dijalankan dalam dua pemeriksaan crash server.",
+        "Koreksi catatan V1.7 88213: catatan itu menyebut batas penyimpanan per sel dinaikkan. Sebenarnya sel di atas sekitar 1,1 triliun J, seperti Mythos, dihitung sebagai beberapa bagian yang sama, dan jaringan energinya sendiri tidak berubah. README di zip ini mengulang kata-kata lama."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.7 88213",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Ouka V1.7 88213 — Baterai Kuantum SMES dalam 12 tingkat, soket baterai untuk semua tingkat, Ingot Inti Berat digambar ulang",
+     "summary": "Baterai Kuantum SMES kini menjadi keluarga 12 tingkat, dari Lite (200 MJ) sampai Mythos (2.048.000 MJ). Baterai 400 MJ yang sudah ada kini menjadi Standard, soket baterai menampung semua tingkat secara campur, dan Ingot Inti Berat digambar ulang dalam bentuk ingot vanilla.",
+     "sections": [
+      {
+       "title": "Perubahan",
+       "items": [
+        "12 tingkat: Lite 200 MJ, Standard 400 MJ (Baterai Kuantum SMES yang sudah ada, tampilan diubah menjadi tembaga dan kuningan), Plus 800 MJ, Super 1.600 MJ, Max 3.200 MJ, Ultra 6.400 MJ, UltraFast 12.800 MJ, Ultracore 25.600 MJ, Ultimate 51.200 MJ, Wonder Full 102.400 MJ, Premium 204.800 MJ, Mythos 2.048.000 MJ. Setiap tingkat punya warna sendiri.",
+        "Pengisian dan pengosongan memindahkan kapasitas / 4000 per tick, sehingga setiap tingkat penuh dalam 200 detik. UltraFast mengosongkan 4 kali lebih cepat.",
+        "Resep: setiap tingkat dibuat dari 2 tingkat sebelumnya ditambah bahan. Mythos memakai 8 Premium dan sebuah Bintang Nether.",
+        "Soket baterai menampung semua tingkat secara campur. Sel di soket dari versi sebelumnya dimuat sebagai sel Standard.",
+        "Jaringan mendukung sel berukuran Mythos: batas penyimpanan per sel dinaikkan, dan total berhenti di batas itu. Ingot Inti Berat digambar ulang dalam bentuk ingot vanilla.",
+        "Diperiksa pada build ini: JUnit 2136 tes PASS, GameTest 1485 tes PASS, pemeriksaan crash server pada dunia yang sudah ada (diperbarui dari 81347) dan dunia baru bersih."
+       ]
+      },
+      {
+       "title": "Catatan Penting",
+       "items": [
+        "Sebelum memasang V1.7 88213, hapus jar OUKA lama (1.7.81347 atau lebih lama) dari folder mods dan sisakan hanya 1 salinan GeckoLib 5.5.6. Dibutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, dan Fabric API 0.161.0+26.3 atau lebih baru. Pasang di klien dan server.",
+        "Belum diperiksa: keseimbangan permainan. Pemeriksaan rilis tidak mencakup keseimbangan Matahari, tingkat SMES, atau permainan lainnya, jadi kapasitas dan biaya resep di atas belum diuji keseimbangannya.",
+        "Pemeriksaan klien nyata untuk tingkat baru, soket baterai, dan Ingot Inti Berat dijalankan pada commit sebelumnya dari build ini dan tidak diulang pada commit terakhir. Jar yang sudah dikemas hanya dijalankan oleh dua pemeriksaan crash server, bukan oleh klien nyata."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.7 81347",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Ouka V1.7 81347 — Reaktor Fusi Matahari Buatan V2, Jalur Perakitan Otomasi Generasi Berikutnya, Tempa Karbida, Transceiver Materi Max",
+     "summary": "Menambahkan Reaktor Fusi Matahari Buatan V2 (multiblok 16 × 16 × 16, daya nominal 500 GW) dengan layar kontrol kaca, Jalur Perakitan Otomasi Generasi Berikutnya, Tempa Karbida, Transceiver Materi Max, dan meja kerja OUKA Wonder.",
+     "sections": [
+      {
+       "title": "Perubahan",
+       "items": [
+        "Reaktor Fusi Matahari Buatan V2 (multiblok baru): kubus 16 × 16 × 16. Daya nominal 500 GW (100 kali matahari V1). Hanya inti bahan bakar V2. Batas keluaran Matahari Buatan V1 kini 5 GW.",
+        "Layar kontrol: desain kaca, penggeser cahaya vertikal untuk batas keluaran, matahari yang hidup. Tanpa tombol.",
+        "Jalur Perakitan Otomasi Generasi Berikutnya (8 × 2 × 2): layar kaca, resep berupa ikon dalam kisi yang bisa digulir (semuanya terjangkau), antrean pekerjaan dengan ikon.",
+        "Tempa Karbida (3 × 3 × 3, vakum). Transceiver Materi Max: aksen ungu, jangkauan 256 blok, hingga 256 item per tick. Berkasnya ungu secara bawaan, bisa dipilih merah muda atau biru, dan tetap terlihat di siang hari.",
+        "Meja kerja OUKA Wonder; perbaikan animasi isi ulang dan inspeksi. Layar mesin tidak lagi menjeda permainan di mode satu pemain (perbaikan bug).",
+        "Diperiksa pada build ini: JUnit 2126 tes PASS, GameTest 1485 tes PASS, pemeriksaan klien nyata untuk layar dan mesin baru PASS, pemeriksaan crash server dengan dunia yang sudah ada dan dunia baru bersih."
+       ]
+      },
+      {
+       "title": "Catatan Penting",
+       "items": [
+        "Sebelum memasang V1.7 81347, hapus jar OUKA lama (1.7.71208 atau lebih lama) dari folder mods dan sisakan hanya 1 salinan GeckoLib 5.5.6. Dibutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, dan Fabric API 0.161.0+26.3 atau lebih baru. Pasang di klien dan server.",
+        "Belum diuji: Reaktor Fusi Matahari Buatan V2 pada 500 GW di jaringan nyata. Angka 100 kali bersifat relatif terhadap matahari V1.",
+        "Tempa Karbida memakai layar mesin umum, bukan layar tersendiri, dan bagian geraknya belum teranimasi sepenuhnya.",
+        "Pembakaran helium-3 pada keluaran penuh reaktor sangat besar. README sengaja tidak mencantumkan angka bahan bakar.",
+        "Resep Transceiver Materi Max membutuhkan ingot Starbloom Max dari Tsubomi. Tanpa Tsubomi, item ini tidak bisa dibuat."
+       ]
+      }
+     ]
+    },
     {
      "version": "V1.7 71208",
      "date": "2026-10-26",
      "type": "release",
-     "title": "Ouka JJK V1.7 71208 — OUKA Wonder, GUN MAX dihentikan",
+     "title": "Ouka V1.7 71208 — OUKA Wonder, GUN MAX dihentikan",
      "summary": "OUKA Wonder menambah 54 senjata, 99 bagian pemasangan, dan 6 jenis amunisi baru, dengan layar pemasangan, serangan jarak dekat bayonet, lensa scope, jejak peluru, dan kilatan moncong.",
      "sections": [
       {
@@ -40,7 +259,7 @@
      "version": "V1.7 55114",
      "date": "2026-10-25",
      "type": "release",
-     "title": "Ouka JJK V1.7 55114 — Perbaikan Beacon, helium-3 Matahari Buatan, overclock x50, Soket Pengisian Baterai",
+     "title": "Ouka V1.7 55114 — Perbaikan Beacon, helium-3 Matahari Buatan, overclock x50, Soket Pengisian Baterai",
      "summary": "Beacon diperbaiki dengan satu blok Netherite Star Tsubomi, Matahari Buatan membakar helium-3 sebagai bahan bakar tersendiri, batas overclock naik ke x50, dan Soket Pengisian Baterai yang baru memuat hingga 200 baterai SMES.",
      "sections": [
       {
@@ -65,7 +284,7 @@
      "version": "V1.7.2.2",
      "date": "2026-10-21",
      "type": "release",
-     "title": "Ouka JJK 1.7.2.2 — Exoskeleton Bahaya Industri disesuaikan",
+     "title": "Ouka 1.7.2.2 — Exoskeleton Bahaya Industri disesuaikan",
      "summary": "Set lengkap Exoskeleton Bahaya lebih ringan: kerusakan jatuh dan api turun 25%, dan berenang di lava dihapus.",
      "sections": [
       {
@@ -87,7 +306,7 @@
      "version": "V1.7.2.1",
      "date": "2026-10-21",
      "type": "release",
-     "title": "Ouka JJK 1.7.2.1 — Heavy Core Ingot dan blok, penyeimbangan OUKA Beacon",
+     "title": "Ouka 1.7.2.1 — Heavy Core Ingot dan blok, penyeimbangan OUKA Beacon",
      "summary": "Heavy Core Ingot dan blok Heavy Core, serta nilai baru untuk OUKA Beacon.",
      "sections": [
       {
@@ -109,7 +328,7 @@
      "version": "V1.7.2",
      "date": "2026-10-20",
      "type": "release",
-     "title": "Ouka JJK 1.7.2 — bola Hollow Purple dan resep jendela kisi",
+     "title": "Ouka 1.7.2 — bola Hollow Purple dan resep jendela kisi",
      "summary": "Bola Hollow Purple tampil sama di setiap pengaturan grafis, dan jendela kisi punya resep baru.",
      "sections": [
       {
@@ -131,13 +350,13 @@
      "version": "V1.7.1",
      "date": "2026-10-18",
      "type": "release",
-     "title": "Ouka JJK 1.7.1 — nama baru dan OUKA Beacon yang diseimbangkan ulang",
-     "summary": "Limitless sekarang bernama Ouka JJK. OUKA Beacon diseimbangkan ulang: berkatnya tinggal seperempat kekuatan, resepnya butuh dua Heavy Core, dan kini ia aus seiring pemakaian serta diperbaiki dengan satu Heavy Core.",
+     "title": "Ouka 1.7.1 — nama baru dan OUKA Beacon yang diseimbangkan ulang",
+     "summary": "Limitless sekarang bernama Ouka. OUKA Beacon diseimbangkan ulang: berkatnya tinggal seperempat kekuatan, resepnya butuh dua Heavy Core, dan kini ia aus seiring pemakaian serta diperbaiki dengan satu Heavy Core.",
      "sections": [
       {
        "title": "Perubahan",
        "items": [
-        "Limitless diganti namanya menjadi Ouka JJK: tab kreatif, kategori Controls, dan roda teknik memakai nama baru. Teknik dan item tetap dengan namanya.",
+        "Limitless diganti namanya menjadi Ouka: tab kreatif, kategori Controls, dan roda teknik memakai nama baru. Teknik dan item tetap dengan namanya.",
         "Berkat OUKA Beacon kini tinggal seperempat dari sebelumnya; jangkauannya tidak berubah. Terminal menampilkan kekuatan yang baru. Ketahanan tidak lagi membuatmu kebal, dan kekebalan api serta penglihatan malam penuh butuh level lebih tinggi.",
         "Resep OUKA Beacon butuh dua Heavy Core, di sudut bawah.",
         "OUKA Beacon punya daya tahan. Ia makin cepat aus semakin banyak pemain yang diberkati dan semakin tinggi level yang diatur, dan berhenti saat rusak. Klik kanan dengan satu Heavy Core untuk memperbaikinya sampai penuh. Terminal menampilkan sisanya, dan beacon tetap menyimpan daya tahannya saat diambil."
@@ -156,7 +375,7 @@
      "version": "V1.7.0",
      "date": "2026-10-18",
      "type": "release",
-     "title": "Ouka JJK 1.7.0 — Infinity, domain, dan Raja Kutukan",
+     "title": "Ouka 1.7.0 — Infinity, domain, dan Raja Kutukan",
      "summary": "OUKA menghadirkan paket sihir lengkap: mainkan sebagai Gojo dengan Infinity, Lapse Blue, Reversal Red, Hollow Purple, dan domain Infinite Void, atau sebagai Sukuna dengan Dismantle, Cleave, Open, dan Malevolent Shrine. Senjata Kamutoke dan Hiten, Blindfold, serta Character Guide juga ikut. Menambahkan 10 item dan 1 blok, dan memuat semua yang ada di 1.6.2.2.",
      "sections": [
       {
@@ -172,7 +391,7 @@
        "title": "Catatan Penting",
        "items": [
         "Dengan opsi grafis Improved Transparency dinyalakan (defaultnya mati), bola Hollow Purple digambar di depan air, bukan di belakangnya. Ini masalah yang sudah diketahui dan akan diperbaiki di 1.7.1. Dengan opsi mati, bola digambar dengan benar.",
-        "Kembali ke versi sebelumnya setelah bermain 1.7.0 menghapus Domain Barrier dan semua item Ouka JJK (Kamutoke, Hiten, Blindfold, Character Guide, dan 6 telur kemunculan) dari dunia.",
+        "Kembali ke versi sebelumnya setelah bermain 1.7.0 menghapus Domain Barrier dan semua item Ouka (Kamutoke, Hiten, Blindfold, Character Guide, dan 6 telur kemunculan) dari dunia.",
         "Sebelum memasang 1.7.0, hapus jar OUKA lama (1.6.2.2 atau yang lebih lama) dari folder mods dan simpan hanya satu salinan GeckoLib 5.5.6. Perlu Minecraft 26.3, Fabric Loader 0.19.5 atau yang lebih baru, dan Fabric API 0.161.0+26.3 atau yang lebih baru. Pasang di klien dan server."
        ]
       }

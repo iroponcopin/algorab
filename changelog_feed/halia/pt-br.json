@@ -1,11 +1,155 @@
 {
  "lang": "pt-br",
  "brand": "halia",
- "updated": "2026-10-26",
+ "updated": "2026-10-31",
  "title": "Histórico de atualizações",
- "updated_label": "Atualizado em 2026-10-26",
+ "updated_label": "Atualizado em 2026-10-31",
  "note": "",
  "groups": [
+  {
+   "label": "V1.6",
+   "summary": "Halia V1.6 1217",
+   "releases": [
+    {
+     "version": "V1.6 1217",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.6 1217",
+     "summary": "Adiciona Halia UltraFast: equipamento tático com escudo, granadas, armas corpo a corpo e suprimentos médicos.",
+     "sections": [
+      {
+       "title": "O que mudou",
+       "items": [
+        "Novo: o escudo de flash. Também para balas de frente.",
+        "Novo: granada de fragmentação, carga ofuscante e carga de fumaça. Segure para preparar e solte para lançar.",
+        "Novo: lâmina de combate, porrete de impacto e faca de escaramuça, cada um com seu ritmo.",
+        "Novo: dez itens médicos e de comida.",
+        "Tudo pode ser fabricado e aparece na aba Halia UltraFast.",
+        "O rifle de virotes voltou ao projeto completo: alcance ilimitado, cratera no impacto e um nível máximo de dano que derruba tudo, usado por padrão."
+       ]
+      },
+      {
+       "title": "Pontos de atenção",
+       "items": [
+        "O rifle de virotes é muito forte por padrão: um tiro pode derrubar jogadores e criaturas em uma área ampla e mudar o terreno. Reduza Potência e Dano nas configurações.",
+        "Armas corpo a corpo precisam ser sacadas antes de acertar.",
+        "Itens médicos compartilham tempo de espera.",
+        "Verificado apenas em servidor e clientes de teste, ainda não em multijogador real."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.6 211",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.6 211",
+     "summary": "Adiciona o Halia Avatar Engine: use seu próprio avatar, com animações e uma roda de ações.",
+     "sections": [
+      {
+       "title": "O que mudou",
+       "items": [
+        "Novo: avatares. Coloque uma pasta de avatar em halia/avatars, aperte a tecla vírgula e escolha.",
+        "Avatares se movem com animações e scripts próprios e tocam sons próprios.",
+        "Novo: a roda de ações. Segure a tecla ponto, aponte para uma ação e solte.",
+        "Jogadores próximos veem seu avatar se o servidor tiver Halia. Scripts nunca são compartilhados."
+       ]
+      },
+      {
+       "title": "Pontos de atenção",
+       "items": [
+        "Scripts de avatar rodam em um ambiente isolado com limites rígidos. Quem passar do limite para, e só aquele avatar é afetado.",
+        "Nada se conecta a serviços externos; os avatares ficam no seu computador e no seu servidor.",
+        "Verificado apenas em clientes e servidor de teste, ainda não com dois jogadores reais."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "V1.5",
+   "summary": "Halia V1.5 8892",
+   "releases": [
+    {
+     "version": "V1.5 8892",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.5 8892",
+     "summary": "Adiciona lançamentos de suprimentos: chame um avião ou dispare um sinalizador, e uma caixa chega até você.",
+     "sections": [
+      {
+       "title": "O que mudou",
+       "items": [
+        "Novo: lançamentos de suprimentos. O comando /supplydrop call envia um avião que solta uma caixa acima de você.",
+        "Novo: três pistolas sinalizadoras. Uma caixa desce onde o sinalizador termina. Níveis maiores trazem caixas melhores.",
+        "Novo: a caixa de suprimentos, com tela própria."
+       ]
+      },
+      {
+       "title": "Pontos de atenção",
+       "items": [
+        "As chamadas têm tempo de espera, e cada mundo aceita um número limitado de lançamentos ao mesmo tempo.",
+        "Os lançamentos periódicos pelo mundo vêm desligados.",
+        "Verificado apenas em servidor e clientes de teste, ainda não em multijogador real."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.5 1018",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Halia V1.5 1018",
+     "summary": "Corrige as configurações do rifle de virotes: a potência e o dano escolhidos agora valem para os seus tiros.",
+     "sections": [
+      {
+       "title": "O que mudou",
+       "items": [
+        "Os controles de Potência e Dano nas configurações do rifle de virotes agora mudam seus tiros. Antes, todo tiro usava os valores padrão."
+       ]
+      },
+      {
+       "title": "Pontos de atenção",
+       "items": [
+        "O dano fica dentro do máximo padrão do rifle e o alcance da explosão e da onda de choque continua limitado, então potência alta muda principalmente a aparência.",
+        "Verificado apenas em servidor e clientes de teste, ainda não em multijogador real."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.5 1017",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Halia V1.5 1017",
+     "summary": "Adiciona o rifle de virote: carregue círculos de fórmula, defina o alvo e dispare um virote que cruza o ar em câmera lenta e explode onde acerta.",
+     "sections": [
+      {
+       "title": "O que mudou",
+       "items": [
+        "Novo item: o rifle de virote. Segure o botão direito para carregar e olhar pela luneta; o botão esquerdo define o ponto ou a criatura a atingir, e agachar cancela a seleção.",
+        "Enquanto você carrega, círculos de fórmula se empilham na frente do cano. Quanto mais longa a carga, mais forte o tiro.",
+        "Solte para disparar: o virote cruza o ar em câmera lenta, selos descem onde ele acerta, ele explode e uma onda de choque se espalha pelo chão.",
+        "A explosão e a onda de choque ferem criaturas e jogadores ao alcance. Jogadores no modo criativo ou espectador nunca são feridos.",
+        "Fabricado com um olho de Ender, lingotes de netherita, uma besta e uma luneta; aparece na aba Combate e na aba do Halia. As configurações abrem com uma tecla (H por padrão)."
+       ]
+      },
+      {
+       "title": "Pontos de atenção",
+       "items": [
+        "Em servidores, a explosão e a onda de choque têm alcance limitado, menor do que você vê.",
+        "Por padrão a explosão não quebra blocos; uma configuração do servidor pode permitir uma cratera.",
+        "A potência e o dano escolhidos nas configurações só valem onde o servidor permite; caso contrário, todo tiro usa os valores padrão.",
+        "Carregar no ar mantém você parado; depois do tiro você desce devagar sem dano de queda.",
+        "O atirador vê um curto filme do tiro; os filmes podem ser desligados nas configurações.",
+        "Verificado apenas em um servidor de teste e em clientes de teste, ainda não em partidas multijogador reais."
+       ]
+      }
+     ]
+    }
+   ]
+  },
   {
    "label": "V1.4",
    "summary": "Halia V1.4 1143",

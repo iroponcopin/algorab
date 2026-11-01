@@ -1,11 +1,156 @@
 {
  "lang": "en",
  "brand": "halia",
- "updated": "2026-10-26",
+ "updated": "2026-10-31",
  "title": "Changelog",
- "updated_label": "Updated 2026-10-26",
+ "updated_label": "Updated 2026-10-31",
  "note": "",
  "groups": [
+  {
+   "label": "V1.6",
+   "summary": "Halia V1.6 1217",
+   "releases": [
+    {
+     "version": "V1.6 1217",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.6 1217",
+     "summary": "Adds Halia UltraFast: tactical equipment with a shield, grenades, melee weapons and medical supplies.",
+     "sections": [
+      {
+       "title": "Highlights",
+       "items": [
+        "New: the Flash Shield. It also stops bullets from the front.",
+        "New: Frag Grenade, Dazzle Charge and Haze Charge. Hold to cook, release to throw.",
+        "New: Combat Blade, Impact Club and Skirmish Knife, each with its own swing timing.",
+        "New: ten medical and food items, from Large Heal Vial to Survival Pack.",
+        "Everything can be crafted, and is listed in its own Halia UltraFast tab.",
+        "The Bolt Rifle now matches its full design: unlimited reach for blast and shock, a crater where it lands, and a top Damage step that takes down anything, which is the default."
+       ]
+      },
+      {
+       "title": "Warnings",
+       "items": [
+        "The Bolt Rifle is very strong by default: one shot can defeat players and creatures over a wide area and change the terrain. Lower Power and Damage in its settings. Terrain stays safe only with the mob griefing rule off.",
+        "Alone on a server, the Bolt Rifle slows the whole world briefly while the bolt flies.",
+        "Melee weapons must be drawn before they can hit.",
+        "Medical items share cool-downs.",
+        "It has been checked on a test server and in test clients only, not yet in real multiplayer play."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.6 211",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.6 211",
+     "summary": "Adds the Halia Avatar Engine: wear your own avatar, with its own animations and an action wheel.",
+     "sections": [
+      {
+       "title": "Highlights",
+       "items": [
+        "New: avatars. Put an avatar folder in halia/avatars, press the comma key and choose it.",
+        "Avatars can move with their own animations and scripts, and can play their own sounds.",
+        "New: the action wheel. Hold the period key, point at an action and let go.",
+        "Players nearby see your avatar when the server has Halia. Scripts are never shared."
+       ]
+      },
+      {
+       "title": "Warnings",
+       "items": [
+        "Avatar scripts run in a sandbox with strict limits. A script that breaks them stops, and only that avatar is affected.",
+        "Nothing connects to any outside service; avatars stay on your computer and your server.",
+        "It has been checked in test clients and on a test server only, not yet with two real players."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "V1.5",
+   "summary": "Halia V1.5 8892",
+   "releases": [
+    {
+     "version": "V1.5 8892",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.5 8892",
+     "summary": "Adds supply drops: call a plane or fire a flare, and a supply crate comes down to you.",
+     "sections": [
+      {
+       "title": "Highlights",
+       "items": [
+        "New: supply drops. The command /supplydrop call sends a plane that releases a crate above you.",
+        "New: three flare launchers. Fire one and a supply crate comes down where the flare ends. A higher tier brings a better crate.",
+        "New: the supply crate, with its own contents screen."
+       ]
+      },
+      {
+       "title": "Warnings",
+       "items": [
+        "Calls have a cool-down, and each world holds a limited number of drops at once.",
+        "Timed drops across the world are off by default.",
+        "It has been checked on a test server and in test clients only, not yet in real multiplayer play."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.5 1018",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Halia V1.5 1018",
+     "summary": "Fixes the Bolt Rifle's settings: the power and damage you choose now apply to your shots.",
+     "sections": [
+      {
+       "title": "Highlights",
+       "items": [
+        "The Power and Damage sliders in the Bolt Rifle's settings now change your shots. Before, every shot used the standard values."
+       ]
+      },
+      {
+       "title": "Warnings",
+       "items": [
+        "Damage stays within the rifle's standard maximum, and the reach of the blast and the shock wave keeps its limit, so high Power changes the look more than the reach.",
+        "It has been checked on a test server and in test clients only, not yet in real multiplayer play."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.5 1017",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Halia V1.5 1017",
+     "summary": "Adds the Bolt Rifle: charge formula circles, mark your target, and fire a bolt that crosses the air in slow motion and bursts where it lands.",
+     "sections": [
+      {
+       "title": "Highlights",
+       "items": [
+        "New item: the Bolt Rifle. Hold right click to charge and look through its scope; left click marks the spot or creature to hit, and sneaking clears the mark.",
+        "While you charge, formula circles stack up in front of the barrel. The longer the charge, the stronger the shot.",
+        "Let go to fire: the bolt crosses the air in slow motion, seals come down where it lands, and it bursts, sending a shock wave across the ground.",
+        "The blast and the shock wave hurt creatures and players in their reach. Players in creative or spectator mode are never hurt.",
+        "Crafted from an eye of ender, netherite ingots, a crossbow and a spyglass; listed in the Combat tab and in Halia's tab. Its settings open with a key (H by default)."
+       ]
+      },
+      {
+       "title": "Warnings",
+       "items": [
+        "On servers the blast and the shock wave reach a limited distance, shorter than what you see.",
+        "By default the blast does not break blocks; a server setting can allow a crater.",
+        "Power and damage chosen in the settings are used only where the server allows it; otherwise every shot uses the standard values.",
+        "Charging in mid-air holds you in place; after the shot you drift down without fall damage.",
+        "A short film of the shot plays for the shooter; films can be turned off in the settings.",
+        "It has been checked on a test server and in test clients only, not yet in real multiplayer play."
+       ]
+      }
+     ]
+    }
+   ]
+  },
   {
    "label": "V1.4",
    "summary": "Halia V1.4 1143",

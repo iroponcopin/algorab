@@ -1,15 +1,105 @@
 {
  "lang": "tr",
  "brand": "tsubomi",
- "updated": "2026-10-26",
+ "updated": "2026-10-29",
  "title": "Güncelleme Geçmişi",
- "updated_label": "2026-10-26 tarihinde güncellendi",
+ "updated_label": "2026-10-29 tarihinde güncellendi",
  "note": "",
  "groups": [
   {
    "label": "V2.4",
-   "summary": "Tsubomi V2.4 1017 — Yıldız Çiçeği Phoenix, Yıldız Çiçeği Phoenix Mythic, Yıldız Çiçeği Phoenix Zenith",
+   "summary": "Tsubomi V2.4 2009 — /tsubomi gift: bir sandıktan bir hediye seçin",
    "releases": [
+    {
+     "version": "V2.4 2009",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Tsubomi V2.4 2009 — /tsubomi gift: bir sandıktan bir hediye seçin",
+     "summary": "Tsubomi V2.4 2009, /tsubomi gift komutunu değiştirir: önünüzde bir hediye sandığı belirir ve açtığınızda Creative tarzı bir seçicide bir eşya seçebilirsiniz.",
+     "sections": [
+      {
+       "title": "Değişiklikler",
+       "items": [
+        "/tsubomi gift adını korur ve operatör yetkisi gerektirmez; bu nedenle hileler kapalıyken Survival modunda da çalışır. Her oyuncu kampanya başına bir kez alabilir.",
+        "Önünüzde iki blok uzakta bir hediye sandığı belirir. Yalnızca siz açabilir veya kırabilirsiniz. Hediye seçiciyi açmak için sağ tıklayın.",
+        "Seçici, mod bazında kategori sekmeleri, bir arama kutusu, kaydırılabilir bir ızgara ve üzerine gelindiğinde görünen bir ipucu içeren Creative tarzı bir penceredir. Bir eşyaya tıklayın, ardından Take tuşuna basın. Tam olarak bir eşya alırsınız ve sandık kaldırılır.",
+        "Silahlar, zırhlar, elytra'lar, kalkanlar, yaylar ve Tsubomi'nin ekipman hatları (Starbloom, Ziz, Phoenix, Corvus ve kanatları) hiçbir zaman sunulmaz. Kazma, kürek, çapa, olta ve makas gibi basit araçlar yine de sunulur.",
+        "Yalnızca Creative eşyaları hiçbir zaman sunulmaz; spawner ve tablo listede kalır. Sandık için yer yoksa seçici hemen açılır."
+       ]
+      },
+      {
+       "title": "Dikkat Edilmesi Gerekenler",
+       "items": [
+        "Minecraft 26.3, Fabric Loader 0.19.5 veya daha yenisi, Fabric API 0.161.0+26.3 veya daha yenisi ve Java 25 gerekir. Başka mod gerekmez; Cherry isteğe bağlıdır.",
+        "Tsubomi, Alpha ile birlikte kullanılamaz. Alpha modlarından biri bile kuruluysa oyun başlamaz; önce Alpha'nın jar dosyalarını kaldır.",
+        "Survival ve ekipman kuralları geliştiricinin yorumudur. Corvus Dev listeleri değiştirebilir.",
+        "Bu sürümde sürüm kontrolü, özel sunucu, çok oyunculu mod ve gerçek Halia, OUKA ve Cherry jar dosyaları test edilmedi.",
+        "Japonca metin henüz Corvus Dev tarafından onaylanmadı.",
+        "Sandık sesi ve parçacıkları oyunun kendisine aittir. Seçici yalnızca tek bir ekran boyutunda (1280×720) gerçek bir istemcide kontrol edildi."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V2.4 1852",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Tsubomi V2.4 1852 — her hayatta kalan için /tsubomi gift",
+     "summary": "Tsubomi V2.4 1852, /tsubomi gift komutunu ekler: kampanya başına bir kez, rastgele üç eşyadan oluşan bir hediye; hileler kapalıyken Hayatta kullanılabilir.",
+     "sections": [
+      {
+       "title": "Değişiklikler",
+       "items": [
+        "/tsubomi gift, operatör yetkisi gerektirmeyen yeni bir komuttur; bu yüzden hileler kapalıyken Hayatta modda da çalışır. Her oyuncu kampanya başına bir kez alabilir.",
+        "Hediye, Hayatta elde edilebilen Minecraft, Tsubomi, Halia, OUKA ve Cherry eşyaları arasından rastgele seçilen üç farklı eşyadır. Önünüzdeki yaklaşık iki blok uzaklıktaki bir sandıkta belirirler; başlık hediyeyi duyurur ve üç eşyanın adı sohbette görünür.",
+        "Yüklü Tsubomi, Halia, OUKA veya Cherry sürümü, bu dünyanın en son gördüğü sürümden farklı olduğunda yeni bir kampanya başlar. Henüz almamış oyunculara, katıldıklarında kampanya başına bir kez haber verilir.",
+        "Bedrock, komut blokları, bariyerler ve yapı blokları gibi yalnızca yaratıcı moda ait eşyalar asla verilmez. Tsubomi yaptığı için doğurucu listede kalır.",
+        "Sandık için yer yoksa üç eşya envantere girer; sığmayanlar ayaklarınızın dibine düşer. Denetim kendi bilgisayarınızda çevrimdışı çalışır ve hiçbir yere bir şey göndermez."
+       ]
+      },
+      {
+       "title": "Dikkat Edilmesi Gerekenler",
+       "items": [
+        "Minecraft 26.3, Fabric Loader 0.19.5 veya daha yenisi, Fabric API 0.161.0+26.3 veya daha yenisi ve Java 25 gerekir. Başka mod gerekmez; Cherry isteğe bağlıdır.",
+        "Tsubomi, Alpha ile birlikte kullanılamaz. Alpha modlarından biri bile kuruluysa oyun başlamaz; önce Alpha'nın jar dosyalarını kaldır.",
+        "Hediye havuzu, geliştiricinin \"Hayatta elde edilebilir\" ifadesini okumasına dayanır. Hariç tutma listesi yaratıcı modun Operatör sekmesinden ve sürüm notlarındaki kurallardan üretilir; Corvus Dev bunu değiştirebilir.",
+        "Bu sürümde sürüm denetimi, özel sunucu, çok oyunculu oyun ve gerçek Halia, OUKA ve Cherry jar dosyaları sınanmadı. Testler Tsubomi'nin kendi sürümüyle yapıldı.",
+        "Japonca adlar ve metinler henüz Corvus Dev tarafından onaylanmadı.",
+        "Sandığın sesi ve parçacıkları oyunun kendi sesleridir. Bu sürümde özel ses eklenmedi."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V2.4 1779",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Tsubomi V2.4 1779 — Starbloom Ziz The Final, Ziz Kanatları ve kazı alanı kaydırıcısı",
+     "summary": "Tsubomi V2.4 1779, serinin son seti olan Starbloom Ziz The Final'i, kendi Ziz Kanatlarını ve Starbloom kazma için bir kazı alanı kaydırıcısını ekler.",
+     "sections": [
+      {
+       "title": "Değişiklikler",
+       "items": [
+        "Starbloom Ziz The Final, Starbloom Phoenix Zenith'in üstündeki son seridir; Boşluk Obsidyeni, Taç Altını ve Biyolüminesan Camgöbeği renklerindedir. Starbloom Max'in dizilimine sahiptir — 13 öğe: alaşım külçesi, taş ocağı kazması, kesme baltası, düzleme küreği, hasat çapası, mızrak, dört zırh parçası, kalkan, yay ve ok — ve kendi Kanatlarına sahiptir. Dayanıklılık ve kazma hızı Phoenix Zenith'in 1.25× katıdır.",
+        "Tam Ziz takımı düşme hasarı ve lav hasarı almaz, lavda yanmadan suda olduğu gibi yüzer ve ölümcül bir darbe sizi öldürmek yerine tüm zırhı parçalar — bir kez, /kill ve boşluğa karşı değil.",
+        "Ziz alaşım külçesi 3 Phoenix Zenith alaşım külçesi, 4 Nether yıldız bloğu ve 1 Netherit bloğundan yapılır ve 3 külçe verir. Ziz Kanatları Phoenix Zenith Kanatlarından, 4 Ziz külçesinden, 3 Nether yıldız bloğundan ve bir Corvus Amblemi'nden yapılır.",
+        "Ziz Kanatlarının 14 uçuş hızı kademesi vardır: temel Kanatların ivmesinin 0.5× ile 7.0× arasında, 0.5× adımlarla. ] bir kademe hızlandırır, [ bir kademe yavaşlatır; varsayılan 3.0×'tir (6. kademe).",
+        "Elinizde Starbloom kazma varken Çömelme + sağ tık kazı alanı kaydırıcısını açar: bir değer ve bir kaydırıcı, tek vuruşun kırdığı alanı seçer; 1×1'den 26×26'ya ve Hızlı Kazı'ya, tuttuğunuz kazmanın izin verdiği kadar. Sunucu artık Çömelme + kullan ile alanı değiştirmez."
+       ]
+      },
+      {
+       "title": "Dikkat Edilmesi Gerekenler",
+       "items": [
+        "Minecraft 26.3, Fabric Loader 0.19.5 veya daha yenisi, Fabric API 0.161.0+26.3 veya daha yenisi ve Java 25 gerekir. Başka mod gerekmez; Cherry isteğe bağlıdır.",
+        "Tsubomi, Alpha ile birlikte kullanılamaz. Alpha modlarından biri bile kuruluysa oyun başlamaz; önce Alpha'nın jar dosyalarını kaldır.",
+        "Corvus Dev tarafından verilen ad, renkler, konsept ve Ziz yetenekleri dışında, bu serilerin tüm sayıları ve tarifleri geliştiricinin ilk tahminidir ve yeniden dengelenebilir.",
+        "Japonca adlar Corvus Dev tarafından henüz onaylanmadı.",
+        "Kazı alanı kaydırıcısı ve Ziz yetenekleri yalnızca tek oyunculu gerçek bir istemcide denendi; özel sunucuda ve çok oyunculu modda denenmedi.",
+        "Ziz Kanatlarının çırpınma sesi henüz yapılmadı."
+       ]
+      }
+     ]
+    },
     {
      "version": "V2.4 1017",
      "date": "2026-10-26",

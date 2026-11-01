@@ -1115,6 +1115,22 @@ YOMI = {
     "Phoenix Wings": "ふぇにっくすうぃんぐす",
     "Phoenix Mythic Wings": "ふぇにっくすみしっくうぃんぐす",
     "Phoenix Zenith Wings": "ふぇにっくすぜにすうぃんぐす",
+    # --- Tsubomi V2.4 1779 (2026-10-29 サイト日付) 星桜 Ziz The Final(13 件)と Ziz Wings。読みは tsubomi-src-v26/docs/JA_READINGS_V2.4_1779.json(未確認。日本語名そのものはオーナー未承認)。 ---
+    "星桜Ziz The Final合金インゴット": "ほしざくらずぃーずざふぁいなるごうきんいんごっと",
+    "星桜Ziz The Finalの削岩鎚": "ほしざくらずぃーずざふぁいなるのさくがんづち",
+    "星桜Ziz The Finalの大伐斧": "ほしざくらずぃーずざふぁいなるのだいばつおの",
+    "星桜Ziz The Finalの地均しシャベル": "ほしざくらずぃーずざふぁいなるのじならししゃべる",
+    "星桜Ziz The Finalの豊穣クワ": "ほしざくらずぃーずざふぁいなるのほうじょうくわ",
+    "星桜Ziz The Finalの光槍": "ほしざくらずぃーずざふぁいなるのこうそう",
+    "星桜Ziz The Finalのヘルメット": "ほしざくらずぃーずざふぁいなるのへるめっと",
+    "星桜Ziz The Finalの胸当て": "ほしざくらずぃーずざふぁいなるのむねあて",
+    "星桜Ziz The Finalのレギンス": "ほしざくらずぃーずざふぁいなるのれぎんす",
+    "星桜Ziz The Finalのブーツ": "ほしざくらずぃーずざふぁいなるのぶーつ",
+    "星桜Ziz The Finalの盾": "ほしざくらずぃーずざふぁいなるのたて",
+    "星桜Ziz The Finalの弓": "ほしざくらずぃーずざふぁいなるのゆみ",
+    "星桜Ziz The Finalの矢": "ほしざくらずぃーずざふぁいなるのや",
+    "星桜Ziz Wings": "ほしざくらずぃーずうぃんぐす",
+    "Ziz Wings": "ずぃーずうぃんぐす",
     # --- Tsubomi V2.3.0.1 の Halia 1.3.0.2 / OUKA 1.7.2 の名前(表に無く WARNING が出たもの)。読みは未確認(この作業の当て字)。 ---
     "看板": "かんばん", "編成票": "へんせいひょう", "運行指令盤": "うんこうしれいばん", "展望車": "てんぼうしゃ",
     "電源車": "でんげんしゃ", "定位置停止コイル": "ていいちていしこいる", "測量器": "そくりょうき",
@@ -1152,6 +1168,7 @@ YOMI = {
     "血月瑪瑙（メノウ）レンガ": "けつげつめのうれんが", "模様入り血月瑪瑙（メノウ）": "もよういりけつげつめのう", "血月瑪瑙（メノウ）の柱": "けつげつめのうのはしら", "血月瑪瑙（メノウ）タイル": "けつげつめのうたいる", "血月瑪瑙（メノウ）ランプ": "けつげつめのうらんぷ", "血月瑪瑙（メノウ）グレーティング": "けつげつめのうぐれーてぃんぐ", "血月瑪瑙（メノウ）強化装甲板": "けつげつめのうきょうかそうこうばん", "血月瑪瑙（メノウ）の階段": "けつげつめのうのかいだん", "血月瑪瑙（メノウ）のハーフブロック": "けつげつめのうのはーふぶろっく", "血月瑪瑙（メノウ）の塀": "けつげつめのうのへい",
     "月光透石膏レンガ": "げっこうとうせっこうれんが", "模様入り月光透石膏": "もよういりげっこうとうせっこう", "月光透石膏の柱": "げっこうとうせっこうのはしら", "月光透石膏タイル": "げっこうとうせっこうたいる", "月光透石膏ランプ": "げっこうとうせっこうらんぷ", "月光透石膏グレーティング": "げっこうとうせっこうぐれーてぃんぐ", "月光透石膏強化装甲板": "げっこうとうせっこうきょうかそうこうばん", "月光透石膏の階段": "げっこうとうせっこうのかいだん", "月光透石膏のハーフブロック": "げっこうとうせっこうのはーふぶろっく", "月光透石膏の塀": "げっこうとうせっこうのへい",
     "夕暮れタンザナイトレンガ": "ゆうぐれたんざないとれんが", "模様入り夕暮れタンザナイト": "もよういりゆうぐれたんざないと", "夕暮れタンザナイトの柱": "ゆうぐれたんざないとのはしら", "夕暮れタンザナイトタイル": "ゆうぐれたんざないとたいる", "夕暮れタンザナイトランプ": "ゆうぐれたんざないとらんぷ", "夕暮れタンザナイトグレーティング": "ゆうぐれたんざないとぐれーてぃんぐ", "夕暮れタンザナイト強化装甲板": "ゆうぐれたんざないときょうかそうこうばん", "夕暮れタンザナイトの階段": "ゆうぐれたんざないとのかいだん", "夕暮れタンザナイトのハーフブロック": "ゆうぐれたんざないとのはーふぶろっく", "夕暮れタンザナイトの塀": "ゆうぐれたんざないとのへい",
+    "特異点触媒": "とくいてんしょくばい",
     "虚空特異点石レンガ": "こくうとくいてんせきれんが", "模様入り虚空特異点石": "もよういりこくうとくいてんせき", "虚空特異点石の柱": "こくうとくいてんせきのはしら", "虚空特異点石タイル": "こくうとくいてんせきたいる", "虚空特異点石ランプ": "こくうとくいてんせきらんぷ", "虚空特異点石グレーティング": "こくうとくいてんせきぐれーてぃんぐ", "虚空特異点石強化装甲板": "こくうとくいてんせききょうかそうこうばん", "虚空特異点石の階段": "こくうとくいてんせきのかいだん", "虚空特異点石のハーフブロック": "こくうとくいてんせきのはーふぶろっく", "虚空特異点石の塀": "こくうとくいてんせきのへい",
     "星雲オパールレンガ": "せいうんおぱーるれんが", "模様入り星雲オパール": "もよういりせいうんおぱーる", "星雲オパールの柱": "せいうんおぱーるのはしら", "星雲オパールタイル": "せいうんおぱーるたいる", "星雲オパールランプ": "せいうんおぱーるらんぷ", "星雲オパールグレーティング": "せいうんおぱーるぐれーてぃんぐ", "星雲オパール強化装甲板": "せいうんおぱーるきょうかそうこうばん", "星雲オパールの階段": "せいうんおぱーるのかいだん", "星雲オパールのハーフブロック": "せいうんおぱーるのはーふぶろっく", "星雲オパールの塀": "せいうんおぱーるのへい",
     "赫陽シトリンレンガ": "かくようしとりんれんが", "模様入り赫陽シトリン": "もよういりかくようしとりん", "赫陽シトリンの柱": "かくようしとりんのはしら", "赫陽シトリンタイル": "かくようしとりんたいる", "赫陽シトリンランプ": "かくようしとりんらんぷ", "赫陽シトリングレーティング": "かくようしとりんぐれーてぃんぐ", "赫陽シトリン強化装甲板": "かくようしとりんきょうかそうこうばん", "赫陽シトリンの階段": "かくようしとりんのかいだん", "赫陽シトリンのハーフブロック": "かくようしとりんのはーふぶろっく", "赫陽シトリンの塀": "かくようしとりんのへい",
@@ -1680,6 +1697,7 @@ YOMI = {
     "暖簾": "のれん", "暖": "だん",
     # 工業化 第 2 弾(I-01〜I-10)
     "転送": "てんそう", "転": "てん", "共振": "きょうしん", "共": "きょう", "振": "しん",
+    "残響": "ざんきょう", "環": "かん", "恒": "こう", "複": "ふく", "所": "しょ",   # OUKA 3371: 残響共鳴掘削塔 / 光環ビーコン / 恒星核融合炉 / 複合サイクル ガスタービン発電所
     "直結": "ちょっけつ", "直": "ちょく", "結": "けつ", "火山": "かざん", "熱水": "ねっすい",
     "造石": "ぞうせき", "造": "ぞう", "生体": "せいたい", "粉砕": "ふんさい", "砕": "さい",
     "同期": "どうき", "同": "どう", "期": "き", "端末": "たんまつ", "端": "たん",
@@ -1917,7 +1935,7 @@ def reading_of(name):
             out.append(chr(o - 0x60))
         elif 0x3041 <= o <= 0x3096 or ch in "ー":
             out.append(ch)
-        elif ch.isascii() or ch in "()（）×・、。〜 　":
+        elif ch.isascii() or ch in "()（）×・、。〜 　∞✦":
             out.append(ch)
         else:                                 # 未登録の漢字など
             unknown.append(ch)
@@ -2458,8 +2476,10 @@ def load_lang(mod_dir, modid, locale="ja_jp"):
 
 
 def display_name(lang, modid, name):
+    # The game turns a "/" in an id into "." in the translation key (Halia's ultrafast/bolt_rifle).
+    name_key = name.replace("/", ".")
     for prefix in ("item", "block"):
-        key = f"{prefix}.{modid}.{name}"
+        key = f"{prefix}.{modid}.{name_key}"
         if key in lang:
             return lang[key]
     return name
@@ -2694,6 +2714,7 @@ INTENDED_ICON_CHANGES = {
     "tsubomi:starbloom_pickaxe": ("t2052", "t2060", "Tsubomi V2.3.0.2: redrawn in the vanilla Diamond pickaxe shape, Starbloom colours (owner request 2026-10-21)"),
     "tsubomi:starbloom_shovel": ("t2053", "t2061", "Tsubomi V2.3.0.2: redrawn in the vanilla Diamond shovel shape, Starbloom colours (owner request 2026-10-21)"),
     "tsubomi:starbloom_spear": ("t2054", "t2062", "Tsubomi V2.3.0.2: redrawn in the vanilla Diamond spear shape, Starbloom colours (owner request 2026-10-21)"),
+    "ouka:smes_battery": ("t173", "t2258", "OUKA V1.7 88213: the SMES Quantum Battery is the Standard tier of the 12-tier family, its look changed to copper and brass"),
     "minecraft:white_carpet": (None, "t50", "Tsubomi 2.0.0 uses it; drawn with the white wool picture it already shared, never had one"),
     "minecraft:stonecutter": (None, "t889", "Tsubomi 2.0.0: the stonecutter became a station (120 recipes); it had no picture"),
     "ouka:operating_shelter_block": ("t157", "t269", "V1.4 new shelter look, owner-intended 2026-10-05"),
@@ -2722,6 +2743,12 @@ INTENDED_ICON_CHANGES = {
     "astraea:gas_scrubber": ("t458", "t752", "ASTRAEA V1.5.4: hand-drawn icon of the rebuilt device (owner's rebuild order 2026-10-11)"),
     "astraea:icbm_silo": ("t469", "t753", "ASTRAEA V1.5.4: hand-drawn icon of the rebuilt device (owner's rebuild order 2026-10-11)"),
     "astraea:interceptor_battery": ("t471", "t754", "ASTRAEA V1.5.4: hand-drawn icon of the rebuilt device (owner's rebuild order 2026-10-11)"),
+    "ouka:ouka_alloy_ingot": ("t120", "t2294", "OUKA V1.7 93560: the Ouka Alloy Ingot (now a 12-tier family) redrawn in the vanilla ingot shape"),
+    "ouka:ouka_alloy_block": ("t103", "t2301", "OUKA V1.7 93560: the Ouka Alloy Block (now a 12-tier family) redrawn as a polished gem block"),
+    "ouka:heavy_core_ingot": ("t2259", "t2302", "OUKA V1.7 93560: the Heavy Core Ingot redrawn again on the common ingot tone map"),
+    "ouka:pure_titanium_ingot": ("t2273", "t2326", "OUKA V1.7 93560: the Ultra-Pure Titanium Ingot redrawn on the common ingot tone map"),
+    "ouka:titanium_ingot": ("t114", "t2303", "OUKA V1.7 93560: the Titanium Ingot redrawn in the vanilla ingot shape"),
+    "#ouka:transceiver_max_key": ("t2253", "t2104", "OUKA V1.7 93560: the placeholder Starbloom Max ingot now uses the Tsubomi Starbloom Max art, and the 'either of' card shows the first of them"),
     "halia:watch_eye": ("t1691", "t2102", "Halia 1.4.0.36 hotfix: the Watch Eye inventory icon was the missing-texture block"),
 }
 
@@ -2736,6 +2763,24 @@ INTENDED_REMOVALS = {
     "ouka:ammo_mythic": "OUKA V1.7 71208: GUN MAX and its ammunition were deleted (owner's order)",
     "ouka:ammo_shotgun": "OUKA V1.7 71208: GUN MAX and its ammunition were deleted (owner's order)",
     "ouka:ammo_sniper": "OUKA V1.7 71208: GUN MAX and its ammunition were deleted (owner's order)",
+    "ouka:smes_battery_plus": "OUKA V1.7 1128612: this tier is made only in the Quantum Cell Assembler, so its crafting-table card is gone; the item stays in the mod and is on the machine sheet",
+    "ouka:smes_battery_super": "OUKA V1.7 1128612: this tier is made only in the Quantum Cell Assembler, so its crafting-table card is gone; the item stays in the mod and is on the machine sheet",
+    "ouka:smes_battery_max": "OUKA V1.7 1128612: this tier is made only in the Quantum Cell Assembler, so its crafting-table card is gone; the item stays in the mod and is on the machine sheet",
+    "ouka:smes_battery_ultra": "OUKA V1.7 1128612: this tier is made only in the Quantum Cell Assembler, so its crafting-table card is gone; the item stays in the mod and is on the machine sheet",
+    "ouka:smes_battery_ultracore": "OUKA V1.7 1128612: this tier is made only in the Quantum Cell Assembler, so its crafting-table card is gone; the item stays in the mod and is on the machine sheet",
+    "ouka:smes_battery_ultimate": "OUKA V1.7 1128612: this tier is made only in the Quantum Cell Assembler, so its crafting-table card is gone; the item stays in the mod and is on the machine sheet",
+    "ouka:smes_battery_wonder_full": "OUKA V1.7 1128612: this tier is made only in the Quantum Cell Assembler, so its crafting-table card is gone; the item stays in the mod and is on the machine sheet",
+    "ouka:smes_battery_premium": "OUKA V1.7 1128612: this tier is made only in the Quantum Cell Assembler, so its crafting-table card is gone; the item stays in the mod and is on the machine sheet",
+    "ouka:smes_battery_mythos": "OUKA V1.7 1128612: this tier is made only in the Quantum Cell Assembler, so its crafting-table card is gone; the item stays in the mod and is on the machine sheet",
+    "ouka:deuterium_cryo_ice": "OUKA V1.7 1128612: its only crafting-sheet cards were the SMES tier recipes that the Quantum Cell Assembler replaced; the item stays in the mod and on the machine sheet",
+    "ouka:amorphous_glass_ice": "OUKA V1.7 1128612: its only crafting-sheet cards were the SMES tier recipes that the Quantum Cell Assembler replaced; the item stays in the mod and on the machine sheet",
+    "ouka:bec_cryo_ice": "OUKA V1.7 1128612: its only crafting-sheet cards were the SMES tier recipes that the Quantum Cell Assembler replaced; the item stays in the mod and on the machine sheet",
+    "ouka:sakura_chrono_ice": "OUKA V1.7 1128612: its only crafting-sheet cards were the SMES tier recipes that the Quantum Cell Assembler replaced; the item stays in the mod and on the machine sheet",
+    "ouka:deuterium_cell": "OUKA V1.7 1128612: its only crafting-sheet cards were the SMES tier recipes that the Quantum Cell Assembler replaced; the item stays in the mod and on the machine sheet",
+    "ouka:tungsten_plate": "OUKA V1.7 1128612: its only crafting-sheet cards were the SMES tier recipes that the Quantum Cell Assembler replaced; the item stays in the mod and on the machine sheet",
+    "ouka:smes_battery_ultrafast": "OUKA V1.7 1128612: this tier is made only in the Quantum Cell Assembler, so its crafting-table card is gone; the item stays in the mod and is on the machine sheet",
+    "ouka:superionic_ice": "OUKA V1.7 1128612: its only crafting-sheet cards were the SMES tier recipes that the Quantum Cell Assembler replaced; the item stays in the mod and on the machine sheet",
+    "minecraft:end_crystal": "OUKA V1.7 1128612: its only crafting-sheet card was an SMES tier recipe that the Quantum Cell Assembler replaced (the item is vanilla and unchanged)",
     "ouka:lithium_dust": "OUKA V1.7 71208: its only crafting-sheet card was the deleted GUN MAX energy round; the item stays in the mod and on the machine sheet",
 }
 

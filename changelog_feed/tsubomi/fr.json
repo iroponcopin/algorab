@@ -1,15 +1,105 @@
 {
  "lang": "fr",
  "brand": "tsubomi",
- "updated": "2026-10-26",
+ "updated": "2026-10-29",
  "title": "Historique des mises à jour",
- "updated_label": "Mis à jour le 2026-10-26",
+ "updated_label": "Mis à jour le 2026-10-29",
  "note": "",
  "groups": [
   {
    "label": "V2.4",
-   "summary": "Tsubomi V2.4 1017 — Floraison d'étoile Phoenix, Floraison d'étoile Phoenix Mythic, Floraison d'étoile Phoenix Zenith",
+   "summary": "Tsubomi V2.4 2009 — /tsubomi gift : choisir un cadeau dans un coffre",
    "releases": [
+    {
+     "version": "V2.4 2009",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Tsubomi V2.4 2009 — /tsubomi gift : choisir un cadeau dans un coffre",
+     "summary": "Tsubomi V2.4 2009 modifie /tsubomi gift : un coffre cadeau apparaît devant vous, et l'ouvrir vous permet de choisir un objet dans un sélecteur de style Creative.",
+     "sections": [
+      {
+       "title": "Changements",
+       "items": [
+        "/tsubomi gift conserve son nom et ne nécessite pas de droits d'opérateur ; il fonctionne donc en Survival avec les triches désactivées. Chaque joueur peut le réclamer une fois par campagne.",
+        "Un coffre cadeau apparaît à deux blocs devant vous. Vous seul pouvez l'ouvrir ou le casser. Faites un clic droit dessus pour ouvrir le sélecteur de cadeaux.",
+        "Le sélecteur est une fenêtre de style Creative avec des onglets de catégories par mod, une zone de recherche, une grille défilante et une info-bulle au survol. Cliquez sur un objet, puis appuyez sur Take. Vous recevez exactement un objet, et le coffre disparaît.",
+        "Les armes, armures, élytres, boucliers, arcs et lignes d'équipement de Tsubomi (Starbloom, Ziz, Phoenix, Corvus et leurs ailes) ne sont jamais proposés. Les outils simples comme les pioches, pelles, houes, cannes à pêche et cisailles sont toujours proposés.",
+        "Les objets réservés au mode Creative ne sont jamais proposés, et le générateur et le tableau restent disponibles. S'il n'y a pas de place pour un coffre, le sélecteur s'ouvre immédiatement."
+       ]
+      },
+      {
+       "title": "Points d'attention",
+       "items": [
+        "Nécessite Minecraft 26.3, Fabric Loader 0.19.5 ou plus récent, Fabric API 0.161.0+26.3 ou plus récent et Java 25. Aucun autre mod n'est nécessaire ; Cherry est facultatif.",
+        "Tsubomi ne peut pas être utilisé avec Alpha. Si un seul mod Alpha est installé, le jeu ne démarre pas ; retirez d'abord les jars d'Alpha.",
+        "Les règles Survival et équipement reflètent l'interprétation du développeur. Corvus Dev peut modifier les listes.",
+        "La vérification de version, un serveur dédié, le multijoueur, ainsi que les vrais jars Halia, OUKA et Cherry n'ont pas été testés dans cette version.",
+        "Le texte japonais n'a pas encore été approuvé par Corvus Dev.",
+        "Le son et les particules du coffre sont ceux du jeu. Le sélecteur n'a été vérifié que dans un vrai client, sur une seule taille d'écran (1280×720)."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V2.4 1852",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Tsubomi V2.4 1852 — /tsubomi gift pour chaque survivant",
+     "summary": "Tsubomi V2.4 1852 ajoute /tsubomi gift : une fois par campagne, trois objets au hasard, utilisable en survie sans triche.",
+     "sections": [
+      {
+       "title": "Changements",
+       "items": [
+        "/tsubomi gift est une nouvelle commande qui ne demande aucun droit d'opérateur ; elle fonctionne donc en survie avec les triches désactivées. Chaque joueur peut la réclamer une fois par campagne.",
+        "Le cadeau est composé de trois objets différents tirés au hasard parmi les objets de Minecraft, Tsubomi, Halia, OUKA et Cherry qui s'obtiennent en survie. Ils apparaissent dans un coffre à environ deux blocs devant vous ; le titre annonce le cadeau et les trois noms s'affichent dans le chat.",
+        "Une nouvelle campagne commence dès que la version installée de Tsubomi, Halia, OUKA ou Cherry diffère de celle que ce monde a vue en dernier. Un joueur qui n'a pas encore réclamé est prévenu une fois par campagne à sa connexion.",
+        "Les objets réservés au mode créatif, comme la roche mère, les blocs de commande, les barrières et les blocs de structure, ne sont jamais donnés. Le générateur reste dans la liste, car Tsubomi le fabrique.",
+        "S'il n'y a pas de place pour un coffre, les trois objets vont dans votre inventaire, et ce qui ne rentre pas tombe à vos pieds. La vérification se fait hors ligne sur votre ordinateur et n'envoie rien nulle part."
+       ]
+      },
+      {
+       "title": "Points d'attention",
+       "items": [
+        "Nécessite Minecraft 26.3, Fabric Loader 0.19.5 ou plus récent, Fabric API 0.161.0+26.3 ou plus récent et Java 25. Aucun autre mod n'est nécessaire ; Cherry est facultatif.",
+        "Tsubomi ne peut pas être utilisé avec Alpha. Si un seul mod Alpha est installé, le jeu ne démarre pas ; retirez d'abord les jars d'Alpha.",
+        "Le réservoir de cadeaux repose sur la lecture par le développeur de « obtenable en survie ». La liste d'exclusion est issue de l'onglet Opérateur du mode créatif et des règles des notes de version ; Corvus Dev peut la modifier.",
+        "La vérification de version, un serveur dédié, le multijoueur et les vrais jars de Halia, OUKA et Cherry n'ont pas été testés dans cette version. Les tests ont utilisé la version propre de Tsubomi.",
+        "Les noms et textes japonais ne sont pas encore approuvés par Corvus Dev.",
+        "Le son et les particules du coffre sont ceux du jeu. Aucun son personnalisé n'est ajouté dans cette version."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V2.4 1779",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Tsubomi V2.4 1779 — Starbloom Ziz The Final, Ailes Ziz et curseur de zone de minage",
+     "summary": "Tsubomi V2.4 1779 ajoute Starbloom Ziz The Final, la dernière série de la lignée, avec ses propres ailes Ziz et un curseur de zone de minage pour la pioche Starbloom.",
+     "sections": [
+      {
+       "title": "Changements",
+       "items": [
+        "Starbloom Ziz The Final est la dernière série, au-dessus de Starbloom Phoenix Zenith, en Obsidienne du Vide, Or de la Couronne et Cyan bioluminescent. Elle a la gamme de Starbloom Max — 13 objets : lingot d'alliage, pioche de carrière, hache d'abattage, pelle de nivellement, houe de récolte, lance, les quatre pièces d'armure, bouclier, arc et flèche — et ses propres ailes. Durabilité et vitesse de minage sont 1.25× celles de la Phoenix Zenith.",
+        "Le set Ziz complet ne subit ni dégâts de chute ni dégâts de lave, nage dans la lave comme dans l'eau sans prendre feu, et un coup mortel fait éclater toute l'armure au lieu de vous tuer — une seule fois, et pas contre /kill ni le vide.",
+        "Un lingot d'alliage Ziz se fabrique avec 3 lingots d'alliage Phoenix Zenith, 4 blocs d'étoile du Nether et un bloc de netherite, et donne 3 lingots. Les ailes Ziz se fabriquent avec les Ailes Phoenix Zenith, 4 lingots Ziz, 3 blocs d'étoile du Nether et un Emblème de Corvus.",
+        "Les ailes Ziz ont 14 paliers de vitesse de vol, de 0.5× à 7.0× l'accélération des ailes de base, par pas de 0.5×. ] accélère d'un palier, [ ralentit d'un palier ; la valeur par défaut est 3.0× (palier 6).",
+        "Avec une pioche Starbloom en main, Accroupi + clic droit ouvre le curseur de zone de minage : une valeur et un curseur choisissent la zone que brise un coup, de 1×1 à 26×26 et Quick Mining, dans la limite de la pioche tenue. Le serveur ne change plus la zone sur Accroupi + utiliser."
+       ]
+      },
+      {
+       "title": "Points d'attention",
+       "items": [
+        "Nécessite Minecraft 26.3, Fabric Loader 0.19.5 ou plus récent, Fabric API 0.161.0+26.3 ou plus récent et Java 25. Aucun autre mod n'est nécessaire ; Cherry est facultatif.",
+        "Tsubomi ne peut pas être utilisé avec Alpha. Si un seul mod Alpha est installé, le jeu ne démarre pas ; retirez d'abord les jars d'Alpha.",
+        "Hors le nom, les couleurs, le concept et les pouvoirs de Ziz donnés par Corvus Dev, tous les chiffres et recettes de ces séries sont la première valeur du développeur et peuvent être rééquilibrés.",
+        "Les noms japonais ne sont pas encore approuvés par Corvus Dev.",
+        "Le curseur de zone de minage et les pouvoirs de Ziz n'ont été testés que dans un client réel en solo, pas sur un serveur dédié ni en multijoueur.",
+        "Le son du battement des ailes Ziz n'est pas encore fait."
+       ]
+      }
+     ]
+    },
     {
      "version": "V2.4 1017",
      "date": "2026-10-26",

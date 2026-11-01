@@ -1,20 +1,239 @@
 {
  "lang": "es",
  "brand": "ouka",
- "updated": "2026-10-26",
+ "updated": "2026-10-31",
  "title": "Historial de actualizaciones",
- "updated_label": "Actualizado el 2026-10-26",
+ "updated_label": "Actualizado el 2026-10-31",
  "note": "",
  "groups": [
   {
-   "label": "V1.7",
-   "summary": "Ouka JJK V1.7 71208 — OUKA Wonder, GUN MAX retirado",
+   "label": "V1.8",
+   "summary": "Ouka V1.8 5567 — Doce máquinas de la siguiente generación y una Battery Charging Socket tan fácil de usar como un cofre",
    "releases": [
+    {
+     "version": "V1.8 5567",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Ouka V1.8 5567 — Doce máquinas de la siguiente generación y una Battery Charging Socket tan fácil de usar como un cofre",
+     "summary": "V1.8 5567 añade la siguiente generación de doce máquinas, cada una como bloque nuevo con movimiento y pantalla nuevos, y una Battery Charging Socket tan fácil de usar como un cofre. Las máquinas anteriores siguen funcionando como antes.",
+     "sections": [
+      {
+       "title": "Cambios",
+       "items": [
+        "Cada máquina es un bloque nuevo, con aspecto, movimiento y pantalla rediseñados. Las máquinas anteriores siguen funcionando como antes.",
+        "Stasis Harvester (segunda generación del Kinetic Grinder): ajusta el campo con un control deslizante (de 3 a 9 de ancho). Derrota 4 veces más rápido y puede vencer al Wither.",
+        "Precision Assembly Cell (tercera generación de la línea de ensamblaje): dos brazos robóticos trabajan sobre una plataforma giratoria dentro de una celda de cristal de 3 × 3 × 3. Va 4 veces más rápido que la Next-Generation Assembly Line.",
+        "Logistics Skyport (segunda generación de la estación de drones): tres drones vuelan de forma independiente, cada uno transporta 9 pilas y vuela el doble de rápido. Funciona con las estaciones anteriores en ambos sentidos.",
+        "Phase Resonance Miner (segunda generación del minero resonante): elige el ancho de 1 a 9 y la profundidad de 1 a 32 con controles deslizantes. Mina 4 veces más rápido.",
+        "Molten-Salt Solar Tower (segunda generación de la torre solar): potencia nominal de 80,000 J/t (4 veces). Almacena calor en sal fundida y genera de noche. Al romperla, el calor se queda en el objeto.",
+        "Tracking Heliostat (segunda generación del heliostato): sigue al sol y devuelve la luz a la torre. Con la Molten-Salt Solar Tower entrega el doble de calor que el espejo anterior.",
+        "Tachyon Overdrive (segunda generación del acelerador): control deslizante del 100 al 1000 %, con un 25 % menos de consumo.",
+        "Isostatic Press (segunda generación de la trituradora): 4 veces más rápida.",
+        "Dynamo Crank (segunda generación de la manivela): un volante pesado sigue girando unos 3 segundos después de que dejes de girarla. La salida llega a 16,000 J/t.",
+        "Ultracentrifuge (segunda generación de la centrifugadora): separa 4 veces más rápido, con 1,5 veces más probabilidad y 8 huecos de salida.",
+        "Atomic Lattice Crafter (segunda generación del autocrafteador): craftea 4 veces más rápido.",
+        "OUKA Type-W2 “Hayate” (segunda generación del aerogenerador): unos 48 bloques de altura y potencia nominal de 200,000 J/t (4 veces). Constrúyela a 31 bloques o más de otros aerogeneradores.",
+        "Battery Charging Socket: ábrela con la mano vacía y mueve baterías como con un cofre. Las tolvas y las tuberías también se conectan. Los zócalos existentes conservan su contenido.",
+        "Código de regalo: escribe /ouka code OUKA-5567 en el juego y un regalo aparecerá delante de ti. Funciona en supervivencia sin trucos, una vez por jugador y mundo."
+       ]
+      },
+      {
+       "title": "Advertencias",
+       "items": [
+        "Antes de instalar la V1.8 5567, elimina el jar antiguo de OUKA (1.8.3371 o anterior) de la carpeta mods y conserva solo 1 copia de GeckoLib 5.5.6. Necesita Minecraft 26.3, Fabric Loader 0.19.5 o más reciente, y Fabric API 0.161.0+26.3 o más reciente. Instálalo en el cliente y en el servidor.",
+        "Las máquinas anteriores conservan su diseño y sus valores; las nuevas son bloques separados.",
+        "Si rompes la Next-Generation Assembly Line, pierdes su contenido. Ya era así antes y no cambia en esta versión.",
+        "Solo se ha comprobado con pruebas automáticas y clientes de prueba, no en partidas multijugador reales.",
+        "El README de este zip aún repite la redacción de V1.7 88213 de que se elevó el límite de almacenamiento por celda. Esa redacción es incorrecta; consulta la corrección en las notas de V1.7 91209."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.8 3371",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Ouka V1.8 3371 — Halo Beacon, 173 TW Stellar Fusion Reactor, Combined-Cycle Gas Turbine, Subspace Silo, Echo Resonance Excavator, Helium-3 Regolith Refinery",
+     "summary": "V1.8 3371 añade el Halo Beacon, el Stellar Fusion Reactor de 173 TW, la Combined-Cycle Gas Turbine de 100 MW y el Subspace Silo, además de las dos torres redondas de V1.8 2033: el Echo Resonance Excavator y la Helium-3 Regolith Refinery.",
+     "sections": [
+      {
+       "title": "Cambios",
+       "items": [
+        "El OUKA Halo Beacon es la segunda generación del OUKA Beacon. Su alcance es de 4000 bloques y sus efectos son 1,25 veces más fuertes con el mismo nivel. Su base tiene la misma forma que la baliza antigua, pero debe construirse con bloques de aleación OUKA de nivel Max o superior. Cuando dos balizas se superponen, se aplica el valor más fuerte de cada efecto; los valores no se suman. La baliza antigua no cambia.",
+        "El Stellar Fusion Reactor es el Sol artificial de tercera generación: 32 × 16 × 32 bloques, 4 veces el volumen del Sun V2, con una potencia nominal de 173 TW. Quema los mismos núcleos de deuterio y helio-3 que el Sun V2, y cada núcleo dura allí lo mismo que en aquel. A través del cristal se ve una estrella dorada con anillos giratorios.",
+        "La Combined-Cycle Gas Turbine es el generador de turbina de gas de segunda generación: 3 × 6 × 3 bloques, potencia nominal de 100 MW, 20 veces la V1. Cada 1 J de combustible da 2 J de electricidad. Su pantalla muestra la salida, el estado y el tiempo de combustible restante. A 100 MW, un bidón de queroseno dura unos 1,2 segundos.",
+        "El Subspace Silo es un silo grande nuevo sin límite de cantidad. Toca una vez el controlador montado con la mano vacía; a partir de entonces, un botón redondo junto al inventario lo abre, sin mando a distancia. Ordena por cantidad, nombre, reciente u orden arrastrado a mano, ascendente o descendente. Un PDA vinculado a un antiguo Quantum-Compression Vault, usado en el nuevo controlador, pregunta si quieres mover todo; los objetos solo se mueven al pulsar Move, y el silo antiguo queda intacto.",
+        "Se incluye la V1.8 2033, que nunca se publicó por separado: el Echo Resonance Excavator (11 × 18 y redondo; extrae un fragmento de eco cada 100 ticks con 1 GW) y la Helium-3 Regolith Refinery (7 × 12, redonda; convierte 16 End Stone o 1 regolito lunar en bidones de helio-3), ambos construidos con la nueva familia de carcasas Resonance Casing blancas. Romper un controlador de Sun V2 con combustible ahora suelta sus núcleos. También se incluye la V1.8 2012.",
+        "Comprobado en esta versión: 2404 pruebas JUnit superadas, 1556 pruebas GameTest superadas tres veces seguidas, y comprobaciones de caída del servidor sin errores en un mundo existente y en uno nuevo."
+       ]
+      },
+      {
+       "title": "Advertencias",
+       "items": [
+        "Antes de instalar la V1.8 3371, elimina el jar antiguo de OUKA (1.8.2012 o anterior) de la carpeta mods y conserva solo 1 copia de GeckoLib 5.5.6. Necesita Minecraft 26.3, Fabric Loader 0.19.5 o más reciente, y Fabric API 0.161.0+26.3 o más reciente. Instálalo en el cliente y en el servidor.",
+        "No comprobado: el equilibrio del juego. No se probó el equilibrio del Halo Beacon, del Stellar Fusion Reactor de 173 TW ni de la turbina de 100 MW, que consume combustible muy rápido.",
+        "Las comprobaciones con cliente real se ejecutaron en 59 grupos; 54 pasaron. Tres grupos (el aspecto del Sun V1, la comprobación de equipo y la comprobación de industria pesada V1.6) fallan, igual que en V1.7 1128612, y no están corregidos. Otros dos fallaron mientras se ejecutaba al mismo tiempo la compilación de lanzamiento, y pasaron al ejecutarse solos. El jar empaquetado solo se probó con las dos comprobaciones de caída del servidor.",
+        "El README de este zip aún repite la redacción de V1.7 88213 de que se elevó el límite de almacenamiento por celda. Esa redacción es incorrecta; consulta la corrección en las notas de V1.7 91209."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.8 2012",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Ouka V1.8 2012 — Transceptor Ultra a Mythos, ocho niveles de tolva, Perforadora térmica V2, puentes de pilones, Cinta V2, Sol V2 de 30 TW",
+     "summary": "V1.8 2012 añade siete niveles del transceptor de materia, ocho niveles de la tolva de hiperimpulso, la Perforadora térmica subcortical V2, puentes de pilones, una Cinta maglev V2 cuatro veces más rápida y un Sol artificial V2 de 30 TW.",
+     "sections": [
+      {
+       "title": "Cambios",
+       "items": [
+        "El transceptor de materia gana siete niveles sobre Normal y Max, de Ultra a Mythos. Alcance: Ultra 2048 bloques, UltraFast 8192, Ultracore 32768; Ultimate no tiene límite dentro de su dimensión y también une el Overworld y el Nether a 1:8; Wonder Full, Premium y Mythos unen cualquier dimensión. Objetos por tick: 512, 1024, 2048, 4096, 8192, 16384, 65536. Entre dos transceptores cuenta el alcance menor.",
+        "La tolva extractora de hiperimpulso gana ocho niveles, de Max a Mythos, que mueven 256, 512, 1024, 2048, 4096, 8192, 16384 y 65536 objetos por tick (la tolva base mueve 64).",
+        "La Perforadora térmica subcortical V2 es una máquina de 5 × 5 × 8. Excava una vez cada 10 ticks (cuatro veces V1), saca dos objetos por excavación y gasta 8 veces la potencia de V1, es decir, la misma potencia por objeto.",
+        "Los pilones Tesla inalámbricos V2 a 256 bloques o menos se unen con un puente y las redes unidas comparten su energía; el puente no crea ni destruye energía. La Cinta maglev V2 mueve los objetos cuatro veces más rápido, 20 bloques por segundo frente a 5 en V1.",
+        "El reactor de fusión Sol artificial V2 pasa a 30 TW, 6000 veces V1. Los núcleos de combustible de helio-3 que usa el Sol V2 guardan 3000 veces más energía. La fusión V1 no cambia.",
+        "Comprobado en esta compilación: JUnit 2290 pruebas PASS, GameTest 1530 pruebas PASS tres veces seguidas, comprobaciones de caída del servidor con un mundo existente y uno nuevo sin problemas."
+       ]
+      },
+      {
+       "title": "Advertencias",
+       "items": [
+        "Antes de instalar V1.8 2012, quita el jar antiguo de OUKA (1.7.1128612 o anterior) de la carpeta mods y deja solo 1 copia de GeckoLib 5.5.6. Requiere Minecraft 26.3, Fabric Loader 0.19.5 o más reciente y Fabric API 0.161.0+26.3 o más reciente. Instálalo en el cliente y en el servidor.",
+        "No comprobado: el equilibrio del juego. Los valores de los niveles, la potencia de la Perforadora térmica V2 y el Sol V2 de 30 TW no se probaron en equilibrio.",
+        "Las comprobaciones en cliente real se hicieron en 54 grupos; 49 dieron PASS a la primera y 2 más tras repetirlas con correcciones. Tres grupos (el aspecto del Sol V1, la comprobación del equipo y la de industria pesada V1.6) fallan igual que en V1.7 1128612 y no se han corregido. El jar empaquetado solo se ejecutó en las dos comprobaciones de caída del servidor.",
+        "El README de este zip aún repite la frase de V1.7 88213 según la cual se subió el límite de almacenamiento por celda. Esa frase es errónea; consulta la corrección en las notas de V1.7 91209."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "V1.7",
+   "summary": "Ouka V1.7 1128612 — Ensamblador de celdas cuánticas, aleación Ouka en 12 niveles, lingotes con forma vanilla",
+   "releases": [
+    {
+     "version": "V1.7 1128612",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Ouka V1.7 1128612 — Ensamblador de celdas cuánticas, aleación Ouka en 12 niveles, lingotes con forma vanilla",
+     "summary": "V1.7 1128612 añade el ensamblador de celdas cuánticas, una máquina de 12 × 16 × 12 que construye las baterías cuánticas SMES de Plus a Mythos, convierte la aleación Ouka en una familia de 12 niveles y redibuja todos los lingotes de OUKA con la forma del lingote vanilla.",
+     "sections": [
+      {
+       "title": "Cambios",
+       "items": [
+        "El ensamblador de celdas cuánticas es una máquina grande de 12 de ancho × 16 de alto × 12 de fondo, hecha de carcasa, cristal blindado, dos puertos de entrada, un puerto de salida y un controlador en la parte alta de una cara lateral. Ensambla las baterías cuánticas SMES de todos los niveles, de Lite a Mythos.",
+        "Cada batería cuesta el 5 % de su capacidad en energía y 10 segundos × el número del nivel (Lite 10 s, Mythos 120 s). Sin corriente espera y conserva el progreso. Por el cristal se ve una plataforma giratoria, un elevador, bobinadoras, cuatro brazos de soldadura y una grúa; la pantalla usa el diseño de cristal del reactor de fusión Sol artificial V2 y el nivel se elige con un dial.",
+        "Cambio de receta: las baterías cuánticas SMES de Plus a Mythos ahora solo se fabrican en el ensamblador, con los mismos ingredientes de antes. Lite y Standard se siguen pudiendo craftear en la mesa de trabajo.",
+        "El lingote y el bloque de aleación Ouka son ahora una familia de 12 niveles, de Lite a Mythos. Son solo materiales, sin electricidad ni cifras de energía. Cada nivel convierte 9 lingotes en 1 bloque y viceversa; cada nivel por encima de Standard se alea con 2 del nivel inferior más metales. Todo bloque es base de baliza, los niveles duros necesitan mejor pico, Max y superiores resisten fuego y lava, y los niveles altos brillan.",
+        "Todos los lingotes de OUKA, incluidos los de núcleo pesado, titanio, titanio ultrapuro, tungsteno y barrera de hierro pesado, se redibujan con la forma del lingote vanilla. Los nombres japoneses del lingote y del bloque de aleación son ahora «Ouka合金インゴット» y «Ouka合金ブロック».",
+        "Comprobado en esta compilación: JUnit 2235 pruebas PASS, GameTest 1516 pruebas PASS tres veces seguidas, comprobaciones de caída del servidor con un mundo existente y uno nuevo sin problemas."
+       ]
+      },
+      {
+       "title": "Advertencias",
+       "items": [
+        "Antes de instalar V1.7 1128612, quita el jar antiguo de OUKA (1.7.91209 o anterior) de la carpeta mods y deja una sola copia de GeckoLib 5.5.6. Necesita Minecraft 26.3, Fabric Loader 0.19.5 o posterior y Fabric API 0.161.0+26.3 o posterior. Instálalo en el cliente y en el servidor.",
+        "No comprobado: el equilibrio del juego. La energía y los tiempos del ensamblador, y las recetas y propiedades de bloque de los niveles de aleación, no se probaron en cuanto a equilibrio.",
+        "Las comprobaciones en cliente real de la sala y la pantalla del ensamblador se hicieron con la compilación anterior al último commit, que solo cambió el README y las listas de archivos del constructor de versiones; no se repitieron en el commit final. El jar empaquetado solo se ejecutó en las dos comprobaciones de caída del servidor.",
+        "El README de este zip aún repite la redacción de V1.7 88213 de que se subió el límite de almacenamiento por celda. Es incorrecta; consulta la corrección en las notas de V1.7 91209."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.7 91209",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Ouka V1.7 91209 — Industria del hielo: compresor criogénico, sintetizador criogénico cuántico y cinco hielos cuánticos",
+     "summary": "V1.7 91209 añade dos máquinas que fabrican hielo: el compresor criogénico para los cuatro hielos vanilla y el sintetizador criogénico cuántico para cinco hielos cuánticos nuevos. Los niveles de la batería cuántica SMES desde Plus ahora necesitan estos hielos.",
+     "sections": [
+      {
+       "title": "Cambios",
+       "items": [
+        "El compresor criogénico es una máquina de 2 × 2 × 2. Con agua fabrica hielo, hielo escarchado (estabilizado), hielo compacto y hielo azul; también hace hielo compacto con 2 de hielo y hielo azul con 2 de hielo compacto. Gasta energía y un solo control elige el producto. El hielo escarchado (estabilizado) nunca se derrite.",
+        "El sintetizador criogénico cuántico es una máquina de 3 × 3 × 3 que fabrica 5 hielos cuánticos: hielo de red criogénica de deuterio, hielo de vidrio amorfo, hielo superiónico XVIII, núcleo criogénico de condensado de Bose-Einstein e hielo crono de singularidad de sakura. Todos los hielos son muy resbaladizos.",
+        "El hielo de red criogénica de deuterio protege los bloques a menos de 4 de las explosiones. El hielo de vidrio amorfo es transparente y nunca se derrite. El hielo superiónico XVIII une sin pérdidas las redes de pilones separadas que toca; las máquinas siguen necesitando alcance de pilón. El núcleo criogénico de condensado de Bose-Einstein convierte el agua y la lava a menos de 3 en hielo azul y obsidiana.",
+        "El hielo crono de singularidad de sakura detiene la degradación (hojas, hielo, nieve, tierra de cultivo, cobre, coral) a menos de 8, hace que la refrigeración de un núcleo de fisión adyacente sea 4 veces más rápida y limita la velocidad de las entidades a 32 bloques por tick.",
+        "Objeto nuevo: el catalizador de singularidad de OUKA. Los niveles de la batería cuántica SMES desde Plus ahora necesitan estos hielos en sus recetas.",
+        "Comprobado en esta compilación: JUnit 2183 pruebas PASS, GameTest 1505 pruebas PASS en la última ejecución, comprobaciones de caída del servidor con un mundo existente (actualizado desde 88213) y un mundo nuevo sin problemas."
+       ]
+      },
+      {
+       "title": "Advertencias",
+       "items": [
+        "Antes de instalar V1.7 91209, quita el jar antiguo de OUKA (1.7.88213 o anterior) de la carpeta mods y deja una sola copia de GeckoLib 5.5.6. Necesita Minecraft 26.3, Fabric Loader 0.19.5 o posterior y Fabric API 0.161.0+26.3 o posterior. Instálalo en el cliente y en el servidor.",
+        "No comprobado: el equilibrio del juego. Los costes de energía, los tiempos y las recetas de los hielos y de las dos máquinas no se probaron en cuanto a equilibrio.",
+        "Una ejecución de GameTest falló una vez (la prueba del hielo de sakura, un bloque de control no se derritió) y pasó en la siguiente; no se determinó la causa y la prueba se ajustó después. Las máquinas no se jugaron en un cliente real dentro de las comprobaciones de la versión, y el jar empaquetado solo se ejecutó en las dos comprobaciones de caída del servidor.",
+        "Corrección de la nota de V1.7 88213: decía que se había subido el límite de almacenamiento por celda. En realidad, las celdas de más de unos 1,1 billones de J, como la Mythos, se cuentan como varias partes iguales, y la red de energía en sí no ha cambiado. El README de este zip repite la redacción antigua."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.7 88213",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Ouka V1.7 88213 — Batería cuántica SMES en 12 niveles, zócalo de baterías para todos los niveles, lingote de núcleo pesado redibujado",
+     "summary": "La batería cuántica SMES pasa a ser una familia de 12 niveles, de Lite (200 MJ) a Mythos (2.048.000 MJ). La batería de 400 MJ existente es ahora Standard, el zócalo de baterías admite todos los niveles mezclados y el lingote de núcleo pesado se ha redibujado con la forma del lingote vanilla.",
+     "sections": [
+      {
+       "title": "Cambios",
+       "items": [
+        "12 niveles: Lite 200 MJ, Standard 400 MJ (la batería cuántica SMES existente, con aspecto de cobre y latón), Plus 800 MJ, Super 1.600 MJ, Max 3.200 MJ, Ultra 6.400 MJ, UltraFast 12.800 MJ, Ultracore 25.600 MJ, Ultimate 51.200 MJ, Wonder Full 102.400 MJ, Premium 204.800 MJ, Mythos 2.048.000 MJ. Cada nivel tiene sus propios colores.",
+        "La carga y la descarga mueven capacidad / 4000 por tick, así que cada nivel se llena en 200 s. UltraFast descarga 4 veces más rápido.",
+        "Recetas: cada nivel se fabrica con 2 del nivel anterior más materiales. Mythos usa 8 Premium y una estrella del Nether.",
+        "El zócalo de baterías admite todos los niveles, mezclados. Las celdas de zócalos de versiones anteriores se cargan como celdas Standard.",
+        "La red admite celdas del tamaño de Mythos: se subió el límite de almacenamiento por celda y los totales se detienen en el límite. El lingote de núcleo pesado se ha redibujado con la forma del lingote vanilla.",
+        "Comprobado en esta compilación: JUnit 2136 pruebas PASS, GameTest 1485 pruebas PASS, comprobaciones de caída del servidor con un mundo existente (actualizado desde 81347) y con un mundo nuevo, sin problemas."
+       ]
+      },
+      {
+       "title": "Advertencias",
+       "items": [
+        "Antes de instalar V1.7 88213, elimina el jar antiguo de OUKA (1.7.81347 o anterior) de la carpeta mods y conserva solo 1 copia de GeckoLib 5.5.6. Requiere Minecraft 26.3, Fabric Loader 0.19.5 o superior y Fabric API 0.161.0+26.3 o superior. Instálalo en el cliente y en el servidor.",
+        "No comprobado: el equilibrio de juego. Las comprobaciones de la versión no cubren el equilibrio del Sol, de los niveles SMES ni del resto del juego, así que las capacidades y los costes de receta indicados no se han probado en cuanto a equilibrio.",
+        "Las comprobaciones con un cliente real de los nuevos niveles, el zócalo de baterías y el lingote de núcleo pesado se hicieron sobre un commit anterior de esta compilación y no se repitieron en el último. El jar empaquetado solo se ejecutó en las dos comprobaciones de caída del servidor, no con un cliente real."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.7 81347",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Ouka V1.7 81347 — Reactor de fusión Sol Artificial V2, Línea de montaje de automatización de nueva generación, Forja de carburo, Transceptor de materia Max",
+     "summary": "Añade el Reactor de fusión Sol Artificial V2 (multibloque de 16 × 16 × 16, potencia nominal de 500 GW) con una pantalla de control de cristal, la Línea de montaje de automatización de nueva generación, la Forja de carburo, el Transceptor de materia Max y la mesa de trabajo de OUKA Wonder.",
+     "sections": [
+      {
+       "title": "Cambios",
+       "items": [
+        "Reactor de fusión Sol Artificial V2 (nuevo multibloque): un cubo de 16 × 16 × 16. Potencia nominal de 500 GW (100 veces el sol V1). Solo núcleos de combustible V2. El límite de salida del Sol Artificial V1 es ahora de 5 GW.",
+        "Pantalla de control: diseño de cristal, un deslizador vertical de luz para el límite de salida, un sol en vivo. Sin botones.",
+        "Línea de montaje de automatización de nueva generación (8 × 2 × 2): pantalla de cristal, recetas como iconos en una cuadrícula con desplazamiento (todas accesibles), cola de trabajos con iconos.",
+        "Forja de carburo (3 × 3 × 3, vacío). Transceptor de materia Max: acentos morados, alcance de 256 bloques, hasta 256 objetos por tick. El haz es morado por defecto, se puede elegir rosa o azul, y se mantiene a plena luz del día.",
+        "Mesa de trabajo de OUKA Wonder; correcciones de las animaciones de recarga e inspección. Las pantallas de las máquinas ya no pausan el juego en un jugador (corrección de error).",
+        "Comprobado en esta compilación: JUnit 2126 pruebas PASS, GameTest 1485 pruebas PASS, comprobaciones en un cliente real de las nuevas pantallas y máquinas PASS, comprobaciones de fallos del servidor con un mundo existente y uno nuevo sin incidencias."
+       ]
+      },
+      {
+       "title": "Advertencias",
+       "items": [
+        "Antes de instalar V1.7 81347, elimina el jar antiguo de OUKA (1.7.71208 o anterior) de la carpeta mods y conserva solo 1 copia de GeckoLib 5.5.6. Requiere Minecraft 26.3, Fabric Loader 0.19.5 o superior y Fabric API 0.161.0+26.3 o superior. Instálalo en el cliente y en el servidor.",
+        "No probado: el Reactor de fusión Sol Artificial V2 a 500 GW en una red real. La cifra de 100 veces es relativa al sol V1.",
+        "La Forja de carburo usa la pantalla genérica de máquina, no una propia, y sus piezas móviles aún no están animadas por completo.",
+        "El consumo de helio-3 a la salida máxima del reactor es elevado. El README no incluye cifras de combustible a propósito.",
+        "La receta del Transceptor de materia Max requiere el lingote Starbloom Max de Tsubomi. Sin Tsubomi no se puede fabricar."
+       ]
+      }
+     ]
+    },
     {
      "version": "V1.7 71208",
      "date": "2026-10-26",
      "type": "release",
-     "title": "Ouka JJK V1.7 71208 — OUKA Wonder, GUN MAX retirado",
+     "title": "Ouka V1.7 71208 — OUKA Wonder, GUN MAX retirado",
      "summary": "OUKA Wonder añade 54 armas, 99 piezas de accesorios y 6 tipos nuevos de munición, con pantalla de accesorios, cuerpo a cuerpo con bayoneta, lente de mira, trazador y destello de boca.",
      "sections": [
       {
@@ -40,7 +259,7 @@
      "version": "V1.7 55114",
      "date": "2026-10-25",
      "type": "release",
-     "title": "Ouka JJK V1.7 55114 — Reparación del Beacon, helio-3 del Sol Artificial, sobrecarga x50, Toma de carga de baterías",
+     "title": "Ouka V1.7 55114 — Reparación del Beacon, helio-3 del Sol Artificial, sobrecarga x50, Toma de carga de baterías",
      "summary": "El Beacon se repara con un bloque de Estrella del Nether de Tsubomi, el Sol Artificial quema helio-3 como combustible propio, el límite de sobrecarga sube a x50 y la nueva Toma de carga de baterías admite hasta 200 baterías SMES.",
      "sections": [
       {
@@ -65,7 +284,7 @@
      "version": "V1.7.2.2",
      "date": "2026-10-21",
      "type": "release",
-     "title": "Ouka JJK 1.7.2.2 — Exoesqueleto de peligro industrial ajustado",
+     "title": "Ouka 1.7.2.2 — Exoesqueleto de peligro industrial ajustado",
      "summary": "El conjunto completo del exoesqueleto de peligro es más suave: el daño por caída y por fuego baja un 25 %, y se elimina nadar en lava.",
      "sections": [
       {
@@ -87,7 +306,7 @@
      "version": "V1.7.2.1",
      "date": "2026-10-21",
      "type": "release",
-     "title": "Ouka JJK 1.7.2.1 — Heavy Core Ingot y bloque Heavy Core, ajuste del OUKA Beacon",
+     "title": "Ouka 1.7.2.1 — Heavy Core Ingot y bloque Heavy Core, ajuste del OUKA Beacon",
      "summary": "Un Heavy Core Ingot y un bloque Heavy Core, y nuevos valores para el OUKA Beacon.",
      "sections": [
       {
@@ -109,7 +328,7 @@
      "version": "V1.7.2",
      "date": "2026-10-20",
      "type": "release",
-     "title": "Ouka JJK 1.7.2 — la esfera de Hollow Purple y la receta de la ventana de celosía",
+     "title": "Ouka 1.7.2 — la esfera de Hollow Purple y la receta de la ventana de celosía",
      "summary": "La esfera de Hollow Purple se dibuja igual con cualquier opción gráfica, y la ventana de celosía tiene una receta nueva.",
      "sections": [
       {
@@ -131,13 +350,13 @@
      "version": "V1.7.1",
      "date": "2026-10-18",
      "type": "release",
-     "title": "Ouka JJK 1.7.1 — el nuevo nombre y un OUKA Beacon reequilibrado",
-     "summary": "Limitless ahora se llama Ouka JJK. El OUKA Beacon está reequilibrado: sus bendiciones son un cuarto de fuertes, su receta necesita dos Heavy Core y ahora se desgasta con el uso y se repara con un Heavy Core.",
+     "title": "Ouka 1.7.1 — el nuevo nombre y un OUKA Beacon reequilibrado",
+     "summary": "Limitless ahora se llama Ouka. El OUKA Beacon está reequilibrado: sus bendiciones son un cuarto de fuertes, su receta necesita dos Heavy Core y ahora se desgasta con el uso y se repara con un Heavy Core.",
      "sections": [
       {
        "title": "Cambios",
        "items": [
-        "Limitless pasa a llamarse Ouka JJK: la pestaña creativa, la categoría Controls y la rueda de técnicas usan el nuevo nombre. Las técnicas y los objetos conservan sus nombres.",
+        "Limitless pasa a llamarse Ouka: la pestaña creativa, la categoría Controls y la rueda de técnicas usan el nuevo nombre. Las técnicas y los objetos conservan sus nombres.",
         "Las bendiciones del OUKA Beacon son un cuarto de fuertes que antes; el alcance no cambia. La terminal muestra la nueva fuerza. La resistencia ya no te hace inmune, y la inmunidad al fuego y la visión nocturna completa necesitan un nivel más alto.",
         "La receta del OUKA Beacon necesita dos Heavy Core, en las esquinas inferiores.",
         "El OUKA Beacon tiene durabilidad. Se desgasta más rápido cuantos más jugadores bendice y cuanto más altos son sus niveles, y se detiene al romperse. Haz clic derecho sobre él con un Heavy Core para repararlo por completo. La terminal muestra cuánto queda, y un beacon conserva su durabilidad al recogerlo."
@@ -156,7 +375,7 @@
      "version": "V1.7.0",
      "date": "2026-10-18",
      "type": "release",
-     "title": "Ouka JJK 1.7.0 — Infinito, los dominios y el Rey de las Maldiciones",
+     "title": "Ouka 1.7.0 — Infinito, los dominios y el Rey de las Maldiciones",
      "summary": "OUKA incorpora un conjunto completo de hechicería: juega como Gojo con Infinity, Lapse Blue, Reversal Red, Hollow Purple y el dominio Infinite Void, o como Sukuna con Dismantle, Cleave, Open y el Malevolent Shrine. Incluye también las armas Kamutoke e Hiten, la Blindfold y el Character Guide. Añade 10 objetos y 1 bloque, y conserva todo lo de 1.6.2.2.",
      "sections": [
       {
@@ -172,7 +391,7 @@
        "title": "Advertencias",
        "items": [
         "Con la opción gráfica Improved Transparency activada (desactivada por defecto), la esfera de Hollow Purple se dibuja delante del agua en vez de detrás. Es un problema conocido que se corregirá en 1.7.1. Con la opción desactivada se dibuja correctamente.",
-        "Volver a una versión anterior después de jugar 1.7.0 elimina del mundo la Domain Barrier y todos los objetos de Ouka JJK (Kamutoke, Hiten, Blindfold, Character Guide y los 6 huevos de aparición).",
+        "Volver a una versión anterior después de jugar 1.7.0 elimina del mundo la Domain Barrier y todos los objetos de Ouka (Kamutoke, Hiten, Blindfold, Character Guide y los 6 huevos de aparición).",
         "Antes de instalar 1.7.0, quita de la carpeta mods el jar antiguo de OUKA (1.6.2.2 o anterior) y deja solo una copia de GeckoLib 5.5.6. Necesita Minecraft 26.3, Fabric Loader 0.19.5 o más reciente y Fabric API 0.161.0+26.3 o más reciente. Instálalo tanto en el cliente como en el servidor."
        ]
       }

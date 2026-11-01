@@ -122,6 +122,48 @@
         "release": "V1.7 71208",
         "date": "2026-10-26",
         "type": "release"
+      },
+      {
+        "id": "ouka-v1.7-81347",
+        "release": "V1.7 81347",
+        "date": "2026-10-29",
+        "type": "release"
+      },
+      {
+        "id": "ouka-v1.7-88213",
+        "release": "V1.7 88213",
+        "date": "2026-10-29",
+        "type": "release"
+      },
+      {
+        "id": "ouka-v1.7-91209",
+        "release": "V1.7 91209",
+        "date": "2026-10-29",
+        "type": "release"
+      },
+      {
+        "id": "ouka-v1.7-1128612",
+        "release": "V1.7 1128612",
+        "date": "2026-10-29",
+        "type": "release"
+      },
+      {
+        "id": "ouka-v1.8-2012",
+        "release": "V1.8 2012",
+        "date": "2026-10-30",
+        "type": "release"
+      },
+      {
+        "id": "ouka-v1.8-3371",
+        "release": "V1.8 3371",
+        "date": "2026-10-30",
+        "type": "release"
+      },
+      {
+        "id": "ouka-v1.8-5567",
+        "release": "V1.8 5567",
+        "date": "2026-10-31",
+        "type": "release"
       }
     ],
     "cherry": [
@@ -346,6 +388,24 @@
         "release": "V2.4 1017",
         "date": "2026-10-26",
         "type": "release"
+      },
+      {
+        "id": "tsubomi-v2.4-1779",
+        "release": "V2.4 1779",
+        "date": "2026-10-29",
+        "type": "release"
+      },
+      {
+        "id": "tsubomi-v2.4-1852",
+        "release": "V2.4 1852",
+        "date": "2026-10-29",
+        "type": "release"
+      },
+      {
+        "id": "tsubomi-v2.4-2009",
+        "release": "V2.4 2009",
+        "date": "2026-10-29",
+        "type": "release"
       }
     ],
     "halia": [
@@ -437,6 +497,36 @@
         "id": "halia-v1.4-1143",
         "release": "V1.4 1143",
         "date": "2026-10-26",
+        "type": "release"
+      },
+      {
+        "id": "halia-v1.5-1017",
+        "release": "V1.5 1017",
+        "date": "2026-10-30",
+        "type": "release"
+      },
+      {
+        "id": "halia-v1.5-1018",
+        "release": "V1.5 1018",
+        "date": "2026-10-30",
+        "type": "release"
+      },
+      {
+        "id": "halia-v1.5-8892",
+        "release": "V1.5 8892",
+        "date": "2026-10-31",
+        "type": "release"
+      },
+      {
+        "id": "halia-v1.6-211",
+        "release": "V1.6 211",
+        "date": "2026-10-31",
+        "type": "release"
+      },
+      {
+        "id": "halia-v1.6-1217",
+        "release": "V1.6 1217",
+        "date": "2026-10-31",
         "type": "release"
       }
     ]

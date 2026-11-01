@@ -1,11 +1,155 @@
 {
  "lang": "de",
  "brand": "halia",
- "updated": "2026-10-26",
+ "updated": "2026-10-31",
  "title": "Änderungsprotokoll",
- "updated_label": "Aktualisiert am 2026-10-26",
+ "updated_label": "Aktualisiert am 2026-10-31",
  "note": "",
  "groups": [
+  {
+   "label": "V1.6",
+   "summary": "Halia V1.6 1217",
+   "releases": [
+    {
+     "version": "V1.6 1217",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.6 1217",
+     "summary": "Neu ist Halia UltraFast: taktische Ausrüstung mit Schild, Granaten, Nahkampfwaffen und Sanitätsmaterial.",
+     "sections": [
+      {
+       "title": "Änderungen",
+       "items": [
+        "Neu: der Blitzschild. Er stoppt auch Kugeln von vorn.",
+        "Neu: Splittergranate, Blendladung und Dunstladung. Halten zum Scharfmachen, loslassen zum Werfen.",
+        "Neu: Kampfklinge, Schlagkeule und Gefechtsmesser, jeweils mit eigenem Schlagtakt.",
+        "Neu: zehn Sanitäts- und Nahrungsgegenstände.",
+        "Alles ist herstellbar und im eigenen Halia-UltraFast-Reiter gelistet.",
+        "Das Bolzengewehr entspricht jetzt seinem vollen Entwurf: unbegrenzte Reichweite, ein Krater am Einschlag und eine oberste Schadensstufe, die alles niederstreckt und Standard ist."
+       ]
+      },
+      {
+       "title": "Hinweise",
+       "items": [
+        "Das Bolzengewehr ist standardmäßig sehr stark: Ein Schuss kann weithin Spieler und Kreaturen besiegen und das Gelände verändern. Stärke und Schaden lassen sich senken.",
+        "Nahkampfwaffen müssen gezogen sein, bevor sie treffen.",
+        "Sanitätsgegenstände teilen sich Abklingzeiten.",
+        "Bisher nur auf einem Testserver und in Testclients geprüft, noch nicht im echten Mehrspielerbetrieb."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.6 211",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.6 211",
+     "summary": "Neu ist die Halia Avatar Engine: Trage deinen eigenen Avatar mit eigenen Animationen und einem Aktionsrad.",
+     "sections": [
+      {
+       "title": "Änderungen",
+       "items": [
+        "Neu: Avatare. Lege einen Avatar-Ordner in halia/avatars ab, drücke die Komma-Taste und wähle ihn aus.",
+        "Avatare bewegen sich mit eigenen Animationen und Skripten und spielen eigene Klänge.",
+        "Neu: das Aktionsrad. Halte die Punkt-Taste, zeige auf eine Aktion und lass los.",
+        "Spieler in der Nähe sehen deinen Avatar, wenn der Server Halia hat. Skripte werden nie geteilt."
+       ]
+      },
+      {
+       "title": "Hinweise",
+       "items": [
+        "Avatar-Skripte laufen in einer Sandbox mit strengen Grenzen. Wer sie überschreitet, stoppt, und nur dieser Avatar ist betroffen.",
+        "Es gibt keine Verbindung zu externen Diensten; Avatare bleiben auf deinem Computer und deinem Server.",
+        "Bisher nur in Testclients und auf einem Testserver geprüft, noch nicht mit zwei echten Spielern."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "V1.5",
+   "summary": "Halia V1.5 8892",
+   "releases": [
+    {
+     "version": "V1.5 8892",
+     "date": "2026-10-31",
+     "type": "release",
+     "title": "Halia V1.5 8892",
+     "summary": "Neu sind Versorgungsabwürfe: Rufe ein Flugzeug oder feuere eine Leuchtrakete ab, und eine Versorgungskiste kommt zu dir.",
+     "sections": [
+      {
+       "title": "Änderungen",
+       "items": [
+        "Neu: Versorgungsabwürfe. Der Befehl /supplydrop call schickt ein Flugzeug, das über dir eine Kiste abwirft.",
+        "Neu: drei Signalpistolen. Am Ende der Leuchtrakete kommt eine Versorgungskiste herunter. Höhere Stufen bringen bessere Kisten.",
+        "Neu: die Versorgungskiste mit eigenem Bildschirm."
+       ]
+      },
+      {
+       "title": "Hinweise",
+       "items": [
+        "Rufe haben eine Abklingzeit, und jede Welt hält nur eine begrenzte Zahl von Abwürfen gleichzeitig.",
+        "Zeitgesteuerte Abwürfe in der Welt sind standardmäßig aus.",
+        "Bisher nur auf einem Testserver und in Testclients geprüft, noch nicht im echten Mehrspielerbetrieb."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.5 1018",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Halia V1.5 1018",
+     "summary": "Korrigiert die Einstellungen des Bolzengewehrs: Gewählte Stärke und gewählter Schaden gelten jetzt für deine Schüsse.",
+     "sections": [
+      {
+       "title": "Änderungen",
+       "items": [
+        "Die Regler für Stärke und Schaden in den Einstellungen des Bolzengewehrs verändern jetzt deine Schüsse. Bisher nutzte jeder Schuss die Standardwerte."
+       ]
+      },
+      {
+       "title": "Hinweise",
+       "items": [
+        "Der Schaden bleibt innerhalb des Standardmaximums, und die Reichweite von Explosion und Schockwelle bleibt begrenzt; hohe Stärke verändert daher vor allem das Aussehen.",
+        "Bisher nur auf einem Testserver und in Testclients geprüft, noch nicht im echten Mehrspielerbetrieb."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V1.5 1017",
+     "date": "2026-10-30",
+     "type": "release",
+     "title": "Halia V1.5 1017",
+     "summary": "Neu ist das Bolzengewehr: Formelkreise aufladen, das Ziel markieren und einen Bolzen abfeuern, der in Zeitlupe durch die Luft fliegt und am Einschlagpunkt zerbirst.",
+     "sections": [
+      {
+       "title": "Änderungen",
+       "items": [
+        "Neuer Gegenstand: das Bolzengewehr. Rechtsklick halten zum Aufladen und durch das Zielfernrohr schauen; Linksklick markiert den Punkt oder die Kreatur, Schleichen löscht die Markierung.",
+        "Während des Aufladens stapeln sich Formelkreise vor dem Lauf. Je länger die Ladung, desto stärker der Schuss.",
+        "Loslassen zum Feuern: Der Bolzen fliegt in Zeitlupe, am Einschlagpunkt senken sich Siegel herab, er zerbirst und eine Schockwelle läuft über den Boden.",
+        "Explosion und Schockwelle verletzen Kreaturen und Spieler in ihrer Reichweite. Spieler im Kreativ- oder Zuschauermodus werden nie verletzt.",
+        "Herstellbar aus einem Enderauge, Netheritbarren, einer Armbrust und einem Fernrohr; im Kampf-Reiter und in Halias Reiter. Die Einstellungen öffnen sich mit einer Taste (standardmäßig H)."
+       ]
+      },
+      {
+       "title": "Hinweise",
+       "items": [
+        "Auf Servern reichen Explosion und Schockwelle nur begrenzt weit, kürzer als das, was du siehst.",
+        "Standardmäßig zerstört die Explosion keine Blöcke; eine Servereinstellung kann einen Krater erlauben.",
+        "In den Einstellungen gewählte Stärke und Schaden gelten nur, wenn der Server es erlaubt; sonst nutzt jeder Schuss die Standardwerte.",
+        "Aufladen in der Luft hält dich an Ort und Stelle; nach dem Schuss sinkst du ohne Fallschaden herab.",
+        "Der Schütze sieht einen kurzen Film des Schusses; Filme lassen sich in den Einstellungen abschalten.",
+        "Nur auf einem Testserver und in Testclients geprüft, noch nicht im echten Mehrspielerbetrieb."
+       ]
+      }
+     ]
+    }
+   ]
+  },
   {
    "label": "V1.4",
    "summary": "Halia V1.4 1143",

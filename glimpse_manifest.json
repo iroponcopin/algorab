@@ -71,11 +71,11 @@
   },
   "ouka": {
     "mod_id": "ouka",
-    "latest": "1.7.71208",
-    "download_url": "https://iroponcopin.github.io/corvus-dev/downloads/OUKA_MODs_v1.7.71208+mc26.3.zip",
-    "file_name": "OUKA_MODs_v1.7.71208+mc26.3.zip",
-    "file_size": 38627849,
-    "sha256": "6e9db69af228e6d2bb04d95c432eb3e1c4ccab7c69af8afdae93a94b1d735947",
+    "latest": "1.8.5567",
+    "download_url": "https://iroponcopin.github.io/corvus-dev/downloads/OUKA_MODs_v1.8.5567+mc26.3.zip",
+    "file_name": "OUKA_MODs_v1.8.5567+mc26.3.zip",
+    "file_size": 50015320,
+    "sha256": "da07cd29dad6187b63c3e3e46a1dd1d0b3f0d978257ea96f9e4f47084a17dcd9",
     "jars": {
       "geckolib": {
         "path": "mods/geckolib-fabric-26.3-5.5.6.jar",
@@ -84,10 +84,10 @@
         "sha256": "68e861d4dbbf0143261503a1e958833d2b9a1a4c91b4887faf28749d66fc1cf3"
       },
       "ouka": {
-        "path": "mods/ouka-1.7.71208+mc26.3.jar",
-        "version": "1.7.71208",
-        "file_size": 38676204,
-        "sha256": "896d8817c145d7c3d5d994d45c0a8d640c487dc849cac2c24d6bb70fa0904147"
+        "path": "mods/ouka-1.8.5567+mc26.3.jar",
+        "version": "1.8.5567",
+        "file_size": 50381319,
+        "sha256": "8fe9ee906c6abe8adb5f426fece0c1b31b984db7c1fc497454daa2cd65b22a24"
       }
     }
   },
@@ -114,19 +114,19 @@
   },
   "tsubomi": {
     "mod_id": "tsubomi",
-    "latest": "2.4.1017",
-    "download_url": "https://iroponcopin.github.io/corvus-dev/downloads/tsubomi-2.4.1017.jar",
-    "file_name": "tsubomi-2.4.1017.jar",
-    "file_size": 3749414,
-    "sha256": "8c930d227b1afbaa0b6c1928d263e38f90405073f0c14bbfce82e0c5dc3703e9"
+    "latest": "2.4.2009",
+    "download_url": "https://iroponcopin.github.io/corvus-dev/downloads/tsubomi-2.4.2009.jar",
+    "file_name": "tsubomi-2.4.2009.jar",
+    "file_size": 3841033,
+    "sha256": "7b6ae8fa39190a7d01cd77f1f69276ce41595b5c1a96a21403017b327ae866d0"
   },
   "halia": {
     "mod_id": "halia",
-    "latest": "1.4.1143",
-    "download_url": "https://iroponcopin.github.io/corvus-dev/downloads/halia-1.4.1143.jar",
-    "file_name": "halia-1.4.1143.jar",
-    "file_size": 61553945,
-    "sha256": "777c522e27673130aea9e952aab25b48848cc88d75b4dc63cfd3bc612b8c6496",
+    "latest": "1.6.1217",
+    "download_url": "https://iroponcopin.github.io/corvus-dev/downloads/halia-1.6.1217.jar",
+    "file_name": "halia-1.6.1217.jar",
+    "file_size": 64158277,
+    "sha256": "b1d2650b49171a51fa4344c06b7a15bc3e59124a5f0ac41f684f5fde123c2a9f",
     "creatures": [
       {
         "id": "glimmerwisp",

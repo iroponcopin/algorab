@@ -306,8 +306,151 @@
  "changelog_brands": {
   "ouka": [
    {
+    "id": "ouka-v1.8-5567",
+    "title": "Ouka V1.8 5567 — Dodici macchine di nuova generazione e una Battery Charging Socket facile come un baule",
+    "summary": "La V1.8 5567 aggiunge la nuova generazione di dodici macchine, ciascuna un blocco nuovo con movimento e schermo rinnovati, e una Battery Charging Socket facile da usare come un baule. Le macchine precedenti continuano a funzionare come prima.",
+    "highlights": [
+     "Ogni macchina è un nuovo blocco con aspetto, movimento e schermo rinnovati. Le macchine precedenti continuano a funzionare come prima.",
+     "Stasis Harvester (2ª generazione del Kinetic Grinder): imposta l'area con un cursore (larga da 3 a 9). Uccide 4 volte più velocemente e può sconfiggere il Wither.",
+     "Precision Assembly Cell (3ª generazione della linea di assemblaggio): due bracci robotici lavorano su un piatto girevole in una cella di vetro 3 × 3 × 3. È 4 volte più veloce della Next-Generation Assembly Line.",
+     "Logistics Skyport (2ª generazione della stazione di droni): tre droni volano in modo indipendente, portano 9 pile ciascuno e volano due volte più veloce. Funziona con le stazioni precedenti in entrambe le direzioni.",
+     "Phase Resonance Miner (2ª generazione del minatore risonante): scegli larghezza da 1 a 9 e profondità da 1 a 32 con i cursori. Scava 4 volte più velocemente.",
+     "Molten-Salt Solar Tower (2ª generazione della torre solare): potenza nominale 80,000 J/t (4 volte). Accumula calore nel sale fuso e genera di notte. Se la rompi, il calore resta nell'oggetto.",
+     "Tracking Heliostat (2ª generazione dell'eliostato): segue il sole e rinvia la luce alla torre. Con la Molten-Salt Solar Tower fornisce il doppio del calore dello specchio precedente.",
+     "Tachyon Overdrive (2ª generazione dell'acceleratore): cursore dal 100 al 1000%, con il 25% di energia in meno.",
+     "Isostatic Press (2ª generazione del frantoio): 4 volte più veloce.",
+     "Dynamo Crank (2ª generazione della manovella): un volano pesante continua a girare per circa 3 secondi dopo che smetti. L'uscita arriva fino a 16,000 J/t.",
+     "Ultracentrifuge (2ª generazione della centrifuga): separa 4 volte più velocemente, con 1,5 volte le possibilità e 8 slot di uscita.",
+     "Atomic Lattice Crafter (2ª generazione del crafter automatico): crea 4 volte più velocemente.",
+     "OUKA Type-W2 “Hayate” (2ª generazione della turbina eolica): alta circa 48 blocchi, potenza nominale 200,000 J/t (4 volte). Costruiscila a 31 blocchi o più dalle altre turbine.",
+     "Battery Charging Socket: aprila a mani nude e sposta le batterie come con un baule. Anche tramogge e tubi si collegano. Le prese esistenti mantengono il loro contenuto.",
+     "Codice regalo: scrivi /ouka code OUKA-5567 in gioco e un regalo arriva davanti a te. Funziona in sopravvivenza senza cheat, una volta per giocatore e per mondo."
+    ],
+    "warnings": [
+     "Prima di installare la V1.8 5567, rimuovi il vecchio jar di OUKA (1.8.3371 o precedente) dalla cartella mods e conserva una sola copia di GeckoLib 5.5.6. Servono Minecraft 26.3, Fabric Loader 0.19.5 o più recente e Fabric API 0.161.0+26.3 o più recente. Installalo sul client e sul server.",
+     "Le macchine precedenti mantengono il loro design e i loro valori; le nuove macchine sono blocchi separati.",
+     "Rompere la Next-Generation Assembly Line fa perdere il suo contenuto; era già così e non è cambiato in questa versione.",
+     "Verificato solo con test automatici e client di prova, non in partite multiplayer reali.",
+     "Il README in questo zip ripete ancora la formulazione di V1.7 88213 secondo cui il limite di archiviazione per cella è stato alzato. Quella formulazione è errata; vedi la correzione nelle note di V1.7 91209."
+    ]
+   },
+   {
+    "id": "ouka-v1.8-3371",
+    "title": "Ouka V1.8 3371 — Halo Beacon, 173 TW Stellar Fusion Reactor, Combined-Cycle Gas Turbine, Subspace Silo, Echo Resonance Excavator, Helium-3 Regolith Refinery",
+    "summary": "La V1.8 3371 aggiunge l'Halo Beacon, lo Stellar Fusion Reactor da 173 TW, la Combined-Cycle Gas Turbine da 100 MW e il Subspace Silo, oltre alle due torri rotonde della V1.8 2033: l'Echo Resonance Excavator e la Helium-3 Regolith Refinery.",
+    "highlights": [
+     "L'OUKA Halo Beacon è la seconda generazione dell'OUKA Beacon. Il raggio è di 4000 blocchi e gli effetti sono 1,25 volte più forti allo stesso livello. Il basamento ha la stessa forma del vecchio faro, ma va costruito con blocchi di lega OUKA di livello Max o superiore. Dove due fari si sovrappongono, vale il valore più forte per ogni effetto; i valori non si sommano. Il vecchio faro non cambia.",
+     "Lo Stellar Fusion Reactor è il Sole artificiale di terza generazione: 32 × 16 × 32 blocchi, 4 volte il volume del Sun V2, con potenza nominale di 173 TW. Brucia gli stessi nuclei di deuterio ed elio-3 del Sun V2, e ogni nucleo dura lì quanto lì. Attraverso il vetro si vede una stella dorata con anelli rotanti.",
+     "La Combined-Cycle Gas Turbine è il generatore a turbina a gas di seconda generazione: 3 × 6 × 3 blocchi, potenza nominale di 100 MW, 20 volte la V1. Ogni 1 J di combustibile dà 2 J di elettricità. Lo schermo mostra l'uscita, lo stato e il tempo di combustibile rimasto. A 100 MW, una tanica di cherosene dura circa 1,2 secondi.",
+     "Il Subspace Silo è un nuovo grande silo senza limite di quantità. Tocca una volta il controller formato a mani vuote; da quel momento un pulsante rotondo accanto all'inventario lo apre, senza telecomando. Ordina per quantità, nome, recenti o ordine trascinato a mano, crescente o decrescente. Un PDA collegato a un vecchio Quantum-Compression Vault, usato sul nuovo controller, chiede se spostare tutto; gli oggetti si spostano solo quando premi Move, e il vecchio silo resta intatto.",
+     "È inclusa la V1.8 2033, mai rilasciata da sola: l'Echo Resonance Excavator (11 × 18 e rotondo; estrae un frammento d'eco ogni 100 tick a 1 GW) e la Helium-3 Regolith Refinery (7 × 12, rotonda; trasforma 16 End Stone o 1 regolite lunare in taniche di elio-3), entrambi costruiti con la nuova famiglia di involucri Resonance Casing bianchi. Rompere un controller Sun V2 alimentato ora fa cadere i suoi nuclei. Inclusa anche la V1.8 2012.",
+     "Verificato su questa build: 2404 test JUnit SUPERATI, 1556 test GameTest SUPERATI tre volte di seguito, controlli di crash del server puliti su un mondo esistente e su un mondo nuovo."
+    ],
+    "warnings": [
+     "Prima di installare la V1.8 3371, rimuovi il vecchio jar di OUKA (1.8.2012 o precedente) dalla cartella mods e conserva una sola copia di GeckoLib 5.5.6. Servono Minecraft 26.3, Fabric Loader 0.19.5 o più recente e Fabric API 0.161.0+26.3 o più recente. Installalo sul client e sul server.",
+     "Non verificato: il bilanciamento di gioco. La potenza dell'Halo Beacon, dello Stellar Fusion Reactor da 173 TW e della turbina da 100 MW, che consuma combustibile molto rapidamente, non è stata testata per il bilanciamento.",
+     "I controlli sul client reale sono stati eseguiti in 59 gruppi; 54 sono passati. Tre gruppi (l'aspetto del Sun V1, il controllo dell'equipaggiamento e il controllo dell'industria pesante V1.6) falliscono, esattamente come su V1.7 1128612, e non sono stati corretti. Altri due sono falliti mentre la build di rilascio era in esecuzione in parallelo, e sono passati se eseguiti da soli. Il jar impacchettato è stato verificato solo dai due controlli di crash del server.",
+     "Il README in questo zip ripete ancora la formulazione di V1.7 88213 secondo cui il limite di archiviazione per cella è stato alzato. Quella formulazione è errata; vedi la correzione nelle note di V1.7 91209."
+    ]
+   },
+   {
+    "id": "ouka-v1.8-2012",
+    "title": "Ouka V1.8 2012 — Ricetrasmettitore da Ultra a Mythos, otto livelli di tramoggia, Trivella termica V2, ponti di piloni, Nastro V2, Sole V2 da 30 TW",
+    "summary": "V1.8 2012 aggiunge sette livelli del ricetrasmettitore di materia, otto livelli della tramoggia a iperimpulso, la Trivella termica subcrostale V2, ponti di piloni, un Nastro maglev V2 quattro volte più veloce e un Sole artificiale V2 da 30 TW.",
+    "highlights": [
+     "Il ricetrasmettitore di materia ottiene sette livelli sopra Normal e Max, da Ultra a Mythos. Portata: Ultra 2048 blocchi, UltraFast 8192, Ultracore 32768; Ultimate non ha limite nella sua dimensione e collega anche Overworld e Nether a 1:8; Wonder Full, Premium e Mythos collegano qualsiasi dimensione. Oggetti per tick: 512, 1024, 2048, 4096, 8192, 16384, 65536. Tra due ricetrasmettitori vale la portata minore.",
+     "La tramoggia estrattrice a iperimpulso ottiene otto livelli, da Max a Mythos, che spostano 256, 512, 1024, 2048, 4096, 8192, 16384 e 65536 oggetti per tick (la tramoggia base ne sposta 64).",
+     "La Trivella termica subcrostale V2 è una macchina da 5 × 5 × 8. Scava una volta ogni 10 tick (quattro volte la V1), estrae due oggetti per scavo e usa 8 volte la potenza della V1, cioè la stessa potenza per oggetto.",
+     "I piloni Tesla wireless V2 entro 256 blocchi si collegano con un ponte e le reti collegate si dividono l'energia; il ponte non crea né distrugge energia. Il Nastro maglev V2 sposta gli oggetti quattro volte più veloce, 20 blocchi al secondo contro 5 della V1.",
+     "Il reattore a fusione Sole artificiale V2 ora è da 30 TW, 6000 volte la V1. I nuclei di combustibile all'elio-3 usati dal Sole V2 contengono 3000 volte l'energia. La fusione V1 non cambia.",
+     "Verificato su questa build: JUnit 2290 test PASS, GameTest 1530 test PASS in tre esecuzioni di fila, controlli di crash del server su un mondo esistente e uno nuovo senza anomalie."
+    ],
+    "warnings": [
+     "Prima di installare V1.8 2012, rimuovi il vecchio jar di OUKA (1.7.1128612 o precedente) dalla cartella mods e lascia una sola copia di GeckoLib 5.5.6. Servono Minecraft 26.3, Fabric Loader 0.19.5 o più recente e Fabric API 0.161.0+26.3 o più recente. Installalo su client e server.",
+     "Non verificato: il bilanciamento del gioco. I valori dei livelli, la potenza della Trivella termica V2 e il Sole V2 da 30 TW non sono stati testati per il bilanciamento.",
+     "I controlli in client reale sono stati fatti in 54 gruppi; 49 PASS al primo colpo e altri 2 dopo la riesecuzione con correzioni. Tre gruppi (l'aspetto del Sole V1, il controllo dell'equipaggiamento e quello dell'industria pesante V1.6) falliscono esattamente come su V1.7 1128612 e non sono stati corretti. Il jar impacchettato è stato eseguito solo nei due controlli di crash del server.",
+     "Il README di questo zip ripete ancora la frase di V1.7 88213 secondo cui il limite di accumulo per cella sarebbe stato alzato. Quella frase è sbagliata; vedi la correzione nelle note di V1.7 91209."
+    ]
+   },
+   {
+    "id": "ouka-v1.7-1128612",
+    "title": "Ouka V1.7 1128612 — Assemblatore di celle quantistiche, lega Ouka in 12 livelli, lingotti dalla forma vanilla",
+    "summary": "V1.7 1128612 aggiunge l'assemblatore di celle quantistiche, una macchina 12 × 16 × 12 che costruisce le batterie quantistiche SMES da Plus a Mythos, rende la lega Ouka una famiglia di 12 livelli e ridisegna tutti i lingotti OUKA con la forma del lingotto vanilla.",
+    "highlights": [
+     "L'assemblatore di celle quantistiche è una grande macchina di 12 di larghezza × 16 di altezza × 12 di profondità, fatta di involucro, vetro corazzato, due porte di ingresso, una porta di uscita e un controller nella parte alta di una faccia laterale. Assembla le batterie quantistiche SMES di tutti i livelli, da Lite a Mythos.",
+     "Ogni batteria costa il 5% della sua capacità in energia e 10 secondi × il numero del livello (Lite 10 s, Mythos 120 s). Senza corrente aspetta e conserva i progressi. Attraverso il vetro si vedono un piatto girevole, un sollevatore, avvolgitori di bobine, quattro bracci di saldatura e una gru; lo schermo ha il design in vetro del reattore a fusione Sole artificiale V2 e il livello si sceglie con un selettore.",
+     "Modifica delle ricette: le batterie quantistiche SMES da Plus a Mythos ora si fanno solo nell'assemblatore, con gli stessi ingredienti di prima. Lite e Standard si possono ancora creare al banco da lavoro.",
+     "Il lingotto e il blocco di lega Ouka sono ora una famiglia di 12 livelli, da Lite a Mythos. Sono solo materiali, senza elettricità e senza valori di energia. Ogni livello converte 9 lingotti in 1 blocco e viceversa; ogni livello sopra Standard si ottiene da 2 del livello sotto più metalli. Ogni blocco è una base per faro, i livelli duri richiedono un piccone migliore, Max e oltre resistono a fuoco e lava, e i livelli alti brillano.",
+     "Tutti i lingotti OUKA, compresi quelli di nucleo pesante, titanio, titanio ultrapuro, tungsteno e barriera di ferro pesante, sono ridisegnati con la forma del lingotto vanilla. I nomi giapponesi del lingotto e del blocco di lega sono ora «Ouka合金インゴット» e «Ouka合金ブロック».",
+     "Verificato su questa build: JUnit 2235 test PASS, GameTest 1516 test PASS tre volte di fila, controlli di crash del server su un mondo esistente e su uno nuovo senza problemi."
+    ],
+    "warnings": [
+     "Prima di installare V1.7 1128612, rimuovi il vecchio jar di OUKA (1.7.91209 o precedente) dalla cartella mods e tieni una sola copia di GeckoLib 5.5.6. Servono Minecraft 26.3, Fabric Loader 0.19.5 o più recente e Fabric API 0.161.0+26.3 o più recente. Installalo sul client e sul server.",
+     "Non verificato: il bilanciamento del gioco. Energia e tempi dell'assemblatore, e ricette e proprietà dei blocchi dei livelli di lega, non sono stati testati per il bilanciamento.",
+     "I controlli in client reale della sala e dello schermo dell'assemblatore sono stati fatti sulla build precedente all'ultimo commit, che ha cambiato solo il README e gli elenchi di file del costruttore di release; non sono stati ripetuti sul commit finale. Il jar impacchettato è stato eseguito solo nei due controlli di crash del server.",
+     "Il README di questo zip ripete ancora la formulazione di V1.7 88213 secondo cui il limite di immagazzinamento per cella era stato alzato. È sbagliata; vedi la correzione nelle note di V1.7 91209."
+    ]
+   },
+   {
+    "id": "ouka-v1.7-91209",
+    "title": "Ouka V1.7 91209 — Industria del ghiaccio: compressore criogenico, sintetizzatore criogenico quantistico e cinque ghiacci quantistici",
+    "summary": "V1.7 91209 aggiunge due macchine che producono ghiaccio: il compressore criogenico per i quattro ghiacci vanilla e il sintetizzatore criogenico quantistico per cinque nuovi ghiacci quantistici. I livelli della batteria quantistica SMES da Plus in su ora richiedono questi ghiacci.",
+    "highlights": [
+     "Il compressore criogenico è una macchina 2 × 2 × 2. Dall'acqua produce ghiaccio, ghiaccio brinato (stabilizzato), ghiaccio compatto e ghiaccio blu; fa anche ghiaccio compatto da 2 ghiacci e ghiaccio blu da 2 ghiacci compatti. Usa energia e un solo comando sceglie il prodotto. Il ghiaccio brinato (stabilizzato) non si scioglie mai.",
+     "Il sintetizzatore criogenico quantistico è una macchina 3 × 3 × 3 che produce 5 ghiacci quantistici: ghiaccio a reticolo criogenico di deuterio, ghiaccio di vetro amorfo, ghiaccio superionico XVIII, nucleo criogenico a condensato di Bose-Einstein e crono-ghiaccio a singolarità di sakura. Ogni ghiaccio è molto scivoloso.",
+     "Il ghiaccio a reticolo criogenico di deuterio protegge dalle esplosioni i blocchi entro 4. Il ghiaccio di vetro amorfo è trasparente e non si scioglie mai. Il ghiaccio superionico XVIII collega senza perdite le reti di piloni separate che tocca; le macchine devono comunque essere nel raggio di un pilone. Il nucleo criogenico a condensato di Bose-Einstein trasforma acqua e lava entro 3 in ghiaccio blu e ossidiana.",
+     "Il crono-ghiaccio a singolarità di sakura ferma il deterioramento (foglie, ghiaccio, neve, terreno arato, rame, corallo) entro 8, rende 4 volte più rapido il raffreddamento di un nucleo di fissione adiacente e limita la velocità delle entità a 32 blocchi per tick.",
+     "Nuovo oggetto: il catalizzatore di singolarità OUKA. I livelli della batteria quantistica SMES da Plus in su ora richiedono questi ghiacci nelle ricette.",
+     "Verificato su questa build: JUnit 2183 test PASS, GameTest 1505 test PASS nell'ultima esecuzione, controlli di crash del server su un mondo esistente (aggiornato da 88213) e su un mondo nuovo senza problemi."
+    ],
+    "warnings": [
+     "Prima di installare V1.7 91209, rimuovi il vecchio jar di OUKA (1.7.88213 o precedente) dalla cartella mods e tieni una sola copia di GeckoLib 5.5.6. Servono Minecraft 26.3, Fabric Loader 0.19.5 o più recente e Fabric API 0.161.0+26.3 o più recente. Installalo sul client e sul server.",
+     "Non verificato: il bilanciamento del gioco. Costi di energia, tempi e ricette dei ghiacci e delle due macchine non sono stati testati per il bilanciamento.",
+     "Un'esecuzione del GameTest è fallita una volta (il test del ghiaccio di sakura, un blocco di controllo non si è sciolto) ed è passata alla successiva; la causa non è stata individuata e il test è stato poi modificato. Le macchine non sono state giocate in un client reale nei controlli della versione, e il jar impacchettato è stato eseguito solo nei due controlli di crash del server.",
+     "Correzione alla nota di V1.7 88213: diceva che il limite di immagazzinamento per cella era stato alzato. In realtà le celle oltre circa 1,1 mila miliardi di J, come la Mythos, sono contate come più parti uguali, e la rete energetica in sé non è cambiata. Il README di questo zip ripete la vecchia formulazione."
+    ]
+   },
+   {
+    "id": "ouka-v1.7-88213",
+    "title": "Ouka V1.7 88213 — Batteria quantistica SMES in 12 livelli, presa per batterie per ogni livello, lingotto del nucleo pesante ridisegnato",
+    "summary": "La batteria quantistica SMES diventa una famiglia di 12 livelli, da Lite (200 MJ) a Mythos (2.048.000 MJ). La batteria da 400 MJ esistente ora è Standard, la presa per batterie accetta tutti i livelli mescolati e il lingotto del nucleo pesante è ridisegnato nella forma del lingotto vanilla.",
+    "highlights": [
+     "12 livelli: Lite 200 MJ, Standard 400 MJ (la batteria quantistica SMES esistente, aspetto in rame e ottone), Plus 800 MJ, Super 1.600 MJ, Max 3.200 MJ, Ultra 6.400 MJ, UltraFast 12.800 MJ, Ultracore 25.600 MJ, Ultimate 51.200 MJ, Wonder Full 102.400 MJ, Premium 204.800 MJ, Mythos 2.048.000 MJ. Ogni livello ha i propri colori.",
+     "Carica e scarica spostano capacità / 4000 per tick, quindi ogni livello si riempie in 200 s. UltraFast si scarica 4 volte più in fretta.",
+     "Ricette: ogni livello si crea con 2 del livello precedente più materiali. Mythos richiede 8 Premium e una Stella del Nether.",
+     "La presa per batterie accetta tutti i livelli, mescolati. Le celle nelle prese delle versioni precedenti vengono caricate come celle Standard.",
+     "La rete gestisce celle della dimensione di Mythos: il limite di accumulo per cella è stato alzato e i totali si fermano al limite. Il lingotto del nucleo pesante è ridisegnato nella forma del lingotto vanilla.",
+     "Verificato su questa build: JUnit 2136 test PASS, GameTest 1485 test PASS, controlli di crash del server su un mondo esistente (aggiornato da 81347) e su un mondo nuovo, senza problemi."
+    ],
+    "warnings": [
+     "Prima di installare V1.7 88213, rimuovi il vecchio jar di OUKA (1.7.81347 o precedente) dalla cartella mods e tieni solo 1 copia di GeckoLib 5.5.6. Servono Minecraft 26.3, Fabric Loader 0.19.5 o successivo e Fabric API 0.161.0+26.3 o successiva. Installalo sia sul client sia sul server.",
+     "Non verificato: il bilanciamento del gioco. I controlli della versione non coprono il bilanciamento del Sole, dei livelli SMES né del resto del gioco; le capacità e i costi delle ricette indicati non sono stati testati per il bilanciamento.",
+     "I controlli con un client reale dei nuovi livelli, della presa per batterie e del lingotto del nucleo pesante sono stati eseguiti su un commit precedente di questa build e non sono stati ripetuti sull'ultimo. Il jar impacchettato è stato eseguito solo dai due controlli di crash del server, non da un client reale."
+    ]
+   },
+   {
+    "id": "ouka-v1.7-81347",
+    "title": "Ouka V1.7 81347 — Reattore a fusione Sole Artificiale V2, Linea di assemblaggio di automazione di nuova generazione, Forgia al carburo, Transceiver di materia Max",
+    "summary": "Aggiunge il Reattore a fusione Sole Artificiale V2 (multiblocco 16 × 16 × 16, potenza nominale 500 GW) con una schermata di controllo in vetro, la Linea di assemblaggio di automazione di nuova generazione, la Forgia al carburo, il Transceiver di materia Max e il banco da lavoro di OUKA Wonder.",
+    "highlights": [
+     "Reattore a fusione Sole Artificiale V2 (nuovo multiblocco): un cubo di 16 × 16 × 16. Potenza nominale 500 GW (100 volte il sole V1). Solo nuclei di combustibile V2. Il limite di uscita del Sole Artificiale V1 è ora di 5 GW.",
+     "Schermata di controllo: design in vetro, un cursore verticale di luce per il limite di uscita, un sole dal vivo. Nessun pulsante.",
+     "Linea di assemblaggio di automazione di nuova generazione (8 × 2 × 2): schermata in vetro, ricette come icone in una griglia scorrevole (tutte raggiungibili), coda dei lavori con icone.",
+     "Forgia al carburo (3 × 3 × 3, vuoto). Transceiver di materia Max: accenti viola, portata di 256 blocchi, fino a 256 oggetti per tick. Il raggio è viola per impostazione predefinita, si può scegliere rosa o blu, e resta visibile alla luce del giorno.",
+     "Banco da lavoro di OUKA Wonder; correzioni delle animazioni di ricarica e ispezione. Le schermate delle macchine non mettono più in pausa il gioco in singolo (correzione di un errore).",
+     "Verificato su questa build: JUnit 2126 test PASS, GameTest 1485 test PASS, verifiche su un client reale delle nuove schermate e macchine PASS, verifiche di crash del server con un mondo esistente e uno nuovo senza anomalie."
+    ],
+    "warnings": [
+     "Prima di installare V1.7 81347, rimuovi il vecchio jar di OUKA (1.7.71208 o precedente) dalla cartella mods e tieni solo 1 copia di GeckoLib 5.5.6. Servono Minecraft 26.3, Fabric Loader 0.19.5 o successivo e Fabric API 0.161.0+26.3 o successivo. Installalo sia sul client sia sul server.",
+     "Non testato: il Reattore a fusione Sole Artificiale V2 a 500 GW su una rete reale. La cifra di 100 volte è relativa al sole V1.",
+     "La Forgia al carburo usa la schermata generica delle macchine, non una propria, e le sue parti mobili non sono ancora animate del tutto.",
+     "Il consumo di elio-3 alla massima uscita del reattore è elevato. Il README non riporta volutamente numeri sul combustibile.",
+     "La ricetta del Transceiver di materia Max richiede il lingotto Starbloom Max di Tsubomi. Senza Tsubomi non si può fabbricare."
+    ]
+   },
+   {
     "id": "ouka-v1.7-71208",
-    "title": "Ouka JJK V1.7 71208 — OUKA Wonder, GUN MAX ritirato",
+    "title": "Ouka V1.7 71208 — OUKA Wonder, GUN MAX ritirato",
     "summary": "OUKA Wonder aggiunge 54 armi, 99 componenti e 6 nuovi tipi di munizioni, con schermata degli accessori, corpo a corpo con baionetta, lente di mira, traccia e lampo di volata.",
     "highlights": [
      "OUKA GUN MAX è ritirato. Le armi, le munizioni e gli accessori GUN MAX esistenti vengono rimossi dai mondi al caricamento di V1.7 71208.",
@@ -323,7 +466,7 @@
    },
    {
     "id": "ouka-v1.7-55114",
-    "title": "Ouka JJK V1.7 55114 — Riparazione del Beacon, elio-3 del Sole Artificiale, overclock x50, Presa di ricarica batterie",
+    "title": "Ouka V1.7 55114 — Riparazione del Beacon, elio-3 del Sole Artificiale, overclock x50, Presa di ricarica batterie",
     "summary": "Il Beacon si ripara con un blocco di Stella del Nether Tsubomi, il Sole Artificiale brucia elio-3 come combustibile proprio, il limite di overclock sale a x50 e la nuova Presa di ricarica batterie contiene fino a 200 batterie SMES.",
     "highlights": [
      "Un Beacon Ouka si ripara con 1 blocco di Stella del Nether Tsubomi. Un lingotto di nucleo pesante non lo ripara più. Senza Tsubomi non c'è un oggetto per ripararlo, quindi non può essere riparato.",
@@ -338,7 +481,7 @@
    },
    {
     "id": "ouka-v1.7.2.2",
-    "title": "Ouka JJK 1.7.2.2 — Esoscheletro di pericolo industriale regolato",
+    "title": "Ouka 1.7.2.2 — Esoscheletro di pericolo industriale regolato",
     "summary": "L'intero set dell'esoscheletro di pericolo è più leggero: il danno da caduta e da fuoco cala del 25 %, e non si nuota più nella lava.",
     "highlights": [
      "Indossando tutti e 4 i pezzi, il danno da caduta cala del 25 % (prima era annullato) e il danno da fuoco del 25 % (prima era annullato). Ora prendi fuoco. Non si nuota più nella lava.",
@@ -350,7 +493,7 @@
    },
    {
     "id": "ouka-v1.7.2.1",
-    "title": "Ouka JJK 1.7.2.1 — Heavy Core Ingot e blocco, bilanciamento dell'OUKA Beacon",
+    "title": "Ouka 1.7.2.1 — Heavy Core Ingot e blocco, bilanciamento dell'OUKA Beacon",
     "summary": "Un Heavy Core Ingot e un blocco Heavy Core, e nuovi valori per l'OUKA Beacon.",
     "highlights": [
      "Sono aggiunti l'Heavy Core Ingot e il blocco Heavy Core. L'OUKA Beacon ora si ripara con 1 Heavy Core Ingot.",
@@ -362,7 +505,7 @@
    },
    {
     "id": "ouka-v1.7.2",
-    "title": "Ouka JJK 1.7.2 — la sfera di Hollow Purple e la ricetta della finestra a traliccio",
+    "title": "Ouka 1.7.2 — la sfera di Hollow Purple e la ricetta della finestra a traliccio",
     "summary": "La sfera di Hollow Purple appare uguale con ogni impostazione grafica, e la finestra a traliccio ha una nuova ricetta.",
     "highlights": [
      "La sfera di Hollow Purple appare uguale con ogni impostazione grafica, anche sopra e sotto l'acqua. Con Improved Transparency non si spezza più in un reticolo.",
@@ -374,10 +517,10 @@
    },
    {
     "id": "ouka-v1.7.1",
-    "title": "Ouka JJK 1.7.1 — il nuovo nome e un OUKA Beacon ribilanciato",
-    "summary": "Limitless ora si chiama Ouka JJK. L'OUKA Beacon è stato ribilanciato: le sue benedizioni sono ridotte a un quarto, la ricetta richiede due Heavy Core e ora si consuma con l'uso e si ripara con un Heavy Core.",
+    "title": "Ouka 1.7.1 — il nuovo nome e un OUKA Beacon ribilanciato",
+    "summary": "Limitless ora si chiama Ouka. L'OUKA Beacon è stato ribilanciato: le sue benedizioni sono ridotte a un quarto, la ricetta richiede due Heavy Core e ora si consuma con l'uso e si ripara con un Heavy Core.",
     "highlights": [
-     "Limitless viene rinominato Ouka JJK: la scheda creativa, la categoria Controls e la ruota delle tecniche usano il nuovo nome. Tecniche e oggetti mantengono i loro nomi.",
+     "Limitless viene rinominato Ouka: la scheda creativa, la categoria Controls e la ruota delle tecniche usano il nuovo nome. Tecniche e oggetti mantengono i loro nomi.",
      "Le benedizioni dell'OUKA Beacon sono ridotte a un quarto; il raggio resta invariato. Il terminale mostra la nuova potenza. La resistenza non ti rende più immune, e l'immunità al fuoco e la visione notturna piena richiedono un livello più alto.",
      "La ricetta dell'OUKA Beacon richiede due Heavy Core, negli angoli in basso.",
      "L'OUKA Beacon ha una durabilità. Si consuma più in fretta quanti più giocatori benedice e quanto più alti sono i suoi livelli, e si ferma quando si rompe. Fai clic destro su di esso con un Heavy Core per ripararlo del tutto. Il terminale mostra quanto resta, e un beacon conserva la sua durabilità quando lo raccogli."
@@ -389,7 +532,7 @@
    },
    {
     "id": "ouka-v1.7.0",
-    "title": "Ouka JJK 1.7.0 — Infinito, i domini e il Re delle Maledizioni",
+    "title": "Ouka 1.7.0 — Infinito, i domini e il Re delle Maledizioni",
     "summary": "OUKA aggiunge un intero set di magia: gioca come Gojo con Infinity, Lapse Blue, Reversal Red, Hollow Purple e il dominio Infinite Void, oppure come Sukuna con Dismantle, Cleave, Open e il Malevolent Shrine. Arrivano anche le armi Kamutoke e Hiten, la Blindfold e il Character Guide. Aggiunge 10 oggetti e 1 blocco e include tutto ciò che c'è in 1.6.2.2.",
     "highlights": [
      "Gojo: Infinity ferma ciò che ti viene addosso. Lapse Blue attira il mondo verso di te, Reversal Red lo respinge, e i due si uniscono in Hollow Purple. Espandi l'Infinite Void per intrappolare tutto ciò che sta sotto la sua cupola.",
@@ -399,7 +542,7 @@
     ],
     "warnings": [
      "Con l'opzione grafica Improved Transparency attiva (disattiva di default), la sfera di Hollow Purple viene disegnata davanti all'acqua invece che dietro. È un problema noto che sarà corretto in 1.7.1. Con l'opzione disattivata viene disegnata correttamente.",
-     "Tornare a una versione precedente dopo aver giocato 1.7.0 rimuove dal mondo la Domain Barrier e tutti gli oggetti Ouka JJK (Kamutoke, Hiten, Blindfold, Character Guide e le 6 uova di generazione).",
+     "Tornare a una versione precedente dopo aver giocato 1.7.0 rimuove dal mondo la Domain Barrier e tutti gli oggetti Ouka (Kamutoke, Hiten, Blindfold, Character Guide e le 6 uova di generazione).",
      "Prima di installare 1.7.0, rimuovi dalla cartella mods il vecchio jar di OUKA (1.6.2.2 o precedente) e tieni una sola copia di GeckoLib 5.5.6. Servono Minecraft 26.3, Fabric Loader 0.19.5 o più recente e Fabric API 0.161.0+26.3 o più recente. Installalo sia sul client sia sul server."
     ]
    },
@@ -1231,9 +1374,151 @@
      "Il suono del battito d'ali delle Wings non è ancora pronto.",
      "Ogni valore e ogni ricetta di queste serie è un primo valore scelto dallo sviluppatore e potrà essere riequilibrato."
     ]
+   },
+   {
+    "id": "tsubomi-v2.4-1779",
+    "title": "Tsubomi V2.4 1779 — Starbloom Ziz The Final, Ali Ziz e cursore dell'area di scavo",
+    "summary": "Tsubomi V2.4 1779 aggiunge Starbloom Ziz The Final, l'ultima serie della linea, con le proprie ali Ziz e un cursore dell'area di scavo per il piccone Starbloom.",
+    "highlights": [
+     "Starbloom Ziz The Final è l'ultima serie, sopra Starbloom Phoenix Zenith, in Ossidiana del Vuoto, Oro della Corona e Ciano bioluminescente. Ha la gamma di Starbloom Max — 13 oggetti: lingotto di lega, piccone da cava, ascia da taglio, pala livellatrice, zappa da raccolta, lancia, i quattro pezzi d'armatura, scudo, arco e freccia — e ali proprie. Durata e velocità di scavo sono 1.25× quelle della Phoenix Zenith.",
+     "Il set Ziz completo non subisce danni da caduta né danni da lava, nuota nella lava come nell'acqua senza bruciare, e un colpo letale manda in frantumi tutta l'armatura invece di ucciderti — una sola volta, e non contro /kill né il vuoto.",
+     "Un lingotto di lega Ziz si crea con 3 lingotti di lega Phoenix Zenith, 4 blocchi di stella del Nether e 1 blocco di netherite, e produce 3 lingotti. Le ali Ziz si creano con le Ali Phoenix Zenith, 4 lingotti Ziz, 3 blocchi di stella del Nether e un Emblema di Corvus.",
+     "Le ali Ziz hanno 14 livelli di velocità di volo, da 0.5× a 7.0× l'accelerazione delle ali base, a passi di 0.5×. ] sale di un livello, [ scende di un livello; il valore predefinito è 3.0× (livello 6).",
+     "Con un piccone Starbloom in mano, Accovacciarsi + clic destro apre il cursore dell'area di scavo: un valore e un cursore scelgono l'area che un colpo spezza, da 1×1 a 26×26 e Scavo Rapido, nei limiti del piccone che tieni. Il server non cambia più l'area con Accovacciarsi + usare."
+    ],
+    "warnings": [
+     "Richiede Minecraft 26.3, Fabric Loader 0.19.5 o successivo, Fabric API 0.161.0+26.3 o successiva e Java 25. Non serve nessun altro mod; Cherry è facoltativo.",
+     "Tsubomi non può essere usato insieme ad Alpha. Se è installato anche un solo mod di Alpha, il gioco non si avvia; rimuovi prima i jar di Alpha.",
+     "Oltre al nome, ai colori, al concetto e ai poteri di Ziz indicati da Corvus Dev, tutti i numeri e le ricette di queste serie sono la prima stima dello sviluppatore e potrebbero essere ribilanciati.",
+     "I nomi giapponesi non sono ancora approvati da Corvus Dev.",
+     "Il cursore dell'area di scavo e i poteri di Ziz sono stati provati solo in un client reale in singolo giocatore, non su un server dedicato né in multigiocatore.",
+     "Il suono del battito delle ali Ziz non è ancora fatto."
+    ]
+   },
+   {
+    "id": "tsubomi-v2.4-1852",
+    "title": "Tsubomi V2.4 1852 — /tsubomi gift per ogni sopravvissuto",
+    "summary": "Tsubomi V2.4 1852 aggiunge /tsubomi gift: una volta per campagna, tre oggetti casuali, utilizzabile in Sopravvivenza senza cheat.",
+    "highlights": [
+     "/tsubomi gift è un nuovo comando che non richiede permessi da operatore, quindi funziona in Sopravvivenza con i cheat disattivati. Ogni giocatore può richiederlo una volta per campagna.",
+     "Il dono è composto da tre oggetti diversi estratti a caso tra gli oggetti di Minecraft, Tsubomi, Halia, OUKA e Cherry che si possono ottenere in Sopravvivenza. Compaiono in una cassa a circa due blocchi davanti a te; il titolo annuncia il dono e i tre nomi compaiono in chat.",
+     "Una nuova campagna inizia ogni volta che la versione installata di Tsubomi, Halia, OUKA o Cherry è diversa da quella che questo mondo ha visto per ultima. Chi non ha ancora richiesto il dono riceve un avviso una volta per campagna quando entra.",
+     "Gli oggetti esclusivi della modalità creativa, come il bedrock, i blocchi di comando, le barriere e i blocchi di struttura, non vengono mai assegnati. Lo spawner resta nel pool, perché Tsubomi lo crea.",
+     "Se non c'è spazio per una cassa, i tre oggetti vanno nell'inventario e ciò che non ci entra cade ai tuoi piedi. La verifica avviene offline sul tuo computer e non invia nulla da nessuna parte."
+    ],
+    "warnings": [
+     "Richiede Minecraft 26.3, Fabric Loader 0.19.5 o successivo, Fabric API 0.161.0+26.3 o successiva e Java 25. Non serve nessun altro mod; Cherry è facoltativo.",
+     "Tsubomi non può essere usato insieme ad Alpha. Se è installato anche un solo mod di Alpha, il gioco non si avvia; rimuovi prima i jar di Alpha.",
+     "Il bacino dei doni segue la lettura dello sviluppatore di «ottenibile in Sopravvivenza». La lista delle esclusioni nasce dalla scheda Operatore della modalità creativa e dalle regole delle note di rilascio, e Corvus Dev può modificarla.",
+     "La verifica della versione, un server dedicato, il multiplayer e i jar reali di Halia, OUKA e Cherry non sono stati testati in questa versione. I test hanno usato la versione di Tsubomi stessa.",
+     "I nomi e i testi giapponesi non sono ancora approvati da Corvus Dev.",
+     "Il suono e le particelle della cassa sono quelli del gioco. In questa versione non viene aggiunto alcun suono personalizzato."
+    ]
+   },
+   {
+    "id": "tsubomi-v2.4-2009",
+    "title": "Tsubomi V2.4 2009 — /tsubomi gift: scegli un regalo da un forziere",
+    "summary": "Tsubomi V2.4 2009 modifica /tsubomi gift: davanti a te appare un forziere dei regali e, aprendolo, puoi scegliere un oggetto in un selettore in stile Creative.",
+    "highlights": [
+     "/tsubomi gift mantiene il suo nome e non richiede permessi da operatore, quindi funziona in Survival con i cheat disattivati. Ogni giocatore può richiederlo una volta per campagna.",
+     "Un forziere dei regali appare a due blocchi davanti a te. Solo tu puoi aprirlo o romperlo. Fai clic destro su di esso per aprire il selettore dei regali.",
+     "Il selettore è una finestra in stile Creative con schede di categoria per mod, una casella di ricerca, una griglia scorrevole e una descrizione al passaggio del mouse. Fai clic su un oggetto, quindi premi Take. Ricevi esattamente un oggetto e il forziere viene rimosso.",
+     "Armi, armature, elitre, scudi, archi e le linee di equipaggiamento di Tsubomi (Starbloom, Ziz, Phoenix, Corvus e le loro ali) non vengono mai offerti. Gli strumenti semplici come picconi, pale, zappe, canne da pesca e cesoie vengono ancora offerti.",
+     "Gli oggetti solo Creative non vengono mai offerti, e lo spawner e il dipinto restano disponibili. Se non c'è spazio per un forziere, il selettore si apre subito."
+    ],
+    "warnings": [
+     "Richiede Minecraft 26.3, Fabric Loader 0.19.5 o successivo, Fabric API 0.161.0+26.3 o successiva e Java 25. Non serve nessun altro mod; Cherry è facoltativo.",
+     "Tsubomi non può essere usato insieme ad Alpha. Se è installato anche un solo mod di Alpha, il gioco non si avvia; rimuovi prima i jar di Alpha.",
+     "Le regole su Survival e sull'equipaggiamento sono l'interpretazione dello sviluppatore. Corvus Dev può modificare le liste.",
+     "Il controllo della versione, un server dedicato, il multigiocatore e i jar reali di Halia, OUKA e Cherry non sono stati testati in questa versione.",
+     "Il testo giapponese non è ancora stato approvato da Corvus Dev.",
+     "Il suono e le particelle del forziere sono quelli del gioco. Il selettore è stato verificato in un client reale su una sola dimensione dello schermo (1280×720)."
+    ]
    }
   ],
   "halia": [
+   {
+    "id": "halia-v1.6-1217",
+    "title": "Halia V1.6 1217",
+    "summary": "Aggiunge Halia UltraFast: equipaggiamento tattico con scudo, granate, armi da mischia e materiale medico.",
+    "highlights": [
+     "Nuovo: lo scudo flash. Ferma anche i proiettili frontali.",
+     "Nuovo: granata a frammentazione, carica abbagliante e carica fumogena. Tieni premuto per innescare, rilascia per lanciare.",
+     "Nuovo: lama da combattimento, mazza d'impatto e coltello da schermaglia, ognuno col suo ritmo.",
+     "Nuovo: dieci oggetti medici e alimentari.",
+     "Tutto si può fabbricare e si trova nella scheda Halia UltraFast.",
+     "Il fucile a dardi torna al progetto completo: portata illimitata, cratere all'impatto e un livello massimo di danno che abbatte tutto, predefinito."
+    ],
+    "warnings": [
+     "Il fucile a dardi è molto potente di base: un colpo può abbattere giocatori e creature su una vasta area e cambiare il terreno. Riduci Potenza e Danno nelle impostazioni.",
+     "Le armi da mischia vanno estratte prima di colpire.",
+     "Gli oggetti medici condividono i tempi di ricarica.",
+     "Verificato solo su un server e client di prova, non ancora in vero multigiocatore."
+    ]
+   },
+   {
+    "id": "halia-v1.6-211",
+    "title": "Halia V1.6 211",
+    "summary": "Aggiunge Halia Avatar Engine: indossa il tuo avatar, con animazioni proprie e una ruota delle azioni.",
+    "highlights": [
+     "Nuovo: avatar. Metti una cartella avatar in halia/avatars, premi il tasto virgola e sceglilo.",
+     "Gli avatar si muovono con animazioni e script propri e riproducono suoni propri.",
+     "Nuovo: la ruota delle azioni. Tieni premuto il tasto punto, indica un'azione e rilascia.",
+     "I giocatori vicini vedono il tuo avatar se il server ha Halia. Gli script non vengono mai condivisi."
+    ],
+    "warnings": [
+     "Gli script degli avatar girano in un ambiente isolato con limiti severi. Se uno li supera si ferma, e solo quell'avatar ne risente.",
+     "Nessuna connessione a servizi esterni; gli avatar restano sul tuo computer e sul tuo server.",
+     "Verificato solo su client e server di prova, non ancora con due veri giocatori."
+    ]
+   },
+   {
+    "id": "halia-v1.5-8892",
+    "title": "Halia V1.5 8892",
+    "summary": "Aggiunge i lanci di rifornimenti: chiama un aereo o spara un razzo e una cassa arriverà da te.",
+    "highlights": [
+     "Nuovo: lanci di rifornimenti. Il comando /supplydrop call invia un aereo che sgancia una cassa sopra di te.",
+     "Nuovo: tre lanciarazzi di segnalazione. Una cassa scende dove finisce il razzo. I livelli alti portano casse migliori.",
+     "Nuovo: la cassa di rifornimenti, con una schermata propria."
+    ],
+    "warnings": [
+     "Le chiamate hanno un tempo di ricarica e ogni mondo ammette un numero limitato di lanci alla volta.",
+     "I lanci periodici nel mondo sono disattivati per impostazione predefinita.",
+     "Verificato solo su un server e client di prova, non ancora in vero multigiocatore."
+    ]
+   },
+   {
+    "id": "halia-v1.5-1018",
+    "title": "Halia V1.5 1018",
+    "summary": "Corregge le impostazioni del fucile a dardi: potenza e danno scelti ora valgono per i tuoi colpi.",
+    "highlights": [
+     "I cursori Potenza e Danno nelle impostazioni del fucile a dardi ora cambiano i tuoi colpi. Prima ogni colpo usava i valori standard."
+    ],
+    "warnings": [
+     "Il danno resta entro il massimo standard del fucile e la portata di esplosione e onda d'urto resta limitata, quindi una potenza alta cambia soprattutto l'aspetto.",
+     "Verificato solo su un server e client di prova, non ancora in vero multigiocatore."
+    ]
+   },
+   {
+    "id": "halia-v1.5-1017",
+    "title": "Halia V1.5 1017",
+    "summary": "Aggiunto il fucile a dardo: carica cerchi di formula, segna il bersaglio e spara un dardo che attraversa l'aria al rallentatore ed esplode dove colpisce.",
+    "highlights": [
+     "Nuovo oggetto: il fucile a dardo. Tieni premuto il tasto destro per caricare e guardare nel mirino; il tasto sinistro segna il punto o la creatura da colpire, e accovacciarsi cancella il segno.",
+     "Durante la carica, cerchi di formula si impilano davanti alla canna. Più lunga la carica, più forte il colpo.",
+     "Rilascia per sparare: il dardo attraversa l'aria al rallentatore, dei sigilli scendono dove colpisce, esplode e un'onda d'urto si propaga sul terreno.",
+     "L'esplosione e l'onda d'urto feriscono creature e giocatori a portata. I giocatori in modalità creativa o spettatore non vengono mai feriti.",
+     "Si fabbrica con un occhio di Ender, lingotti di netherite, una balestra e un cannocchiale; si trova nella scheda Combattimento e nella scheda di Halia. Le impostazioni si aprono con un tasto (H per impostazione predefinita)."
+    ],
+    "warnings": [
+     "Sui server l'esplosione e l'onda d'urto hanno una portata limitata, più corta di ciò che si vede.",
+     "Per impostazione predefinita l'esplosione non rompe blocchi; un'impostazione del server può consentire un cratere.",
+     "Potenza e danno scelti nelle impostazioni valgono solo dove il server lo consente; altrimenti ogni colpo usa i valori standard.",
+     "Caricare a mezz'aria ti tiene sul posto; dopo il colpo scendi lentamente senza danni da caduta.",
+     "Chi spara vede un breve filmato del colpo; i filmati si possono disattivare nelle impostazioni.",
+     "Verificato solo su un server di prova e in client di prova, non ancora in vere partite multigiocatore."
+    ]
+   },
    {
     "id": "halia-v1.4-1143",
     "title": "Halia V1.4 1143",

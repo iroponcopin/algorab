@@ -1,15 +1,105 @@
 {
  "lang": "id",
  "brand": "tsubomi",
- "updated": "2026-10-26",
+ "updated": "2026-10-29",
  "title": "Riwayat Pembaruan",
- "updated_label": "Diperbarui 2026-10-26",
+ "updated_label": "Diperbarui 2026-10-29",
  "note": "",
  "groups": [
   {
    "label": "V2.4",
-   "summary": "Tsubomi V2.4 1017 — Starbloom Phoenix, Starbloom Phoenix Mythic, Starbloom Phoenix Zenith",
+   "summary": "Tsubomi V2.4 2009 — /tsubomi gift: pilih satu hadiah dari peti",
    "releases": [
+    {
+     "version": "V2.4 2009",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Tsubomi V2.4 2009 — /tsubomi gift: pilih satu hadiah dari peti",
+     "summary": "Tsubomi V2.4 2009 mengubah /tsubomi gift: sebuah peti hadiah muncul di depan Anda, dan saat dibuka Anda dapat memilih satu item di pemilih bergaya Creative.",
+     "sections": [
+      {
+       "title": "Perubahan",
+       "items": [
+        "/tsubomi gift mempertahankan namanya dan tidak memerlukan hak operator, sehingga berfungsi di Survival dengan cheat nonaktif. Setiap pemain dapat mengklaimnya sekali per kampanye.",
+        "Peti hadiah muncul dua blok di depan Anda. Hanya Anda yang dapat membukanya atau menghancurkannya. Klik kanan untuk membuka pemilih hadiah.",
+        "Pemilih adalah jendela bergaya Creative dengan tab kategori per mod, kotak pencarian, kisi yang dapat digulir, dan tooltip saat kursor diarahkan. Klik satu item, lalu tekan Take. Anda mendapat tepat satu item, dan peti dihapus.",
+        "Senjata, armor, elytra, perisai, busur, dan lini perlengkapan Tsubomi (Starbloom, Ziz, Phoenix, Corvus, dan sayapnya) tidak pernah ditawarkan. Alat sederhana seperti beliung, sekop, cangkul, pancing, dan gunting tetap ditawarkan.",
+        "Item khusus Creative tidak pernah ditawarkan, dan spawner serta lukisan tetap ada. Jika tidak ada ruang untuk peti, pemilih langsung terbuka."
+       ]
+      },
+      {
+       "title": "Catatan Penting",
+       "items": [
+        "Membutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, dan Java 25. Tidak perlu mod lain; Cherry bersifat opsional.",
+        "Tsubomi tidak dapat digunakan bersama Alpha. Jika satu mod Alpha saja terpasang, game tidak akan berjalan; lepaskan dulu jar Alpha.",
+        "Aturan Survival dan perlengkapan adalah interpretasi pengembang. Corvus Dev dapat mengubah daftar.",
+        "Pemeriksaan versi, server dedicated, multipemain, serta file jar Halia, OUKA, dan Cherry yang asli tidak diuji di rilis ini.",
+        "Teks bahasa Jepang belum disetujui oleh Corvus Dev.",
+        "Suara dan partikel peti berasal dari game itu sendiri. Pemilih hanya diperiksa di klien asli pada satu ukuran layar (1280×720)."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V2.4 1852",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Tsubomi V2.4 1852 — /tsubomi gift untuk setiap penyintas",
+     "summary": "Tsubomi V2.4 1852 menambahkan /tsubomi gift: sekali per kampanye, tiga item acak, bisa dipakai di Survival tanpa cheat.",
+     "sections": [
+      {
+       "title": "Perubahan",
+       "items": [
+        "/tsubomi gift adalah perintah baru yang tidak memerlukan hak operator, jadi bisa dipakai di Survival dengan cheat dimatikan. Setiap pemain dapat mengklaimnya sekali per kampanye.",
+        "Hadiahnya adalah tiga item berbeda yang dipilih acak dari item Minecraft, Tsubomi, Halia, OUKA, dan Cherry yang bisa didapat di Survival. Hadiah muncul di peti sekitar dua blok di depan Anda; judul mengumumkan hadiah dan ketiga nama item muncul di chat.",
+        "Kampanye baru dimulai setiap kali versi Tsubomi, Halia, OUKA, atau Cherry yang terpasang berbeda dari yang terakhir dilihat dunia ini. Pemain yang belum mengklaim akan diberi tahu sekali per kampanye saat bergabung.",
+        "Item khusus mode kreatif seperti bedrock, blok perintah, barrier, dan blok struktur tidak pernah diberikan. Spawner tetap ada di daftar karena Tsubomi bisa membuatnya.",
+        "Jika tidak ada ruang untuk peti, ketiga item masuk ke inventaris, dan yang tidak muat jatuh di dekat kaki Anda. Pemeriksaan berjalan offline di komputer Anda sendiri dan tidak mengirim apa pun ke mana pun."
+       ]
+      },
+      {
+       "title": "Catatan Penting",
+       "items": [
+        "Membutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, dan Java 25. Tidak perlu mod lain; Cherry bersifat opsional.",
+        "Tsubomi tidak dapat digunakan bersama Alpha. Jika satu mod Alpha saja terpasang, game tidak akan berjalan; lepaskan dulu jar Alpha.",
+        "Kumpulan hadiah mengikuti tafsir pengembang atas \"bisa didapat di Survival\". Daftar pengecualian diambil dari tab Operator mode kreatif dan aturan di catatan rilis, dan Corvus Dev dapat mengubahnya.",
+        "Pemeriksaan versi, server dedicated, multipemain, dan jar Halia, OUKA, serta Cherry yang sebenarnya tidak diuji pada rilis ini. Pengujian memakai versi Tsubomi sendiri.",
+        "Nama dan teks Jepang belum disetujui Corvus Dev.",
+        "Suara dan partikel peti adalah bawaan game. Tidak ada suara khusus yang ditambahkan pada rilis ini."
+       ]
+      }
+     ]
+    },
+    {
+     "version": "V2.4 1779",
+     "date": "2026-10-29",
+     "type": "release",
+     "title": "Tsubomi V2.4 1779 — Starbloom Ziz The Final, Sayap Ziz, dan geser area tambang",
+     "summary": "Tsubomi V2.4 1779 menambahkan Starbloom Ziz The Final, seri terakhir dari lini ini, dengan Sayap Ziz sendiri dan geser area tambang untuk beliung Starbloom.",
+     "sections": [
+      {
+       "title": "Perubahan",
+       "items": [
+        "Starbloom Ziz The Final adalah seri terakhir, di atas Starbloom Phoenix Zenith, dalam Obsidian Kehampaan, Emas Korona, dan Cyan Bioluminesen. Ia memiliki susunan Starbloom Max — 13 item: ingot paduan, beliung tambang, kapak tebang, sekop perata, cangkul panen, tombak, empat bagian zirah, perisai, busur dan panah — dan Sayapnya sendiri. Daya tahan dan kecepatan tambang 1.25× dari Phoenix Zenith.",
+        "Set Ziz lengkap tidak menerima kerusakan jatuh dan kerusakan lava, berenang di lava seperti di air tanpa terbakar, dan pukulan mematikan memecahkan semua zirah alih-alih membunuh Anda — sekali saja, dan tidak untuk /kill atau kehampaan.",
+        "Ingot paduan Ziz dibuat dari 3 ingot paduan Phoenix Zenith, 4 blok bintang Nether, dan 1 blok netherite, menghasilkan 3 ingot. Sayap Ziz dibuat dari Sayap Phoenix Zenith, 4 ingot Ziz, 3 blok bintang Nether, dan Lambang Corvus.",
+        "Sayap Ziz punya 14 tingkat kecepatan terbang, dari 0.5× hingga 7.0× percepatan sayap dasar, per langkah 0.5×. ] naik satu tingkat, [ turun satu tingkat; bawaannya 3.0× (tingkat 6).",
+        "Dengan beliung Starbloom di tangan, Jongkok + klik kanan membuka geser area tambang: satu nilai dan satu geser memilih area yang dipecahkan satu ayunan, dari 1×1 sampai 26×26 dan Penambangan Cepat, sesuai batas beliung yang Anda pegang. Server tidak lagi mengganti area dengan Jongkok + gunakan."
+       ]
+      },
+      {
+       "title": "Catatan Penting",
+       "items": [
+        "Membutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, dan Java 25. Tidak perlu mod lain; Cherry bersifat opsional.",
+        "Tsubomi tidak dapat digunakan bersama Alpha. Jika satu mod Alpha saja terpasang, game tidak akan berjalan; lepaskan dulu jar Alpha.",
+        "Selain nama, warna, konsep, dan kemampuan Ziz yang diberikan Corvus Dev, semua angka dan resep seri ini adalah perkiraan pertama pengembang dan dapat diseimbangkan ulang.",
+        "Nama bahasa Jepang belum disetujui Corvus Dev.",
+        "Geser area tambang dan kemampuan Ziz hanya diuji di klien nyata pada mode pemain tunggal, bukan di server khusus dan bukan multipemain.",
+        "Suara kepakan Sayap Ziz belum dibuat."
+       ]
+      }
+     ]
+    },
     {
      "version": "V2.4 1017",
      "date": "2026-10-26",

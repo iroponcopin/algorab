@@ -27,6 +27,8 @@ export const viewport: Viewport = {
  * Before first paint: mark that scripts run (so reveal animations and WebGL-only elements may
  * hide their resting state), and settle the cheap half of the WebGL verdict at once, so a page
  * that will never draw WebGL shows its posters from the first frame. Experience settles the rest.
+ * `data-enhanced` is the switch for the scroll-driven layer: without it (no scripts, reduced motion, data saver) the page
+ * is laid out as still images and nothing heavy loads.
  */
 /** Before first paint: a saved Dark or Light choice is applied to <html>; with none (or no storage) the device's setting decides in CSS, so there is no flash of the wrong theme. */
 const THEME_BOOT = `(function(){try{var t=localStorage.getItem("corvus-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();`;
@@ -34,7 +36,8 @@ const THEME_BOOT = `(function(){try{var t=localStorage.getItem("corvus-theme");i
 const BOOT =
   `(function(){var d=document.documentElement;d.setAttribute("data-js","1");try{var q=new URLSearchParams(location.search),` +
   `n=navigator,c=n.connection;if(q.get("webgl")==="off"||q.get("stage")==="off"||(c&&c.saveData===true)||` +
-  `(n.deviceMemory||8)<=2||(n.hardwareConcurrency||8)<=2||!window.WebGL2RenderingContext)d.setAttribute("data-webgl","off")}catch(e){}})();`;
+  `(n.deviceMemory||8)<=2||(n.hardwareConcurrency||8)<=2||!window.WebGL2RenderingContext)d.setAttribute("data-webgl","off");` +
+  `if(!(c&&c.saveData===true)&&!matchMedia("(prefers-reduced-motion: reduce)").matches)d.setAttribute("data-enhanced","1")}catch(e){}})();`;
 
 /**
  * Entry-time language detection, exactly as before: the wiki's own detector (portal/lang.js,

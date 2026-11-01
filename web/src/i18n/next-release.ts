@@ -10,6 +10,12 @@ import type { Lang } from "@/lib/wiki-types";
  * The languages other than English and Japanese have not been read by a native speaker.
  */
 export interface NextRelease {
+  /** The home's showcase: the running macOS app changing language. The caption says what the footage is. */
+  showTitle: string;
+  showBody: string;
+  showCaption: string;
+  /** The heading above the home's three system tiles. */
+  platformsTitle: string;
   /** The download page's hero: the one title on the page. */
   title: string;
   lede: string;
@@ -53,6 +59,10 @@ export interface NextRelease {
 
 export const NEXT_RELEASE: Record<Lang, NextRelease> = {
   ja: {
+    showTitle: "13 の言語を、その場で。",
+    showBody: "言語を切り替えると、ウィンドウ全体がすぐに変わります。アラビア語では右から左へ。",
+    showCaption: "macOS 版の実際の画面です。Windows 版と Linux 版は見た目が異なる場合があります。",
+    platformsTitle: "3 つのシステムのために、作り直しました。",
     title: "Corvus NEXT をダウンロード",
     lede: "Corvus NEXT は開発中です。まだリリースされたビルドはないため、ダウンロードできるファイルはありません。",
     statusLabel: "開発中",
@@ -72,7 +82,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "最初の Corvus NEXT リリースの変更点は、ここに掲載されます。",
     homeCta: "Corvus NEXT の状況を見る",
     manifestValue: "開発中",
-    manifestLabel: "Corvus NEXT V10174 · まだビルドは公開されていません",
+    manifestLabel: "Corvus NEXT V6.0 · まだビルドは公開されていません",
     manifestTitle: "リリースマニフェスト",
     javaEnds: "Corvus Store の Java 版はサポートを終了します。Corvus NEXT がこれに代わります。",
     openTitle: "Corvus NEXT を初めて開くとき",
@@ -82,6 +92,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "Linux 版の Corvus NEXT は AppImage で提供されます。ファイルを実行可能にしてから起動してください。",
   },
   en: {
+    showTitle: "Thirteen languages. One switch.",
+    showBody: "Change the language and the whole window follows at once. Arabic reads right to left.",
+    showCaption: "The macOS version, captured from the running app. Windows and Linux may look different.",
+    platformsTitle: "Rebuilt for three systems.",
     title: "Download Corvus NEXT",
     lede: "Corvus NEXT is in development. No build has been released yet, so there is nothing to download.",
     statusLabel: "In development",
@@ -101,7 +115,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "The changes in the first Corvus NEXT release will be listed here.",
     homeCta: "See Corvus NEXT status",
     manifestValue: "In development",
-    manifestLabel: "Corvus NEXT V10174 · no build released yet",
+    manifestLabel: "Corvus NEXT V6.0 · no build released yet",
     manifestTitle: "Release manifest",
     javaEnds: "Support for the Java version of Corvus Store is ending. Corvus NEXT replaces it.",
     openTitle: "Opening a Corvus NEXT app for the first time",
@@ -111,6 +125,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "On Linux, Corvus NEXT is provided as an AppImage. Make the file executable, then run it.",
   },
   es: {
+    showTitle: "Trece idiomas. Un solo cambio.",
+    showBody: "Cambia el idioma y toda la ventana lo sigue al instante. El árabe se lee de derecha a izquierda.",
+    showCaption: "La versión para macOS, capturada de la aplicación en marcha. Windows y Linux pueden verse distintos.",
+    platformsTitle: "Rehecho para tres sistemas.",
     title: "Descargar Corvus NEXT",
     lede: "Corvus NEXT está en desarrollo. Todavía no se ha publicado ninguna versión, así que no hay nada que descargar.",
     statusLabel: "En desarrollo",
@@ -130,7 +148,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "Aquí aparecerán los cambios de la primera versión de Corvus NEXT.",
     homeCta: "Ver el estado de Corvus NEXT",
     manifestValue: "En desarrollo",
-    manifestLabel: "Corvus NEXT V10174 · aún no hay versiones publicadas",
+    manifestLabel: "Corvus NEXT V6.0 · aún no hay versiones publicadas",
     manifestTitle: "Manifiesto de la versión",
     javaEnds: "El soporte de la versión Java de Corvus Store está terminando. Corvus NEXT la reemplaza.",
     openTitle: "Abrir una app de Corvus NEXT por primera vez",
@@ -140,6 +158,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "En Linux, Corvus NEXT se ofrece como AppImage. Hazlo ejecutable y ejecútalo.",
   },
   fr: {
+    showTitle: "Treize langues. Un seul réglage.",
+    showBody: "Changez de langue et toute la fenêtre suit aussitôt. L'arabe se lit de droite à gauche.",
+    showCaption: "La version macOS, capturée depuis l'application en marche. Windows et Linux peuvent avoir un aspect différent.",
+    platformsTitle: "Refait pour trois systèmes.",
     title: "Télécharger Corvus NEXT",
     lede: "Corvus NEXT est en cours de développement. Aucune version n'a encore été publiée, il n'y a donc rien à télécharger.",
     statusLabel: "En développement",
@@ -159,7 +181,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "Les modifications de la première version de Corvus NEXT seront listées ici.",
     homeCta: "Voir l'état de Corvus NEXT",
     manifestValue: "En développement",
-    manifestLabel: "Corvus NEXT V10174 · aucune version publiée",
+    manifestLabel: "Corvus NEXT V6.0 · aucune version publiée",
     manifestTitle: "Manifeste de version",
     javaEnds: "La prise en charge de la version Java de Corvus Store prend fin. Corvus NEXT la remplace.",
     openTitle: "Ouvrir une app Corvus NEXT pour la première fois",
@@ -169,6 +191,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "Sous Linux, Corvus NEXT est fourni sous forme d'AppImage. Rendez le fichier exécutable, puis lancez-le.",
   },
   zh: {
+    showTitle: "十三种语言，一键切换。",
+    showBody: "切换语言后，整个窗口立即随之改变。阿拉伯语从右向左显示。",
+    showCaption: "这是 macOS 版运行时的实际画面。Windows 版和 Linux 版的外观可能不同。",
+    platformsTitle: "为三个系统重新打造。",
     title: "下载 Corvus NEXT",
     lede: "Corvus NEXT 正在开发中。尚未发布任何版本，因此暂无可下载的文件。",
     statusLabel: "开发中",
@@ -188,7 +214,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "首个 Corvus NEXT 版本的更新内容将在此列出。",
     homeCta: "查看 Corvus NEXT 状态",
     manifestValue: "开发中",
-    manifestLabel: "Corvus NEXT V10174 · 尚未发布版本",
+    manifestLabel: "Corvus NEXT V6.0 · 尚未发布版本",
     manifestTitle: "发布清单",
     javaEnds: "Corvus Store 的 Java 版本即将停止支持，由 Corvus NEXT 取代。",
     openTitle: "首次打开 Corvus NEXT 应用",
@@ -198,6 +224,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "在 Linux 上，Corvus NEXT 以 AppImage 提供。先让文件可执行，再运行它。",
   },
   ko: {
+    showTitle: "13개 언어를 그 자리에서.",
+    showBody: "언어를 바꾸면 창 전체가 바로 따라 바뀝니다. 아랍어는 오른쪽에서 왼쪽으로 표시됩니다.",
+    showCaption: "실행 중인 macOS 버전의 실제 화면입니다. Windows와 Linux 버전은 모습이 다를 수 있습니다.",
+    platformsTitle: "세 가지 시스템을 위해 다시 만들었습니다.",
     title: "Corvus NEXT 다운로드",
     lede: "Corvus NEXT는 개발 중입니다. 아직 릴리스된 빌드가 없어 내려받을 파일이 없습니다.",
     statusLabel: "개발 중",
@@ -217,7 +247,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "첫 Corvus NEXT 릴리스의 변경 사항이 여기에 표시됩니다.",
     homeCta: "Corvus NEXT 상태 보기",
     manifestValue: "개발 중",
-    manifestLabel: "Corvus NEXT V10174 · 아직 릴리스된 빌드 없음",
+    manifestLabel: "Corvus NEXT V6.0 · 아직 릴리스된 빌드 없음",
     manifestTitle: "릴리스 매니페스트",
     javaEnds: "Corvus Store의 Java 버전은 지원이 종료됩니다. Corvus NEXT가 이를 대체합니다.",
     openTitle: "Corvus NEXT 앱을 처음 열 때",
@@ -227,6 +257,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "Linux에서는 Corvus NEXT가 AppImage로 제공됩니다. 파일을 실행 가능하게 만든 뒤 실행하세요.",
   },
   "pt-br": {
+    showTitle: "Treze idiomas. Uma só troca.",
+    showBody: "Troque o idioma e a janela inteira acompanha na hora. O árabe é lido da direita para a esquerda.",
+    showCaption: "A versão para macOS, capturada do aplicativo em execução. Windows e Linux podem ter aparência diferente.",
+    platformsTitle: "Refeito para três sistemas.",
     title: "Baixar Corvus NEXT",
     lede: "O Corvus NEXT está em desenvolvimento. Nenhuma versão foi lançada ainda, então não há nada para baixar.",
     statusLabel: "Em desenvolvimento",
@@ -246,7 +280,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "As alterações da primeira versão do Corvus NEXT aparecerão aqui.",
     homeCta: "Ver o status do Corvus NEXT",
     manifestValue: "Em desenvolvimento",
-    manifestLabel: "Corvus NEXT V10174 · nenhuma versão lançada",
+    manifestLabel: "Corvus NEXT V6.0 · nenhuma versão lançada",
     manifestTitle: "Manifesto da versão",
     javaEnds: "O suporte à versão Java do Corvus Store está terminando. O Corvus NEXT a substitui.",
     openTitle: "Abrir um app do Corvus NEXT pela primeira vez",
@@ -256,6 +290,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "No Linux, o Corvus NEXT é entregue como AppImage. Torne o arquivo executável e depois execute-o.",
   },
   it: {
+    showTitle: "Tredici lingue. Un solo gesto.",
+    showBody: "Cambia lingua e tutta la finestra segue subito. L'arabo si legge da destra a sinistra.",
+    showCaption: "La versione per macOS, catturata dall'app in esecuzione. Windows e Linux possono apparire diversi.",
+    platformsTitle: "Rifatto per tre sistemi.",
     title: "Scarica Corvus NEXT",
     lede: "Corvus NEXT è in sviluppo. Non è ancora stata pubblicata alcuna versione, quindi non c'è nulla da scaricare.",
     statusLabel: "In sviluppo",
@@ -275,7 +313,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "Qui verranno elencate le modifiche della prima versione di Corvus NEXT.",
     homeCta: "Vedi lo stato di Corvus NEXT",
     manifestValue: "In sviluppo",
-    manifestLabel: "Corvus NEXT V10174 · nessuna versione pubblicata",
+    manifestLabel: "Corvus NEXT V6.0 · nessuna versione pubblicata",
     manifestTitle: "Manifesto della versione",
     javaEnds: "Il supporto alla versione Java di Corvus Store sta terminando. Corvus NEXT la sostituisce.",
     openTitle: "Aprire un'app di Corvus NEXT per la prima volta",
@@ -285,6 +323,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "Su Linux, Corvus NEXT è distribuito come AppImage. Rendi il file eseguibile, poi avvialo.",
   },
   ar: {
+    showTitle: "ثلاث عشرة لغة، بتبديل واحد.",
+    showBody: "غيّر اللغة فتتغير النافذة كلها فورًا. وتُقرأ العربية من اليمين إلى اليسار.",
+    showCaption: "إصدار macOS كما يظهر أثناء تشغيل التطبيق. قد يختلف المظهر في Windows وLinux.",
+    platformsTitle: "أعدنا بناءه لثلاثة أنظمة.",
     title: "تنزيل Corvus NEXT",
     lede: "Corvus NEXT قيد التطوير. لم يُصدر أي إصدار بعد، لذلك لا يوجد ما يمكن تنزيله.",
     statusLabel: "قيد التطوير",
@@ -304,7 +346,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "ستُدرج هنا التغييرات الخاصة بأول إصدار من Corvus NEXT.",
     homeCta: "عرض حالة Corvus NEXT",
     manifestValue: "قيد التطوير",
-    manifestLabel: "Corvus NEXT V10174 · لا يوجد إصدار منشور بعد",
+    manifestLabel: "Corvus NEXT V6.0 · لا يوجد إصدار منشور بعد",
     manifestTitle: "بيان الإصدار",
     javaEnds: "ينتهي الدعم لنسخة Java من Corvus Store، ويحل Corvus NEXT محلها.",
     openTitle: "فتح تطبيق Corvus NEXT لأول مرة",
@@ -314,6 +356,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "على Linux يُقدَّم Corvus NEXT بصيغة AppImage. اجعل الملف قابلًا للتنفيذ ثم شغّله.",
   },
   ru: {
+    showTitle: "Тринадцать языков. Одно переключение.",
+    showBody: "Смените язык, и всё окно сразу изменится. Арабский читается справа налево.",
+    showCaption: "Версия для macOS, снято с работающего приложения. В Windows и Linux внешний вид может отличаться.",
+    platformsTitle: "Создано заново для трёх систем.",
     title: "Скачать Corvus NEXT",
     lede: "Corvus NEXT находится в разработке. Ни одна сборка ещё не выпущена, поэтому скачивать пока нечего.",
     statusLabel: "В разработке",
@@ -333,7 +379,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "Здесь будут перечислены изменения первого выпуска Corvus NEXT.",
     homeCta: "Статус Corvus NEXT",
     manifestValue: "В разработке",
-    manifestLabel: "Corvus NEXT V10174 · сборок пока нет",
+    manifestLabel: "Corvus NEXT V6.0 · сборок пока нет",
     manifestTitle: "Манифест релиза",
     javaEnds: "Поддержка Java-версии Corvus Store прекращается. Её заменяет Corvus NEXT.",
     openTitle: "Первый запуск приложения Corvus NEXT",
@@ -343,6 +389,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "В Linux Corvus NEXT поставляется в виде AppImage. Сделайте файл исполняемым и запустите его.",
   },
   id: {
+    showTitle: "Tiga belas bahasa. Sekali ganti.",
+    showBody: "Ganti bahasa dan seluruh jendela langsung mengikuti. Bahasa Arab dibaca dari kanan ke kiri.",
+    showCaption: "Versi macOS, direkam dari aplikasi yang sedang berjalan. Tampilan di Windows dan Linux bisa berbeda.",
+    platformsTitle: "Dibuat ulang untuk tiga sistem.",
     title: "Unduh Corvus NEXT",
     lede: "Corvus NEXT sedang dikembangkan. Belum ada build yang dirilis, jadi belum ada yang bisa diunduh.",
     statusLabel: "Dalam pengembangan",
@@ -362,7 +412,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "Perubahan pada rilis Corvus NEXT pertama akan dicantumkan di sini.",
     homeCta: "Lihat status Corvus NEXT",
     manifestValue: "Dalam pengembangan",
-    manifestLabel: "Corvus NEXT V10174 · belum ada build yang dirilis",
+    manifestLabel: "Corvus NEXT V6.0 · belum ada build yang dirilis",
     manifestTitle: "Manifes rilis",
     javaEnds: "Dukungan untuk versi Java Corvus Store berakhir. Corvus NEXT menggantikannya.",
     openTitle: "Membuka aplikasi Corvus NEXT untuk pertama kali",
@@ -372,6 +422,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "Di Linux, Corvus NEXT disediakan sebagai AppImage. Jadikan berkas itu dapat dieksekusi, lalu jalankan.",
   },
   de: {
+    showTitle: "Dreizehn Sprachen. Ein Wechsel.",
+    showBody: "Wechsle die Sprache, und das ganze Fenster folgt sofort. Arabisch läuft von rechts nach links.",
+    showCaption: "Die macOS-Version, aufgenommen in der laufenden App. Windows und Linux können anders aussehen.",
+    platformsTitle: "Neu gebaut für drei Systeme.",
     title: "Corvus NEXT herunterladen",
     lede: "Corvus NEXT befindet sich in der Entwicklung. Es wurde noch kein Build veröffentlicht, daher gibt es noch nichts zum Herunterladen.",
     statusLabel: "In Entwicklung",
@@ -391,7 +445,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "Die Änderungen der ersten Corvus-NEXT-Version werden hier aufgeführt.",
     homeCta: "Status von Corvus NEXT ansehen",
     manifestValue: "In Entwicklung",
-    manifestLabel: "Corvus NEXT V10174 · noch kein Build veröffentlicht",
+    manifestLabel: "Corvus NEXT V6.0 · noch kein Build veröffentlicht",
     manifestTitle: "Release-Manifest",
     javaEnds: "Die Unterstützung der Java-Version von Corvus Store endet. Corvus NEXT ersetzt sie.",
     openTitle: "Eine Corvus-NEXT-App zum ersten Mal öffnen",
@@ -401,6 +455,10 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     linuxLine: "Unter Linux wird Corvus NEXT als AppImage bereitgestellt. Machen Sie die Datei ausführbar und starten Sie sie dann.",
   },
   tr: {
+    showTitle: "On üç dil. Tek geçiş.",
+    showBody: "Dili değiştirin, tüm pencere hemen uyum sağlasın. Arapça sağdan sola okunur.",
+    showCaption: "macOS sürümü, çalışan uygulamadan alınmıştır. Windows ve Linux farklı görünebilir.",
+    platformsTitle: "Üç sistem için yeniden yapıldı.",
     title: "Corvus NEXT'i indir",
     lede: "Corvus NEXT geliştirme aşamasında. Henüz hiçbir sürüm yayımlanmadı, bu yüzden indirilecek bir şey yok.",
     statusLabel: "Geliştirme aşamasında",
@@ -420,7 +478,7 @@ export const NEXT_RELEASE: Record<Lang, NextRelease> = {
     emptyBody: "Corvus NEXT'in ilk sürümünün değişiklikleri burada listelenecek.",
     homeCta: "Corvus NEXT durumunu gör",
     manifestValue: "Geliştirme aşamasında",
-    manifestLabel: "Corvus NEXT V10174 · henüz sürüm yok",
+    manifestLabel: "Corvus NEXT V6.0 · henüz sürüm yok",
     manifestTitle: "Sürüm manifestosu",
     javaEnds: "Corvus Store'un Java sürümü için destek sona eriyor. Yerine Corvus NEXT geçiyor.",
     openTitle: "Corvus NEXT uygulamasını ilk kez açma",

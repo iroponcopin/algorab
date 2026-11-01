@@ -6,7 +6,7 @@ import { THEATRE } from "@/i18n/theatre";
 import { BRAND_ICON } from "@/lib/brands";
 import { pageMeta } from "@/lib/meta";
 import { inModelOrder } from "@/lib/models";
-import { asset, isLang, pathOf } from "@/lib/site";
+import { asset, BASE_URL, isLang, pathOf } from "@/lib/site";
 import { langData, lineupFor } from "@/lib/wiki";
 import type { Lang } from "@/lib/wiki-types";
 
@@ -66,6 +66,28 @@ export default async function Page({ params }: Params) {
     cta: n.homeCta,
     ctaHref: href("download/"),
     javaNote: n.javaEnds,
+    showcase: {
+      title: n.showTitle,
+      body: n.showBody,
+      caption: n.showCaption,
+      alt: n.showCaption,
+      video: { small: asset("art/next/languages-small.mp4"), large: asset("art/next/languages-large.mp4") },
+      stills: (["en", "ja", "ar"] as const).map((l) => ({
+        lang: l,
+        small: asset(`art/next/languages-${l}-small.webp`),
+        large: asset(`art/next/languages-${l}-large.webp`),
+      })),
+    },
+    platforms: {
+      title: n.platformsTitle,
+      systemLabel: n.system,
+      stackLabel: n.builtWith,
+      items: [
+        { name: "macOS", system: n.macSystem, stack: n.macStack },
+        { name: "Windows", system: n.toBeSet, stack: n.qtStack },
+        { name: "Linux", system: n.toBeSet, stack: n.qtStack },
+      ],
+    },
     models: { id: "models", title: d.home.brandsTitle, open: th.open, cards: models },
     explore: { id: "explore", title: d.home.explore, open: th.open, cards: explore },
     manifest: {
@@ -76,5 +98,15 @@ export default async function Page({ params }: Params) {
       cta: n.homeCta,
     },
   };
-  return <NextHome c={content} />;
+  const organization = { "@type": "Organization", name: "Corvus Dev", url: `${BASE_URL}/` };
+  const structured = {
+    "@context": "https://schema.org",
+    "@graph": [organization, { "@type": "WebSite", name: "Corvus", url: `${BASE_URL}/`, inLanguage: lang, publisher: organization }],
+  };
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured) }} />
+      <NextHome c={content} />
+    </>
+  );
 }

@@ -6,7 +6,7 @@ import { chime } from "@/engine/audio";
 import type { Fresh } from "@/i18n/fresh";
 import { asset } from "@/lib/site";
 import { Icon } from "../Icon";
-import { scrollToY } from "../SmoothScroll";
+import { scrollToY } from "../NativeScroll";
 
 export interface ReelTeaser {
   id: string;

@@ -66,6 +66,132 @@ html:lang(ar) .cn-hero-title {
   margin-bottom: clamp(16px, 4vh, 40px);
 }
 
+/*
+ * The running app, tied to the scroll position. At rest (no scripts, reduced motion, data saver) this is a heading and three
+ * stills in normal flow. html[data-enhanced] turns it into a pinned stage with one window whose video follows the scroll.
+ */
+.cn-show {
+  width: min(100% - 2 * var(--ac-gutter), 1240px);
+  margin: 0 auto clamp(48px, 8vh, 96px);
+}
+
+.cn-show-stage {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+
+.cn-show-head {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  max-width: 44rem;
+  text-align: center;
+}
+
+.cn-show-title {
+  margin: 0;
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 700;
+  letter-spacing: var(--cn-track);
+  text-wrap: balance;
+}
+
+.cn-show-body {
+  margin: 0;
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.4;
+  color: var(--cn-titanium);
+  text-wrap: balance;
+}
+
+/* A capture stays a capture: it is shown as it was recorded, in a frame with concentric corners and no tint. */
+.cn-show-window {
+  position: relative;
+  overflow: hidden;
+  width: min(100%, 1120px);
+  aspect-ratio: 1416 / 864;
+  border-radius: var(--cn-r-lg);
+  background: #f6f6fa;
+  box-shadow: var(--cn-elevation), 0 0 0 0.5px var(--cn-line-strong);
+}
+
+.cn-show-window img,
+.cn-show-window video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.cn-show-window video {
+  opacity: 0;
+}
+
+.cn-show-more {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: min(100%, 1120px);
+}
+
+.cn-show-more .cn-show-window {
+  width: 100%;
+  border-radius: var(--cn-r-md);
+}
+
+.cn-show-caption {
+  max-width: 92ch;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--cn-muted);
+}
+
+html[data-enhanced] .cn-show {
+  height: 280vh;
+  margin-bottom: 0;
+}
+
+html[data-enhanced] .cn-show-stage {
+  position: sticky;
+  top: var(--header-h);
+  align-content: center;
+  min-height: calc(100dvh - var(--header-h));
+  padding-block: 12px;
+}
+
+html[data-enhanced] .cn-show-more {
+  display: none;
+}
+
+/* The window fits the height the heading and the caption leave. */
+html[data-enhanced] .cn-show-stage > .cn-show-window {
+  width: min(100%, 1120px, calc((100dvh - var(--header-h) - 210px) * 1416 / 864));
+}
+
+html[data-enhanced] .cn-show[data-scrub="ready"] .cn-show-window video {
+  opacity: 1;
+}
+
+/* The window settles into place as it arrives, on the browser's own scroll timeline where there is one. */
+@supports (animation-timeline: view()) {
+  html[data-enhanced] .cn-show-stage > .cn-show-window {
+    animation: cn-show-arrive linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+}
+
+@keyframes cn-show-arrive {
+  from {
+    opacity: 0.4;
+    transform: translate3d(0, 28px, 0) scale(0.96);
+  }
+}
+
 /* Spatial bento. */
 .cn-band {
   width: min(100% - 2 * var(--ac-gutter), 1240px);

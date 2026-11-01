@@ -151,14 +151,12 @@ export function Dock({
     const root = document.documentElement;
     const prev = root.style.overflow;
     root.style.overflow = "hidden";
-    window.dispatchEvent(new CustomEvent("cn:scroll-lock", { detail: true }));
     const onKey = (e: KeyboardEvent): void => {
       if (e.key === "Escape") setSheet(false);
     };
     document.addEventListener("keydown", onKey);
     return () => {
       root.style.overflow = prev;
-      window.dispatchEvent(new CustomEvent("cn:scroll-lock", { detail: false }));
       document.removeEventListener("keydown", onKey);
     };
   }, [sheet]);

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BuildTag } from "@/components/next/BuildTag";
+import { LanguageShowcase, type ShowcaseContent } from "./LanguageShowcase";
 
 export interface HomeCard {
   key: string;
@@ -18,6 +19,8 @@ export interface HomeContent {
   ctaHref: string;
   /** One sentence: the Java version of Corvus Store ends and Corvus NEXT replaces it. */
   javaNote: string;
+  showcase: ShowcaseContent;
+  platforms: { title: string; systemLabel: string; stackLabel: string; items: { name: string; system: string; stack: string }[] };
   models: { id: string; title: string; open: string; cards: HomeCard[] };
   explore: { id: string; title: string; open: string; cards: HomeCard[] };
   manifest: { title: string; versionLabel: string; version: string; href: string; cta: string };
@@ -43,7 +46,7 @@ function Card({ card, open, span }: { card: HomeCard; open: string; span: string
 }
 
 /**
- * The home page of Corvus NEXT: the hero, then a spatial bento of the models and of
+ * The home page of Corvus NEXT: the hero, the running app, the three systems, a spatial bento of the models and of
  * the rest of the site, then the release manifest. All content comes from the data pipeline and the i18n files.
  */
 export function NextHome({ c }: { c: HomeContent }) {
@@ -62,6 +65,33 @@ export function NextHome({ c }: { c: HomeContent }) {
           <span aria-hidden="true">→</span>
         </Link>
         <p className="ac-small cn-hero-note">{c.javaNote}</p>
+      </section>
+
+      <LanguageShowcase c={c.showcase} />
+
+      <section className="cn-band" aria-labelledby="cn-platforms-h">
+        <h2 id="cn-platforms-h" className="cn-band-title">
+          {c.platforms.title}
+        </h2>
+        <div className="cn-bento">
+          {c.platforms.items.map((p) => (
+            <article key={p.name} className="cn-card cn-glass cn-glass--lite cn-span-4" data-glass="">
+              <span className="cn-card-title" translate="no">
+                {p.name}
+              </span>
+              <dl className="cn-facts">
+                <div>
+                  <dt>{c.platforms.systemLabel}</dt>
+                  <dd>{p.system}</dd>
+                </div>
+                <div>
+                  <dt>{c.platforms.stackLabel}</dt>
+                  <dd>{p.stack}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="cn-band" id={c.models.id} aria-labelledby="cn-models-h">

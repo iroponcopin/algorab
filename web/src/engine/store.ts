@@ -12,7 +12,7 @@ export const engine = {
   dt: 1 / 60,
   frame: 0,
 
-  /** Lenis' animated scroll position, in CSS pixels, and its velocity (px per frame at 60 Hz). */
+  /** The native scroll position, in CSS pixels, and its velocity (px per frame at 60 Hz). */
   scrollY: 0,
   scrollVelocity: 0,
   scrollLimit: 1,

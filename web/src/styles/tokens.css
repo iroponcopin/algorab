@@ -1,5 +1,5 @@
 /*
- * Corvus NEXT design tokens (V10174), in two themes that are designed, not inverted.
+ * Corvus NEXT design tokens, in two themes that are designed, not inverted.
  * Dark: an abyssal canvas, brushed-titanium type, glass tinted by the dark. Light: a #F4F4F7 to #FFFFFF substrate, graphite
  * type, glass tinted by the light, edges drawn by a dark hairline and white highlights.
  * The theme follows the device (prefers-color-scheme, live) unless the visitor chose one: <html data-theme="dark|light">,
@@ -54,10 +54,10 @@
   --cn-r-sm: 10px;
 
   --cn-font:
-    "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Inter Variable", "Inter", "Segoe UI Variable Display", "Segoe UI", system-ui,
+    -apple-system, BlinkMacSystemFont, "Inter Variable", "Inter", "Segoe UI Variable Display", "Segoe UI", system-ui,
     "Hiragino Sans", "Hiragino Kaku Gothic ProN", "PingFang SC", "Apple SD Gothic Neo", "Noto Sans CJK JP", "Noto Sans Arabic Variable", "Microsoft YaHei",
     "Malgun Gothic", "Yu Gothic", Meiryo, Roboto, Arial, sans-serif;
-  --cn-mono: "SF Mono", ui-monospace, "JetBrains Mono Variable", Menlo, Consolas, monospace;
+  --cn-mono: ui-monospace, "JetBrains Mono Variable", Menlo, Consolas, monospace;
   --cn-track: -0.035em;
 }
 

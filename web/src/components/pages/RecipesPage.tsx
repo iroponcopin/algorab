@@ -7,7 +7,7 @@ import { RecipeBrowser } from "../recipes/RecipeBrowser";
 import { type RecipeGroup, RecipeTable } from "../recipes/RecipeTable";
 
 /** The item the page opens on, beside the table. Any item with a recipe works; the first item stands in if it goes. */
-const FEATURED = "halia:halia_blade[item.halia.gale_fang]";
+const FEATURED = "ouka:artificial_sun_core";
 
 /**
  * The recipes page. The server writes the whole table as plain rows: every item and what it is made of, readable with

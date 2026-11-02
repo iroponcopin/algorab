@@ -255,7 +255,7 @@ def _corvus6_block():
     Every Store ignores a block it does not know. None when the files are not there."""
     native = {}
     for platform, ext, extra in (("macos", "dmg", {"min_os": "14.0", "arch": "arm64"}), ("windows", "msi", {}), ("linux", "AppImage", {})):
-        path = DOWNLOAD_DIR / f"algorab-6.0.0-{platform}.{ext}"
+        path = DOWNLOAD_DIR / f"algorab-6.2.0-{platform}.{ext}"
         if path.exists():
             native[platform] = {
                 "download_url": f"{SITE_BASE_URL}/downloads/{path.name}",
@@ -264,7 +264,7 @@ def _corvus6_block():
                 "sha256": _sha256(path),
                 **extra,
             }
-    return {"latest": "6.0.0", "native": native} if native else None
+    return {"latest": "6.2.0", "native": native} if native else None
 
 
 def _aureum_mod_id(jar_path):

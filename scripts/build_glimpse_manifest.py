@@ -255,7 +255,7 @@ def _corvus6_block():
     Every Store ignores a block it does not know. None when the files are not there."""
     native = {}
     for platform, ext, extra in (("macos", "dmg", {"min_os": "14.0", "arch": "arm64"}), ("windows", "msi", {}), ("linux", "AppImage", {})):
-        path = DOWNLOAD_DIR / f"corvus-6.0.0-{platform}.{ext}"
+        path = DOWNLOAD_DIR / f"algorab-6.0.0-{platform}.{ext}"
         if path.exists():
             native[platform] = {
                 "download_url": f"{SITE_BASE_URL}/downloads/{path.name}",

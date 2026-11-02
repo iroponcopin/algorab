@@ -170,7 +170,7 @@ def og_card(tile, width=1200, height=630):
         card.alpha_composite(bird, (x, y))
 
     font, font_name = _load_font(round(height * 0.155))
-    text = "Corvus"
+    text = "Algorab"
     if font is not None:
         d = ImageDraw.Draw(card)
         bbox = d.textbbox((0, 0), text, font=font)

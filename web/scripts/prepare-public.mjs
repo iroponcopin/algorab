@@ -71,6 +71,41 @@ for (const lang of LANG_CODES) {
   writeFileSync(join(OUT, "search", `${lang}.json`), JSON.stringify({ models, changelog, recipes }));
 }
 
+// The recipe sheet, one file per language (fetched by the recipes page, never inlined in it). The page's HTML carries
+// the whole table as plain rows; this file carries what a row cannot hold: every recipe in full, and what search reads.
+// `read` is an item's name and reading as the sheet's Japanese search text gives them, so a kana search finds kanji on
+// every language's page, as it always has.
+const ID_TOKEN = /^#?[a-z0-9_.-]+:[a-z0-9_/.[\]-]+$/;
+const NOT_A_NAME = /[、。()(),]/;
+const readings = new Map();
+for (const rec of wikiData.recipes.recipes) {
+  const tokens = rec.search.split(" ");
+  let start = 0;
+  tokens.forEach((tok, i) => {
+    if (!ID_TOKEN.test(tok)) return;
+    const set = readings.get(tok) ?? new Set();
+    // eslint-disable-next-line no-control-regex
+    for (const w of tokens.slice(start, i)) if (/[^\x00-\x7f]/.test(w) && !NOT_A_NAME.test(w) && w.length <= 24) set.add(w);
+    readings.set(tok, set);
+    start = i + 1;
+  });
+}
+mkdirSync(join(OUT, "recipes"), { recursive: true });
+for (const lang of LANG_CODES) {
+  const d = wikiData.langs[lang].recipes;
+  const items = {};
+  for (const [id, it] of Object.entries(wikiData.recipes.items)) {
+    const read = [...(readings.get(id) ?? [])].join(" ");
+    items[id] = { name: d.names[id] ?? it.en, ...(d.subs[id] ? { sub: d.subs[id] } : {}), icon: it.icon, kind: it.kind, ...(read ? { read } : {}) };
+  }
+  const recipes = wikiData.recipes.recipes.map(({ search: _s, how: _h, howText, fusion, ...rec }) => ({
+    ...rec,
+    ...(fusion && !rec.inputs ? { fusion } : {}),
+    ...(howText ? { howLine: lang === "ja" ? { text: howText.ja, lang: "ja" } : { text: howText.en, lang: "en" } } : {}),
+  }));
+  writeFileSync(join(OUT, "recipes", `${lang}.json`), JSON.stringify({ items, recipes }));
+}
+
 // Recipe icons are named by stable ids and are 219 of them: they keep plain URLs.
 const versions = {};
 (function walk(dir, rel) {

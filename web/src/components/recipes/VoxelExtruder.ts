@@ -14,7 +14,7 @@ import {
 import { loadPixels, srgbToLinear } from "@/realms/voxel";
 
 /**
- * The 3D pedestal's item models. A recipe's picture is read pixel by pixel (loadPixels and srgbToLinear, shared
+ * The item models of the recipe table. A recipe's picture is read pixel by pixel (loadPixels and srgbToLinear, shared
  * with the skin and the Synthesizer), every opaque pixel becomes a voxel `depth` cells thick, and only the faces
  * that touch air are kept, so the mesh stays a few thousand triangles. Bright pixels also get an unlit glow layer
  * (the emissive part of the look; there is no bloom pass). Each model is built once and kept in a bounded LRU; an
@@ -225,7 +225,7 @@ const liveModels = new Map<string, VoxelModel>();
 let pinned: string | null = null;
 
 /**
- * The model for an item, built on first use. The pinned model (the one on the pedestal) is never evicted; when the
+ * The model for an item, built on first use. The pinned model (the one on screen) is never evicted; when the
  * cache is over its limit the least recently used built model is disposed.
  */
 export function modelFor(url: string | null, kind: ItemKind): Promise<VoxelModel> {

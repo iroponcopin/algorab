@@ -48,7 +48,7 @@ export function lineupFor(lang: Lang): string {
 }
 
 /**
- * The models that have recipes in the Tome, named and joined for the language in MODEL_ORDER (Halia, OUKA,
+ * The models that have recipes in the table, named and joined for the language in MODEL_ORDER (Halia, OUKA,
  * Cherry, Tsubomi): the copy carries a {models} slot, so a new model or a new order never needs a translation edit.
  */
 export function recipeModelList(lang: Lang): string {

@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 
 const Experience = dynamic(() => import("./Experience").then((m) => m.Experience), { ssr: false });
 
-/** The pages whose scenes draw into the shared 3D stage: the Sparxie skin. The recipe Tome has its own canvas. */
+/** The pages whose scenes draw into the shared 3D stage: the Sparxie skin. The recipe table has its own canvas. */
 const STAGE_PAGES = ["skin/"];
 
 /**

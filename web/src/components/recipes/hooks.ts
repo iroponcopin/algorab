@@ -1,7 +1,7 @@
 import { useSyncExternalStore } from "react";
 
 /**
- * Media queries for the Recipe Tome, read through useSyncExternalStore so the server render and the first client
+ * Media queries for the recipe table, read through useSyncExternalStore so the server render and the first client
  * render agree (the server snapshot is passed in) and a later change re-renders without a hydration error.
  */
 export function useMediaQuery(query: string, serverSnapshot: boolean): boolean {
@@ -16,12 +16,12 @@ export function useMediaQuery(query: string, serverSnapshot: boolean): boolean {
   );
 }
 
-/** The side-by-side book and the 3D stage start at 1024 px (the owner's split). */
+/** The table and the item side by side start at 1024 px; below it, the item opens as a sheet. */
 export function useWide(): boolean {
   return useMediaQuery("(min-width: 1024px)", true);
 }
 
-/** Reduced motion: no turntable, no riffle, no ritual, no page curl (the state changes at once). */
+/** Reduced motion: no turntable and no entrances; every state changes at once. */
 export function useReducedMotion(): boolean {
   return useMediaQuery("(prefers-reduced-motion: reduce)", false);
 }

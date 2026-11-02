@@ -1,75 +1,87 @@
 import { FRESH } from "@/i18n/fresh";
-import { recipeIcon } from "@/lib/site";
+import { modelRank } from "@/lib/models";
 import { langData, recipeModelList, wiki } from "@/lib/wiki";
 import type { Lang } from "@/lib/wiki-types";
-import { RecipeBookScene } from "../recipes/RecipeBookScene";
-import { modelOfCat, type TomeData } from "../recipes/tome-data";
+import { buildIndex, modelOfCat, type ModelTab, rowFacts, type Sheet, type StationOption } from "../recipes/recipe-data";
+import { RecipeBrowser } from "../recipes/RecipeBrowser";
+import { type RecipeGroup, RecipeTable } from "../recipes/RecipeTable";
+
+/** The item the page opens on, beside the table. Any item with a recipe works; the first item stands in if it goes. */
+const FEATURED = "halia:halia_blade[item.halia.gale_fang]";
 
 /**
- * The recipes page: the Recipe Tome (the book and the crafting pedestal). The server prepares the shared sheet for
- * the language (names, search text, chapter names), and the one client component draws it. The static list in the
- * noscript block keeps every recipe readable without JavaScript.
+ * The recipes page. The server writes the whole table as plain rows: every item and what it is made of, readable with
+ * no script at all and findable with the browser's own search. The sheet itself (every recipe in full) is one file per
+ * language, fetched by RecipeBrowser, which turns those rows into a searchable table and opens an item beside it.
  */
 export function RecipesPage({ lang }: { lang: Lang }) {
   const d = langData(lang);
   const shared = wiki().recipes;
   const r = d.recipes;
-  const data: TomeData = {
-    total: shared.total,
-    cats: shared.cats.map((c, i) => ({
-      index: c.index,
-      name: r.catNames[i] ?? c.name,
-      model: modelOfCat(shared, i),
-      icon: c.icon,
-      count: c.count,
-    })),
-    allTabIcon: shared.allTabIcon,
+  const f = FRESH[lang].recipes;
+
+  const sheet: Sheet = {
     items: Object.fromEntries(
-      Object.entries(shared.items).map(([id, it]) => [
-        id,
-        { id, name: r.names[id] ?? it.en, ...(r.subs[id] ? { sub: r.subs[id] } : {}), icon: it.icon, kind: it.kind },
-      ]),
+      Object.entries(shared.items).map(([id, it]) => [id, { id, name: r.names[id] ?? it.en, ...(r.subs[id] ? { sub: r.subs[id] } : {}), icon: it.icon, kind: it.kind }]),
     ),
-    recipes: shared.recipes.map((rec) =>
-      rec.howText ? { ...rec, howLine: lang === "ja" ? { text: rec.howText.ja, lang: "ja" as const } : { text: rec.howText.en, lang: "en" as const } } : rec,
-    ),
-    search: r.search,
-    stations: shared.stations,
+    recipes: shared.recipes,
   };
-  const f = FRESH[lang];
-  // One unit everywhere: the number of ITEMS (distinct results), the same count the book and the bar show.
-  const itemCount = new Set(shared.recipes.map((rec) => rec.result)).size;
+  const modelOf = new Map(shared.cats.map((c) => [c.index, modelOfCat(shared, c.index)]));
+  const index = buildIndex(sheet, (cat) => modelRank(modelOf.get(cat) ?? ""));
+
+  const stationName = (id: string): string => {
+    const item = shared.stations.find((s) => s.id === id)?.item;
+    return (item ? sheet.items[item]?.name : undefined) ?? id;
+  };
+
+  // One unit everywhere: the number of items, each counted once, under the chapter of its first recipe.
+  const members = new Map<number, string[]>();
+  for (const id of index.order) {
+    const cat = index.catOf.get(id) ?? 0;
+    const list = members.get(cat);
+    if (list) list.push(id);
+    else members.set(cat, [id]);
+  }
+  const tabs: ModelTab[] = Array.from(members, ([cat, ids]) => ({
+    cat,
+    model: modelOf.get(cat) ?? "",
+    name: r.catNames[cat] ?? shared.cats[cat]?.name ?? "",
+    count: ids.length,
+  }));
+  const groups: RecipeGroup[] = tabs.map((tab) => ({ ...tab, rows: (members.get(tab.cat) ?? []).map((id) => rowFacts(sheet, index.byResult, id)) }));
+
+  const atStation = new Map<string, Set<string>>();
+  for (const rec of shared.recipes) {
+    const s = atStation.get(rec.station);
+    if (s) s.add(rec.result);
+    else atStation.set(rec.station, new Set([rec.result]));
+  }
+  const stations: StationOption[] = Array.from(atStation, ([id, s]) => ({ id, name: stationName(id), item: shared.stations.find((x) => x.id === id)?.item ?? null, count: s.size })).sort(
+    (a, b) => b.count - a.count,
+  );
+
+  const names: Record<string, string> = Object.fromEntries(stations.map((s) => [s.id, s.name]));
   return (
-    <section>
-      <div className="ac-wrap ac-page-head">
-        <h1 className="ac-h1 tome-page-title">{r.title}</h1>
-        <p className="ac-lead">{f.tome.intro.replace("{count}", String(itemCount)).replace("{models}", recipeModelList(lang))}</p>
+    <section className="rx">
+      <noscript>
+        <style>{".rx-bar,.rx-panel,.rx-count{display:none}.rx-body{grid-template-columns:minmax(0,1fr)}"}</style>
+      </noscript>
+      <div className="ac-wrap rx-head">
+        <h1 className="rx-title">{r.title}</h1>
+        <p className="rx-lead">{f.intro.replace("{count}", index.order.length.toLocaleString(lang === "pt-br" ? "pt-BR" : lang)).replace("{models}", recipeModelList(lang))}</p>
       </div>
       <div className="ac-wrap">
-        <RecipeBookScene data={data} labels={r.labels} t={f.tome} dir={d.dir} />
-        <noscript>
-          <ul className="ac-cx-all">
-            {shared.recipes.map((rec) => {
-              const name = data.items[rec.result]?.name ?? rec.result;
-              const icon = recipeIcon(data.items[rec.result]?.icon ?? null);
-              return (
-                <li key={rec.key}>
-                  {icon ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={icon} alt="" width={24} height={24} className="ac-pixel" />
-                  ) : null}
-                  <b>{name}</b>{" "}
-                  {rec.grid
-                    ? rec.grid
-                        .filter((c): c is string => c !== 0)
-                        .map((c) => data.items[c]?.name ?? c)
-                        .join(" + ")
-                    : (rec.fusion ?? []).map((x) => `${data.items[x.id]?.name ?? x.id} ×${x.n}`).join(" + ")}
-                </li>
-              );
-            })}
-          </ul>
-        </noscript>
+        <RecipeBrowser
+          lang={lang}
+          labels={r.labels}
+          t={f}
+          tabs={tabs}
+          stations={stations}
+          total={index.order.length}
+          featured={index.byResult.has(FEATURED) ? FEATURED : (index.order[0] ?? "")}
+        >
+          <RecipeTable groups={groups} stationNames={names} />
+        </RecipeBrowser>
       </div>
     </section>
   );

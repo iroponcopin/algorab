@@ -44,7 +44,7 @@ FLAG = {
 ORDER = ["ja", "en", "es", "fr", "zh", "ko", "pt-br", "it", "ar", "ru", "id", "de", "tr"]
 HREFLANG = {c: c for c in ORDER}
 HREFLANG["pt-br"] = "pt-BR"
-BASE = "https://iroponcopin.github.io/corvus-dev"
+BASE = "https://algorab.uk"
 # Directories that are not language sections. Named rather than pattern-matched
 # so a genuinely new section cannot be skipped by accident.
 SKIP_DIRS = {"assets", "data", "scripts", "downloads", "scratchpad",

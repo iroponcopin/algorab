@@ -47,7 +47,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 LANGS = ["ja", "en", "es", "fr", "zh", "ko", "pt-br", "it", "ar", "ru", "id", "de", "tr"]
 JAR_RE = re.compile(r"^halia-(\d+(?:\.\d+)*)\.jar$")
-SITE = "https://iroponcopin.github.io/corvus-dev"
+SITE = "https://algorab.uk"
 ALLOWED_DEPENDS = {"fabricloader", "minecraft", "java", "fabric-api"}
 ALLOWED_SOFT = set()               # Halia recommends and suggests nothing
 CREATURE_ID_RE = re.compile(r"[a-z][a-z0-9_]*")       # the Store's pattern (HaliaCreature.ID)

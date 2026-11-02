@@ -83,7 +83,7 @@ with contextlib.redirect_stdout(_quiet):
 
 SCHEMA = "corvus.wiki/4"
 BASE_URL = SC.SITE_BASE_URL
-BASE_PATH = "/corvus-dev"
+BASE_PATH = ""
 LANGS = SC.available_langs()
 # The models with a page of their own (src/app/[lang]/<id>/).
 MODEL_PAGES = ("ouka", "cherry", "aureum", "alpha", "astraea", "tsubomi", "noctua", "halia")

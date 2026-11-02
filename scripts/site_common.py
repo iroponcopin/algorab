@@ -98,7 +98,7 @@ def pack_zip_path(version: str, mc_version: str = "26.2", *, why: str = "This pa
 # requires an ABSOLUTE og:image URL — a relative one is silently ignored by
 # every scraper, which is how a site ends up with no share preview at all.
 # (build_glimpse_manifest.py keeps its own copy for the launcher manifest.)
-SITE_BASE_URL = "https://iroponcopin.github.io/corvus-dev"
+SITE_BASE_URL = "https://algorab.uk"
 OG_IMAGE_URL = f"{SITE_BASE_URL}/assets/img/brand/og-image.png"
 
 # (code, native display name, text direction). Order = language-switcher order.

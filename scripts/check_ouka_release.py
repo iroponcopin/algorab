@@ -65,8 +65,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 LANGS = ["ja", "en", "es", "fr", "zh", "ko", "pt-br", "it", "ar", "ru", "id", "de", "tr"]
 ZIP_RE = re.compile(r"^OUKA_MODs_v(\d+(?:\.\d+)*)\+mc(\d+(?:\.\d+)*)\.zip$")
-SITE = "https://iroponcopin.github.io/corvus-dev"
-SITE_PATH = "/corvus-dev"
+SITE = "https://algorab.uk"
+SITE_PATH = ""
 SIZE_RE = re.compile(r"\(([\d,]+) bytes\)")
 SOON_CLASSES = {"ac-soon", "ou-soon"}
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source",

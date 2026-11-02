@@ -20,7 +20,7 @@ const OUT = join(WEB, "out");
 const REPO = join(WEB, "..");
 const LANGS = ["en", "es", "fr", "zh", "ko", "pt-br", "it", "ar", "ru", "id", "de", "tr"];
 const SECTIONS = ["alpha", "aureum", "changelog", "cherry-controls", "cherry", "discord", "download", "launcher", "ouka", "recipes", "skin", "teasers", "announcement", "astraea", "tsubomi", "noctua", "halia"];
-const CONTRACT = [/^glimpse_manifest\.json$/, /^releases\.json$/, /^upcoming\.json$/, /^changelog_feed\//, /^downloads\//, /^data\//, /^robots\.txt$/, /^\.nojekyll$/];
+const CONTRACT = [/^CNAME$/, /^glimpse_manifest\.json$/, /^releases\.json$/, /^upcoming\.json$/, /^changelog_feed\//, /^downloads\//, /^data\//, /^robots\.txt$/, /^\.nojekyll$/];
 
 function fail(msg) {
   console.error(`apply-export: ${msg}`);

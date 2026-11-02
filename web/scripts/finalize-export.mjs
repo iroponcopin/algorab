@@ -14,12 +14,12 @@ import { fileURLToPath } from "node:url";
 
 const WEB = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(WEB, "out");
-const BASE_URL = "https://iroponcopin.github.io/corvus-dev";
+const BASE_URL = "https://algorab.uk";
 const LANGS = ["ja", "en", "es", "fr", "zh", "ko", "pt-br", "it", "ar", "ru", "id", "de", "tr"];
 const SECTIONS = ["", "alpha/", "aureum/", "changelog/", "cherry-controls/", "cherry/", "discord/", "download/",
   "launcher/", "ouka/", "recipes/", "skin/", "teasers/", "announcement/", "astraea/", "tsubomi/", "noctua/", "halia/"];
 /** What the launcher and the bot read (README "Releasing"); the export may contain none of it. */
-const CONTRACT = ["glimpse_manifest.json", "releases.json", "upcoming.json", "changelog_feed", "downloads", "data",
+const CONTRACT = ["CNAME", "glimpse_manifest.json", "releases.json", "upcoming.json", "changelog_feed", "downloads", "data",
   "robots.txt", ".nojekyll", "assets", "scripts", "README.md", "web", ".gitignore"];
 
 function fail(msg) {

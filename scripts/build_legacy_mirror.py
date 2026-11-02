@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Builds the legacy mirror: the folder served at the site's OLD address, for the software already installed.
 
-The site moved from https://iroponcopin.github.io/aurora-corvus/ to https://iroponcopin.github.io/corvus-dev/.
+The site moved from https://iroponcopin.github.io/aurora-corvus/ to https://algorab.uk/.
 The Corvus Store and Agent (glimpse-launcher-eos) and the Discord release bot (discord-release-bot) read these from the
 old address, so the old address keeps serving exactly those files, copied byte-for-byte from the new build:
 
@@ -34,9 +34,9 @@ REPO = Path(__file__).resolve().parent.parent
 
 #: The OLD address: the only place this repository names the old path. Everything else points at the new site.
 LEGACY_SITE_URL = "https://iroponcopin.github.io/aurora-corvus/"
-NEW_SITE_URL = "https://iroponcopin.github.io/corvus-dev/"
+NEW_SITE_URL = "https://algorab.uk/"
 OLD_BASE_PATH = "/aurora-corvus"
-NEW_BASE_PATH = "/corvus-dev"
+NEW_BASE_PATH = ""
 
 #: The files the installed software reads from the old address, relative to the new build's root.
 FILES = ["glimpse_manifest.json", "releases.json", "upcoming.json"]

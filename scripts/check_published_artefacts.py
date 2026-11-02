@@ -24,7 +24,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-BASE = "https://iroponcopin.github.io/corvus-dev"
+BASE = "https://algorab.uk"
 
 
 def fetch(url, timeout=120):

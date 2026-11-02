@@ -134,7 +134,7 @@ module.exports = { run, check, resolveTarget, configFor };
 
 // ============================================================ THE TEST MATRIX
 if (require.main === module) {
-  const MOUNTS = ["/", "/corvus-dev/"];
+  const MOUNTS = ["/"];
 
   note("=== A. resolution order, mocked devices ===");
   const M = "/";

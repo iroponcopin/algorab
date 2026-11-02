@@ -306,6 +306,24 @@
  "changelog_brands": {
   "ouka": [
    {
+    "id": "ouka-v1.8-6166",
+    "title": "Ouka V1.8 6166 — Empat generator tanpa turbin",
+    "summary": "V1.8 6166 menambahkan empat generator yang mengubah panas langsung menjadi listrik, paling kuat di tempat panas seperti Nether, dan memperbaiki penautan Spatial Transceiver antardimensi.",
+    "highlights": [
+     "Inti Gradien Krio-Termal: menghasilkan listrik dari selisih panas di sekitar dan es di dalamnya. Jenis es memberi 160 hingga 640 MJ/t, es deuterium dan superionik 2.560 hingga 10.240 MJ/t, es BEC dan sakura 40.960 hingga 163.840 MJ/t. Es perlahan berkurang, kecuali es sakura.",
+     "Sel TPV Termofotovoltaik: lempeng tipis untuk lantai, dinding, dan langit-langit, tanpa bahan bakar. 80 MJ/t di Nether, hingga 2.400 MJ/t menghadap lautan lava.",
+     "Saluran Magma MHD: menghasilkan listrik di samping lava yang mengalir. 1.200 MJ/t per saluran, +25% per saluran sejajar hingga 8. Lava tidak habis.",
+     "Resonator Termoakustik: cincin cahaya bergelombang di dalam kolom. 600 hingga 9.600 MJ/t, tertinggi di Basalt Deltas dan Nether Wastes.",
+     "Buka salah satunya dengan tangan kosong untuk melihat layar berisi keluaran dan grafik langsung.",
+     "Perbaikan Spatial Transceiver: pengirim di dimensi lain kini dapat ditautkan. Pasangan yang tertaut tetap berjalan selama salah satu ujungnya dimuat. Jika tingkatnya terlalu rendah, pesannya menjelaskan alasannya."
+    ],
+    "warnings": [
+     "Sebelum memasang V1.8 6166, hapus jar OUKA lama (1.8.5567 atau lebih lama) dari folder mods dan simpan hanya 1 salinan GeckoLib 5.5.6. Diperlukan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, dan Fabric API 0.161.0+26.3 atau lebih baru. Pasang di client dan server.",
+     "Hanya diperiksa dengan tes otomatis dan klien uji, bukan dalam permainan multipemain nyata.",
+     "README di dalam zip ini masih mengulang kalimat V1.7 88213 bahwa batas penyimpanan per sel telah dinaikkan. Kalimat itu keliru; lihat koreksinya di catatan V1.7 91209."
+    ]
+   },
+   {
     "id": "ouka-v1.8-5567",
     "title": "Ouka V1.8 5567 — Dua belas mesin generasi berikutnya dan Battery Charging Socket semudah peti",
     "summary": "V1.8 5567 menambahkan generasi berikutnya dari dua belas mesin, masing-masing berupa blok baru dengan gerakan dan layar baru, serta Battery Charging Socket yang semudah peti. Mesin sebelumnya tetap bekerja seperti biasa.",
@@ -1437,6 +1455,25 @@
    }
   ],
   "halia": [
+   {
+    "id": "halia-v1.6-1945",
+    "title": "Halia V1.6 1945",
+    "summary": "Menambahkan Halia Cinematic Core, adegan orang pertama di blok kerja, dan SS-06 Gravitia untuk Remot Stellar.",
+    "highlights": [
+     "Blok kerja kini terbuka sebagai adegan orang pertama: kamu bekerja langsung di blok, bukan di jendela. Termasuk meja kerajinan, tungku, landasan, rak ramuan, meja pesona, suar, api unggun, dan lainnya.",
+     "Setiap adegan bisa dimatikan di pengaturan; blok itu lalu membuka jendela biasanya.",
+     "Keahlian baru Remot Stellar: SS-06 Gravitia, adegan panjang yang mengirim seluruh dunia ke Ruang Imajiner.",
+     "Item Halia UltraFast kini punya animasi orang pertama: mengeluarkan, memakai, menyerang, melempar, dan menyimpan, lengkap dengan lengan dan suara. Pisau dan pentungan kini 3D. Tekan H untuk memeriksa item. Item medis mode alih tetap berjalan setelah tombol dilepas; tekan lagi untuk membatalkan."
+    ],
+    "warnings": [
+     "SS-06 Gravitia menghapus permanen dunia tempat ia digunakan, beserta bangunan dan makhluknya, lalu menggantinya dengan kota blok bercahaya. Ini tidak bisa dibatalkan. Cadangkan duniamu dulu.",
+     "Di server, siapa pun yang memegang Remot Stellar bisa memakai SS-06 Gravitia, dan semua pemain di sana terdampak.",
+     "SS-06 Gravitia berat dan butuh banyak memori kosong.",
+     "Halia Cinematic Core harus dipasang di klien dan server.",
+     "Untuk saat ini, sebagian besar teks blok kerja berbahasa Inggris.",
+     "Baru diperiksa di server dan klien uji, belum di permainan multipemain sungguhan."
+    ]
+   },
    {
     "id": "halia-v1.6-1217",
     "title": "Halia V1.6 1217",

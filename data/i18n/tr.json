@@ -306,6 +306,24 @@
  "changelog_brands": {
   "ouka": [
    {
+    "id": "ouka-v1.8-6166",
+    "title": "Ouka V1.8 6166 — Türbinsiz dört jeneratör",
+    "summary": "V1.8 6166, ısıyı doğrudan elektriğe çeviren ve Nether gibi sıcak yerlerde en güçlü olan dört jeneratör ekler; ayrıca Uzamsal Alıcı-Vericinin boyutlar arası bağlanmasını düzeltir.",
+    "highlights": [
+     "Kriyo-Termal Gradyan Çekirdeği: yakındaki ısı ile içindeki buz arasındaki farktan üretir. Buz türleri 160-640 MJ/t, döteryum ve süperiyonik buz 2.560-10.240 MJ/t, BEC ve sakura buzu 40.960-163.840 MJ/t verir. Buz yavaşça tükenir, sakura buzu hariç.",
+     "Termofotovoltaik TPV Hücresi: zemin, duvar ve tavanlar için ince bir levha, yakıt gerekmez. Nether'de 80 MJ/t, lav denizine bakarken 2.400 MJ/t'ye kadar.",
+     "MHD Magma Kanalı: akan lavın yanında üretir. Kanal başına 1.200 MJ/t, hizalı her kanal için +%25, 8'e kadar. Lav tükenmez.",
+     "Termoakustik Rezonatör: sütunun içinde ışık halkaları dalgalanır. 600-9.600 MJ/t, en yüksek değer Bazalt Deltaları ve Nether Çorakları'nda.",
+     "Herhangi birini boş elle açtığınızda çıktı ve canlı grafik içeren bir ekran görünür.",
+     "Uzamsal Alıcı-Verici düzeltmesi: başka bir boyuttaki verici artık bağlanabilir. Bağlı çift, uçlarından biri yüklü olduğu sürece çalışmaya devam eder. Kademe çok düşükse mesaj nedenini söyler."
+    ],
+    "warnings": [
+     "V1.8 6166'i kurmadan önce mods klasöründen eski OUKA jar dosyasını (1.8.5567 veya daha eski) silin ve GeckoLib 5.5.6'nın yalnızca 1 kopyasını bırakın. Minecraft 26.3, Fabric Loader 0.19.5 veya daha yeni ve Fabric API 0.161.0+26.3 veya daha yeni gerekir. İstemciye ve sunucuya kurun.",
+     "Yalnızca otomatik testler ve test istemcileriyle kontrol edildi, gerçek çok oyunculu oyunda değil.",
+     "Bu zip'teki README hâlâ V1.7 88213 ifadesini tekrarlıyor: hücre başına depolama sınırının yükseltildiği yazıyor. Bu ifade yanlıştır; V1.7 91209 notlarındaki düzeltmeye bakın."
+    ]
+   },
+   {
     "id": "ouka-v1.8-5567",
     "title": "Ouka V1.8 5567 — On iki yeni nesil makine ve sandık kadar kolay bir Battery Charging Socket",
     "summary": "V1.8 5567; yeni görünüm, hareket ve ekrana sahip on iki makinenin yeni neslini ve sandık kadar kolay bir Battery Charging Socket'i ekler. Önceki makineler eskisi gibi çalışmaya devam eder.",
@@ -1437,6 +1455,25 @@
    }
   ],
   "halia": [
+   {
+    "id": "halia-v1.6-1945",
+    "title": "Halia V1.6 1945",
+    "summary": "Halia Cinematic Core ile çalışma bloklarında birinci şahıs sahneler ve Yıldız Kumandası için SS-06 Gravitia eklendi.",
+    "highlights": [
+     "Çalışma blokları artık birinci şahıs sahne olarak açılır: pencerede değil, doğrudan blok üzerinde çalışırsın. Çalışma masası, fırınlar, örs, iksir standı, büyü masası, işaret feneri, kamp ateşi ve diğerleri dahildir.",
+     "Her sahne ayarlardan kapatılabilir; o blok da her zamanki penceresini açar.",
+     "Yıldız Kumandası için yeni yetenek: SS-06 Gravitia, tüm dünyayı Sanal Uzay'a gönderen uzun bir sahne.",
+     "Halia UltraFast eşyalarında artık birinci şahıs animasyonlar var: çıkarma, kullanma, saldırma, fırlatma ve kaldırma, kollar ve seslerle birlikte. Bıçaklar ve cop artık 3D. Bir eşyayı incelemek için H tuşuna basın. Geçişli tıbbi eşyalar düğmeyi bırakınca da devam eder; iptal için tekrar basın."
+    ],
+    "warnings": [
+     "SS-06 Gravitia, kullanıldığı dünyayı yapıları ve yaratıklarıyla kalıcı olarak siler ve parlak bloklardan bir şehirle değiştirir. Geri alınamaz. Önce dünyanı yedekle.",
+     "Sunucuda Yıldız Kumandası olan herkes SS-06 Gravitia'yı kullanabilir ve oradaki tüm oyuncuları etkiler.",
+     "SS-06 Gravitia ağırdır ve bol boş bellek ister.",
+     "Halia Cinematic Core hem istemciye hem sunucuya kurulmalıdır.",
+     "Çalışma bloklarının metinleri şimdilik çoğunlukla İngilizcedir.",
+     "Yalnızca test sunucusunda ve test istemcilerinde denetlendi, gerçek çok oyunculu oyunda henüz denenmedi."
+    ]
+   },
    {
     "id": "halia-v1.6-1217",
     "title": "Halia V1.6 1217",

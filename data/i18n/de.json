@@ -306,6 +306,24 @@
  "changelog_brands": {
   "ouka": [
    {
+    "id": "ouka-v1.8-6166",
+    "title": "Ouka V1.8 6166 — Vier Generatoren ohne Turbine",
+    "summary": "V1.8 6166 fügt vier Generatoren hinzu, die Wärme direkt in Strom umwandeln und an heißen Orten wie dem Nether am stärksten sind. Außerdem ist das Verbinden des räumlichen Transceivers über Dimensionen hinweg behoben.",
+    "highlights": [
+     "Kryo-Thermogradientenkern: erzeugt Strom aus dem Unterschied zwischen naher Hitze und dem Eis im Inneren. Eissorten liefern 160 bis 640 MJ/t, Deuterium- und superionisches Eis 2.560 bis 10.240 MJ/t, BEC- und Sakura-Eis 40.960 bis 163.840 MJ/t. Eis nutzt sich langsam ab, außer Sakura-Eis.",
+     "Thermophotovoltaische TPV-Zelle: eine dünne Platte für Böden, Wände und Decken, ohne Brennstoff. 80 MJ/t im Nether, bis zu 2.400 MJ/t vor einem Lavameer.",
+     "MHD-Magmakanal: erzeugt Strom neben fließender Lava. 1.200 MJ/t pro Kanal, +25 % pro fluchtendem Kanal bis 8. Die Lava wird nicht verbraucht.",
+     "Thermoakustischer Resonator: Lichtringe wogen in der Säule. 600 bis 9.600 MJ/t, am höchsten in Basaltdeltas und Nether-Ödland.",
+     "Öffne einen davon mit leerer Hand für einen Bildschirm mit Leistung und Live-Diagramm.",
+     "Korrektur des räumlichen Transceivers: Ein Sender in einer anderen Dimension lässt sich jetzt verbinden. Ein verbundenes Paar läuft weiter, solange eine Seite geladen ist. Ist die Stufe zu niedrig, nennt die Meldung den Grund."
+    ],
+    "warnings": [
+     "Bevor du V1.8 6166 installierst, entferne die alte OUKA-jar (1.8.5567 oder älter) aus dem Ordner mods und behalte nur 1 Kopie von GeckoLib 5.5.6. Benötigt werden Minecraft 26.3, Fabric Loader 0.19.5 oder neuer und Fabric API 0.161.0+26.3 oder neuer. Auf Client und Server installieren.",
+     "Geprüft nur mit automatisierten Tests und Testclients, nicht in echtem Mehrspielerbetrieb.",
+     "Die README in dieser zip wiederholt noch die Formulierung von V1.7 88213, dass das Speicherlimit pro Zelle erhöht wurde. Diese Formulierung ist falsch; siehe die Korrektur in den Notizen zu V1.7 91209."
+    ]
+   },
+   {
     "id": "ouka-v1.8-5567",
     "title": "Ouka V1.8 5567 — Zwölf Maschinen der nächsten Generation und eine Battery Charging Socket so einfach wie eine Truhe",
     "summary": "V1.8 5567 bringt die nächste Generation von zwölf Maschinen, jede als neuer Block mit neuer Bewegung und neuem Bildschirm, sowie eine Battery Charging Socket, die sich wie eine Truhe öffnen lässt. Die früheren Maschinen funktionieren weiter wie bisher.",
@@ -1437,6 +1455,25 @@
    }
   ],
   "halia": [
+   {
+    "id": "halia-v1.6-1945",
+    "title": "Halia V1.6 1945",
+    "summary": "Neu sind Halia Cinematic Core mit Ego-Szenen an Arbeitsblöcken und SS-06 Gravitia für die Stellar-Fernbedienung.",
+    "highlights": [
+     "Arbeitsblöcke öffnen sich jetzt als Ego-Szenen: Du arbeitest direkt am Block statt in einem Fenster. Dazu gehören Werkbank, Öfen, Amboss, Braustand, Zaubertisch, Leuchtfeuer, Lagerfeuer und mehr.",
+     "Jede Szene lässt sich in den Werkstatt-Einstellungen abschalten; der Block öffnet dann sein übliches Fenster.",
+     "Neue Fähigkeit der Stellar-Fernbedienung: SS-06 Gravitia, eine lange Inszenierung, die die ganze Welt in den imaginären Raum schickt.",
+     "Halia-UltraFast-Gegenstände haben jetzt Ego-Animationen: Ziehen, Benutzen, Angreifen, Werfen und Wegstecken, mit Armen und Sounds. Messer und Keule sind nun 3D-Modelle. Mit H untersuchst du einen Gegenstand. Medizin im Umschaltmodus läuft nach dem Loslassen weiter; erneutes Drücken bricht ab."
+    ],
+    "warnings": [
+     "SS-06 Gravitia löscht die Welt, in der es eingesetzt wird, endgültig mit allen Bauten und Kreaturen und ersetzt sie durch eine Stadt aus leuchtenden Blöcken. Das lässt sich nicht rückgängig machen. Sichere deine Welt vorher.",
+     "Auf einem Server kann jeder mit einer Stellar-Fernbedienung SS-06 Gravitia einsetzen, und es betrifft alle Spieler dort.",
+     "SS-06 Gravitia ist rechenintensiv und braucht viel freien Arbeitsspeicher.",
+     "Halia Cinematic Core muss auf Client und Server installiert sein.",
+     "Die Texte der Arbeitsblöcke sind vorerst meist englisch.",
+     "Bisher nur auf einem Testserver und in Testclients geprüft, noch nicht im echten Mehrspielerbetrieb."
+    ]
+   },
    {
     "id": "halia-v1.6-1217",
     "title": "Halia V1.6 1217",

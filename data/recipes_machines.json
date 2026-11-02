@@ -1,6 +1,6 @@
 {
  "sources": {
-  "ouka": "1.8.5567",
+  "ouka": "1.8.6166",
   "cherry": "1.3.1017"
  },
  "stations": [
@@ -494,6 +494,12 @@
    "mcb957409cc24",
    "flat"
   ],
+  "ouka:cryo_thermal_core": [
+   "クライオ熱電勾配炉",
+   "Cryo Thermal Gradient Core",
+   "m28459fd5f1ab",
+   "flat"
+  ],
   "ouka:crystal_pulling_furnace": [
    "単結晶引き上げ炉",
    "Crystal Pulling Furnace",
@@ -672,6 +678,12 @@
    "潤滑油の缶",
    "Lubricant Canister",
    "ma63fee0671e7",
+   "flat"
+  ],
+  "ouka:mhd_magma_channel": [
+   "MHDマグマチャンネル",
+   "MHD Magma Channel",
+   "mb05843a3e533",
    "flat"
   ],
   "ouka:molten_salt_exchanger": [
@@ -962,6 +974,12 @@
    "m5dbf919dc041",
    "flat"
   ],
+  "ouka:thermoacoustic_resonator": [
+   "熱音響レゾネーター",
+   "Thermoacoustic Resonator",
+   "m102e794c55ec",
+   "flat"
+  ],
   "ouka:thorium_dust": [
    "トリウムの粉",
    "Thorium Dust",
@@ -978,6 +996,12 @@
    "チタンの粉",
    "Titanium Dust",
    "m3ee85cca2f12",
+   "flat"
+  ],
+  "ouka:tpv_thermal_cell": [
+   "熱放射TPVセル",
+   "Thermophotovoltaic TPV Cell",
+   "m96bd3b08e261",
    "flat"
   ],
   "ouka:tracking_heliostat": [
@@ -2797,6 +2821,35 @@
    "brand": "ouka"
   },
   {
+   "id": "ouka:assembly/cryo_thermal_core",
+   "station": "assembly",
+   "inputs": [
+    {
+     "id": "ouka:ouka_alloy_ingot",
+     "n": 16
+    },
+    {
+     "id": "ouka:deuterium_cryo_ice",
+     "n": 4
+    },
+    {
+     "id": "minecraft:quartz",
+     "n": 8
+    },
+    {
+     "id": "minecraft:amethyst_shard",
+     "n": 4
+    }
+   ],
+   "outputs": [
+    {
+     "id": "ouka:cryo_thermal_core",
+     "n": 1
+    }
+   ],
+   "brand": "ouka"
+  },
+  {
    "id": "ouka:assembly/crystal_pulling_furnace",
    "station": "assembly",
    "inputs": [
@@ -3334,6 +3387,35 @@
    "outputs": [
     {
      "id": "ouka:machine_frame",
+     "n": 1
+    }
+   ],
+   "brand": "ouka"
+  },
+  {
+   "id": "ouka:assembly/mhd_magma_channel",
+   "station": "assembly",
+   "inputs": [
+    {
+     "id": "ouka:ouka_alloy_ingot_max",
+     "n": 8
+    },
+    {
+     "id": "minecraft:quartz",
+     "n": 8
+    },
+    {
+     "id": "minecraft:amethyst_shard",
+     "n": 8
+    },
+    {
+     "id": "ouka:titanium_ingot",
+     "n": 8
+    }
+   ],
+   "outputs": [
+    {
+     "id": "ouka:mhd_magma_channel",
      "n": 1
     }
    ],
@@ -3925,6 +4007,35 @@
    "brand": "ouka"
   },
   {
+   "id": "ouka:assembly/thermoacoustic_resonator",
+   "station": "assembly",
+   "inputs": [
+    {
+     "id": "ouka:ouka_alloy_ingot_max",
+     "n": 8
+    },
+    {
+     "id": "minecraft:quartz",
+     "n": 8
+    },
+    {
+     "id": "minecraft:amethyst_shard",
+     "n": 8
+    },
+    {
+     "id": "minecraft:glass",
+     "n": 8
+    }
+   ],
+   "outputs": [
+    {
+     "id": "ouka:thermoacoustic_resonator",
+     "n": 1
+    }
+   ],
+   "brand": "ouka"
+  },
+  {
    "id": "ouka:assembly/thorium_fuel_rod",
    "station": "assembly",
    "inputs": [
@@ -3944,6 +4055,35 @@
    "outputs": [
     {
      "id": "ouka:thorium_fuel_rod",
+     "n": 1
+    }
+   ],
+   "brand": "ouka"
+  },
+  {
+   "id": "ouka:assembly/tpv_thermal_cell",
+   "station": "assembly",
+   "inputs": [
+    {
+     "id": "ouka:ouka_alloy_ingot",
+     "n": 8
+    },
+    {
+     "id": "ouka:deuterium_cryo_ice",
+     "n": 2
+    },
+    {
+     "id": "minecraft:quartz",
+     "n": 16
+    },
+    {
+     "id": "minecraft:amethyst_shard",
+     "n": 8
+    }
+   ],
+   "outputs": [
+    {
+     "id": "ouka:tpv_thermal_cell",
      "n": 1
     }
    ],
@@ -11707,6 +11847,7 @@
   "ouka:assembly/cooling_tower": "ouka 強制通風冷却塔 強制通風冷却塔 ouka:cooling_tower cooling_tower forced-draft cooling tower 機械の骨組み 機械の骨組み ouka:machine_frame machine_frame machine frame 複合素材の板 複合素材の板 ouka:composite_plate composite_plate composite plate カーボンプレート かーぼんぷれーと ouka:carbon_plate carbon_plate carbon plate チタンの板 ちたんの板 ouka:titanium_plate titanium_plate titanium plate",
   "ouka:assembly/cryo_compressor": "ouka 極低温圧縮機 極低温圧縮機 ouka:cryo_compressor cryo_compressor cryogenic compressor 機械の骨組み 機械の骨組み ouka:machine_frame machine_frame machine frame 電子回路 電子回路 ouka:electronic_circuit electronic_circuit electronic circuit 重水素セル 重水素せる ouka:deuterium_cell deuterium_cell deuterium cell",
   "ouka:assembly/cryo_oxygen_extractor": "ouka 極低温電解酸素精製機 極低温電解酸素精製機 ouka:cryo_oxygen_extractor cryo_oxygen_extractor cryo-oxygen extractor 機械の骨組み 機械の骨組み ouka:machine_frame machine_frame machine frame チタンインゴット ちたんいんごっと ouka:titanium_ingot titanium_ingot titanium ingot 銅板 銅板 ouka:copper_plate copper_plate copper plate 電子回路 電子回路 ouka:electronic_circuit electronic_circuit electronic circuit",
+  "ouka:assembly/cryo_thermal_core": "ouka クライオ熱電勾配炉 くらいお熱電勾配炉 ouka:cryo_thermal_core cryo_thermal_core cryo thermal gradient core Ouka合金インゴット ouka合金いんごっと ouka:ouka_alloy_ingot ouka_alloy_ingot ouka alloy ingot 重水素クライオ格子氷 重水素くらいお格子氷 ouka:deuterium_cryo_ice deuterium_cryo_ice deuterium cryo-lattice ice ネザークォーツ ねざーくぉーつ minecraft:quartz quartz nether quartz アメジストの欠片 あめじすとの欠片 minecraft:amethyst_shard amethyst_shard amethyst shard",
   "ouka:assembly/crystal_pulling_furnace": "ouka 単結晶引き上げ炉 単結晶引き上げ炉 ouka:crystal_pulling_furnace crystal_pulling_furnace crystal pulling furnace 機械の骨組み 機械の骨組み ouka:machine_frame machine_frame machine frame 耐火レンガ 耐火れんが ouka:refractory_brick refractory_brick refractory brick タングステンの板 たんぐすてんの板 ouka:tungsten_plate tungsten_plate tungsten plate 電子回路 電子回路 ouka:electronic_circuit electronic_circuit electronic circuit",
   "ouka:assembly/dynamo_crank": "ouka ダイナモ・クランク だいなも・くらんく ouka:dynamo_crank dynamo_crank dynamo crank 手回し発電機 手回し発電機 ouka:hand_crank_generator hand_crank_generator hand-crank generator Ouka合金インゴット Max ouka合金いんごっと max ouka:ouka_alloy_ingot_max ouka_alloy_ingot_max ouka alloy ingot max チタンインゴット ちたんいんごっと ouka:titanium_ingot titanium_ingot titanium ingot",
   "ouka:assembly/electrolytic_refining_cell": "ouka 電解精錬槽 電解精錬槽 ouka:electrolytic_refining_cell electrolytic_refining_cell electrolytic refining cell 機械の骨組み 機械の骨組み ouka:machine_frame machine_frame machine frame 銅板 銅板 ouka:copper_plate copper_plate copper plate チタンインゴット ちたんいんごっと ouka:titanium_ingot titanium_ingot titanium ingot 電子回路 電子回路 ouka:electronic_circuit electronic_circuit electronic circuit",
@@ -11726,6 +11867,7 @@
   "ouka:assembly/laser_ablation_bed": "ouka 連続レーザーアブレーション加工機 連続れーざーあぶれーしょん加工機 ouka:laser_ablation_bed laser_ablation_bed laser ablation bed 機械の骨組み 機械の骨組み ouka:machine_frame machine_frame machine frame カーボンプレート かーぼんぷれーと ouka:carbon_plate carbon_plate carbon plate 電子回路 電子回路 ouka:electronic_circuit electronic_circuit electronic circuit 超伝導コイル 超伝導こいる ouka:superconducting_coil superconducting_coil superconducting coil",
   "ouka:assembly/logistics_skyport": "ouka 物流スカイポート 物流すかいぽーと ouka:logistics_skyport logistics_skyport logistics skyport 自律型物流ドローンステーション 自律型物流どろーんすてーしょん ouka:logistics_drone_port logistics_drone_port logistics drone port Ouka合金インゴット Max ouka合金いんごっと max ouka:ouka_alloy_ingot_max ouka_alloy_ingot_max ouka alloy ingot max チタンインゴット ちたんいんごっと ouka:titanium_ingot titanium_ingot titanium ingot 複合素材の板 複合素材の板 ouka:composite_plate composite_plate composite plate",
   "ouka:assembly/machine_frame": "ouka 機械の骨組み 機械の骨組み ouka:machine_frame machine_frame machine frame 鉄板 鉄板 ouka:iron_plate iron_plate iron plate 複合素材の板 複合素材の板 ouka:composite_plate composite_plate composite plate 電子回路 電子回路 ouka:electronic_circuit electronic_circuit electronic circuit",
+  "ouka:assembly/mhd_magma_channel": "ouka MHDマグマチャンネル mhdまぐまちゃんねる ouka:mhd_magma_channel mhd_magma_channel mhd magma channel Ouka合金インゴット Max ouka合金いんごっと max ouka:ouka_alloy_ingot_max ouka_alloy_ingot_max ouka alloy ingot max ネザークォーツ ねざーくぉーつ minecraft:quartz quartz nether quartz アメジストの欠片 あめじすとの欠片 minecraft:amethyst_shard amethyst_shard amethyst shard チタンインゴット ちたんいんごっと ouka:titanium_ingot titanium_ingot titanium ingot",
   "ouka:assembly/molten_salt_exchanger": "ouka 高温溶融塩熱交換タワー 高温溶融塩熱交換たわー ouka:molten_salt_exchanger molten_salt_exchanger molten salt exchanger tower 機械の骨組み 機械の骨組み ouka:machine_frame machine_frame machine frame 耐火レンガ 耐火れんが ouka:refractory_brick refractory_brick refractory brick チタンの板 ちたんの板 ouka:titanium_plate titanium_plate titanium plate 超高純度チタンのインゴット 超高純度ちたんのいんごっと ouka:pure_titanium_ingot pure_titanium_ingot pure titanium ingot",
   "ouka:assembly/molten_salt_solar_tower": "ouka 溶融塩ソーラータワー 溶融塩そーらーたわー ouka:molten_salt_solar_tower molten_salt_solar_tower molten-salt solar tower 太陽熱集光蓄熱タワー 太陽熱集光蓄熱たわー ouka:solar_thermal_tower solar_thermal_tower solar-thermal molten salt tower 桜花合金板 桜花合金板 ouka:ouka_alloy_plate ouka_alloy_plate ouka alloy plate チタンの板 ちたんの板 ouka:titanium_plate titanium_plate titanium plate 機械の骨組み 機械の骨組み ouka:machine_frame machine_frame machine frame",
   "ouka:assembly/omni_wrench": "ouka 万能工業ラチェット 万能工業らちぇっと ouka:omni_wrench omni_wrench industrial omni-wrench チタンインゴット ちたんいんごっと ouka:titanium_ingot titanium_ingot titanium ingot 鉄板 鉄板 ouka:iron_plate iron_plate iron plate 電子回路 電子回路 ouka:electronic_circuit electronic_circuit electronic circuit 工業用プラスチック 工業用ぷらすちっく ouka:industrial_plastic industrial_plastic industrial plastic",
@@ -11747,7 +11889,9 @@
   "ouka:assembly/syngas_synthesis_reactor": "ouka 合成ガス触媒反応器 合成がす触媒反応器 ouka:syngas_synthesis_reactor syngas_synthesis_reactor syngas synthesis reactor 機械の骨組み 機械の骨組み ouka:machine_frame machine_frame machine frame チタンの板 ちたんの板 ouka:titanium_plate titanium_plate titanium plate 耐火レンガ 耐火れんが ouka:refractory_brick refractory_brick refractory brick 触媒ペレット 触媒ぺれっと ouka:catalyst_pellet catalyst_pellet catalyst pellet",
   "ouka:assembly/tachyon_overdrive": "ouka タキオン・オーバークロック たきおん・おーばーくろっく ouka:tachyon_overdrive tachyon_overdrive tachyon overdrive タキオン・オーバークロック加速コア たきおん・おーばーくろっく加速こあ ouka:tachyon_accelerator tachyon_accelerator tachyon acceleration pylon Ouka合金インゴット Max ouka合金いんごっと max ouka:ouka_alloy_ingot_max ouka_alloy_ingot_max ouka alloy ingot max",
   "ouka:assembly/thermal_demolition_laser": "ouka 携帯型熱分解カッター 携帯型熱分解かったー ouka:thermal_demolition_laser thermal_demolition_laser thermal demolition laser チタンインゴット ちたんいんごっと ouka:titanium_ingot titanium_ingot titanium ingot 電子回路 電子回路 ouka:electronic_circuit electronic_circuit electronic circuit ブレイズロッド ぶれいずろっど minecraft:blaze_rod blaze_rod blaze rod アメジストの欠片 あめじすとの欠片 minecraft:amethyst_shard amethyst_shard amethyst shard",
+  "ouka:assembly/thermoacoustic_resonator": "ouka 熱音響レゾネーター 熱音響れぞねーたー ouka:thermoacoustic_resonator thermoacoustic_resonator thermoacoustic resonator Ouka合金インゴット Max ouka合金いんごっと max ouka:ouka_alloy_ingot_max ouka_alloy_ingot_max ouka alloy ingot max ネザークォーツ ねざーくぉーつ minecraft:quartz quartz nether quartz アメジストの欠片 あめじすとの欠片 minecraft:amethyst_shard amethyst_shard amethyst shard ガラス がらす minecraft:glass glass glass",
   "ouka:assembly/thorium_fuel_rod": "ouka トリウム燃料棒 とりうむ燃料棒 ouka:thorium_fuel_rod thorium_fuel_rod thorium fuel rod チタンインゴット ちたんいんごっと ouka:titanium_ingot titanium_ingot titanium ingot トリウムの粉 とりうむの粉 ouka:thorium_dust thorium_dust thorium dust 複合素材の板 複合素材の板 ouka:composite_plate composite_plate composite plate",
+  "ouka:assembly/tpv_thermal_cell": "ouka 熱放射TPVセル 熱放射tpvせる ouka:tpv_thermal_cell tpv_thermal_cell thermophotovoltaic tpv cell Ouka合金インゴット ouka合金いんごっと ouka:ouka_alloy_ingot ouka_alloy_ingot ouka alloy ingot 重水素クライオ格子氷 重水素くらいお格子氷 ouka:deuterium_cryo_ice deuterium_cryo_ice deuterium cryo-lattice ice ネザークォーツ ねざーくぉーつ minecraft:quartz quartz nether quartz アメジストの欠片 あめじすとの欠片 minecraft:amethyst_shard amethyst_shard amethyst shard",
   "ouka:assembly/tracking_heliostat": "ouka 追尾ヘリオスタット 追尾へりおすたっと ouka:tracking_heliostat tracking_heliostat tracking heliostat ヘリオスタット(平面鏡) へりおすたっと(平面鏡) ouka:heliostat heliostat heliostat 桜花合金板 桜花合金板 ouka:ouka_alloy_plate ouka_alloy_plate ouka alloy plate チタンの板 ちたんの板 ouka:titanium_plate titanium_plate titanium plate",
   "ouka:assembly/ultracentrifuge": "ouka 超遠心分離機 超遠心分離機 ouka:ultracentrifuge ultracentrifuge ultracentrifuge 分子遠心分離抽出機 分子遠心分離抽出機 ouka:molecular_centrifuge molecular_centrifuge molecular centrifuge extractor Ouka合金インゴット Max ouka合金いんごっと max ouka:ouka_alloy_ingot_max ouka_alloy_ingot_max ouka alloy ingot max",
   "ouka:assembly/uranium_fuel_rod": "ouka ウラン燃料棒 うらん燃料棒 ouka:uranium_fuel_rod uranium_fuel_rod uranium fuel rod チタンインゴット ちたんいんごっと ouka:titanium_ingot titanium_ingot titanium ingot 濃縮ウラン 濃縮うらん ouka:enriched_uranium enriched_uranium enriched uranium 複合素材の板 複合素材の板 ouka:composite_plate composite_plate composite plate",

@@ -310,6 +310,24 @@
  "changelog_brands": {
   "ouka": [
    {
+    "id": "ouka-v1.8-6166",
+    "title": "Ouka V1.8 6166 — Four generators with no moving turbine",
+    "summary": "V1.8 6166 adds four generators that turn heat straight into electricity, at their best in hot places such as the Nether, and fixes linking a Spatial Transceiver across dimensions.",
+    "highlights": [
+     "Cryo-Thermal Gradient Core: generates from the difference between nearby heat and the ice inside. Ice grades give 160 to 640 MJ/t, deuterium and superionic ice 2,560 to 10,240 MJ/t, BEC and sakura ice 40,960 to 163,840 MJ/t. Ice slowly wears away, except sakura ice.",
+     "Thermophotovoltaic TPV Cell: a thin slate for floors, walls and ceilings, no fuel. 80 MJ/t in the Nether, up to 2,400 MJ/t facing a lava sea.",
+     "MHD Magma Channel: generates beside flowing lava. 1,200 MJ/t per channel, +25% per aligned channel up to 8. The lava is not used up.",
+     "Thermoacoustic Resonator: rings of light wave inside the column. 600 to 9,600 MJ/t, peaking in Basalt Deltas and Nether Wastes.",
+     "Open any of them bare-handed for a screen with the output and a live graph.",
+     "Spatial Transceiver fix: a sender in another dimension can now be linked. A linked cross-dimension pair keeps both ends running while either end is loaded. When the tier is too low, the message says why."
+    ],
+    "warnings": [
+     "Before you install V1.8 6166, remove the old OUKA jar (1.8.5567 or older) from the mods folder and keep only 1 copy of GeckoLib 5.5.6. It needs Minecraft 26.3, Fabric Loader 0.19.5 or newer, and Fabric API 0.161.0+26.3 or newer. Install it on both the client and the server.",
+     "It has been checked in automated tests and test clients only, not in real multiplayer play.",
+     "The README in this zip still repeats the V1.7 88213 wording that the per-cell storage limit was raised. That wording is wrong; see the correction in the V1.7 91209 notes."
+    ]
+   },
+   {
     "id": "ouka-v1.8-5567",
     "title": "Ouka V1.8 5567 — Twelve next-generation machines and a chest-easy Battery Charging Socket",
     "summary": "V1.8 5567 adds the next generation of twelve machines, each a new block with new motion and a new screen, and a Battery Charging Socket that opens like a chest. The earlier machines keep working as they are.",
@@ -1441,6 +1459,25 @@
    }
   ],
   "halia": [
+   {
+    "id": "halia-v1.6-1945",
+    "title": "Halia V1.6 1945",
+    "summary": "Adds Halia Cinematic Core, first-person scenes at workstations, and SS-06 Gravitia for the Stellar Remote.",
+    "highlights": [
+     "Workstations now open as first-person scenes: you work on the block itself instead of in a window. This covers the crafting table, furnaces, anvil, brewing stand, enchanting table, beacon, campfire and more.",
+     "Each scene can be switched off in Workstation Settings, and that block then opens its usual window.",
+     "New Stellar Remote skill: SS-06 Gravitia, a full cinematic that sends the whole world into Imaginary Space.",
+     "Halia UltraFast items now have first-person animations: drawing, using, attacking, throwing and putting away, with your arms and their sounds. The knives and the club are now 3D. Press H to inspect an item. Medical items that use a toggle keep working after you release the button; press again to cancel."
+    ],
+    "warnings": [
+     "SS-06 Gravitia permanently deletes the world it is used in, with all builds and creatures, and replaces it with a city of glowing blocks. It cannot be undone. Back up your world first.",
+     "On a server, anyone who holds a Stellar Remote can use SS-06 Gravitia, and it affects every player there.",
+     "SS-06 Gravitia is heavy and needs plenty of free memory.",
+     "Halia Cinematic Core must be installed on both the client and the server.",
+     "Workstation text is in English and Japanese for now.",
+     "It has been checked on a test server and in test clients only, not yet in real multiplayer play."
+    ]
+   },
    {
     "id": "halia-v1.6-1217",
     "title": "Halia V1.6 1217",

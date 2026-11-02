@@ -306,6 +306,24 @@
  "changelog_brands": {
   "ouka": [
    {
+    "id": "ouka-v1.8-6166",
+    "title": "Ouka V1.8 6166 — Quatro geradores sem turbina",
+    "summary": "A V1.8 6166 adiciona quatro geradores que transformam calor diretamente em eletricidade, melhores em lugares quentes como o Nether, e corrige a ligação do transceptor espacial entre dimensões.",
+    "highlights": [
+     "Núcleo de gradiente criotérmico: gera com a diferença entre o calor próximo e o gelo interno. Gelos comuns dão de 160 a 640 MJ/t, deutério e superiônico de 2.560 a 10.240 MJ/t, BEC e sakura de 40.960 a 163.840 MJ/t. O gelo se desgasta aos poucos, exceto o de sakura.",
+     "Célula TPV termofotovoltaica: uma placa fina para pisos, paredes e tetos, sem combustível. 80 MJ/t no Nether e até 2.400 MJ/t de frente para um mar de lava.",
+     "Canal de magma MHD: gera ao lado de lava corrente. 1.200 MJ/t por canal, +25% por canal alinhado até 8. A lava não é consumida.",
+     "Ressonador termoacústico: anéis de luz ondulam dentro da coluna. De 600 a 9.600 MJ/t, com o máximo em Deltas de Basalto e Ermos do Nether.",
+     "Abra qualquer um com a mão vazia para ver uma tela com a produção e um gráfico ao vivo.",
+     "Correção do transceptor espacial: agora é possível ligar um emissor de outra dimensão. Um par ligado continua funcionando enquanto uma das pontas estiver carregada. Quando o nível é baixo demais, a mensagem explica o motivo."
+    ],
+    "warnings": [
+     "Antes de instalar a V1.8 6166, remova o jar antigo da OUKA (1.8.5567 ou anterior) da pasta mods e mantenha apenas 1 cópia do GeckoLib 5.5.6. Ele precisa de Minecraft 26.3, Fabric Loader 0.19.5 ou mais recente, e Fabric API 0.161.0+26.3 ou mais recente. Instale no cliente e no servidor.",
+     "Verificado apenas com testes automatizados e clientes de teste, não em partidas multijogador reais.",
+     "O README deste zip ainda repete a redação da V1.7 88213 de que o limite de armazenamento por célula foi aumentado. Essa redação está errada; veja a correção nas notas da V1.7 91209."
+    ]
+   },
+   {
     "id": "ouka-v1.8-5567",
     "title": "Ouka V1.8 5567 — Doze máquinas de próxima geração e uma Battery Charging Socket tão fácil quanto um baú",
     "summary": "A V1.8 5567 adiciona a próxima geração de doze máquinas, cada uma um bloco novo com movimento e tela novos, e uma Battery Charging Socket tão fácil de usar quanto um baú. As máquinas anteriores continuam funcionando como antes.",
@@ -1437,6 +1455,25 @@
    }
   ],
   "halia": [
+   {
+    "id": "halia-v1.6-1945",
+    "title": "Halia V1.6 1945",
+    "summary": "Adiciona Halia Cinematic Core, cenas em primeira pessoa nos blocos de trabalho, e SS-06 Gravitia para o controle estelar.",
+    "highlights": [
+     "Os blocos de trabalho agora abrem como cenas em primeira pessoa: você trabalha no próprio bloco, não em uma janela. Inclui bancada, fornalhas, bigorna, suporte de poções, mesa de encantamento, sinalizador, fogueira e outros.",
+     "Cada cena pode ser desligada nas configurações; o bloco então abre a janela de sempre.",
+     "Nova habilidade do controle estelar: SS-06 Gravitia, uma longa sequência que envia o mundo inteiro ao espaço imaginário.",
+     "Os itens do Halia UltraFast agora têm animações em primeira pessoa: sacar, usar, atacar, lançar e guardar, com braços e sons. As facas e o bastão agora são 3D. Pressione H para inspecionar um item. Itens médicos de alternância continuam em uso ao soltar o botão; pressione de novo para cancelar."
+    ],
+    "warnings": [
+     "SS-06 Gravitia apaga para sempre o mundo em que é usado, com construções e criaturas, e o substitui por uma cidade de blocos brilhantes. Não pode ser desfeito. Faça backup do mundo antes.",
+     "Em um servidor, qualquer pessoa com um controle estelar pode usar SS-06 Gravitia, e isso afeta todos os jogadores ali.",
+     "SS-06 Gravitia é pesado e precisa de bastante memória livre.",
+     "Halia Cinematic Core deve ser instalado no cliente e no servidor.",
+     "Por enquanto, a maioria dos textos dos blocos de trabalho está em inglês.",
+     "Verificado apenas em servidor e clientes de teste, ainda não em multijogador real."
+    ]
+   },
    {
     "id": "halia-v1.6-1217",
     "title": "Halia V1.6 1217",

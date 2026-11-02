@@ -306,6 +306,24 @@
  "changelog_brands": {
   "ouka": [
    {
+    "id": "ouka-v1.8-6166",
+    "title": "Ouka V1.8 6166 — Quatre générateurs sans turbine",
+    "summary": "V1.8 6166 ajoute quatre générateurs qui transforment directement la chaleur en électricité, plus efficaces dans les lieux chauds comme le Nether. La liaison du transcepteur spatial entre dimensions est aussi corrigée.",
+    "highlights": [
+     "Cœur à gradient cryothermique : produit grâce à l'écart entre la chaleur proche et la glace à l'intérieur. Les glaces donnent 160 à 640 MJ/t, celles au deutérium et superionique 2 560 à 10 240 MJ/t, BEC et sakura 40 960 à 163 840 MJ/t. La glace s'use lentement, sauf celle de sakura.",
+     "Cellule TPV thermophotovoltaïque : une plaque fine pour sols, murs et plafonds, sans combustible. 80 MJ/t dans le Nether, jusqu'à 2 400 MJ/t face à une mer de lave.",
+     "Canal de magma MHD : produit à côté de lave en mouvement. 1 200 MJ/t par canal, +25 % par canal aligné jusqu'à 8. La lave n'est pas consommée.",
+     "Résonateur thermoacoustique : des anneaux de lumière ondulent dans la colonne. 600 à 9 600 MJ/t, au maximum dans les Deltas de basalte et les Terres désolées du Nether.",
+     "Ouvrez-les à main nue pour voir un écran avec la production et un graphique en direct.",
+     "Correction du transcepteur spatial : un émetteur d'une autre dimension peut désormais être lié. Une paire liée continue de fonctionner tant qu'un de ses côtés est chargé. Si le niveau est trop bas, le message en donne la raison."
+    ],
+    "warnings": [
+     "Avant d'installer la V1.8 6166, supprimez l'ancien jar d'OUKA (1.8.5567 ou antérieur) du dossier mods et ne gardez qu'une seule copie de GeckoLib 5.5.6. Il faut Minecraft 26.3, Fabric Loader 0.19.5 ou plus récent, et Fabric API 0.161.0+26.3 ou plus récent. Installez-le sur le client et sur le serveur.",
+     "Vérifié seulement avec des tests automatisés et des clients de test, pas en partie multijoueur réelle.",
+     "Le README de cette archive répète encore la formulation de la V1.7 88213 selon laquelle la limite de stockage par cellule a été relevée. Cette formulation est fausse ; voir la correction dans les notes de la V1.7 91209."
+    ]
+   },
+   {
     "id": "ouka-v1.8-5567",
     "title": "Ouka V1.8 5567 — Douze machines de nouvelle génération et une Battery Charging Socket aussi simple qu'un coffre",
     "summary": "La V1.8 5567 ajoute la nouvelle génération de douze machines, chacune étant un bloc neuf avec un mouvement et un écran nouveaux, ainsi qu'une Battery Charging Socket aussi simple d'usage qu'un coffre. Les machines précédentes continuent de fonctionner comme avant.",
@@ -1437,6 +1455,25 @@
    }
   ],
   "halia": [
+   {
+    "id": "halia-v1.6-1945",
+    "title": "Halia V1.6 1945",
+    "summary": "Ajoute Halia Cinematic Core, des scènes à la première personne sur les blocs de travail, et SS-06 Gravitia pour la télécommande stellaire.",
+    "highlights": [
+     "Les blocs de travail s'ouvrent en scènes à la première personne : vous travaillez sur le bloc, plus dans une fenêtre. Cela concerne l'établi, les fours, l'enclume, l'alambic, la table d'enchantement, la balise, le feu de camp et d'autres.",
+     "Chaque scène peut être désactivée dans les réglages ; le bloc ouvre alors sa fenêtre habituelle.",
+     "Nouvelle compétence de la télécommande stellaire : SS-06 Gravitia, une longue mise en scène qui envoie le monde entier dans l'espace imaginaire.",
+     "Les objets Halia UltraFast ont désormais des animations à la première personne : sortir, utiliser, attaquer, lancer et ranger, avec les bras et les sons. Les couteaux et la matraque sont maintenant en 3D. Appuyez sur H pour inspecter un objet. Les objets médicaux à bascule continuent après le relâchement du bouton ; appuyez de nouveau pour annuler."
+    ],
+    "warnings": [
+     "SS-06 Gravitia supprime définitivement le monde où il est utilisé, avec constructions et créatures, et le remplace par une ville de blocs lumineux. C'est irréversible. Sauvegardez d'abord votre monde.",
+     "Sur un serveur, quiconque possède une télécommande stellaire peut utiliser SS-06 Gravitia, et tous les joueurs présents sont touchés.",
+     "SS-06 Gravitia est lourd et demande beaucoup de mémoire libre.",
+     "Halia Cinematic Core doit être installé sur le client et sur le serveur.",
+     "Les textes des blocs de travail sont pour l'instant surtout en anglais.",
+     "Vérifié uniquement sur un serveur et des clients de test, pas encore en vrai multijoueur."
+    ]
+   },
    {
     "id": "halia-v1.6-1217",
     "title": "Halia V1.6 1217",

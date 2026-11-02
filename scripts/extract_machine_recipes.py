@@ -170,6 +170,10 @@ class Jar:
         """The item's inventory icon: items/<id>.json -> its gui model -> layer0. A GeckoLib item (Cherry's
         guns) has no flat icon, only a 3D model whose texture is a UV atlas: it is drawn from the side."""
         ns, path = iid.split(":", 1)
+        # An OUKA machine drawn from a Blender mesh keeps its inventory picture beside its block textures.
+        picture = f"assets/{ns}/textures/block/{path}_item.png"
+        if picture in self.names:
+            return self.zf.read(picture)
         model = None
         d = f"assets/{ns}/items/{path}.json"
         if d in self.names:

@@ -164,6 +164,12 @@
         "release": "V1.8 5567",
         "date": "2026-10-31",
         "type": "release"
+      },
+      {
+        "id": "ouka-v1.8-6166",
+        "release": "V1.8 6166",
+        "date": "2026-11-02",
+        "type": "release"
       }
     ],
     "cherry": [
@@ -527,6 +533,12 @@
         "id": "halia-v1.6-1217",
         "release": "V1.6 1217",
         "date": "2026-10-31",
+        "type": "release"
+      },
+      {
+        "id": "halia-v1.6-1945",
+        "release": "V1.6 1945",
+        "date": "2026-11-02",
         "type": "release"
       }
     ]

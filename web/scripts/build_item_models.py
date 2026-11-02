@@ -13,7 +13,7 @@ texture. Run it after a mod release; the output is committed, because the client
 
     Update/venv-pillow-11.3.0/bin/python web/scripts/build_item_models.py
 """
-import hashlib, io, json, math, os, re, shutil, sys, zipfile
+import hashlib, io, json, math, os, re, shutil, struct, sys, zipfile
 from collections import Counter
 from pathlib import Path
 
@@ -493,6 +493,25 @@ def bake_blade(files, profile, shape):
     ns2, q = split(tex)
     return bake_obj(files, f"assets/{ns}/{p}", {}, shape, True, default=f"{ns2}:{q}", raw_tex=True, only=BLADE_PARTS)
 
+def bake_mesh(files, path, texture, shape):
+    """OUKA's Blender meshes (OKMS): groups of quads, 8 floats a corner (x y z, u v, normal), positions in blocks."""
+    t = load_texture(files, texture)
+    raw = files.read(path)
+    if not t or raw is None or raw[:4] != b"OKMS":
+        return False
+    at, groups = 12, struct.unpack_from("<i", raw, 8)[0]
+    for _ in range(groups):
+        n = struct.unpack_from("<i", raw, at)[0]
+        at += 4 + n
+        quads = struct.unpack_from("<i", raw, at)[0]
+        at += 4
+        for _ in range(quads):
+            c = [struct.unpack_from("<8f", raw, at + k * 32) for k in range(4)]
+            at += 128
+            shape.add(t[0], None, [(x * 16, y * 16, z * 16) for x, y, z, *_ in c], [(u, v) for _, _, _, u, v, *_ in c])
+    shape.double = True
+    return bool(shape.mats)
+
 # ---------------------------------------------------------------------- the client's item tree
 
 def colour(t):
@@ -593,6 +612,8 @@ def bake_item(files, iid, report):
     if d:
         leaves(d.get("model") or {}, nodes)
     # A machine's item is a flat picture in the inventory; the thing itself is its block.
+    if bake_mesh(files, f"assets/{ns}/mesh/{path}.mesh", f"assets/{ns}/textures/mesh/{path}.png", shape):
+        return shape, "geo"
     g, tx = geo_of(files, ns, path)
     if g and tx:
         if bake_geo(files, files.json(g), tx, shape):

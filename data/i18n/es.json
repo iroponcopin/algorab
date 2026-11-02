@@ -306,6 +306,24 @@
  "changelog_brands": {
   "ouka": [
    {
+    "id": "ouka-v1.8-6166",
+    "title": "Ouka V1.8 6166 — Cuatro generadores sin turbina",
+    "summary": "V1.8 6166 añade cuatro generadores que convierten el calor directamente en electricidad, y rinden más en lugares calientes como el Nether. También corrige la vinculación del transceptor espacial entre dimensiones.",
+    "highlights": [
+     "Núcleo de gradiente criotérmico: genera con la diferencia entre el calor cercano y el hielo interior. Los hielos dan de 160 a 640 MJ/t, el de deuterio y el superiónico de 2.560 a 10.240 MJ/t, el BEC y el de sakura de 40.960 a 163.840 MJ/t. El hielo se desgasta poco a poco, salvo el de sakura.",
+     "Célula TPV termofotovoltaica: una placa fina para suelos, paredes y techos, sin combustible. 80 MJ/t en el Nether y hasta 2.400 MJ/t frente a un mar de lava.",
+     "Canal de magma MHD: genera junto a lava en movimiento. 1.200 MJ/t por canal, +25 % por canal alineado hasta 8. La lava no se gasta.",
+     "Resonador termoacústico: anillos de luz ondulan dentro de la columna. De 600 a 9.600 MJ/t, con el máximo en Deltas de basalto y Desiertos del Nether.",
+     "Ábrelos con la mano vacía para ver una pantalla con la salida y un gráfico en vivo.",
+     "Corrección del transceptor espacial: ya se puede vincular un emisor de otra dimensión. Una pareja vinculada sigue funcionando mientras uno de sus extremos esté cargado. Si el nivel es demasiado bajo, el mensaje explica el motivo."
+    ],
+    "warnings": [
+     "Antes de instalar la V1.8 6166, elimina el jar antiguo de OUKA (1.8.5567 o anterior) de la carpeta mods y conserva solo 1 copia de GeckoLib 5.5.6. Necesita Minecraft 26.3, Fabric Loader 0.19.5 o más reciente, y Fabric API 0.161.0+26.3 o más reciente. Instálalo en el cliente y en el servidor.",
+     "Solo se ha comprobado con pruebas automáticas y clientes de prueba, no en partidas multijugador reales.",
+     "El README de este zip aún repite la redacción de V1.7 88213 de que se elevó el límite de almacenamiento por celda. Esa redacción es incorrecta; consulta la corrección en las notas de V1.7 91209."
+    ]
+   },
+   {
     "id": "ouka-v1.8-5567",
     "title": "Ouka V1.8 5567 — Doce máquinas de la siguiente generación y una Battery Charging Socket tan fácil de usar como un cofre",
     "summary": "V1.8 5567 añade la siguiente generación de doce máquinas, cada una como bloque nuevo con movimiento y pantalla nuevos, y una Battery Charging Socket tan fácil de usar como un cofre. Las máquinas anteriores siguen funcionando como antes.",
@@ -1437,6 +1455,25 @@
    }
   ],
   "halia": [
+   {
+    "id": "halia-v1.6-1945",
+    "title": "Halia V1.6 1945",
+    "summary": "Añade Halia Cinematic Core, escenas en primera persona en los bloques de trabajo, y SS-06 Gravitia para el mando estelar.",
+    "highlights": [
+     "Los bloques de trabajo se abren como escenas en primera persona: trabajas sobre el bloque y no en una ventana. Incluye mesa de crafteo, hornos, yunque, soporte de pociones, mesa de encantamientos, faro, hoguera y más.",
+     "Cada escena se puede desactivar en los ajustes; ese bloque abre entonces su ventana habitual.",
+     "Nueva habilidad del mando estelar: SS-06 Gravitia, una larga secuencia que envía el mundo entero al espacio imaginario.",
+     "Los objetos de Halia UltraFast ahora tienen animaciones en primera persona: sacar, usar, atacar, lanzar y guardar, con brazos y sonidos. Los cuchillos y la porra ahora son 3D. Pulsa H para inspeccionar un objeto. Los objetos médicos de alternancia siguen en uso al soltar el botón; pulsa otra vez para cancelar."
+    ],
+    "warnings": [
+     "SS-06 Gravitia borra para siempre el mundo donde se usa, con construcciones y criaturas, y lo sustituye por una ciudad de bloques brillantes. No se puede deshacer. Haz antes una copia de tu mundo.",
+     "En un servidor, cualquiera con un mando estelar puede usar SS-06 Gravitia, y afecta a todos los jugadores de allí.",
+     "SS-06 Gravitia es pesado y necesita bastante memoria libre.",
+     "Halia Cinematic Core debe instalarse en el cliente y en el servidor.",
+     "Por ahora, la mayoría de los textos de los bloques de trabajo están en inglés.",
+     "Solo se ha comprobado en un servidor y clientes de prueba, aún no en multijugador real."
+    ]
+   },
    {
     "id": "halia-v1.6-1217",
     "title": "Halia V1.6 1217",

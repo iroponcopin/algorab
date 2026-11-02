@@ -32,6 +32,7 @@
   },
   "route_kinds": [
     "update",
+    "announcement",
     "upcoming",
     "bug",
     "request"
@@ -118,6 +119,7 @@
               "required": true,
               "choices": [
                 "update",
+                "announcement",
                 "upcoming",
                 "bug",
                 "request"
@@ -136,6 +138,7 @@
               "required": true,
               "choices": [
                 "update",
+                "announcement",
                 "upcoming",
                 "bug",
                 "request"

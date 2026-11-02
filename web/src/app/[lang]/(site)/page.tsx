@@ -6,7 +6,7 @@ import { NEXT_RELEASE } from "@/i18n/next-release";
 import { THEATRE } from "@/i18n/theatre";
 import { BRAND_ICON } from "@/lib/brands";
 import { pageMeta } from "@/lib/meta";
-import { inModelOrder } from "@/lib/models";
+import { inModelOrder, modelListName } from "@/lib/models";
 import { asset, BASE_URL, isLang, pathOf } from "@/lib/site";
 import { langData, lineupFor } from "@/lib/wiki";
 import type { Lang } from "@/lib/wiki-types";
@@ -47,8 +47,8 @@ export default async function Page({ params }: Params) {
   const models: HomeCard[] = inModelOrder([...HOME_MODELS]).map((id) => ({
     key: id,
     href: href(`${id}/`),
-    eyebrow: `${p[id]?.version ? `V${p[id]?.version} · ` : ""}${status(id)}`,
-    title: p[id]?.name ?? id,
+    eyebrow: `${p[id]?.name ?? id} · ${p[id]?.version ? `V${p[id]?.version} · ` : ""}${status(id)}`,
+    title: modelListName(id, lang),
     body: line[id],
     icon: asset(BRAND_ICON[id] ?? `icons/${id}.png`),
   }));

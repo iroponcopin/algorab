@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FooterLanguages } from "./FooterLanguages";
 import { BuildTag } from "./next/BuildTag";
 import { FRESH } from "@/i18n/fresh";
-import { MODELS } from "@/lib/models";
+import { MODELS, MODEL_TIERS, modelListName } from "@/lib/models";
 import { pathOf } from "@/lib/site";
 import type { Lang, LangData } from "@/lib/wiki-types";
 
@@ -17,7 +17,7 @@ export function Footer({ lang, d }: { lang: Lang; d: LangData }) {
     {
       heading: f.nav.models,
       links: MODELS.map(([id, name, href]) => ({
-        label: d.products[id]?.name ?? name,
+        label: MODEL_TIERS[id] ? modelListName(id, lang) : (d.products[id]?.name ?? name),
         href: pathOf(lang, href),
         note:
           d.products[id]?.availability === "soon"

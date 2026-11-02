@@ -12,7 +12,7 @@ import { ThemeToggle } from "@/components/next/ThemeToggle";
 import { THEME } from "@/i18n/theme";
 import { FRESH } from "@/i18n/fresh";
 import { SHELL } from "@/i18n/shell";
-import { MODELS } from "@/lib/models";
+import { MODELS, MODEL_TIERS, modelListName } from "@/lib/models";
 import { isLang, pathOf } from "@/lib/site";
 import { langData } from "@/lib/wiki";
 
@@ -30,7 +30,7 @@ export default async function SiteLayout({ children, params }: { children: React
     const soon = availability === "soon";
     const ended = availability === "archived";
     const status = soon ? t.comingSoon : ended ? (key === "astraea" ? f.astraeaEnded.badge : t.archived) : t.available;
-    return { key, label: d.products[key]?.name ?? name, href: pathOf(lang, href), status, soon };
+    return { key, label: MODEL_TIERS[key] ? modelListName(key, lang) : (d.products[key]?.name ?? name), href: pathOf(lang, href), status, soon };
   });
   const updates: UpdateLink[] = [
     { key: "changelog", label: c.changelog, desc: f.nav.updatesDesc.changelog, href: pathOf(lang, "changelog/"), icon: "library" },

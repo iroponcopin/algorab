@@ -28,6 +28,20 @@ export const MODEL_NAMES: Readonly<Record<string, string>> = {
   astraea: "ASTRAEA",
 };
 
+/** The tier each model is sold as on the site (owner, 2026-11-02). The mod keeps its own name on its page. */
+export const MODEL_TIERS: Readonly<Record<string, string>> = { halia: "Ultra", ouka: "Max", cherry: "Pro", tsubomi: "Free" };
+
+const TIER_FORM: Readonly<Record<string, string>> = {
+  ja: "{0} モデル", en: "{0} model", de: "{0}-Modell", fr: "Modèle {0}", es: "Modelo {0}", it: "Modello {0}", "pt-br": "Modelo {0}",
+  ru: "Модель {0}", ko: "{0} 모델", zh: "{0} 型号", ar: "طراز {0}", tr: "{0} modeli", id: "Model {0}",
+};
+
+/** A model's name in the site's lists: its tier ("Ultra モデル"), or its own name when it has no tier. */
+export function modelListName(id: string, lang: string): string {
+  const tier = MODEL_TIERS[id];
+  return tier ? (TIER_FORM[lang] ?? "{0} model").replace("{0}", tier) : (MODEL_NAMES[id] ?? id);
+}
+
 /** The models whose service has ended: they keep their page and their place (last), but not a live slot. */
 export const ENDED_MODELS: readonly string[] = ["astraea"];
 

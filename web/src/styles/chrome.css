@@ -1,4 +1,4 @@
-/* Header, footer, palette and the other shared chrome of Corvus NEXT. Entrances run on the spring solver
+/* Header, footer, palette and the other shared chrome of Algorab. Entrances run on the spring solver
    (design/useSpringIn.ts); nothing here uses a CSS transition or an eased animation on an interactive surface. */
 
 .ac-skip {

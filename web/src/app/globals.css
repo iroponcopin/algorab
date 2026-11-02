@@ -13,7 +13,7 @@
 @import "../styles/surfaces.css";
 
 /*
- * Corvus NEXT: the design language of the whole site.
+ * Algorab: the design language of the whole site.
  * Abyssal var(--cn-void) canvas, brushed-titanium type in the system stack (Inter, self-hosted, where the system has no such face),
  * tracking -0.035em on display, glass built from the four-layer Optical Glass Stack (styles/glass.css), and motion
  * from the spring solver (design/spring.ts). Nothing interactive uses a linear or eased CSS transition.

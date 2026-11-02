@@ -17,7 +17,7 @@ export interface HomeContent {
   lede: string;
   cta: string;
   ctaHref: string;
-  /** One sentence: the Java version of Corvus Store ends and Corvus NEXT replaces it. */
+  /** One sentence: the Java version of Algorab Store ends and Algorab replaces it. */
   javaNote: string;
   showcase: ShowcaseContent;
   platforms: { title: string; systemLabel: string; stackLabel: string; items: { name: string; system: string; stack: string }[] };
@@ -46,7 +46,7 @@ function Card({ card, open, span }: { card: HomeCard; open: string; span: string
 }
 
 /**
- * The home page of Corvus NEXT: the hero, the running app, the three systems, a spatial bento of the models and of
+ * The home page of Algorab: the hero, the running app, the three systems, a spatial bento of the models and of
  * the rest of the site, then the release manifest. All content comes from the data pipeline and the i18n files.
  */
 export function NextHome({ c }: { c: HomeContent }) {

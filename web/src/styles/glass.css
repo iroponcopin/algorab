@@ -1,5 +1,5 @@
 /*
- * The four-layer Optical Glass Stack. Every glass surface of Corvus NEXT is built from this recipe:
+ * The four-layer Optical Glass Stack. Every glass surface of Algorab is built from this recipe:
  *   L1  refractive substrate   backdrop-filter on the element
  *   L2  tint and depth         the element's own background
  *   L3  specular rim hairline  ::before, a 0.5 px ring cut out of a 135deg gradient with a mask

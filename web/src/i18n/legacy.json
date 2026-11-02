@@ -7,24 +7,24 @@
   "cherry": "1.2.0",
   "aureum": "1.0.1"
  },
- "notFoundTitle": "404 | Corvus",
+ "notFoundTitle": "404 | Algorab",
  "langs": {
   "ja": {
    "chrome": {
     "primaryLabel": "メインナビゲーション",
     "brandsLabel": "モデル",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Sparxie スキン",
     "homeLabel": "ホーム",
     "footerGetStarted": "はじめる",
     "footerReference": "資料",
     "footerStatus": "開発状況",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA・Cherry・Aureum は公開中。Tsubomi・Noctua・ASTRAEA は近日公開。Corvus Store がすべてを最新に保ちます。",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA・Cherry・Aureum は公開中。Tsubomi・Noctua・ASTRAEA は近日公開。Algorab Store がすべてを最新に保ちます。",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "スタジオのシンボル:水晶を囲むアストロラーベ。装飾です。",
     "brandsTitle": "モデル",
     "hint": "マークを選ぶと開きます。",
@@ -144,14 +144,14 @@
      "noResults": "「{0}」に一致するものはありません",
      "searchHint": "名前や、それが何かで探せます。",
      "libraryEmptyTitle": "まだ何もインストールされていません",
-     "libraryEmptyBody": "Corvus Store で入手したものが、ここに開ける状態で並びます。",
+     "libraryEmptyBody": "Algorab Store で入手したものが、ここに開ける状態で並びます。",
      "browse": "Appを見る",
      "updatesEmptyTitle": "すべて最新です",
      "updatesEmptyBody": "新しいバージョンが公開されると、ここに表示されます。",
      "updatesAvailable": "利用可能なアップデート",
      "account": "アカウント",
      "autoUpdateTitle": "自動アップデート",
-     "autoUpdateDesc": "Corvus Store とインストール済みのすべての Mod のアップデートを、自動でダウンロードしてインストールします。",
+     "autoUpdateDesc": "Algorab Store とインストール済みのすべての Mod のアップデートを、自動でダウンロードしてインストールします。",
      "featured": "注目のモデル",
      "category": "カテゴリ",
      "compat": "互換性",
@@ -167,12 +167,12 @@
      "archivedTitle": "Alpha は公式に配信を終了しました。",
      "archivedBody": "Alpha は開発を終了しました。OUKA または Cherry への移行をおすすめします。",
      "demoNote": "デモ · このサイトのためのシミュレーションです。何もダウンロードされません。",
-     "demoOpen": "デモ:ここで Corvus Store が {0} を開きます。何もインストールされません。",
+     "demoOpen": "デモ:ここで Algorab Store が {0} を開きます。何もインストールされません。",
      "simulate": "新しいバージョンを想定する",
      "updateAll": "すべてアップデート",
      "reset": "デモをリセット",
      "settingsNote": "デモ · この設定はこのウインドウの中だけで変わります。",
-     "region": "Corvus Store のデモ",
+     "region": "Algorab Store のデモ",
      "readMore": "→",
      "announce": {
       "started": "{0}:ダウンロードのシミュレーションを開始しました。",
@@ -184,7 +184,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "すべての冒険と、至高のMODが、ここに集う。",
      "brandsTitle": "モデル",
      "brandsHint": "6つのマーク。ホバーまたはタップで詳細が見られます。",
@@ -196,13 +196,13 @@
     "modsHeading": "Mod",
     "macNote": "Apple Silicon(arm64)のみ対応です。Intel 版はありません。",
     "whatsNew": "新機能",
-    "notesEnglishOnly": "Corvus Store のリリースノートは英語のみで公開されています。",
+    "notesEnglishOnly": "Algorab Store のリリースノートは英語のみで公開されています。",
     "versionHistory": "バージョン履歴",
     "guideTitle": "ガイド",
-    "guideNote": "このガイドは以前のバージョンの Corvus のために書かれました。Corvus Store 3.0 は画面が新しくなっているため、手順が異なる場合があります。"
+    "guideNote": "このガイドは以前のバージョンの Algorab のために書かれました。Algorab Store 3.0 は画面が新しくなっているため、手順が異なる場合があります。"
    },
    "download": {
-    "metaDescription": "Corvus Store を macOS・Windows・Linux 用、または Java の jar でダウンロード。全ファイルのサイズと SHA-256 付き。",
+    "metaDescription": "Algorab Store を macOS・Windows・Linux 用、または Java の jar でダウンロード。全ファイルのサイズと SHA-256 付き。",
     "alphaNote": "Alpha は配信を終了しており、ダウンロードはありません。"
    },
    "recipes": {
@@ -503,7 +503,7 @@
      "balance": "バランス調整",
      "warnings": "注意点",
      "limits": "この時点で未実装・未確認だったこと",
-     "corvusNote": "Corvus Store のリリースノートは英語のみで公開されています。",
+     "corvusNote": "Algorab Store のリリースノートは英語のみで公開されています。",
      "types": {
       "release": "新機能",
       "hotfix": "不具合修正",
@@ -519,7 +519,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -584,18 +584,18 @@
    "chrome": {
     "primaryLabel": "Main navigation",
     "brandsLabel": "Models",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Sparxie skin",
     "homeLabel": "Home",
     "footerGetStarted": "Get started",
     "footerReference": "Reference",
     "footerStatus": "Status",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA, Cherry and Aureum are out. Tsubomi, Noctua and ASTRAEA are coming. Corvus Store keeps it all up to date.",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA, Cherry and Aureum are out. Tsubomi, Noctua and ASTRAEA are coming. Algorab Store keeps it all up to date.",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "The studio's symbol: an astrolabe around a crystal. Decorative.",
     "brandsTitle": "The models",
     "hint": "Select a mark to open it.",
@@ -715,14 +715,14 @@
      "noResults": "No results for \"{0}\"",
      "searchHint": "Search by name, or by what it is.",
      "libraryEmptyTitle": "Nothing installed yet",
-     "libraryEmptyBody": "What you get from Corvus Store appears here, ready to open.",
+     "libraryEmptyBody": "What you get from Algorab Store appears here, ready to open.",
      "browse": "Browse apps",
      "updatesEmptyTitle": "Everything is up to date",
      "updatesEmptyBody": "When a new version is published, it appears here.",
      "updatesAvailable": "Available updates",
      "account": "Account",
      "autoUpdateTitle": "Automatic Updates",
-     "autoUpdateDesc": "Automatically download and install updates for Corvus Store and all installed mods.",
+     "autoUpdateDesc": "Automatically download and install updates for Algorab Store and all installed mods.",
      "featured": "Featured model",
      "category": "Category",
      "compat": "Compatibility",
@@ -738,12 +738,12 @@
      "archivedTitle": "Alpha has officially ended distribution.",
      "archivedBody": "Alpha's development has ended. We recommend moving to OUKA or Cherry.",
      "demoNote": "Demo · a simulation for this website. Nothing is downloaded.",
-     "demoOpen": "Demo: Corvus Store would open {0} here. Nothing is installed.",
+     "demoOpen": "Demo: Algorab Store would open {0} here. Nothing is installed.",
      "simulate": "Simulate a new version",
      "updateAll": "Update All",
      "reset": "Reset demo",
      "settingsNote": "Demo · these settings only change this window.",
-     "region": "Corvus Store demo",
+     "region": "Algorab Store demo",
      "readMore": "→",
      "announce": {
       "started": "{0}: simulated download started.",
@@ -755,7 +755,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "The Sovereign Mod Marketplace.",
      "brandsTitle": "The models",
      "brandsHint": "Six marks. Hover or tap one to read about it.",
@@ -767,13 +767,13 @@
     "modsHeading": "Mods",
     "macNote": "Apple Silicon (arm64) only. There is no Intel build.",
     "whatsNew": "What's New",
-    "notesEnglishOnly": "Corvus Store's release notes are published in English only.",
+    "notesEnglishOnly": "Algorab Store's release notes are published in English only.",
     "versionHistory": "Version History",
     "guideTitle": "Guide",
-    "guideNote": "This guide was written for earlier versions of Corvus. Corvus Store 3.0 has new screens, so some steps may differ."
+    "guideNote": "This guide was written for earlier versions of Algorab. Algorab Store 3.0 has new screens, so some steps may differ."
    },
    "download": {
-    "metaDescription": "Download Corvus Store for macOS, Windows and Linux, or as a Java jar, with the size and SHA-256 of every file.",
+    "metaDescription": "Download Algorab Store for macOS, Windows and Linux, or as a Java jar, with the size and SHA-256 of every file.",
     "alphaNote": "Alpha ended distribution and is not offered for download."
    },
    "recipes": {
@@ -844,7 +844,7 @@
      "balance": "Balance changes",
      "warnings": "Warnings",
      "limits": "Not yet implemented/confirmed at this point",
-     "corvusNote": "Corvus Store's release notes are published in English only.",
+     "corvusNote": "Algorab Store's release notes are published in English only.",
      "types": {
       "release": "New feature",
       "hotfix": "Bug fix",
@@ -860,7 +860,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -925,18 +925,18 @@
    "chrome": {
     "primaryLabel": "Navegación principal",
     "brandsLabel": "Modelos",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Skin de Sparxie",
     "homeLabel": "Inicio",
     "footerGetStarted": "Primeros pasos",
     "footerReference": "Referencia",
     "footerStatus": "Estado",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA, Cherry y Aureum ya están disponibles. Tsubomi, Noctua y ASTRAEA llegan pronto. Corvus Store lo mantiene todo al día.",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA, Cherry y Aureum ya están disponibles. Tsubomi, Noctua y ASTRAEA llegan pronto. Algorab Store lo mantiene todo al día.",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "El símbolo del estudio: un astrolabio alrededor de un cristal. Decorativo.",
     "brandsTitle": "Los modelos",
     "hint": "Selecciona un modelo para abrirlo.",
@@ -1056,14 +1056,14 @@
      "noResults": "Sin resultados para «{0}»",
      "searchHint": "Busca por nombre o por lo que es.",
      "libraryEmptyTitle": "Aún no hay nada instalado",
-     "libraryEmptyBody": "Lo que obtengas de Corvus Store aparece aquí, listo para abrir.",
+     "libraryEmptyBody": "Lo que obtengas de Algorab Store aparece aquí, listo para abrir.",
      "browse": "Ver apps",
      "updatesEmptyTitle": "Todo está al día",
      "updatesEmptyBody": "Cuando se publique una versión nueva, aparecerá aquí.",
      "updatesAvailable": "Actualizaciones disponibles",
      "account": "Cuenta",
      "autoUpdateTitle": "Actualizaciones automáticas",
-     "autoUpdateDesc": "Descarga e instala automáticamente las actualizaciones de Corvus Store y de todos los mods instalados.",
+     "autoUpdateDesc": "Descarga e instala automáticamente las actualizaciones de Algorab Store y de todos los mods instalados.",
      "featured": "Modelo destacado",
      "category": "Categoría",
      "compat": "Compatibilidad",
@@ -1079,12 +1079,12 @@
      "archivedTitle": "Alpha ha terminado oficialmente su distribución.",
      "archivedBody": "El desarrollo de Alpha ha terminado. Recomendamos pasarse a OUKA o Cherry.",
      "demoNote": "Demo · una simulación para este sitio web. No se descarga nada.",
-     "demoOpen": "Demo: aquí Corvus Store abriría {0}. No se instala nada.",
+     "demoOpen": "Demo: aquí Algorab Store abriría {0}. No se instala nada.",
      "simulate": "Simular una versión nueva",
      "updateAll": "Actualizar todo",
      "reset": "Restablecer la demo",
      "settingsNote": "Demo · estos ajustes solo cambian esta ventana.",
-     "region": "Demo de Corvus Store",
+     "region": "Demo de Algorab Store",
      "readMore": "→",
      "announce": {
       "started": "{0}: descarga simulada iniciada.",
@@ -1096,7 +1096,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "El mercado soberano de mods.",
      "brandsTitle": "Los modelos",
      "brandsHint": "Seis modelos. Pasa el puntero o toca uno para leer sobre él.",
@@ -1108,13 +1108,13 @@
     "modsHeading": "Mods",
     "macNote": "Solo Apple Silicon (arm64). No hay versión para Intel.",
     "whatsNew": "Novedades",
-    "notesEnglishOnly": "Las notas de versión de Corvus Store solo se publican en inglés.",
+    "notesEnglishOnly": "Las notas de versión de Algorab Store solo se publican en inglés.",
     "versionHistory": "Historial de versiones",
     "guideTitle": "Guía",
-    "guideNote": "Esta guía se escribió para versiones anteriores de Corvus. Corvus Store 3.0 tiene pantallas nuevas, así que algunos pasos pueden variar."
+    "guideNote": "Esta guía se escribió para versiones anteriores de Algorab. Algorab Store 3.0 tiene pantallas nuevas, así que algunos pasos pueden variar."
    },
    "download": {
-    "metaDescription": "Descarga Corvus Store para macOS, Windows y Linux, o como jar de Java, con el tamaño y el SHA-256 de cada archivo.",
+    "metaDescription": "Descarga Algorab Store para macOS, Windows y Linux, o como jar de Java, con el tamaño y el SHA-256 de cada archivo.",
     "alphaNote": "Alpha ha dejado de distribuirse y no se ofrece para descargar."
    },
    "recipes": {
@@ -1185,7 +1185,7 @@
      "balance": "Ajustes de balance",
      "warnings": "Advertencias",
      "limits": "Lo que aún no estaba implementado o confirmado en este momento",
-     "corvusNote": "Las notas de versión de Corvus Store solo se publican en inglés.",
+     "corvusNote": "Las notas de versión de Algorab Store solo se publican en inglés.",
      "types": {
       "release": "Novedad",
       "hotfix": "Corrección de errores",
@@ -1200,7 +1200,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -1265,18 +1265,18 @@
    "chrome": {
     "primaryLabel": "Navigation principale",
     "brandsLabel": "Modèles",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Skin de Sparxie",
     "homeLabel": "Accueil",
     "footerGetStarted": "Pour commencer",
     "footerReference": "Référence",
     "footerStatus": "État",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA, Cherry et Aureum sont disponibles. Tsubomi, Noctua et ASTRAEA arrivent bientôt. Corvus Store garde le tout à jour.",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA, Cherry et Aureum sont disponibles. Tsubomi, Noctua et ASTRAEA arrivent bientôt. Algorab Store garde le tout à jour.",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "Le symbole du studio : un astrolabe autour d'un cristal. Décoratif.",
     "brandsTitle": "Les modèles",
     "hint": "Sélectionnez un modèle pour l'ouvrir.",
@@ -1396,14 +1396,14 @@
      "noResults": "Aucun résultat pour « {0} »",
      "searchHint": "Recherchez par nom, ou par ce que c'est.",
      "libraryEmptyTitle": "Rien d'installé pour l'instant",
-     "libraryEmptyBody": "Ce que vous obtenez depuis Corvus Store apparaît ici, prêt à ouvrir.",
+     "libraryEmptyBody": "Ce que vous obtenez depuis Algorab Store apparaît ici, prêt à ouvrir.",
      "browse": "Voir les apps",
      "updatesEmptyTitle": "Tout est à jour",
      "updatesEmptyBody": "Quand une nouvelle version est publiée, elle apparaît ici.",
      "updatesAvailable": "Mises à jour disponibles",
      "account": "Compte",
      "autoUpdateTitle": "Mises à jour automatiques",
-     "autoUpdateDesc": "Télécharge et installe automatiquement les mises à jour de Corvus Store et de tous les mods installés.",
+     "autoUpdateDesc": "Télécharge et installe automatiquement les mises à jour d'Algorab Store et de tous les mods installés.",
      "featured": "Modèle à l'honneur",
      "category": "Catégorie",
      "compat": "Compatibilité",
@@ -1419,12 +1419,12 @@
      "archivedTitle": "Alpha a officiellement cessé d'être distribué.",
      "archivedBody": "Le développement d'Alpha est terminé. Nous recommandons de passer à OUKA ou Cherry.",
      "demoNote": "Démo · une simulation pour ce site. Rien n'est téléchargé.",
-     "demoOpen": "Démo : Corvus Store ouvrirait {0} ici. Rien n'est installé.",
+     "demoOpen": "Démo : Algorab Store ouvrirait {0} ici. Rien n'est installé.",
      "simulate": "Simuler une nouvelle version",
      "updateAll": "Tout mettre à jour",
      "reset": "Réinitialiser la démo",
      "settingsNote": "Démo · ces réglages ne modifient que cette fenêtre.",
-     "region": "Démo de Corvus Store",
+     "region": "Démo d'Algorab Store",
      "readMore": "→",
      "announce": {
       "started": "{0} : téléchargement simulé démarré.",
@@ -1436,7 +1436,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "La place de marché souveraine des mods.",
      "brandsTitle": "Les modèles",
      "brandsHint": "Six modèles. Survolez-en un ou touchez-le pour en savoir plus.",
@@ -1448,13 +1448,13 @@
     "modsHeading": "Mods",
     "macNote": "Apple Silicon (arm64) uniquement. Il n'existe pas de version Intel.",
     "whatsNew": "Nouveautés",
-    "notesEnglishOnly": "Les notes de version de Corvus Store ne sont publiées qu'en anglais.",
+    "notesEnglishOnly": "Les notes de version d'Algorab Store ne sont publiées qu'en anglais.",
     "versionHistory": "Historique des versions",
     "guideTitle": "Guide",
-    "guideNote": "Ce guide a été écrit pour les versions précédentes de Corvus. Corvus Store 3.0 a de nouveaux écrans ; certaines étapes peuvent différer."
+    "guideNote": "Ce guide a été écrit pour les versions précédentes d'Algorab. Algorab Store 3.0 a de nouveaux écrans ; certaines étapes peuvent différer."
    },
    "download": {
-    "metaDescription": "Téléchargez Corvus Store pour macOS, Windows et Linux, ou en jar Java, avec la taille et le SHA-256 de chaque fichier.",
+    "metaDescription": "Téléchargez Algorab Store pour macOS, Windows et Linux, ou en jar Java, avec la taille et le SHA-256 de chaque fichier.",
     "alphaNote": "Alpha n'est plus distribué et n'est pas proposé au téléchargement."
    },
    "recipes": {
@@ -1525,7 +1525,7 @@
      "balance": "Ajustements d'équilibrage",
      "warnings": "Points d'attention",
      "limits": "Ce qui n'était pas encore implémenté ou vérifié à ce stade",
-     "corvusNote": "Les notes de version de Corvus Store ne sont publiées qu'en anglais.",
+     "corvusNote": "Les notes de version d'Algorab Store ne sont publiées qu'en anglais.",
      "types": {
       "release": "Nouveauté",
       "hotfix": "Correctif",
@@ -1540,7 +1540,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -1605,18 +1605,18 @@
    "chrome": {
     "primaryLabel": "主导航",
     "brandsLabel": "型号",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Sparxie 皮肤",
     "homeLabel": "首页",
     "footerGetStarted": "开始使用",
     "footerReference": "资料",
     "footerStatus": "动态",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA、Cherry 和 Aureum 已经推出。Tsubomi、Noctua 和 ASTRAEA 即将到来。Corvus Store 让一切保持最新。",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA、Cherry 和 Aureum 已经推出。Tsubomi、Noctua 和 ASTRAEA 即将到来。Algorab Store 让一切保持最新。",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "工作室的标志：环绕水晶的星盘。仅作装饰。",
     "brandsTitle": "型号",
     "hint": "选择一个标志即可打开。",
@@ -1736,14 +1736,14 @@
      "noResults": "没有“{0}”的结果",
      "searchHint": "按名称或类型搜索。",
      "libraryEmptyTitle": "尚未安装任何内容",
-     "libraryEmptyBody": "你从 Corvus Store 获取的内容会显示在这里，随时可以打开。",
+     "libraryEmptyBody": "你从 Algorab Store 获取的内容会显示在这里，随时可以打开。",
      "browse": "浏览 App",
      "updatesEmptyTitle": "一切都是最新的",
      "updatesEmptyBody": "新版本发布后会显示在这里。",
      "updatesAvailable": "可用更新",
      "account": "账户",
      "autoUpdateTitle": "自动更新",
-     "autoUpdateDesc": "自动下载并安装 Corvus Store 和所有已安装模组的更新。",
+     "autoUpdateDesc": "自动下载并安装 Algorab Store 和所有已安装模组的更新。",
      "featured": "精选型号",
      "category": "类别",
      "compat": "兼容性",
@@ -1759,12 +1759,12 @@
      "archivedTitle": "Alpha 已正式终止发布。",
      "archivedBody": "Alpha 已结束开发。建议迁移到 OUKA 或 Cherry。",
      "demoNote": "演示 · 仅为本网站制作的模拟。不会下载任何内容。",
-     "demoOpen": "演示：Corvus Store 会在此打开 {0}。不会安装任何内容。",
+     "demoOpen": "演示：Algorab Store 会在此打开 {0}。不会安装任何内容。",
      "simulate": "模拟新版本",
      "updateAll": "全部更新",
      "reset": "重置演示",
      "settingsNote": "演示 · 这些设置只会改变此窗口。",
-     "region": "Corvus Store 演示",
+     "region": "Algorab Store 演示",
      "readMore": "→",
      "announce": {
       "started": "{0}：已开始模拟下载。",
@@ -1776,7 +1776,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "至高的 Mod 市集。",
      "brandsTitle": "型号",
      "brandsHint": "六个标志。悬停或轻触即可了解。",
@@ -1788,13 +1788,13 @@
     "modsHeading": "模组",
     "macNote": "仅支持 Apple Silicon（arm64），没有 Intel 版本。",
     "whatsNew": "新功能",
-    "notesEnglishOnly": "Corvus Store 的发行说明仅提供英文版。",
+    "notesEnglishOnly": "Algorab Store 的发行说明仅提供英文版。",
     "versionHistory": "版本记录",
     "guideTitle": "指南",
-    "guideNote": "本指南是为较早版本的 Corvus 编写的。Corvus Store 3.0 的界面已更新，部分步骤可能不同。"
+    "guideNote": "本指南是为较早版本的 Algorab 编写的。Algorab Store 3.0 的界面已更新，部分步骤可能不同。"
    },
    "download": {
-    "metaDescription": "下载适用于 macOS、Windows 和 Linux 的 Corvus Store，或 Java jar 版本，并附每个文件的大小与 SHA-256。",
+    "metaDescription": "下载适用于 macOS、Windows 和 Linux 的 Algorab Store，或 Java jar 版本，并附每个文件的大小与 SHA-256。",
     "alphaNote": "Alpha 已停止分发，不提供下载。"
    },
    "recipes": {
@@ -1865,7 +1865,7 @@
      "balance": "平衡性调整",
      "warnings": "注意事项",
      "limits": "截至当时尚未实现或未确认的内容",
-     "corvusNote": "Corvus Store 的发行说明仅提供英文版。",
+     "corvusNote": "Algorab Store 的发行说明仅提供英文版。",
      "types": {
       "release": "新功能",
       "hotfix": "问题修复",
@@ -1880,7 +1880,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -1945,18 +1945,18 @@
    "chrome": {
     "primaryLabel": "기본 내비게이션",
     "brandsLabel": "모델",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Sparxie 스킨",
     "homeLabel": "홈",
     "footerGetStarted": "시작하기",
     "footerReference": "자료",
     "footerStatus": "진행 상황",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA, Cherry, Aureum은 공개 중입니다. Tsubomi, Noctua, ASTRAEA는 곧 공개됩니다. Corvus Store가 모든 것을 최신 상태로 유지합니다.",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA, Cherry, Aureum은 공개 중입니다. Tsubomi, Noctua, ASTRAEA는 곧 공개됩니다. Algorab Store가 모든 것을 최신 상태로 유지합니다.",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "스튜디오의 상징: 수정을 감싼 아스트롤라베. 장식용입니다.",
     "brandsTitle": "모델",
     "hint": "마크를 선택하면 열립니다.",
@@ -2076,14 +2076,14 @@
      "noResults": "\"{0}\"에 대한 결과가 없습니다",
      "searchHint": "이름이나 종류로 검색하세요.",
      "libraryEmptyTitle": "아직 설치된 항목이 없습니다",
-     "libraryEmptyBody": "Corvus Store에서 받은 항목이 여기에 열 수 있는 상태로 나타납니다.",
+     "libraryEmptyBody": "Algorab Store에서 받은 항목이 여기에 열 수 있는 상태로 나타납니다.",
      "browse": "앱 둘러보기",
      "updatesEmptyTitle": "모두 최신 상태입니다",
      "updatesEmptyBody": "새 버전이 공개되면 여기에 표시됩니다.",
      "updatesAvailable": "사용 가능한 업데이트",
      "account": "계정",
      "autoUpdateTitle": "자동 업데이트",
-     "autoUpdateDesc": "Corvus Store와 설치된 모든 모드의 업데이트를 자동으로 다운로드하고 설치합니다.",
+     "autoUpdateDesc": "Algorab Store와 설치된 모든 모드의 업데이트를 자동으로 다운로드하고 설치합니다.",
      "featured": "추천 모델",
      "category": "카테고리",
      "compat": "호환성",
@@ -2099,12 +2099,12 @@
      "archivedTitle": "Alpha는 공식적으로 배포를 종료했습니다.",
      "archivedBody": "Alpha의 개발은 종료되었습니다. OUKA 또는 Cherry로 옮기시길 권장합니다.",
      "demoNote": "데모 · 이 웹사이트를 위한 시뮬레이션입니다. 아무것도 다운로드되지 않습니다.",
-     "demoOpen": "데모: 여기서 Corvus Store가 {0}을(를) 엽니다. 아무것도 설치되지 않습니다.",
+     "demoOpen": "데모: 여기서 Algorab Store가 {0}을(를) 엽니다. 아무것도 설치되지 않습니다.",
      "simulate": "새 버전 가정하기",
      "updateAll": "모두 업데이트",
      "reset": "데모 초기화",
      "settingsNote": "데모 · 이 설정은 이 창에서만 바뀝니다.",
-     "region": "Corvus Store 데모",
+     "region": "Algorab Store 데모",
      "readMore": "→",
      "announce": {
       "started": "{0}: 다운로드 시뮬레이션을 시작했습니다.",
@@ -2116,7 +2116,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "최상의 Mod가 모이는 곳.",
      "brandsTitle": "모델",
      "brandsHint": "여섯 개의 마크. 마우스를 올리거나 탭하면 자세히 볼 수 있습니다.",
@@ -2128,13 +2128,13 @@
     "modsHeading": "모드",
     "macNote": "Apple Silicon(arm64)만 지원합니다. Intel 버전은 없습니다.",
     "whatsNew": "새로운 기능",
-    "notesEnglishOnly": "Corvus Store의 릴리스 노트는 영어로만 제공됩니다.",
+    "notesEnglishOnly": "Algorab Store의 릴리스 노트는 영어로만 제공됩니다.",
     "versionHistory": "버전 기록",
     "guideTitle": "가이드",
-    "guideNote": "이 가이드는 이전 버전의 Corvus를 위해 작성되었습니다. Corvus Store 3.0은 화면이 새로워져 일부 단계가 다를 수 있습니다."
+    "guideNote": "이 가이드는 이전 버전의 Algorab을 위해 작성되었습니다. Algorab Store 3.0은 화면이 새로워져 일부 단계가 다를 수 있습니다."
    },
    "download": {
-    "metaDescription": "macOS, Windows, Linux용 Corvus Store 또는 Java jar를 내려받으세요. 모든 파일의 크기와 SHA-256을 함께 제공합니다.",
+    "metaDescription": "macOS, Windows, Linux용 Algorab Store 또는 Java jar를 내려받으세요. 모든 파일의 크기와 SHA-256을 함께 제공합니다.",
     "alphaNote": "Alpha는 배포가 종료되어 내려받을 수 없습니다."
    },
    "recipes": {
@@ -2205,7 +2205,7 @@
      "balance": "밸런스 조정",
      "warnings": "주의 사항",
      "limits": "이 시점에 미구현·미확인이었던 사항",
-     "corvusNote": "Corvus Store의 릴리스 노트는 영어로만 제공됩니다.",
+     "corvusNote": "Algorab Store의 릴리스 노트는 영어로만 제공됩니다.",
      "types": {
       "release": "신규 기능",
       "hotfix": "버그 수정",
@@ -2220,7 +2220,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -2285,18 +2285,18 @@
    "chrome": {
     "primaryLabel": "Navegação principal",
     "brandsLabel": "Modelos",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Skin da Sparxie",
     "homeLabel": "Início",
     "footerGetStarted": "Primeiros passos",
     "footerReference": "Referência",
     "footerStatus": "Status",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA, Cherry e Aureum já estão disponíveis. Tsubomi, Noctua e ASTRAEA estão chegando. O Corvus Store mantém tudo atualizado.",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA, Cherry e Aureum já estão disponíveis. Tsubomi, Noctua e ASTRAEA estão chegando. O Algorab Store mantém tudo atualizado.",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "O símbolo do estúdio: um astrolábio em volta de um cristal. Decorativo.",
     "brandsTitle": "Os modelos",
     "hint": "Selecione um modelo para abri-lo.",
@@ -2416,14 +2416,14 @@
      "noResults": "Nenhum resultado para \"{0}\"",
      "searchHint": "Pesquise pelo nome ou pelo que é.",
      "libraryEmptyTitle": "Nada instalado ainda",
-     "libraryEmptyBody": "O que você obtiver na Corvus Store aparece aqui, pronto para abrir.",
+     "libraryEmptyBody": "O que você obtiver na Algorab Store aparece aqui, pronto para abrir.",
      "browse": "Ver apps",
      "updatesEmptyTitle": "Tudo está atualizado",
      "updatesEmptyBody": "Quando uma nova versão for publicada, ela aparece aqui.",
      "updatesAvailable": "Atualizações disponíveis",
      "account": "Conta",
      "autoUpdateTitle": "Atualizações automáticas",
-     "autoUpdateDesc": "Baixa e instala automaticamente as atualizações do Corvus Store e de todos os mods instalados.",
+     "autoUpdateDesc": "Baixa e instala automaticamente as atualizações do Algorab Store e de todos os mods instalados.",
      "featured": "Modelo em destaque",
      "category": "Categoria",
      "compat": "Compatibilidade",
@@ -2439,12 +2439,12 @@
      "archivedTitle": "O Alpha encerrou oficialmente a distribuição.",
      "archivedBody": "O desenvolvimento do Alpha terminou. Recomendamos migrar para OUKA ou Cherry.",
      "demoNote": "Demo · uma simulação para este site. Nada é baixado.",
-     "demoOpen": "Demo: o Corvus Store abriria {0} aqui. Nada é instalado.",
+     "demoOpen": "Demo: o Algorab Store abriria {0} aqui. Nada é instalado.",
      "simulate": "Simular uma nova versão",
      "updateAll": "Atualizar tudo",
      "reset": "Redefinir a demo",
      "settingsNote": "Demo · estes ajustes só mudam esta janela.",
-     "region": "Demo do Corvus Store",
+     "region": "Demo do Algorab Store",
      "readMore": "→",
      "announce": {
       "started": "{0}: download simulado iniciado.",
@@ -2456,7 +2456,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "O mercado soberano de mods.",
      "brandsTitle": "Os modelos",
      "brandsHint": "Seis modelos. Passe o cursor ou toque em um para saber mais.",
@@ -2468,13 +2468,13 @@
     "modsHeading": "Mods",
     "macNote": "Somente Apple Silicon (arm64). Não há versão para Intel.",
     "whatsNew": "Novidades",
-    "notesEnglishOnly": "As notas de versão do Corvus Store são publicadas somente em inglês.",
+    "notesEnglishOnly": "As notas de versão do Algorab Store são publicadas somente em inglês.",
     "versionHistory": "Histórico de versões",
     "guideTitle": "Guia",
-    "guideNote": "Este guia foi escrito para versões anteriores do Corvus. O Corvus Store 3.0 tem telas novas, então alguns passos podem ser diferentes."
+    "guideNote": "Este guia foi escrito para versões anteriores do Algorab. O Algorab Store 3.0 tem telas novas, então alguns passos podem ser diferentes."
    },
    "download": {
-    "metaDescription": "Baixe o Corvus Store para macOS, Windows e Linux, ou como jar de Java, com o tamanho e o SHA-256 de cada arquivo.",
+    "metaDescription": "Baixe o Algorab Store para macOS, Windows e Linux, ou como jar de Java, com o tamanho e o SHA-256 de cada arquivo.",
     "alphaNote": "O Alpha encerrou a distribuição e não é oferecido para download."
    },
    "recipes": {
@@ -2545,7 +2545,7 @@
      "balance": "Ajustes de balanceamento",
      "warnings": "Pontos de atenção",
      "limits": "O que ainda não estava implementado ou confirmado nesse momento",
-     "corvusNote": "As notas de versão do Corvus Store são publicadas somente em inglês.",
+     "corvusNote": "As notas de versão do Algorab Store são publicadas somente em inglês.",
      "types": {
       "release": "Novidade",
       "hotfix": "Correção de bug",
@@ -2560,7 +2560,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -2625,18 +2625,18 @@
    "chrome": {
     "primaryLabel": "Navigazione principale",
     "brandsLabel": "Modelli",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Skin di Sparxie",
     "homeLabel": "Home",
     "footerGetStarted": "Per iniziare",
     "footerReference": "Riferimenti",
     "footerStatus": "Stato",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA, Cherry e Aureum sono disponibili. Tsubomi, Noctua e ASTRAEA arrivano presto. Corvus Store mantiene tutto aggiornato.",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA, Cherry e Aureum sono disponibili. Tsubomi, Noctua e ASTRAEA arrivano presto. Algorab Store mantiene tutto aggiornato.",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "Il simbolo dello studio: un astrolabio attorno a un cristallo. Decorativo.",
     "brandsTitle": "I modelli",
     "hint": "Seleziona un modello per aprirlo.",
@@ -2756,14 +2756,14 @@
      "noResults": "Nessun risultato per \"{0}\"",
      "searchHint": "Cerca per nome o per cosa è.",
      "libraryEmptyTitle": "Ancora nulla di installato",
-     "libraryEmptyBody": "Ciò che ottieni da Corvus Store compare qui, pronto da aprire.",
+     "libraryEmptyBody": "Ciò che ottieni da Algorab Store compare qui, pronto da aprire.",
      "browse": "Sfoglia le app",
      "updatesEmptyTitle": "Tutto è aggiornato",
      "updatesEmptyBody": "Quando viene pubblicata una nuova versione, compare qui.",
      "updatesAvailable": "Aggiornamenti disponibili",
      "account": "Account",
      "autoUpdateTitle": "Aggiornamenti automatici",
-     "autoUpdateDesc": "Scarica e installa automaticamente gli aggiornamenti di Corvus Store e di tutte le mod installate.",
+     "autoUpdateDesc": "Scarica e installa automaticamente gli aggiornamenti di Algorab Store e di tutte le mod installate.",
      "featured": "Modello in evidenza",
      "category": "Categoria",
      "compat": "Compatibilità",
@@ -2779,12 +2779,12 @@
      "archivedTitle": "Alpha ha concluso ufficialmente la distribuzione.",
      "archivedBody": "Lo sviluppo di Alpha è terminato. Consigliamo di passare a OUKA o Cherry.",
      "demoNote": "Demo · una simulazione per questo sito. Non viene scaricato nulla.",
-     "demoOpen": "Demo: qui Corvus Store aprirebbe {0}. Non viene installato nulla.",
+     "demoOpen": "Demo: qui Algorab Store aprirebbe {0}. Non viene installato nulla.",
      "simulate": "Simula una nuova versione",
      "updateAll": "Aggiorna tutto",
      "reset": "Ripristina la demo",
      "settingsNote": "Demo · queste impostazioni cambiano solo questa finestra.",
-     "region": "Demo di Corvus Store",
+     "region": "Demo di Algorab Store",
      "readMore": "→",
      "announce": {
       "started": "{0}: download simulato avviato.",
@@ -2796,7 +2796,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "Il mercato sovrano dei mod.",
      "brandsTitle": "I modelli",
      "brandsHint": "Sei modelli. Passa il cursore o tocca per saperne di più.",
@@ -2808,13 +2808,13 @@
     "modsHeading": "Mod",
     "macNote": "Solo Apple Silicon (arm64). Non esiste una versione per Intel.",
     "whatsNew": "Novità",
-    "notesEnglishOnly": "Le note di rilascio di Corvus Store sono pubblicate solo in inglese.",
+    "notesEnglishOnly": "Le note di rilascio di Algorab Store sono pubblicate solo in inglese.",
     "versionHistory": "Cronologia versioni",
     "guideTitle": "Guida",
-    "guideNote": "Questa guida è stata scritta per le versioni precedenti di Corvus. Corvus Store 3.0 ha schermate nuove, quindi alcuni passaggi possono differire."
+    "guideNote": "Questa guida è stata scritta per le versioni precedenti di Algorab. Algorab Store 3.0 ha schermate nuove, quindi alcuni passaggi possono differire."
    },
    "download": {
-    "metaDescription": "Scarica Corvus Store per macOS, Windows e Linux, o come jar Java, con dimensione e SHA-256 di ogni file.",
+    "metaDescription": "Scarica Algorab Store per macOS, Windows e Linux, o come jar Java, con dimensione e SHA-256 di ogni file.",
     "alphaNote": "Alpha ha concluso la distribuzione e non viene offerto per il download."
    },
    "recipes": {
@@ -2885,7 +2885,7 @@
      "balance": "Bilanciamento",
      "warnings": "Avvertenze",
      "limits": "Cosa non era ancora implementato o verificato a questo punto",
-     "corvusNote": "Le note di rilascio di Corvus Store sono pubblicate solo in inglese.",
+     "corvusNote": "Le note di rilascio di Algorab Store sono pubblicate solo in inglese.",
      "types": {
       "release": "Novità",
       "hotfix": "Correzione",
@@ -2900,7 +2900,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -2965,18 +2965,18 @@
    "chrome": {
     "primaryLabel": "التنقل الرئيسي",
     "brandsLabel": "الطرازات",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "سكن Sparxie",
     "homeLabel": "الرئيسية",
     "footerGetStarted": "ابدأ",
     "footerReference": "مراجع",
     "footerStatus": "الحالة",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA وCherry وAureum متاحة الآن. أما Tsubomi وNoctua وASTRAEA فقادمة قريبًا. ويُبقي Corvus Store كل شيء محدَّثًا.",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA وCherry وAureum متاحة الآن. أما Tsubomi وNoctua وASTRAEA فقادمة قريبًا. ويُبقي Algorab Store كل شيء محدَّثًا.",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "شعار الاستوديو: أسطرلاب يحيط ببلورة. للزينة فقط.",
     "brandsTitle": "الطرازات",
     "hint": "اختر شعارًا لفتحه.",
@@ -3096,14 +3096,14 @@
      "noResults": "لا نتائج لـ «{0}»",
      "searchHint": "ابحث بالاسم أو بما هو عليه.",
      "libraryEmptyTitle": "لم يُثبَّت شيء بعد",
-     "libraryEmptyBody": "ما تحصل عليه من Corvus Store يظهر هنا وجاهزًا للفتح.",
+     "libraryEmptyBody": "ما تحصل عليه من Algorab Store يظهر هنا وجاهزًا للفتح.",
      "browse": "تصفّح التطبيقات",
      "updatesEmptyTitle": "كل شيء محدَّث",
      "updatesEmptyBody": "عند نشر إصدار جديد يظهر هنا.",
      "updatesAvailable": "التحديثات المتاحة",
      "account": "الحساب",
      "autoUpdateTitle": "التحديثات التلقائية",
-     "autoUpdateDesc": "تنزيل التحديثات لـ Corvus Store وجميع المودات المثبّتة وتثبيتها تلقائيًا.",
+     "autoUpdateDesc": "تنزيل التحديثات لـ Algorab Store وجميع المودات المثبّتة وتثبيتها تلقائيًا.",
      "featured": "طراز مميز",
      "category": "الفئة",
      "compat": "التوافق",
@@ -3119,12 +3119,12 @@
      "archivedTitle": "أنهى Alpha توزيعه رسميًا.",
      "archivedBody": "انتهى تطوير Alpha. نوصي بالانتقال إلى OUKA أو Cherry.",
      "demoNote": "عرض تجريبي · محاكاة لهذا الموقع. لا يُنزَّل أي شيء.",
-     "demoOpen": "عرض تجريبي: كان Corvus Store سيفتح {0} هنا. لا يُثبَّت أي شيء.",
+     "demoOpen": "عرض تجريبي: كان Algorab Store سيفتح {0} هنا. لا يُثبَّت أي شيء.",
      "simulate": "محاكاة إصدار جديد",
      "updateAll": "تحديث الكل",
      "reset": "إعادة ضبط العرض",
      "settingsNote": "عرض تجريبي · هذه الإعدادات تغيّر هذه النافذة فقط.",
-     "region": "عرض Corvus Store التجريبي",
+     "region": "عرض Algorab Store التجريبي",
      "readMore": "←",
      "announce": {
       "started": "{0}: بدأ التنزيل المحاكى.",
@@ -3136,7 +3136,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "سوق المودات السيادي.",
      "brandsTitle": "الطرازات",
      "brandsHint": "ستة طرازات. مرّر المؤشر أو المس أحدها لقراءة تفاصيله.",
@@ -3148,13 +3148,13 @@
     "modsHeading": "المودات",
     "macNote": "لأجهزة Apple Silicon (arm64) فقط. لا توجد نسخة لأجهزة Intel.",
     "whatsNew": "الجديد",
-    "notesEnglishOnly": "ملاحظات إصدارات Corvus Store تُنشر بالإنجليزية فقط.",
+    "notesEnglishOnly": "ملاحظات إصدارات Algorab Store تُنشر بالإنجليزية فقط.",
     "versionHistory": "سجل الإصدارات",
     "guideTitle": "الدليل",
-    "guideNote": "كُتب هذا الدليل لإصدارات سابقة من Corvus. لدى Corvus Store 3.0 شاشات جديدة، لذا قد تختلف بعض الخطوات."
+    "guideNote": "كُتب هذا الدليل لإصدارات سابقة من Algorab. لدى Algorab Store 3.0 شاشات جديدة، لذا قد تختلف بعض الخطوات."
    },
    "download": {
-    "metaDescription": "نزّل Corvus Store لأنظمة macOS وWindows وLinux، أو كملف jar لـ Java، مع حجم كل ملف وقيمة SHA-256 الخاصة به.",
+    "metaDescription": "نزّل Algorab Store لأنظمة macOS وWindows وLinux، أو كملف jar لـ Java، مع حجم كل ملف وقيمة SHA-256 الخاصة به.",
     "alphaNote": "أنهى Alpha توزيعه ولا يُعرض للتنزيل."
    },
    "recipes": {
@@ -3225,7 +3225,7 @@
      "balance": "تعديلات التوازن",
      "warnings": "ملاحظات هامة",
      "limits": "أمور لم تُنفَّذ أو لم يتم التحقق منها حتى هذه اللحظة",
-     "corvusNote": "ملاحظات إصدارات Corvus Store تُنشر بالإنجليزية فقط.",
+     "corvusNote": "ملاحظات إصدارات Algorab Store تُنشر بالإنجليزية فقط.",
      "types": {
       "release": "ميزة جديدة",
       "hotfix": "إصلاح خلل",
@@ -3240,7 +3240,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -3305,18 +3305,18 @@
    "chrome": {
     "primaryLabel": "Основная навигация",
     "brandsLabel": "Модели",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Скин Sparxie",
     "homeLabel": "Главная",
     "footerGetStarted": "Начало",
     "footerReference": "Справочник",
     "footerStatus": "Состояние",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA, Cherry и Aureum уже вышли. Tsubomi, Noctua и ASTRAEA скоро появятся. Corvus Store поддерживает всё в актуальном состоянии.",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA, Cherry и Aureum уже вышли. Tsubomi, Noctua и ASTRAEA скоро появятся. Algorab Store поддерживает всё в актуальном состоянии.",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "Символ студии: астролябия вокруг кристалла. Декоративный элемент.",
     "brandsTitle": "Модели",
     "hint": "Выберите знак, чтобы открыть его.",
@@ -3436,14 +3436,14 @@
      "noResults": "Нет результатов для «{0}»",
      "searchHint": "Ищите по названию или по тому, что это.",
      "libraryEmptyTitle": "Пока ничего не установлено",
-     "libraryEmptyBody": "Всё, что вы получите в Corvus Store, появится здесь и будет готово к открытию.",
+     "libraryEmptyBody": "Всё, что вы получите в Algorab Store, появится здесь и будет готово к открытию.",
      "browse": "Смотреть приложения",
      "updatesEmptyTitle": "Всё актуально",
      "updatesEmptyBody": "Когда выйдет новая версия, она появится здесь.",
      "updatesAvailable": "Доступные обновления",
      "account": "Учётная запись",
      "autoUpdateTitle": "Автоматические обновления",
-     "autoUpdateDesc": "Автоматически загружать и устанавливать обновления для Corvus Store и всех установленных модов.",
+     "autoUpdateDesc": "Автоматически загружать и устанавливать обновления для Algorab Store и всех установленных модов.",
      "featured": "Избранная модель",
      "category": "Категория",
      "compat": "Совместимость",
@@ -3459,12 +3459,12 @@
      "archivedTitle": "Alpha официально прекратил распространение.",
      "archivedBody": "Разработка Alpha завершена. Рекомендуем перейти на OUKA или Cherry.",
      "demoNote": "Демо · симуляция для этого сайта. Ничего не скачивается.",
-     "demoOpen": "Демо: здесь Corvus Store открыл бы {0}. Ничего не устанавливается.",
+     "demoOpen": "Демо: здесь Algorab Store открыл бы {0}. Ничего не устанавливается.",
      "simulate": "Имитировать новую версию",
      "updateAll": "Обновить все",
      "reset": "Сбросить демо",
      "settingsNote": "Демо · эти настройки меняют только это окно.",
-     "region": "Демо Corvus Store",
+     "region": "Демо Algorab Store",
      "readMore": "→",
      "announce": {
       "started": "{0}: имитация загрузки началась.",
@@ -3476,7 +3476,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "Суверенный рынок модов.",
      "brandsTitle": "Модели",
      "brandsHint": "Шесть знаков. Наведите курсор или коснитесь одного, чтобы узнать о нём.",
@@ -3488,13 +3488,13 @@
     "modsHeading": "Моды",
     "macNote": "Только Apple Silicon (arm64). Версии для Intel нет.",
     "whatsNew": "Что нового",
-    "notesEnglishOnly": "Примечания к выпускам Corvus Store публикуются только на английском.",
+    "notesEnglishOnly": "Примечания к выпускам Algorab Store публикуются только на английском.",
     "versionHistory": "История версий",
     "guideTitle": "Руководство",
-    "guideNote": "Это руководство написано для прежних версий Corvus. У Corvus Store 3.0 новые экраны, поэтому некоторые шаги могут отличаться."
+    "guideNote": "Это руководство написано для прежних версий Algorab. У Algorab Store 3.0 новые экраны, поэтому некоторые шаги могут отличаться."
    },
    "download": {
-    "metaDescription": "Скачайте Corvus Store для macOS, Windows и Linux или в виде Java-jar; у каждого файла указаны размер и SHA-256.",
+    "metaDescription": "Скачайте Algorab Store для macOS, Windows и Linux или в виде Java-jar; у каждого файла указаны размер и SHA-256.",
     "alphaNote": "Распространение Alpha прекращено, скачать его нельзя."
    },
    "recipes": {
@@ -3565,7 +3565,7 @@
      "balance": "Баланс",
      "warnings": "Важно",
      "limits": "Что на тот момент не было реализовано или проверено",
-     "corvusNote": "Примечания к выпускам Corvus Store публикуются только на английском.",
+     "corvusNote": "Примечания к выпускам Algorab Store публикуются только на английском.",
      "types": {
       "release": "Новое",
       "hotfix": "Исправление",
@@ -3580,7 +3580,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -3645,18 +3645,18 @@
    "chrome": {
     "primaryLabel": "Navigasi utama",
     "brandsLabel": "Model",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Skin Sparxie",
     "homeLabel": "Beranda",
     "footerGetStarted": "Mulai",
     "footerReference": "Referensi",
     "footerStatus": "Status",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA, Cherry, dan Aureum sudah tersedia. Tsubomi, Noctua, dan ASTRAEA segera hadir. Corvus Store menjaga semuanya tetap mutakhir.",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA, Cherry, dan Aureum sudah tersedia. Tsubomi, Noctua, dan ASTRAEA segera hadir. Algorab Store menjaga semuanya tetap mutakhir.",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "Simbol studio: astrolab yang mengelilingi sebuah kristal. Hanya hiasan.",
     "brandsTitle": "Model",
     "hint": "Pilih sebuah tanda untuk membukanya.",
@@ -3776,14 +3776,14 @@
      "noResults": "Tidak ada hasil untuk \"{0}\"",
      "searchHint": "Cari berdasarkan nama, atau jenisnya.",
      "libraryEmptyTitle": "Belum ada yang terpasang",
-     "libraryEmptyBody": "Yang Anda dapatkan dari Corvus Store muncul di sini, siap dibuka.",
+     "libraryEmptyBody": "Yang Anda dapatkan dari Algorab Store muncul di sini, siap dibuka.",
      "browse": "Lihat aplikasi",
      "updatesEmptyTitle": "Semuanya sudah terbaru",
      "updatesEmptyBody": "Saat versi baru dirilis, versi itu muncul di sini.",
      "updatesAvailable": "Pembaruan tersedia",
      "account": "Akun",
      "autoUpdateTitle": "Pembaruan Otomatis",
-     "autoUpdateDesc": "Unduh dan pasang pembaruan untuk Corvus Store dan semua mod yang terpasang secara otomatis.",
+     "autoUpdateDesc": "Unduh dan pasang pembaruan untuk Algorab Store dan semua mod yang terpasang secara otomatis.",
      "featured": "Model unggulan",
      "category": "Kategori",
      "compat": "Kompatibilitas",
@@ -3799,12 +3799,12 @@
      "archivedTitle": "Alpha secara resmi mengakhiri distribusinya.",
      "archivedBody": "Pengembangan Alpha telah berakhir. Kami menyarankan beralih ke OUKA atau Cherry.",
      "demoNote": "Demo · simulasi untuk situs web ini. Tidak ada yang diunduh.",
-     "demoOpen": "Demo: di sini Corvus Store akan membuka {0}. Tidak ada yang dipasang.",
+     "demoOpen": "Demo: di sini Algorab Store akan membuka {0}. Tidak ada yang dipasang.",
      "simulate": "Simulasikan versi baru",
      "updateAll": "Perbarui Semua",
      "reset": "Setel ulang demo",
      "settingsNote": "Demo · pengaturan ini hanya mengubah jendela ini.",
-     "region": "Demo Corvus Store",
+     "region": "Demo Algorab Store",
      "readMore": "→",
      "announce": {
       "started": "{0}: unduhan simulasi dimulai.",
@@ -3816,7 +3816,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "Pasar mod yang berdaulat.",
      "brandsTitle": "Model",
      "brandsHint": "Enam tanda. Arahkan kursor atau ketuk salah satunya untuk membaca tentangnya.",
@@ -3828,13 +3828,13 @@
     "modsHeading": "Mod",
     "macNote": "Hanya untuk Apple Silicon (arm64). Tidak ada versi Intel.",
     "whatsNew": "Yang Baru",
-    "notesEnglishOnly": "Catatan rilis Corvus Store hanya diterbitkan dalam bahasa Inggris.",
+    "notesEnglishOnly": "Catatan rilis Algorab Store hanya diterbitkan dalam bahasa Inggris.",
     "versionHistory": "Riwayat Versi",
     "guideTitle": "Panduan",
-    "guideNote": "Panduan ini ditulis untuk Corvus versi sebelumnya. Corvus Store 3.0 punya tampilan baru, jadi beberapa langkah mungkin berbeda."
+    "guideNote": "Panduan ini ditulis untuk Algorab versi sebelumnya. Algorab Store 3.0 punya tampilan baru, jadi beberapa langkah mungkin berbeda."
    },
    "download": {
-    "metaDescription": "Unduh Corvus Store untuk macOS, Windows, dan Linux, atau sebagai jar Java, lengkap dengan ukuran dan SHA-256 setiap berkas.",
+    "metaDescription": "Unduh Algorab Store untuk macOS, Windows, dan Linux, atau sebagai jar Java, lengkap dengan ukuran dan SHA-256 setiap berkas.",
     "alphaNote": "Alpha telah berhenti didistribusikan dan tidak tersedia untuk diunduh."
    },
    "recipes": {
@@ -3905,7 +3905,7 @@
      "balance": "Penyesuaian Balance",
      "warnings": "Catatan Penting",
      "limits": "Yang Belum Diimplementasikan / Belum Dikonfirmasi Saat Itu",
-     "corvusNote": "Catatan rilis Corvus Store hanya diterbitkan dalam bahasa Inggris.",
+     "corvusNote": "Catatan rilis Algorab Store hanya diterbitkan dalam bahasa Inggris.",
      "types": {
       "release": "Fitur Baru",
       "hotfix": "Perbaikan Bug",
@@ -3920,7 +3920,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -3985,18 +3985,18 @@
    "chrome": {
     "primaryLabel": "Hauptnavigation",
     "brandsLabel": "Modelle",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Sparxie-Skin",
     "homeLabel": "Startseite",
     "footerGetStarted": "Erste Schritte",
     "footerReference": "Nachschlagen",
     "footerStatus": "Status",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA, Cherry und Aureum sind erschienen. Tsubomi, Noctua und ASTRAEA folgen. Corvus Store hält alles auf dem neuesten Stand.",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA, Cherry und Aureum sind erschienen. Tsubomi, Noctua und ASTRAEA folgen. Algorab Store hält alles auf dem neuesten Stand.",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "Das Symbol des Studios: ein Astrolabium um einen Kristall. Dekorativ.",
     "brandsTitle": "Die Modelle",
     "hint": "Ein Zeichen auswählen, um es zu öffnen.",
@@ -4116,14 +4116,14 @@
      "noResults": "Keine Ergebnisse für „{0}“",
      "searchHint": "Suche nach Name oder danach, was es ist.",
      "libraryEmptyTitle": "Noch nichts installiert",
-     "libraryEmptyBody": "Was du aus dem Corvus Store holst, erscheint hier und ist bereit zum Öffnen.",
+     "libraryEmptyBody": "Was du aus dem Algorab Store holst, erscheint hier und ist bereit zum Öffnen.",
      "browse": "Apps ansehen",
      "updatesEmptyTitle": "Alles ist aktuell",
      "updatesEmptyBody": "Sobald eine neue Version erscheint, taucht sie hier auf.",
      "updatesAvailable": "Verfügbare Updates",
      "account": "Konto",
      "autoUpdateTitle": "Automatische Updates",
-     "autoUpdateDesc": "Updates für Corvus Store und alle installierten Mods werden automatisch geladen und installiert.",
+     "autoUpdateDesc": "Updates für Algorab Store und alle installierten Mods werden automatisch geladen und installiert.",
      "featured": "Ausgewähltes Modell",
      "category": "Kategorie",
      "compat": "Kompatibilität",
@@ -4139,12 +4139,12 @@
      "archivedTitle": "Alpha hat den Vertrieb offiziell beendet.",
      "archivedBody": "Die Entwicklung von Alpha ist beendet. Wir empfehlen den Wechsel zu OUKA oder Cherry.",
      "demoNote": "Demo · eine Simulation für diese Website. Es wird nichts heruntergeladen.",
-     "demoOpen": "Demo: Corvus Store würde hier {0} öffnen. Es wird nichts installiert.",
+     "demoOpen": "Demo: Algorab Store würde hier {0} öffnen. Es wird nichts installiert.",
      "simulate": "Neue Version simulieren",
      "updateAll": "Alle aktualisieren",
      "reset": "Demo zurücksetzen",
      "settingsNote": "Demo · diese Einstellungen ändern nur dieses Fenster.",
-     "region": "Corvus-Store-Demo",
+     "region": "Algorab-Store-Demo",
      "readMore": "→",
      "announce": {
       "started": "{0}: simulierter Download gestartet.",
@@ -4156,7 +4156,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "Der souveräne Mod-Marktplatz.",
      "brandsTitle": "Die Modelle",
      "brandsHint": "Sechs Zeichen. Mit der Maus darüberfahren oder antippen, um mehr zu lesen.",
@@ -4168,13 +4168,13 @@
     "modsHeading": "Mods",
     "macNote": "Nur Apple Silicon (arm64). Es gibt keine Intel-Version.",
     "whatsNew": "Neuheiten",
-    "notesEnglishOnly": "Die Release-Notes von Corvus Store erscheinen nur auf Englisch.",
+    "notesEnglishOnly": "Die Release-Notes von Algorab Store erscheinen nur auf Englisch.",
     "versionHistory": "Versionsverlauf",
     "guideTitle": "Anleitung",
-    "guideNote": "Diese Anleitung wurde für frühere Versionen von Corvus geschrieben. Corvus Store 3.0 hat neue Bildschirme, daher können einige Schritte abweichen."
+    "guideNote": "Diese Anleitung wurde für frühere Versionen von Algorab geschrieben. Algorab Store 3.0 hat neue Bildschirme, daher können einige Schritte abweichen."
    },
    "download": {
-    "metaDescription": "Corvus Store für macOS, Windows und Linux oder als Java-jar herunterladen, mit Größe und SHA-256 jeder Datei.",
+    "metaDescription": "Algorab Store für macOS, Windows und Linux oder als Java-jar herunterladen, mit Größe und SHA-256 jeder Datei.",
     "alphaNote": "Alpha wird nicht mehr vertrieben und steht nicht zum Download bereit."
    },
    "recipes": {
@@ -4245,7 +4245,7 @@
      "balance": "Balance-Anpassungen",
      "warnings": "Hinweise",
      "limits": "Zu diesem Zeitpunkt noch nicht umgesetzt bzw. nicht bestätigt",
-     "corvusNote": "Die Release-Notes von Corvus Store erscheinen nur auf Englisch.",
+     "corvusNote": "Die Release-Notes von Algorab Store erscheinen nur auf Englisch.",
      "types": {
       "release": "Neue Funktion",
       "hotfix": "Fehlerbehebung",
@@ -4260,7 +4260,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {
@@ -4325,18 +4325,18 @@
    "chrome": {
     "primaryLabel": "Ana gezinme",
     "brandsLabel": "Modeller",
-    "launcherLabel": "Corvus Store",
+    "launcherLabel": "Algorab Store",
     "skinLabel": "Sparxie skin",
     "homeLabel": "Ana Sayfa",
     "footerGetStarted": "Başlarken",
     "footerReference": "Başvuru",
     "footerStatus": "Durum",
-    "legalTitle": "Corvus"
+    "legalTitle": "Algorab"
    },
    "home": {
-    "eyebrow": "Corvus",
-    "sub": "OUKA, Cherry ve Aureum çıktı. Tsubomi, Noctua ve ASTRAEA yolda. Corvus Store hepsini güncel tutar.",
-    "ctaStore": "Corvus Store 3.0",
+    "eyebrow": "Algorab",
+    "sub": "OUKA, Cherry ve Aureum çıktı. Tsubomi, Noctua ve ASTRAEA yolda. Algorab Store hepsini güncel tutar.",
+    "ctaStore": "Algorab Store 3.0",
     "symbolLabel": "Stüdyonun simgesi: bir kristali saran astrolab. Yalnızca süs.",
     "brandsTitle": "Modeller",
     "hint": "Açmak için bir işaret seçin.",
@@ -4456,14 +4456,14 @@
      "noResults": "\"{0}\" için sonuç yok",
      "searchHint": "Adına ya da ne olduğuna göre arayın.",
      "libraryEmptyTitle": "Henüz bir şey kurulu değil",
-     "libraryEmptyBody": "Corvus Store'dan aldığınız her şey burada, açılmaya hazır görünür.",
+     "libraryEmptyBody": "Algorab Store'dan aldığınız her şey burada, açılmaya hazır görünür.",
      "browse": "Uygulamalara göz at",
      "updatesEmptyTitle": "Her şey güncel",
      "updatesEmptyBody": "Yeni bir sürüm yayımlandığında burada görünür.",
      "updatesAvailable": "Kullanılabilir güncellemeler",
      "account": "Hesap",
      "autoUpdateTitle": "Otomatik Güncellemeler",
-     "autoUpdateDesc": "Corvus Store ve yüklü tüm modlar için güncellemeleri otomatik olarak indirir ve yükler.",
+     "autoUpdateDesc": "Algorab Store ve yüklü tüm modlar için güncellemeleri otomatik olarak indirir ve yükler.",
      "featured": "Öne çıkan model",
      "category": "Kategori",
      "compat": "Uyumluluk",
@@ -4479,12 +4479,12 @@
      "archivedTitle": "Alpha dağıtımı resmen sonlandırdı.",
      "archivedBody": "Alpha'nın geliştirilmesi sona erdi. OUKA veya Cherry'ye geçmenizi öneririz.",
      "demoNote": "Demo · bu web sitesi için bir simülasyon. Hiçbir şey indirilmez.",
-     "demoOpen": "Demo: Corvus Store burada {0} uygulamasını açardı. Hiçbir şey kurulmaz.",
+     "demoOpen": "Demo: Algorab Store burada {0} uygulamasını açardı. Hiçbir şey kurulmaz.",
      "simulate": "Yeni sürümü simüle et",
      "updateAll": "Tümünü Güncelle",
      "reset": "Demoyu sıfırla",
      "settingsNote": "Demo · bu ayarlar yalnızca bu pencereyi değiştirir.",
-     "region": "Corvus Store demosu",
+     "region": "Algorab Store demosu",
      "readMore": "→",
      "announce": {
       "started": "{0}: simüle edilen indirme başladı.",
@@ -4496,7 +4496,7 @@
      }
     },
     "copy": {
-     "title": "Corvus Store.",
+     "title": "Algorab Store.",
      "tagline": "Egemen Mod Pazarı.",
      "brandsTitle": "Modeller",
      "brandsHint": "Altı işaret. Hakkında okumak için üzerine gelin veya dokunun.",
@@ -4508,13 +4508,13 @@
     "modsHeading": "Modlar",
     "macNote": "Yalnızca Apple Silicon (arm64). Intel sürümü yoktur.",
     "whatsNew": "Yenilikler",
-    "notesEnglishOnly": "Corvus Store sürüm notları yalnızca İngilizce yayımlanır.",
+    "notesEnglishOnly": "Algorab Store sürüm notları yalnızca İngilizce yayımlanır.",
     "versionHistory": "Sürüm Geçmişi",
     "guideTitle": "Kılavuz",
-    "guideNote": "Bu kılavuz Corvus'un önceki sürümleri için yazıldı. Corvus Store 3.0'ın ekranları yeni; bazı adımlar farklı olabilir."
+    "guideNote": "Bu kılavuz Algorab'ın önceki sürümleri için yazıldı. Algorab Store 3.0'ın ekranları yeni; bazı adımlar farklı olabilir."
    },
    "download": {
-    "metaDescription": "Corvus Store'u macOS, Windows ve Linux için ya da Java jar olarak indirin; her dosyanın boyutu ve SHA-256 değeri yanında.",
+    "metaDescription": "Algorab Store'u macOS, Windows ve Linux için ya da Java jar olarak indirin; her dosyanın boyutu ve SHA-256 değeri yanında.",
     "alphaNote": "Alpha'nın dağıtımı sona erdi; indirme için sunulmuyor."
    },
    "recipes": {
@@ -4585,7 +4585,7 @@
      "balance": "Denge Ayarları",
      "warnings": "Dikkat Edilmesi Gerekenler",
      "limits": "Bu sürümde henüz eklenmemiş veya doğrulanmamış olanlar",
-     "corvusNote": "Corvus Store sürüm notları yalnızca İngilizce yayımlanır.",
+     "corvusNote": "Algorab Store sürüm notları yalnızca İngilizce yayımlanır.",
      "types": {
       "release": "Yeni Özellik",
       "hotfix": "Hata Düzeltmesi",
@@ -4600,7 +4600,7 @@
      "aureum": "Aureum",
      "astraea": "ASTRAEA",
      "tsubomi": "Tsubomi",
-     "corvus": "Corvus Store"
+     "corvus": "Algorab Store"
     }
    },
    "upcoming": {

@@ -3,7 +3,7 @@ import type { Lang } from "@/lib/wiki-types";
 /**
  * Copy that is new in portal 4.0 (the six realms and the controls they brought), in all 13
  * languages. Everything older keeps its original source: the wiki's bundles and copy tables,
- * the Corvus Store jar, or legacy.json. These translations were written for this release and
+ * the Algorab Store jar, or legacy.json. These translations were written for this release and
  * have not yet been read by a native speaker of each language — the same caveat the Store's
  * own release notes make about theirs.
  *
@@ -162,7 +162,7 @@ export interface Fresh {
   skinPreview: { title: string; front: string; side: string };
   /** The skin page once the skin is public (data/skin_public.json). */
   skinPublic: { lede: string };
-  /** The Download page's Corvus Agent section (4.0.0): the program for a self-hosted server. */
+  /** The Download page's Algorab Agent section (4.0.0): the program for a self-hosted server. */
   agent: { title: string; body: string; note: string };
   /** The changelog's Ended filter and its note (ASTRAEA and Alpha are ended; they are not in All). */
   changelogUi: { ended: string; endedNote: string; filters: string };
@@ -189,10 +189,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "スキンを見る",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "ストアを、このブラウザで。",
         lede: "カードを押せば記事に広がり、入手を押せばリングが回る。実物と同じ流れを、何もダウンロードせずに。",
-        cta: "Corvus Store へ",
+        cta: "Algorab Store へ",
       },
       chronology: {
         eyebrow: "クロノロジー",
@@ -276,9 +276,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "ASTRAEA は 2026年10月16日をもってサービスを終了しました。V1.0 から最終版の V1.5.4「防衛」まで、遊んでくださったすべての皆さまに感謝します。",
       thanks: "不具合を知らせてくださった皆さまにも、心から感謝します。防壁ドアや錠前、宿星刀、天星の道具、建物の大きさの機械たちを、皆さまの世界に置いていただけたことを嬉しく思います。",
       nextTitle: "これから起きること",
-      next: ["Corvus Store では ASTRAEA はアーカイブ済みとなり、新しく入れることはできなくなります。各プレイヤーの Corvus Store では、パックからも移動して外され、削除はされません。", "Corvus Agent が、サーバーに入っている ASTRAEA を 2026年10月18日以降の最初の同期で、ワールドのバックアップを取ったうえで自動的に無効化し、削除します。", "このページからのダウンロードは終了し、各ページはサービス終了の記録として残します。"],
+      next: ["Algorab Store では ASTRAEA はアーカイブ済みとなり、新しく入れることはできなくなります。各プレイヤーの Algorab Store では、パックからも移動して外され、削除はされません。", "Algorab Agent が、サーバーに入っている ASTRAEA を 2026年10月18日以降の最初の同期で、ワールドのバックアップを取ったうえで自動的に無効化し、削除します。", "このページからのダウンロードは終了し、各ページはサービス終了の記録として残します。"],
       backupTitle: "大切なお願い",
-      backup: "ASTRAEA を外すと、そのブロックとアイテムは世界から消えます。Corvus Agent は削除する前にワールドのバックアップを取ります。残しておきたいワールドは、2026年10月18日までにバックアップを取ってください。",
+      backup: "ASTRAEA を外すと、そのブロックとアイテムは世界から消えます。Algorab Agent は削除する前にワールドのバックアップを取ります。残しておきたいワールドは、2026年10月18日までにバックアップを取ってください。",
       ouka: "OUKA は影響を受けません。",
       closing: "これまで本当にありがとうございました。",
       archivedBody: "ASTRAEA は 2026年10月16日にサービスを終了しました。新しく入れることはできません。",
@@ -286,7 +286,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} は公開中。", "{0} は公開中。"],
       coming: ["{0} は近日公開。", "{0} は近日公開。"],
-      keeps: "Corvus Store がすべてを最新に保ちます。",
+      keeps: "Algorab Store がすべてを最新に保ちます。",
       list: { sep: "・", last: "・", pair: "・" },
       join: "",
     },
@@ -310,7 +310,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "ティザー",
-      description: "Corvus が公開したティザーの記録。もう一度再生し、読み返せます。",
+      description: "Algorab が公開したティザーの記録。もう一度再生し、読み返せます。",
       lede: "どれも、約束したリリースより前に告知したときの言葉のまま。再生すればもう一度流れ、開けば全文を読めます。",
       player: "ティザー再生",
       play: "再生",
@@ -331,7 +331,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "ゲームの中の Sparxie", front: "正面", side: "斜め" },
     skinPublic: { lede: "Sparxie は Minecraft のスキンとして、誰でも無料で使えます。ここで回して、ポーズを試して、そのままダウンロードできます。" },
-    agent: { title: "Corvus Agent", body: "自分で運用している Minecraft サーバーの Mod を、Corvus Store と同じ状態に保つプログラムです。ダウンロードを検証してから、サーバーを停止・入れ替え・起動し、起動しなければ元に戻します。", note: "Java 25 · 導入ガイドと設定例を同梱" },
+    agent: { title: "Algorab Agent", body: "自分で運用している Minecraft サーバーの Mod を、Algorab Store と同じ状態に保つプログラムです。ダウンロードを検証してから、サーバーを停止・入れ替え・起動し、起動しなければ元に戻します。", note: "Java 25 · 導入ガイドと設定例を同梱" },
     changelogUi: { ended: "終了", endedNote: "終了したモデルは記録として残し、「すべて」には含めていません。", filters: "リリースを絞り込む" },
   },
   en: {
@@ -354,10 +354,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "See the skin",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "The Store, live in your browser.",
         lede: "Press a card and it grows into its article; press Get and the ring turns. The real app's flow, with nothing downloaded.",
-        cta: "Go to Corvus Store",
+        cta: "Go to Algorab Store",
       },
       chronology: {
         eyebrow: "Chronology",
@@ -441,9 +441,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "ASTRAEA ended its service on 16 October 2026. Thank you to everyone who played it, from V1.0 to the final release, V1.5.4 \"Defence\".",
       thanks: "Thank you, too, to everyone who told us about its bugs. It meant a great deal to see the blast doors and locks, the celestial blade and tools, and machines the size of buildings standing in your worlds.",
       nextTitle: "What happens now",
-      next: ["In Corvus Store, ASTRAEA is archived and can no longer be installed. It is also moved out of players' packs (moved aside, not deleted).", "Corvus Agent removes ASTRAEA from servers automatically, after taking a world backup, starting 18 October 2026 on its first sync.", "Its download is no longer offered on this site. The pages stay up as a record of ASTRAEA."],
+      next: ["In Algorab Store, ASTRAEA is archived and can no longer be installed. It is also moved out of players' packs (moved aside, not deleted).", "Algorab Agent removes ASTRAEA from servers automatically, after taking a world backup, starting 18 October 2026 on its first sync.", "Its download is no longer offered on this site. The pages stay up as a record of ASTRAEA."],
       backupTitle: "Please read this",
-      backup: "When ASTRAEA is removed, its blocks and items disappear from your worlds. Corvus Agent takes a world backup before removing it, but back up any world you want to keep before 18 October 2026.",
+      backup: "When ASTRAEA is removed, its blocks and items disappear from your worlds. Algorab Agent takes a world backup before removing it, but back up any world you want to keep before 18 October 2026.",
       ouka: "OUKA is not affected.",
       closing: "Thank you, all of you, for everything.",
       archivedBody: "ASTRAEA ended its service on 16 October 2026. It can no longer be installed.",
@@ -451,7 +451,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} is out.", "{0} are out."],
       coming: ["{0} is coming.", "{0} are coming."],
-      keeps: "Corvus Store keeps it all up to date.",
+      keeps: "Algorab Store keeps it all up to date.",
       list: { sep: ", ", last: " and ", pair: " and " },
       join: " ",
     },
@@ -475,7 +475,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "Teasers",
-      description: "Every teaser Corvus has published, kept to replay and to read again.",
+      description: "Every teaser Algorab has published, kept to replay and to read again.",
       lede: "Each one in the words it was announced in, before the release it promised. Play it to watch it again, or open it to read it in full.",
       player: "Teaser player",
       play: "Play",
@@ -496,7 +496,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "Sparxie, as she looks in game", front: "Front", side: "Three-quarter" },
     skinPublic: { lede: "Sparxie is available as a Minecraft skin, free for everyone: turn her around and try her poses here, then download the skin." },
-    agent: { title: "Corvus Agent", body: "A program for the Minecraft server you host yourself: it keeps the server's mods in step with Corvus Store. It checks each download, stops the server, swaps the files, starts it again, and puts the old files back if it does not come up.", note: "Java 25 · setup guide and example config inside" },
+    agent: { title: "Algorab Agent", body: "A program for the Minecraft server you host yourself: it keeps the server's mods in step with Algorab Store. It checks each download, stops the server, swaps the files, starts it again, and puts the old files back if it does not come up.", note: "Java 25 · setup guide and example config inside" },
     changelogUi: { ended: "Ended", endedNote: "Ended models stay on record and are not in All.", filters: "Filter releases" },
   },
   es: {
@@ -519,10 +519,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "Ver la skin",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "La Store, en vivo en tu navegador.",
         lede: "Pulsa una tarjeta y se convierte en su artículo; pulsa Obtener y el anillo gira. El mismo flujo que la app real, sin descargar nada.",
-        cta: "Ir a Corvus Store",
+        cta: "Ir a Algorab Store",
       },
       chronology: {
         eyebrow: "Cronología",
@@ -606,9 +606,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "ASTRAEA finalizó su servicio el 16 de octubre de 2026. Gracias a todos los que jugaron desde la V1.0 hasta la última versión, la V1.5.4 «Defence».",
       thanks: "Gracias también a quienes nos informaron de sus errores. Nos ha significado mucho ver las puertas blindadas y las cerraduras, la hoja celestial, las herramientas y las máquinas del tamaño de edificios en sus mundos.",
       nextTitle: "Qué pasará ahora",
-      next: ["En Corvus Store, ASTRAEA está archivada y ya no se puede instalar. También se saca de los paquetes de cada jugador (se aparta, no se elimina).", "Corvus Agent elimina ASTRAEA de los servidores automáticamente, tras hacer una copia de seguridad del mundo, a partir del 18 de octubre de 2026, en su primera sincronización.", "Su descarga ya no se ofrece en este sitio. Estas páginas se conservan como registro de ASTRAEA."],
+      next: ["En Algorab Store, ASTRAEA está archivada y ya no se puede instalar. También se saca de los paquetes de cada jugador (se aparta, no se elimina).", "Algorab Agent elimina ASTRAEA de los servidores automáticamente, tras hacer una copia de seguridad del mundo, a partir del 18 de octubre de 2026, en su primera sincronización.", "Su descarga ya no se ofrece en este sitio. Estas páginas se conservan como registro de ASTRAEA."],
       backupTitle: "Por favor, lea esto",
-      backup: "Al eliminar ASTRAEA, sus bloques y objetos desaparecen de sus mundos. Corvus Agent hace una copia de seguridad del mundo antes de eliminarla, pero haga una copia de cualquier mundo que quiera conservar antes del 18 de octubre de 2026.",
+      backup: "Al eliminar ASTRAEA, sus bloques y objetos desaparecen de sus mundos. Algorab Agent hace una copia de seguridad del mundo antes de eliminarla, pero haga una copia de cualquier mundo que quiera conservar antes del 18 de octubre de 2026.",
       ouka: "OUKA no se ve afectada.",
       closing: "Muchas gracias a todos, por todo.",
       archivedBody: "El servicio de ASTRAEA finalizó el 16 de octubre de 2026. Ya no se puede instalar.",
@@ -616,7 +616,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} ya está disponible.", "{0} ya están disponibles."],
       coming: ["{0} llega pronto.", "{0} llegan pronto."],
-      keeps: "Corvus Store lo mantiene todo al día.",
+      keeps: "Algorab Store lo mantiene todo al día.",
       list: { sep: ", ", last: " y ", pair: " y " },
       join: " ",
     },
@@ -640,7 +640,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "Adelantos",
-      description: "Cada adelanto que Corvus ha publicado, para volver a verlo y leerlo.",
+      description: "Cada adelanto que Algorab ha publicado, para volver a verlo y leerlo.",
       lede: "Cada uno con las palabras con que se anunció, antes de la versión que prometía. Reprodúcelo para verlo de nuevo o ábrelo para leerlo completo.",
       player: "Reproductor de adelantos",
       play: "Reproducir",
@@ -661,7 +661,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "Sparxie tal como se ve en el juego", front: "Frente", side: "Tres cuartos" },
     skinPublic: { lede: "Sparxie está disponible como skin de Minecraft, gratis para todos: gírala y prueba sus poses aquí, y luego descarga la skin." },
-    agent: { title: "Corvus Agent", body: "Un programa para el servidor de Minecraft que alojas tú: mantiene los mods del servidor al día con Corvus Store. Comprueba cada descarga, detiene el servidor, cambia los archivos, lo arranca de nuevo y restaura los anteriores si no arranca.", note: "Java 25 · incluye guía de instalación y configuración de ejemplo" },
+    agent: { title: "Algorab Agent", body: "Un programa para el servidor de Minecraft que alojas tú: mantiene los mods del servidor al día con Algorab Store. Comprueba cada descarga, detiene el servidor, cambia los archivos, lo arranca de nuevo y restaura los anteriores si no arranca.", note: "Java 25 · incluye guía de instalación y configuración de ejemplo" },
     changelogUi: { ended: "Finalizados", endedNote: "Los modelos finalizados quedan como registro y no aparecen en Todos.", filters: "Filtrar versiones" },
   },
   fr: {
@@ -684,10 +684,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "Voir le skin",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "Le Store, en direct dans votre navigateur.",
         lede: "Touchez une carte, elle devient son article ; touchez Obtenir, l’anneau tourne. Le parcours de la vraie app, sans rien télécharger.",
-        cta: "Aller sur Corvus Store",
+        cta: "Aller sur Algorab Store",
       },
       chronology: {
         eyebrow: "Chronologie",
@@ -771,9 +771,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "ASTRAEA a mis fin à son service le 16 octobre 2026. Merci à tous ceux et celles qui y ont joué, de la V1.0 à la dernière version, la V1.5.4 « Defence ».",
       thanks: "Merci aussi à ceux et celles qui nous ont signalé ses bogues. Voir les portes blindées et les verrous, la lame céleste, les outils et les machines grandes comme des bâtiments dans vos mondes a beaucoup compté pour nous.",
       nextTitle: "Ce qui se passe maintenant",
-      next: ["Dans Corvus Store, ASTRAEA est archivée et ne peut plus être installée. Elle est aussi retirée des packs de chaque joueur (mise de côté, non supprimée).", "Corvus Agent retire ASTRAEA des serveurs automatiquement, après une sauvegarde du monde, à partir du 18 octobre 2026, lors de sa première synchronisation.", "Son téléchargement n'est plus proposé sur ce site. Ces pages sont conservées en souvenir d'ASTRAEA."],
+      next: ["Dans Algorab Store, ASTRAEA est archivée et ne peut plus être installée. Elle est aussi retirée des packs de chaque joueur (mise de côté, non supprimée).", "Algorab Agent retire ASTRAEA des serveurs automatiquement, après une sauvegarde du monde, à partir du 18 octobre 2026, lors de sa première synchronisation.", "Son téléchargement n'est plus proposé sur ce site. Ces pages sont conservées en souvenir d'ASTRAEA."],
       backupTitle: "Merci de lire ceci",
-      backup: "Lorsqu'ASTRAEA est retirée, ses blocs et ses objets disparaissent de vos mondes. Corvus Agent sauvegarde le monde avant de la retirer, mais sauvegardez tout monde que vous souhaitez garder avant le 18 octobre 2026.",
+      backup: "Lorsqu'ASTRAEA est retirée, ses blocs et ses objets disparaissent de vos mondes. Algorab Agent sauvegarde le monde avant de la retirer, mais sauvegardez tout monde que vous souhaitez garder avant le 18 octobre 2026.",
       ouka: "OUKA n'est pas concernée.",
       closing: "Merci à vous toutes et tous, pour tout.",
       archivedBody: "Le service d'ASTRAEA a pris fin le 16 octobre 2026. ASTRAEA ne peut plus être installée.",
@@ -781,7 +781,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} est disponible.", "{0} sont disponibles."],
       coming: ["{0} arrive bientôt.", "{0} arrivent bientôt."],
-      keeps: "Corvus Store garde le tout à jour.",
+      keeps: "Algorab Store garde le tout à jour.",
       list: { sep: ", ", last: " et ", pair: " et " },
       join: " ",
     },
@@ -805,7 +805,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "Teasers",
-      description: "Chaque teaser publié par Corvus, à revoir et à relire.",
+      description: "Chaque teaser publié par Algorab, à revoir et à relire.",
       lede: "Chacun dans les mots de son annonce, avant la version qu’il promettait. Lancez-le pour le revoir ou ouvrez-le pour le lire en entier.",
       player: "Lecteur de teasers",
       play: "Lire",
@@ -826,7 +826,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "Sparxie telle qu’elle apparaît en jeu", front: "Face", side: "Trois-quarts" },
     skinPublic: { lede: "Sparxie est disponible comme skin Minecraft, gratuit pour tous : faites-la tourner, essayez ses poses ici, puis téléchargez le skin." },
-    agent: { title: "Corvus Agent", body: "Un programme pour le serveur Minecraft que vous hébergez vous-même : il garde les mods du serveur au même niveau que Corvus Store. Il vérifie chaque téléchargement, arrête le serveur, remplace les fichiers, le relance, et remet les anciens s'il ne redémarre pas.", note: "Java 25 · guide d'installation et exemple de configuration inclus" },
+    agent: { title: "Algorab Agent", body: "Un programme pour le serveur Minecraft que vous hébergez vous-même : il garde les mods du serveur au même niveau qu'Algorab Store. Il vérifie chaque téléchargement, arrête le serveur, remplace les fichiers, le relance, et remet les anciens s'il ne redémarre pas.", note: "Java 25 · guide d'installation et exemple de configuration inclus" },
     changelogUi: { ended: "Terminés", endedNote: "Les modèles terminés restent consultables et ne figurent pas dans Tous.", filters: "Filtrer les versions" },
   },
   zh: {
@@ -849,10 +849,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "查看皮肤",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "在你的浏览器里，实时体验 Store。",
         lede: "点一下卡片，它会展开成文章；点“获取”，圆环开始旋转。与真实应用相同的流程，却什么也不下载。",
-        cta: "前往 Corvus Store",
+        cta: "前往 Algorab Store",
       },
       chronology: {
         eyebrow: "时间轴",
@@ -936,9 +936,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "ASTRAEA 已于 2026 年 10 月 16 日结束服务。感谢每一位玩过它的朋友，从 V1.0 一路到最终版本 V1.5.4「Defence」。",
       thanks: "也感谢每一位向我们报告问题的朋友。看到防爆门与门锁、宿星刀、工具，以及建筑般大小的机器立在你们的世界里，我们非常感动。",
       nextTitle: "接下来会发生什么",
-      next: ["在 Corvus Store 中，ASTRAEA 已归档，无法再安装。在每位玩家的 Corvus Store 中，它也会从整合包中移出（只是移到一旁，不会删除）。", "Corvus Agent 会在 2026 年 10 月 18 日或之后的第一次同步时，先备份世界，再自动停用并移除服务器上的 ASTRAEA。", "此网站不再提供下载。这些页面将作为 ASTRAEA 的记录保留。"],
+      next: ["在 Algorab Store 中，ASTRAEA 已归档，无法再安装。在每位玩家的 Algorab Store 中，它也会从整合包中移出（只是移到一旁，不会删除）。", "Algorab Agent 会在 2026 年 10 月 18 日或之后的第一次同步时，先备份世界，再自动停用并移除服务器上的 ASTRAEA。", "此网站不再提供下载。这些页面将作为 ASTRAEA 的记录保留。"],
       backupTitle: "请务必阅读",
-      backup: "移除 ASTRAEA 后，它的方块和物品会从你的世界中消失。Corvus Agent 在移除前会备份世界，但想保留的世界，请在 2026 年 10 月 18 日之前自行备份。",
+      backup: "移除 ASTRAEA 后，它的方块和物品会从你的世界中消失。Algorab Agent 在移除前会备份世界，但想保留的世界，请在 2026 年 10 月 18 日之前自行备份。",
       ouka: "OUKA 不受影响。",
       closing: "感谢大家的一切。",
       archivedBody: "ASTRAEA 的服务已于 2026 年 10 月 16 日结束，无法再安装。",
@@ -946,7 +946,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} 已经推出。", "{0} 已经推出。"],
       coming: ["{0} 即将到来。", "{0} 即将到来。"],
-      keeps: "Corvus Store 让一切保持最新。",
+      keeps: "Algorab Store 让一切保持最新。",
       list: { sep: "、", last: " 和 ", pair: " 和 " },
       join: "",
     },
@@ -970,7 +970,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "预告",
-      description: "Corvus 发布过的每一则预告，可重播，也可重读。",
+      description: "Algorab 发布过的每一则预告，可重播，也可重读。",
       lede: "每一则都保留着在它所承诺的版本发布之前预告时的原话。播放即可重温，展开即可读完全文。",
       player: "预告播放器",
       play: "播放",
@@ -991,7 +991,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "游戏中的 Sparxie", front: "正面", side: "斜侧" },
     skinPublic: { lede: "Sparxie 作为 Minecraft 皮肤向所有人免费开放：在这里转动她、试试各种姿势，然后下载皮肤。" },
-    agent: { title: "Corvus Agent", body: "面向自建 Minecraft 服务器的程序:让服务器的模组与 Corvus Store 保持一致。它会校验每个下载,停止服务器,替换文件,重新启动;如果服务器没有启动,就恢复原来的文件。", note: "Java 25 · 内含安装指南和示例配置" },
+    agent: { title: "Algorab Agent", body: "面向自建 Minecraft 服务器的程序:让服务器的模组与 Algorab Store 保持一致。它会校验每个下载,停止服务器,替换文件,重新启动;如果服务器没有启动,就恢复原来的文件。", note: "Java 25 · 内含安装指南和示例配置" },
     changelogUi: { ended: "已结束", endedNote: "已结束的型号作为记录保留，不计入“全部”。", filters: "筛选版本" },
   },
   ko: {
@@ -1014,10 +1014,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "스킨 보기",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "브라우저에서 바로 만나는 Store.",
         lede: "카드를 누르면 기사로 펼쳐지고, 받기를 누르면 링이 돕니다. 실제 앱과 같은 흐름을, 아무것도 내려받지 않고.",
-        cta: "Corvus Store로 이동",
+        cta: "Algorab Store로 이동",
       },
       chronology: {
         eyebrow: "크로놀로지",
@@ -1101,9 +1101,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "ASTRAEA는 2026년 10월 16일에 서비스를 종료했습니다. V1.0부터 최종 버전인 V1.5.4 \"Defence\"까지 함께해 주신 모든 분께 감사드립니다.",
       thanks: "버그를 알려 주신 모든 분께도 감사드립니다. 여러분의 세계에 놓인 방벽 문과 잠금장치, 천상의 검과 도구들, 건물만큼 거대한 기계들을 보며 큰 의미를 느꼈습니다.",
       nextTitle: "앞으로 일어날 일",
-      next: ["Corvus Store에서 ASTRAEA는 보관 처리되며 더 이상 설치할 수 없습니다. 또한 각 플레이어의 팩에서도 옮겨져 치워지며, 삭제되지는 않습니다.", "Corvus Agent가 2026년 10월 18일 이후 처음 동기화할 때, 월드를 백업한 뒤 서버의 ASTRAEA를 자동으로 비활성화하고 제거합니다.", "이 사이트에서는 더 이상 다운로드를 제공하지 않으며, 이 페이지들은 ASTRAEA의 기록으로 남습니다."],
+      next: ["Algorab Store에서 ASTRAEA는 보관 처리되며 더 이상 설치할 수 없습니다. 또한 각 플레이어의 팩에서도 옮겨져 치워지며, 삭제되지는 않습니다.", "Algorab Agent가 2026년 10월 18일 이후 처음 동기화할 때, 월드를 백업한 뒤 서버의 ASTRAEA를 자동으로 비활성화하고 제거합니다.", "이 사이트에서는 더 이상 다운로드를 제공하지 않으며, 이 페이지들은 ASTRAEA의 기록으로 남습니다."],
       backupTitle: "꼭 읽어 주세요",
-      backup: "ASTRAEA를 제거하면 그 블록과 아이템이 월드에서 사라집니다. Corvus Agent가 제거 전에 월드를 백업하지만, 남기고 싶은 월드는 2026년 10월 18일 전에 직접 백업해 주세요.",
+      backup: "ASTRAEA를 제거하면 그 블록과 아이템이 월드에서 사라집니다. Algorab Agent가 제거 전에 월드를 백업하지만, 남기고 싶은 월드는 2026년 10월 18일 전에 직접 백업해 주세요.",
       ouka: "OUKA는 영향을 받지 않습니다.",
       closing: "지금까지 정말 감사했습니다.",
       archivedBody: "ASTRAEA는 2026년 10월 16일에 서비스를 종료했습니다. 더 이상 설치할 수 없습니다.",
@@ -1111,7 +1111,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0}{p} 공개 중입니다.", "{0}{p} 공개 중입니다."],
       coming: ["{0}{p} 곧 공개됩니다.", "{0}{p} 곧 공개됩니다."],
-      keeps: "Corvus Store가 모든 것을 최신 상태로 유지합니다.",
+      keeps: "Algorab Store가 모든 것을 최신 상태로 유지합니다.",
       list: { sep: ", ", last: ", ", pair: ", " },
       join: " ",
     },
@@ -1135,7 +1135,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "티저",
-      description: "Corvus가 공개한 모든 티저를 다시 재생하고 읽을 수 있습니다.",
+      description: "Algorab이 공개한 모든 티저를 다시 재생하고 읽을 수 있습니다.",
       lede: "약속한 릴리스보다 먼저 공개했던 그때의 문장 그대로입니다. 재생하면 다시 보고, 펼치면 전문을 읽을 수 있습니다.",
       player: "티저 플레이어",
       play: "재생",
@@ -1156,7 +1156,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "게임 속 Sparxie", front: "정면", side: "비스듬히" },
     skinPublic: { lede: "Sparxie는 누구나 무료로 쓸 수 있는 Minecraft 스킨입니다. 여기서 돌려 보고 포즈를 바꿔 본 뒤 스킨을 내려받으세요." },
-    agent: { title: "Corvus Agent", body: "직접 운영하는 Minecraft 서버를 위한 프로그램입니다. 서버의 모드를 Corvus Store와 같은 상태로 유지합니다. 다운로드를 검증하고, 서버를 멈춘 뒤 파일을 교체하고 다시 시작하며, 서버가 올라오지 않으면 이전 파일로 되돌립니다.", note: "Java 25 · 설치 안내와 예시 설정 포함" },
+    agent: { title: "Algorab Agent", body: "직접 운영하는 Minecraft 서버를 위한 프로그램입니다. 서버의 모드를 Algorab Store와 같은 상태로 유지합니다. 다운로드를 검증하고, 서버를 멈춘 뒤 파일을 교체하고 다시 시작하며, 서버가 올라오지 않으면 이전 파일로 되돌립니다.", note: "Java 25 · 설치 안내와 예시 설정 포함" },
     changelogUi: { ended: "종료", endedNote: "종료된 모델은 기록으로 남기며 '전체'에는 포함하지 않습니다.", filters: "릴리스 필터" },
   },
   "pt-br": {
@@ -1179,10 +1179,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "Ver a skin",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "A Store, ao vivo no seu navegador.",
         lede: "Toque num cartão e ele vira o artigo; toque em Obter e o anel gira. O mesmo fluxo do app de verdade, sem baixar nada.",
-        cta: "Ir para a Corvus Store",
+        cta: "Ir para a Algorab Store",
       },
       chronology: {
         eyebrow: "Cronologia",
@@ -1266,9 +1266,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "A ASTRAEA encerrou seu serviço em 16 de outubro de 2026. Obrigado a todos que jogaram, da V1.0 até a última versão, a V1.5.4 \"Defence\".",
       thanks: "Obrigado também a quem nos avisou sobre os bugs. Foi muito especial ver as portas blindadas e as fechaduras, a lâmina celestial, as ferramentas e as máquinas do tamanho de prédios nos seus mundos.",
       nextTitle: "O que acontece agora",
-      next: ["Na Corvus Store, a ASTRAEA está arquivada e não pode mais ser instalada. Ela também é retirada dos pacotes de cada jogador (movida para o lado, não excluída).", "O Corvus Agent remove a ASTRAEA dos servidores automaticamente, depois de fazer um backup do mundo, a partir de 18 de outubro de 2026, na primeira sincronização.", "O download deixa de ser oferecido neste site. Estas páginas permanecem como registro da ASTRAEA."],
+      next: ["Na Algorab Store, a ASTRAEA está arquivada e não pode mais ser instalada. Ela também é retirada dos pacotes de cada jogador (movida para o lado, não excluída).", "O Algorab Agent remove a ASTRAEA dos servidores automaticamente, depois de fazer um backup do mundo, a partir de 18 de outubro de 2026, na primeira sincronização.", "O download deixa de ser oferecido neste site. Estas páginas permanecem como registro da ASTRAEA."],
       backupTitle: "Por favor, leia",
-      backup: "Ao remover a ASTRAEA, os blocos e itens dela desaparecem dos seus mundos. O Corvus Agent faz um backup do mundo antes de remover, mas faça um backup de qualquer mundo que queira manter antes de 18 de outubro de 2026.",
+      backup: "Ao remover a ASTRAEA, os blocos e itens dela desaparecem dos seus mundos. O Algorab Agent faz um backup do mundo antes de remover, mas faça um backup de qualquer mundo que queira manter antes de 18 de outubro de 2026.",
       ouka: "A OUKA não é afetada.",
       closing: "Muito obrigado a todos, por tudo.",
       archivedBody: "O serviço da ASTRAEA foi encerrado em 16 de outubro de 2026. Ela não pode mais ser instalada.",
@@ -1276,7 +1276,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} já está disponível.", "{0} já estão disponíveis."],
       coming: ["{0} está chegando.", "{0} estão chegando."],
-      keeps: "O Corvus Store mantém tudo atualizado.",
+      keeps: "O Algorab Store mantém tudo atualizado.",
       list: { sep: ", ", last: " e ", pair: " e " },
       join: " ",
     },
@@ -1300,7 +1300,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "Teasers",
-      description: "Cada teaser que o Corvus publicou, para rever e reler.",
+      description: "Cada teaser que o Algorab publicou, para rever e reler.",
       lede: "Cada um com as palavras do anúncio, antes da versão que prometia. Reproduza para ver de novo ou abra para ler por inteiro.",
       player: "Player de teasers",
       play: "Reproduzir",
@@ -1321,7 +1321,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "Sparxie como aparece no jogo", front: "Frente", side: "Três quartos" },
     skinPublic: { lede: "Sparxie está disponível como skin de Minecraft, grátis para todos: gire-a e experimente as poses aqui, depois baixe a skin." },
-    agent: { title: "Corvus Agent", body: "Um programa para o servidor de Minecraft que você mesmo hospeda: mantém os mods do servidor em dia com o Corvus Store. Ele confere cada download, para o servidor, troca os arquivos, inicia de novo e devolve os arquivos antigos se o servidor não subir.", note: "Java 25 · inclui guia de instalação e configuração de exemplo" },
+    agent: { title: "Algorab Agent", body: "Um programa para o servidor de Minecraft que você mesmo hospeda: mantém os mods do servidor em dia com o Algorab Store. Ele confere cada download, para o servidor, troca os arquivos, inicia de novo e devolve os arquivos antigos se o servidor não subir.", note: "Java 25 · inclui guia de instalação e configuração de exemplo" },
     changelogUi: { ended: "Encerrados", endedNote: "Os modelos encerrados ficam registrados e não aparecem em Todos.", filters: "Filtrar versões" },
   },
   it: {
@@ -1344,10 +1344,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "Guarda la skin",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "Lo Store, dal vivo nel tuo browser.",
         lede: "Premi una scheda e diventa il suo articolo; premi Ottieni e l’anello gira. Lo stesso flusso dell’app vera, senza scaricare nulla.",
-        cta: "Vai a Corvus Store",
+        cta: "Vai a Algorab Store",
       },
       chronology: {
         eyebrow: "Cronologia",
@@ -1431,9 +1431,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "ASTRAEA ha concluso il suo servizio il 16 ottobre 2026. Grazie a tutti coloro che l'hanno giocata, dalla V1.0 fino all'ultima versione, la V1.5.4 «Defence».",
       thanks: "Grazie anche a chi ci ha segnalato i suoi bug. Ci ha fatto davvero piacere vedere porte blindate e serrature, la lama celeste, gli strumenti e le macchine grandi come edifici nei vostri mondi.",
       nextTitle: "Cosa succede ora",
-      next: ["In Corvus Store ASTRAEA è archiviata e non può più essere installata. Viene inoltre spostata fuori dai pacchetti di ogni giocatore (messa da parte, non eliminata).", "Corvus Agent disattiva e rimuove ASTRAEA dai server in automatico, dopo aver salvato una copia del mondo, a partire dal 18 ottobre 2026, alla prima sincronizzazione.", "Il download non viene più offerto su questo sito. Queste pagine restano a ricordo di ASTRAEA."],
+      next: ["In Algorab Store ASTRAEA è archiviata e non può più essere installata. Viene inoltre spostata fuori dai pacchetti di ogni giocatore (messa da parte, non eliminata).", "Algorab Agent disattiva e rimuove ASTRAEA dai server in automatico, dopo aver salvato una copia del mondo, a partire dal 18 ottobre 2026, alla prima sincronizzazione.", "Il download non viene più offerto su questo sito. Queste pagine restano a ricordo di ASTRAEA."],
       backupTitle: "Leggete questo",
-      backup: "Quando ASTRAEA viene rimossa, i suoi blocchi e i suoi oggetti scompaiono dai vostri mondi. Corvus Agent salva una copia del mondo prima di rimuoverla, ma fate una copia di sicurezza di ogni mondo che volete conservare prima del 18 ottobre 2026.",
+      backup: "Quando ASTRAEA viene rimossa, i suoi blocchi e i suoi oggetti scompaiono dai vostri mondi. Algorab Agent salva una copia del mondo prima di rimuoverla, ma fate una copia di sicurezza di ogni mondo che volete conservare prima del 18 ottobre 2026.",
       ouka: "OUKA non è interessata.",
       closing: "Grazie di cuore a tutti, per tutto.",
       archivedBody: "Il servizio di ASTRAEA è terminato il 16 ottobre 2026. ASTRAEA non può più essere installata.",
@@ -1441,7 +1441,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} è disponibile.", "{0} sono disponibili."],
       coming: ["{0} arriva presto.", "{0} arrivano presto."],
-      keeps: "Corvus Store mantiene tutto aggiornato.",
+      keeps: "Algorab Store mantiene tutto aggiornato.",
       list: { sep: ", ", last: " e ", pair: " e " },
       join: " ",
     },
@@ -1465,7 +1465,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "Teaser",
-      description: "Ogni teaser pubblicato da Corvus, da rivedere e rileggere.",
+      description: "Ogni teaser pubblicato da Algorab, da rivedere e rileggere.",
       lede: "Ognuno con le parole con cui fu annunciato, prima della versione promessa. Avvialo per rivederlo o aprilo per leggerlo tutto.",
       player: "Lettore di teaser",
       play: "Riproduci",
@@ -1486,7 +1486,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "Sparxie come appare nel gioco", front: "Fronte", side: "Tre quarti" },
     skinPublic: { lede: "Sparxie è disponibile come skin di Minecraft, gratis per tutti: falla girare e prova le sue pose qui, poi scarica la skin." },
-    agent: { title: "Corvus Agent", body: "Un programma per il server Minecraft che ospiti tu: tiene i mod del server allineati a Corvus Store. Controlla ogni download, ferma il server, sostituisce i file, lo riavvia e rimette i file precedenti se non riparte.", note: "Java 25 · guida all'installazione e configurazione di esempio incluse" },
+    agent: { title: "Algorab Agent", body: "Un programma per il server Minecraft che ospiti tu: tiene i mod del server allineati a Algorab Store. Controlla ogni download, ferma il server, sostituisce i file, lo riavvia e rimette i file precedenti se non riparte.", note: "Java 25 · guida all'installazione e configurazione di esempio incluse" },
     changelogUi: { ended: "Conclusi", endedNote: "I modelli conclusi restano in archivio e non compaiono in Tutti.", filters: "Filtra le versioni" },
   },
   ar: {
@@ -1509,10 +1509,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "شاهد السكن",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "المتجر، مباشرةً في متصفحك.",
         lede: "اضغط بطاقة فتتّسع إلى مقالها؛ اضغط «الحصول» فتدور الحلقة. مسار التطبيق الحقيقي نفسه، من دون تنزيل أي شيء.",
-        cta: "انتقل إلى Corvus Store",
+        cta: "انتقل إلى Algorab Store",
       },
       chronology: {
         eyebrow: "التسلسل الزمني",
@@ -1596,9 +1596,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "أنهت ASTRAEA خدمتها في 16 أكتوبر 2026. شكرًا لكل من لعب بها، من الإصدار V1.0 حتى الإصدار الأخير V1.5.4 «Defence».",
       thanks: "وشكرًا كذلك لكل من أبلغنا عن أخطائها. كان يسعدنا كثيرًا أن نرى الأبواب المدرعة والأقفال والسيف السماوي والأدوات والآلات بحجم المباني في عوالمكم.",
       nextTitle: "ماذا يحدث الآن",
-      next: ["في Corvus Store أصبحت ASTRAEA مؤرشفة، ولم يعد بالإمكان تثبيتها. وتُنقل أيضًا خارج حزم كل لاعب (تُنحّى جانبًا ولا تُحذف).", "يُزيل Corvus Agent ASTRAEA من الخوادم تلقائيًا، بعد أخذ نسخة احتياطية من العالم، ابتداءً من 18 أكتوبر 2026 في أول مزامنة له.", "لم يعد تنزيلها متاحًا في هذا الموقع، وتبقى الصفحات سجلًا لـ ASTRAEA."],
+      next: ["في Algorab Store أصبحت ASTRAEA مؤرشفة، ولم يعد بالإمكان تثبيتها. وتُنقل أيضًا خارج حزم كل لاعب (تُنحّى جانبًا ولا تُحذف).", "يُزيل Algorab Agent ASTRAEA من الخوادم تلقائيًا، بعد أخذ نسخة احتياطية من العالم، ابتداءً من 18 أكتوبر 2026 في أول مزامنة له.", "لم يعد تنزيلها متاحًا في هذا الموقع، وتبقى الصفحات سجلًا لـ ASTRAEA."],
       backupTitle: "يرجى قراءة هذا",
-      backup: "عند إزالة ASTRAEA تختفي كتلها وعناصرها من عالمك. يأخذ Corvus Agent نسخة احتياطية من العالم قبل إزالتها، لكن يُرجى أخذ نسخة احتياطية بنفسك من أي عالم تريد الاحتفاظ به قبل 18 أكتوبر 2026.",
+      backup: "عند إزالة ASTRAEA تختفي كتلها وعناصرها من عالمك. يأخذ Algorab Agent نسخة احتياطية من العالم قبل إزالتها، لكن يُرجى أخذ نسخة احتياطية بنفسك من أي عالم تريد الاحتفاظ به قبل 18 أكتوبر 2026.",
       ouka: "OUKA لا تتأثر.",
       closing: "شكرًا لكم جميعًا على كل شيء.",
       archivedBody: "انتهت خدمة ASTRAEA في 16 أكتوبر 2026، ولم يعد بالإمكان تثبيتها.",
@@ -1606,7 +1606,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} متاحة الآن.", "{0} متاحة الآن."],
       coming: ["أما {0} فقادمة قريبًا.", "أما {0} فقادمة قريبًا."],
-      keeps: "ويُبقي Corvus Store كل شيء محدَّثًا.",
+      keeps: "ويُبقي Algorab Store كل شيء محدَّثًا.",
       list: { sep: " و", last: " و", pair: " و" },
       join: " ",
     },
@@ -1630,7 +1630,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "الإعلانات التشويقية",
-      description: "كل إعلان تشويقي نشرته Corvus، لإعادة تشغيله وقراءته من جديد.",
+      description: "كل إعلان تشويقي نشرته Algorab، لإعادة تشغيله وقراءته من جديد.",
       lede: "كلٌّ منها بالكلمات التي أُعلن بها، قبل الإصدار الذي وعد به. شغّله لتشاهده من جديد، أو افتحه لتقرأه كاملًا.",
       player: "مشغّل الإعلانات التشويقية",
       play: "تشغيل",
@@ -1651,7 +1651,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "Sparxie كما تظهر في اللعبة", front: "من الأمام", side: "منظر جانبي" },
     skinPublic: { lede: "Sparxie متاحة كمظهر لـ Minecraft مجانًا للجميع: أدِرها وجرّب وضعياتها هنا، ثم نزّل المظهر." },
-    agent: { title: "Corvus Agent", body: "برنامج لخادم Minecraft الذي تستضيفه بنفسك: يُبقي مودات الخادم مطابقة لما في Corvus Store. يتحقق من كل تنزيل، ثم يوقف الخادم ويستبدل الملفات ويشغّله من جديد، ويعيد الملفات السابقة إن لم يعمل.", note: "Java 25 · يتضمن دليل الإعداد ومثالًا للإعدادات" },
+    agent: { title: "Algorab Agent", body: "برنامج لخادم Minecraft الذي تستضيفه بنفسك: يُبقي مودات الخادم مطابقة لما في Algorab Store. يتحقق من كل تنزيل، ثم يوقف الخادم ويستبدل الملفات ويشغّله من جديد، ويعيد الملفات السابقة إن لم يعمل.", note: "Java 25 · يتضمن دليل الإعداد ومثالًا للإعدادات" },
     changelogUi: { ended: "المنتهية", endedNote: "تبقى النماذج المنتهية في السجل ولا تظهر ضمن «الكل».", filters: "تصفية الإصدارات" },
   },
   ru: {
@@ -1674,10 +1674,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "Посмотреть скин",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "Store — прямо в вашем браузере.",
         lede: "Нажмите на карточку — она раскроется в статью; нажмите «Получить» — кольцо закрутится. Тот же путь, что в настоящем приложении, без единой загрузки.",
-        cta: "Перейти в Corvus Store",
+        cta: "Перейти в Algorab Store",
       },
       chronology: {
         eyebrow: "Хронология",
@@ -1761,9 +1761,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "ASTRAEA завершила работу 16 октября 2026 г. Спасибо всем, кто играл в неё, от V1.0 до финальной версии V1.5.4 «Defence».",
       thanks: "Спасибо и всем, кто сообщал нам об ошибках. Нам было очень приятно видеть в ваших мирах бронированные двери и замки, небесный клинок, инструменты и машины размером с здания.",
       nextTitle: "Что будет дальше",
-      next: ["В Corvus Store ASTRAEA перенесена в архив и больше не может быть установлена. Кроме того, она убирается из сборок у каждого игрока (откладывается в сторону, но не удаляется).", "Corvus Agent автоматически отключает и удаляет ASTRAEA с серверов после резервного копирования миров — начиная с 18 октября 2026 г., при первой синхронизации.", "Загрузка на этом сайте больше не предлагается. Страницы сохраняются как память об ASTRAEA."],
+      next: ["В Algorab Store ASTRAEA перенесена в архив и больше не может быть установлена. Кроме того, она убирается из сборок у каждого игрока (откладывается в сторону, но не удаляется).", "Algorab Agent автоматически отключает и удаляет ASTRAEA с серверов после резервного копирования миров — начиная с 18 октября 2026 г., при первой синхронизации.", "Загрузка на этом сайте больше не предлагается. Страницы сохраняются как память об ASTRAEA."],
       backupTitle: "Пожалуйста, прочтите",
-      backup: "При удалении ASTRAEA её блоки и предметы исчезают из ваших миров. Corvus Agent создаёт резервную копию мира перед удалением, но сделайте резервную копию всех миров, которые хотите сохранить, до 18 октября 2026 г.",
+      backup: "При удалении ASTRAEA её блоки и предметы исчезают из ваших миров. Algorab Agent создаёт резервную копию мира перед удалением, но сделайте резервную копию всех миров, которые хотите сохранить, до 18 октября 2026 г.",
       ouka: "OUKA это не затрагивает.",
       closing: "Спасибо вам всем за всё.",
       archivedBody: "Служба ASTRAEA завершена 16 октября 2026 г. Установить её больше нельзя.",
@@ -1771,7 +1771,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} уже вышел.", "{0} уже вышли."],
       coming: ["{0} скоро появится.", "{0} скоро появятся."],
-      keeps: "Corvus Store поддерживает всё в актуальном состоянии.",
+      keeps: "Algorab Store поддерживает всё в актуальном состоянии.",
       list: { sep: ", ", last: " и ", pair: " и " },
       join: " ",
     },
@@ -1795,7 +1795,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "Тизеры",
-      description: "Все тизеры, которые опубликовал Corvus, — чтобы пересмотреть и перечитать.",
+      description: "Все тизеры, которые опубликовал Algorab, — чтобы пересмотреть и перечитать.",
       lede: "Каждый — теми словами, какими он был объявлен, до обещанного выпуска. Запустите, чтобы посмотреть снова, или раскройте, чтобы прочитать целиком.",
       player: "Проигрыватель тизеров",
       play: "Воспроизвести",
@@ -1816,7 +1816,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "Sparxie в игре", front: "Спереди", side: "Вполоборота" },
     skinPublic: { lede: "Sparxie доступна как скин для Minecraft — бесплатно для всех: покрутите её и примерьте позы здесь, а затем скачайте скин." },
-    agent: { title: "Corvus Agent", body: "Программа для сервера Minecraft, который вы держите сами: она поддерживает моды сервера в том же состоянии, что и Corvus Store. Проверяет каждую загрузку, останавливает сервер, заменяет файлы, запускает его снова и возвращает прежние файлы, если сервер не поднялся.", note: "Java 25 · руководство по установке и пример настроек внутри" },
+    agent: { title: "Algorab Agent", body: "Программа для сервера Minecraft, который вы держите сами: она поддерживает моды сервера в том же состоянии, что и Algorab Store. Проверяет каждую загрузку, останавливает сервер, заменяет файлы, запускает его снова и возвращает прежние файлы, если сервер не поднялся.", note: "Java 25 · руководство по установке и пример настроек внутри" },
     changelogUi: { ended: "Завершённые", endedNote: "Завершённые модели остаются в истории и не входят в «Все».", filters: "Фильтр версий" },
   },
   id: {
@@ -1839,10 +1839,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "Lihat skin",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "Store, langsung di peramban Anda.",
         lede: "Tekan sebuah kartu dan ia membesar menjadi artikelnya; tekan Dapatkan dan cincinnya berputar. Alur aplikasi aslinya, tanpa mengunduh apa pun.",
-        cta: "Ke Corvus Store",
+        cta: "Ke Algorab Store",
       },
       chronology: {
         eyebrow: "Kronologi",
@@ -1926,9 +1926,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "ASTRAEA mengakhiri layanannya pada 16 Oktober 2026. Terima kasih kepada semua yang telah memainkannya, dari V1.0 hingga rilis terakhir, V1.5.4 \"Defence\".",
       thanks: "Terima kasih juga kepada semua yang melaporkan bug-nya kepada kami. Kami sangat senang melihat pintu baja dan kunci, bilah surgawi, alat, serta mesin sebesar bangunan berdiri di dunia Anda.",
       nextTitle: "Apa yang terjadi sekarang",
-      next: ["Di Corvus Store, ASTRAEA telah diarsipkan dan tidak bisa lagi dipasang. Ia juga dipindahkan keluar dari paket setiap pemain (disisihkan, tidak dihapus).", "Corvus Agent akan menonaktifkan dan menghapus ASTRAEA dari server secara otomatis, setelah membuat cadangan dunia, mulai 18 Oktober 2026 pada sinkronisasi pertamanya.", "Unduhannya tidak lagi ditawarkan di situs ini. Halaman-halaman ini tetap ada sebagai catatan tentang ASTRAEA."],
+      next: ["Di Algorab Store, ASTRAEA telah diarsipkan dan tidak bisa lagi dipasang. Ia juga dipindahkan keluar dari paket setiap pemain (disisihkan, tidak dihapus).", "Algorab Agent akan menonaktifkan dan menghapus ASTRAEA dari server secara otomatis, setelah membuat cadangan dunia, mulai 18 Oktober 2026 pada sinkronisasi pertamanya.", "Unduhannya tidak lagi ditawarkan di situs ini. Halaman-halaman ini tetap ada sebagai catatan tentang ASTRAEA."],
       backupTitle: "Mohon baca ini",
-      backup: "Saat ASTRAEA dihapus, blok dan itemnya akan hilang dari dunia Anda. Corvus Agent membuat cadangan dunia sebelum menghapus, tetapi cadangkan dunia yang ingin Anda simpan sebelum 18 Oktober 2026.",
+      backup: "Saat ASTRAEA dihapus, blok dan itemnya akan hilang dari dunia Anda. Algorab Agent membuat cadangan dunia sebelum menghapus, tetapi cadangkan dunia yang ingin Anda simpan sebelum 18 Oktober 2026.",
       ouka: "OUKA tidak terpengaruh.",
       closing: "Terima kasih, semuanya, atas segalanya.",
       archivedBody: "Layanan ASTRAEA berakhir pada 16 Oktober 2026. ASTRAEA tidak bisa lagi dipasang.",
@@ -1936,7 +1936,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} sudah tersedia.", "{0} sudah tersedia."],
       coming: ["{0} segera hadir.", "{0} segera hadir."],
-      keeps: "Corvus Store menjaga semuanya tetap mutakhir.",
+      keeps: "Algorab Store menjaga semuanya tetap mutakhir.",
       list: { sep: ", ", last: ", dan ", pair: " dan " },
       join: " ",
     },
@@ -1960,7 +1960,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "Teaser",
-      description: "Setiap teaser yang pernah diterbitkan Corvus, untuk diputar dan dibaca ulang.",
+      description: "Setiap teaser yang pernah diterbitkan Algorab, untuk diputar dan dibaca ulang.",
       lede: "Masing-masing dengan kata-kata saat diumumkan, sebelum rilis yang dijanjikannya. Putar untuk menontonnya lagi, atau buka untuk membacanya utuh.",
       player: "Pemutar teaser",
       play: "Putar",
@@ -1981,7 +1981,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "Sparxie di dalam game", front: "Depan", side: "Tiga perempat" },
     skinPublic: { lede: "Sparxie tersedia sebagai skin Minecraft, gratis untuk semua: putar dia dan coba pose-posenya di sini, lalu unduh skin-nya." },
-    agent: { title: "Corvus Agent", body: "Program untuk server Minecraft yang Anda kelola sendiri: menjaga mod server tetap sama dengan Corvus Store. Program ini memeriksa setiap unduhan, menghentikan server, mengganti berkas, menyalakannya lagi, dan mengembalikan berkas lama jika server tidak menyala.", note: "Java 25 · panduan pemasangan dan contoh konfigurasi disertakan" },
+    agent: { title: "Algorab Agent", body: "Program untuk server Minecraft yang Anda kelola sendiri: menjaga mod server tetap sama dengan Algorab Store. Program ini memeriksa setiap unduhan, menghentikan server, mengganti berkas, menyalakannya lagi, dan mengembalikan berkas lama jika server tidak menyala.", note: "Java 25 · panduan pemasangan dan contoh konfigurasi disertakan" },
     changelogUi: { ended: "Berakhir", endedNote: "Model yang berakhir tetap tercatat dan tidak termasuk dalam Semua.", filters: "Saring rilis" },
   },
   de: {
@@ -2004,10 +2004,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "Den Skin ansehen",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "Der Store, live in Ihrem Browser.",
         lede: "Tippen Sie auf eine Karte, und sie wird zu ihrem Artikel; tippen Sie auf Laden, und der Ring dreht sich. Der Ablauf der echten App, ohne etwas herunterzuladen.",
-        cta: "Zum Corvus Store",
+        cta: "Zum Algorab Store",
       },
       chronology: {
         eyebrow: "Chronologie",
@@ -2091,9 +2091,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "ASTRAEA hat seinen Dienst am 16. Oktober 2026 eingestellt. Vielen Dank an alle, die es gespielt haben, von V1.0 bis zur letzten Version V1.5.4 „Defence“.",
       thanks: "Ebenso danken wir allen, die uns von Fehlern berichtet haben. Es hat uns sehr bedeutet, die Panzertüren und Schlösser, die Himmelsklinge, die Werkzeuge und die gebäudegroßen Maschinen in Ihren Welten zu sehen.",
       nextTitle: "Was jetzt passiert",
-      next: ["Im Corvus Store ist ASTRAEA archiviert und kann nicht mehr installiert werden. Außerdem wird sie aus den Paketen jedes Spielers entfernt (beiseitegelegt, nicht gelöscht).", "Corvus Agent deaktiviert und entfernt ASTRAEA auf Servern automatisch, nach einer Sicherung der Welt, ab dem 18. Oktober 2026 bei der ersten Synchronisation.", "Der Download wird hier nicht mehr angeboten. Diese Seiten bleiben als Erinnerung an ASTRAEA erhalten."],
+      next: ["Im Algorab Store ist ASTRAEA archiviert und kann nicht mehr installiert werden. Außerdem wird sie aus den Paketen jedes Spielers entfernt (beiseitegelegt, nicht gelöscht).", "Algorab Agent deaktiviert und entfernt ASTRAEA auf Servern automatisch, nach einer Sicherung der Welt, ab dem 18. Oktober 2026 bei der ersten Synchronisation.", "Der Download wird hier nicht mehr angeboten. Diese Seiten bleiben als Erinnerung an ASTRAEA erhalten."],
       backupTitle: "Bitte lesen Sie das",
-      backup: "Beim Entfernen von ASTRAEA verschwinden deren Blöcke und Gegenstände aus Ihren Welten. Corvus Agent sichert die Welt vor dem Entfernen. Sichern Sie aber Welten, die Sie behalten möchten, bitte selbst vor dem 18. Oktober 2026.",
+      backup: "Beim Entfernen von ASTRAEA verschwinden deren Blöcke und Gegenstände aus Ihren Welten. Algorab Agent sichert die Welt vor dem Entfernen. Sichern Sie aber Welten, die Sie behalten möchten, bitte selbst vor dem 18. Oktober 2026.",
       ouka: "OUKA ist nicht betroffen.",
       closing: "Vielen Dank Ihnen allen für alles.",
       archivedBody: "Der Dienst von ASTRAEA wurde am 16. Oktober 2026 beendet. ASTRAEA kann nicht mehr installiert werden.",
@@ -2101,7 +2101,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} ist erschienen.", "{0} sind erschienen."],
       coming: ["{0} folgt.", "{0} folgen."],
-      keeps: "Corvus Store hält alles auf dem neuesten Stand.",
+      keeps: "Algorab Store hält alles auf dem neuesten Stand.",
       list: { sep: ", ", last: " und ", pair: " und " },
       join: " ",
     },
@@ -2125,7 +2125,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "Teaser",
-      description: "Jeder Teaser, den Corvus veröffentlicht hat – zum erneuten Abspielen und Nachlesen.",
+      description: "Jeder Teaser, den Algorab veröffentlicht hat – zum erneuten Abspielen und Nachlesen.",
       lede: "Jeder in den Worten seiner Ankündigung, vor dem Release, das er versprach. Abspielen, um ihn noch einmal zu sehen, oder öffnen, um ihn ganz zu lesen.",
       player: "Teaser-Player",
       play: "Abspielen",
@@ -2146,7 +2146,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "Sparxie, wie sie im Spiel aussieht", front: "Vorne", side: "Dreiviertel" },
     skinPublic: { lede: "Sparxie gibt es als Minecraft-Skin, kostenlos für alle: Dreh sie hier herum, probier ihre Posen aus und lade dann den Skin herunter." },
-    agent: { title: "Corvus Agent", body: "Ein Programm für den Minecraft-Server, den du selbst betreibst: Es hält die Mods des Servers auf dem Stand von Corvus Store. Es prüft jeden Download, stoppt den Server, tauscht die Dateien, startet ihn wieder und stellt die alten Dateien zurück, wenn er nicht hochkommt.", note: "Java 25 · Einrichtungsanleitung und Beispielkonfiguration liegen bei" },
+    agent: { title: "Algorab Agent", body: "Ein Programm für den Minecraft-Server, den du selbst betreibst: Es hält die Mods des Servers auf dem Stand von Algorab Store. Es prüft jeden Download, stoppt den Server, tauscht die Dateien, startet ihn wieder und stellt die alten Dateien zurück, wenn er nicht hochkommt.", note: "Java 25 · Einrichtungsanleitung und Beispielkonfiguration liegen bei" },
     changelogUi: { ended: "Beendet", endedNote: "Beendete Modelle bleiben im Verlauf und erscheinen nicht unter Alle.", filters: "Versionen filtern" },
   },
   tr: {
@@ -2169,10 +2169,10 @@ export const FRESH: Record<Lang, Fresh> = {
         cta: "Skin’i gör",
       },
       store: {
-        eyebrow: "Corvus Store 3.0",
+        eyebrow: "Algorab Store 3.0",
         title: "Store, tarayıcınızda canlı.",
         lede: "Bir karta dokunun, makalesine dönüşsün; Al’a dokunun, halka dönsün. Gerçek uygulamanın akışı, hiçbir şey indirmeden.",
-        cta: "Corvus Store’a git",
+        cta: "Algorab Store’a git",
       },
       chronology: {
         eyebrow: "Kronoloji",
@@ -2256,9 +2256,9 @@ export const FRESH: Record<Lang, Fresh> = {
       lede: "ASTRAEA hizmetini 16 Ekim 2026'da sonlandırdı. V1.0'dan son sürüm V1.5.4 \"Defence\"'e kadar oynayan herkese teşekkür ederiz.",
       thanks: "Hatalarını bize bildiren herkese de teşekkür ederiz. Dünyalarınızda savunma kapılarının ve kilitlerin, gök kılıcının ve araçların, bina boyutundaki makinelerin durduğunu görmek bizim için çok anlamlıydı.",
       nextTitle: "Şimdi neler olacak",
-      next: ["Corvus Store'da ASTRAEA arşivlendi ve artık yüklenemez. Ayrıca her oyuncunun paketlerinden de çıkarılır (kenara alınır, silinmez).", "Corvus Agent, 18 Ekim 2026'dan itibaren ilk senkronizasyonunda, dünyaların yedeğini aldıktan sonra kurulu ASTRAEA'yı sunuculardan otomatik olarak devre dışı bırakır ve kaldırır.", "Buradan indirme artık sunulmuyor. Bu sayfalar ASTRAEA'nın kaydı olarak kalacak."],
+      next: ["Algorab Store'da ASTRAEA arşivlendi ve artık yüklenemez. Ayrıca her oyuncunun paketlerinden de çıkarılır (kenara alınır, silinmez).", "Algorab Agent, 18 Ekim 2026'dan itibaren ilk senkronizasyonunda, dünyaların yedeğini aldıktan sonra kurulu ASTRAEA'yı sunuculardan otomatik olarak devre dışı bırakır ve kaldırır.", "Buradan indirme artık sunulmuyor. Bu sayfalar ASTRAEA'nın kaydı olarak kalacak."],
       backupTitle: "Lütfen bunu okuyun",
-      backup: "ASTRAEA kaldırıldığında blokları ve eşyaları dünyalarınızdan kaybolur. Corvus Agent kaldırmadan önce dünyanın yedeğini alır, ancak saklamak istediğiniz dünyaların yedeğini 18 Ekim 2026'dan önce kendiniz alın.",
+      backup: "ASTRAEA kaldırıldığında blokları ve eşyaları dünyalarınızdan kaybolur. Algorab Agent kaldırmadan önce dünyanın yedeğini alır, ancak saklamak istediğiniz dünyaların yedeğini 18 Ekim 2026'dan önce kendiniz alın.",
       ouka: "OUKA etkilenmez.",
       closing: "Hepinize, her şey için çok teşekkür ederiz.",
       archivedBody: "ASTRAEA'nın hizmeti 16 Ekim 2026'da sona erdi. Artık yüklenemez.",
@@ -2266,7 +2266,7 @@ export const FRESH: Record<Lang, Fresh> = {
     lineup: {
       out: ["{0} çıktı.", "{0} çıktı."],
       coming: ["{0} yolda.", "{0} yolda."],
-      keeps: "Corvus Store hepsini güncel tutar.",
+      keeps: "Algorab Store hepsini güncel tutar.",
       list: { sep: ", ", last: " ve ", pair: " ve " },
       join: " ",
     },
@@ -2290,7 +2290,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     teasers: {
       title: "Fragmanlar",
-      description: "Corvus’un yayımladığı her fragman; yeniden oynatmak ve okumak için.",
+      description: "Algorab’un yayımladığı her fragman; yeniden oynatmak ve okumak için.",
       lede: "Her biri, vaat ettiği sürümden önce duyurulduğu sözlerle. Yeniden izlemek için oynatın ya da tamamını okumak için açın.",
       player: "Fragman oynatıcı",
       play: "Oynat",
@@ -2311,7 +2311,7 @@ export const FRESH: Record<Lang, Fresh> = {
     },
     skinPreview: { title: "Sparxie oyunda böyle görünür", front: "Önden", side: "Dörtte üç" },
     skinPublic: { lede: "Sparxie, herkes için ücretsiz bir Minecraft skin’i olarak hazır: burada döndürün, pozlarını deneyin, sonra skin’i indirin." },
-    agent: { title: "Corvus Agent", body: "Kendi barındırdığınız Minecraft sunucusu için bir program: sunucunun modlarını Corvus Store ile aynı durumda tutar. Her indirmeyi doğrular, sunucuyu durdurur, dosyaları değiştirir, yeniden başlatır ve sunucu açılmazsa eski dosyaları geri koyar.", note: "Java 25 · kurulum kılavuzu ve örnek yapılandırma içinde" },
+    agent: { title: "Algorab Agent", body: "Kendi barındırdığınız Minecraft sunucusu için bir program: sunucunun modlarını Algorab Store ile aynı durumda tutar. Her indirmeyi doğrular, sunucuyu durdurur, dosyaları değiştirir, yeniden başlatır ve sunucu açılmazsa eski dosyaları geri koyar.", note: "Java 25 · kurulum kılavuzu ve örnek yapılandırma içinde" },
     changelogUi: { ended: "Sonlanan", endedNote: "Sonlanan modeller kayıtta kalır ve Tümü'nde yer almaz.", filters: "Sürümleri filtrele" },
   },
 };

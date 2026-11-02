@@ -904,7 +904,7 @@ html:lang(ko) body {
   overflow-wrap: break-word;
 }
 
-/* Corvus NEXT status: a plain pill, and a control that is shown but cannot be pressed (no file exists yet). */
+/* Algorab status: a plain pill, and a control that is shown but cannot be pressed (no file exists yet). */
 .cn-status {
   display: inline-flex;
   align-items: center;

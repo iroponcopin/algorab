@@ -11,7 +11,7 @@ export const BRAND_COLOR: Record<string, string> = {
   noctua: "#ffb340",
 };
 
-/** The changelog brands' icons (the Store's own mark for Corvus Store). */
+/** The changelog brands' icons (the Store's own mark for Algorab Store). */
 export const BRAND_ICON: Record<string, string> = {
   ouka: "icons/ouka.png",
   cherry: "icons/cherry.png",

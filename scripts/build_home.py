@@ -3,8 +3,8 @@
 
 Owner directive (2026-09-10, verbatim):
 
-    「CorvusのホームについてもAI生成画像等を使用するなどして、迫力あ率つも
-      Appleらしさを追求した方法でCorvusのできることを説明してください。
+    「AlgorabのホームについてもAI生成画像等を使用するなどして、迫力あ率つも
+      Appleらしさを追求した方法でAlgorabのできることを説明してください。
       展開しているブランドに関して言及することも良いでしょう。ただし
       シンプルかつ洗練された説明文に留めることです。」
     「全体的にテーマがスカイブルーではなく、以前のテーマが残っている
@@ -23,10 +23,10 @@ So the home page is an Apple product page now, top to bottom:
   2. always current    — headline, one line, the Update pane (4.3.7 -> 4.3.8)
   3. verified          — three short rules in a glass strip, text only
   4. the brands        — OUKA / Cherry / Alpha ranked, Aureum on its own line
-  5. sign-off          — the mark and two buttons: Get Corvus, Get Alpha
+  5. sign-off          — the mark and two buttons: Get Algorab, Get Alpha
 
 The five other scenes of the film (the arrival, the fan, the dissolve, the
-sheet, the sign-off) are gone, and with them their five Corvus 1.5.2 frames,
+sheet, the sign-off) are gone, and with them their five Algorab 1.5.2 frames,
 the pinned-stage CSS in style.css and the film module in main.js. Sections
 reveal on scroll through main.js's existing `.reveal` system — every
 `main > section:not(.film)` is already one of its targets — so this page adds
@@ -34,12 +34,12 @@ no observer of its own, and with JS off or under prefers-reduced-motion
 everything is simply visible where it stands.
 
 IMAGERY. There is no video, no canvas, no library and no image-generation
-model behind this page. The two pictures are real captures of Corvus 2.0.0 on
+model behind this page. The two pictures are real captures of Algorab 2.0.0 on
 macOS (a 760x720pt window at 2x, shot over a neutral sky-blue backdrop with
 the account shown as a neutral "Player" monogram), re-encoded to WebP and set
 in window-shaped cards lit from behind by CSS light fields. The "depth" the
 owner asked for comes from the real translucent glass of the app's own
-window, which is the most honest picture of Corvus there is.
+window, which is the most honest picture of Algorab there is.
 
 COPY. Every string on the page lives in COPY below, in all 13 languages,
 Japanese first (the owner's language), with no fallback — the `home` section
@@ -61,7 +61,7 @@ from site_common import (  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 
-# Both frames are the real Corvus 2.0.0 window on macOS, 760x720pt captured at
+# Both frames are the real Algorab 2.0.0 window on macOS, 760x720pt captured at
 # 2x, so their natural size is 1520x1440 — which is what the width/height
 # attributes advertise so nothing shifts while they load. They were shot
 # against a throwaway pack folder under a scratch directory, never a real
@@ -82,12 +82,12 @@ FRAMES = {
 #   brands_h, brands_p        4. the brands — plus one line per brand:
 #   ouka_p, cherry_p, alpha_p, aureum_p
 #   get_corvus, get_alpha     5. the two buttons
-# Brand names (Corvus, Alpha, Aureum, Cherry) are never translated.
+# Brand names (Algorab, Alpha, Aureum, Cherry) are never translated.
 COPY = {
     "ja": {
         "tagline": "OUKA・Cherry・Aureum のためのランチャー。",
         "what_h": "すべての MOD を、ひとつのウインドウに。",
-        "what_p": "Corvus は OUKA・Cherry・Aureum を導入し、最新に保ちます。macOS では、ウインドウは本物のガラス。デスクトップが、ぼかしを通して透けて見えます。",
+        "what_p": "Algorab は OUKA・Cherry・Aureum を導入し、最新に保ちます。macOS では、ウインドウは本物のガラス。デスクトップが、ぼかしを通して透けて見えます。",
         "current_h": "いつも、最新。",
         "current_p": "新しいリリースは、ボタンひとつ先に。自動アップデートをオンにすれば、ひとりでに届きます。",
         "verified_h": "ファイルに触れる前に、検証。",
@@ -103,12 +103,12 @@ COPY = {
         "ouka_p": "Cherry の上に立つ、最上位のブランド。Cherry と併せて導入でき、バージョンは独立して進みます。",
         "aureum_p": "独立した、任意の Mod。選んだときにだけ導入され、以降は最新に保たれます。",
         "cherry_p": "OUKA のすぐ下に位置するブランド。OUKA と併せて導入でき、バージョンは独立して進みます。",
-        "get_corvus": "Corvus を入手",
+        "get_corvus": "Algorab を入手",
     },
     "en": {
         "tagline": "The launcher for OUKA, Cherry and Aureum.",
         "what_h": "Every mod, in one window.",
-        "what_p": "Corvus installs OUKA, Cherry and Aureum and keeps them current. On macOS the window is real glass: the desktop shows through, blurred.",
+        "what_p": "Algorab installs OUKA, Cherry and Aureum and keeps them current. On macOS the window is real glass: the desktop shows through, blurred.",
         "current_h": "Always current.",
         "current_p": "A new release is one press away. With automatic updates on, it arrives by itself.",
         "verified_h": "Verified before it touches a file.",
@@ -124,12 +124,12 @@ COPY = {
         "ouka_p": "The highest tier, above Cherry. It installs alongside Cherry and versions independently.",
         "aureum_p": "A separate, optional mod. Installed only when you choose, and kept current from then on.",
         "cherry_p": "The tier just below OUKA. It installs alongside OUKA and versions independently.",
-        "get_corvus": "Get Corvus",
+        "get_corvus": "Get Algorab",
     },
     "es": {
         "tagline": "El launcher para OUKA, Cherry y Aureum.",
         "what_h": "Todos los mods, en una sola ventana.",
-        "what_p": "Corvus instala OUKA, Cherry y Aureum y los mantiene al día. En macOS la ventana es cristal de verdad: el escritorio se ve a través, desenfocado.",
+        "what_p": "Algorab instala OUKA, Cherry y Aureum y los mantiene al día. En macOS la ventana es cristal de verdad: el escritorio se ve a través, desenfocado.",
         "current_h": "Siempre al día.",
         "current_p": "Una nueva versión está a un solo clic. Con las actualizaciones automáticas activadas, llega por sí sola.",
         "verified_h": "Verificado antes de tocar un archivo.",
@@ -145,12 +145,12 @@ COPY = {
         "ouka_p": "El nivel más alto, por encima de Cherry. Se instala junto a Cherry y avanza con su propia versión.",
         "aureum_p": "Un mod independiente y opcional. Se instala solo cuando tú lo eliges, y desde entonces se mantiene al día.",
         "cherry_p": "El nivel justo por debajo de OUKA. Se instala junto a OUKA y avanza con su propia versión.",
-        "get_corvus": "Obtener Corvus",
+        "get_corvus": "Obtener Algorab",
     },
     "fr": {
         "tagline": "Le launcher pour OUKA, Cherry et Aureum.",
         "what_h": "Tous les mods, dans une seule fenêtre.",
-        "what_p": "Corvus installe OUKA, Cherry et Aureum et les garde à jour. Sur macOS, la fenêtre est un vrai verre : le bureau apparaît au travers, flouté.",
+        "what_p": "Algorab installe OUKA, Cherry et Aureum et les garde à jour. Sur macOS, la fenêtre est un vrai verre : le bureau apparaît au travers, flouté.",
         "current_h": "Toujours à jour.",
         "current_p": "Une nouvelle version est à un clic. Avec les mises à jour automatiques activées, elle arrive d'elle-même.",
         "verified_h": "Vérifié avant de toucher un fichier.",
@@ -166,12 +166,12 @@ COPY = {
         "ouka_p": "Le niveau le plus élevé, au-dessus de Cherry. Il s'installe aux côtés de Cherry et avance avec sa propre version.",
         "aureum_p": "Un mod distinct et facultatif. Installé seulement si vous le choisissez, puis tenu à jour.",
         "cherry_p": "Le niveau juste en dessous d'OUKA. Il s'installe aux côtés d'OUKA et avance avec sa propre version.",
-        "get_corvus": "Obtenir Corvus",
+        "get_corvus": "Obtenir Algorab",
     },
     "zh": {
         "tagline": "为 OUKA、Cherry 和 Aureum 而生的启动器。",
         "what_h": "所有模组，尽在一个窗口。",
-        "what_p": "Corvus 安装 OUKA、Cherry 和 Aureum，并保持其最新。在 macOS 上，窗口是真正的玻璃：桌面透过模糊的窗口若隐若现。",
+        "what_p": "Algorab 安装 OUKA、Cherry 和 Aureum，并保持其最新。在 macOS 上，窗口是真正的玻璃：桌面透过模糊的窗口若隐若现。",
         "current_h": "始终最新。",
         "current_p": "新版本只需一次点击。开启自动更新后，它会自行送达。",
         "verified_h": "在触及任何文件之前，先行验证。",
@@ -187,12 +187,12 @@ COPY = {
         "ouka_p": "位于 Cherry 之上，最高级别的品牌。可与 Cherry 一同安装，版本各自独立演进。",
         "aureum_p": "一个独立的可选 Mod。仅在你选择时安装，此后保持最新。",
         "cherry_p": "位于 OUKA 之下的品牌。可与 OUKA 一同安装，版本各自独立演进。",
-        "get_corvus": "获取 Corvus",
+        "get_corvus": "获取 Algorab",
     },
     "ko": {
         "tagline": "OUKA, Cherry, Aureum을 위한 런처.",
         "what_h": "모든 모드를, 하나의 창에.",
-        "what_p": "Corvus는 OUKA, Cherry, Aureum을 설치하고 최신 상태로 유지합니다. macOS에서는 창이 진짜 유리입니다. 데스크톱이 흐릿하게 비쳐 보입니다.",
+        "what_p": "Algorab은 OUKA, Cherry, Aureum을 설치하고 최신 상태로 유지합니다. macOS에서는 창이 진짜 유리입니다. 데스크톱이 흐릿하게 비쳐 보입니다.",
         "current_h": "언제나 최신.",
         "current_p": "새 릴리스는 버튼 하나 거리에 있습니다. 자동 업데이트를 켜 두면, 저절로 도착합니다.",
         "verified_h": "파일에 손대기 전에, 검증.",
@@ -208,12 +208,12 @@ COPY = {
         "ouka_p": "Cherry 위에 서는 최상위 브랜드입니다. Cherry와 함께 설치할 수 있으며, 버전은 각자 독립적으로 나아갑니다.",
         "aureum_p": "별도의 선택형 모드입니다. 직접 선택했을 때만 설치되며, 그 후로는 최신 상태로 유지됩니다.",
         "cherry_p": "OUKA 바로 아래에 자리한 브랜드입니다. OUKA와 함께 설치할 수 있으며, 버전은 각자 독립적으로 나아갑니다.",
-        "get_corvus": "Corvus 받기",
+        "get_corvus": "Algorab 받기",
     },
     "pt-br": {
         "tagline": "O launcher para OUKA, Cherry e Aureum.",
         "what_h": "Todos os mods, em uma só janela.",
-        "what_p": "O Corvus instala OUKA, Cherry e Aureum e os mantém atualizados. No macOS, a janela é vidro de verdade: a área de trabalho aparece através dela, desfocada.",
+        "what_p": "O Algorab instala OUKA, Cherry e Aureum e os mantém atualizados. No macOS, a janela é vidro de verdade: a área de trabalho aparece através dela, desfocada.",
         "current_h": "Sempre atualizado.",
         "current_p": "Uma nova versão está a um toque de distância. Com as atualizações automáticas ligadas, ela chega sozinha.",
         "verified_h": "Verificado antes de tocar em um arquivo.",
@@ -229,12 +229,12 @@ COPY = {
         "ouka_p": "O nível mais alto, acima do Cherry. Instala-se ao lado do Cherry e avança com versão própria.",
         "aureum_p": "Um mod separado e opcional. Instalado só quando você escolhe, e mantido atualizado a partir daí.",
         "cherry_p": "O nível logo abaixo de OUKA. Instala-se ao lado de OUKA e avança com versão própria.",
-        "get_corvus": "Obter o Corvus",
+        "get_corvus": "Obter o Algorab",
     },
     "it": {
         "tagline": "Il launcher per OUKA, Cherry e Aureum.",
         "what_h": "Tutte le mod, in una sola finestra.",
-        "what_p": "Corvus installa OUKA, Cherry e Aureum e li tiene aggiornati. Su macOS la finestra è vetro vero: la scrivania traspare, sfocata.",
+        "what_p": "Algorab installa OUKA, Cherry e Aureum e li tiene aggiornati. Su macOS la finestra è vetro vero: la scrivania traspare, sfocata.",
         "current_h": "Sempre aggiornato.",
         "current_p": "Una nuova versione è a un solo clic. Con gli aggiornamenti automatici attivi, arriva da sé.",
         "verified_h": "Verificato prima di toccare un file.",
@@ -250,12 +250,12 @@ COPY = {
         "ouka_p": "Il livello più alto, sopra Cherry. Si installa accanto a Cherry e avanza con una versione propria.",
         "aureum_p": "Una mod separata e facoltativa. Installata solo quando lo scegli, e da allora tenuta aggiornata.",
         "cherry_p": "Il livello appena sotto OUKA. Si installa accanto a OUKA e avanza con una versione propria.",
-        "get_corvus": "Ottieni Corvus",
+        "get_corvus": "Ottieni Algorab",
     },
     "ar": {
         "tagline": "المشغّل المخصّص لـ OUKA وCherry وAureum.",
         "what_h": "كل الإضافات، في نافذة واحدة.",
-        "what_p": "يثبّت Corvus إضافات OUKA وCherry وAureum ويبقيها محدّثة. على macOS النافذة زجاج حقيقي: يظهر سطح المكتب من خلالها، مموّهاً.",
+        "what_p": "يثبّت Algorab إضافات OUKA وCherry وAureum ويبقيها محدّثة. على macOS النافذة زجاج حقيقي: يظهر سطح المكتب من خلالها، مموّهاً.",
         "current_h": "محدّث دائماً.",
         "current_p": "الإصدار الجديد على بُعد ضغطة واحدة. ومع تفعيل التحديثات التلقائية، يصل من تلقاء نفسه.",
         "verified_h": "يُتحقّق منه قبل أن يمسّ أيّ ملف.",
@@ -271,12 +271,12 @@ COPY = {
         "ouka_p": "المستوى الأعلى، فوق Cherry. يُثبَّت إلى جانب Cherry ويتقدّم بإصدار مستقل.",
         "aureum_p": "مود منفصل واختياري. لا يُثبَّت إلا حين تختار ذلك، ثم يبقى محدّثاً بعدها.",
         "cherry_p": "المستوى الذي يلي OUKA مباشرة. يُثبَّت إلى جانب OUKA ويتقدّم بإصدار مستقل.",
-        "get_corvus": "احصل على Corvus",
+        "get_corvus": "احصل على Algorab",
     },
     "ru": {
         "tagline": "Лаунчер для OUKA, Cherry и Aureum.",
         "what_h": "Все моды — в одном окне.",
-        "what_p": "Corvus устанавливает OUKA, Cherry и Aureum и держит их актуальными. На macOS окно — настоящее стекло: сквозь него, размытым, виден рабочий стол.",
+        "what_p": "Algorab устанавливает OUKA, Cherry и Aureum и держит их актуальными. На macOS окно — настоящее стекло: сквозь него, размытым, виден рабочий стол.",
         "current_h": "Всегда актуально.",
         "current_p": "Новый выпуск — в одном нажатии. С включёнными автообновлениями он приходит сам.",
         "verified_h": "Проверено до того, как тронут хоть один файл.",
@@ -292,12 +292,12 @@ COPY = {
         "ouka_p": "Высший уровень — выше Cherry. Устанавливается рядом с Cherry и развивается в собственной версии.",
         "aureum_p": "Отдельный необязательный мод. Устанавливается только по вашему выбору и с тех пор держится актуальным.",
         "cherry_p": "Уровень сразу под OUKA. Устанавливается рядом с OUKA и развивается в собственной версии.",
-        "get_corvus": "Получить Corvus",
+        "get_corvus": "Получить Algorab",
     },
     "id": {
         "tagline": "Launcher untuk OUKA, Cherry, dan Aureum.",
         "what_h": "Semua mod, dalam satu jendela.",
-        "what_p": "Corvus memasang OUKA, Cherry, dan Aureum dan menjaganya tetap mutakhir. Di macOS, jendelanya kaca sungguhan: desktop tampak menembusnya, dengan buram.",
+        "what_p": "Algorab memasang OUKA, Cherry, dan Aureum dan menjaganya tetap mutakhir. Di macOS, jendelanya kaca sungguhan: desktop tampak menembusnya, dengan buram.",
         "current_h": "Selalu mutakhir.",
         "current_p": "Rilis baru hanya satu tekanan jauhnya. Dengan pembaruan otomatis aktif, ia tiba dengan sendirinya.",
         "verified_h": "Diverifikasi sebelum menyentuh satu berkas pun.",
@@ -313,12 +313,12 @@ COPY = {
         "ouka_p": "Tingkat tertinggi, di atas Cherry. Terpasang berdampingan dengan Cherry, dan melaju dengan versinya sendiri.",
         "aureum_p": "Mod terpisah dan opsional. Dipasang hanya saat Anda memilihnya, lalu dijaga tetap mutakhir.",
         "cherry_p": "Tingkat tepat di bawah OUKA. Terpasang berdampingan dengan OUKA dan melaju dengan versinya sendiri.",
-        "get_corvus": "Dapatkan Corvus",
+        "get_corvus": "Dapatkan Algorab",
     },
     "de": {
         "tagline": "Der Launcher für OUKA, Cherry und Aureum.",
         "what_h": "Alle Mods, in einem Fenster.",
-        "what_p": "Corvus installiert OUKA, Cherry und Aureum und hält sie aktuell. Auf macOS ist das Fenster echtes Glas: Der Schreibtisch scheint hindurch, unscharf.",
+        "what_p": "Algorab installiert OUKA, Cherry und Aureum und hält sie aktuell. Auf macOS ist das Fenster echtes Glas: Der Schreibtisch scheint hindurch, unscharf.",
         "current_h": "Immer aktuell.",
         "current_p": "Eine neue Version ist einen Klick entfernt. Mit eingeschalteten automatischen Updates kommt sie von selbst.",
         "verified_h": "Geprüft, bevor eine Datei berührt wird.",
@@ -334,12 +334,12 @@ COPY = {
         "ouka_p": "Die höchste Stufe, über Cherry. Wird neben Cherry installiert und führt seine eigene Version.",
         "aureum_p": "Ein separater, optionaler Mod. Nur installiert, wenn Sie es wählen, und von da an aktuell gehalten.",
         "cherry_p": "Die Stufe direkt unter OUKA. Wird neben OUKA installiert und führt seine eigene Version.",
-        "get_corvus": "Corvus laden",
+        "get_corvus": "Algorab laden",
     },
     "tr": {
         "tagline": "OUKA, Cherry ve Aureum için başlatıcı.",
         "what_h": "Tüm modlar, tek bir pencerede.",
-        "what_p": "Corvus; OUKA, Cherry ve Aureum'u kurar ve güncel tutar. macOS'ta pencere gerçek camdır: masaüstü, bulanık biçimde arkasından görünür.",
+        "what_p": "Algorab; OUKA, Cherry ve Aureum'u kurar ve güncel tutar. macOS'ta pencere gerçek camdır: masaüstü, bulanık biçimde arkasından görünür.",
         "current_h": "Her zaman güncel.",
         "current_p": "Yeni sürüm yalnızca bir dokunuş uzakta. Otomatik güncellemeler açıkken kendiliğinden gelir.",
         "verified_h": "Bir dosyaya dokunmadan önce doğrulanır.",
@@ -355,7 +355,7 @@ COPY = {
         "ouka_p": "En üst seviye; Cherry'nin üzerinde. Cherry ile birlikte kurulur ve kendi sürümüyle ilerler.",
         "aureum_p": "Ayrı, isteğe bağlı bir mod. Yalnızca siz seçtiğinizde kurulur, sonrasında güncel tutulur.",
         "cherry_p": "OUKA'nın hemen altındaki seviye. OUKA ile birlikte kurulur ve kendi sürümüyle ilerler.",
-        "get_corvus": "Corvus'u edinin",
+        "get_corvus": "Algorab'ı edinin",
     },
 }
 

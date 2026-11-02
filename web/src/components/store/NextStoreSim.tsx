@@ -28,7 +28,7 @@ function speed(template: string, id: string): string {
 }
 
 /**
- * The Corvus Store, simulated in the page: a spatial bento instead of a sidebar window. Nothing is downloaded and nothing
+ * The Algorab Store, simulated in the page: a spatial bento instead of a sidebar window. Nothing is downloaded and nothing
  * is installed: every state change, every progress bar and the account are sample data, and the page says so.
  */
 export function NextStoreSim({ products, hrefs, labels }: { products: Product[]; hrefs: Record<string, string>; labels: NextStoreLabels }) {
@@ -93,9 +93,9 @@ export function NextStoreSim({ products, hrefs, labels }: { products: Product[];
   };
 
   return (
-    <div className="cn-store cn-glass" data-glass="" role="group" aria-label="Corvus Store">
+    <div className="cn-store cn-glass" data-glass="" role="group" aria-label="Algorab Store">
       <div className="cn-store-top">
-        <span className="cn-store-title">Corvus Store</span>
+        <span className="cn-store-title">Algorab Store</span>
         <span className="cn-store-account">
           <span className="cn-store-avatar" aria-hidden="true">
             {labels.account

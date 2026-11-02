@@ -11,7 +11,7 @@
   "license": "Apache-2.0",
   "source": "modrinth",
   "hosted_by_corvus": false,
-  "redistribution": "The jar is NOT in this repository or downloads/. The Store downloads it from the Modrinth CDN when a mod that needs Fabric API is installed and Fabric API is missing. Corvus does not host it.",
+  "redistribution": "The jar is NOT in this repository or downloads/. The Store downloads it from the Modrinth CDN when a mod that needs Fabric API is installed and Fabric API is missing. Algorab does not host it.",
   "latest": "0.165.0+26.3",
   "file_name": "fabric-api-0.165.0+26.3.jar",
   "file_size": 1778588,

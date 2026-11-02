@@ -33,7 +33,7 @@ function clause(forms: readonly [string, string], names: readonly string[], l: L
 }
 
 /**
- * The hero's line-up sentence ("OUKA, Cherry and Aureum are out. Noctua is coming. Corvus Store
+ * The hero's line-up sentence ("OUKA, Cherry and Aureum are out. Noctua is coming. Algorab Store
  * keeps it all up to date."), composed from what the Store says is out and what is coming, so it
  * cannot fall behind a release. Given the facts of the legacy copy, every language's templates
  * give back its translator's sentence exactly.

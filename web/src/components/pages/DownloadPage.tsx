@@ -12,7 +12,7 @@ export function fileLabels(d: LangData): FileCardLabels {
   return { fileSize: d.chrome.fileSize, sha256: d.chrome.sha256, copy: d.chrome.copy, copied: d.chrome.copied };
 }
 
-/** The three Corvus 6 files (macOS, Windows, Linux), shared with the Store page. */
+/** The three Algorab 6 files (macOS, Windows, Linux), shared with the Store page. */
 export function LauncherFiles({ d, lang }: { d: LangData; lang: Lang }) {
   const n = NEXT_RELEASE[lang];
   const labels = fileLabels(d);

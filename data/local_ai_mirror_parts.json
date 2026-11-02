@@ -1,5 +1,5 @@
 {
-  "_comment": "Planned parts of the Corvus mirror of the local assistant model. NOT in the manifest: data/local_ai.json keeps the mirror source's parts empty (the Store skips it and uses its built-in source) until the mirror is public. Publish-time step: once the parts answer 200 without sign-in, copy each part's url, bytes and sha256 into data/local_ai.json's corvus source, in order. The mirror host must be public; a private repository cannot serve the Store.",
+  "_comment": "Planned parts of the Algorab mirror of the local assistant model. NOT in the manifest: data/local_ai.json keeps the mirror source's parts empty (the Store skips it and uses its built-in source) until the mirror is public. Publish-time step: once the parts answer 200 without sign-in, copy each part's url, bytes and sha256 into data/local_ai.json's corvus source, in order. The mirror host must be public; a private repository cannot serve the Store.",
   "status": "not public",
   "joined": {"file": "gemma-4-E4B_q4_0-it.gguf", "bytes": 5154941280, "sha256": "676c35070db6dbe52f93e9c864ee0fba4eddea94b9c875d9cb10daff453fbaee"},
   "parts": [

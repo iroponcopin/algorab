@@ -3,7 +3,7 @@ import { NEXT_RELEASE } from "@/i18n/next-release";
 import type { Lang } from "@/lib/wiki-types";
 
 /**
- * The Corvus NEXT changelog. No Next build is released, so the page says so and lists no entries; the first release's
+ * The Algorab changelog. No Next build is released, so the page says so and lists no entries; the first release's
  * changes go here when it ships. The shared release feed is not rendered on this page: it carries text this page must
  * not show (see the report that added this page).
  */

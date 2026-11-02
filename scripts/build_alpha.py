@@ -67,7 +67,7 @@ NOTICE = {
         "h1": "終了したこと", "p1": "Alpha の配信は {date} に終了しました。{version} が最後の版で、{modules} の MOD を、ゲームに何も足さないプレースホルダーに置き換えます。",
         "h2": "取り下げたもの", "p2": "過去の版のダウンロード、Alpha のレシピ、導入手順・ゲート・機能紹介・ロードマップ・既知の不具合のページは、このサイトから消えました。更新履歴に残るのは、このお知らせだけです。",
         "h3": "ワールドについて", "p3": "更新の前にワールドのバックアップを取ってください。Alpha が足したブロックは空気になり、1 度保存されると戻りません。Y=319 より上に普通のブロックで建てたものは残ります。",
-        "h4": "続くもの", "p4": "OUKA・Cherry・Aureum は別のブランドで、影響を受けません。Corvus が引き続き最新に保ちます。",
+        "h4": "続くもの", "p4": "OUKA・Cherry・Aureum は別のブランドで、影響を受けません。Algorab が引き続き最新に保ちます。",
         "cta_dl": "廃止の更新", "cta_log": "変更履歴",
     },
     "en": {
@@ -76,7 +76,7 @@ NOTICE = {
         "h1": "What has ended", "p1": "Distribution of Alpha ended on {date}. {version} is the last release: it replaces the {modules} mods with placeholders that add nothing to the game.",
         "h2": "What has been withdrawn", "p2": "Every earlier download, Alpha's recipes, and its install guide, gates, features, roadmap and known-issues pages are gone from this site. The changelog keeps only this notice.",
         "h3": "Your worlds", "p3": "Back up your worlds before you update. Blocks that Alpha added turn into empty air, and once a world has been saved that way they do not come back. What you built above Y=319 with ordinary blocks is kept.",
-        "h4": "What continues", "p4": "OUKA, Cherry and Aureum are separate and are not affected. Corvus keeps updating them.",
+        "h4": "What continues", "p4": "OUKA, Cherry and Aureum are separate and are not affected. Algorab keeps updating them.",
         "cta_dl": "Retirement update", "cta_log": "Changelog",
     },
     "es": {
@@ -85,7 +85,7 @@ NOTICE = {
         "h1": "Lo que ha terminado", "p1": "La distribución de Alpha terminó el {date}. {version} es la última versión: sustituye los {modules} mods por marcadores de posición que no añaden nada al juego.",
         "h2": "Lo que se ha retirado", "p2": "Todas las descargas anteriores, las recetas de Alpha y sus páginas de guía de instalación, portales, funciones, hoja de ruta y problemas conocidos han desaparecido de este sitio. El historial de cambios conserva solo este aviso.",
         "h3": "Tus mundos", "p3": "Haz una copia de seguridad de tus mundos antes de actualizar. Los bloques que Alpha añadió se convierten en aire vacío y, una vez guardado el mundo así, no vuelven. Lo que construiste por encima de Y=319 con bloques normales se conserva.",
-        "h4": "Lo que continúa", "p4": "OUKA, Cherry y Aureum son independientes y no se ven afectados. Corvus sigue manteniéndolos al día.",
+        "h4": "Lo que continúa", "p4": "OUKA, Cherry y Aureum son independientes y no se ven afectados. Algorab sigue manteniéndolos al día.",
         "cta_dl": "Actualización de retirada", "cta_log": "Historial de cambios",
     },
     "fr": {
@@ -94,7 +94,7 @@ NOTICE = {
         "h1": "Ce qui a pris fin", "p1": "La distribution d'Alpha a pris fin le {date}. La {version} est la dernière version : elle remplace les {modules} mods par des substituts qui n'ajoutent rien au jeu.",
         "h2": "Ce qui a été retiré", "p2": "Tous les téléchargements antérieurs, les recettes d'Alpha et ses pages de guide d'installation, portails, fonctionnalités, feuille de route et problèmes connus ont disparu de ce site. L'historique des mises à jour ne garde que cette annonce.",
         "h3": "Vos mondes", "p3": "Sauvegardez vos mondes avant de mettre à jour. Les blocs qu'Alpha avait ajoutés deviennent de l'air vide et, une fois le monde sauvegardé ainsi, ils ne reviennent pas. Ce que vous avez construit au-dessus de Y=319 avec des blocs ordinaires est conservé.",
-        "h4": "Ce qui continue", "p4": "OUKA, Cherry et Aureum sont indépendants et ne sont pas touchés. Corvus continue de les tenir à jour.",
+        "h4": "Ce qui continue", "p4": "OUKA, Cherry et Aureum sont indépendants et ne sont pas touchés. Algorab continue de les tenir à jour.",
         "cta_dl": "Mise à jour de retrait", "cta_log": "Historique des mises à jour",
     },
     "zh": {
@@ -103,7 +103,7 @@ NOTICE = {
         "h1": "已经结束的", "p1": "Alpha 的发布于 {date} 结束。{version} 是最后一个版本：它把 {modules} 个模组替换为不给游戏添加任何内容的占位文件。",
         "h2": "已经撤下的", "p2": "所有旧版本的下载、Alpha 的配方，以及它的安装指南、传送门、功能、路线图和已知问题页面，均已从本站移除。更新记录只保留这份公告。",
         "h3": "你的世界", "p3": "更新前请先备份你的世界。Alpha 添加的方块会变成空气，世界以这种状态保存后就不会再回来。你在 Y=319 以上用普通方块建造的东西会保留。",
-        "h4": "继续的", "p4": "OUKA、Cherry 和 Aureum 是独立的，不受影响。Corvus 会继续让它们保持最新。",
+        "h4": "继续的", "p4": "OUKA、Cherry 和 Aureum 是独立的，不受影响。Algorab 会继续让它们保持最新。",
         "cta_dl": "退役更新", "cta_log": "更新记录",
     },
     "ko": {
@@ -112,7 +112,7 @@ NOTICE = {
         "h1": "끝난 것", "p1": "Alpha의 배포는 {date}에 끝났습니다. {version}이 마지막 버전이며, {modules}개 모드를 게임에 아무것도 더하지 않는 자리 표시용 파일로 바꿉니다.",
         "h2": "내린 것", "p2": "이전 버전의 다운로드, Alpha의 레시피, 설치 안내·게이트·기능 소개·로드맵·알려진 문제 페이지는 이 사이트에서 사라졌습니다. 업데이트 기록에는 이 공지만 남습니다.",
         "h3": "월드에 대해", "p3": "업데이트하기 전에 월드를 백업하세요. Alpha가 추가한 블록은 빈 공기로 바뀌고, 월드가 그 상태로 저장되면 다시 돌아오지 않습니다. Y=319보다 위에 일반 블록으로 지은 것은 남습니다.",
-        "h4": "이어지는 것", "p4": "OUKA, Cherry, Aureum은 별개의 브랜드이며 영향을 받지 않습니다. Corvus가 계속 최신 상태로 유지합니다.",
+        "h4": "이어지는 것", "p4": "OUKA, Cherry, Aureum은 별개의 브랜드이며 영향을 받지 않습니다. Algorab이 계속 최신 상태로 유지합니다.",
         "cta_dl": "종료 업데이트", "cta_log": "업데이트 기록",
     },
     "pt-br": {
@@ -121,7 +121,7 @@ NOTICE = {
         "h1": "O que terminou", "p1": "A distribuição do Alpha terminou em {date}. A {version} é a última versão: ela substitui os {modules} mods por marcadores que não adicionam nada ao jogo.",
         "h2": "O que foi retirado", "p2": "Todos os downloads anteriores, as receitas do Alpha e suas páginas de guia de instalação, portais, recursos, roteiro e problemas conhecidos saíram deste site. O histórico de atualizações guarda apenas este aviso.",
         "h3": "Seus mundos", "p3": "Faça backup dos seus mundos antes de atualizar. Os blocos que o Alpha adicionou viram ar vazio e, depois que o mundo é salvo assim, não voltam. O que você construiu acima de Y=319 com blocos comuns é mantido.",
-        "h4": "O que continua", "p4": "OUKA, Cherry e Aureum são independentes e não são afetados. O Corvus continua mantendo-os atualizados.",
+        "h4": "O que continua", "p4": "OUKA, Cherry e Aureum são independentes e não são afetados. O Algorab continua mantendo-os atualizados.",
         "cta_dl": "Atualização de encerramento", "cta_log": "Histórico de atualizações",
     },
     "it": {
@@ -130,7 +130,7 @@ NOTICE = {
         "h1": "Cosa è finito", "p1": "La distribuzione di Alpha è terminata il {date}. La {version} è l'ultima versione: sostituisce i {modules} mod con segnaposto che non aggiungono nulla al gioco.",
         "h2": "Cosa è stato ritirato", "p2": "Tutti i download precedenti, le ricette di Alpha e le sue pagine di guida all'installazione, portali, funzioni, roadmap e problemi noti sono spariti da questo sito. La cronologia degli aggiornamenti conserva solo questo avviso.",
         "h3": "I tuoi mondi", "p3": "Fai una copia di sicurezza dei tuoi mondi prima di aggiornare. I blocchi che Alpha aveva aggiunto diventano aria vuota e, una volta salvato il mondo così, non tornano. Ciò che hai costruito sopra Y=319 con blocchi normali resta.",
-        "h4": "Cosa continua", "p4": "OUKA, Cherry e Aureum sono indipendenti e non sono toccati. Corvus continua a mantenerli aggiornati.",
+        "h4": "Cosa continua", "p4": "OUKA, Cherry e Aureum sono indipendenti e non sono toccati. Algorab continua a mantenerli aggiornati.",
         "cta_dl": "Aggiornamento di ritiro", "cta_log": "Cronologia degli aggiornamenti",
     },
     "ar": {
@@ -139,7 +139,7 @@ NOTICE = {
         "h1": "ما انتهى", "p1": "انتهى توزيع Alpha في {date}. {version} هو الإصدار الأخير: يستبدل الإضافات الـ {modules} بعناصر نائبة لا تضيف شيئًا إلى اللعبة.",
         "h2": "ما سُحب", "p2": "أُزيلت من هذا الموقع كل التنزيلات السابقة ووصفات Alpha وصفحات دليل التثبيت والبوابات والميزات وخارطة الطريق والمشكلات المعروفة. ولا يحتفظ سجل التحديثات إلا بهذا الإعلان.",
         "h3": "عوالمك", "p3": "انسخ عوالمك احتياطيًا قبل التحديث. الكتل التي أضافها Alpha تتحول إلى هواء فارغ، وبعد حفظ العالم بهذه الحالة لا تعود. أما ما بنيته فوق Y=319 بكتل عادية فيبقى.",
-        "h4": "ما يستمر", "p4": "OUKA وCherry وAureum مستقلة ولا تتأثر. ويواصل Corvus إبقاءها محدّثة.",
+        "h4": "ما يستمر", "p4": "OUKA وCherry وAureum مستقلة ولا تتأثر. ويواصل Algorab إبقاءها محدّثة.",
         "cta_dl": "تحديث الإيقاف", "cta_log": "سجل التحديثات",
     },
     "ru": {
@@ -148,7 +148,7 @@ NOTICE = {
         "h1": "Что закончилось", "p1": "Распространение Alpha закончилось {date}. {version} \u2014 последняя версия: она заменяет {modules} модов заглушками, которые ничего не добавляют в игру.",
         "h2": "Что снято", "p2": "Все прежние загрузки, рецепты Alpha и его страницы \u2014 руководство по установке, врата, возможности, дорожная карта и известные проблемы \u2014 удалены с этого сайта. В истории обновлений остаётся только это объявление.",
         "h3": "Ваши миры", "p3": "Сделайте резервную копию миров перед обновлением. Блоки, добавленные Alpha, превращаются в пустой воздух, и после сохранения мира в таком виде они не возвращаются. Всё, что вы построили выше Y=319 из обычных блоков, сохраняется.",
-        "h4": "Что продолжается", "p4": "OUKA, Cherry и Aureum независимы и не затронуты. Corvus по-прежнему держит их актуальными.",
+        "h4": "Что продолжается", "p4": "OUKA, Cherry и Aureum независимы и не затронуты. Algorab по-прежнему держит их актуальными.",
         "cta_dl": "Обновление о прекращении", "cta_log": "История обновлений",
     },
     "id": {
@@ -157,7 +157,7 @@ NOTICE = {
         "h1": "Yang telah berakhir", "p1": "Distribusi Alpha berakhir pada {date}. {version} adalah rilis terakhir: ia mengganti {modules} mod dengan pengganti yang tidak menambahkan apa pun ke permainan.",
         "h2": "Yang ditarik", "p2": "Semua unduhan sebelumnya, resep Alpha, serta halaman panduan pemasangan, gerbang, fitur, peta jalan, dan masalah yang diketahui telah dihapus dari situs ini. Riwayat pembaruan hanya menyimpan pengumuman ini.",
         "h3": "Duniamu", "p3": "Cadangkan duniamu sebelum memperbarui. Blok yang ditambahkan Alpha menjadi udara kosong, dan setelah dunia disimpan seperti itu, blok tersebut tidak kembali. Apa yang kamu bangun di atas Y=319 dengan blok biasa tetap ada.",
-        "h4": "Yang berlanjut", "p4": "OUKA, Cherry, dan Aureum terpisah dan tidak terpengaruh. Corvus terus menjaganya tetap mutakhir.",
+        "h4": "Yang berlanjut", "p4": "OUKA, Cherry, dan Aureum terpisah dan tidak terpengaruh. Algorab terus menjaganya tetap mutakhir.",
         "cta_dl": "Pembaruan penghentian", "cta_log": "Riwayat pembaruan",
     },
     "de": {
@@ -166,7 +166,7 @@ NOTICE = {
         "h1": "Was zu Ende ist", "p1": "Der Vertrieb von Alpha endete am {date}. {version} ist die letzte Version: Sie ersetzt die {modules} Mods durch Platzhalter, die dem Spiel nichts hinzufügen.",
         "h2": "Was zurückgezogen wurde", "p2": "Alle früheren Downloads, Alphas Rezepte sowie die Seiten zu Installationsanleitung, Portalen, Funktionen, Roadmap und bekannten Problemen sind von dieser Seite verschwunden. Der Änderungsverlauf behält nur diese Mitteilung.",
         "h3": "Deine Welten", "p3": "Sichere deine Welten, bevor du aktualisierst. Blöcke, die Alpha hinzugefügt hat, werden zu leerer Luft, und sobald eine Welt so gespeichert wurde, kommen sie nicht zurück. Was du oberhalb von Y=319 aus normalen Blöcken gebaut hast, bleibt erhalten.",
-        "h4": "Was weitergeht", "p4": "OUKA, Cherry und Aureum sind eigenständig und nicht betroffen. Corvus hält sie weiter aktuell.",
+        "h4": "Was weitergeht", "p4": "OUKA, Cherry und Aureum sind eigenständig und nicht betroffen. Algorab hält sie weiter aktuell.",
         "cta_dl": "Abschluss-Update", "cta_log": "Änderungsverlauf",
     },
     "tr": {
@@ -175,7 +175,7 @@ NOTICE = {
         "h1": "Sona eren", "p1": "Alpha'nın dağıtımı {date} tarihinde sona erdi. {version} son sürümdür: {modules} modu, oyuna hiçbir şey eklemeyen yer tutucularla değiştirir.",
         "h2": "Geri çekilen", "p2": "Önceki tüm indirmeler, Alpha'nın tarifleri ve kurulum kılavuzu, geçitler, özellikler, yol haritası ve bilinen sorunlar sayfaları bu siteden kaldırıldı. Güncelleme geçmişinde yalnızca bu duyuru kalır.",
         "h3": "Dünyalarınız", "p3": "Güncellemeden önce dünyalarınızı yedekleyin. Alpha'nın eklediği bloklar boş havaya dönüşür ve dünya böyle kaydedildikten sonra geri gelmez. Y=319'un üstünde sıradan bloklarla yaptığınız şeyler korunur.",
-        "h4": "Devam eden", "p4": "OUKA, Cherry ve Aureum ayrıdır ve etkilenmez. Corvus onları güncel tutmaya devam eder.",
+        "h4": "Devam eden", "p4": "OUKA, Cherry ve Aureum ayrıdır ve etkilenmez. Algorab onları güncel tutmaya devam eder.",
         "cta_dl": "Sonlandırma güncellemesi", "cta_log": "Güncelleme geçmişi",
     },
 }

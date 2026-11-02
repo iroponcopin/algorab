@@ -1,7 +1,7 @@
 {
- "what": "Corvus portal 4.3.0, static export. Made by web/ (npm run build); nothing here is a contract file.",
- "wiki_commit": "a78c7e017997b686bc99691f50f2f7191e387b75",
- "wiki_branch": "algorab-domain",
+ "what": "Algorab portal 4.3.0, static export. Made by web/ (npm run build); nothing here is a contract file.",
+ "wiki_commit": "72ed186735df4f6bd8a0d3ecdde49a47247f1528",
+ "wiki_branch": "algorab-text",
  "wiki_dirty": true,
  "corvus_store": "5.5.1312",
  "ouka": "1.8.6166",

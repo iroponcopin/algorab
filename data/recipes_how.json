@@ -538,8 +538,8 @@
    "inputs": [
     "halia:corvus_soul"
    ],
-   "ja": "溶鉱炉で、コルヴスの魂を精錬する(10 秒。作業台では作れない)",
-   "en": "Smelt Corvus Soul in a blast furnace (10 s; it cannot be made at a workbench)"
+   "ja": "溶鉱炉で、アルゴラブの魂を精錬する(10 秒。作業台では作れない)",
+   "en": "Smelt Algorab Soul in a blast furnace (10 s; it cannot be made at a workbench)"
   },
   "halia:tide_block_1024b": {
    "station": "workbench",
@@ -3537,48 +3537,48 @@
    "inputs": [
     "tsubomi:corvus_monolith_bricks"
    ],
-   "ja": "石切台で、コルヴス黒曜装甲レンガを切り出す(作業台では作れない)",
-   "en": "Cut Corvus Monolith Composite Bricks on a stonecutter (it cannot be made at a workbench)"
+   "ja": "石切台で、アルゴラブ黒曜装甲レンガを切り出す(作業台では作れない)",
+   "en": "Cut Algorab Monolith Composite Bricks on a stonecutter (it cannot be made at a workbench)"
   },
   "tsubomi:corvus_monolith_pillar": {
    "station": "stonecutter",
    "inputs": [
     "tsubomi:corvus_monolith_bricks"
    ],
-   "ja": "石切台で、コルヴス黒曜装甲レンガを切り出す(作業台では作れない)",
-   "en": "Cut Corvus Monolith Composite Bricks on a stonecutter (it cannot be made at a workbench)"
+   "ja": "石切台で、アルゴラブ黒曜装甲レンガを切り出す(作業台では作れない)",
+   "en": "Cut Algorab Monolith Composite Bricks on a stonecutter (it cannot be made at a workbench)"
   },
   "tsubomi:corvus_monolith_slab": {
    "station": "stonecutter",
    "inputs": [
     "tsubomi:corvus_monolith_bricks"
    ],
-   "ja": "石切台で、コルヴス黒曜装甲レンガを切り出す(2 個できる)(作業台では作れない)",
-   "en": "Cut Corvus Monolith Composite Bricks on a stonecutter (makes 2) (it cannot be made at a workbench)"
+   "ja": "石切台で、アルゴラブ黒曜装甲レンガを切り出す(2 個できる)(作業台では作れない)",
+   "en": "Cut Algorab Monolith Composite Bricks on a stonecutter (makes 2) (it cannot be made at a workbench)"
   },
   "tsubomi:corvus_monolith_stairs": {
    "station": "stonecutter",
    "inputs": [
     "tsubomi:corvus_monolith_bricks"
    ],
-   "ja": "石切台で、コルヴス黒曜装甲レンガを切り出す(作業台では作れない)",
-   "en": "Cut Corvus Monolith Composite Bricks on a stonecutter (it cannot be made at a workbench)"
+   "ja": "石切台で、アルゴラブ黒曜装甲レンガを切り出す(作業台では作れない)",
+   "en": "Cut Algorab Monolith Composite Bricks on a stonecutter (it cannot be made at a workbench)"
   },
   "tsubomi:corvus_monolith_tiles": {
    "station": "stonecutter",
    "inputs": [
     "tsubomi:corvus_monolith_bricks"
    ],
-   "ja": "石切台で、コルヴス黒曜装甲レンガを切り出す(作業台では作れない)",
-   "en": "Cut Corvus Monolith Composite Bricks on a stonecutter (it cannot be made at a workbench)"
+   "ja": "石切台で、アルゴラブ黒曜装甲レンガを切り出す(作業台では作れない)",
+   "en": "Cut Algorab Monolith Composite Bricks on a stonecutter (it cannot be made at a workbench)"
   },
   "tsubomi:corvus_monolith_wall": {
    "station": "stonecutter",
    "inputs": [
     "tsubomi:corvus_monolith_bricks"
    ],
-   "ja": "石切台で、コルヴス黒曜装甲レンガを切り出す(作業台では作れない)",
-   "en": "Cut Corvus Monolith Composite Bricks on a stonecutter (it cannot be made at a workbench)"
+   "ja": "石切台で、アルゴラブ黒曜装甲レンガを切り出す(作業台では作れない)",
+   "en": "Cut Algorab Monolith Composite Bricks on a stonecutter (it cannot be made at a workbench)"
   },
   "tsubomi:crimson_tamahagane_chiseled": {
    "station": "stonecutter",

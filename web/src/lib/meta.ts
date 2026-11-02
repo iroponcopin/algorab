@@ -17,8 +17,8 @@ function checkLanguages(): void {
 }
 
 /**
- * The head every page carries, as the pre-4.0 portal wrote it: "<title> | Corvus" (the home page
- * is just "Corvus"), the description, the canonical URL, 13 hreflang alternates plus x-default
+ * The head every page carries, as the pre-4.0 portal wrote it: "<title> | Algorab" (the home page
+ * is just "Algorab"), the description, the canonical URL, 13 hreflang alternates plus x-default
  * (the Japanese URL), Open Graph and Twitter cards with the shared image, and the favicons.
  */
 export function pageMeta(lang: Lang, section: string, title: string | null, description: string): Metadata {

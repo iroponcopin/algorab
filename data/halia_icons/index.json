@@ -14,26 +14,26 @@
    "file": "ascended_core.png"
   },
   "halia:corvus_core": {
-   "en": "Corvus Core",
-   "ja": "コルヴスの核",
+   "en": "Algorab Core",
+   "ja": "アルゴラブの核",
    "yomi": "こるゔすのかく",
    "file": "corvus_core.png"
   },
   "halia:corvus_crystal": {
-   "en": "Corvus Crystal",
-   "ja": "コルヴスの結晶",
+   "en": "Algorab Crystal",
+   "ja": "アルゴラブの結晶",
    "yomi": "こるゔすのけっしょう",
    "file": "corvus_crystal.png"
   },
   "halia:corvus_soul": {
-   "en": "Corvus Soul",
-   "ja": "コルヴスの魂",
+   "en": "Algorab Soul",
+   "ja": "アルゴラブの魂",
    "yomi": "こるゔすのたましい",
    "file": "corvus_soul.png"
   },
   "halia:corvus_soul_tiny": {
-   "en": "Tiny Corvus Soul",
-   "ja": "コルヴスの魂片",
+   "en": "Tiny Algorab Soul",
+   "ja": "アルゴラブの魂片",
    "yomi": "こるゔすのこんぺん",
    "file": "corvus_soul_tiny.png"
   },
@@ -2858,8 +2858,8 @@
   }
  },
  "refine": {
-  "en": "On an anvil, put a Halia Blade in the left slot and a soul material in the right slot. Each piece used repairs the blade's wear and raises its refine by 1, for 1 experience level per piece; pieces are used until the wear is gone. The material sets the highest refine it can reach: Tiny Corvus Soul 10, Corvus Soul 50, Soulsteel Ingot 100, Corvus Core 150, Corvus Crystal 200, Abyssal Geode no limit.",
-  "ja": "金床の左に刀、右に魂の素材を置きます。素材 1 個ごとに刀の損耗が直り、強化回数が 1 上がります。経験値レベルは 1 個につき 1 で、損耗がなくなるまで素材を使います。強化回数の上限は素材で決まります: コルヴスの魂片 10、コルヴスの魂 50、魂鋼のインゴット 100、コルヴスの核 150、コルヴスの結晶 200、深淵の晶洞は上限なし。",
+  "en": "On an anvil, put a Halia Blade in the left slot and a soul material in the right slot. Each piece used repairs the blade's wear and raises its refine by 1, for 1 experience level per piece; pieces are used until the wear is gone. The material sets the highest refine it can reach: Tiny Algorab Soul 10, Algorab Soul 50, Soulsteel Ingot 100, Algorab Core 150, Algorab Crystal 200, Abyssal Geode no limit.",
+  "ja": "金床の左に刀、右に魂の素材を置きます。素材 1 個ごとに刀の損耗が直り、強化回数が 1 上がります。経験値レベルは 1 個につき 1 で、損耗がなくなるまで素材を使います。強化回数の上限は素材で決まります: アルゴラブの魂片 10、アルゴラブの魂 50、魂鋼のインゴット 100、アルゴラブの核 150、アルゴラブの結晶 200、深淵の晶洞は上限なし。",
   "limits": {
    "halia:corvus_soul_tiny": 10,
    "halia:corvus_soul": 50,

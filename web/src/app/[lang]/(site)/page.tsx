@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 const HOME_MODELS = ["halia", "ouka", "cherry", "tsubomi"] as const;
 
 /**
- * The home of Corvus NEXT: the hero, the models, the rest of the site and the release manifest.
+ * The home of Algorab: the hero, the models, the rest of the site and the release manifest.
  * Every string is the data pipeline's or an i18n file's; nothing here is hard-coded content.
  */
 export default async function Page({ params }: Params) {
@@ -99,10 +99,10 @@ export default async function Page({ params }: Params) {
       cta: n.homeCta,
     },
   };
-  const organization = { "@type": "Organization", name: "Corvus Dev", url: `${BASE_URL}/` };
+  const organization = { "@type": "Organization", name: "Algorab Developer Program", url: `${BASE_URL}/` };
   const structured = {
     "@context": "https://schema.org",
-    "@graph": [organization, { "@type": "WebSite", name: "Corvus", url: `${BASE_URL}/`, inLanguage: lang, publisher: organization }],
+    "@graph": [organization, { "@type": "WebSite", name: "Algorab", url: `${BASE_URL}/`, inLanguage: lang, publisher: organization }],
   };
   return (
     <>

@@ -2,7 +2,7 @@
  "lang": "id",
  "ui": {
   "site_tagline": "Referensi Tidak Resmi MOD Server Sorakazekarasu",
-  "site_description": "Situs tidak resmi tentang mod Fabric OUKA, Cherry, dan Aureum: resep, riwayat pembaruan, unduhan, dan peluncur Corvus. Alpha, paket yang semula menjadi alasan situs ini dibuat, sudah tidak didistribusikan lagi.",
+  "site_description": "Situs tidak resmi tentang mod Fabric OUKA, Cherry, dan Aureum: resep, riwayat pembaruan, unduhan, dan peluncur Algorab. Alpha, paket yang semula menjadi alasan situs ini dibuat, sudah tidak didistribusikan lagi.",
   "nav": {
    "home": "Beranda",
    "changelog": "Riwayat Pembaruan",
@@ -119,7 +119,7 @@
   "page_descriptions": {
    "changelog": "Riwayat pembaruan OUKA, Cherry, Aureum, ASTRAEA, Tsubomi, dan Halia, serta pengumuman berakhirnya Alpha. Pilih merek untuk melihat apa yang berubah di setiap rilis, dari yang terbaru.",
    "recipes": "Tabel rujukan cepat resep pembuatan untuk setiap item di OUKA, Cherry, Tsubomi, dan Halia. Mendukung pencarian dan penyaringan kategori.",
-   "download": "Alpha tidak lagi didistribusikan. Rilis terakhirnya, V{pack_version}, mematikan Alpha; ada di sini beserta ukuran berkas dan SHA-256, di samping unduhan Corvus dan Aureum.",
+   "download": "Alpha tidak lagi didistribusikan. Rilis terakhirnya, V{pack_version}, mematikan Alpha; ada di sini beserta ukuran berkas dan SHA-256, di samping unduhan Algorab dan Aureum.",
    "aureum": "Aureum: mod optimasi ringan yang terpisah dan diukur dengan jujur. Bukan pengganti Sodium — ia mengoptimalkan sisi yang tidak disentuh Sodium."
   }
  },
@@ -149,13 +149,13 @@
    "highlights": [
     "Alpha dimatikan. Ke-13 mod diganti dengan pengganti yang tidak menambahkan apa pun ke permainan (Cherry, OUKA, dan Aureum tidak disentuh)",
     "Hanya batas ketinggian Overworld (sampai Y=1023) yang dipertahankan, agar bangunan biasa yang kamu buat di atas Y=319 tidak terhapus",
-    "Corvus menghapus jar lama, memasang pengganti, dan menyimpan cadangan file yang diganti. Jika kamu memasang manual atau menjalankan server, hapus jar lama seperti yang dijelaskan README di dalam paket"
+    "Algorab menghapus jar lama, memasang pengganti, dan menyimpan cadangan file yang diganti. Jika kamu memasang manual atau menjalankan server, hapus jar lama seperti yang dijelaskan README di dalam paket"
    ],
    "balance_changes": [],
    "warnings": [
     "<b>Cadangkan duniamu dulu.</b> Blok yang ditambahkan Alpha menjadi udara kosong saat dunia dibuka tanpa Alpha, dan hilang selamanya setelah disimpan seperti itu. Memasang Alpha kembali tidak memulihkannya (diperiksa di server khusus). Item dan makhluk Alpha diperkirakan bernasib sama (belum diuji)",
     "Server dan pemainnya harus pindah bersamaan: pemain yang masih memakai Alpha tidak bisa masuk ke server yang sudah tidak memakainya, dan sebaliknya",
-    "Jika \"Pasang pembaruan secara otomatis\" aktif di Corvus, pembaruan ini diterapkan tanpa bertanya. Cadangan Corvus mencakup folder mods, bukan duniamu"
+    "Jika \"Pasang pembaruan secara otomatis\" aktif di Algorab, pembaruan ini diterapkan tanpa bertanya. Cadangan Algorab mencakup folder mods, bukan duniamu"
    ],
    "known_limitations": [
     "Semua sisa milik Alpha di situs ini telah dihapus: semua unduhan sebelumnya, resepnya, serta halaman panduan pemasangan, gerbang, fitur, peta jalan, dan masalah yang diketahui. Entri ini satu-satunya yang tersisa dari riwayat pembaruannya."
@@ -235,11 +235,11 @@
   "discord_body": "Undang bot rilis ke server Discord-mu supaya pesan otomatis diposting setiap kali ada pembaruan baru. Setelah mengundangnya, jalankan /release channel di servermu untuk memilih kanal tempat pengumuman dikirim.",
   "discord_invite_cta": "Undang bot notifikasi",
   "discord_pending": "Bot notifikasi Discord belum tersedia untuk server ini — tautan undangannya belum dipublikasikan.",
-  "launcher_heading": "Corvus",
-  "launcher_body": "Corvus adalah aplikasi desktop yang menjaga mod kamu tetap mutakhir secara otomatis, memverifikasi setiap unduhan dengan SHA-256 terhadap Wiki ini — Wiki ini tetap satu-satunya sumber yang dipercayainya.",
+  "launcher_heading": "Algorab",
+  "launcher_body": "Algorab adalah aplikasi desktop yang menjaga mod kamu tetap mutakhir secara otomatis, memverifikasi setiap unduhan dengan SHA-256 terhadap Wiki ini — Wiki ini tetap satu-satunya sumber yang dipercayainya.",
   "launcher_version_label": "Versi",
-  "launcher_cta": "Unduh Corvus",
-  "launcher_pending": "Corvus belum tersedia untuk diunduh — belum ada build yang diunggah ke Wiki. Silakan cek lagi nanti, atau pasang MOD pack secara manual memakai ZIP di atas.",
+  "launcher_cta": "Unduh Algorab",
+  "launcher_pending": "Algorab belum tersedia untuk diunduh — belum ada build yang diunggah ke Wiki. Silakan cek lagi nanti, atau pasang MOD pack secara manual memakai ZIP di atas.",
   "launcher_jar_note": "Satu berkas yang sama berjalan di Windows, macOS, maupun Linux. Untuk menjalankannya, Java 25 atau yang lebih baru harus sudah terpasang.",
   "launcher_native_heading": "Pemasang bawaan sistem (tanpa perlu Java)",
   "launcher_native_note": "Dipasang seperti aplikasi desktop biasa dan tidak memerlukan Java. Belum ditandatangani, jadi OS akan menampilkan peringatan saat pertama dijalankan: di macOS, klik kanan aplikasi lalu pilih Buka; di Windows, klik \"Info lainnya\" lalu \"Tetap jalankan\".",
@@ -252,21 +252,21 @@
   "intro": "Alpha telah dipensiunkan. Halaman ini memuat rilis terakhirnya, V{pack_version}, yang mematikan Alpha. ZIP berisi {mod_count} jar pengganti yang tidak menambahkan apa pun ke permainan, dan sebuah README. Tidak ada konten Alpha di dalamnya.",
   "server_note": "Cadangkan duniamu sebelum memasangnya. Blok yang ditambahkan Alpha menjadi udara kosong dan hilang selamanya begitu dunia disimpan tanpa Alpha; memasang Alpha kembali tidak memulihkannya. Admin server: server dan pemainnya harus pindah bersamaan.",
   "install_heading": "Cara mematikan Alpha",
-  "install_body": "Jika kamu memakai Corvus, semuanya dilakukan sebagai pembaruan biasa. Jika kamu memasang manual atau menjalankan server, langkah-langkahnya ada di README di dalam ZIP.",
+  "install_body": "Jika kamu memakai Algorab, semuanya dilakukan sebagai pembaruan biasa. Jika kamu memasang manual atau menjalankan server, langkah-langkahnya ada di README di dalam ZIP.",
   "older_versions_note": "Halaman ini selalu menyediakan rilis terkini (V{pack_version}), yang sekaligus rilis terakhir. Versi lama tidak lagi ditawarkan di sini; jika masih membutuhkannya, tanyakan langsung ke admin server kamu."
  },
  "launcher_page": {
-  "intro": "Corvus adalah aplikasi desktop kecil yang menjaga mod kamu tetap mutakhir secara otomatis. Ia memeriksa Wiki ini untuk rilis terkini, mengunduh pembaruan untukmu, dan memverifikasi setiap berkas yang diunduh dengan checksum SHA-256 yang dipublikasikan di sini sebelum menyentuh folder mods kamu. Wiki ini satu-satunya sumber yang dipercayainya.",
+  "intro": "Algorab adalah aplikasi desktop kecil yang menjaga mod kamu tetap mutakhir secara otomatis. Ia memeriksa Wiki ini untuk rilis terkini, mengunduh pembaruan untukmu, dan memverifikasi setiap berkas yang diunduh dengan checksum SHA-256 yang dipublikasikan di sini sebelum menyentuh folder mods kamu. Wiki ini satu-satunya sumber yang dipercayainya.",
   "sections": [
    {
     "id": "what-it-is",
-    "title": "Apa itu Corvus, dan mengapa ia dibuat",
-    "body_html": "<p>Menjaga mod tetap mutakhir secara manual berarti kembali ke halaman unduhan setiap ada rilis, membandingkan nomor versi, mengunduh berkas baru, dan menaruhnya di folder yang benar. Corvus mengotomatiskan itu: ia membaca manifes rilis Wiki ini, membandingkannya dengan yang sudah terpasang, dan hanya mengambil yang berubah.</p><p>Setiap unduhan yang dilakukan peluncur diperiksa dengan checksum SHA-256 yang dipublikasikan Wiki ini sebelum dipakai. Jika berkas yang diunduh tidak cocok, peluncur tidak akan memasangnya. Wiki ini satu-satunya sumber kebenaran bagi peluncur tentang rilis \"terkini\".</p>"
+    "title": "Apa itu Algorab, dan mengapa ia dibuat",
+    "body_html": "<p>Menjaga mod tetap mutakhir secara manual berarti kembali ke halaman unduhan setiap ada rilis, membandingkan nomor versi, mengunduh berkas baru, dan menaruhnya di folder yang benar. Algorab mengotomatiskan itu: ia membaca manifes rilis Wiki ini, membandingkannya dengan yang sudah terpasang, dan hanya mengambil yang berubah.</p><p>Setiap unduhan yang dilakukan peluncur diperiksa dengan checksum SHA-256 yang dipublikasikan Wiki ini sebelum dipakai. Jika berkas yang diunduh tidak cocok, peluncur tidak akan memasangnya. Wiki ini satu-satunya sumber kebenaran bagi peluncur tentang rilis \"terkini\".</p>"
    },
    {
     "id": "installing",
-    "title": "Cara memasang Corvus",
-    "body_html": "<p>Corvus tersedia dari halaman unduhan Wiki ini dalam dua bentuk:</p><ul><li><strong>Pemasang asli untuk tiap OS</strong> (<code>.msi</code> untuk Windows, <code>.dmg</code> untuk macOS, <code>.deb</code> untuk Linux) — bisa dipasang dengan langkah yang sama seperti aplikasi desktop biasa, dan tidak butuh Java. Karena penandatanganan kode belum dilakukan, OS akan menampilkan peringatan saat pertama kali dijalankan. Di macOS, alih-alih klik ganda, klik kanan aplikasinya lalu pilih «Buka». Di Windows, pada peringatan SmartScreen pilih «Info selengkapnya» → «Tetap jalankan».</li><li><strong>Jar lintas platform</strong> <code>{launcher_jar}</code> — satu berkas yang sama berjalan di Windows, macOS, maupun Linux, tetapi Java 25 atau yang lebih baru harus sudah terpasang lebih dulu. Kalau klik ganda tidak membukanya, buka Terminal (atau Command Prompt) di folder tempat kamu mengunduhnya, lalu jalankan <code>java -jar {launcher_jar}</code>.</li></ul>"
+    "title": "Cara memasang Algorab",
+    "body_html": "<p>Algorab tersedia dari halaman unduhan Wiki ini dalam dua bentuk:</p><ul><li><strong>Pemasang asli untuk tiap OS</strong> (<code>.msi</code> untuk Windows, <code>.dmg</code> untuk macOS, <code>.deb</code> untuk Linux) — bisa dipasang dengan langkah yang sama seperti aplikasi desktop biasa, dan tidak butuh Java. Karena penandatanganan kode belum dilakukan, OS akan menampilkan peringatan saat pertama kali dijalankan. Di macOS, alih-alih klik ganda, klik kanan aplikasinya lalu pilih «Buka». Di Windows, pada peringatan SmartScreen pilih «Info selengkapnya» → «Tetap jalankan».</li><li><strong>Jar lintas platform</strong> <code>{launcher_jar}</code> — satu berkas yang sama berjalan di Windows, macOS, maupun Linux, tetapi Java 25 atau yang lebih baru harus sudah terpasang lebih dulu. Kalau klik ganda tidak membukanya, buka Terminal (atau Command Prompt) di folder tempat kamu mengunduhnya, lalu jalankan <code>java -jar {launcher_jar}</code>.</li></ul>"
    },
    {
     "id": "pointing-at-existing-pack",
@@ -681,7 +681,7 @@
     "warnings": [
      "Batasan yang diketahui di V1.4.0: untuk saat ini hanya Transceiver Materi yang berjalan di OKE (mesin lain menyusul di V1.4.x); layar komponen holografik dan animasi pemasangan hadir di V1.4.x; turbin angin hanya berjalan di Overworld. Perintah baru /ouka reload dan /ouka mount untuk operator.",
      "Saat memperbarui dari versi sebelumnya, hapus jar OUKA lama (ouka-1.3.1+mc26.3.jar dan sebagainya) dari folder mods. Jika ada 2 jar OUKA, game tidak bisa dimulai.",
-     "Anda juga bisa memasangnya dari Corvus Store: pertama kali, tekan Dapatkan di Corvus Store; setelah itu Corvus Store menggantinya sendiri dengan versi yang lebih baru. Jika Anda mematikan Pembaruan Otomatis, tekan Perbarui. (Untuk memasang manual, gunakan halaman OUKA.)",
+     "Anda juga bisa memasangnya dari Algorab Store: pertama kali, tekan Dapatkan di Algorab Store; setelah itu Algorab Store menggantinya sendiri dengan versi yang lebih baru. Jika Anda mematikan Pembaruan Otomatis, tekan Perbarui. (Untuk memasang manual, gunakan halaman OUKA.)",
      "Memerlukan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, GeckoLib 5.5.6 (sudah termasuk di zip), dan Java 25."
     ]
    },
@@ -696,7 +696,7 @@
     ],
     "warnings": [
      "Saat memperbarui dari versi sebelumnya, hapus jar OUKA lama (ouka-1.3.0+mc26.3.jar dan sebagainya) dari folder mods. Jika ada 2 jar OUKA, game tidak bisa dimulai.",
-     "Anda juga bisa memasangnya dari Corvus Store: pertama kali, tekan Dapatkan di Corvus Store; setelah itu Corvus Store menggantinya sendiri dengan versi yang lebih baru. Jika Anda mematikan Pembaruan Otomatis, tekan Perbarui. (Untuk memasang manual, gunakan halaman OUKA.)",
+     "Anda juga bisa memasangnya dari Algorab Store: pertama kali, tekan Dapatkan di Algorab Store; setelah itu Algorab Store menggantinya sendiri dengan versi yang lebih baru. Jika Anda mematikan Pembaruan Otomatis, tekan Perbarui. (Untuk memasang manual, gunakan halaman OUKA.)",
      "Memerlukan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, GeckoLib 5.5.6 (sudah termasuk di zip), dan Java 25."
     ]
    },
@@ -718,7 +718,7 @@
     ],
     "warnings": [
      "Rilis ini memperbaiki dua suara yang tidak pernah berbunyi di V1.0.1, V1.1.0, maupun V1.2.0: bunyi ketukan penggeser di terminal Suar OUKA dan suara konfirmasi pemilih Ouka Caster. Jika Anda memakai versi sebelumnya, harap ganti.",
-     "Anda juga bisa memasangnya dari Corvus Store: pertama kali, tekan Dapatkan di Corvus Store; setelah itu Corvus Store menggantinya sendiri dengan versi yang lebih baru. Jika Anda mematikan Pembaruan Otomatis, tekan Perbarui. (Untuk memasang manual, gunakan halaman OUKA.)",
+     "Anda juga bisa memasangnya dari Algorab Store: pertama kali, tekan Dapatkan di Algorab Store; setelah itu Algorab Store menggantinya sendiri dengan versi yang lebih baru. Jika Anda mematikan Pembaruan Otomatis, tekan Perbarui. (Untuk memasang manual, gunakan halaman OUKA.)",
      "Memerlukan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, GeckoLib 5.5.6 (sudah termasuk di zip), dan Java 25."
     ]
    },
@@ -740,7 +740,7 @@
     ],
     "warnings": [
      "Rilis ini memperbaiki dua cacat V1.1.0 (Blok Paduan Ouka yang ditambang tidak menjatuhkan apa pun; tabel jarahan shelter). Jika Anda memakai V1.1.0, harap ganti.",
-     "Anda juga bisa memasangnya dari Corvus: pertama kali, tekan Unduh di Corvus; setelah itu Corvus menggantinya dengan versi yang lebih baru. (Untuk memasang manual, gunakan halaman OUKA.)",
+     "Anda juga bisa memasangnya dari Algorab: pertama kali, tekan Unduh di Algorab; setelah itu Algorab menggantinya dengan versi yang lebih baru. (Untuk memasang manual, gunakan halaman OUKA.)",
      "Memerlukan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, GeckoLib 5.5.6 (sudah termasuk di zip), dan Java 25."
     ]
    },
@@ -762,7 +762,7 @@
     ],
     "warnings": [
      "Jika Anda memakai V1.0.0, harap gantilah: V1.0.0 membuat permainan crash begitu proyektil lingkaran masuk ke layar, saat «Transparansi yang Ditingkatkan» aktif di pengaturan video.",
-     "Pasang dari halaman OUKA. Corvus menampilkan changelog OUKA tetapi tidak memasang OUKA.",
+     "Pasang dari halaman OUKA. Algorab menampilkan changelog OUKA tetapi tidak memasang OUKA.",
      "Membutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, GeckoLib 5.5.6 (disertakan dalam zip) dan Java 25."
     ]
    },
@@ -787,7 +787,7 @@
     ],
     "warnings": [
      "Satu warna membuat layar berkedip putih saat hantaman (Celestial White). Tidak berkedip bila pengaturan “Sembunyikan kilatan petir” di Minecraft aktif.",
-     "Pasang dari halaman OUKA. Corvus menampilkan changelog OUKA tetapi tidak memasang OUKA.",
+     "Pasang dari halaman OUKA. Algorab menampilkan changelog OUKA tetapi tidak memasang OUKA.",
      "Membutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, GeckoLib 5.5.6 (disertakan dalam zip), dan Java 25."
     ]
    }
@@ -963,13 +963,13 @@
     "release": "V1.3 1017",
     "date": "2026-10-25",
     "title": "HoyoBrainrot",
-    "summary": "Pembaruan tampilan: paket sumber daya bawaan, HoyoBrainrot, buatan Corvus Dev. Beri nama Totem Keabadian di landasan dan ikonnya menjadi gambar bergerak. Cara bermain tidak berubah.",
+    "summary": "Pembaruan tampilan: paket sumber daya bawaan, HoyoBrainrot, buatan Algorab Developer Program. Beri nama Totem Keabadian di landasan dan ikonnya menjadi gambar bergerak. Cara bermain tidak berubah.",
     "highlights": [
      "Beri nama Totem Keabadian di landasan dengan salah satu nama di bawah dan ikonnya menjadi gambar karakter yang bergerak: di hotbar, di inventaris, dan di tanganmu. Totem tanpa nama, atau dengan nama yang tidak ada di daftar, tetap seperti semula.",
      "Nama: evernight, stelle, breakdance, lucia, nefer, march7, gerta, jahoda, cipher, yunli, black swan, ica, vivian, the gerta, nekomata, soukaku draw, soukaku picture, ju fufu, harumasa. Ejaan berawalan huruf kapital dan beberapa variasi seperti \"march 7th\" juga berfungsi.",
      "Saat totem aktif, kamu mendengar suara dari paket ini, bukan suara vanilla.",
      "Paket ini aktif sejak awal. Untuk mematikannya, lepas HoyoBrainrot di Opsi, Paket Sumber Daya: gambar dan suara totem kembali ke vanilla.",
-     "Jar menjadi sekitar 23 MB lebih besar. Paket ini dibuat oleh Corvus Dev."
+     "Jar menjadi sekitar 23 MB lebih besar. Paket ini dibuat oleh Algorab Developer Program."
     ],
     "warnings": [
      "Membutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, GeckoLib 5.5.6 atau lebih baru, dan Java 25.",
@@ -1021,10 +1021,10 @@
    {
     "id": "astraea-v1.1.0",
     "title": "The Cyber-Relics & Mythic Pedestals",
-    "summary": "Sistem keamanan yang ditenagai jaringan OUKA — laser, kamera, dan Corvus Book Pro yang menampilkan gambar langsungnya —, Plasma Saber, dan dua pedang yang tidak pernah dibuat: Excalibur dan Muramasa, dicabut dari alasnya dengan tangan Anda sendiri.",
+    "summary": "Sistem keamanan yang ditenagai jaringan OUKA — laser, kamera, dan Algorab Book Pro yang menampilkan gambar langsungnya —, Plasma Saber, dan dua pedang yang tidak pernah dibuat: Excalibur dan Muramasa, dicabut dari alasnya dengan tangan Anda sendiri.",
     "highlights": [
      "Security Laser: kawat jebakan tak terlihat yang memberi sinyal redstone dan peringatan, atau sinar mematikan merah tua (10 kerusakan per detik). Optical Prisms membelokkan sinar 90° untuk membentuk kisi. Ia tidak melukai pemiliknya dan pemain yang dipercaya pemiliknya, dan tidak menghancurkan blok.",
-     "Security Camera dan Corvus Book Pro: kamera mengikuti apa pun yang bergerak; CorvusOS di laptop menampilkan gambar asli tiap kamera yang ditautkan, memutarnya, beralih ke penglihatan malam dan termal, menggambar grafik daya OUKA, mengganti mode laser, mengunci dan membuka kunci elektronik, serta menyunting daftar kepercayaan Anda.",
+     "Security Camera dan Algorab Book Pro: kamera mengikuti apa pun yang bergerak; AlgorabOS di laptop menampilkan gambar asli tiap kamera yang ditautkan, memutarnya, beralih ke penglihatan malam dan termal, menggambar grafik daya OUKA, mengganti mode laser, mengunci dan membuka kunci elektronik, serta menyunting daftar kepercayaan Anda.",
      "Plasma Saber: gunakan untuk menyalakan bilah; dengungnya meninggi pada setiap putaran dan ayunan. Ayunkan saat tembakan tiba, dan panah, trisula, atau bola api kembali ke penembaknya. Enam Saber Crystals mengubah warnanya di Diamond Polishing Bench.",
      "Excalibur: letakkan Hallowed Anvil Pedestal di Y 180 atau lebih tinggi di bawah langit siang yang terbuka, lalu tahan tombol guna selama tiga detik untuk mencabutnya. Tahan lalu lepas untuk Excalibur Ray (50 blok, lebar 5, tertahan dinding); selama di tangan, Anda dan mereka yang Anda percaya mendapat Regenerasi II dan Ketahanan II.",
      "Muramasa: letakkan Blood-Bound Shrine di Y 0 atau lebih dalam, di kegelapan; mencabutnya memakan setengah nyawa maksimum Anda. Ia bertarung dengan kendali Celestial Blade, mengembalikan seperlima kerusakan yang diberikannya sebagai nyawa, dan tebasan saat disarungkan mengabaikan zirah."
@@ -1053,17 +1053,17 @@
    {
     "id": "astraea-v1.5.2",
     "title": "Heavy Industry",
-    "summary": "Mesin industri dibangun ulang sebesar pabrik sungguhan: tungku busur setinggi enam blok, kolom distilasi dua belas blok, menara dua puluh blok, semuanya di jaringan OUKA. Setiap item kini menjelaskan cara pakainya, dan Corvus Book Pro menjadi perangkat yang diletakkan. Mulai versi ini, OUKA 1.4.0 atau yang lebih baru wajib dipasang.",
+    "summary": "Mesin industri dibangun ulang sebesar pabrik sungguhan: tungku busur setinggi enam blok, kolom distilasi dua belas blok, menara dua puluh blok, semuanya di jaringan OUKA. Setiap item kini menjelaskan cara pakainya, dan Algorab Book Pro menjadi perangkat yang diletakkan. Mulai versi ini, OUKA 1.4.0 atau yang lebih baru wajib dipasang.",
     "highlights": [
      "Sepuluh pabrik, ditempatkan utuh: Refinery Smelter 5×5×6, Still 3×3×12, Crystalliser 5×5×5, Purifier 5×4×4, Synthesizer 5×5×5, Heavy Mill 7×7×6, Dynamo 7×3×4, Transformer 4×3×5, High-Voltage Pylon 5×5×20 dan Fission Core 9×9×10. Menggunakan item di tanah kosong membuat pabrik naik menghadap Anda; menggunakan bagian mana pun akan membukanya, dan merusak bagian mana pun mengembalikannya sebagai satu item.",
      "Pabrik-pabrik itu bergerak: tungku menurunkan elektrodanya, mengangkat atapnya, memiringkan dan menuangkan; kaca intip kolom menyala seiring mendidihnya cairan; drum penggiling berputar; roda gila dynamo melambat saat api padam; inti yang bekerja bersinar biru dan pitanya memijar saat terlalu panas. Pabrik yang bekerja menerangi tanah di sekitarnya.",
      "Batch lebih besar dengan biaya sama: delapan debu atau empat bijih mentah masuk ke jalur pemurnian dan keluar sebagai dua puluh ingot; Synthesizer membuat empat sekaligus; Heavy Mill mengubah empat bijih menjadi dua belas debu OUKA. Daya dan air tiap item tidak berubah. Hopper atau pipa yang menempel pada bagian mana pun dari pabrik pemrosesan akan memasukkan bahan dan mengambil produknya.",
      "Tahan Shift di atas item mana pun: setiap dari 284 item dan blok ASTRAEA kini menjelaskan apa itu, cara pakainya, dan apa yang dibutuhkannya.",
-     "Corvus Book Pro: letakkan di meja atau lantai dan gunakan di sana untuk membuka CorvusOS. Ia terbuka untuk pemiliknya dan pemain yang dipercayainya, menyimpan tautan dan dayanya, serta mengisi daya dari jaringan OUKA di tempat ia berada."
+     "Algorab Book Pro: letakkan di meja atau lantai dan gunakan di sana untuk membuka AlgorabOS. Ia terbuka untuk pemiliknya dan pemain yang dipercayainya, menyimpan tautan dan dayanya, serta mengisi daya dari jaringan OUKA di tempat ia berada."
     ],
     "warnings": [
      "Memerlukan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, Java 25, dan – baru di versi ini – OUKA 1.4.0 atau lebih baru. Mesin yang berdiri di dunia V1.5.0 tetap sebagai blok tunggal dan tidak berfungsi: hancurkan lalu letakkan kembali. Heavy Mill tidak lagi dibangun sebagai kubus; selubung dan rotornya adalah bahan pembuatannya. Pemasangan ASTRAEA bersama Alpha tidak didukung.",
-     "Diperbaiki: menambahkan pemain ke daftar kepercayaan Corvus Book Pro dapat mencatat pemain yang salah di beberapa server, sehingga kamera terus mengikuti mereka. Kini pemain daring ditemukan berdasarkan nama, dan hasilnya ditampilkan di dalam jendela CorvusOS. Tidak ada di versi ini: kelompok lain yang dibangun ulang (logistik, pertahanan, pandai besi dan perlengkapan, kendaraan dan perbatasan, mitos, perabot) menyusul di versi berikutnya; suara mesin dibuat dan diperiksa hanya dengan pengukuran."
+     "Diperbaiki: menambahkan pemain ke daftar kepercayaan Algorab Book Pro dapat mencatat pemain yang salah di beberapa server, sehingga kamera terus mengikuti mereka. Kini pemain daring ditemukan berdasarkan nama, dan hasilnya ditampilkan di dalam jendela AlgorabOS. Tidak ada di versi ini: kelompok lain yang dibangun ulang (logistik, pertahanan, pandai besi dan perlengkapan, kendaraan dan perbatasan, mitos, perabot) menyusul di versi berikutnya; suara mesin dibuat dan diperiksa hanya dengan pengukuran."
     ]
    },
    {
@@ -1341,14 +1341,14 @@
    },
    {
     "id": "tsubomi-v2.3-3124",
-    "title": "Tsubomi V2.3 3124 — Starbloom Corvus",
-    "summary": "Tsubomi V2.3 3124 menambahkan Starbloom Corvus (hitam OLED): jajaran Max, Elytra For Corvus dengan sayap gagak, penambangan 14×14, dan pasif set lengkap terkuat.",
+    "title": "Tsubomi V2.3 3124 — Starbloom Algorab",
+    "summary": "Tsubomi V2.3 3124 menambahkan Starbloom Algorab (hitam OLED): jajaran Max, Elytra For Algorab dengan sayap gagak, penambangan 14×14, dan pasif set lengkap terkuat.",
     "highlights": [
-     "Starbloom Corvus memiliki jajaran Starbloom Max (batangan paduan, beliung, kapak, sekop, cangkul, tombak, helm, baju zirah, celana, sepatu, perisai, busur dan panah) ditambah Elytra For Corvus. Daya tahannya 1.8× milik UltraCore, alatnya menambang 2× lebih cepat dari Ultimate, dan serangannya sama dengan Max.",
-     "Batangan Paduan Corvus dibuat dari 8 Batangan Paduan Ultimate dan satu Lambang Corvus, menghasilkan 8 batangan. Lambang Corvus dibuat dari Kepala Naga, Telur Naga, Lambang Laut, Lambang Aomori, Lambang Hutan, dan Batangan Netherstar. Batangan Netherstar dibuat dari 3 Bundel Netherstar, dan satu bundel dari 9 Bintang Nether (27 Bintang Nether seluruhnya).",
-     "Beliung Corvus menambahkan penambangan 14×14 (jongkok lalu gunakan untuk berganti antara 1×1, 3×3, 5×5, 7×7, 9×9, 11×11 dan 14×14, lalu Quick Mining).",
-     "Elytra For Corvus dibuat dari 2 Lambang Corvus, 3 Batangan Netherstar, sebuah elitron, dan 3 Batangan Paduan Corvus. Sayapnya dari bulu gagak dan terbang 8× lebih cepat dari elitron; daya tahannya sama dengan elitron, tetapi aus 8× lebih cepat.",
-     "Mengenakan set zirah Starbloom Corvus lengkap memberi pasif: kerusakan jatuh −55% (nonaktif saat memakai Elytra For Corvus), kerusakan api −68%, kerusakan racun −37%, kerusakan lava −71%, sonic boom Penunggu −64%, kecepatan menambang +11%, kecepatan gerak +24%, serangan +17%, dan peluang 66% setiap efek merugikan baru ditepis. Mendarat setelah jatuh memancarkan gelombang kejut yang memberi 61% dari kerusakan jatuh kepada mob musuh dalam radius 4 blok, dan balok magma tidak lagi melukai. Hanya memakai sebagian set tidak memberi satu pun dari ini."
+     "Starbloom Algorab memiliki jajaran Starbloom Max (batangan paduan, beliung, kapak, sekop, cangkul, tombak, helm, baju zirah, celana, sepatu, perisai, busur dan panah) ditambah Elytra For Algorab. Daya tahannya 1.8× milik UltraCore, alatnya menambang 2× lebih cepat dari Ultimate, dan serangannya sama dengan Max.",
+     "Batangan Paduan Algorab dibuat dari 8 Batangan Paduan Ultimate dan satu Lambang Algorab, menghasilkan 8 batangan. Lambang Algorab dibuat dari Kepala Naga, Telur Naga, Lambang Laut, Lambang Aomori, Lambang Hutan, dan Batangan Netherstar. Batangan Netherstar dibuat dari 3 Bundel Netherstar, dan satu bundel dari 9 Bintang Nether (27 Bintang Nether seluruhnya).",
+     "Beliung Algorab menambahkan penambangan 14×14 (jongkok lalu gunakan untuk berganti antara 1×1, 3×3, 5×5, 7×7, 9×9, 11×11 dan 14×14, lalu Quick Mining).",
+     "Elytra For Algorab dibuat dari 2 Lambang Algorab, 3 Batangan Netherstar, sebuah elitron, dan 3 Batangan Paduan Algorab. Sayapnya dari bulu gagak dan terbang 8× lebih cepat dari elitron; daya tahannya sama dengan elitron, tetapi aus 8× lebih cepat.",
+     "Mengenakan set zirah Starbloom Algorab lengkap memberi pasif: kerusakan jatuh −55% (nonaktif saat memakai Elytra For Algorab), kerusakan api −68%, kerusakan racun −37%, kerusakan lava −71%, sonic boom Penunggu −64%, kecepatan menambang +11%, kecepatan gerak +24%, serangan +17%, dan peluang 66% setiap efek merugikan baru ditepis. Mendarat setelah jatuh memancarkan gelombang kejut yang memberi 61% dari kerusakan jatuh kepada mob musuh dalam radius 4 blok, dan balok magma tidak lagi melukai. Hanya memakai sebagian set tidak memberi satu pun dari ini."
     ],
     "warnings": [
      "Membutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, dan Java 25. Tidak perlu mod lain; Cherry bersifat opsional.",
@@ -1357,13 +1357,13 @@
    },
    {
     "id": "tsubomi-v2.4-0204",
-    "title": "Tsubomi V2.4 0204 — Starbloom Corvus Mythic dan Mythic Pearl, Wings, Blok Bintang Nether",
-    "summary": "Tsubomi V2.4 0204 menambahkan Starbloom Corvus Mythic dan Starbloom Corvus Mythic Pearl, Wings, Blok Bintang Nether, balok struktur yang mencapai 256×300×256, dan Overworld yang dapat dibangun hingga y = 1999, serta memperbaiki dua bug.",
+    "title": "Tsubomi V2.4 0204 — Starbloom Algorab Mythic dan Mythic Pearl, Wings, Blok Bintang Nether",
+    "summary": "Tsubomi V2.4 0204 menambahkan Starbloom Algorab Mythic dan Starbloom Algorab Mythic Pearl, Wings, Blok Bintang Nether, balok struktur yang mencapai 256×300×256, dan Overworld yang dapat dibangun hingga y = 1999, serta memperbaiki dua bug.",
     "highlights": [
-     "Perbaikan: memakai set lengkap Starbloom Corvus dengan Elytra For Corvus, jatuh tidak lagi melukai sama sekali (sebelumnya bonus jatuh hanya dimatikan, sehingga jatuh tetap memberi kerusakan penuh); dan Pancing UltraFast Starbloom sekarang benar-benar memancing (pelampungnya dulu hilang sesaat setelah dilempar).",
-     "Starbloom Corvus Mythic (hitam dengan ungu gelap) memiliki jajaran Starbloom Max dan berada di atas Corvus di semua aspek: daya tahan dan kecepatan menambang 1.3×, alat yang memukul 10% lebih keras, beliung hingga 16×16, dan pasif set lengkap yaitu jatuh −65%, api −74%, racun −45%, lava −77%, sonic boom Penunggu −72%, kecepatan menambang +15%, kecepatan gerak +30%, serangan +22%, peluang 72% menepis setiap efek merugikan baru, dan gelombang kejut saat mendarat sebesar 70% dari jatuh. Starbloom Corvus Mythic Pearl (hitam dengan putih mutiara) berada di atas Mythic: 1.25× lagi, beliung hingga 18×18, dan pasif −75%, −80%, −53%, −83%, −80%, +19%, +36%, +27%, 78%, dan 80%.",
-     "Batangan Paduan Mythic dibuat dari 7 Batangan Paduan Corvus, sebuah Lambang Corvus, dan sebuah Blok Bintang Nether, menghasilkan 7 batangan. Batangan Paduan Pearl dibuat dari 6 Batangan Paduan Mythic, 2 Blok Bintang Nether, dan sebuah Mutiara Ender, menghasilkan 6 batangan. Blok Bintang Nether dibuat dari 9 Batangan Netherstar, dan kembali menjadi 9.",
-     "Wings adalah item dada. Buka di udara dengan lompatan, seperti Elytra, lalu terbang di langit; Wings memerlukan minimal 5 food untuk terbang, membuat Anda lelah sesuai jarak yang ditempuh, dan membuat jatuh tidak berbahaya. Wings dibuat dari 4 Batangan Paduan Mythic, 3 Blok Bintang Nether, sebuah Elytra For Corvus, dan sebuah Lambang Corvus, dan dihitung sebagai baju dada set Mythic dan Pearl.",
+     "Perbaikan: memakai set lengkap Starbloom Algorab dengan Elytra For Algorab, jatuh tidak lagi melukai sama sekali (sebelumnya bonus jatuh hanya dimatikan, sehingga jatuh tetap memberi kerusakan penuh); dan Pancing UltraFast Starbloom sekarang benar-benar memancing (pelampungnya dulu hilang sesaat setelah dilempar).",
+     "Starbloom Algorab Mythic (hitam dengan ungu gelap) memiliki jajaran Starbloom Max dan berada di atas Algorab di semua aspek: daya tahan dan kecepatan menambang 1.3×, alat yang memukul 10% lebih keras, beliung hingga 16×16, dan pasif set lengkap yaitu jatuh −65%, api −74%, racun −45%, lava −77%, sonic boom Penunggu −72%, kecepatan menambang +15%, kecepatan gerak +30%, serangan +22%, peluang 72% menepis setiap efek merugikan baru, dan gelombang kejut saat mendarat sebesar 70% dari jatuh. Starbloom Algorab Mythic Pearl (hitam dengan putih mutiara) berada di atas Mythic: 1.25× lagi, beliung hingga 18×18, dan pasif −75%, −80%, −53%, −83%, −80%, +19%, +36%, +27%, 78%, dan 80%.",
+     "Batangan Paduan Mythic dibuat dari 7 Batangan Paduan Algorab, sebuah Lambang Algorab, dan sebuah Blok Bintang Nether, menghasilkan 7 batangan. Batangan Paduan Pearl dibuat dari 6 Batangan Paduan Mythic, 2 Blok Bintang Nether, dan sebuah Mutiara Ender, menghasilkan 6 batangan. Blok Bintang Nether dibuat dari 9 Batangan Netherstar, dan kembali menjadi 9.",
+     "Wings adalah item dada. Buka di udara dengan lompatan, seperti Elytra, lalu terbang di langit; Wings memerlukan minimal 5 food untuk terbang, membuat Anda lelah sesuai jarak yang ditempuh, dan membuat jatuh tidak berbahaya. Wings dibuat dari 4 Batangan Paduan Mythic, 3 Blok Bintang Nether, sebuah Elytra For Algorab, dan sebuah Lambang Algorab, dan dihitung sebagai baju dada set Mythic dan Pearl.",
      "Balok struktur kini mencapai 256×300×256 (offset hingga ±512, dan pemindaian sudut melihat 320 blok di sekitarnya). Overworld kini dapat dibangun hingga y = 1999 (sebelumnya y = 319). Kedua perubahan ini memerlukan Tsubomi di server dan di setiap klien. Menyimpan atau memuat area yang sangat besar membutuhkan banyak memori, sehingga game menolak yang tidak muat di memori bebas dan menyebutkan kebutuhannya (256×300×256 penuh membutuhkan sekitar 8,5 GB)."
     ],
     "warnings": [
@@ -1382,7 +1382,7 @@
      "Starbloom Phoenix (biru laut kosmos pekat dan merah muda magenta), Starbloom Phoenix Mythic (ungu nebula dan mawar neon, dengan emas topaz), dan Starbloom Phoenix Zenith (putih platinum dan sian kosmik) adalah tiga seri baru. Tiap seri punya jajaran Starbloom Max — 13 item — dan Wings sendiri.",
      "Setiap seri berada di atas seri sebelumnya, Phoenix di atas Mythic Pearl: daya tahan dan kecepatan menambang 1.25 kali di setiap langkah, alat yang memukul 10% lebih keras, beliung hingga 20×20, 22×22, dan 24×24, serta pasif set lengkap yang naik di setiap langkah — jatuh −82%, −88%, −94%; api −85%, −90%, −95%; racun −60%, −68%, −78%; lava −87%, −91%, −95%; ledakan sonik Warden −85%, −89%, −94%; kecepatan menambang +23%, +27%, +32%; kecepatan gerak +42%, +48%, +55%; serangan +32%, +37%, +43%; peluang 82%, 86%, dan 90% untuk menepis setiap efek buruk baru; dan gelombang kejut saat mendarat sebesar 85%, 90%, dan 95% dari jatuhan.",
      "Setiap paduan lebih mahal dari sebelumnya: Batangan Paduan Phoenix dibuat dari 5 Batangan Paduan Pearl, 3 Blok Bintang Nether, dan sebuah Totem Keabadian, menghasilkan 5 batangan; Batangan Paduan Phoenix Mythic dari 4 Batangan Paduan Phoenix, 4 Blok Bintang Nether, dan sebuah Apel Emas Terpesona, menghasilkan 4; Batangan Paduan Phoenix Zenith dari 4 Batangan Paduan Phoenix Mythic, 4 Blok Bintang Nether, dan sebuah Suar, menghasilkan 4.",
-     "Setiap seri punya Wings sendiri yang lebih kuat dari sebelumnya: berakselerasi dan terbang 1.12, 1.26, dan 1.40 kali secepat Wings pertama, tahan 3000, 4500, dan 7000 dibanding 2000, dan membuat Anda lebih sedikit lelah tiap blok yang ditempuh. Masing-masing dibuat dari Wings seri sebelumnya, 4 batangan paduannya sendiri, 3 Blok Bintang Nether, dan sebuah Lambang Corvus, hanya dihitung sebagai pelindung dada setnya sendiri, dan membuat jatuh tidak berbahaya.",
+     "Setiap seri punya Wings sendiri yang lebih kuat dari sebelumnya: berakselerasi dan terbang 1.12, 1.26, dan 1.40 kali secepat Wings pertama, tahan 3000, 4500, dan 7000 dibanding 2000, dan membuat Anda lebih sedikit lelah tiap blok yang ditempuh. Masing-masing dibuat dari Wings seri sebelumnya, 4 batangan paduannya sendiri, 3 Blok Bintang Nether, dan sebuah Lambang Algorab, hanya dihitung sebagai pelindung dada setnya sendiri, dan membuat jatuh tidak berbahaya.",
      "Wings Phoenix memudar dari biru laut ke ujung magenta dengan titik bintang ungu yang berkelip; Wings Phoenix Mythic berpendar dengan mawar neon yang berkedip dan tepi emas topaz serta menebar debu bintang saat mengepak; Wings Phoenix Zenith berupa platinum dan sian tembus pandang dengan kilau yang berganti warna pelangi."
     ],
     "warnings": [
@@ -1400,15 +1400,15 @@
     "highlights": [
      "Starbloom Ziz The Final adalah seri terakhir, di atas Starbloom Phoenix Zenith, dalam Obsidian Kehampaan, Emas Korona, dan Cyan Bioluminesen. Ia memiliki susunan Starbloom Max — 13 item: ingot paduan, beliung tambang, kapak tebang, sekop perata, cangkul panen, tombak, empat bagian zirah, perisai, busur dan panah — dan Sayapnya sendiri. Daya tahan dan kecepatan tambang 1.25× dari Phoenix Zenith.",
      "Set Ziz lengkap tidak menerima kerusakan jatuh dan kerusakan lava, berenang di lava seperti di air tanpa terbakar, dan pukulan mematikan memecahkan semua zirah alih-alih membunuh Anda — sekali saja, dan tidak untuk /kill atau kehampaan.",
-     "Ingot paduan Ziz dibuat dari 3 ingot paduan Phoenix Zenith, 4 blok bintang Nether, dan 1 blok netherite, menghasilkan 3 ingot. Sayap Ziz dibuat dari Sayap Phoenix Zenith, 4 ingot Ziz, 3 blok bintang Nether, dan Lambang Corvus.",
+     "Ingot paduan Ziz dibuat dari 3 ingot paduan Phoenix Zenith, 4 blok bintang Nether, dan 1 blok netherite, menghasilkan 3 ingot. Sayap Ziz dibuat dari Sayap Phoenix Zenith, 4 ingot Ziz, 3 blok bintang Nether, dan Lambang Algorab.",
      "Sayap Ziz punya 14 tingkat kecepatan terbang, dari 0.5× hingga 7.0× percepatan sayap dasar, per langkah 0.5×. ] naik satu tingkat, [ turun satu tingkat; bawaannya 3.0× (tingkat 6).",
      "Dengan beliung Starbloom di tangan, Jongkok + klik kanan membuka geser area tambang: satu nilai dan satu geser memilih area yang dipecahkan satu ayunan, dari 1×1 sampai 26×26 dan Penambangan Cepat, sesuai batas beliung yang Anda pegang. Server tidak lagi mengganti area dengan Jongkok + gunakan."
     ],
     "warnings": [
      "Membutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, dan Java 25. Tidak perlu mod lain; Cherry bersifat opsional.",
      "Tsubomi tidak dapat digunakan bersama Alpha. Jika satu mod Alpha saja terpasang, game tidak akan berjalan; lepaskan dulu jar Alpha.",
-     "Selain nama, warna, konsep, dan kemampuan Ziz yang diberikan Corvus Dev, semua angka dan resep seri ini adalah perkiraan pertama pengembang dan dapat diseimbangkan ulang.",
-     "Nama bahasa Jepang belum disetujui Corvus Dev.",
+     "Selain nama, warna, konsep, dan kemampuan Ziz yang diberikan Algorab Developer Program, semua angka dan resep seri ini adalah perkiraan pertama pengembang dan dapat diseimbangkan ulang.",
+     "Nama bahasa Jepang belum disetujui Algorab Developer Program.",
      "Geser area tambang dan kemampuan Ziz hanya diuji di klien nyata pada mode pemain tunggal, bukan di server khusus dan bukan multipemain.",
      "Suara kepakan Sayap Ziz belum dibuat."
     ]
@@ -1427,9 +1427,9 @@
     "warnings": [
      "Membutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, dan Java 25. Tidak perlu mod lain; Cherry bersifat opsional.",
      "Tsubomi tidak dapat digunakan bersama Alpha. Jika satu mod Alpha saja terpasang, game tidak akan berjalan; lepaskan dulu jar Alpha.",
-     "Kumpulan hadiah mengikuti tafsir pengembang atas \"bisa didapat di Survival\". Daftar pengecualian diambil dari tab Operator mode kreatif dan aturan di catatan rilis, dan Corvus Dev dapat mengubahnya.",
+     "Kumpulan hadiah mengikuti tafsir pengembang atas \"bisa didapat di Survival\". Daftar pengecualian diambil dari tab Operator mode kreatif dan aturan di catatan rilis, dan Algorab Developer Program dapat mengubahnya.",
      "Pemeriksaan versi, server dedicated, multipemain, dan jar Halia, OUKA, serta Cherry yang sebenarnya tidak diuji pada rilis ini. Pengujian memakai versi Tsubomi sendiri.",
-     "Nama dan teks Jepang belum disetujui Corvus Dev.",
+     "Nama dan teks Jepang belum disetujui Algorab Developer Program.",
      "Suara dan partikel peti adalah bawaan game. Tidak ada suara khusus yang ditambahkan pada rilis ini."
     ]
    },
@@ -1441,15 +1441,15 @@
      "/tsubomi gift mempertahankan namanya dan tidak memerlukan hak operator, sehingga berfungsi di Survival dengan cheat nonaktif. Setiap pemain dapat mengklaimnya sekali per kampanye.",
      "Peti hadiah muncul dua blok di depan Anda. Hanya Anda yang dapat membukanya atau menghancurkannya. Klik kanan untuk membuka pemilih hadiah.",
      "Pemilih adalah jendela bergaya Creative dengan tab kategori per mod, kotak pencarian, kisi yang dapat digulir, dan tooltip saat kursor diarahkan. Klik satu item, lalu tekan Take. Anda mendapat tepat satu item, dan peti dihapus.",
-     "Senjata, armor, elytra, perisai, busur, dan lini perlengkapan Tsubomi (Starbloom, Ziz, Phoenix, Corvus, dan sayapnya) tidak pernah ditawarkan. Alat sederhana seperti beliung, sekop, cangkul, pancing, dan gunting tetap ditawarkan.",
+     "Senjata, armor, elytra, perisai, busur, dan lini perlengkapan Tsubomi (Starbloom, Ziz, Phoenix, Algorab, dan sayapnya) tidak pernah ditawarkan. Alat sederhana seperti beliung, sekop, cangkul, pancing, dan gunting tetap ditawarkan.",
      "Item khusus Creative tidak pernah ditawarkan, dan spawner serta lukisan tetap ada. Jika tidak ada ruang untuk peti, pemilih langsung terbuka."
     ],
     "warnings": [
      "Membutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, dan Java 25. Tidak perlu mod lain; Cherry bersifat opsional.",
      "Tsubomi tidak dapat digunakan bersama Alpha. Jika satu mod Alpha saja terpasang, game tidak akan berjalan; lepaskan dulu jar Alpha.",
-     "Aturan Survival dan perlengkapan adalah interpretasi pengembang. Corvus Dev dapat mengubah daftar.",
+     "Aturan Survival dan perlengkapan adalah interpretasi pengembang. Algorab Developer Program dapat mengubah daftar.",
      "Pemeriksaan versi, server dedicated, multipemain, serta file jar Halia, OUKA, dan Cherry yang asli tidak diuji di rilis ini.",
-     "Teks bahasa Jepang belum disetujui oleh Corvus Dev.",
+     "Teks bahasa Jepang belum disetujui oleh Algorab Developer Program.",
      "Suara dan partikel peti berasal dari game itu sendiri. Pemilih hanya diperiksa di klien asli pada satu ukuran layar (1280×720)."
     ]
    }
@@ -1671,7 +1671,7 @@
     "warnings": [
      "Persyaratan: Minecraft 26.3, Fabric Loader 0.19.5 atau yang lebih baru, Fabric API 0.161.0+26.3 atau yang lebih baru, Java 25. Untuk multipemain, Halia juga harus dipasang di server.",
      "Halia V1.4 sekarang menggunakan GeckoLib 5.5.6. GeckoLib sudah disertakan di dalam jar Halia, jadi tidak ada yang perlu dipasang terpisah; jika mod lain membawa GeckoLib yang sama, game hanya memakai satu salinan.",
-     "Pemunculan alami setiap makhluk dapat dimatikan satu per satu dari aplikasi Corvus. Sakelarnya terkunci menyala selama dua bulan setelah rilis V1.4; tanggal berakhirnya kunci ditetapkan pada hari rilis."
+     "Pemunculan alami setiap makhluk dapat dimatikan satu per satu dari aplikasi Algorab. Sakelarnya terkunci menyala selama dua bulan setelah rilis V1.4; tanggal berakhirnya kunci ditetapkan pada hari rilis."
     ]
    },
    {
@@ -1770,20 +1770,20 @@
     "title": "Halia V1.1 — Halia Blade: katana, 90 gerakan kombo, dan pedang panggilan",
     "summary": "Halia V1.1 menambahkan Halia Blade, katana yang disandang di pinggul dan dipakai bertarung dengan pengaturan waktu: kombo di darat dan di udara, seni terisi, pedang panggilan, kunci sasaran, penjagaan, dan gerakan trik. Tersedia 8 bahan kerajinan, 6 dudukan bilah, dan 11 bilah bernama. Stellar Remote dari V1.0 tidak berubah.",
     "highlights": [
-     "Halia Blade: dibuat dari Soulsteel Ingots, Corvus Soul, pedang besi, dan bata nether. Gunakan (klik kanan) untuk menyerang; menekan lagi tepat waktu melanjutkan kombo — total 90 gerakan kombo, di darat dan di udara.",
+     "Halia Blade: dibuat dari Soulsteel Ingots, Algorab Soul, pedang besi, dan bata nether. Gunakan (klik kanan) untuk menyerang; menekan lagi tepat waktu melanjutkan kombo — total 90 gerakan kombo, di darat dan di udara.",
      "Seni terisi: tahan gunakan dan lepaskan saat partikel muncul untuk Judgement Cut; lepaskan tepat sebelum partikel muncul untuk versi yang lebih kuat. Menyelinap + maju + gunakan adalah Rapid Slash, menyelinap + mundur + gunakan adalah Upper Slash.",
      "Pedang panggilan: tombol pilih blok (klik tengah) meluncurkan pedang ke sasaranmu dengan biaya 1 poin pengalaman; 4 pola yang lebih besar — Spiral, Storm, Blistering, dan Heavy Rain Swords — masing-masing menghabiskan 5.",
      "Kunci sasaran, penjagaan, dan gerak: tahan menyelinap untuk mengunci musuh; menyelinap saat diam menjaga dari serangan jarak jauh; trik tombol lari membuatmu melesat ke musuh, di atasnya, atau menjauh darinya; di udara, lompat dari musuh atau dinding.",
      "Peringkat konsentrasi: serangan yang mengenai menaikkan peringkat yang tampil di kanan atas, dari D sampai SSS; peringkat turun lagi saat kamu berhenti bertarung. Peringkat tinggi menambah damage.",
-     "Aus, penyempurnaan, dan pandai ulang: bilah patah setelah 101 pukulan dan menjatuhkan jiwa yang menyimpan catatannya. Di landasan, Corvus Soul menyempurnakan bilah (1 level per jiwa), dan bilah yang patah bisa ditempa ulang.",
-     "Bahan dan dudukan: 8 bahan, dari Tiny Corvus Soul sampai Abyssal Geode, masing-masing punya resep, dan 6 Halia Stands (tipe lantai dan dinding) untuk memajang bilah.",
+     "Aus, penyempurnaan, dan pandai ulang: bilah patah setelah 101 pukulan dan menjatuhkan jiwa yang menyimpan catatannya. Di landasan, Algorab Soul menyempurnakan bilah (1 level per jiwa), dan bilah yang patah bisa ditempa ulang.",
+     "Bahan dan dudukan: 8 bahan, dari Tiny Algorab Soul sampai Abyssal Geode, masing-masing punya resep, dan 6 Halia Stands (tipe lantai dan dinding) untuk memajang bilah.",
      "Panduan dalam game: 57 kemajuan. Cabang “Blade MoveSets” mencantumkan setiap gerakan dengan tombol yang diatur di komputermu, dan mengklik kemajuan bahan atau bilah menampilkan resepnya."
     ],
     "warnings": [
      "Membutuhkan Minecraft 26.3, Fabric Loader 0.19.5 atau lebih baru, Fabric API 0.161.0+26.3 atau lebih baru, dan Java 25. Untuk multipemain, Halia juga harus terpasang di server.",
      "Stellar Remote masih menghancurkan wilayah dunia yang sangat luas secara permanen — cadangkan duniamu sebelum menekan tombolnya. Tidak ada yang berubah padanya di versi ini.",
      "Dunia dari V1.0.0 terbuka apa adanya; versi ini hanya menambah konten. Jangan kembali ke 1.0.0 dengan dunia yang berisi bilah, bahan, atau dudukan: semuanya akan terhapus.",
-     "Belum dikonfirmasi oleh studio: bermain di server multipemain khusus, di Windows, dan digunakan bersama mod Corvus Store lain. Di sudut pandang orang pertama, bilah yang disarungkan sebagian besar tidak terlihat sampai kamu menyerang."
+     "Belum dikonfirmasi oleh studio: bermain di server multipemain khusus, di Windows, dan digunakan bersama mod Algorab Store lain. Di sudut pandang orang pertama, bilah yang disarungkan sebagian besar tidak terlihat sampai kamu menyerang."
     ]
    },
    {

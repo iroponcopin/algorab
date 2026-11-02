@@ -2,7 +2,7 @@
  "lang": "pt-br",
  "ui": {
   "site_tagline": "Referência não oficial dos MODs do Servidor Sorakazekarasu",
-  "site_description": "Um site não oficial sobre os mods Fabric OUKA, Cherry e Aureum: receitas, histórico de atualizações, downloads e o lançador Corvus. O Alpha, o pacote para o qual ele foi feito no início, deixou de ser distribuído.",
+  "site_description": "Um site não oficial sobre os mods Fabric OUKA, Cherry e Aureum: receitas, histórico de atualizações, downloads e o lançador Algorab. O Alpha, o pacote para o qual ele foi feito no início, deixou de ser distribuído.",
   "nav": {
    "home": "Início",
    "changelog": "Histórico de atualizações",
@@ -119,7 +119,7 @@
   "page_descriptions": {
    "changelog": "O histórico de atualizações de OUKA, Cherry, Aureum, ASTRAEA, Tsubomi e Halia, e o aviso do fim do Alpha. Escolha uma marca para ver o que mudou em cada versão, da mais recente para a mais antiga.",
    "recipes": "Uma tabela de consulta rápida com as receitas de criação de todos os itens de OUKA, Cherry, Tsubomi e Halia. Com busca e filtro por categoria.",
-   "download": "O Alpha deixou de ser distribuído. A última versão, V{pack_version}, desativa o Alpha; ela está aqui com tamanho de arquivo e SHA-256, junto dos downloads do Corvus e do Aureum.",
+   "download": "O Alpha deixou de ser distribuído. A última versão, V{pack_version}, desativa o Alpha; ela está aqui com tamanho de arquivo e SHA-256, junto dos downloads do Algorab e do Aureum.",
    "aureum": "Aureum: um mod de otimização leve, independente e medido com honestidade. Não substitui o Sodium: otimiza o lado que o Sodium não toca."
   }
  },
@@ -149,13 +149,13 @@
    "highlights": [
     "O Alpha é desativado. Os 13 mods são substituídos por marcadores que não adicionam nada ao jogo (Cherry, OUKA e Aureum não são tocados)",
     "Só o limite de altura do mundo principal (até Y=1023) permanece, para que nada do que você construiu acima de Y=319 com blocos comuns seja apagado",
-    "O Corvus remove os jars antigos, coloca os marcadores e guarda um backup dos arquivos substituídos. Se você instalou à mão ou administra um servidor, apague os jars antigos como diz o README do pacote"
+    "O Algorab remove os jars antigos, coloca os marcadores e guarda um backup dos arquivos substituídos. Se você instalou à mão ou administra um servidor, apague os jars antigos como diz o README do pacote"
    ],
    "balance_changes": [],
    "warnings": [
     "<b>Faça backup dos seus mundos primeiro.</b> Os blocos que o Alpha adicionou viram ar vazio quando um mundo é aberto sem o Alpha e somem para sempre depois de salvo assim. Colocar o Alpha de volta não os recupera (verificado em um servidor dedicado). Espera-se que os itens e as criaturas do Alpha tenham o mesmo destino (não testado)",
     "Servidor e jogadores devem migrar juntos: quem ainda tem o Alpha não entra em um servidor que já não o tem, e vice-versa",
-    "Se \"Instalar atualizações automaticamente\" estiver ativado no Corvus, esta atualização é aplicada sem perguntar. O backup do Corvus cobre a pasta mods, não os seus mundos"
+    "Se \"Instalar atualizações automaticamente\" estiver ativado no Algorab, esta atualização é aplicada sem perguntar. O backup do Algorab cobre a pasta mods, não os seus mundos"
    ],
    "known_limitations": [
     "Tudo o mais que o Alpha tinha neste site foi retirado: todos os downloads anteriores, suas receitas e suas páginas de guia de instalação, portais, recursos, roteiro e problemas conhecidos. Esta entrada é tudo o que resta do seu histórico de atualizações."
@@ -235,11 +235,11 @@
   "discord_body": "Adicione o bot de lançamentos ao seu servidor do Discord para que uma mensagem seja postada automaticamente sempre que sair uma atualização. Depois de convidá-lo, execute /release channel no seu servidor para escolher onde os avisos aparecem.",
   "discord_invite_cta": "Convidar o bot de avisos",
   "discord_pending": "O bot de avisos do Discord ainda não está disponível para este servidor — o link de convite ainda não foi publicado.",
-  "launcher_heading": "Corvus",
-  "launcher_body": "O Corvus é um aplicativo de desktop que mantém seus mods atualizados automaticamente, verificando cada download por SHA-256 contra esta Wiki — esta Wiki continua sendo a única fonte em que ele confia.",
+  "launcher_heading": "Algorab",
+  "launcher_body": "O Algorab é um aplicativo de desktop que mantém seus mods atualizados automaticamente, verificando cada download por SHA-256 contra esta Wiki — esta Wiki continua sendo a única fonte em que ele confia.",
   "launcher_version_label": "Versão",
-  "launcher_cta": "Baixar o Corvus",
-  "launcher_pending": "O Corvus ainda não está disponível para download — nenhuma compilação foi publicada no Wiki até agora. Confira de novo mais tarde ou instale o pacote de MODs manualmente usando o ZIP acima.",
+  "launcher_cta": "Baixar o Algorab",
+  "launcher_pending": "O Algorab ainda não está disponível para download — nenhuma compilação foi publicada no Wiki até agora. Confira de novo mais tarde ou instale o pacote de MODs manualmente usando o ZIP acima.",
   "launcher_jar_note": "Multiplataforma (Windows, macOS, Linux). Exige que o Java 25 ou mais novo já esteja instalado.",
   "launcher_native_heading": "Instaladores nativos (sem precisar de Java)",
   "launcher_native_note": "Eles se instalam como um aplicativo de desktop comum e não precisam de Java. Ainda não são assinados, então o sistema mostrará um aviso na primeira execução: no macOS, clique com o botão direito no app e escolha Abrir; no Windows, clique em «Mais informações» e depois em «Executar assim mesmo».",
@@ -252,21 +252,21 @@
   "intro": "O Alpha foi encerrado. Esta página traz a última versão, a V{pack_version}, que desativa o Alpha. O ZIP contém {mod_count} jars marcadores que não adicionam nada ao jogo e um README. Não há conteúdo do Alpha nele.",
   "server_note": "Faça backup dos seus mundos antes de instalar. Os blocos que o Alpha adicionou viram ar vazio e somem para sempre depois que o mundo é salvo sem o Alpha; colocar o Alpha de volta não os recupera. Administradores de servidor: o servidor e os jogadores devem migrar juntos.",
   "install_heading": "Como desativar o Alpha",
-  "install_body": "Se você usa o Corvus, ele faz isso por você como uma atualização normal. Se instalou à mão ou administra um servidor, o README dentro do ZIP lista os passos.",
+  "install_body": "Se você usa o Algorab, ele faz isso por você como uma atualização normal. Se instalou à mão ou administra um servidor, o README dentro do ZIP lista os passos.",
   "older_versions_note": "Esta página sempre oferece a versão atual (V{pack_version}), que é a última. As versões anteriores não são mais oferecidas aqui; se ainda precisar de uma, peça diretamente ao administrador do seu servidor."
  },
  "launcher_page": {
-  "intro": "O Corvus é um pequeno aplicativo de desktop que mantém seus mods atualizados automaticamente. Ele consulta esta Wiki para saber a versão atual, baixa as atualizações para você e verifica cada arquivo baixado contra um checksum SHA-256 publicado aqui antes de mexer na sua pasta mods. Esta Wiki é a única fonte em que ele confia.",
+  "intro": "O Algorab é um pequeno aplicativo de desktop que mantém seus mods atualizados automaticamente. Ele consulta esta Wiki para saber a versão atual, baixa as atualizações para você e verifica cada arquivo baixado contra um checksum SHA-256 publicado aqui antes de mexer na sua pasta mods. Esta Wiki é a única fonte em que ele confia.",
   "sections": [
    {
     "id": "what-it-is",
-    "title": "O que é o Corvus e por que ele foi feito",
-    "body_html": "<p>Manter os mods atualizados à mão significa voltar à página de download, comparar números de versão, baixar um arquivo novo e colocá-lo na pasta certa a cada lançamento. O Corvus automatiza isso: ele lê o manifesto de versões desta Wiki, compara com o que você já tem instalado e baixa apenas o que mudou.</p><p>Cada download feito pelo lançador é verificado contra um checksum SHA-256 publicado por esta Wiki antes de ser usado. Se um arquivo baixado não corresponder, o lançador não o instala. Esta Wiki é a única fonte de verdade do lançador sobre qual é a versão «atual».</p>"
+    "title": "O que é o Algorab e por que ele foi feito",
+    "body_html": "<p>Manter os mods atualizados à mão significa voltar à página de download, comparar números de versão, baixar um arquivo novo e colocá-lo na pasta certa a cada lançamento. O Algorab automatiza isso: ele lê o manifesto de versões desta Wiki, compara com o que você já tem instalado e baixa apenas o que mudou.</p><p>Cada download feito pelo lançador é verificado contra um checksum SHA-256 publicado por esta Wiki antes de ser usado. Se um arquivo baixado não corresponder, o lançador não o instala. Esta Wiki é a única fonte de verdade do lançador sobre qual é a versão «atual».</p>"
    },
    {
     "id": "installing",
-    "title": "Como instalar o Corvus",
-    "body_html": "<p>O Corvus está disponível na página de download desta Wiki em duas formas:</p><ul><li><strong>Instaladores nativos para cada sistema operacional</strong> (<code>.msi</code> para Windows, <code>.dmg</code> para macOS, <code>.deb</code> para Linux) — a instalação segue os mesmos passos de um aplicativo de desktop comum e não precisa de Java. Como ainda não fizemos a assinatura de código, o sistema operacional mostra um aviso na primeira execução. No macOS, em vez de dar dois cliques, clique com o botão direito no aplicativo e escolha “Abrir”. No Windows, no aviso do SmartScreen, escolha “Mais informações” → “Executar assim mesmo”.</li><li><strong>O jar multiplataforma</strong> <code>{launcher_jar}</code> — o mesmo arquivo funciona tanto no Windows quanto no macOS e no Linux, mas exige o Java 25 ou mais recente já instalado. Se ele não abrir com dois cliques, abra o Terminal (ou o Prompt de Comando) na pasta em que você baixou o arquivo e execute <code>java -jar {launcher_jar}</code>.</li></ul>"
+    "title": "Como instalar o Algorab",
+    "body_html": "<p>O Algorab está disponível na página de download desta Wiki em duas formas:</p><ul><li><strong>Instaladores nativos para cada sistema operacional</strong> (<code>.msi</code> para Windows, <code>.dmg</code> para macOS, <code>.deb</code> para Linux) — a instalação segue os mesmos passos de um aplicativo de desktop comum e não precisa de Java. Como ainda não fizemos a assinatura de código, o sistema operacional mostra um aviso na primeira execução. No macOS, em vez de dar dois cliques, clique com o botão direito no aplicativo e escolha “Abrir”. No Windows, no aviso do SmartScreen, escolha “Mais informações” → “Executar assim mesmo”.</li><li><strong>O jar multiplataforma</strong> <code>{launcher_jar}</code> — o mesmo arquivo funciona tanto no Windows quanto no macOS e no Linux, mas exige o Java 25 ou mais recente já instalado. Se ele não abrir com dois cliques, abra o Terminal (ou o Prompt de Comando) na pasta em que você baixou o arquivo e execute <code>java -jar {launcher_jar}</code>.</li></ul>"
    },
    {
     "id": "pointing-at-existing-pack",
@@ -681,7 +681,7 @@
     "warnings": [
      "Limites conhecidos da V1.4.0: por enquanto só o Transceptor de Matéria roda no OKE (as outras máquinas passam depois, na V1.4.x); a tela holográfica de acessórios e a animação de montagem chegam na V1.4.x; a turbina eólica só funciona no Overworld. Os novos comandos /ouka reload e /ouka mount são para operadores.",
      "Ao atualizar de uma versão anterior, remova o jar antigo do OUKA (ouka-1.3.1+mc26.3.jar, por exemplo) da pasta mods. Com dois jars do OUKA, o jogo não inicia.",
-     "Você também pode instalar pelo Corvus Store: na primeira vez, clique em Obter no Corvus Store; depois, o Corvus Store o substitui sozinho pelas versões novas. Se você desativou as Atualizações automáticas, clique em Atualizar. (Para instalar manualmente, use a página do OUKA.)",
+     "Você também pode instalar pelo Algorab Store: na primeira vez, clique em Obter no Algorab Store; depois, o Algorab Store o substitui sozinho pelas versões novas. Se você desativou as Atualizações automáticas, clique em Atualizar. (Para instalar manualmente, use a página do OUKA.)",
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais recente, Fabric API 0.161.0+26.3 ou mais recente, GeckoLib 5.5.6 (incluído no zip) e Java 25."
     ]
    },
@@ -696,7 +696,7 @@
     ],
     "warnings": [
      "Ao atualizar de uma versão anterior, remova o jar antigo do OUKA (ouka-1.3.0+mc26.3.jar, por exemplo) da pasta mods. Com dois jars do OUKA, o jogo não inicia.",
-     "Você também pode instalar pelo Corvus Store: na primeira vez, clique em Obter no Corvus Store; depois, o Corvus Store o substitui sozinho pelas versões novas. Se você desativou as Atualizações automáticas, clique em Atualizar. (Para instalar manualmente, use a página do OUKA.)",
+     "Você também pode instalar pelo Algorab Store: na primeira vez, clique em Obter no Algorab Store; depois, o Algorab Store o substitui sozinho pelas versões novas. Se você desativou as Atualizações automáticas, clique em Atualizar. (Para instalar manualmente, use a página do OUKA.)",
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais recente, Fabric API 0.161.0+26.3 ou mais recente, GeckoLib 5.5.6 (incluído no zip) e Java 25."
     ]
    },
@@ -718,7 +718,7 @@
     ],
     "warnings": [
      "Esta versão corrige dois sons que nunca tocaram na V1.0.1, na V1.1.0 nem na V1.2.0: o clique do controle deslizante no terminal do farol OUKA e o som de confirmação do seletor do Ouka Caster. Se você usa uma versão anterior, substitua-a.",
-     "Você também pode instalar pelo Corvus Store: na primeira vez, clique em Obter no Corvus Store; depois, o Corvus Store o substitui sozinho pelas versões novas. Se você desativou as Atualizações automáticas, clique em Atualizar. (Para instalar manualmente, use a página do OUKA.)",
+     "Você também pode instalar pelo Algorab Store: na primeira vez, clique em Obter no Algorab Store; depois, o Algorab Store o substitui sozinho pelas versões novas. Se você desativou as Atualizações automáticas, clique em Atualizar. (Para instalar manualmente, use a página do OUKA.)",
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais recente, Fabric API 0.161.0+26.3 ou mais recente, GeckoLib 5.5.6 (incluído no zip) e Java 25."
     ]
    },
@@ -740,7 +740,7 @@
     ],
     "warnings": [
      "Esta versão corrige os dois defeitos da V1.1.0 (um bloco de liga de Ouka minerado não soltava nada; a tabela de itens do abrigo). Se você usa a V1.1.0, substitua-a.",
-     "Você também pode instalar pelo Corvus: na primeira vez, clique em Baixar no Corvus; depois, o Corvus o substitui pelas versões novas. (Para instalar manualmente, use a página do OUKA.)",
+     "Você também pode instalar pelo Algorab: na primeira vez, clique em Baixar no Algorab; depois, o Algorab o substitui pelas versões novas. (Para instalar manualmente, use a página do OUKA.)",
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais recente, Fabric API 0.161.0+26.3 ou mais recente, GeckoLib 5.5.6 (incluído no zip) e Java 25."
     ]
    },
@@ -762,7 +762,7 @@
     ],
     "warnings": [
      "Se você está na V1.0.0, troque: a V1.0.0 trava o jogo assim que um projétil circular entra em cena, com «Transparência aprimorada» ligada nas configurações de vídeo.",
-     "Instale pela página do OUKA. O Corvus mostra o changelog do OUKA, mas não instala o OUKA.",
+     "Instale pela página do OUKA. O Algorab mostra o changelog do OUKA, mas não instala o OUKA.",
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais recente, Fabric API 0.161.0+26.3 ou mais recente, GeckoLib 5.5.6 (incluído no zip) e Java 25."
     ]
    },
@@ -787,7 +787,7 @@
     ],
     "warnings": [
      "Uma cor faz a tela piscar em branco no impacto (Celestial White). Ela não pisca se a opção “Ocultar flashes de raios” do Minecraft estiver ligada.",
-     "Instale pela página do OUKA. O Corvus mostra o changelog do OUKA, mas não instala o OUKA.",
+     "Instale pela página do OUKA. O Algorab mostra o changelog do OUKA, mas não instala o OUKA.",
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais recente, Fabric API 0.161.0+26.3 ou mais recente, GeckoLib 5.5.6 (incluído no zip) e Java 25."
     ]
    }
@@ -963,13 +963,13 @@
     "release": "V1.3 1017",
     "date": "2026-10-25",
     "title": "HoyoBrainrot",
-    "summary": "Uma atualização cosmética: um pacote de recursos embutido, HoyoBrainrot, feito pela Corvus Dev. Dê nome a um Totem da Imortalidade numa bigorna e o ícone vira uma imagem animada. O jogo em si não muda.",
+    "summary": "Uma atualização cosmética: um pacote de recursos embutido, HoyoBrainrot, feito pela Algorab Developer Program. Dê nome a um Totem da Imortalidade numa bigorna e o ícone vira uma imagem animada. O jogo em si não muda.",
     "highlights": [
      "Dê a um Totem da Imortalidade, numa bigorna, um dos nomes abaixo e o ícone vira uma imagem animada de personagem: na barra de atalhos, no inventário e na sua mão. Um totem sem nome, ou com um nome fora da lista, fica como antes.",
      "Nomes: evernight, stelle, breakdance, lucia, nefer, march7, gerta, jahoda, cipher, yunli, black swan, ica, vivian, the gerta, nekomata, soukaku draw, soukaku picture, ju fufu, harumasa. Grafias com inicial maiúscula e algumas variantes como \"march 7th\" também funcionam.",
      "Quando um totem é ativado, você ouve o som deste pacote em vez do som vanilla.",
      "O pacote já vem ativado. Para desativar, tire HoyoBrainrot em Opções, Pacotes de recursos: a imagem e o som do totem voltam ao vanilla.",
-     "O jar fica cerca de 23 MB maior. O pacote foi feito pela Corvus Dev."
+     "O jar fica cerca de 23 MB maior. O pacote foi feito pela Algorab Developer Program."
     ],
     "warnings": [
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais recente, Fabric API 0.161.0+26.3 ou mais recente, GeckoLib 5.5.6 ou mais recente e Java 25.",
@@ -1021,10 +1021,10 @@
    {
     "id": "astraea-v1.1.0",
     "title": "The Cyber-Relics & Mythic Pedestals",
-    "summary": "Um sistema de segurança alimentado pela rede da OUKA — lasers, câmeras e o Corvus Book Pro que mostra a imagem ao vivo delas —, o Plasma Saber e duas espadas que nunca são fabricadas: Excalibur e Muramasa, arrancadas de seus pedestais com a sua própria mão.",
+    "summary": "Um sistema de segurança alimentado pela rede da OUKA — lasers, câmeras e o Algorab Book Pro que mostra a imagem ao vivo delas —, o Plasma Saber e duas espadas que nunca são fabricadas: Excalibur e Muramasa, arrancadas de seus pedestais com a sua própria mão.",
     "highlights": [
      "Security Laser: um fio de armadilha invisível que emite um sinal de redstone e um alerta, ou um feixe letal carmesim (10 de dano por segundo). Os Optical Prisms desviam o feixe em 90° para formar uma grade. Ele poupa o dono e os jogadores em quem o dono confia, e não quebra blocos.",
-     "Security Camera e Corvus Book Pro: as câmeras seguem o que se move; o CorvusOS, no notebook, mostra a imagem real de cada câmera vinculada, gira a câmera, alterna visão noturna e térmica, traça a energia da OUKA, muda o modo dos lasers, tranca e destranca fechaduras eletrônicas e edita sua lista de confiança.",
+     "Security Camera e Algorab Book Pro: as câmeras seguem o que se move; o AlgorabOS, no notebook, mostra a imagem real de cada câmera vinculada, gira a câmera, alterna visão noturna e térmica, traça a energia da OUKA, muda o modo dos lasers, tranca e destranca fechaduras eletrônicas e edita sua lista de confiança.",
      "Plasma Saber: usar acende a lâmina; o zumbido sobe a cada giro e a cada golpe. Golpeie quando um disparo chegar e a flecha, o tridente ou a bola de fogo volta para quem atirou. Seis Saber Crystals mudam a cor no Diamond Polishing Bench.",
      "Excalibur: coloque o Hallowed Anvil Pedestal em Y 180 ou mais sob o céu aberto do meio-dia e segure usar por três segundos para sacá-la. Segure e solte para o Excalibur Ray (50 blocos, 5 de largura, barrado por paredes); enquanto ela está na sua mão, você e aqueles em quem confia têm Regeneração II e Resistência II.",
      "Muramasa: coloque o Blood-Bound Shrine em Y 0 ou abaixo, no escuro; sacá-la custa metade da sua vida máxima. Ela luta com os controles da Celestial Blade, devolve como vida um quinto do dano causado, e o corte ao embainhar ignora armadura."
@@ -1053,17 +1053,17 @@
    {
     "id": "astraea-v1.5.2",
     "title": "Heavy Industry",
-    "summary": "As máquinas industriais foram reconstruídas no tamanho de uma planta real – um forno a arco com seis blocos de altura, uma coluna de destilação de doze blocos, uma torre de vinte blocos –, todas na rede da OUKA. Cada item agora informa como é usado, e o Corvus Book Pro vira um aparelho que se coloca sobre uma superfície. A partir desta versão, o OUKA 1.4.0 ou mais recente é obrigatório.",
+    "summary": "As máquinas industriais foram reconstruídas no tamanho de uma planta real – um forno a arco com seis blocos de altura, uma coluna de destilação de doze blocos, uma torre de vinte blocos –, todas na rede da OUKA. Cada item agora informa como é usado, e o Algorab Book Pro vira um aparelho que se coloca sobre uma superfície. A partir desta versão, o OUKA 1.4.0 ou mais recente é obrigatório.",
     "highlights": [
      "Dez plantas, colocadas inteiras: Refinery Smelter 5×5×6, Still 3×3×12, Crystalliser 5×5×5, Purifier 5×4×4, Synthesizer 5×5×5, Heavy Mill 7×7×6, Dynamo 7×3×4, Transformer 4×3×5, High-Voltage Pylon 5×5×20 e Fission Core 9×9×10. Usar o item em terreno livre faz a planta surgir voltada para quem usou; usar qualquer parte a abre, e quebrar qualquer parte a devolve como um único item.",
      "Elas se movem: o forno abaixa seus eletrodos, levanta o teto, inclina e despeja; os visores da coluna acendem conforme a fervura sobe; o tambor do moinho gira; o volante do dínamo desacelera quando o fogo se apaga; um núcleo em funcionamento brilha em azul e suas faixas ficam incandescentes quando superaquece. Plantas em funcionamento iluminam o chão ao redor.",
      "Lotes maiores pelo mesmo custo: oito pós ou quatro minérios brutos entram na linha de refino e saem como vinte lingotes; o Synthesizer produz quatro de uma vez; o Heavy Mill transforma quatro minérios em doze pós de OUKA. A energia e a água de cada item não mudam. Um funil ou um cano encostado em qualquer parte de uma planta de processamento a alimenta e retira o produto.",
      "Segurar Shift sobre qualquer item: cada um dos 284 itens e blocos do ASTRAEA agora informa o que é, como é usado e do que precisa.",
-     "Corvus Book Pro: colocá-lo sobre uma mesa ou no chão e usá-lo ali para abrir o CorvusOS. Ele abre para o dono e para os jogadores em quem ele confia, mantém seus links e sua carga, e carrega a partir da rede da OUKA onde estiver."
+     "Algorab Book Pro: colocá-lo sobre uma mesa ou no chão e usá-lo ali para abrir o AlgorabOS. Ele abre para o dono e para os jogadores em quem ele confia, mantém seus links e sua carga, e carrega a partir da rede da OUKA onde estiver."
     ],
     "warnings": [
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais recente, Fabric API 0.161.0+26.3 ou mais recente, Java 25 e – novidade nesta versão – OUKA 1.4.0 ou mais recente. As máquinas que estavam em um mundo da V1.5.0 continuam como blocos únicos e não funcionam: é preciso quebrá-las e colocá-las de novo. O Heavy Mill não é mais construído como cubo; seu revestimento e seu rotor são o que ele é feito. Instalar o ASTRAEA junto com o Alpha não é suportado.",
-     "Corrigido: adicionar um jogador à lista de confiança do Corvus Book Pro podia registrar o jogador errado em alguns servidores, e as câmeras continuavam seguindo essas pessoas. Agora um jogador online é encontrado pelo nome, e o resultado aparece dentro da janela do CorvusOS. Não nesta versão: os outros grupos reconstruídos (logística, defesa, forja e equipamento, veículos e fronteira, mito, mobília) virão em versões seguintes; os sons das máquinas foram gerados e verificados apenas por medição."
+     "Corrigido: adicionar um jogador à lista de confiança do Algorab Book Pro podia registrar o jogador errado em alguns servidores, e as câmeras continuavam seguindo essas pessoas. Agora um jogador online é encontrado pelo nome, e o resultado aparece dentro da janela do AlgorabOS. Não nesta versão: os outros grupos reconstruídos (logística, defesa, forja e equipamento, veículos e fronteira, mito, mobília) virão em versões seguintes; os sons das máquinas foram gerados e verificados apenas por medição."
     ]
    },
    {
@@ -1341,14 +1341,14 @@
    },
    {
     "id": "tsubomi-v2.3-3124",
-    "title": "Tsubomi V2.3 3124 — Flor Estelar Corvus",
-    "summary": "O Tsubomi V2.3 3124 adiciona Flor Estelar Corvus (preto OLED): a linha do Max, a Elytra For Corvus com asas de corvo, mineração em 14×14 e a passiva de conjunto mais forte.",
+    "title": "Tsubomi V2.3 3124 — Flor Estelar Algorab",
+    "summary": "O Tsubomi V2.3 3124 adiciona Flor Estelar Algorab (preto OLED): a linha do Max, a Elytra For Algorab com asas de corvo, mineração em 14×14 e a passiva de conjunto mais forte.",
     "highlights": [
-     "Flor Estelar Corvus tem a linha de Flor Estelar Max (lingote de liga, picareta, machado, pá, enxada, lança, capacete, peitoral, calças, botas, escudo, arco e flecha) mais a Elytra For Corvus. A durabilidade é 1.8× a do UltraCore, as ferramentas mineram 2× mais rápido que as do Ultimate, e o ataque é o mesmo do Max.",
-     "O lingote de liga Corvus é feito com 8 lingotes de liga Ultimate e um emblema Corvus, rendendo 8 lingotes. O emblema Corvus é feito com uma Cabeça do Dragão, um Ovo do Dragão, um emblema oceânico, um emblema de Aomori, um emblema da floresta e um lingote de Netherstar. Um lingote de Netherstar é feito com 3 pacotes de estrelas do Nether, e um pacote, com 9 estrelas do Nether (27 estrelas do Nether no total).",
-     "A picareta Corvus acrescenta mineração em 14×14 (agachar e usar alterna entre 1×1, 3×3, 5×5, 7×7, 9×9, 11×11 e 14×14, depois Quick Mining).",
-     "A Elytra For Corvus é feita com 2 emblemas Corvus, 3 lingotes de Netherstar, um élitro e 3 lingotes de liga Corvus. Tem asas de penas de corvo e voa 8× mais rápido que um élitro; a durabilidade é a de um élitro, mas ela se desgasta 8× mais rápido.",
-     "Vestir um conjunto completo de armadura Flor Estelar Corvus dá passivas: dano de queda −55% (inativo ao vestir a Elytra For Corvus), dano de fogo −68%, dano de veneno −37%, dano de lava −71%, o estrondo sônico da Sentinela −64%, velocidade de mineração +11%, velocidade de movimento +24%, ataque +17%, e 66% de chance de cada novo efeito nocivo ser ignorado. Ao cair e pousar, uma onda de choque causa 61% do dano de queda aos mobs hostis num raio de 4 blocos, e os blocos de magma não causam mais dano. Vestir apenas parte do conjunto não dá nenhum desses efeitos."
+     "Flor Estelar Algorab tem a linha de Flor Estelar Max (lingote de liga, picareta, machado, pá, enxada, lança, capacete, peitoral, calças, botas, escudo, arco e flecha) mais a Elytra For Algorab. A durabilidade é 1.8× a do UltraCore, as ferramentas mineram 2× mais rápido que as do Ultimate, e o ataque é o mesmo do Max.",
+     "O lingote de liga Algorab é feito com 8 lingotes de liga Ultimate e um emblema Algorab, rendendo 8 lingotes. O emblema Algorab é feito com uma Cabeça do Dragão, um Ovo do Dragão, um emblema oceânico, um emblema de Aomori, um emblema da floresta e um lingote de Netherstar. Um lingote de Netherstar é feito com 3 pacotes de estrelas do Nether, e um pacote, com 9 estrelas do Nether (27 estrelas do Nether no total).",
+     "A picareta Algorab acrescenta mineração em 14×14 (agachar e usar alterna entre 1×1, 3×3, 5×5, 7×7, 9×9, 11×11 e 14×14, depois Quick Mining).",
+     "A Elytra For Algorab é feita com 2 emblemas Algorab, 3 lingotes de Netherstar, um élitro e 3 lingotes de liga Algorab. Tem asas de penas de corvo e voa 8× mais rápido que um élitro; a durabilidade é a de um élitro, mas ela se desgasta 8× mais rápido.",
+     "Vestir um conjunto completo de armadura Flor Estelar Algorab dá passivas: dano de queda −55% (inativo ao vestir a Elytra For Algorab), dano de fogo −68%, dano de veneno −37%, dano de lava −71%, o estrondo sônico da Sentinela −64%, velocidade de mineração +11%, velocidade de movimento +24%, ataque +17%, e 66% de chance de cada novo efeito nocivo ser ignorado. Ao cair e pousar, uma onda de choque causa 61% do dano de queda aos mobs hostis num raio de 4 blocos, e os blocos de magma não causam mais dano. Vestir apenas parte do conjunto não dá nenhum desses efeitos."
     ],
     "warnings": [
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais novo, Fabric API 0.161.0+26.3 ou mais nova e Java 25. Nenhum outro mod é necessário; o Cherry é opcional.",
@@ -1357,13 +1357,13 @@
    },
    {
     "id": "tsubomi-v2.4-0204",
-    "title": "Tsubomi V2.4 0204 — Flor Estelar Corvus Mythic e Mythic Pearl, Wings, bloco de Estrela do Nether",
-    "summary": "O Tsubomi V2.4 0204 adiciona Flor Estelar Corvus Mythic e Flor Estelar Corvus Mythic Pearl, as Wings, o bloco de Estrela do Nether, um Gerador de Estruturas que alcança 256×300×256 e a Superfície, que pode ser construída até y = 1999, e corrige dois bugs.",
+    "title": "Tsubomi V2.4 0204 — Flor Estelar Algorab Mythic e Mythic Pearl, Wings, bloco de Estrela do Nether",
+    "summary": "O Tsubomi V2.4 0204 adiciona Flor Estelar Algorab Mythic e Flor Estelar Algorab Mythic Pearl, as Wings, o bloco de Estrela do Nether, um Gerador de Estruturas que alcança 256×300×256 e a Superfície, que pode ser construída até y = 1999, e corrige dois bugs.",
     "highlights": [
-     "Correções: vestir um conjunto completo de Flor Estelar Corvus com a Elytra For Corvus já não causa nenhum dano de queda (antes, o bônus de queda só era desligado, então as quedas ainda causavam dano total); e a Vara de Pesca UltraFast Flor Estelar agora pesca de verdade (a boia costumava desaparecer logo depois do lançamento).",
-     "A Flor Estelar Corvus Mythic (preto com roxo escuro) tem a linha da Flor Estelar Max e fica acima da Corvus em tudo: 1.3× de durabilidade e velocidade de mineração, ferramentas que causam 10% a mais de dano, picareta de até 16×16, e uma passiva de conjunto completo de queda −65%, fogo −74%, veneno −45%, lava −77%, estrondo sônico da Sentinela −72%, velocidade de mineração +15%, velocidade de movimento +30%, ataque +22%, 72% de chance de ignorar cada novo efeito nocivo e uma onda de choque ao pousar de 70% da queda. A Flor Estelar Corvus Mythic Pearl (preto com branco pérola) fica acima da Mythic por sua vez: mais 1.25×, picareta de até 18×18, e passivas de −75%, −80%, −53%, −83%, −80%, +19%, +36%, +27%, 78% e 80%.",
-     "O lingote de liga Mythic é feito com 7 lingotes de liga Corvus, um emblema Corvus e um bloco de Estrela do Nether, rendendo 7 lingotes. O lingote de liga Pearl é feito com 6 lingotes de liga Mythic, 2 blocos de Estrela do Nether e uma Pérola de Ender, rendendo 6 lingotes. O bloco de Estrela do Nether é feito com 9 lingotes de Netherstar e se desfaz em 9.",
-     "As Wings são um item de peitoral. Abra-as no ar com um pulo, como com um élitro, e voe pelo céu; elas precisam de pelo menos 5 de fome para voar, cansam conforme a distância percorrida e tornam as quedas inofensivas. As Wings são feitas com 4 lingotes de liga Mythic, 3 blocos de Estrela do Nether, uma Elytra For Corvus e um emblema Corvus, e contam como peitoral dos conjuntos Mythic e Pearl.",
+     "Correções: vestir um conjunto completo de Flor Estelar Algorab com a Elytra For Algorab já não causa nenhum dano de queda (antes, o bônus de queda só era desligado, então as quedas ainda causavam dano total); e a Vara de Pesca UltraFast Flor Estelar agora pesca de verdade (a boia costumava desaparecer logo depois do lançamento).",
+     "A Flor Estelar Algorab Mythic (preto com roxo escuro) tem a linha da Flor Estelar Max e fica acima da Algorab em tudo: 1.3× de durabilidade e velocidade de mineração, ferramentas que causam 10% a mais de dano, picareta de até 16×16, e uma passiva de conjunto completo de queda −65%, fogo −74%, veneno −45%, lava −77%, estrondo sônico da Sentinela −72%, velocidade de mineração +15%, velocidade de movimento +30%, ataque +22%, 72% de chance de ignorar cada novo efeito nocivo e uma onda de choque ao pousar de 70% da queda. A Flor Estelar Algorab Mythic Pearl (preto com branco pérola) fica acima da Mythic por sua vez: mais 1.25×, picareta de até 18×18, e passivas de −75%, −80%, −53%, −83%, −80%, +19%, +36%, +27%, 78% e 80%.",
+     "O lingote de liga Mythic é feito com 7 lingotes de liga Algorab, um emblema Algorab e um bloco de Estrela do Nether, rendendo 7 lingotes. O lingote de liga Pearl é feito com 6 lingotes de liga Mythic, 2 blocos de Estrela do Nether e uma Pérola de Ender, rendendo 6 lingotes. O bloco de Estrela do Nether é feito com 9 lingotes de Netherstar e se desfaz em 9.",
+     "As Wings são um item de peitoral. Abra-as no ar com um pulo, como com um élitro, e voe pelo céu; elas precisam de pelo menos 5 de fome para voar, cansam conforme a distância percorrida e tornam as quedas inofensivas. As Wings são feitas com 4 lingotes de liga Mythic, 3 blocos de Estrela do Nether, uma Elytra For Algorab e um emblema Algorab, e contam como peitoral dos conjuntos Mythic e Pearl.",
      "O Gerador de Estruturas agora alcança 256×300×256 (o deslocamento vai até ±512, e a varredura dos cantos olha 320 blocos ao redor). A Superfície agora pode ser construída até y = 1999 (era y = 319). Ambas as mudanças precisam do Tsubomi no servidor e em todos os clientes. Salvar ou carregar uma área muito grande exige muita memória, então o jogo recusa o que não couber na memória livre e informa quanto precisa (um 256×300×256 completo precisa de cerca de 8,5 GB)."
     ],
     "warnings": [
@@ -1382,7 +1382,7 @@
      "Flor Estelar Phoenix (azul-marinho cósmico profundo e rosa magenta), Flor Estelar Phoenix Mythic (roxo de nebulosa e rosa neon, com ouro topázio) e Flor Estelar Phoenix Zenith (branco platina e ciano cósmico) são três séries novas. Cada uma tem o sortimento de Flor Estelar Max — 13 itens — e suas próprias Wings.",
      "Cada série fica acima da anterior, Phoenix acima de Mythic Pearl: 1.25 vez a durabilidade e a velocidade de mineração a cada passo, ferramentas que batem 10% mais forte, picaretas de até 20×20, 22×22 e 24×24, e passivas do conjunto que sobem a cada passo — queda −82%, −88%, −94%; fogo −85%, −90%, −95%; veneno −60%, −68%, −78%; lava −87%, −91%, −95%; onda sônica do Defensor −85%, −89%, −94%; velocidade de mineração +23%, +27%, +32%; velocidade de movimento +42%, +48%, +55%; ataque +32%, +37%, +43%; uma chance de 82%, 86% e 90% de ignorar cada novo efeito nocivo; e uma onda de choque no pouso de 85%, 90% e 95% da queda.",
      "Cada liga custa mais que a anterior: o lingote de liga Phoenix é feito com 5 lingotes de liga Pearl, 3 blocos de Estrela do Nether e um Totem da Imortalidade, rendendo 5 lingotes; o lingote de liga Phoenix Mythic com 4 lingotes de liga Phoenix, 4 blocos de Estrela do Nether e uma Maçã Dourada Encantada, rendendo 4; o lingote de liga Phoenix Zenith com 4 lingotes de liga Phoenix Mythic, 4 blocos de Estrela do Nether e um Sinalizador, rendendo 4.",
-     "Cada série tem suas próprias Wings, mais fortes que as anteriores: aceleram e voam 1.12, 1.26 e 1.40 vez mais rápido que as primeiras Wings, duram 3000, 4500 e 7000 contra 2000, e cansam menos a cada bloco percorrido. Cada uma é feita com as Wings da série anterior, 4 lingotes da própria liga, 3 blocos de Estrela do Nether e um emblema Corvus, conta só como peitoral do próprio conjunto e torna as quedas inofensivas.",
+     "Cada série tem suas próprias Wings, mais fortes que as anteriores: aceleram e voam 1.12, 1.26 e 1.40 vez mais rápido que as primeiras Wings, duram 3000, 4500 e 7000 contra 2000, e cansam menos a cada bloco percorrido. Cada uma é feita com as Wings da série anterior, 4 lingotes da própria liga, 3 blocos de Estrela do Nether e um emblema Algorab, conta só como peitoral do próprio conjunto e torna as quedas inofensivas.",
      "As Wings Phoenix passam do azul-marinho a pontas rosa magenta, com pequenos pontos de estrela violeta que cintilam; as Wings Phoenix Mythic brilham num rosa neon trêmulo com bordas de ouro topázio e espalham poeira de estrelas ao bater; as Wings Phoenix Zenith são de platina e ciano translúcidos, com um brilho que percorre as cores do arco-íris."
     ],
     "warnings": [
@@ -1400,15 +1400,15 @@
     "highlights": [
      "O Starbloom Ziz The Final é a última série, acima do Starbloom Phoenix Zenith, em Obsidiana do Vazio, Ouro da Coroa e Ciano bioluminescente. Tem a linha do Starbloom Max — 13 itens: lingote de liga, picareta de pedreira, machado de derrubada, pá de nivelamento, enxada de colheita, lança, as quatro peças de armadura, escudo, arco e flecha — e asas próprias. A durabilidade e a velocidade de mineração são 1.25× as da Phoenix Zenith.",
      "O conjunto Ziz completo não sofre dano de queda nem dano de lava, nada na lava como na água sem pegar fogo, e um golpe fatal estilhaça toda a armadura em vez de matar você — uma única vez, e não contra /kill nem o vazio.",
-     "O lingote de liga Ziz é feito com 3 lingotes de liga Phoenix Zenith, 4 blocos de estrela do Nether e 1 bloco de netherita, e resulta em 3 lingotes. As asas Ziz são feitas com as Asas Phoenix Zenith, 4 lingotes Ziz, 3 blocos de estrela do Nether e um Emblema de Corvus.",
+     "O lingote de liga Ziz é feito com 3 lingotes de liga Phoenix Zenith, 4 blocos de estrela do Nether e 1 bloco de netherita, e resulta em 3 lingotes. As asas Ziz são feitas com as Asas Phoenix Zenith, 4 lingotes Ziz, 3 blocos de estrela do Nether e um Emblema de Algorab.",
      "As asas Ziz têm 14 níveis de velocidade de voo, de 0.5× a 7.0× a aceleração das asas base, em passos de 0.5×. ] sobe um nível, [ desce um nível; o padrão é 3.0× (nível 6).",
      "Com uma picareta Starbloom na mão, Agachar + clique direito abre o controle deslizante de área de mineração: um valor e um controle escolhem a área que um golpe quebra, de 1×1 a 26×26 e Mineração Rápida, conforme a picareta que você segura permite. O servidor não muda mais a área com Agachar + usar."
     ],
     "warnings": [
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais novo, Fabric API 0.161.0+26.3 ou mais nova e Java 25. Nenhum outro mod é necessário; o Cherry é opcional.",
      "O Tsubomi não pode ser usado junto com o Alpha. Se houver um único mod do Alpha instalado, o jogo não inicia; remova antes os jars do Alpha.",
-     "Além do nome, das cores, do conceito e dos poderes de Ziz dados pela Corvus Dev, todos os números e receitas dessas séries são a primeira estimativa do desenvolvedor e podem ser rebalanceados.",
-     "Os nomes em japonês ainda não foram aprovados pela Corvus Dev.",
+     "Além do nome, das cores, do conceito e dos poderes de Ziz dados pela Algorab Developer Program, todos os números e receitas dessas séries são a primeira estimativa do desenvolvedor e podem ser rebalanceados.",
+     "Os nomes em japonês ainda não foram aprovados pela Algorab Developer Program.",
      "O controle deslizante de área de mineração e os poderes de Ziz foram testados só em um cliente real de um jogador, não em um servidor dedicado nem em multijogador.",
      "O som do bater das asas Ziz ainda não foi feito."
     ]
@@ -1427,9 +1427,9 @@
     "warnings": [
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais novo, Fabric API 0.161.0+26.3 ou mais nova e Java 25. Nenhum outro mod é necessário; o Cherry é opcional.",
      "O Tsubomi não pode ser usado junto com o Alpha. Se houver um único mod do Alpha instalado, o jogo não inicia; remova antes os jars do Alpha.",
-     "O conjunto de presentes segue a leitura do desenvolvedor sobre \"obtível na Sobrevivência\". A lista de exclusões vem da aba Operador do modo criativo e das regras das notas de versão, e Corvus Dev pode alterá-la.",
+     "O conjunto de presentes segue a leitura do desenvolvedor sobre \"obtível na Sobrevivência\". A lista de exclusões vem da aba Operador do modo criativo e das regras das notas de versão, e Algorab Developer Program pode alterá-la.",
      "A verificação de versão, um servidor dedicado, o multiplayer e os jars reais de Halia, OUKA e Cherry não foram testados nesta versão. Os testes usaram a versão própria do Tsubomi.",
-     "Os nomes e textos em japonês ainda não foram aprovados pela Corvus Dev.",
+     "Os nomes e textos em japonês ainda não foram aprovados pela Algorab Developer Program.",
      "O som e as partículas do baú são os do jogo. Nenhum som personalizado é adicionado nesta versão."
     ]
    },
@@ -1441,15 +1441,15 @@
      "/tsubomi gift mantém o nome e não exige direitos de operador, então funciona no Survival com os cheats desativados. Cada jogador pode resgatá-lo uma vez por campanha.",
      "Um baú de presente aparece a dois blocos à sua frente. Somente você pode abri-lo ou quebrá-lo. Clique com o botão direito para abrir o seletor de presentes.",
      "O seletor é uma janela no estilo Creative com abas de categoria por mod, uma caixa de busca, uma grade rolável e uma dica ao passar o mouse. Clique em um item e depois pressione Take. Você recebe exatamente um item e o baú é removido.",
-     "Armas, armaduras, elytras, escudos, arcos e as linhas de equipamento do Tsubomi (Starbloom, Ziz, Phoenix, Corvus e suas asas) nunca são oferecidos. Ferramentas simples como picaretas, pás, enxadas, varas de pescar e tesouras continuam sendo oferecidas.",
+     "Armas, armaduras, elytras, escudos, arcos e as linhas de equipamento do Tsubomi (Starbloom, Ziz, Phoenix, Algorab e suas asas) nunca são oferecidos. Ferramentas simples como picaretas, pás, enxadas, varas de pescar e tesouras continuam sendo oferecidas.",
      "Itens exclusivos do Creative nunca são oferecidos, e o spawner e a pintura continuam disponíveis. Se não houver espaço para um baú, o seletor abre imediatamente."
     ],
     "warnings": [
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais novo, Fabric API 0.161.0+26.3 ou mais nova e Java 25. Nenhum outro mod é necessário; o Cherry é opcional.",
      "O Tsubomi não pode ser usado junto com o Alpha. Se houver um único mod do Alpha instalado, o jogo não inicia; remova antes os jars do Alpha.",
-     "As regras de Survival e de equipamento refletem a interpretação do desenvolvedor. Corvus Dev pode alterar as listas.",
+     "As regras de Survival e de equipamento refletem a interpretação do desenvolvedor. Algorab Developer Program pode alterar as listas.",
      "A verificação de versão, um servidor dedicado, o multiplayer e os jars reais de Halia, OUKA e Cherry não foram testados nesta versão.",
-     "O texto em japonês ainda não foi aprovado pela Corvus Dev.",
+     "O texto em japonês ainda não foi aprovado pela Algorab Developer Program.",
      "O som e as partículas do baú são do próprio jogo. O seletor foi verificado em um cliente real em apenas um tamanho de tela (1280×720)."
     ]
    }
@@ -1671,7 +1671,7 @@
     "warnings": [
      "Requisitos: Minecraft 26.3, Fabric Loader 0.19.5 ou mais recente, Fabric API 0.161.0+26.3 ou mais recente, Java 25. Em multijogador, o Halia também precisa estar instalado no servidor.",
      "O Halia V1.4 agora usa o GeckoLib 5.5.6. Ele vem dentro do jar do Halia, então não há nada a mais para instalar; se outro mod trouxer o mesmo GeckoLib, o jogo usa só uma cópia.",
-     "A geração natural de cada criatura pode ser desligada individualmente pelo aplicativo Corvus. As chaves ficam travadas ligadas por dois meses após o lançamento do V1.4; a data de término do bloqueio é definida no dia do lançamento."
+     "A geração natural de cada criatura pode ser desligada individualmente pelo aplicativo Algorab. As chaves ficam travadas ligadas por dois meses após o lançamento do V1.4; a data de término do bloqueio é definida no dia do lançamento."
     ]
    },
    {
@@ -1770,20 +1770,20 @@
     "title": "Halia V1.1 — a Halia Blade: uma katana, 90 combos e espadas invocadas",
     "summary": "O Halia V1.1 adiciona a Halia Blade, uma katana usada na cintura e manejada no tempo certo: combos no chão e no ar, ataques carregados, espadas invocadas, mira travada, defesa e movimentos de manobra. Vêm 8 materiais de criação, 6 suportes de lâmina e 11 lâminas nomeadas. O Stellar Remote da V1.0 não muda.",
     "highlights": [
-     "Halia Blade: crie-a com Soulsteel Ingots, uma Corvus Soul, uma espada de ferro e um tijolo do Nether. Use (clique direito) para atacar; apertar de novo no momento certo continua o combo. São 90 movimentos de combo no total, no chão e no ar.",
+     "Halia Blade: crie-a com Soulsteel Ingots, uma Algorab Soul, uma espada de ferro e um tijolo do Nether. Use (clique direito) para atacar; apertar de novo no momento certo continua o combo. São 90 movimentos de combo no total, no chão e no ar.",
      "Ataques carregados: segure usar e solte quando as partículas aparecerem para Judgement Cut; solte logo antes de elas aparecerem para a versão mais forte. Agachar + para frente + usar é Rapid Slash, agachar + para trás + usar é Upper Slash.",
      "Espadas invocadas: o botão de escolher bloco (clique do meio) lança uma espada no seu alvo por 1 ponto de experiência; 4 padrões maiores — Spiral, Storm, Blistering e Heavy Rain Swords — custam 5 cada.",
      "Mira travada, defesa e movimento: segure agachar para travar em um inimigo; agachar parado protege contra ataques à distância; as manobras com o botão de correr lançam você até um inimigo, por cima dele ou para longe dele; no ar, você pode pular de um inimigo ou de uma parede.",
      "Ranque de concentração: acertar golpes sobe um ranque mostrado no canto superior direito, de D até SSS; ele cai de novo quando você para de lutar. Ranques altos aumentam o dano.",
-     "Desgaste, aprimoramento e reforja: uma lâmina quebra após 101 golpes e deixa cair uma alma que guarda o seu registro. Na bigorna, uma Corvus Soul aprimora uma lâmina (1 nível por alma), e uma lâmina quebrada pode ser reforjada.",
-     "Materiais e suportes: 8 materiais, de Tiny Corvus Soul a Abyssal Geode, cada um com receita, e 6 Halia Stands (de piso e de parede) para exibir uma lâmina.",
+     "Desgaste, aprimoramento e reforja: uma lâmina quebra após 101 golpes e deixa cair uma alma que guarda o seu registro. Na bigorna, uma Algorab Soul aprimora uma lâmina (1 nível por alma), e uma lâmina quebrada pode ser reforjada.",
+     "Materiais e suportes: 8 materiais, de Tiny Algorab Soul a Abyssal Geode, cada um com receita, e 6 Halia Stands (de piso e de parede) para exibir uma lâmina.",
      "Guia no jogo: 57 progressos. O ramo “Blade MoveSets” lista cada movimento com as teclas definidas no seu computador, e clicar em um progresso de material ou de lâmina mostra a receita dele."
     ],
     "warnings": [
      "Requer Minecraft 26.3, Fabric Loader 0.19.5 ou mais recente, Fabric API 0.161.0+26.3 ou mais recente e Java 25. No multijogador, o Halia também precisa estar instalado no servidor.",
      "O Stellar Remote continua destruindo de forma permanente áreas muito grandes do mundo: faça um backup do seu mundo antes de apertar o botão. Nada nele mudou nesta versão.",
      "Mundos da V1.0.0 abrem do jeito que estão; esta versão apenas acrescenta conteúdo. Não volte para a 1.0.0 com um mundo que tenha lâminas, materiais ou suportes: eles seriam apagados.",
-     "Ainda não confirmado pelo estúdio: jogar em um servidor multijogador dedicado, no Windows e usar junto com outros mods do Corvus Store. Em primeira pessoa, a lâmina na bainha fica quase sempre fora de vista até você atacar."
+     "Ainda não confirmado pelo estúdio: jogar em um servidor multijogador dedicado, no Windows e usar junto com outros mods do Algorab Store. Em primeira pessoa, a lâmina na bainha fica quase sempre fora de vista até você atacar."
     ]
    },
    {

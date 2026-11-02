@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Corvus portal — the one reader of the wiki's data.
+"""Algorab portal — the one reader of the wiki's data.
 
 Everything the portal shows comes through here, at build time, from this repository:
 
   data/i18n/<lang>.json, data/*.json, glimpse_manifest.json, releases.json, upcoming.json
   scripts/build_*.py copy tables (imported — the owner's routine edits them, so they must stay importable)
-  downloads/<brand zips and jars>  (requirements from fabric.mod.json; the Store catalogue from the Corvus jar)
+  downloads/<brand zips and jars>  (requirements from fabric.mod.json; the Store catalogue from the Algorab jar)
   web/src/i18n/legacy.json         (copy that only ever lived in the pre-4.0 portal; see capture_legacy_strings.py)
 
 and is written to web/.data/wiki.json, which the Next.js build reads. Nothing in the repository is written,
@@ -168,7 +168,7 @@ def parse_properties(text: str) -> dict[str, str]:
 
 
 def store_catalogue(manifest: dict) -> dict:
-    """The Corvus Store's own strings (13 languages) from the jar the manifest publishes."""
+    """The Algorab Store's own strings (13 languages) from the jar the manifest publishes."""
     jar = WIKI / "downloads" / manifest["launcher"]["file_name"]
     if not jar.exists():
         die(f"the manifest's launcher jar {jar.name} is not in downloads/")
@@ -180,7 +180,7 @@ def store_catalogue(manifest: dict) -> dict:
             props = parse_properties(z.read(name).decode("utf-8"))
         except KeyError:
             die(f"{jar.name} has no {name}")
-        # Corvus Island is abolished (owner decision): its strings are not carried into the portal.
+        # Algorab Island is abolished (owner decision): its strings are not carried into the portal.
         out[lang] = {k: v for k, v in props.items() if k.startswith(("store.", "account.title", "nav."))}
     return {"jar": jar.name, "version": manifest["launcher"]["latest"], "messages": out}
 
@@ -465,7 +465,7 @@ def changelog_lang(lang: str, bundle: dict, launcher_notes: dict, launcher_notes
             "highlights": [], "balance": [], "warnings": [], "limits": [],
             "paragraphs": [p.strip() for p in re.split(r"\n\s*\n", notes.strip()) if p.strip()],
         })
-    brands.append({"id": "corvus", "name": "Corvus Store", "releases": corvus})
+    brands.append({"id": "corvus", "name": "Algorab Store", "releases": corvus})
     return brands
 
 
@@ -567,7 +567,7 @@ MODEL_WORDS: dict[str, list[tuple[str, str]]] = {
     "tr": [("Temel Taş Markası", "Temel Taş Modeli"), ("Öne çıkan marka", "Öne çıkan model"),
            ("bir marka seçin", "bir model seçin"), ("ayrı bir mod markası", "ayrı bir model")],
 }
-# The Corvus Store's own release notes (data/launcher_notes.json) are English on every language's page, except where
+# The Algorab Store's own release notes (data/launcher_notes.json) are English on every language's page, except where
 # data/launcher_notes_i18n.json carries a translation (from 5.1.0).
 ENGLISH_BRAND = re.compile(r"\b([Bb])rand(s|'s)?\b")
 MODEL_USED: set[tuple[str, str]] = set()
@@ -776,7 +776,7 @@ def build_lang(lang: str, ctx: dict) -> dict:
         "eyebrow": leg["home"]["eyebrow"],
         "sub": leg["home"]["sub"],
         "description": leg["home"]["sub"],
-        "ctaStore": f"Corvus Store {major_minor(launcher['latest'])}",
+        "ctaStore": f"Algorab Store {major_minor(launcher['latest'])}",
         "symbolLabel": leg["home"]["symbolLabel"],
         "brandsTitle": leg["home"]["brandsTitle"],
         "hint": leg["home"]["hint"],
@@ -795,7 +795,7 @@ def build_lang(lang: str, ctx: dict) -> dict:
         sections.append({"id": sec["id"], "title": sec["title"],
                          "html": re.sub(r'\sclass="[^"]*"', "", sec["body_html"])})
     launcher_page = {
-        "title": "Corvus Store",
+        "title": "Algorab Store",
         "description": SITE_COPY[lang]["store"],
         "hub": leg["store"]["copy"],
         "text": stext,
@@ -1029,7 +1029,7 @@ def main() -> None:
         "upcoming": read_json("data/upcoming.json"), "discordBot": read_json("data/discord_bot.json"),
         "discordCommands": read_json("data/discord_commands.json"),
         "launcherNotes": english_model(read_json("data/launcher_notes.json")),
-        # From 5.1.0 a Corvus Store note may carry translations (data/launcher_notes_i18n.json); missing ones stay English.
+        # From 5.1.0 a Algorab Store note may carry translations (data/launcher_notes_i18n.json); missing ones stay English.
         "launcherNotesI18n": {k: v for k, v in read_json("data/launcher_notes_i18n.json").items() if not k.startswith("_")},
         "skinGate": read_json("data/skin_gate.json"),
         "teasers": read_json("data/teasers.json")["teasers"],

@@ -2,7 +2,7 @@
  "lang": "tr",
  "ui": {
   "site_tagline": "Sorakazekarasu Sunucusuna Kurulu MOD'lar İçin Resmî Olmayan Kaynak",
-  "site_description": "Fabric modları OUKA, Cherry ve Aureum hakkında resmî olmayan bir site: tarifler, güncelleme geçmişi, indirmeler ve Corvus başlatıcısı. İlk olarak kendisi için yapıldığı paket Alpha artık dağıtılmıyor.",
+  "site_description": "Fabric modları OUKA, Cherry ve Aureum hakkında resmî olmayan bir site: tarifler, güncelleme geçmişi, indirmeler ve Algorab başlatıcısı. İlk olarak kendisi için yapıldığı paket Alpha artık dağıtılmıyor.",
   "nav": {
    "home": "Ana Sayfa",
    "changelog": "Güncelleme Geçmişi",
@@ -119,7 +119,7 @@
   "page_descriptions": {
    "changelog": "OUKA, Cherry, Aureum, ASTRAEA, Tsubomi ve Halia'nın güncelleme geçmişi ve Alpha'nın sonunu bildiren duyuru. Her sürümde neyin değiştiğini görmek için bir marka seçin; en yeni en üstte.",
    "recipes": "OUKA, Cherry, Tsubomi ve Halia'daki her eşyanın üretim tariflerini gösteren hızlı başvuru tablosu. Arama ve kategori filtresi destekler.",
-   "download": "Alpha artık dağıtılmıyor. Son sürümü V{pack_version}, Alpha'yı kapatır; burada dosya boyutu ve SHA-256 ile, Corvus ve Aureum indirmelerinin yanında duruyor.",
+   "download": "Alpha artık dağıtılmıyor. Son sürümü V{pack_version}, Alpha'yı kapatır; burada dosya boyutu ve SHA-256 ile, Algorab ve Aureum indirmelerinin yanında duruyor.",
    "aureum": "Aureum: ayrı, dürüstçe ölçülmüş, hafif bir optimizasyon modu. Sodium'un yerine geçmez — Sodium'un dokunmadığı tarafı optimize eder."
   }
  },
@@ -149,13 +149,13 @@
    "highlights": [
     "Alpha kapatılır. 13 mod, oyuna hiçbir şey eklemeyen yer tutucularla değiştirilir (Cherry, OUKA ve Aureum'a dokunulmaz)",
     "Yalnızca Ana Dünya'nın yükseklik sınırı (Y=1023'e kadar) kalır; böylece Y=319'un üstünde sıradan bloklarla yaptığınız şeyler silinmez",
-    "Corvus eski jar dosyalarını kaldırır, yer tutucuları koyar ve değiştirdiği dosyaların yedeğini tutar. Elle kurduysanız veya sunucu işletiyorsanız, paketin README'sinde anlatıldığı gibi eski jar dosyalarını silin"
+    "Algorab eski jar dosyalarını kaldırır, yer tutucuları koyar ve değiştirdiği dosyaların yedeğini tutar. Elle kurduysanız veya sunucu işletiyorsanız, paketin README'sinde anlatıldığı gibi eski jar dosyalarını silin"
    ],
    "balance_changes": [],
    "warnings": [
     "<b>Önce dünyalarınızı yedekleyin.</b> Alpha'nın eklediği bloklar, dünya Alpha olmadan açıldığında boş havaya dönüşür ve bu şekilde kaydedildikten sonra kalıcı olarak yok olur. Alpha'yı geri koymak onları geri getirmez (özel bir sunucuda doğrulandı). Alpha'nın eşyalarının ve yaratıklarının da aynı akıbete uğraması beklenir (denenmedi)",
     "Sunucu ve oyuncular birlikte geçmelidir: hâlâ Alpha'sı olan bir oyuncu, artık Alpha'sı olmayan bir sunucuya katılamaz; tersi de geçerlidir",
-    "Corvus'ta «Güncellemeleri otomatik kur» açıksa bu güncelleme sormadan uygulanır. Corvus'un yedeği mods klasörünü kapsar, dünyalarınızı değil"
+    "Algorab'da «Güncellemeleri otomatik kur» açıksa bu güncelleme sormadan uygulanır. Algorab'ın yedeği mods klasörünü kapsar, dünyalarınızı değil"
    ],
    "known_limitations": [
     "Alpha'nın bu sitedeki diğer her şeyi kaldırıldı: önceki tüm indirmeler, tarifleri ve kurulum kılavuzu, geçitler, özellikler, yol haritası ve bilinen sorunlar sayfaları. Bu kayıt, güncelleme geçmişinden geriye kalan tek şeydir."
@@ -235,11 +235,11 @@
   "discord_body": "Sürüm botunu Discord sunucunuza ekleyin; yeni bir güncelleme yayımlandığında otomatik olarak bir mesaj gönderilsin. Botu davet ettikten sonra, duyuruların gideceği kanalı seçmek için sunucunuzda /release channel komutunu çalıştırın.",
   "discord_invite_cta": "Bildirim botunu davet et",
   "discord_pending": "Discord güncelleme bildirim botu bu sunucu için henüz kullanılabilir değil — davet bağlantısı henüz yayımlanmadı.",
-  "launcher_heading": "Corvus",
-  "launcher_body": "Corvus, modlarınızı otomatik olarak güncel tutan bir masaüstü uygulamasıdır; her indirmeyi bu Wiki'ye karşı SHA-256 ile doğrular — güvendiği tek kaynak bu Wiki'dir.",
+  "launcher_heading": "Algorab",
+  "launcher_body": "Algorab, modlarınızı otomatik olarak güncel tutan bir masaüstü uygulamasıdır; her indirmeyi bu Wiki'ye karşı SHA-256 ile doğrular — güvendiği tek kaynak bu Wiki'dir.",
   "launcher_version_label": "Sürüm",
-  "launcher_cta": "Corvus'u indir",
-  "launcher_pending": "Corvus henüz indirilebilir değil — Wiki'ye herhangi bir derleme yüklenmedi. Daha sonra tekrar bakın ya da MOD paketini yukarıdaki ZIP ile elle kurun.",
+  "launcher_cta": "Algorab'ı indir",
+  "launcher_pending": "Algorab henüz indirilebilir değil — Wiki'ye herhangi bir derleme yüklenmedi. Daha sonra tekrar bakın ya da MOD paketini yukarıdaki ZIP ile elle kurun.",
   "launcher_jar_note": "Windows, macOS ve Linux'ta aynı tek dosyayla çalışır. Çalıştırmak için Java 25 veya daha yenisinin önceden kurulmuş olması gerekir.",
   "launcher_native_heading": "Yerel kurulum dosyaları (Java gerekmez)",
   "launcher_native_note": "Normal bir masaüstü uygulaması gibi kurulur ve ayrıca Java gerektirmez. Henüz kod imzası yok, bu yüzden işletim sisteminiz ilk çalıştırmada bir uyarı gösterir: macOS'ta uygulamaya sağ tıklayıp Aç'ı seçin; Windows'ta \"Daha fazla bilgi\"ye, ardından \"Yine de çalıştır\"a tıklayın.",
@@ -252,21 +252,21 @@
   "intro": "Alpha emekli oldu. Bu sayfa, Alpha'yı kapatan son sürümü, V{pack_version}'i sunar. ZIP, oyuna hiçbir şey eklemeyen {mod_count} yer tutucu jar ve bir README içerir. İçinde Alpha içeriği yoktur.",
   "server_note": "Kurmadan önce dünyalarınızı yedekleyin. Alpha'nın eklediği bloklar boş havaya dönüşür ve dünya Alpha olmadan kaydedildiğinde kalıcı olarak yok olur; Alpha'yı geri koymak onları geri getirmez. Sunucu yöneticileri: sunucu ve oyuncular birlikte geçmelidir.",
   "install_heading": "Alpha nasıl kapatılır",
-  "install_body": "Corvus kullanıyorsanız bunu normal bir güncelleme olarak sizin yerinize yapar. Elle kurduysanız veya sunucu işletiyorsanız, adımlar ZIP içindeki README'de listelenir.",
+  "install_body": "Algorab kullanıyorsanız bunu normal bir güncelleme olarak sizin yerinize yapar. Elle kurduysanız veya sunucu işletiyorsanız, adımlar ZIP içindeki README'de listelenir.",
   "older_versions_note": "Bu sayfa her zaman güncel sürümü (V{pack_version}) sunar ve bu sonuncusudur. Önceki sürümler artık burada sunulmuyor; birine hâlâ ihtiyacınız varsa doğrudan sunucu yöneticinize sorun."
  },
  "launcher_page": {
-  "intro": "Corvus, modlarınızı otomatik olarak güncel tutan küçük bir masaüstü uygulamasıdır. Güncel sürümü bu Wiki'den öğrenir, güncellemeleri sizin için indirir ve mods klasörünüze dokunmadan önce indirdiği her dosyayı burada yayımlanan SHA-256 sağlama toplamıyla doğrular. Güvendiği tek kaynak bu Wiki'dir.",
+  "intro": "Algorab, modlarınızı otomatik olarak güncel tutan küçük bir masaüstü uygulamasıdır. Güncel sürümü bu Wiki'den öğrenir, güncellemeleri sizin için indirir ve mods klasörünüze dokunmadan önce indirdiği her dosyayı burada yayımlanan SHA-256 sağlama toplamıyla doğrular. Güvendiği tek kaynak bu Wiki'dir.",
   "sections": [
    {
     "id": "what-it-is",
-    "title": "Corvus nedir, neden yapıldı",
-    "body_html": "<p>Modları elle güncel tutmak, her sürümde indirme sayfasına yeniden gitmek, sürüm numaralarını karşılaştırmak, yeni bir dosya indirmek ve onu doğru klasöre koymak demektir. Corvus bunu otomatikleştirir: bu Wiki'nin sürüm bildirimini okur, kurulu olanla karşılaştırır ve yalnızca değişeni getirir.</p><p>Başlatıcının yaptığı her indirme, kullanılmadan önce bu Wiki'nin yayımladığı SHA-256 sağlama toplamıyla doğrulanır. İndirilen dosya eşleşmezse başlatıcı onu kurmaz. \"Güncel\" sürümün hangisi olduğu konusunda başlatıcının tek doğruluk kaynağı bu Wiki'dir.</p>"
+    "title": "Algorab nedir, neden yapıldı",
+    "body_html": "<p>Modları elle güncel tutmak, her sürümde indirme sayfasına yeniden gitmek, sürüm numaralarını karşılaştırmak, yeni bir dosya indirmek ve onu doğru klasöre koymak demektir. Algorab bunu otomatikleştirir: bu Wiki'nin sürüm bildirimini okur, kurulu olanla karşılaştırır ve yalnızca değişeni getirir.</p><p>Başlatıcının yaptığı her indirme, kullanılmadan önce bu Wiki'nin yayımladığı SHA-256 sağlama toplamıyla doğrulanır. İndirilen dosya eşleşmezse başlatıcı onu kurmaz. \"Güncel\" sürümün hangisi olduğu konusunda başlatıcının tek doğruluk kaynağı bu Wiki'dir.</p>"
    },
    {
     "id": "installing",
-    "title": "Corvus nasıl kurulur",
-    "body_html": "<p>Corvus, bu Wiki'nin indirme sayfasından iki biçimde edinilebilir:</p><ul><li><strong>İşletim sistemine özel yerel kurucular</strong> (Windows için <code>.msi</code>, macOS için <code>.dmg</code>, Linux için <code>.deb</code>) — sıradan bir masaüstü uygulaması gibi kurulur, Java gerekmez. Henüz kod imzalaması yapılmadığı için ilk açılışta işletim sistemi bir uyarı gösterir. macOS'ta çift tıklamak yerine uygulamaya sağ tıklayıp «Aç» seçeneğini kullanın. Windows'ta SmartScreen uyarısında «Ek bilgi» → «Yine de çalıştır» seçeneğini kullanın.</li><li><strong>Platformdan bağımsız jar</strong> <code>{launcher_jar}</code> — aynı 1 dosya Windows, macOS ve Linux'un hepsinde çalışır, ancak sisteminizde önceden Java 25 veya üzeri kurulu olmalıdır. Çift tıkladığınızda açılmıyorsa, dosyayı indirdiğiniz klasörde bir terminal (ya da komut istemi) açıp <code>java -jar {launcher_jar}</code> komutunu çalıştırın.</li></ul>"
+    "title": "Algorab nasıl kurulur",
+    "body_html": "<p>Algorab, bu Wiki'nin indirme sayfasından iki biçimde edinilebilir:</p><ul><li><strong>İşletim sistemine özel yerel kurucular</strong> (Windows için <code>.msi</code>, macOS için <code>.dmg</code>, Linux için <code>.deb</code>) — sıradan bir masaüstü uygulaması gibi kurulur, Java gerekmez. Henüz kod imzalaması yapılmadığı için ilk açılışta işletim sistemi bir uyarı gösterir. macOS'ta çift tıklamak yerine uygulamaya sağ tıklayıp «Aç» seçeneğini kullanın. Windows'ta SmartScreen uyarısında «Ek bilgi» → «Yine de çalıştır» seçeneğini kullanın.</li><li><strong>Platformdan bağımsız jar</strong> <code>{launcher_jar}</code> — aynı 1 dosya Windows, macOS ve Linux'un hepsinde çalışır, ancak sisteminizde önceden Java 25 veya üzeri kurulu olmalıdır. Çift tıkladığınızda açılmıyorsa, dosyayı indirdiğiniz klasörde bir terminal (ya da komut istemi) açıp <code>java -jar {launcher_jar}</code> komutunu çalıştırın.</li></ul>"
    },
    {
     "id": "pointing-at-existing-pack",
@@ -681,7 +681,7 @@
     "warnings": [
      "V1.4.0'daki bilinen sınırlar: şimdilik OKE üzerinde yalnızca Madde Alıcı-Vericisi çalışıyor (diğer makineler V1.4.x içinde daha sonra geçecek); holografik parça ekranı ile takma animasyonu V1.4.x'te gelecek; rüzgar türbini yalnızca Ana Dünya'da çalışır. Yeni /ouka reload ve /ouka mount komutları operatörler içindir.",
      "Önceki bir sürümden güncellerken eski OUKA jar dosyasını (ouka-1.3.1+mc26.3.jar vb.) mods klasöründen silin. İki OUKA jar dosyası olursa oyun başlamaz.",
-     "Corvus Store'dan da kurabilirsiniz: ilk seferde Corvus Store'da Al düğmesine basın; sonrasında Corvus Store onu kendiliğinden yeni sürümlerle değiştirir. Otomatik Güncellemeler'i kapattıysanız Güncelle düğmesine basın. (Elle kurmak için OUKA sayfasını kullanın.)",
+     "Algorab Store'dan da kurabilirsiniz: ilk seferde Algorab Store'da Al düğmesine basın; sonrasında Algorab Store onu kendiliğinden yeni sürümlerle değiştirir. Otomatik Güncellemeler'i kapattıysanız Güncelle düğmesine basın. (Elle kurmak için OUKA sayfasını kullanın.)",
      "Minecraft 26.3, Fabric Loader 0.19.5 veya üstü, Fabric API 0.161.0+26.3 veya üstü, GeckoLib 5.5.6 (zip'e dahil) ve Java 25 gerekir."
     ]
    },
@@ -696,7 +696,7 @@
     ],
     "warnings": [
      "Önceki bir sürümden güncellerken eski OUKA jar dosyasını (ouka-1.3.0+mc26.3.jar vb.) mods klasöründen silin. İki OUKA jar dosyası olursa oyun başlamaz.",
-     "Corvus Store'dan da kurabilirsiniz: ilk seferde Corvus Store'da Al düğmesine basın; sonrasında Corvus Store onu kendiliğinden yeni sürümlerle değiştirir. Otomatik Güncellemeler'i kapattıysanız Güncelle düğmesine basın. (Elle kurmak için OUKA sayfasını kullanın.)",
+     "Algorab Store'dan da kurabilirsiniz: ilk seferde Algorab Store'da Al düğmesine basın; sonrasında Algorab Store onu kendiliğinden yeni sürümlerle değiştirir. Otomatik Güncellemeler'i kapattıysanız Güncelle düğmesine basın. (Elle kurmak için OUKA sayfasını kullanın.)",
      "Minecraft 26.3, Fabric Loader 0.19.5 veya üstü, Fabric API 0.161.0+26.3 veya üstü, GeckoLib 5.5.6 (zip'e dahil) ve Java 25 gerekir."
     ]
    },
@@ -718,7 +718,7 @@
     ],
     "warnings": [
      "Bu sürüm, V1.0.1, V1.1.0 ve V1.2.0'da hiç çalmayan iki sesi düzeltir: OUKA İşaret Feneri terminalindeki kaydırıcının tık sesi ve Ouka Caster seçicisinin onay sesi. Daha eski bir sürüm kullanıyorsanız lütfen değiştirin.",
-     "Corvus Store'dan da kurabilirsiniz: ilk seferde Corvus Store'da Al düğmesine basın; sonrasında Corvus Store onu kendiliğinden yeni sürümlerle değiştirir. Otomatik Güncellemeler'i kapattıysanız Güncelle düğmesine basın. (Elle kurmak için OUKA sayfasını kullanın.)",
+     "Algorab Store'dan da kurabilirsiniz: ilk seferde Algorab Store'da Al düğmesine basın; sonrasında Algorab Store onu kendiliğinden yeni sürümlerle değiştirir. Otomatik Güncellemeler'i kapattıysanız Güncelle düğmesine basın. (Elle kurmak için OUKA sayfasını kullanın.)",
      "Minecraft 26.3, Fabric Loader 0.19.5 veya üstü, Fabric API 0.161.0+26.3 veya üstü, GeckoLib 5.5.6 (zip'e dahil) ve Java 25 gerekir."
     ]
    },
@@ -740,7 +740,7 @@
     ],
     "warnings": [
      "Bu sürüm V1.1.0'daki iki hatayı düzeltir (kazılan Ouka alaşımı bloğu hiçbir şey düşürmüyordu; sığınağın ganimet tablosu). V1.1.0 kullanıyorsanız lütfen değiştirin.",
-     "Corvus'tan da kurabilirsiniz: ilk seferde Corvus'ta İndir'e basın; sonrasında Corvus onu yeni sürümlerle değiştirir. (Elle kurmak için OUKA sayfasını kullanın.)",
+     "Algorab'dan da kurabilirsiniz: ilk seferde Algorab'da İndir'e basın; sonrasında Algorab onu yeni sürümlerle değiştirir. (Elle kurmak için OUKA sayfasını kullanın.)",
      "Minecraft 26.3, Fabric Loader 0.19.5 veya üstü, Fabric API 0.161.0+26.3 veya üstü, GeckoLib 5.5.6 (zip'e dahil) ve Java 25 gerekir."
     ]
    },
@@ -762,7 +762,7 @@
     ],
     "warnings": [
      "V1.0.0 kullanıyorsanız mutlaka değiştirin: video ayarlarında «Geliştirilmiş Saydamlık» açıkken, bir çember mermisi görüş alanına girdiği anda V1.0.0 oyunu çökertiyor.",
-     "OUKA sayfasından kurun. Corvus, OUKA'nın değişiklik günlüğünü gösterir ama OUKA'yı kurmaz.",
+     "OUKA sayfasından kurun. Algorab, OUKA'nın değişiklik günlüğünü gösterir ama OUKA'yı kurmaz.",
      "Minecraft 26.3, Fabric Loader 0.19.5 veya üzeri, Fabric API 0.161.0+26.3 veya üzeri, GeckoLib 5.5.6 (zip içinde) ve Java 25 gerekir."
     ]
    },
@@ -787,7 +787,7 @@
     ],
     "warnings": [
      "Bir renk çarpma anında ekranı beyaza boğar (Celestial White). Minecraft'ın “Şimşek parlamalarını gizle” ayarı açıksa parlamaz.",
-     "OUKA sayfasından kurun. Corvus, OUKA'nın değişiklik günlüğünü gösterir ama OUKA'yı kurmaz.",
+     "OUKA sayfasından kurun. Algorab, OUKA'nın değişiklik günlüğünü gösterir ama OUKA'yı kurmaz.",
      "Minecraft 26.3, Fabric Loader 0.19.5 veya üzeri, Fabric API 0.161.0+26.3 veya üzeri, GeckoLib 5.5.6 (zip içinde) ve Java 25 gerekir."
     ]
    }
@@ -963,13 +963,13 @@
     "release": "V1.3 1017",
     "date": "2026-10-25",
     "title": "HoyoBrainrot",
-    "summary": "Görünüm güncellemesi: Corvus Dev yapımı yerleşik kaynak paketi HoyoBrainrot. Örsün üzerinde bir Ölümsüzlük Totemi'ne ad ver, simgesi hareketli bir resme dönüşsün. Oynanış değişmez.",
+    "summary": "Görünüm güncellemesi: Algorab Developer Program yapımı yerleşik kaynak paketi HoyoBrainrot. Örsün üzerinde bir Ölümsüzlük Totemi'ne ad ver, simgesi hareketli bir resme dönüşsün. Oynanış değişmez.",
     "highlights": [
      "Örsün üzerinde bir Ölümsüzlük Totemi'ne aşağıdaki adlardan birini ver; simgesi hareketli bir karakter resmine dönüşür: hızlı erişim çubuğunda, envanterde ve elinde. Adsız totem ya da listede olmayan adlı totem eskisi gibi görünür.",
      "Adlar: evernight, stelle, breakdance, lucia, nefer, march7, gerta, jahoda, cipher, yunli, black swan, ica, vivian, the gerta, nekomata, soukaku draw, soukaku picture, ju fufu, harumasa. Büyük harfle başlayan yazımlar ve \"march 7th\" gibi bazı varyantlar da çalışır.",
      "Bir totem tetiklendiğinde vanilla ses yerine bu paketin sesini duyarsın.",
      "Paket baştan açıktır. Kapatmak için Seçenekler, Kaynak Paketleri bölümünden HoyoBrainrot'u çıkar: totemin resmi ve sesi vanilla'ya döner.",
-     "Jar yaklaşık 23 MB büyüdü. Paketi Corvus Dev yaptı."
+     "Jar yaklaşık 23 MB büyüdü. Paketi Algorab Developer Program yaptı."
     ],
     "warnings": [
      "Minecraft 26.3, Fabric Loader 0.19.5 veya üstü, Fabric API 0.161.0+26.3 veya üstü, GeckoLib 5.5.6 veya üstü ve Java 25 gerekir.",
@@ -1021,10 +1021,10 @@
    {
     "id": "astraea-v1.1.0",
     "title": "The Cyber-Relics & Mythic Pedestals",
-    "summary": "OUKA'nın şebekesinden beslenen bir güvenlik sistemi — lazerler, kameralar ve onların canlı görüntüsünü gösteren Corvus Book Pro —, Plasma Saber ve asla üretilmeyen iki kılıç: kaidelerinden kendi elinizle çektiğiniz Excalibur ve Muramasa.",
+    "summary": "OUKA'nın şebekesinden beslenen bir güvenlik sistemi — lazerler, kameralar ve onların canlı görüntüsünü gösteren Algorab Book Pro —, Plasma Saber ve asla üretilmeyen iki kılıç: kaidelerinden kendi elinizle çektiğiniz Excalibur ve Muramasa.",
     "highlights": [
      "Security Laser: redstone sinyali ve uyarı veren görünmez bir tuzak teli ya da kızıl ölümcül bir ışın (saniyede 10 hasar). Optical Prisms ışını 90° döndürerek bir ızgara kurar. Sahibine ve sahibinin güvendiği oyunculara dokunmaz, blok kırmaz.",
-     "Security Camera ve Corvus Book Pro: kameralar hareket edeni izler; dizüstündeki CorvusOS bağlı her kameranın gerçek görüntüsünü gösterir, kamerayı çevirir, gece ve termal görüşe geçer, OUKA'nın enerjisini çizer, lazer modlarını değiştirir, elektronik kilitleri kilitleyip açar ve güven listenizi düzenler.",
+     "Security Camera ve Algorab Book Pro: kameralar hareket edeni izler; dizüstündeki AlgorabOS bağlı her kameranın gerçek görüntüsünü gösterir, kamerayı çevirir, gece ve termal görüşe geçer, OUKA'nın enerjisini çizer, lazer modlarını değiştirir, elektronik kilitleri kilitleyip açar ve güven listenizi düzenler.",
      "Plasma Saber: kullanınca bıçak yanar; uğultusu her dönüşte ve savuruşta yükselir. Bir atış gelirken savurun; ok, üç dişli mızrak ya da ateş topu atana geri döner. Altı Saber Crystal, Diamond Polishing Bench'te rengini değiştirir.",
      "Excalibur: Hallowed Anvil Pedestal'ı Y 180 veya daha yükseğe, açık öğle göğünün altına yerleştirin ve çekmek için kullanma tuşunu üç saniye basılı tutun. Basılı tutup bırakınca Excalibur Ray (50 blok, 5 genişlik, duvarlarda durur); elinizdeyken siz ve güvendikleriniz Yenilenme II ve Direnç II kazanırsınız.",
      "Muramasa: Blood-Bound Shrine'ı Y 0 veya daha aşağıya, karanlığa yerleştirin; çekmek azami canınızın yarısına mal olur. Celestial Blade'in kontrolleriyle dövüşür, verdiği hasarın beşte birini can olarak geri verir ve kınına girerken attığı kesik zırhı yok sayar."
@@ -1053,17 +1053,17 @@
    {
     "id": "astraea-v1.5.2",
     "title": "Heavy Industry",
-    "summary": "Endüstriyel makineler gerçek tesis boyutunda yeniden yapıldı: altı blok yüksekliğinde bir ark fırını, on iki blokluk bir damıtma kulesi, yirmi blokluk bir direk; hepsi OUKA'nın şebekesinde. Her eşya artık nasıl kullanıldığını anlatıyor ve Corvus Book Pro, yere ya da masaya bırakılan bir cihaza dönüştü. Bu sürümden itibaren OUKA 1.4.0 veya üzeri gereklidir.",
+    "summary": "Endüstriyel makineler gerçek tesis boyutunda yeniden yapıldı: altı blok yüksekliğinde bir ark fırını, on iki blokluk bir damıtma kulesi, yirmi blokluk bir direk; hepsi OUKA'nın şebekesinde. Her eşya artık nasıl kullanıldığını anlatıyor ve Algorab Book Pro, yere ya da masaya bırakılan bir cihaza dönüştü. Bu sürümden itibaren OUKA 1.4.0 veya üzeri gereklidir.",
     "highlights": [
      "On tesis, bütün olarak yerleştirildi: Refinery Smelter 5×5×6, Still 3×3×12, Crystalliser 5×5×5, Purifier 5×4×4, Synthesizer 5×5×5, Heavy Mill 7×7×6, Dynamo 7×3×4, Transformer 4×3×5, High-Voltage Pylon 5×5×20 ve Fission Core 9×9×10. Eşya açık bir zeminde kullanıldığında tesis, kullanana dönük olarak yükselir; herhangi bir parçayı kullanmak tesisi açar, herhangi bir parçayı kırmak ise onu tek bir eşya olarak geri verir.",
      "Hareket ederler: fırın elektrotlarını indirir, çatısını kaldırır, eğilip döker; kulenin gözetleme camları kaynama yükseldikçe yanar; değirmenin tamburu döner; ateş söndüğünde dinamonun volanı yavaşlar; çalışan bir çekirdek maviyle parlar, aşırı ısındığında kuşakları kızarır. Çalışan tesisler çevrelerindeki zemini aydınlatır.",
      "Aynı maliyetle daha büyük partiler: sekiz toz ya da dört ham cevher rafinaj hattına girer ve yirmi külçe olarak çıkar; Synthesizer bir seferde dört tane üretir; Heavy Mill dört cevheri on iki OUKA tozuna çevirir. Her eşyanın enerji ve su gereksinimi değişmedi. İşleme tesisinin herhangi bir parçasına dayanan bir huni ya da boru onu besler ve ürününü alır.",
      "Herhangi bir eşyanın üzerinde Shift tuşunu basılı tutmak: ASTRAEA'nın 284 eşyası ve bloğunun her biri artık ne olduğunu, nasıl kullanıldığını ve neye ihtiyaç duyduğunu gösterir.",
-     "Corvus Book Pro: bir masaya ya da yere koyulup orada kullanıldığında CorvusOS açılır. Sahibi ve güvendiği oyuncular için açılır, bağlantılarını ve şarjını korur ve durduğu yerde OUKA'nın şebekesinden şarj olur."
+     "Algorab Book Pro: bir masaya ya da yere koyulup orada kullanıldığında AlgorabOS açılır. Sahibi ve güvendiği oyuncular için açılır, bağlantılarını ve şarjını korur ve durduğu yerde OUKA'nın şebekesinden şarj olur."
     ],
     "warnings": [
      "Minecraft 26.3, Fabric Loader 0.19.5 veya daha yeni, Fabric API 0.161.0+26.3 veya daha yeni, Java 25 ve – bu sürümle gelen yenilik – OUKA 1.4.0 veya daha yeni gerekir. Bir V1.5.0 dünyasında duran makineler tek blok olarak kalır ve çalışmaz: kırılıp yeniden yerleştirilmeleri gerekir. Heavy Mill artık küp olarak inşa edilmiyor; gövdesi ve rotoru, onun yapıldığı malzemelerdir. ASTRAEA'nın Alpha ile birlikte kurulumu desteklenmiyor.",
-     "Düzeltildi: Corvus Book Pro'nun güven listesine bir oyuncu eklenmesi bazı sunucularda yanlış oyuncuyu kaydedebiliyor ve kameralar onları izlemeye devam ediyordu. Artık çevrimiçi bir oyuncu adıyla bulunuyor ve sonuç CorvusOS penceresinde gösteriliyor. Bu sürümde olmayanlar: yeniden yapılan diğer gruplar (lojistik, savunma, dövme ve donanım, araçlar ve sınır, mit, mobilya) sonraki sürümlerde gelecek; makinelerin sesleri yalnızca ölçümle üretildi ve kontrol edildi."
+     "Düzeltildi: Algorab Book Pro'nun güven listesine bir oyuncu eklenmesi bazı sunucularda yanlış oyuncuyu kaydedebiliyor ve kameralar onları izlemeye devam ediyordu. Artık çevrimiçi bir oyuncu adıyla bulunuyor ve sonuç AlgorabOS penceresinde gösteriliyor. Bu sürümde olmayanlar: yeniden yapılan diğer gruplar (lojistik, savunma, dövme ve donanım, araçlar ve sınır, mit, mobilya) sonraki sürümlerde gelecek; makinelerin sesleri yalnızca ölçümle üretildi ve kontrol edildi."
     ]
    },
    {
@@ -1341,14 +1341,14 @@
    },
    {
     "id": "tsubomi-v2.3-3124",
-    "title": "Tsubomi V2.3 3124 — Yıldız Çiçeği Corvus",
-    "summary": "Tsubomi V2.3 3124, Yıldız Çiçeği Corvus'u (OLED siyahı) ekler: Max dizilimi, kuzgun kanatlı Elytra For Corvus, 14×14 kazma ve en güçlü tam takım pasifi.",
+    "title": "Tsubomi V2.3 3124 — Yıldız Çiçeği Algorab",
+    "summary": "Tsubomi V2.3 3124, Yıldız Çiçeği Algorab'ı (OLED siyahı) ekler: Max dizilimi, kuzgun kanatlı Elytra For Algorab, 14×14 kazma ve en güçlü tam takım pasifi.",
     "highlights": [
-     "Yıldız Çiçeği Corvus, Yıldız Çiçeği Max'ın dizilimine sahiptir (alaşım külçesi, kazma, balta, kürek, çapa, mızrak, miğfer, göğüslük, pantolon, bot, kalkan, yay ve ok) artı Elytra For Corvus. Dayanıklılığı UltraCore'un 1.8×'i, aletler Ultimate'tan 2× hızlı kazar ve saldırı Max ile aynıdır.",
-     "Corvus Alaşım Külçesi, 8 Ultimate Alaşım Külçesi ve bir Corvus Nişanı ile yapılır ve 8 külçe verir. Corvus Nişanı; bir Ejderha Kafası, bir Ejderha Yumurtası, bir Okyanus Nişanı, bir Aomori Nişanı, bir Orman Nişanı ve bir Netherstar Külçesi ile yapılır. Netherstar Külçesi 3 Nether Yıldızı Demeti ile, bir demet ise 9 Nether Yıldızı ile yapılır (toplamda 27 Nether Yıldızı).",
-     "Corvus Kazması 14×14 kazma ekler (çömelip kullanarak 1×1, 3×3, 5×5, 7×7, 9×9, 11×11 ve 14×14 arasında geçiş yapılır, ardından Quick Mining).",
-     "Elytra For Corvus, 2 Corvus Nişanı, 3 Netherstar Külçesi, bir elitra ve 3 Corvus Alaşım Külçesi ile yapılır. Kuzgun tüylü kanatları vardır ve elitra'dan 8× hızlı uçar; dayanıklılığı elitra ile aynıdır, ama 8× hızlı aşınır.",
-     "Tam bir Yıldız Çiçeği Corvus zırh takımı giymek pasifler verir: düşme hasarı −55% (Elytra For Corvus giyilirken devre dışı), ateş hasarı −68%, zehir hasarı −37%, lav hasarı −71%, Muhafız'ın ses dalgası −64%, kazma hızı +11%, hareket hızı +24%, saldırı +17% ve yeni her zararlı etkinin 66% ihtimalle savuşturulması. Düşmenin ardından yere inildiğinde 4 blok içindeki düşman yaratıklara düşme hasarının 61%'ini veren bir şok dalgası çıkar ve magma blokları artık zarar vermez. Takımın yalnızca bir kısmını giymek bunlardan hiçbirini vermez."
+     "Yıldız Çiçeği Algorab, Yıldız Çiçeği Max'ın dizilimine sahiptir (alaşım külçesi, kazma, balta, kürek, çapa, mızrak, miğfer, göğüslük, pantolon, bot, kalkan, yay ve ok) artı Elytra For Algorab. Dayanıklılığı UltraCore'un 1.8×'i, aletler Ultimate'tan 2× hızlı kazar ve saldırı Max ile aynıdır.",
+     "Algorab Alaşım Külçesi, 8 Ultimate Alaşım Külçesi ve bir Algorab Nişanı ile yapılır ve 8 külçe verir. Algorab Nişanı; bir Ejderha Kafası, bir Ejderha Yumurtası, bir Okyanus Nişanı, bir Aomori Nişanı, bir Orman Nişanı ve bir Netherstar Külçesi ile yapılır. Netherstar Külçesi 3 Nether Yıldızı Demeti ile, bir demet ise 9 Nether Yıldızı ile yapılır (toplamda 27 Nether Yıldızı).",
+     "Algorab Kazması 14×14 kazma ekler (çömelip kullanarak 1×1, 3×3, 5×5, 7×7, 9×9, 11×11 ve 14×14 arasında geçiş yapılır, ardından Quick Mining).",
+     "Elytra For Algorab, 2 Algorab Nişanı, 3 Netherstar Külçesi, bir elitra ve 3 Algorab Alaşım Külçesi ile yapılır. Kuzgun tüylü kanatları vardır ve elitra'dan 8× hızlı uçar; dayanıklılığı elitra ile aynıdır, ama 8× hızlı aşınır.",
+     "Tam bir Yıldız Çiçeği Algorab zırh takımı giymek pasifler verir: düşme hasarı −55% (Elytra For Algorab giyilirken devre dışı), ateş hasarı −68%, zehir hasarı −37%, lav hasarı −71%, Muhafız'ın ses dalgası −64%, kazma hızı +11%, hareket hızı +24%, saldırı +17% ve yeni her zararlı etkinin 66% ihtimalle savuşturulması. Düşmenin ardından yere inildiğinde 4 blok içindeki düşman yaratıklara düşme hasarının 61%'ini veren bir şok dalgası çıkar ve magma blokları artık zarar vermez. Takımın yalnızca bir kısmını giymek bunlardan hiçbirini vermez."
     ],
     "warnings": [
      "Minecraft 26.3, Fabric Loader 0.19.5 veya daha yenisi, Fabric API 0.161.0+26.3 veya daha yenisi ve Java 25 gerekir. Başka mod gerekmez; Cherry isteğe bağlıdır.",
@@ -1357,13 +1357,13 @@
    },
    {
     "id": "tsubomi-v2.4-0204",
-    "title": "Tsubomi V2.4 0204 — Yıldız Çiçeği Corvus Mythic ve Mythic Pearl, Wings, Nether Yıldızı Bloğu",
-    "summary": "Tsubomi V2.4 0204; Yıldız Çiçeği Corvus Mythic ve Yıldız Çiçeği Corvus Mythic Pearl, Wings, Nether Yıldızı Bloğu, 256×300×256'ya ulaşan bir Yapı Bloğu ve y = 1999'a kadar inşa edilebilen bir Üst Dünya ekler ve iki hatayı düzeltir.",
+    "title": "Tsubomi V2.4 0204 — Yıldız Çiçeği Algorab Mythic ve Mythic Pearl, Wings, Nether Yıldızı Bloğu",
+    "summary": "Tsubomi V2.4 0204; Yıldız Çiçeği Algorab Mythic ve Yıldız Çiçeği Algorab Mythic Pearl, Wings, Nether Yıldızı Bloğu, 256×300×256'ya ulaşan bir Yapı Bloğu ve y = 1999'a kadar inşa edilebilen bir Üst Dünya ekler ve iki hatayı düzeltir.",
     "highlights": [
-     "Düzeltmeler: Elytra For Corvus ile tam bir Yıldız Çiçeği Corvus takımı giymek artık düşme hasarını tamamen ortadan kaldırıyor (önceden düşme bonusu yalnızca kapatılıyordu, bu yüzden düşmeler yine tam hasar veriyordu); ayrıca Yıldız Çiçeği UltraFast Olta artık gerçekten balık tutuyor (şamandırası eskiden atıştan kısa süre sonra kayboluyordu).",
-     "Yıldız Çiçeği Corvus Mythic (koyu morlu siyah) Yıldız Çiçeği Max dizilimine sahiptir ve her yönden Corvus'un üzerindedir: dayanıklılık ve kazma hızı 1.3×, aletler 10% daha güçlü vurur, 16×16'ya kadar kazma ve tam takım pasifi: düşme −65%, ateş −74%, zehir −45%, lav −77%, Muhafız'ın ses dalgası −72%, kazma hızı +15%, hareket hızı +30%, saldırı +22%, yeni her zararlı etkinin 72% ihtimalle savuşturulması ve düşmenin 70%'i kadar bir iniş şok dalgası. Yıldız Çiçeği Corvus Mythic Pearl (siyah üzerine inci beyazı) Mythic'in de üzerindedir: bir kez daha 1.25×, 18×18'e kadar kazma ve −75%, −80%, −53%, −83%, −80%, +19%, +36%, +27%, 78% ve 80% pasifleri.",
-     "Mythic Alaşım Külçesi, 7 Corvus Alaşım Külçesi, bir Corvus Nişanı ve bir Nether Yıldızı Bloğu ile yapılır ve 7 külçe verir. Pearl Alaşım Külçesi, 6 Mythic Alaşım Külçesi, 2 Nether Yıldızı Bloğu ve bir Ender İncisi ile yapılır ve 6 külçe verir. Nether Yıldızı Bloğu 9 Netherstar Külçesi ile yapılır ve 9'a geri döner.",
-     "Wings bir göğüs eşyasıdır. Havada bir zıplamayla elitra gibi açın ve gökyüzünde uçun; uçmak için en az 5 food gerekir, uçulan mesafeye göre yorar ve düşmeleri zararsız hale getirir. Wings, 4 Mythic Alaşım Külçesi, 3 Nether Yıldızı Bloğu, bir Elytra For Corvus ve bir Corvus Nişanı ile yapılır ve Mythic ile Pearl takımlarının göğüs parçası sayılır.",
+     "Düzeltmeler: Elytra For Algorab ile tam bir Yıldız Çiçeği Algorab takımı giymek artık düşme hasarını tamamen ortadan kaldırıyor (önceden düşme bonusu yalnızca kapatılıyordu, bu yüzden düşmeler yine tam hasar veriyordu); ayrıca Yıldız Çiçeği UltraFast Olta artık gerçekten balık tutuyor (şamandırası eskiden atıştan kısa süre sonra kayboluyordu).",
+     "Yıldız Çiçeği Algorab Mythic (koyu morlu siyah) Yıldız Çiçeği Max dizilimine sahiptir ve her yönden Algorab'ın üzerindedir: dayanıklılık ve kazma hızı 1.3×, aletler 10% daha güçlü vurur, 16×16'ya kadar kazma ve tam takım pasifi: düşme −65%, ateş −74%, zehir −45%, lav −77%, Muhafız'ın ses dalgası −72%, kazma hızı +15%, hareket hızı +30%, saldırı +22%, yeni her zararlı etkinin 72% ihtimalle savuşturulması ve düşmenin 70%'i kadar bir iniş şok dalgası. Yıldız Çiçeği Algorab Mythic Pearl (siyah üzerine inci beyazı) Mythic'in de üzerindedir: bir kez daha 1.25×, 18×18'e kadar kazma ve −75%, −80%, −53%, −83%, −80%, +19%, +36%, +27%, 78% ve 80% pasifleri.",
+     "Mythic Alaşım Külçesi, 7 Algorab Alaşım Külçesi, bir Algorab Nişanı ve bir Nether Yıldızı Bloğu ile yapılır ve 7 külçe verir. Pearl Alaşım Külçesi, 6 Mythic Alaşım Külçesi, 2 Nether Yıldızı Bloğu ve bir Ender İncisi ile yapılır ve 6 külçe verir. Nether Yıldızı Bloğu 9 Netherstar Külçesi ile yapılır ve 9'a geri döner.",
+     "Wings bir göğüs eşyasıdır. Havada bir zıplamayla elitra gibi açın ve gökyüzünde uçun; uçmak için en az 5 food gerekir, uçulan mesafeye göre yorar ve düşmeleri zararsız hale getirir. Wings, 4 Mythic Alaşım Külçesi, 3 Nether Yıldızı Bloğu, bir Elytra For Algorab ve bir Algorab Nişanı ile yapılır ve Mythic ile Pearl takımlarının göğüs parçası sayılır.",
      "Yapı bloğu artık 256×300×256'ya ulaşıyor (kaydırma ±512'ye kadar, köşe taraması çevrede 320 blok tarar). Üst Dünya artık y = 1999'a kadar inşa edilebilir (önceden y = 319'du). Her iki değişiklik de sunucuda ve her istemcide Tsubomi gerektirir. Çok büyük bir alanı kaydetmek veya yüklemek çok bellek gerektirir; boş belleğe sığmayanı oyun reddeder ve gereken miktarı söyler (256×300×256'nın tamamı yaklaşık 8,5 GB ister)."
     ],
     "warnings": [
@@ -1382,7 +1382,7 @@
      "Yıldız Çiçeği Phoenix (derin kozmik lacivert ve macenta pembe), Yıldız Çiçeği Phoenix Mythic (bulutsu moru ve neon gül, topaz altınıyla) ve Yıldız Çiçeği Phoenix Zenith (platin beyazı ve kozmik camgöbeği) üç yeni seridir. Her birinde Yıldız Çiçeği Max'in 13 eşyalık çeşidi ve kendi Wings'i vardır.",
      "Her seri bir öncekinin üstündedir, Phoenix de Mythic Pearl'ün üstündedir: her adımda dayanıklılık ve kazma hızı 1.25 kat, aletler %10 daha sert vurur, kazmalar 20×20, 22×22 ve 24×24'e kadar çalışır ve tam takım pasifleri her adımda yükselir — düşme −%82, −%88, −%94; ateş −%85, −%90, −%95; zehir −%60, −%68, −%78; lav −%87, −%91, −%95; Muhafız'ın ses dalgası −%85, −%89, −%94; kazma hızı +%23, +%27, +%32; hareket hızı +%42, +%48, +%55; saldırı +%32, +%37, +%43; her yeni zararlı etkiyi savuşturma şansı %82, %86 ve %90; ve inişte düşmenin %85, %90 ve %95'i kadar şok dalgası.",
      "Her alaşım bir öncekinden pahalıdır: Phoenix Alaşım Külçesi, 5 Pearl Alaşım Külçesi, 3 Nether Yıldızı Bloğu ve bir Ölümsüzlük Totemi ile yapılır ve 5 külçe verir; Phoenix Mythic Alaşım Külçesi, 4 Phoenix Alaşım Külçesi, 4 Nether Yıldızı Bloğu ve bir Büyülü Altın Elma ile yapılır ve 4 külçe verir; Phoenix Zenith Alaşım Külçesi, 4 Phoenix Mythic Alaşım Külçesi, 4 Nether Yıldızı Bloğu ve bir Fener ile yapılır ve 4 külçe verir.",
-     "Her serinin kendi Wings'i vardır ve öncekinden güçlüdür: ilk Wings'ten 1.12, 1.26 ve 1.40 kat hızlı ivmelenir ve uçar, 2000 yerine 3000, 4500 ve 7000 dayanır ve uçulan her blokta daha az yorar. Her biri önceki serinin Wings'i, kendi alaşımından 4 külçe, 3 Nether Yıldızı Bloğu ve bir Corvus Nişanı ile yapılır, yalnızca kendi takımının göğüslüğü sayılır ve düşmeleri zararsız hale getirir.",
+     "Her serinin kendi Wings'i vardır ve öncekinden güçlüdür: ilk Wings'ten 1.12, 1.26 ve 1.40 kat hızlı ivmelenir ve uçar, 2000 yerine 3000, 4500 ve 7000 dayanır ve uçulan her blokta daha az yorar. Her biri önceki serinin Wings'i, kendi alaşımından 4 külçe, 3 Nether Yıldızı Bloğu ve bir Algorab Nişanı ile yapılır, yalnızca kendi takımının göğüslüğü sayılır ve düşmeleri zararsız hale getirir.",
      "Phoenix Wings lacivertten macenta pembe uçlara geçer ve mor yıldız noktaları parıldar; Phoenix Mythic Wings titreşen neon gülle parlar, kenarları topaz altınıdır ve çırpılırken yıldız tozu saçar; Phoenix Zenith Wings yarı saydam platin ve camgöbeği renktedir, gökkuşağı renkleri arasında dolaşan bir parıltısı vardır."
     ],
     "warnings": [
@@ -1400,15 +1400,15 @@
     "highlights": [
      "Starbloom Ziz The Final, Starbloom Phoenix Zenith'in üstündeki son seridir; Boşluk Obsidyeni, Taç Altını ve Biyolüminesan Camgöbeği renklerindedir. Starbloom Max'in dizilimine sahiptir — 13 öğe: alaşım külçesi, taş ocağı kazması, kesme baltası, düzleme küreği, hasat çapası, mızrak, dört zırh parçası, kalkan, yay ve ok — ve kendi Kanatlarına sahiptir. Dayanıklılık ve kazma hızı Phoenix Zenith'in 1.25× katıdır.",
      "Tam Ziz takımı düşme hasarı ve lav hasarı almaz, lavda yanmadan suda olduğu gibi yüzer ve ölümcül bir darbe sizi öldürmek yerine tüm zırhı parçalar — bir kez, /kill ve boşluğa karşı değil.",
-     "Ziz alaşım külçesi 3 Phoenix Zenith alaşım külçesi, 4 Nether yıldız bloğu ve 1 Netherit bloğundan yapılır ve 3 külçe verir. Ziz Kanatları Phoenix Zenith Kanatlarından, 4 Ziz külçesinden, 3 Nether yıldız bloğundan ve bir Corvus Amblemi'nden yapılır.",
+     "Ziz alaşım külçesi 3 Phoenix Zenith alaşım külçesi, 4 Nether yıldız bloğu ve 1 Netherit bloğundan yapılır ve 3 külçe verir. Ziz Kanatları Phoenix Zenith Kanatlarından, 4 Ziz külçesinden, 3 Nether yıldız bloğundan ve bir Algorab Amblemi'nden yapılır.",
      "Ziz Kanatlarının 14 uçuş hızı kademesi vardır: temel Kanatların ivmesinin 0.5× ile 7.0× arasında, 0.5× adımlarla. ] bir kademe hızlandırır, [ bir kademe yavaşlatır; varsayılan 3.0×'tir (6. kademe).",
      "Elinizde Starbloom kazma varken Çömelme + sağ tık kazı alanı kaydırıcısını açar: bir değer ve bir kaydırıcı, tek vuruşun kırdığı alanı seçer; 1×1'den 26×26'ya ve Hızlı Kazı'ya, tuttuğunuz kazmanın izin verdiği kadar. Sunucu artık Çömelme + kullan ile alanı değiştirmez."
     ],
     "warnings": [
      "Minecraft 26.3, Fabric Loader 0.19.5 veya daha yenisi, Fabric API 0.161.0+26.3 veya daha yenisi ve Java 25 gerekir. Başka mod gerekmez; Cherry isteğe bağlıdır.",
      "Tsubomi, Alpha ile birlikte kullanılamaz. Alpha modlarından biri bile kuruluysa oyun başlamaz; önce Alpha'nın jar dosyalarını kaldır.",
-     "Corvus Dev tarafından verilen ad, renkler, konsept ve Ziz yetenekleri dışında, bu serilerin tüm sayıları ve tarifleri geliştiricinin ilk tahminidir ve yeniden dengelenebilir.",
-     "Japonca adlar Corvus Dev tarafından henüz onaylanmadı.",
+     "Algorab Developer Program tarafından verilen ad, renkler, konsept ve Ziz yetenekleri dışında, bu serilerin tüm sayıları ve tarifleri geliştiricinin ilk tahminidir ve yeniden dengelenebilir.",
+     "Japonca adlar Algorab Developer Program tarafından henüz onaylanmadı.",
      "Kazı alanı kaydırıcısı ve Ziz yetenekleri yalnızca tek oyunculu gerçek bir istemcide denendi; özel sunucuda ve çok oyunculu modda denenmedi.",
      "Ziz Kanatlarının çırpınma sesi henüz yapılmadı."
     ]
@@ -1427,9 +1427,9 @@
     "warnings": [
      "Minecraft 26.3, Fabric Loader 0.19.5 veya daha yenisi, Fabric API 0.161.0+26.3 veya daha yenisi ve Java 25 gerekir. Başka mod gerekmez; Cherry isteğe bağlıdır.",
      "Tsubomi, Alpha ile birlikte kullanılamaz. Alpha modlarından biri bile kuruluysa oyun başlamaz; önce Alpha'nın jar dosyalarını kaldır.",
-     "Hediye havuzu, geliştiricinin \"Hayatta elde edilebilir\" ifadesini okumasına dayanır. Hariç tutma listesi yaratıcı modun Operatör sekmesinden ve sürüm notlarındaki kurallardan üretilir; Corvus Dev bunu değiştirebilir.",
+     "Hediye havuzu, geliştiricinin \"Hayatta elde edilebilir\" ifadesini okumasına dayanır. Hariç tutma listesi yaratıcı modun Operatör sekmesinden ve sürüm notlarındaki kurallardan üretilir; Algorab Developer Program bunu değiştirebilir.",
      "Bu sürümde sürüm denetimi, özel sunucu, çok oyunculu oyun ve gerçek Halia, OUKA ve Cherry jar dosyaları sınanmadı. Testler Tsubomi'nin kendi sürümüyle yapıldı.",
-     "Japonca adlar ve metinler henüz Corvus Dev tarafından onaylanmadı.",
+     "Japonca adlar ve metinler henüz Algorab Developer Program tarafından onaylanmadı.",
      "Sandığın sesi ve parçacıkları oyunun kendi sesleridir. Bu sürümde özel ses eklenmedi."
     ]
    },
@@ -1441,15 +1441,15 @@
      "/tsubomi gift adını korur ve operatör yetkisi gerektirmez; bu nedenle hileler kapalıyken Survival modunda da çalışır. Her oyuncu kampanya başına bir kez alabilir.",
      "Önünüzde iki blok uzakta bir hediye sandığı belirir. Yalnızca siz açabilir veya kırabilirsiniz. Hediye seçiciyi açmak için sağ tıklayın.",
      "Seçici, mod bazında kategori sekmeleri, bir arama kutusu, kaydırılabilir bir ızgara ve üzerine gelindiğinde görünen bir ipucu içeren Creative tarzı bir penceredir. Bir eşyaya tıklayın, ardından Take tuşuna basın. Tam olarak bir eşya alırsınız ve sandık kaldırılır.",
-     "Silahlar, zırhlar, elytra'lar, kalkanlar, yaylar ve Tsubomi'nin ekipman hatları (Starbloom, Ziz, Phoenix, Corvus ve kanatları) hiçbir zaman sunulmaz. Kazma, kürek, çapa, olta ve makas gibi basit araçlar yine de sunulur.",
+     "Silahlar, zırhlar, elytra'lar, kalkanlar, yaylar ve Tsubomi'nin ekipman hatları (Starbloom, Ziz, Phoenix, Algorab ve kanatları) hiçbir zaman sunulmaz. Kazma, kürek, çapa, olta ve makas gibi basit araçlar yine de sunulur.",
      "Yalnızca Creative eşyaları hiçbir zaman sunulmaz; spawner ve tablo listede kalır. Sandık için yer yoksa seçici hemen açılır."
     ],
     "warnings": [
      "Minecraft 26.3, Fabric Loader 0.19.5 veya daha yenisi, Fabric API 0.161.0+26.3 veya daha yenisi ve Java 25 gerekir. Başka mod gerekmez; Cherry isteğe bağlıdır.",
      "Tsubomi, Alpha ile birlikte kullanılamaz. Alpha modlarından biri bile kuruluysa oyun başlamaz; önce Alpha'nın jar dosyalarını kaldır.",
-     "Survival ve ekipman kuralları geliştiricinin yorumudur. Corvus Dev listeleri değiştirebilir.",
+     "Survival ve ekipman kuralları geliştiricinin yorumudur. Algorab Developer Program listeleri değiştirebilir.",
      "Bu sürümde sürüm kontrolü, özel sunucu, çok oyunculu mod ve gerçek Halia, OUKA ve Cherry jar dosyaları test edilmedi.",
-     "Japonca metin henüz Corvus Dev tarafından onaylanmadı.",
+     "Japonca metin henüz Algorab Developer Program tarafından onaylanmadı.",
      "Sandık sesi ve parçacıkları oyunun kendisine aittir. Seçici yalnızca tek bir ekran boyutunda (1280×720) gerçek bir istemcide kontrol edildi."
     ]
    }
@@ -1671,7 +1671,7 @@
     "warnings": [
      "Gereksinimler: Minecraft 26.3, Fabric Loader 0.19.5 veya daha yeni, Fabric API 0.161.0+26.3 veya daha yeni, Java 25. Çok oyunculu oyunda Halia sunucuya da kurulmalıdır.",
      "Halia V1.4 artık GeckoLib 5.5.6 kullanıyor. GeckoLib, Halia jar dosyasının içinde geliyor, bu yüzden ayrıca bir şey kurmanıza gerek yok; başka bir mod aynı GeckoLib'i getirirse oyun yalnızca bir kopyasını kullanır.",
-     "Her yaratığın doğal oluşumu Corvus uygulamasından tek tek kapatılabilir. Anahtarlar V1.4 yayımlandıktan sonra iki ay boyunca açık olarak kilitli kalır; kilidin bitiş tarihi yayın günü belirlenir."
+     "Her yaratığın doğal oluşumu Algorab uygulamasından tek tek kapatılabilir. Anahtarlar V1.4 yayımlandıktan sonra iki ay boyunca açık olarak kilitli kalır; kilidin bitiş tarihi yayın günü belirlenir."
     ]
    },
    {
@@ -1770,20 +1770,20 @@
     "title": "Halia V1.1 — Halia Blade: bir katana, 90 kombo hareketi ve çağrılan kılıçlar",
     "summary": "Halia V1.1, kalçada taşınan ve zamanlamayla kullanılan katana Halia Blade'i ekler: yerde ve havada kombolar, şarj edilen teknikler, çağrılan kılıçlar, hedef kilitleme, savunma ve numara hareketleri. 8 üretim malzemesi, 6 kılıç standı ve 11 adlandırılmış kılıç ile gelir. V1.0'daki Stellar Remote değişmedi.",
     "highlights": [
-     "Halia Blade: Soulsteel Ingots, bir Corvus Soul, bir demir kılıç ve bir Nether tuğlasıyla üretilir. Kullan (sağ tık) ile saldır; zamanında tekrar basmak kombonun devam etmesini sağlar. Yerde ve havada toplam 90 kombo hareketi vardır.",
+     "Halia Blade: Soulsteel Ingots, bir Algorab Soul, bir demir kılıç ve bir Nether tuğlasıyla üretilir. Kullan (sağ tık) ile saldır; zamanında tekrar basmak kombonun devam etmesini sağlar. Yerde ve havada toplam 90 kombo hareketi vardır.",
      "Şarj edilen teknikler: Judgement Cut için parçacıklar belirdiğinde kullan tuşunu basılı tutup bırak; daha güçlü sürüm için hemen belirmeden bırak. Eğilme + ileri + kullan Rapid Slash'tir; eğilme + geri + kullan Upper Slash'tir.",
      "Çağrılan kılıçlar: blok seçme tuşu (orta tık) hedefine 1 deneyim puanı karşılığında bir kılıç fırlatır; Spiral, Storm, Blistering ve Heavy Rain Swords olmak üzere 4 büyük desen her biri 5 puana mal olur.",
      "Kilitleme, savunma ve hareket: düşmana kilitlenmek için eğilmeyi basılı tut; yerinde dururken eğilmek menzilli saldırılara karşı korur; koşma tuşuyla yapılan numaralar seni bir düşmana, onun üstüne ya da ondan uzağa fırlatır; havadayken bir düşmandan ya da duvardan sıçrayabilirsin.",
      "Konsantrasyon derecesi: isabet ettirdikçe sağ üstte görünen derece D'den SSS'ye yükselir; savaşmayı bıraktığında yeniden düşer. Yüksek dereceler hasarı artırır.",
-     "Aşınma, geliştirme ve yeniden dövme: bir kılıç 101 vuruştan sonra kırılır ve kaydını koruyan bir ruh düşürür. Örsün üzerinde bir Corvus Soul kılıcı geliştirir (ruh başına 1 seviye) ve kırık bir kılıç yeniden dövülebilir.",
-     "Malzemeler ve standlar: Tiny Corvus Soul'dan Abyssal Geode'a kadar her biri tarifli 8 malzeme ve kılıcı sergilemek için zemin ve duvar tipinde 6 Halia Stands.",
+     "Aşınma, geliştirme ve yeniden dövme: bir kılıç 101 vuruştan sonra kırılır ve kaydını koruyan bir ruh düşürür. Örsün üzerinde bir Algorab Soul kılıcı geliştirir (ruh başına 1 seviye) ve kırık bir kılıç yeniden dövülebilir.",
+     "Malzemeler ve standlar: Tiny Algorab Soul'dan Abyssal Geode'a kadar her biri tarifli 8 malzeme ve kılıcı sergilemek için zemin ve duvar tipinde 6 Halia Stands.",
      "Oyun içi rehber: 57 gelişme. “Blade MoveSets” dalı her hareketi bilgisayarındaki tuşlarla listeler; bir malzeme ya da kılıç gelişmesine tıklamak tarifini gösterir."
     ],
     "warnings": [
      "Minecraft 26.3, Fabric Loader 0.19.5 veya daha yeni, Fabric API 0.161.0+26.3 veya daha yeni ve Java 25 gerekir. Çok oyunculu oyun için Halia sunucuya da kurulmalıdır.",
      "Stellar Remote hâlâ dünyanın çok geniş bölümlerini kalıcı olarak yok eder; düğmesine basmadan önce dünyanı yedekle. Bu sürümde buna dair bir değişiklik yok.",
      "V1.0.0 dünyaları olduğu gibi açılır; bu sürüm yalnızca içerik ekler. Kılıç, malzeme veya stand içeren bir dünyayla 1.0.0'a dönme: bunlar silinir.",
-     "Stüdyo tarafından henüz doğrulanmadı: özel bir çok oyunculu sunucuda oynamak, Windows ve diğer Corvus Store modlarıyla birlikte kullanmak. Birinci kişi görünümde kınına konmuş kılıç, sen saldırana kadar çoğunlukla görünmez."
+     "Stüdyo tarafından henüz doğrulanmadı: özel bir çok oyunculu sunucuda oynamak, Windows ve diğer Algorab Store modlarıyla birlikte kullanmak. Birinci kişi görünümde kınına konmuş kılıç, sen saldırana kadar çoğunlukla görünmez."
     ]
    },
    {

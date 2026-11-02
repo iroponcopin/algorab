@@ -1265,7 +1265,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar), :lang(ru)) .ac-page-head h1 
   }
 }
 
-/* ———————————————————————————— Corvus Store, the simulator ———————————————————————————— */
+/* ———————————————————————————— Algorab Store, the simulator ———————————————————————————— */
 
 
 
@@ -1598,7 +1598,7 @@ html:is(:lang(ja), :lang(zh), :lang(ko), :lang(ar), :lang(ru)) .ac-page-head h1 
 
 
 
-/* ———————————————————————————— Corvus Store, the page ———————————————————————————— */
+/* ———————————————————————————— Algorab Store, the page ———————————————————————————— */
 
 .ac-hub {
   position: relative;

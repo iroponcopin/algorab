@@ -21,7 +21,7 @@ const RING_MARKS = new Set(["ouka", "cherry", "tsubomi", "noctua"]);
 const RING: readonly string[] = PRODUCTS.filter((id) => RING_MARKS.has(id));
 
 /**
- * Corvus Store: the hub (the models, one card each), the Store itself running in the page, then
+ * Algorab Store: the hub (the models, one card each), the Store itself running in the page, then
  * the installers, the mods, the release notes and the guide.
  */
 export function LauncherPage({ lang }: { lang: Lang }) {

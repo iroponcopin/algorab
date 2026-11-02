@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Shared registry + page-shell template for the Corvus static site.
+Shared registry + page-shell template for the Algorab static site.
 Plain Python string templates (no Jinja2 dependency) — every other generator
 script imports from here so the header/nav/footer never drifts between pages.
 
@@ -27,17 +27,17 @@ I18N_DIR = ROOT / "data" / "i18n"
 DOWNLOADS_DIR = ROOT / "downloads"
 
 # Three distinct names, deliberately kept apart:
-#   SITE_TITLE          the website              -> "Corvus"
+#   SITE_TITLE          the website              -> "Algorab"
 #   PACK_NAME           the mod pack product     -> "Alpha" (was "Glimpse
 #                       Alpha" until the V2.5.0 rename; see below)
-#   LAUNCHER_APP_NAME   the desktop updater app  -> "Corvus" (was
+#   LAUNCHER_APP_NAME   the desktop updater app  -> "Algorab" (was
 #                       "Glimpse Launcher" until the 1.3.0 rename)
-SITE_TITLE = "Corvus"  # brand name, unchanged across languages
-# 2026-09-10、所有者:「Corvus から Corvus に名称を変更」。
-# 旧名は Corvus。リポジトリ名(corvus-dev)と公開 URL は
+SITE_TITLE = "Algorab"  # brand name, unchanged across languages
+# 2026-09-10、所有者:「Algorab から Algorab に名称を変更」。
+# 旧名は Algorab。リポジトリ名(corvus-dev)と公開 URL は
 # **変えない** —— 変えると既に配布したランチャーの取得先が 404 になる
 # (cross-repo filename coupling と同じ罠)。変わるのは表示名だけである。
-LAUNCHER_APP_NAME = "Corvus"
+LAUNCHER_APP_NAME = "Algorab"
 
 # V2.5.0 renamed the pack "Glimpse Alpha" -> "Alpha" (the owner's instruction
 # was to drop "Glimpse"). The BRAND moved; no identifier did — the eleven mod
@@ -412,7 +412,7 @@ def pack_version() -> str:
 #   "find the launcher jar", and both copies had the same two defects:
 #
 #     1. They globbed "glimpse-launcher-*.jar". The app was renamed to
-#        Corvus in 1.3.0 and its files became corvus-1.3.0.*, so the glob
+#        Algorab in 1.3.0 and its files became corvus-1.3.0.*, so the glob
 #        matched nothing — and because a missing jar is a *supported* state
 #        ("no launcher published yet"), the manifest would have quietly
 #        shipped with no "launcher" block at all and every installed
@@ -439,7 +439,7 @@ NATIVE_LAUNCHER_PLATFORMS = [
 ]
 
 
-# Jars named corvus-<word>-... that are not the launcher: Corvus XHard (2026-10-18), a server-side mod the manifest
+# Jars named corvus-<word>-... that are not the launcher: Algorab XHard (2026-10-18), a server-side mod the manifest
 # carries in its own `xhard` block. Named here so the launcher scan skips it on purpose, not by accident.
 NOT_LAUNCHER_JAR_PREFIXES = ("corvus-xhard-",)
 
@@ -560,7 +560,7 @@ def bundle_placeholders() -> dict:
     a "latest is V2.2.0" line shipping next to a V2.4.8 ZIP). {launcher_jar}
     and {launcher_version} joined for the same reason: the install
     instructions used to spell out glimpse-launcher-1.2.1.jar in both the EN
-    and JA bundles, so the Corvus 1.3.0 rename would have left two languages
+    and JA bundles, so the Algorab 1.3.0 rename would have left two languages
     telling people to run a file that no longer exists.
     """
     global _placeholder_cache

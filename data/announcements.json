@@ -1,5 +1,5 @@
 {
- "_note": "Every film the studio has posted publicly (the Discord update/upcoming channels), newest first: the same files, byte for byte (sizes match the attachments), kept in assets/video/announcement/ and played on the portal's Announcement page (2026-10-05, owner: the Coming-next tab is gone and the published trailers are gathered there). 'date' is the UK date it was posted; 'kind' is trailer | launch | teaser | film | indev; 'brand' keys the release notes link (corvus = Corvus Store). Add a film by adding its file, its poster and a line here, newest first.",
+ "_note": "Every film the studio has posted publicly (the Discord update/upcoming channels), newest first: the same files, byte for byte (sizes match the attachments), kept in assets/video/announcement/ and played on the portal's Announcement page (2026-10-05, owner: the Coming-next tab is gone and the published trailers are gathered there). 'date' is the UK date it was posted; 'kind' is trailer | launch | teaser | film | indev; 'brand' keys the release notes link (corvus = Algorab Store). Add a film by adding its file, its poster and a line here, newest first.",
  "films": [
   {
    "id": "ouka-v1-4-film",
@@ -103,7 +103,7 @@
    "kind": "launch",
    "date": "2026-09-30",
    "posted_utc": "2026-09-30T02:07Z",
-   "title": "Corvus Store 3.0",
+   "title": "Algorab Store 3.0",
    "seconds": 60,
    "file": "corvus-store-launch-film.mp4",
    "poster": "corvus-store-launch-film.jpg",

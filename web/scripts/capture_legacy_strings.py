@@ -268,7 +268,7 @@ def capture(lang: str) -> dict:
         "cards": {c["id"]: {"jp": c.get("jp"), "line": c["line"], "status": c["status"]} for c in hero["cards"]},
     }
 
-    # Corvus Store (client 39232 + server copy).
+    # Algorab Store (client 39232 + server copy).
     store_rsc = client_props(page_dir(lang, "launcher") / "index.txt")
     hub = first(store_rsc, 39232)
     copyb = first(store_rsc, 34950)
@@ -365,7 +365,7 @@ def main() -> None:
     if not (WIKI / "portal" / "build.json").exists():
         raise SystemExit("the pre-4.0 portal export is not laid over this tree; nothing to capture")
     build = json.loads((WIKI / "portal" / "build.json").read_text(encoding="utf-8"))
-    if str(build.get("what", "")).startswith("Corvus portal 4"):
+    if str(build.get("what", "")).startswith("Algorab portal 4"):
         raise SystemExit("this tree already carries the 4.x export; legacy.json must not be re-captured")
     nf = html_of(WIKI / "404.html")
     out = {

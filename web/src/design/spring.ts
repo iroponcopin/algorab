@@ -1,5 +1,5 @@
 /**
- * Corvus NEXT spring physics.
+ * Algorab spring physics.
  *
  * A damped harmonic oscillator, advanced with its exact closed-form solution: the step is
  * unconditionally stable and gives the same trajectory for any partition of time (a 60 Hz and a 120 Hz

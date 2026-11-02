@@ -9,7 +9,7 @@ import { Rich } from "../Rich";
 import { asset } from "@/lib/site";
 import { ENDED_MODELS, MODEL_ORDER } from "@/lib/models";
 
-/** The live models, in MODEL_ORDER (the order the chips show them). Corvus Store is the launcher's own feed. */
+/** The live models, in MODEL_ORDER (the order the chips show them). Algorab Store is the launcher's own feed. */
 const LIVE: readonly string[] = [...MODEL_ORDER.filter((id) => !ENDED_MODELS.includes(id)), "corvus"];
 /** The models that have ended: they appear under the Ended filter only, never in All. */
 const ENDED: readonly string[] = [...ENDED_MODELS, "alpha"];
@@ -88,7 +88,7 @@ export function Changelog({
   const names = useMemo(() => Object.fromEntries(brands.map((b) => [b.id, b.name])), [brands]);
   const all = useMemo(() => {
     const flat: Release[] = brands.flatMap((b) => b.releases);
-    // Newest first; stable, so ties keep the brand order; undated (Corvus Store) rows go last.
+    // Newest first; stable, so ties keep the brand order; undated (Algorab Store) rows go last.
     return flat
       .map((r, i) => ({ r, i }))
       .sort((a, b) => (b.r.date ?? "").localeCompare(a.r.date ?? "") || a.i - b.i)

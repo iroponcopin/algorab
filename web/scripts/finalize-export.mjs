@@ -79,7 +79,7 @@ writeFileSync(
   join(OUT, "portal", "build.json"),
   JSON.stringify(
     {
-      what: `Corvus portal ${pkg.version}, static export. Made by web/ (npm run build); nothing here is a contract file.`,
+      what: `Algorab portal ${pkg.version}, static export. Made by web/ (npm run build); nothing here is a contract file.`,
       wiki_commit: wiki.build.commit,
       wiki_branch: wiki.build.branch,
       wiki_dirty: wiki.build.dataDirty,

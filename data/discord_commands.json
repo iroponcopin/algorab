@@ -237,7 +237,7 @@
         },
         {
           "name": "launcher",
-          "description": "Choose whether Corvus updates are announced too",
+          "description": "Choose whether Algorab updates are announced too",
           "admin": true,
           "parameters": [
             {

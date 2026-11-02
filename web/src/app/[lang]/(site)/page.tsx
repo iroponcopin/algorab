@@ -1,3 +1,4 @@
+import { BUILD_NAME } from "@/lib/next";
 import type { Metadata } from "next";
 import { NextHome, type HomeCard, type HomeContent } from "@/components/home/NextHome";
 import { FRESH } from "@/i18n/fresh";
@@ -52,7 +53,7 @@ export default async function Page({ params }: Params) {
     icon: asset(BRAND_ICON[id] ?? `icons/${id}.png`),
   }));
   const explore: HomeCard[] = [
-    { key: "launcher", href: href("launcher/"), eyebrow: `${c.launcherVersion} ${d.launcherFiles.version}`, title: d.launcher.title, body: d.launcher.description, icon: asset("icons/store.png") },
+    { key: "launcher", href: href("launcher/"), eyebrow: BUILD_NAME, title: d.launcher.title, body: d.launcher.description, icon: asset("icons/store.png") },
     { key: "recipes", href: href("recipes/"), eyebrow: c.recipes, title: d.recipes.navTitle, body: d.recipes.description, icon: null },
     { key: "changelog", href: href("changelog/"), eyebrow: c.changelog, title: d.changelog.title, body: d.changelog.description, icon: null },
     { key: "announcement", href: href("announcement/"), eyebrow: f.announcement.title, title: f.announcement.title, body: f.announcement.description, icon: null },

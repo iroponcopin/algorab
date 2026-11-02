@@ -12,23 +12,22 @@ export function fileLabels(d: LangData): FileCardLabels {
   return { fileSize: d.chrome.fileSize, sha256: d.chrome.sha256, copy: d.chrome.copy, copied: d.chrome.copied };
 }
 
-/** The four Corvus Store files (macOS, Windows, Linux, jar), shared with the Store page. */
-export function LauncherFiles({ d }: { d: LangData }) {
-  const f = d.launcherFiles;
+/** The three Corvus 6 files (macOS, Windows, Linux), shared with the Store page. */
+export function LauncherFiles({ d, lang }: { d: LangData; lang: Lang }) {
+  const n = NEXT_RELEASE[lang];
   const labels = fileLabels(d);
   return (
     <div className="cn-tiles">
-      {f.native.map((n) => (
+      {d.launcherFiles.corvus6.map((file) => (
         <FileCard
-          key={n.platform}
-          tag={`${n.label} · .${n.ext}`}
-          file={n}
-          note={n.platform === "macos" ? d.launcher.macNote : undefined}
-          cta={`${d.launcher.cta} (${n.label})`}
+          key={file.platform}
+          tag={`${file.label} · .${file.ext}`}
+          file={file}
+          note={file.platform === "macos" ? `${n.macSystem} · ${n.macStack}` : `${file.platform === "windows" ? n.winSystem : n.linuxSystem} · ${n.qtStack}`}
+          cta={`${n.download} (${file.label})`}
           labels={labels}
         />
       ))}
-      <FileCard tag={`${d.chrome.launcherVersion} ${f.version} · .jar`} file={f.jar} note={d.launcher.jarNote} cta={d.launcher.cta} labels={labels} />
     </div>
   );
 }
@@ -80,18 +79,12 @@ export function DownloadPage({ lang }: { lang: Lang }) {
       </div>
 
       <section className="ac-wrap cn-dl-block" aria-label={n.title}>
-        <div className="cn-tiles">
-          {d.launcherFiles.corvus6.map((file) => (
-            <FileCard
-              key={file.platform}
-              tag={`${file.label} · .${file.ext}`}
-              file={file}
-              note={file.platform === "macos" ? `${n.macSystem} · ${n.macStack}` : `${file.platform === "windows" ? n.winSystem : n.linuxSystem} · ${n.qtStack}`}
-              cta={`${n.download} (${file.label})`}
-              labels={labels}
-            />
-          ))}
-        </div>
+        <LauncherFiles d={d} lang={lang} />
+        <p className="cn-dl-more">
+          <Link className="ac-link" href={pathOf(lang, "changelog/")}>
+            {dl.changelogLink}
+          </Link>
+        </p>
       </section>
 
       <section className="ac-wrap cn-dl-block" aria-labelledby="dl-open">
@@ -129,21 +122,6 @@ export function DownloadPage({ lang }: { lang: Lang }) {
         <p className="cn-dl-line">{n.currentLede}</p>
         <p className="cn-dl-line">{n.javaEnds}</p>
       </header>
-
-      <section className="ac-wrap cn-dl-block" aria-labelledby="dl-store">
-        <header className="cn-dl-head">
-          <h2 id="dl-store" className="cn-dl-title">
-            {dl.nativeHeading}
-          </h2>
-          <p className="cn-dl-line">{dl.nativeNote}</p>
-        </header>
-        <LauncherFiles d={d} />
-        <p className="cn-dl-more">
-          <Link className="ac-link" href={pathOf(lang, "changelog/")}>
-            {dl.changelogLink}
-          </Link>
-        </p>
-      </section>
 
       {dl.halia ? (
         <ModelDownload id="dl-halia" heading={`Halia ${d.products.halia?.jp ?? ""}`.trim()} line={d.products.halia?.tagline} aside={<Aside icon="halia">{mcLine}</Aside>}>

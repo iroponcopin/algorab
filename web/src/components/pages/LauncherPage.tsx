@@ -1,6 +1,8 @@
 import { BuildTag } from "@/components/next/BuildTag";
 import Link from "next/link";
 import { FRESH } from "@/i18n/fresh";
+import { NEXT_RELEASE } from "@/i18n/next-release";
+import { BUILD_NAME } from "@/lib/next";
 import { asset, pathOf } from "@/lib/site";
 import { langData } from "@/lib/wiki";
 import type { Lang, Product } from "@/lib/wiki-types";
@@ -27,9 +29,7 @@ export function LauncherPage({ lang }: { lang: Lang }) {
   const l = d.launcher;
   const t = l.text;
   const f = FRESH[lang];
-  const files = d.launcherFiles;
-  const version = files.version;
-  const series = version.split(".").slice(0, 2).join(".");
+  const n = NEXT_RELEASE[lang];
   const products = PRODUCTS.map((id) => d.products[id]).filter((p): p is Product => p !== undefined);
   const status = (p: Product): string =>
     p.availability === "soon" ? t.comingSoon : p.availability === "archived" ? t.archived : t.available;
@@ -91,15 +91,15 @@ export function LauncherPage({ lang }: { lang: Lang }) {
 
       <section id="hub-get" className="ac-wrap ac-section ac-hub-get" aria-labelledby="hub-get-h">
         <p className="ac-eyebrow">
-          {d.chrome.launcherVersion} <span className="ac-ltr">{version}</span>
+          {n.statusLabel}
         </p>
         <h2 id="hub-get-h" className="ac-h2">
-          Corvus Store <span className="ac-ltr">{series}</span>
+          {BUILD_NAME}
         </h2>
         <p className="ac-lead ac-measure">{l.body}</p>
         <h3 className="ac-eyebrow ac-hub-get-sub">{f.store.installers}</h3>
-        <LauncherFiles d={d} />
-        <p className="ac-small ac-dl-note">{l.nativeNote}</p>
+        <LauncherFiles d={d} lang={lang} />
+        <p className="ac-small ac-dl-note">{n.javaEnds}</p>
         <p>
           <Link className="ac-link" href={pathOf(lang, "download/")}>
             {l.hub.downloadLabel} <span className="ac-flip">{d.chrome.arrow}</span>
@@ -146,16 +146,11 @@ export function LauncherPage({ lang }: { lang: Lang }) {
 
       <section className="ac-wrap ac-section ac-hub-block" aria-labelledby="hub-notes-h">
         <h2 id="hub-notes-h" className="ac-h3">
-          {l.whatsNew} · {d.chrome.launcherVersion} <span className="ac-ltr">{version}</span>
+          {l.whatsNew} · {BUILD_NAME}
         </h2>
-        <div lang="en" dir="ltr" className="ac-hub-notes">
-          {files.notes.map((n, i) => (
-            <p key={i}>{n}</p>
-          ))}
-        </div>
+        <p className="ac-lead ac-measure">{n.emptyBody}</p>
         <p className="ac-small ac-dl-note">
-          {l.notesEnglishOnly}{" "}
-          <Link className="ac-link" href={`${pathOf(lang, "changelog/")}?model=corvus`}>
+          <Link className="ac-link" href={pathOf(lang, "changelog/")}>
             {l.versionHistory} <span className="ac-flip">{d.chrome.arrow}</span>
           </Link>
         </p>
@@ -168,7 +163,7 @@ export function LauncherPage({ lang }: { lang: Lang }) {
         <p className="ac-lead ac-measure">{l.guideIntro}</p>
         <p className="ac-small ac-dl-note">{l.guideNote}</p>
         <div className="ac-hub-guide">
-          {l.guide.map((g) => (
+          {l.guide.filter((g) => g.id !== "installing").map((g) => (
             <details key={g.id} id={g.id} className="ac-hub-guide-item">
               <summary>{g.title}</summary>
               <TrustedHtml className="ac-hub-guide-body" html={g.html} />

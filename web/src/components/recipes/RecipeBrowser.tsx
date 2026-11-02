@@ -242,7 +242,7 @@ export function RecipeBrowser({
   useEffect(() => {
     const coarse = window.matchMedia("(pointer: coarse)").matches;
     setKeyHint(coarse ? "" : /Mac|iPhone|iPad/.test(navigator.platform) ? "⌘K" : "Ctrl K");
-    setSolid(document.documentElement.hasAttribute("data-enhanced") && webgl2());
+    setSolid((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData !== true && webgl2());
   }, []);
 
   // ⌘K / Ctrl K goes to this page's own field; the header's button still opens the site search.
@@ -373,7 +373,8 @@ export function RecipeBrowser({
         t={t}
         tabs={tabs}
         stations={stations}
-        solid={wide && solid && !reduced}
+        solid={solid}
+        still={reduced}
         onPick={pick}
         onSeeAll={seeAll}
         actions={

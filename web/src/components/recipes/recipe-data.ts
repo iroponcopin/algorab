@@ -6,14 +6,16 @@ import type { RecipeShared } from "@/lib/wiki-types";
  */
 
 export type RecipeRow = Omit<RecipeShared["recipes"][number], "search" | "how" | "howText">;
-export type ItemKind = "flat" | "cube" | "icon" | "none";
 
 export interface SheetItem {
   id: string;
   name: string;
   sub?: string;
   icon: string | null;
-  kind: ItemKind;
+  /** The file of the item's shape as the game draws it (web/scripts/build_item_models.py). */
+  shape?: string;
+  /** How the shape is posed: a flat item faces the viewer, a solid one turns a corner to them. */
+  kind?: string;
   /** The item's name and reading as the Japanese sheet gives them (for search). */
   read?: string;
 }

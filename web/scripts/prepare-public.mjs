@@ -33,6 +33,7 @@ const copies = [
   [join(WIKI, "assets", "audio", "ouka", "silver-and-petals.m4a"), "wiki/audio/silver-and-petals.m4a"],
   [join(WIKI, "assets", "audio", "ouka", "silver-and-petals.mp3"), "wiki/audio/silver-and-petals.mp3"],
   [join(WIKI, "assets", "img", "recipes"), "wiki/recipes"],
+  [join(WEB, "brand", "models"), "models"],
   [join(WIKI, "assets", "video", "announcement"), "wiki/announcement"],
   [join(WIKI, "assets", "img", "sparxie-front.png"), "wiki/skin/sparxie-front.png"],
   [join(WIKI, "assets", "img", "sparxie-model.png"), "wiki/skin/sparxie-model.png"],
@@ -77,6 +78,7 @@ for (const lang of LANG_CODES) {
 // every language's page, as it always has.
 const ID_TOKEN = /^#?[a-z0-9_.-]+:[a-z0-9_/.[\]-]+$/;
 const NOT_A_NAME = /[、。()(),]/;
+const shapes = JSON.parse(readFileSync(join(WEB, "brand", "models", "index.json"), "utf8"));
 const readings = new Map();
 for (const rec of wikiData.recipes.recipes) {
   const tokens = rec.search.split(" ");
@@ -96,7 +98,7 @@ for (const lang of LANG_CODES) {
   const items = {};
   for (const [id, it] of Object.entries(wikiData.recipes.items)) {
     const read = [...(readings.get(id) ?? [])].join(" ");
-    items[id] = { name: d.names[id] ?? it.en, ...(d.subs[id] ? { sub: d.subs[id] } : {}), icon: it.icon, kind: it.kind, ...(read ? { read } : {}) };
+    items[id] = { name: d.names[id] ?? it.en, ...(d.subs[id] ? { sub: d.subs[id] } : {}), icon: it.icon, ...(shapes[id] ? { shape: shapes[id].f, kind: shapes[id].k } : {}), ...(read ? { read } : {}) };
   }
   const recipes = wikiData.recipes.recipes.map(({ search: _s, how: _h, howText, fusion, ...rec }) => ({
     ...rec,
@@ -106,13 +108,13 @@ for (const lang of LANG_CODES) {
   writeFileSync(join(OUT, "recipes", `${lang}.json`), JSON.stringify({ items, recipes }));
 }
 
-// Recipe icons are named by stable ids and are 219 of them: they keep plain URLs.
+// Recipe icons are named by stable ids, and item models by their own content hash: both keep plain URLs.
 const versions = {};
 (function walk(dir, rel) {
   for (const e of readdirSync(dir, { withFileTypes: true })) {
     const r = rel === "" ? e.name : `${rel}/${e.name}`;
     if (e.isDirectory()) {
-      if (r !== "wiki/recipes") walk(join(dir, e.name), r);
+      if (r !== "wiki/recipes" && r !== "models") walk(join(dir, e.name), r);
     } else {
       versions[r] = createHash("sha256").update(readFileSync(join(dir, e.name))).digest("hex").slice(0, 10);
     }

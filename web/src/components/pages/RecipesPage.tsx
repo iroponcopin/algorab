@@ -22,7 +22,7 @@ export function RecipesPage({ lang }: { lang: Lang }) {
 
   const sheet: Sheet = {
     items: Object.fromEntries(
-      Object.entries(shared.items).map(([id, it]) => [id, { id, name: r.names[id] ?? it.en, ...(r.subs[id] ? { sub: r.subs[id] } : {}), icon: it.icon, kind: it.kind }]),
+      Object.entries(shared.items).map(([id, it]) => [id, { id, name: r.names[id] ?? it.en, ...(r.subs[id] ? { sub: r.subs[id] } : {}), icon: it.icon }]),
     ),
     recipes: shared.recipes,
   };

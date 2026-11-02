@@ -194,7 +194,7 @@ function Tree({ loaded, id, root, seen, depth, onPick }: Shared & { id: string; 
   );
 }
 
-function Hero({ id, url, kind, accent, solid }: { id: string; url: string | null; kind: Sheet["items"][string]["kind"]; accent: string; solid: boolean }) {
+function Hero({ id, url, shape, kind, accent, solid, still }: { id: string; url: string | null; shape?: string; kind?: string; accent: string; solid: boolean; still: boolean }) {
   const [ready, setReady] = useState(false);
   const onReady = useCallback((r: boolean) => setReady(r), []);
   return (
@@ -207,7 +207,7 @@ function Hero({ id, url, kind, accent, solid }: { id: string; url: string | null
           ?
         </span>
       )}
-      {solid && url ? <ItemTurntable url={url} kind={kind} accent={accent} onReady={onReady} /> : null}
+      {solid && shape ? <ItemTurntable file={shape} flat={kind === "flat"} accent={accent} still={still} onReady={onReady} /> : null}
     </div>
   );
 }
@@ -224,6 +224,7 @@ export function RecipeDetail({
   tabs,
   stations,
   solid,
+  still,
   actions,
   onPick,
   onSeeAll,
@@ -234,8 +235,10 @@ export function RecipeDetail({
   t: Fresh["recipes"];
   tabs: readonly ModelTab[];
   stations: readonly StationOption[];
-  /** Draw the turning model (wide screen, WebGL 2, motion welcome). */
+  /** Draw the model (WebGL 2, and no data-saving connection). */
   solid: boolean;
+  /** Motion is not welcome: the model holds still until it is dragged. */
+  still: boolean;
   actions: ReactNode;
   onPick: (id: string) => void;
   onSeeAll: (name: string) => void;
@@ -257,7 +260,7 @@ export function RecipeDetail({
     <article className="rx-item" style={{ ["--rx-accent" as string]: accent }}>
       {actions ? <div className="rx-item-actions">{actions}</div> : null}
       <header className="rx-hero">
-        <Hero id={id} url={recipeIcon(item?.icon ?? null)} kind={item?.kind ?? "none"} accent={accent} solid={solid} />
+        <Hero id={id} url={recipeIcon(item?.icon ?? null)} shape={item?.shape} kind={item?.kind} accent={accent} solid={solid} still={still} />
         <h2 className="rx-item-name" dir="auto">
           {item?.name ?? id}
         </h2>

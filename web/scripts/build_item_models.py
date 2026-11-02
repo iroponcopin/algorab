@@ -167,7 +167,7 @@ def corners(face, a, b):
         "down": [(x1, y1, z2), (x1, y1, z1), (x2, y1, z1), (x2, y1, z2)],
     }[face]
 
-def bake_elements(files, m, shape, tints):
+def bake_elements(files, m, shape, tints, lift=0):
     for e in m["elements"]:
         a, b = tuple(e["from"]), tuple(e["to"])
         rot = e.get("rotation")
@@ -191,6 +191,8 @@ def bake_elements(files, m, shape, tints):
                     for ax in "xyz":
                         if rot.get(ax):
                             vs = [rotate(v, ax, rot[ax], rot.get("origin", [8, 8, 8]), False) for v in vs]
+            if lift:
+                vs = [(v[0], v[1] + lift, v[2]) for v in vs]
             ti = fd.get("tintindex", fd.get("tint", -1))
             tint = tints[ti] if isinstance(ti, int) and 0 <= ti < len(tints) else None
             shape.add(t[0], tint, vs, uvs)
@@ -263,11 +265,12 @@ def bake_geo(files, geo, texture, shape):
         return out
 
     def rot_pivot(v, rot, pivot):
-        # Game space: x is negated, and rotations about x and y with it. GeckoLib applies z, then y, then x.
+        # Game space: x is negated, and rotations about x and y with it. GeckoLib multiplies z, then y, then x onto the
+        # pose, so a vertex meets them in the other order.
         o = (-pivot[0], pivot[1], pivot[2])
-        if rot[2]: v = rotate(v, "z", rot[2], o, False)
-        if rot[1]: v = rotate(v, "y", -rot[1], o, False)
         if rot[0]: v = rotate(v, "x", -rot[0], o, False)
+        if rot[1]: v = rotate(v, "y", -rot[1], o, False)
+        if rot[2]: v = rotate(v, "z", rot[2], o, False)
         return v
 
     for bone in root.get("bones", []):
@@ -309,6 +312,10 @@ def geo_of(files, ns, path):
     """The GeckoLib model of an item or its block, and its texture."""
     if path.startswith("wonder_") and files.has(f"assets/{ns}/oke/{path}.geo.json"):
         return f"assets/{ns}/oke/{path}.geo.json", f"assets/{ns}/textures/wonder/{path[7:]}/uv.png"
+    # The rest of that folder: the wind turbines, and the train cars, whose items end in _car.
+    oke = re.sub(r"_car$", "", path)
+    if files.has(f"assets/{ns}/oke/{oke}.geo.json") and files.has(f"assets/{ns}/textures/oke/{oke}.png"):
+        return f"assets/{ns}/oke/{oke}.geo.json", f"assets/{ns}/textures/oke/{oke}.png"
     for kind in ("block", "item", "entity"):
         g = f"assets/{ns}/geckolib/models/{kind}/{path}.geo.json"
         if files.has(g):
@@ -524,6 +531,37 @@ def leaves(node, out):
     elif t and t != "empty":
         out.append(node)
 
+def bake_door(files, ns, path, shape, tints):
+    """A door is two blocks tall: its own mesh when it has one, else the closed lower half and upper half."""
+    obj = f"assets/{ns}/models/door/{path}.obj"
+    if files.has(obj) and bake_obj(files, obj, {}, shape, True, default=f"{ns}:block/door/{path}"):
+        shape.double = True
+        return True
+    framed = f"assets/{ns}/models/door/framed_door.obj"
+    if files.has(framed) and files.has(f"assets/{ns}/textures/block/door/{path}.png") and bake_obj(files, framed, {}, shape, True, default=f"{ns}:block/door/{path}"):
+        shape.double = True
+        return True
+    for low, up in ((f"{ns}:block/door/{path}_lower_left", f"{ns}:block/door/{path}_upper_left"), (f"{ns}:block/{path}_bottom_left", f"{ns}:block/{path}_top_left")):
+        a, b = merged(files, low), merged(files, up)
+        if a and b and a["elements"] and b["elements"]:
+            bake_elements(files, a, shape, tints)
+            bake_elements(files, b, shape, tints, 16)
+            return bool(shape.mats)
+    bs = files.json(f"assets/{ns}/blockstates/{path}.json")
+    picks = {}
+    for key, v in ((bs or {}).get("variants") or {}).items():
+        if all(w in key for w in ("hinge=left", "open=false")):
+            v = v[0] if isinstance(v, list) else v
+            for half in ("lower", "upper"):
+                if f"half={half}" in key:
+                    picks.setdefault(half, v.get("model"))
+    a, b = merged(files, picks.get("lower")), merged(files, picks.get("upper"))
+    if a and b and a["elements"] and b["elements"]:
+        bake_elements(files, a, shape, tints)
+        bake_elements(files, b, shape, tints, 16)
+        return bool(shape.mats)
+    return False
+
 def block_model(files, ns, path):
     bs = files.json(f"assets/{ns}/blockstates/{path}.json")
     first = None
@@ -615,6 +653,8 @@ def bake_item(files, iid, report):
             report["no_elements"].append(iid)
     if not shape.mats and flat is not None:
         # An item that stands for a block drawn from model files, when the block is not a door (a door's item is its picture in the game).
+        if re.search(r"door|hatch|drape", path) and bake_door(files, ns, path, shape, flat[1]):
+            return shape, "block"
         if not re.search(r"door|hatch|drape", path):
             bm = block_model(files, ns, path)
             if bm:

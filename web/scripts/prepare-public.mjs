@@ -92,6 +92,9 @@ for (const rec of wikiData.recipes.recipes) {
     start = i + 1;
   });
 }
+// A mod release adds items; the shapes are baked by hand (web/scripts/build_item_models.py), so say so when they are behind.
+const noShape = Object.keys(wikiData.recipes.items).filter((id) => !id.startsWith("#") && !shapes[id]);
+if (noShape.length > 1) console.warn(`prepare-public: ${noShape.length} items have no model and show their icon: ${noShape.slice(0, 8).join(", ")}. Run web/scripts/build_item_models.py.`);
 mkdirSync(join(OUT, "recipes"), { recursive: true });
 for (const lang of LANG_CODES) {
   const d = wikiData.langs[lang].recipes;

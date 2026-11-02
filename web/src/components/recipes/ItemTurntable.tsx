@@ -91,7 +91,7 @@ const SIDE_X = new Vector3(1, 0.2, 0.28).normalize();
 const SIDE_Z = new Vector3(0.28, 0.2, 1).normalize();
 
 function Item({ shape, flat, accent, still }: { shape: Group; flat: boolean; accent: string; still: boolean }) {
-  const { camera, size } = useThree();
+  const { camera, size, invalidate } = useThree();
   const holder = useRef<Group>(null);
   const scale = useRef(new Spring(SPRING_EXPANSION, still ? 1 : 0.72));
   const aspect = size.width / Math.max(1, size.height);
@@ -125,6 +125,11 @@ function Item({ shape, flat, accent, still }: { shape: Group; flat: boolean; acc
     holder.current?.scale.setScalar(scale.current.value);
   });
 
+  // Held still, the scene draws once for each pose: when the model arrives and when it is dragged.
+  useEffect(() => {
+    if (still) invalidate();
+  }, [still, shape, invalidate]);
+
   return (
     <>
       <ambientLight intensity={2.1} />
@@ -133,7 +138,7 @@ function Item({ shape, flat, accent, still }: { shape: Group; flat: boolean; acc
       <group ref={holder}>
         <primitive object={shape} />
       </group>
-      <OrbitControls makeDefault enableDamping dampingFactor={0.08} enablePan={false} enableZoom={false} autoRotate={!still} autoRotateSpeed={1.4} />
+      <OrbitControls makeDefault enableDamping={!still} enablePan={false} enableZoom={false} autoRotate={!still} autoRotateSpeed={1.4} />
     </>
   );
 }
@@ -189,7 +194,7 @@ export default function ItemTurntable({ file, flat, accent, still, onReady }: { 
 
   return (
     <div ref={box} className="rx-turntable">
-      <Canvas flat dpr={[1, 2]} frameloop={live ? "always" : "never"} camera={{ position: [0, 0.5, 6], fov: 22, near: 0.1, far: 60 }} gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}>
+      <Canvas flat dpr={[1, 2]} frameloop={!live ? "never" : still ? "demand" : "always"} camera={{ position: [0, 0.5, 6], fov: 22, near: 0.1, far: 60 }} gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}>
         {shape ? <Item key={shape.uuid} shape={shape} flat={flat} accent={accent} still={still} /> : null}
       </Canvas>
     </div>

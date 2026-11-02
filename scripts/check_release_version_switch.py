@@ -302,7 +302,7 @@ def check(root, old, new, baseline):
             judged = []
             skipped = []
             for brand in sorted(manifest):
-                if brand == "launcher":       # ランチャーは MOD ではないので mc を宣言しない
+                if brand in ("launcher", "corvus6"):   # ランチャーとアプリは MOD ではないので mc を宣言しない
                     continue
                 block = manifest[brand]
                 if brand in SETTING_KEYS:

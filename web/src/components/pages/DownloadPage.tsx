@@ -1,6 +1,6 @@
 import { BuildTag } from "@/components/next/BuildTag";
 import { FRESH } from "@/i18n/fresh";
-import { NEXT_RELEASE, type NextRelease } from "@/i18n/next-release";
+import { NEXT_RELEASE } from "@/i18n/next-release";
 import Link from "next/link";
 import { asset, pathOf } from "@/lib/site";
 import { langData, wiki } from "@/lib/wiki";
@@ -61,32 +61,6 @@ function Aside({ icon, children }: { icon: string; children: React.ReactNode }) 
   );
 }
 
-/**
- * A Corvus NEXT platform that has no build yet: its facts, and a control that is visibly not a download. It is not a
- * link, so no address and no checksum can be shown for a file that does not exist.
- */
-function NextPlatform({ name, system, stack, n }: { name: string; system: string; stack: string; n: NextRelease }) {
-  return (
-    <article className="cn-tile cn-glass cn-glass--lite" data-glass="">
-      <span className="cn-tile-hero">{name}</span>
-      <dl className="cn-facts">
-        <div>
-          <dt>{n.system}</dt>
-          <dd>{system}</dd>
-        </div>
-        <div>
-          <dt>{n.builtWith}</dt>
-          <dd>{stack}</dd>
-        </div>
-      </dl>
-      <span className="ac-btn cn-tile-dl cn-tile-dl--off" aria-disabled="true">
-        {n.notReady}
-      </span>
-      <p className="cn-tile-note">{n.notReadyNote}</p>
-    </article>
-  );
-}
-
 export function DownloadPage({ lang }: { lang: Lang }) {
   const d = langData(lang);
   const w = wiki();
@@ -107,9 +81,16 @@ export function DownloadPage({ lang }: { lang: Lang }) {
 
       <section className="ac-wrap cn-dl-block" aria-label={n.title}>
         <div className="cn-tiles">
-          <NextPlatform name="macOS" system={n.macSystem} stack={n.macStack} n={n} />
-          <NextPlatform name="Windows" system={n.toBeSet} stack={n.qtStack} n={n} />
-          <NextPlatform name="Linux" system={n.toBeSet} stack={n.qtStack} n={n} />
+          {d.launcherFiles.corvus6.map((file) => (
+            <FileCard
+              key={file.platform}
+              tag={`${file.label} · .${file.ext}`}
+              file={file}
+              note={file.platform === "macos" ? `${n.macSystem} · ${n.macStack}` : `${file.platform === "windows" ? n.winSystem : n.linuxSystem} · ${n.qtStack}`}
+              cta={`${n.download} (${file.label})`}
+              labels={labels}
+            />
+          ))}
         </div>
       </section>
 

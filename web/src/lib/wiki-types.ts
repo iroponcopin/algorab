@@ -314,7 +314,7 @@ export interface LangData {
     cta: string;
     storeStrings: Record<string, string>;
   };
-  launcherFiles: { version: string; native: NativeFile[]; jar: FileFacts; notes: string[] };
+  launcherFiles: { version: string; native: NativeFile[]; jar: FileFacts; notes: string[]; corvus6: NativeFile[] };
   download: {
     title: string;
     heading: string;

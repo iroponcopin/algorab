@@ -84,8 +84,8 @@ export default async function Page({ params }: Params) {
       stackLabel: n.builtWith,
       items: [
         { name: "macOS", system: n.macSystem, stack: n.macStack },
-        { name: "Windows", system: n.toBeSet, stack: n.qtStack },
-        { name: "Linux", system: n.toBeSet, stack: n.qtStack },
+        { name: "Windows", system: n.winSystem, stack: n.qtStack },
+        { name: "Linux", system: n.linuxSystem, stack: n.qtStack },
       ],
     },
     models: { id: "models", title: d.home.brandsTitle, open: th.open, cards: models },

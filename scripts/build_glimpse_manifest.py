@@ -249,6 +249,24 @@ def _launcher_block(release):
     return block
 
 
+def _corvus6_block():
+    """Corvus 6, the native apps, offered on the download page. It is its own block on purpose: `launcher.latest` is what an
+    installed Java Store updates itself from, and a Store older than 5.5.1312 would replace itself the moment that moved.
+    Every Store ignores a block it does not know. None when the files are not there."""
+    native = {}
+    for platform, ext, extra in (("macos", "dmg", {"min_os": "14.0", "arch": "arm64"}), ("windows", "msi", {}), ("linux", "AppImage", {})):
+        path = DOWNLOAD_DIR / f"corvus-6.0.0-{platform}.{ext}"
+        if path.exists():
+            native[platform] = {
+                "download_url": f"{SITE_BASE_URL}/downloads/{path.name}",
+                "file_name": path.name,
+                "file_size": path.stat().st_size,
+                "sha256": _sha256(path),
+                **extra,
+            }
+    return {"latest": "6.0.0", "native": native} if native else None
+
+
 def _aureum_mod_id(jar_path):
     """The Fabric mod id the published jar actually declares.
 
@@ -1178,6 +1196,10 @@ def build():
             f"'halia' block. Dropping it would silently withdraw the release. Publish the jar, or fix the naming.")
     else:
         print("glimpse_manifest.py: no Halia jar found yet - writing manifest with no 'halia' block")
+
+    corvus6 = _corvus6_block()
+    if corvus6 is not None:
+        manifest["corvus6"] = corvus6
 
     agent = _agent_block()
     if agent is not None:

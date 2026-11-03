@@ -2268,6 +2268,18 @@ def _png_b64_for_ref(ref, default_ns):
     return None
 
 
+def _tex_refs(textures):
+    """A model's "textures" with each value as a plain reference. Since 1.21.x a value may also be an object
+    {"sprite": "<ref>", "force_translucent": true} (Tsubomi V2.4 5000's frosted panes); the sprite is the reference."""
+    out = {}
+    for k, v in (textures or {}).items():
+        if isinstance(v, dict):
+            v = v.get("sprite")
+        if isinstance(v, str):
+            out[k] = v
+    return out
+
+
 def _model_chain_texture(model_id, depth=0):
     """モデル id から代表テクスチャを 1 枚返す。**`parent` を辿る。**
 
@@ -2294,8 +2306,7 @@ def _model_chain_texture(model_id, depth=0):
                 break
     if data is None:
         return None
-    tex_map = {k: v for k, v in (data.get("textures") or {}).items()
-               if isinstance(v, str) and not v.startswith("#")}
+    tex_map = {k: v for k, v in _tex_refs(data.get("textures")).items() if not v.startswith("#")}
     chosen = None
     for key in ("layer0",) + tuple(TEXTURE_KEY_PREFERENCE):
         if key in tex_map:
@@ -2398,7 +2409,7 @@ def mod_texture_b64(mod_dir, modid, name):
             item_model = json.loads(item_model_path.read_text(encoding="utf-8"))
         except Exception:  # noqa: BLE001
             item_model = {}
-        tex_map = item_model.get("textures", {})
+        tex_map = _tex_refs(item_model.get("textures"))
         for key in ("layer0", "layer1", "texture", "all", "particle"):
             ref = tex_map.get(key)
             if not ref:
@@ -2424,7 +2435,7 @@ def mod_texture_b64(mod_dir, modid, name):
     model_path = assets / "models/block" / f"{name}.json"
     if model_path.exists():
         model = json.loads(model_path.read_text(encoding="utf-8"))
-        tex_map = model.get("textures", {})
+        tex_map = _tex_refs(model.get("textures"))
         chosen = None
         for key in TEXTURE_KEY_PREFERENCE:
             if key in tex_map:
@@ -3061,7 +3072,10 @@ def halia_register_readings(lang_ja):
             if ja is None:
                 raise SystemExit(f"ERROR: the Halia icon index names {section} {key!r}, which the jar's ja_jp.json "
                                  f"does not translate.")
-            if entry.get("ja") != ja:
+            # The site shows Algorab where a jar still says Corvus (owner 2026-11-02; scripts/rebrand_site_text.py renames the
+            # index too), so the index may hold either the jar's name or the site's.
+            from rebrand_site_text import base as site_name
+            if entry.get("ja") not in (ja, site_name(ja)):
                 raise SystemExit(f"ERROR: the Halia icon index calls {key!r} {entry.get('ja')!r}, the jar calls it "
                                  f"{ja!r}. Regenerate the index from the published jar.")
             yomi = entry.get("yomi")
@@ -3845,6 +3859,33 @@ def parse_stonecutting_recipe(path, reg):
     how = "石切台で、%sを切り出す%s(作業台では作れない)" % (ing_ja, many_ja)
     how_en = "Cut %s on a stonecutter%s (it cannot be made at a workbench)" % (ing_en, many_en)
     return result["id"], count, how, how_en, [ing]
+
+
+COOKING_STATIONS = {
+    # type -> (station id on the site, the station's item, ja sentence, en sentence). Halia uses the same two ids.
+    "minecraft:smelting": ("furnace", "minecraft:furnace", "かまどで、%sを焼く(%s 秒。作業台では作れない)",
+                           "Smelt %s in a furnace (%s s; it cannot be made at a workbench)"),
+    "minecraft:blasting": ("blast", "minecraft:blast_furnace", "溶鉱炉で、%sを精錬する(%s 秒。作業台では作れない)",
+                           "Smelt %s in a blast furnace (%s s; it cannot be made at a workbench)"),
+}
+
+
+def parse_cooking_recipe(path, reg):
+    """A `minecraft:smelting` or `minecraft:blasting` recipe -> (result id, ja, en, station, ingredient ids, station item),
+    else None. Tsubomi V2.4 5000 (2026-11-03) ships 70 of each (raw ore -> ingot). The sentence is assembled from the
+    recipe's own fields, as Halia's blast furnace cards are."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    st = COOKING_STATIONS.get(data.get("type"))
+    if st is None:
+        return None
+    station, station_item, ja_fmt, en_fmt = st
+    ing = ingredient_id(data["ingredient"])
+    ing_ja, ing_en, _t = reg.register(ing)
+    secs = data.get("cookingtime", 200) / 20.0
+    secs_txt = ("%d" % secs) if secs == int(secs) else ("%g" % secs)
+    result = data["result"]
+    res_id = result["id"] if isinstance(result, dict) else result
+    return res_id, ja_fmt % (ing_ja, secs_txt), en_fmt % (ing_en, secs_txt), station, [ing], station_item
 
 
 def cat_tokens(cat):
@@ -7669,6 +7710,30 @@ def _main_body():
                     if cut_id in HALIA_HOW:
                         raise SystemExit(f"ERROR: two how-to cards are keyed {cut_id!r}; one would show the other's text.")
                     HALIA_HOW[cut_id] = {"station": "stonecutter", "inputs": cut_ids, "ja": cut_how, "en": cut_how_en}
+                    cards_per_mod[mod_dir] = cards_per_mod.get(mod_dir, 0) + 1
+                elif (cook := parse_cooking_recipe(path, reg)) is not None:
+                    # かまど・溶鉱炉: 3x3 ではないので「入手方法」カード。同じ品に両方あるので、キーは <id>, <id>@2 と続ける
+                    # (Halia 1.3.0 と同じ形。extract_wiki.py は文で突き合わせる)。
+                    ck_id, ck_how, ck_how_en, ck_station, ck_ids, ck_item = cook
+                    ja, en, _tex = reg.register(ck_id)
+                    cat = category_of(mod_cat, ck_id.split(":", 1)[1])
+                    _, unknown = reading_of(ja)
+                    if unknown:
+                        no_yomi.append((cat, ja, "".join(sorted(set(unknown)))))
+                    tokens = cat_tokens(cat) + item_tokens(ck_id, ja) + [en, ck_how]
+                    for cid in ck_ids + [ck_item]:
+                        cja, cen, _ = reg.register(cid)
+                        tokens += item_tokens(cid, cja)
+                        tokens.append(cen)
+                    cards.append({"cat": cat, "id": ck_id, "cells": None, "count": None,
+                                  "how": ck_how, "s": search_blob(tokens)})
+                    key, n = ck_id, 1
+                    while key in HALIA_HOW:
+                        if HALIA_HOW[key]["ja"] == ck_how:
+                            raise SystemExit(f"ERROR: two how-to cards for {ck_id!r} say the same thing: {ck_how}")
+                        n += 1
+                        key = f"{ck_id}@{n}"
+                    HALIA_HOW[key] = {"station": ck_station, "inputs": ck_ids, "ja": ck_how, "en": ck_how_en}
                     cards_per_mod[mod_dir] = cards_per_mod.get(mod_dir, 0) + 1
                 elif mod_dir in EVERY_RECIPE_SHOWN:
                     raise SystemExit(

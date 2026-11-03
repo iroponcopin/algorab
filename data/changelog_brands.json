@@ -412,6 +412,12 @@
         "release": "V2.4 2009",
         "date": "2026-10-29",
         "type": "release"
+      },
+      {
+        "id": "tsubomi-v2.4-5000",
+        "release": "V2.4 5000",
+        "date": "2026-11-03",
+        "type": "release"
       }
     ],
     "halia": [

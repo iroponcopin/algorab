@@ -1456,6 +1456,26 @@
      "The Japanese text is not yet approved by Algorab Developer Program.",
      "The chest sound and particles are the game's own. The picker was checked in a real client on one screen size only (1280 by 720)."
     ]
+   },
+   {
+    "id": "tsubomi-v2.4-5000",
+    "title": "Tsubomi V2.4 5000 — a deeper world, 70 new ores and 2000 new blocks",
+    "summary": "Tsubomi V2.4 5000 deepens the Overworld to Y -2032, adds 70 new ores with ingots, blocks and tools, and adds 2000 new building blocks.",
+    "highlights": [
+     "The Overworld now reaches down to Y -2032, the deepest the game can store (a depth of -5000 does not fit in the game's coordinates). It applies to existing worlds too: new chunks are generated all the way down, and old chunks are filled with deepslate below Y -64 the first time they load, with a bedrock floor at the bottom.",
+     "Deep caves, a bedrock floor, lava only in thin belts at the bottom of every 400-block band, and vanilla ores that continue far below Y -64. New chunks take noticeably longer to generate than before.",
+     "70 new ores in 7 rarity tiers, found deeper the rarer they are. Each one has raw ore, an ingot, a storage block, and a pickaxe, axe, shovel, hoe and sword; stronger tiers need stronger tools.",
+     "2000 new building blocks: 500 materials, each as a full block, stairs, slab and pillar. All of them can be crafted, and cut from the full block in a stonecutter.",
+     "A world type called Vanilla Depth keeps the previous world height for new worlds."
+    ],
+    "warnings": [
+     "Requires Minecraft 26.3, Fabric Loader 0.19.5 or newer, Fabric API 0.161.0+26.3 or newer and Java 25. No other mod is needed; Cherry is optional.",
+     "Tsubomi cannot be used together with Alpha. If any Alpha mod is installed the game will not start; remove Alpha's jars first.",
+     "Chunks in the deeper Overworld take about 7 times longer to generate than before (measured on one machine).",
+     "Old chunks have no caves or ores below Y -64, only plain deepslate; new chunks have them, so a cave can end in a wall where old and new chunks meet.",
+     "A dedicated server, multiplayer, the real Halia, OUKA and Cherry jars, and memory use per chunk were not tested in this release.",
+     "The Japanese text and the ore and block names are not final yet."
+    ]
    }
   ],
   "halia": [

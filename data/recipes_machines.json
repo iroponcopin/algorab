@@ -290,12 +290,6 @@
    "m4ec090458aa4",
    "flat"
   ],
-  "cherry:martian_ferrite_ingot": [
-   "火星赤色フェライトのインゴット",
-   "Martian Ferrite Ingot",
-   "m050d2f914253",
-   "flat"
-  ],
   "cherry:precision_barrel_component": [
    "精密銃身部品",
    "Precision Barrel Component",
@@ -306,12 +300,6 @@
    "レールガン砲身",
    "Railgun Barrel",
    "m6cee8cf69497",
-   "flat"
-  ],
-  "cherry:raw_martian_ferrite": [
-   "火星赤色フェライトの原石",
-   "Raw Martian Ferrite",
-   "mbc55654f8db3",
    "flat"
   ],
   "cherry:security_robot": [
@@ -337,12 +325,6 @@
    "Fire Charge",
    "md9feb5075752",
    "flat"
-  ],
-  "minecraft:ice": [
-   "氷",
-   "Ice",
-   "m6a1789812903",
-   "cube"
   ],
   "minecraft:raw_copper": [
    "銅の原石",
@@ -470,12 +452,6 @@
    "m46f5e5833c17",
    "flat"
   ],
-  "ouka:copper_dust": [
-   "銅の粉",
-   "Copper Dust",
-   "mcd5081ff90e7",
-   "flat"
-  ],
   "ouka:crude_oil_canister": [
    "原油の缶",
    "Crude Oil Canister",
@@ -566,12 +542,6 @@
    "m12006c92daf3",
    "flat"
   ],
-  "ouka:gold_dust": [
-   "金の粉",
-   "Gold Dust",
-   "m0c094147d56f",
-   "flat"
-  ],
   "ouka:gold_plate": [
    "金板",
    "Gold Plate",
@@ -630,12 +600,6 @@
    "工業用蓄電フライホイール",
    "Industrial Flywheel Storage",
    "mdde710455cca",
-   "flat"
-  ],
-  "ouka:iron_dust": [
-   "鉄の粉",
-   "Iron Dust",
-   "m5c676beeab9b",
    "flat"
   ],
   "ouka:isostatic_press": [
@@ -990,12 +954,6 @@
    "トリウム燃料棒",
    "Thorium Fuel Rod",
    "m1d959b4403ec",
-   "flat"
-  ],
-  "ouka:titanium_dust": [
-   "チタンの粉",
-   "Titanium Dust",
-   "m3ee85cca2f12",
    "flat"
   ],
   "ouka:tpv_thermal_cell": [

@@ -190,6 +190,10 @@ def placeholder_problem(path, mod_id):
 NOT_MINECRAFT = frozenset({"noctua", "agent"})
 # 2026-10-18: manifest の鍵のうち、ファイルを配らない「設定」。成果物が無いので性質 5 の対象外だが、黙って飛ばさず
 # 名前で数え、file_name を持っていたら（ファイルの block と取り違えた）赤にする。
+# 2026-11-04: standalone Algorab apps (not mods). Their blocks carry "native" files per OS, not one file_name. They declare
+# no Minecraft version, so property 5 checks instead that every file they name is in downloads/ with the same SHA-256.
+NATIVE_APP_KEYS = frozenset({"algorab_audio", "algorab_io"})
+_sha256_new = __import__("hashlib").sha256
 SETTING_KEYS = frozenset({"difficulty_lock", "ai_chat", "spawn_lock", "local_ai"})   # 2026-10-12: Corvus Agent runs beside a server, not in the game; 2026-10-22: spawn_lock (Halia switches); 2026-10-25: local_ai (model mirror, Store 5.5.204)
 
 
@@ -305,6 +309,28 @@ def check(root, old, new, baseline):
                 if brand in ("launcher", "corvus6"):   # ランチャーとアプリは MOD ではないので mc を宣言しない
                     continue
                 block = manifest[brand]
+                if brand in NATIVE_APP_KEYS:
+                    entries = []
+                    for plat, f in sorted(((block or {}).get("native") or {}).items()):
+                        entries.append((plat, f))
+                        if isinstance(f, dict) and isinstance(f.get("portable"), dict):
+                            entries.append((plat + " portable", f["portable"]))
+                    if not entries:
+                        failures.append("5. %s はアプリの鍵なのに native のファイルが一つも無い" % brand)
+                    for plat, f in entries:
+                        name = (f or {}).get("file_name") or ""
+                        art = os.path.join(root, "downloads", name)
+                        if not name or not os.path.isfile(art):
+                            failures.append("5. %s (%s) が指すファイルが downloads に無い: %s" % (brand, plat, name or "（名前なし）"))
+                            continue
+                        h = _sha256_new()
+                        with open(art, "rb") as fh:
+                            for chunk in iter(lambda: fh.read(1 << 20), b""):
+                                h.update(chunk)
+                        if h.hexdigest() != f.get("sha256"):
+                            failures.append("5. %s (%s) の sha256 が downloads のファイルと違う: %s" % (brand, plat, name))
+                    notes.append("5. %s はアプリ（MOD ではない）なので、%d 個のファイルの存在と sha256 を確かめた" % (brand, len(entries)))
+                    continue
                 if brand in SETTING_KEYS:
                     if isinstance(block, dict) and "file_name" in block:
                         failures.append("5. %s は設定の鍵なのに file_name を持っている" % brand)

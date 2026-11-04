@@ -55,7 +55,7 @@ function NativeApps({ d, lang }: { d: LangData; lang: Lang }) {
             </h3>
             {c.lines[app.id] ? <p className="cn-dl-line">{c.lines[app.id]}</p> : null}
           </header>
-          <div className="cn-tiles">
+          <div className={app.files.length % 2 === 0 ? "cn-tiles cn-tiles--two" : "cn-tiles"}>
             {app.files.map((file) => (
               <FileCard
                 key={file.name}

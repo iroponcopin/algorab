@@ -21,6 +21,14 @@ export interface NativeFile extends FileFacts {
   ext: string;
 }
 
+/** A standalone Algorab app (not a mod) and its files, from its own manifest block. */
+export interface NativeApp {
+  id: string;
+  name: string;
+  version: string;
+  files: (NativeFile & { note: string })[];
+}
+
 export interface Requirement {
   label: string;
   value: string;
@@ -314,7 +322,7 @@ export interface LangData {
     cta: string;
     storeStrings: Record<string, string>;
   };
-  launcherFiles: { version: string; native: NativeFile[]; jar: FileFacts; notes: string[]; corvus6: NativeFile[] };
+  launcherFiles: { version: string; native: NativeFile[]; jar: FileFacts; notes: string[]; corvus6: NativeFile[]; apps: NativeApp[] };
   download: {
     title: string;
     heading: string;

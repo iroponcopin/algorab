@@ -267,6 +267,44 @@ def _corvus6_block():
     return {"latest": "6.2.0", "native": native} if native else None
 
 
+# The standalone Algorab apps (not mods): each has its own block, which every Store that does not know it ignores.
+# Files are read from downloads/; a block is written only when at least one of its files is there.
+NATIVE_APPS = (
+    ("algorab_audio", "algorab-audio", "1.0.0", (
+        ("macos", "algorab-audio-1.0.0-macos.dmg", {"min_os": "14.0", "arch": "arm64"}),
+        ("windows", "algorab-audio-1.0.0-windows-setup.exe", {}),
+        ("windows_portable", "algorab-audio-1.0.0-windows-portable.zip", {}),
+        ("linux", "algorab-audio-1.0.0-linux-x86_64.AppImage", {}),
+    )),
+    ("algorab_io", "algorab-io", "1.0.0", (
+        ("macos", "algorab-io-1.0.0-macos.dmg", {"min_os": "14.2", "arch": "arm64"}),
+        ("windows", "algorab-io-1.0.0-windows.zip", {}),
+        ("linux", "algorab-io-1.0.0-linux.AppImage", {}),
+    )),
+)
+
+
+def _native_app_blocks():
+    """{block: {"latest", "native": {platform: file}}} for each standalone app whose files are published. The Windows
+    portable zip of Audio sits inside the windows entry as "portable", the shape its handover proposed."""
+    blocks = {}
+    for block, _stem, version, files in NATIVE_APPS:
+        native = {}
+        for platform, name, extra in files:
+            path = DOWNLOAD_DIR / name
+            if not path.exists():
+                continue
+            facts = {"download_url": f"{SITE_BASE_URL}/downloads/{name}", "file_name": name,
+                     "file_size": path.stat().st_size, "sha256": _sha256(path), **extra}
+            if platform == "windows_portable":
+                native.setdefault("windows", {})["portable"] = facts
+            else:
+                native[platform] = {**facts, **native.get(platform, {})}
+        if native:
+            blocks[block] = {"latest": version, "native": native}
+    return blocks
+
+
 def _aureum_mod_id(jar_path):
     """The Fabric mod id the published jar actually declares.
 
@@ -1200,6 +1238,8 @@ def build():
     corvus6 = _corvus6_block()
     if corvus6 is not None:
         manifest["corvus6"] = corvus6
+    for block, body in _native_app_blocks().items():
+        manifest[block] = body
 
     agent = _agent_block()
     if agent is not None:

@@ -1,6 +1,7 @@
 import { BuildTag } from "@/components/next/BuildTag";
 import { FRESH } from "@/i18n/fresh";
 import { NEXT_RELEASE } from "@/i18n/next-release";
+import { NATIVE_APPS } from "@/i18n/native-apps";
 import Link from "next/link";
 import { asset, pathOf } from "@/lib/site";
 import { langData, wiki } from "@/lib/wiki";
@@ -29,6 +30,46 @@ export function LauncherFiles({ d, lang }: { d: LangData; lang: Lang }) {
         />
       ))}
     </div>
+  );
+}
+
+/** The standalone Algorab apps (Audio, I/O): one block each, its files as tiles. */
+function NativeApps({ d, lang }: { d: LangData; lang: Lang }) {
+  const apps = d.launcherFiles.apps ?? [];
+  if (apps.length === 0) return null;
+  const c = NATIVE_APPS[lang];
+  const labels = fileLabels(d);
+  return (
+    <>
+      <header className="ac-wrap cn-dl-head cn-dl-block">
+        <h2 id="dl-apps" className="cn-dl-title">
+          {c.title}
+        </h2>
+        <p className="cn-dl-line">{c.lede}</p>
+      </header>
+      {apps.map((app) => (
+        <section key={app.id} className="ac-wrap cn-dl-block" aria-labelledby={`dl-${app.id}`}>
+          <header className="cn-dl-head">
+            <h3 id={`dl-${app.id}`} className="cn-dl-title">
+              {app.name} <span className="ac-ltr">{app.version}</span>
+            </h3>
+            {c.lines[app.id] ? <p className="cn-dl-line">{c.lines[app.id]}</p> : null}
+          </header>
+          <div className="cn-tiles">
+            {app.files.map((file) => (
+              <FileCard
+                key={file.name}
+                tag={`${file.label} · .${file.ext}`}
+                file={file}
+                note={file.note || undefined}
+                cta={`${c.download} (${file.label})`}
+                labels={labels}
+              />
+            ))}
+          </div>
+        </section>
+      ))}
+    </>
   );
 }
 
@@ -114,6 +155,8 @@ export function DownloadPage({ lang }: { lang: Lang }) {
           </article>
         </div>
       </section>
+
+      <NativeApps d={d} lang={lang} />
 
       <header className="ac-wrap cn-dl-head cn-dl-block">
         <h2 id="dl-now" className="cn-dl-title">

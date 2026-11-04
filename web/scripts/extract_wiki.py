@@ -658,6 +658,29 @@ def english_model(data):
 
 # ------------------------------------------------------------------ per language
 
+
+def _native_apps(man):
+    """The standalone Algorab apps published in the manifest (Audio, I/O), each with its files in a fixed order."""
+    apps = []
+    for block, name in (("algorab_audio", "Algorab Audio"), ("algorab_io", "Algorab I/O")):
+        b = man.get(block)
+        if not b:
+            continue
+        files = []
+        for pid, label in (("macos", "macOS"), ("windows", "Windows"), ("linux", "Linux")):
+            f = b.get("native", {}).get(pid)
+            if not f:
+                continue
+            for entry, tag in ((f, label), (f.get("portable"), f"{label} portable")):
+                if not entry:
+                    continue
+                ext = entry["file_name"].rsplit(".", 1)[-1]
+                note = f"macOS {entry['min_os']} · Apple silicon" if pid == "macos" and entry.get("min_os") else ""
+                files.append({"platform": pid, "label": tag, "ext": ext, "note": note,
+                              **file_facts(entry["file_name"], entry["download_url"], entry["file_size"], entry["sha256"])})
+        apps.append({"id": block, "name": name, "version": b["latest"], "files": files})
+    return apps
+
 def build_lang(lang: str, ctx: dict) -> dict:
     with contextlib.redirect_stdout(_quiet):
         b = SC.load_bundle(lang)
@@ -769,6 +792,7 @@ def build_lang(lang: str, ctx: dict) -> dict:
         "corvus6": [{"platform": pid, "label": label, "ext": ext, **file_facts(f["file_name"], f["download_url"], f["file_size"], f["sha256"])}
                     for pid, label, ext in (("macos", "macOS", "dmg"), ("windows", "Windows", "msi"), ("linux", "Linux", "AppImage"))
                     for f in [(man.get("corvus6") or {}).get("native", {}).get(pid)] if f],
+        "apps": _native_apps(man),
     }
 
     home = {

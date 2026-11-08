@@ -249,22 +249,34 @@ def _launcher_block(release):
     return block
 
 
+# Windows and Linux move to 6.2.1 only when its files are in downloads/ (the owner's go); until then 6.2.0 stays.
+CORVUS6_WINDOWS_LINUX_VERSION = "6.2.1" if (DOWNLOAD_DIR / "algorab-6.2.1-windows.msi").exists() and (DOWNLOAD_DIR / "algorab-6.2.1-linux.AppImage").exists() else "6.2.0"
+
+
 def _corvus6_block():
     """Corvus 6, the native apps, offered on the download page. It is its own block on purpose: `launcher.latest` is what an
     installed Java Store updates itself from, and a Store older than 5.5.1312 would replace itself the moment that moved.
     Every Store ignores a block it does not know. None when the files are not there."""
+    # Each system has its own version: 6.2.1 fixed Windows and Linux only (Agent set-up, Optimize tabs, saving the diagnostics
+    # report, the product page), so the macOS file stays 6.2.0. "latest" is the newest of them; no app updates itself from it.
     native = {}
-    for platform, ext, extra in (("macos", "dmg", {"min_os": "14.0", "arch": "arm64"}), ("windows", "msi", {}), ("linux", "AppImage", {})):
-        path = DOWNLOAD_DIR / f"algorab-6.2.0-{platform}.{ext}"
+    for platform, version, ext, extra in (("macos", "6.2.0", "dmg", {"min_os": "14.0", "arch": "arm64"}),
+                                          ("windows", CORVUS6_WINDOWS_LINUX_VERSION, "msi", {}),
+                                          ("linux", CORVUS6_WINDOWS_LINUX_VERSION, "AppImage", {})):
+        path = DOWNLOAD_DIR / f"algorab-{version}-{platform}.{ext}"
         if path.exists():
             native[platform] = {
+                "version": version,
                 "download_url": f"{SITE_BASE_URL}/downloads/{path.name}",
                 "file_name": path.name,
                 "file_size": path.stat().st_size,
                 "sha256": _sha256(path),
                 **extra,
             }
-    return {"latest": "6.2.0", "native": native} if native else None
+    if not native:
+        return None
+    latest = max((f["version"] for f in native.values()), key=lambda v: tuple(int(x) for x in v.split(".")))
+    return {"latest": latest, "native": native}
 
 
 # The standalone Algorab apps (not mods): each has its own block, which every Store that does not know it ignores.

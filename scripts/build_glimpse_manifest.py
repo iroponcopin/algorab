@@ -252,7 +252,8 @@ def _launcher_block(release):
 # Each system offers the newest version whose file is in downloads/ (a file goes there only with the owner's go and only
 # once that version is proven on that system). 6.2.2 (ARK: Survival Ascended servers, the Agent page's old controls, no
 # command prompt window) is proven on Windows; macOS 6.2.2 (difficulty, mob tiers and render distance on the Agents page)
-# is proven on a Mac; Linux stays 6.2.1 until 6.2.2 is proven there too.
+# is proven on a Mac; Linux stays 6.2.1 until 6.2.2 is proven there too. 6.2.3 (the ARK map choice, the card while ARK
+# saves and stops) is proven on Windows only: macOS stays 6.2.2 and Linux 6.2.1.
 def _corvus6_newest(platform, ext, versions):
     for version in versions:
         if (DOWNLOAD_DIR / f"algorab-{version}-{platform}.{ext}").exists():
@@ -261,7 +262,7 @@ def _corvus6_newest(platform, ext, versions):
 
 
 CORVUS6_MACOS_VERSION = _corvus6_newest("macos", "dmg", ("6.2.2", "6.2.0"))
-CORVUS6_WINDOWS_VERSION = _corvus6_newest("windows", "msi", ("6.2.2", "6.2.1", "6.2.0"))
+CORVUS6_WINDOWS_VERSION = _corvus6_newest("windows", "msi", ("6.2.3", "6.2.2", "6.2.1", "6.2.0"))
 CORVUS6_LINUX_VERSION = _corvus6_newest("linux", "AppImage", ("6.2.2", "6.2.1", "6.2.0"))
 
 

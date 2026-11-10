@@ -1,8 +1,8 @@
 {
  "what": "Algorab portal 4.3.0, static export. Made by web/ (npm run build); nothing here is a contract file.",
- "wiki_commit": "5809b1fbd3c6d4537088d8373a95b5ce67a8302a",
+ "wiki_commit": "b655cc713e0606d303ce9e6c977c17d00ec71a42",
  "wiki_branch": "next-web",
- "wiki_dirty": false,
+ "wiki_dirty": true,
  "corvus_store": "5.5.1312",
  "ouka": "1.8.6166",
  "cherry": "1.3.1017",

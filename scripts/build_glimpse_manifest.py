@@ -249,8 +249,20 @@ def _launcher_block(release):
     return block
 
 
-# Windows and Linux move to 6.2.1 only when its files are in downloads/ (the owner's go); until then 6.2.0 stays.
-CORVUS6_WINDOWS_LINUX_VERSION = "6.2.1" if (DOWNLOAD_DIR / "algorab-6.2.1-windows.msi").exists() and (DOWNLOAD_DIR / "algorab-6.2.1-linux.AppImage").exists() else "6.2.0"
+# Each system offers the newest version whose file is in downloads/ (a file goes there only with the owner's go and only
+# once that version is proven on that system). 6.2.2 (ARK: Survival Ascended servers, the Agent page's old controls, no
+# command prompt window) is proven on Windows; macOS 6.2.2 (difficulty, mob tiers and render distance on the Agents page)
+# is proven on a Mac; Linux stays 6.2.1 until 6.2.2 is proven there too.
+def _corvus6_newest(platform, ext, versions):
+    for version in versions:
+        if (DOWNLOAD_DIR / f"algorab-{version}-{platform}.{ext}").exists():
+            return version
+    return versions[-1]
+
+
+CORVUS6_MACOS_VERSION = _corvus6_newest("macos", "dmg", ("6.2.2", "6.2.0"))
+CORVUS6_WINDOWS_VERSION = _corvus6_newest("windows", "msi", ("6.2.2", "6.2.1", "6.2.0"))
+CORVUS6_LINUX_VERSION = _corvus6_newest("linux", "AppImage", ("6.2.2", "6.2.1", "6.2.0"))
 
 
 def _corvus6_block():
@@ -260,9 +272,9 @@ def _corvus6_block():
     # Each system has its own version: 6.2.1 fixed Windows and Linux only (Agent set-up, Optimize tabs, saving the diagnostics
     # report, the product page), so the macOS file stays 6.2.0. "latest" is the newest of them; no app updates itself from it.
     native = {}
-    for platform, version, ext, extra in (("macos", "6.2.0", "dmg", {"min_os": "14.0", "arch": "arm64"}),
-                                          ("windows", CORVUS6_WINDOWS_LINUX_VERSION, "msi", {}),
-                                          ("linux", CORVUS6_WINDOWS_LINUX_VERSION, "AppImage", {})):
+    for platform, version, ext, extra in (("macos", CORVUS6_MACOS_VERSION, "dmg", {"min_os": "14.0", "arch": "arm64"}),
+                                          ("windows", CORVUS6_WINDOWS_VERSION, "msi", {}),
+                                          ("linux", CORVUS6_LINUX_VERSION, "AppImage", {})):
         path = DOWNLOAD_DIR / f"algorab-{version}-{platform}.{ext}"
         if path.exists():
             native[platform] = {
@@ -865,15 +877,17 @@ def _noctua_block():
     }
 
 
-AGENT_ZIP_PREFIX = "corvus-agent-"
+AGENT_ZIP_PREFIX = "algorab-agents-"
+# The jar inside keeps the old name: installed agents and apps look for corvus-agent-<version>/corvus-agent-<version>.jar.
+AGENT_INNER_PREFIX = "corvus-agent-"
 AGENT_ZIP_SUFFIX = ".zip"
 
 
 def _agent_block():
-    """The `agent` block (Corvus Agent, 2026-10-12), or None when no package has been published.
+    """The `agent` block (Algorab Agents, 2026-10-12), or None when no package has been published.
 
-    Corvus Agent is the program beside a self-hosted server that keeps its mods in step with this manifest; nothing in
-    the game loads it, so the block is a file: name, size, SHA-256. Its name starts with "corvus-agent-", which the
+    Algorab Agents is the program beside a self-hosted server that keeps its mods in step with this manifest; nothing in
+    the game loads it, so the block is a file: name, size, SHA-256. Its name starts with "algorab-agents-", which the
     launcher's own rule (corvus-<digits>.jar) cannot match. The version is the file name's and must be the
     Implementation-Version of the jar inside, so a renamed package cannot pass for another. Exactly one package; a
     function of its own, so it cannot change a byte of another block; never dropped once published.
@@ -882,13 +896,13 @@ def _agent_block():
     if not zips:
         return None
     if len(zips) > 1:
-        raise SystemExit(f"ERROR: more than one Corvus Agent package in {DOWNLOAD_DIR} "
+        raise SystemExit(f"ERROR: more than one Algorab Agents package in {DOWNLOAD_DIR} "
                          f"({', '.join(z.name for z in zips)}). Publish exactly one.")
     zpath = zips[0]
     version = zpath.name[len(AGENT_ZIP_PREFIX):-len(AGENT_ZIP_SUFFIX)]
     if not re.fullmatch(r"\d+(\.\d+){2,3}", version):
-        raise SystemExit(f"ERROR: {zpath.name} is not named corvus-agent-<major.minor.patch[.build]>.zip.")
-    inner = f"corvus-agent-{version}/corvus-agent-{version}.jar"
+        raise SystemExit(f"ERROR: {zpath.name} is not named algorab-agents-<major.minor.patch[.build]>.zip.")
+    inner = f"{AGENT_INNER_PREFIX}{version}/{AGENT_INNER_PREFIX}{version}.jar"
     try:
         with zipfile.ZipFile(zpath) as zf:
             with zipfile.ZipFile(io.BytesIO(zf.read(inner))) as jar:
@@ -1256,9 +1270,9 @@ def build():
     agent = _agent_block()
     if agent is not None:
         manifest["agent"] = agent
-        print(f"glimpse_manifest.py: Corvus Agent {agent['latest']} ({agent['file_name']}) selected, including 'agent' block")
+        print(f"glimpse_manifest.py: Algorab Agents {agent['latest']} ({agent['file_name']}) selected, including 'agent' block")
     elif "agent" in _previously_published_manifest():
-        raise SystemExit(f"ERROR: no Corvus Agent package found in {DOWNLOAD_DIR}, but the published manifest carries an "
+        raise SystemExit(f"ERROR: no Algorab Agents package found in {DOWNLOAD_DIR}, but the published manifest carries an "
                          f"'agent' block. Dropping it would silently withdraw the release.")
 
     xhard = _xhard_block()

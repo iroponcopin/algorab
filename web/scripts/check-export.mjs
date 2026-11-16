@@ -175,13 +175,18 @@ for (const f of files.filter((x) => x.endsWith("index.txt"))) {
 }
 
 // Every printed SHA-256 is the hash of a file the page links to, as served; every download is in the manifest.
-const manifest = JSON.parse(readFileSync(join(REPO, "glimpse_manifest.json"), "utf8"));
 const listed = new Set();
-(function collect(o) {
+function collectListed(o) {
   if (o === null || typeof o !== "object") return;
   if (typeof o.download_url === "string") listed.add(o.download_url.replace(ORIGIN, ""));
-  for (const v of Object.values(o)) collect(v);
-})(manifest);
+  for (const v of Object.values(o)) collectListed(v);
+}
+collectListed(JSON.parse(readFileSync(join(REPO, "glimpse_manifest.json"), "utf8")));
+// 2026-11-16: the beta copy (beta/glimpse_manifest.json, built by scripts/build_beta_manifest.py) lists the beta files a
+// Beta section links to; they are in downloads/beta/ and are checked the same way. In the normal state it is a mirror.
+if (existsSync(join(REPO, "beta", "glimpse_manifest.json"))) {
+  collectListed(JSON.parse(readFileSync(join(REPO, "beta", "glimpse_manifest.json"), "utf8")));
+}
 const hashes = new Map();
 function servedHash(sitePath) {
   if (!hashes.has(sitePath)) {

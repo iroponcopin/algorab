@@ -65,21 +65,21 @@ export const BETA_CHANNEL: Record<Lang, BetaChannelCopy> = {
   "pt-br": {
     title: "Beta",
     lede: "Versões que chegam às pessoas antes das demais. Ainda não foram totalmente verificadas.",
-    join: "Para participar, abra Ajustes no Algorab e ative Receber versões beta.",
+    join: "Para participar, abra Configurações no Algorab e ative Receber versões beta.",
     agentLine: "Esta versão do Algorab Agents chega pelo aplicativo quando as versões beta estão ativadas.",
     sends: "Enquanto a beta estiver ativada, o Algorab Agents envia um pequeno relatório para algorab.uk. O relatório contém as versões do Algorab e do Algorab Agents, a versão do Windows, macOS ou Linux, se as inicializações e atualizações funcionaram e as linhas de estado do SteamCMD. Ele não contém nomes, locais de pastas, endereços, senhas nem nada que os jogadores digam ou façam. O servidor que recebe um relatório vê o endereço de Internet do remetente, como qualquer site, mas não o guarda. Uma cópia do último relatório enviado fica no computador. Desativar a beta interrompe os relatórios e apaga o número que identifica o computador.",
   },
   it: {
     title: "Beta",
     lede: "Versioni che arrivano alle persone prima delle altre. Non sono ancora state verificate del tutto.",
-    join: "Per partecipare, apri Impostazioni in Algorab e attiva Ricevi versioni beta.",
+    join: "Per partecipare, apri Impostazioni in Algorab e attiva Ricevi le versioni beta.",
     agentLine: "Questa versione di Algorab Agents arriva tramite l'app quando le versioni beta sono attivate.",
     sends: "Mentre la beta è attiva, Algorab Agents invia un piccolo rapporto ad algorab.uk. Il rapporto contiene le versioni di Algorab e di Algorab Agents, la versione di Windows, macOS o Linux, se avvio e aggiornamenti sono riusciti e le righe di stato di SteamCMD. Non contiene nomi, percorsi di cartelle, indirizzi, password né ciò che i giocatori dicono o fanno. Il server che riceve un rapporto vede l'indirizzo Internet del mittente, come ogni sito web, ma non lo conserva. Una copia dell'ultimo rapporto inviato resta sul computer. Disattivare la beta interrompe i rapporti e cancella il numero che identifica il computer.",
   },
   ar: {
     title: "بيتا",
     lede: "إصدارات تصل إلى المستخدمين قبل غيرهم. لم يكتمل التحقق منها بعد.",
-    join: "للمشاركة، افتح «الإعدادات» في Algorab وفعّل «استلام الإصدارات التجريبية».",
+    join: "للمشاركة، افتح «الإعدادات» في Algorab وفعّل «تلقّي إصدارات بيتا».",
     agentLine: "يصل هذا الإصدار من Algorab Agents عبر التطبيق بعد تفعيل الإصدارات التجريبية.",
     sends: "أثناء تفعيل النسخة التجريبية، يرسل Algorab Agents تقريرًا صغيرًا إلى algorab.uk. يتضمن التقرير إصدارات Algorab وAlgorab Agents، وإصدار Windows أو macOS أو Linux، وما إذا كانت عمليات التشغيل والتحديث قد نجحت، وأسطر حالة SteamCMD. ولا يتضمن أسماء أو مواقع مجلدات أو عناوين أو كلمات مرور أو أي شيء يقوله اللاعبون أو يفعلونه. يرى الخادم الذي يستقبل التقرير عنوان الإنترنت للمُرسِل كما يفعل أي موقع إلكتروني، لكنه لا يحفظه. تبقى نسخة من آخر تقرير أُرسل على الكمبيوتر. ويؤدي إيقاف النسخة التجريبية إلى إيقاف التقارير وحذف الرقم الذي يميّز الكمبيوتر.",
   },
@@ -100,7 +100,7 @@ export const BETA_CHANNEL: Record<Lang, BetaChannelCopy> = {
   de: {
     title: "Beta",
     lede: "Versionen, die vor allen anderen ankommen. Sie sind noch nicht vollständig geprüft.",
-    join: "Zum Mitmachen öffnest du in Algorab die Einstellungen und schaltest Beta-Versionen empfangen ein.",
+    join: "Zum Mitmachen öffnest du in Algorab die Einstellungen und schaltest Beta-Versionen erhalten ein.",
     agentLine: "Diese Version von Algorab Agents kommt über die App, sobald Beta-Versionen eingeschaltet sind.",
     sends: "Solange die Beta eingeschaltet ist, sendet Algorab Agents einen kleinen Bericht an algorab.uk. Der Bericht enthält die Versionen von Algorab und Algorab Agents, die Version von Windows, macOS oder Linux, ob Starts und Aktualisierungen geklappt haben, und die SteamCMD-Statuszeilen. Er enthält keine Namen, Ordnerpfade, Adressen, Passwörter und nichts davon, was Spielende sagen oder tun. Der Server, der einen Bericht empfängt, sieht wie jede Website die Internetadresse des Absenders, speichert sie aber nicht. Eine Kopie des letzten gesendeten Berichts bleibt auf dem Computer. Wenn du die Beta ausschaltest, hören die Berichte auf, und die Nummer, die den Computer kennzeichnet, wird gelöscht.",
   },

@@ -121,7 +121,13 @@ CHECKS = [
     ("fabric-api-pin-controls", "check_fabric_api_pin.py", ["--self-test"],
      "the Fabric API pin gate turns every planted defect red"),
     ("fabric-api-fetch-controls", "pin_fabric_api.py", ["--self-test"],
-     "the Fabric API pin script refuses a wrong hash, a wrong mod id, a non-CDN URL and a beta-only release (stand-in, offline)"),
+     "the Fabric API pin script refuses a wrong hash, a wrong mod id, a non-CDN URL and a beta-only release (stand-in, offline)"),    # 2026-11-16: the beta channel. beta/glimpse_manifest.json is a full copy of the stable manifest; only the agent block
+    # and corvus6.native.windows may differ, and only with newer versions whose files are in downloads/beta/ and match.
+    # The gate re-derives those rules itself and runs the builder's --check; the unit tests cover the builder's refusals.
+    ("beta", "check_beta_manifest.py", [],
+     "beta/glimpse_manifest.json vs the stable manifest (only agent and corvus6 Windows overridable, newer, files match)"),
+    ("beta-tests", "tests/test_beta_manifest.py", [],
+     "the beta builder's unit tests: mirror byte-identical, valid and refused overrides, --check"),
 ]
 
 

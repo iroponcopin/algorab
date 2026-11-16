@@ -77,7 +77,9 @@ writes them. A release (a new pack, a new brand version, a new launcher) is:
    `data/upcoming.json`, `data/recipes*.json` (from `extract_recipes.py`, which keeps running), and the new files in
    `downloads/`.
 2. **Rebuild what is read by machines:** `python3 scripts/build.py --feeds` (manifest, releases feed, changelog feeds,
-   `upcoming.json`). `build.py` without `--feeds` refuses to run: it would write the old pages over the portal.
+   `upcoming.json`, and the beta copy of the manifest: `build_glimpse_manifest.py` calls
+   `scripts/build_beta_manifest.py` after it writes the stable manifest, so the beta copy is rebuilt in the same step and
+   a stable publish that cannot be matched by the beta overrides stops with an error). `build.py` without `--feeds` refuses to run: it would write the old pages over the portal.
    Writing `upcoming.json` also archives the board in `data/teasers.json` (`scripts/build_teaser_archive.py`): a new
    id is stamped `announced`, and the day an entry leaves the board it is stamped `retired` and keeps its last
    wording, which is what the portal's Teasers page plays. `python3 scripts/build_teaser_archive.py --check` says
@@ -85,7 +87,8 @@ writes them. A release (a new pack, a new brand version, a new launcher) is:
 3. **The wiki's data gates:** `python3 scripts/check_site.py` (with the portal in place it runs only the data checks:
    `figures`, `recipe-sources` and `changelog-feeds` — the brand-changelog checker's feed half, `check_changelog_brands.py
    --feeds-only` — and says which page checkers it retired) and
-   `python3 scripts/check_release_version_switch.py --baseline scripts/release_history_baseline_26.2.json`.
+   `python3 scripts/check_release_version_switch.py --baseline scripts/release_history_baseline_26.2.json`. The beta
+   manifest is checked by `check_site.py beta` (and `beta-tests`).
 4. **Rebuild the pages:** `cd web && npm ci && npm run build` (it reads this checkout's data, the same files and
    copy tables as before, through `web/scripts/extract_wiki.py`; nothing in it writes outside `web/`), then
    `npm run typecheck && npm run lint && npm run check:export`. The Download, Corvus Store and brand pages print the
@@ -97,6 +100,21 @@ writes them. A release (a new pack, a new brand version, a new launcher) is:
    anything else stops it with the list.
 6. **Commit, push, and after Pages has deployed** (about a minute to ten): `python3 scripts/check_published_artefacts.py`,
    and a look at the live pages (the export's own gate can be pointed at any served copy of the tree).
+
+### Beta channel (2026-11-16)
+
+A PC that opted in reads `https://algorab.uk/beta/glimpse_manifest.json`, which is `beta/glimpse_manifest.json` in this
+repository: a full copy of the stable manifest, byte for byte, except for the blocks overridden in `beta/overrides.json`
+(`agent`, and `corvus6.native.windows` only). An override is valid only when its version is purely numeric (one to three
+parts) and strictly newer than the stable value; a file sits in `downloads/beta/`, is named `.msi` (Windows) or `.zip`
+(agent), and matches its size and SHA-256. Both overrides start `null`, so the beta copy mirrors stable.
+
+- To offer a beta: add the new file under `downloads/beta/`, fill the override (the five keys of its block), write the
+  Japanese and other notes if wanted, then `python3 scripts/build_beta_manifest.py` and `python3 scripts/check_site.py beta`.
+  The Download page shows a Beta section only while an override is valid; the page is built by `web/` (step 4 above).
+- To promote a beta: the same bytes go to `downloads/` under the stable name, the stable manifest is rebuilt
+  (`build.py --feeds`), and both overrides go back to `null` (which makes the beta copy a mirror again).
+- The app and the agent read the beta copy only after the user turns on "Receive beta versions" (Settings in Algorab).
 
 Tell the other brand sessions before pushing (they share this repository). Going back is `git revert` of the cutover
 or release commit; nothing the launcher or the bot reads is in a page diff.

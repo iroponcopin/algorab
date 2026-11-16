@@ -116,6 +116,7 @@ from site_common import (  # noqa: E402
     ROOT, LAUNCHER_APP_NAME, newest_launcher_jar, launcher_native_files,
     PACK_NAME, pack_zip_path, retirement,
 )
+import build_beta_manifest  # noqa: E402  (the beta copy is rebuilt in the same step, always)
 from build_download import _aureum_facts  # noqa: E402  (single source of truth
 # for which Aureum jar is current -- same import build_aureum.py already makes)
 
@@ -1348,6 +1349,9 @@ def build():
     out_path = ROOT / "glimpse_manifest.json"
     out_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"wrote {out_path} (pack version {version}, sha256 {sha256_hex[:12]}...)")
+    # 2026-11-16: the beta copy of this manifest is regenerated in the same step. A stable publish can never leave a
+    # stale beta manifest behind; if the beta overrides no longer hold, this stops the release (build_beta_manifest.write).
+    build_beta_manifest.write(ROOT)
 
 
 if __name__ == "__main__":

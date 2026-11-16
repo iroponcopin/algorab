@@ -262,5 +262,55 @@ class RefusedOverrides(Fixture):
         self.assertEqual(self.beta(), self.stable)
 
 
+class SpellingAttacks(Fixture):
+    """2026-11-16 review: spellings that the first regex (re.match with "$") let through."""
+
+    def test_trailing_newline_or_space_is_ignored(self):
+        # "6.7.0\n" passed re.match(r"^...$") and reached agent.latest; Agents 6.6.1 exits at start on such a value.
+        for bad_version in ("6.7.0\n", "6.7.0 ", " 6.7.0", "6.7.0\r\n", "6.7.0\t"):
+            with self.subTest(version=bad_version):
+                self.overrides(agent=agent_block(version=bad_version))
+                code, lines = self.run_build()
+                self.assertEqual(code, 0, lines)
+                self.assertEqual(self.beta(), self.stable)
+                self.overrides(corvus6_windows=windows_block(version=bad_version))
+                code, lines = self.run_build()
+                self.assertEqual(code, 0, lines)
+                self.assertEqual(self.beta(), self.stable)
+
+    def test_leading_zeros_and_non_ascii_digits_are_ignored(self):
+        for bad_version in ("06.7.0", "6.07", "6.7.00", "６.7.0", "6.٧.0"):
+            with self.subTest(version=bad_version):
+                self.overrides(agent=agent_block(version=bad_version))
+                code, lines = self.run_build()
+                self.assertEqual(code, 0, lines)
+                self.assertEqual(self.beta(), self.stable)
+                self.assertTrue(any("ignored" in line for line in lines))
+
+    def test_zero_parts_are_still_accepted(self):
+        self.overrides(corvus6_windows=windows_block(version="6.3.0"))
+        code, lines = self.run_build()
+        self.assertEqual(code, 0, lines)
+        self.assertEqual(self.beta()["corvus6"]["native"]["windows"]["version"], "6.3.0")
+
+    def test_sha_with_trailing_newline_is_refused(self):
+        block = agent_block()
+        block["sha256"] = block["sha256"] + "\n"
+        self.overrides(agent=block)
+        self.assertRefused(*self.run_build(), "64 lowercase hex")
+
+    def test_retired_word_inside_a_longer_word_is_refused(self):
+        for text in ("CorvusStore beta", "the Miau's build", "corvus6"):
+            with self.subTest(text=text):
+                self.overrides(notes={"en": text})
+                self.assertRefused(*self.run_build(), "retired brand word")
+
+    def test_non_object_overrides_are_refused(self):
+        for whole in ([], None, 5, "x"):
+            with self.subTest(whole=whole):
+                (self.directory / "overrides.json").write_text(json.dumps(whole), encoding="utf-8")
+                self.assertRefused(*self.run_build(), "must be a JSON object")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -26,7 +26,7 @@ BETA = ROOT / "beta"
 PREFIX = "https://algorab.uk/downloads/beta/"
 AGENT = ("latest", "download_url", "file_name", "file_size", "sha256")
 WIN = ("version", "download_url", "file_name", "file_size", "sha256")
-NUMERIC = re.compile(r"^[0-9]+(?:\.[0-9]+){0,2}$")
+NUMERIC = re.compile(r"(?:0|[1-9][0-9]*)(?:\.(?:0|[1-9][0-9]*)){0,2}")  # fullmatch: no trailing newline, no leading zeros
 ALLOWED_TOP = {"agent", "corvus6_windows", "notes"}
 
 problems = []
@@ -79,6 +79,9 @@ def main():
         if beta.get(key) != stable[key]:
             bad(key, "differs from the stable manifest, but only agent and corvus6.native.windows may be overridden")
 
+    if not isinstance(overrides, dict):
+        print("RED  beta/overrides.json must be a JSON object")
+        return 1
     if set(overrides) - ALLOWED_TOP:
         bad("beta/overrides.json", f"unexpected keys {sorted(set(overrides) - ALLOWED_TOP)}")
 
@@ -94,7 +97,7 @@ def main():
             if k not in AGENT and sa.get(k) != ba.get(k):
                 bad(f"agent.{k}", "not an overridable key")
         if ba.get("latest") != sa.get("latest"):
-            if not NUMERIC.match(str(ba.get("latest"))):
+            if not (isinstance(ba.get("latest"), str) and NUMERIC.fullmatch(ba["latest"])):
                 bad("agent.latest", f"{ba.get('latest')!r} is not numeric")
             elif numtuple(ba["latest"]) <= numtuple(sa["latest"]):
                 bad("agent.latest", f"{ba['latest']} is not newer than stable {sa['latest']}")
@@ -121,7 +124,7 @@ def main():
         if k not in WIN and sw.get(k) != bw.get(k):
             bad(f"corvus6.native.windows.{k}", "not an overridable key")
     if bw.get("version") != sw.get("version"):
-        if not NUMERIC.match(str(bw.get("version"))):
+        if not (isinstance(bw.get("version"), str) and NUMERIC.fullmatch(bw["version"])):
             bad("corvus6.native.windows.version", f"{bw.get('version')!r} is not numeric")
         elif numtuple(bw["version"]) <= numtuple(sw["version"]):
             bad("corvus6.native.windows.version", f"{bw['version']} is not newer than stable {sw['version']}")

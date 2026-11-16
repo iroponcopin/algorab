@@ -50,9 +50,13 @@ ALLOWED_TOP = ("agent", "corvus6_windows", "notes")
 AGENT_KEYS = ("latest", "download_url", "file_name", "file_size", "sha256")
 WINDOWS_KEYS = ("version", "download_url", "file_name", "file_size", "sha256")
 LANGS = ("ja", "en", "es", "fr", "zh", "ko", "pt-br", "it", "ar", "ru", "id", "de", "tr")
-VERSION_RE = re.compile(r"^[0-9]+(?:\.[0-9]+){0,2}$")
-SHA_RE = re.compile(r"^[0-9a-f]{64}$")
-FORBIDDEN_WORDS = re.compile(r"\b(?:corvus|miau)\b", re.IGNORECASE)
+# fullmatch, never match: with match, "$" also accepts a trailing newline, and "6.7.0\n" would reach the manifest (the
+# released Agents 6.6.1 exits at start on a non-numeric agent.latest). No leading zeros either ("06.7" is refused), so a
+# version has exactly one spelling.
+VERSION_RE = re.compile(r"(?:0|[1-9][0-9]*)(?:\.(?:0|[1-9][0-9]*)){0,2}")
+SHA_RE = re.compile(r"[0-9a-f]{64}")
+# No word boundary: "CorvusStore" and "Miau's" are refused too.
+FORBIDDEN_WORDS = re.compile(r"corvus|miau", re.IGNORECASE)
 
 
 def dump(obj) -> str:
@@ -62,9 +66,9 @@ def dump(obj) -> str:
 
 def version_problem(new, stable) -> str | None:
     """None when `new` is a usable beta version newer than `stable`; otherwise the reason it is ignored."""
-    if not isinstance(new, str) or not VERSION_RE.match(new):
+    if not isinstance(new, str) or not VERSION_RE.fullmatch(new):
         return f"{new!r} is not a purely numeric version of one to three parts"
-    if not isinstance(stable, str) or not VERSION_RE.match(stable):
+    if not isinstance(stable, str) or not VERSION_RE.fullmatch(stable):
         return f"the stable value {stable!r} is not a numeric version"
     def pad(v: str) -> tuple[int, ...]:
         parts = [int(p) for p in v.split(".")]
@@ -111,7 +115,7 @@ def _file(where: str, obj: dict, prefix_ext: str, root: Path, errors: list[str])
     if not isinstance(size, int) or isinstance(size, bool) or size <= 0:
         errors.append(f"{where}: file_size must be a positive integer")
         ok = False
-    if not isinstance(sha, str) or not SHA_RE.match(sha):
+    if not isinstance(sha, str) or not SHA_RE.fullmatch(sha):
         errors.append(f"{where}: sha256 must be 64 lowercase hex digits")
         ok = False
     if not ok:

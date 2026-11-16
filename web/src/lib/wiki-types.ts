@@ -43,6 +43,14 @@ export interface ModelDownload {
   file: FileFacts;
 }
 
+/** The beta channel's offers (beta/glimpse_manifest.json, each strictly newer than stable); null when there are none. */
+export interface BetaOffers {
+  agent: { version: string; stableVersion: string } | null;
+  windows: { version: string; stableVersion: string; file: FileFacts } | null;
+  /** This language's note from beta/overrides.json, or "" when it has none. */
+  note: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -336,6 +344,7 @@ export interface LangData {
     tsubomi: ModelDownload | null;
     halia: ModelDownload | null;
     agent: ModelDownload | null;
+    beta: BetaOffers | null;
     noctua: ModelDownload | null;
     discord: { heading: string; body: string; cta: string };
     alphaNote: string;

@@ -2,6 +2,7 @@ import { BuildTag } from "@/components/next/BuildTag";
 import { FRESH } from "@/i18n/fresh";
 import { NEXT_RELEASE } from "@/i18n/next-release";
 import { NATIVE_APPS } from "@/i18n/native-apps";
+import { BETA_CHANNEL } from "@/i18n/beta-channel";
 import Link from "next/link";
 import { asset, pathOf } from "@/lib/site";
 import { langData, wiki } from "@/lib/wiki";
@@ -87,6 +88,47 @@ function ModelDownload({ id, heading, line, children, aside }: { id: string; hea
         {children}
         {aside}
       </div>
+    </section>
+  );
+}
+
+/**
+ * The Beta section: only while the beta copy offers a newer Windows build or Algorab Agents build (the data is null
+ * otherwise, and nothing renders). Every tile says Beta; nothing here is available as a stable release.
+ */
+function BetaSection({ d, lang }: { d: LangData; lang: Lang }) {
+  const beta = d.download.beta;
+  if (!beta) return null;
+  const c = BETA_CHANNEL[lang];
+  const labels = fileLabels(d);
+  return (
+    <section className="ac-wrap cn-dl-block" aria-labelledby="dl-beta">
+      <header className="cn-dl-head">
+        <h2 id="dl-beta" className="cn-dl-title">
+          {c.title}
+        </h2>
+        <p className="cn-dl-line">{c.lede}</p>
+        <p className="cn-dl-line">{c.join}</p>
+        {beta.note ? <p className="cn-dl-line">{beta.note}</p> : null}
+      </header>
+      <div className="cn-tiles cn-tiles--two">
+        {beta.windows ? (
+          <FileCard
+            tag={`${c.title} ${beta.windows.version} · Windows`}
+            file={beta.windows.file}
+            cta={`${d.chrome.primaryCta} (Windows)`}
+            labels={labels}
+          />
+        ) : null}
+        {beta.agent ? (
+          <article className="cn-tile cn-glass cn-glass--lite" data-glass="">
+            <span className="cn-tile-hero">{`${c.title} ${beta.agent.version}`}</span>
+            <span className="cn-tile-name ac-ltr">{FRESH[lang].agent.title}</span>
+            <p className="cn-tile-note">{c.agentLine}</p>
+          </article>
+        ) : null}
+      </div>
+      <p className="cn-dl-line">{c.sends}</p>
     </section>
   );
 }
@@ -199,6 +241,8 @@ export function DownloadPage({ lang }: { lang: Lang }) {
           <FileCard tag={`${d.chrome.version} ${dl.agent.version}`} file={dl.agent.file} cta={d.chrome.primaryCta} labels={labels} />
         </ModelDownload>
       ) : null}
+
+      <BetaSection d={d} lang={lang} />
 
       <section className="ac-wrap cn-dl-block" aria-labelledby="dl-discord">
         <header className="cn-dl-head">

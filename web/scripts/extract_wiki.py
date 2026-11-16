@@ -65,6 +65,7 @@ WEB = HERE.parent
 WIKI = Path(os.environ.get("WIKI_DIR", WEB.parent)).resolve()
 OUT = WEB / ".data" / "wiki.json"
 sys.path.insert(0, str(WIKI / "scripts"))
+import build_beta_manifest as BBM  # the beta copy's rules, read from scripts/ (the same file the builder runs)
 
 # The builders print notes while they compute; the portal build keeps its own output readable.
 _quiet = io.StringIO()
@@ -879,6 +880,9 @@ def build_lang(lang: str, ctx: dict) -> dict:
                                    "requirements": [{"label": "Palworld", "value": "Dedicated Server"}],
                                    "file": file_facts(noctua_file["file_name"], noctua_file["download_url"],
                                                       noctua_file["file_size"], noctua_file["sha256"])},
+        # The Beta section (beta/): only while the beta copy offers something newer than stable; see beta_offers().
+        "beta": ctx["beta"] and {"agent": ctx["beta"]["agent"], "windows": ctx["beta"]["windows"],
+                                  "note": ctx["beta"]["notes"].get(lang) or ""},
         "discord": {"heading": dl["discord_heading"], "body": dl["discord_body"], "cta": dl["discord_invite_cta"]},
         "alphaNote": leg["download"]["alphaNote"],
         "alphaVersion": retired.get("retired_version", ""),
@@ -1027,10 +1031,39 @@ def skin_public() -> dict | None:
     return {"file": pub["file"], "name": pub["name"], "sha256": digest, "bytes": len(data)}
 
 
+def beta_offers(stable: dict) -> dict | None:
+    """The beta channel's offers, read from beta/ (scripts/build_beta_manifest.py): None unless the beta copy offers a
+    newer Windows build or a newer Algorab Agents build. The beta copy must be exactly what the builder gives for the
+    current overrides and the stable manifest; a stale copy stops the build. ALGORAB_BETA_DIR and ALGORAB_BETA_ROOT
+    point the build at a fixture for tests only; the normal build reads the repository."""
+    directory = Path(os.environ.get("ALGORAB_BETA_DIR") or (WIKI / "beta"))
+    root = Path(os.environ.get("ALGORAB_BETA_ROOT") or WIKI)
+    overrides = BBM.load_overrides(directory)
+    expected, _report, errors = BBM.resolve(stable, overrides, root)
+    if errors:
+        die("beta/overrides.json is not valid: " + "; ".join(errors))
+    beta_path = directory / "glimpse_manifest.json"
+    if not beta_path.is_file() or beta_path.read_text(encoding="utf-8") != BBM.dump(expected):
+        die(f"{beta_path} is stale: run python3 scripts/build_beta_manifest.py")
+    beta = json.loads(beta_path.read_text(encoding="utf-8"))
+    agent = None
+    if beta["agent"] != stable["agent"]:
+        agent = {"version": beta["agent"]["latest"], "stableVersion": stable["agent"]["latest"]}
+    bw, sw = beta["corvus6"]["native"]["windows"], stable["corvus6"]["native"]["windows"]
+    windows = None
+    if bw != sw:
+        windows = {"version": bw["version"], "stableVersion": sw["version"],
+                   "file": file_facts(bw["file_name"], bw["download_url"], bw["file_size"], bw["sha256"])}
+    if agent is None and windows is None:
+        return None
+    return {"agent": agent, "windows": windows, "notes": overrides.get("notes") or {}}
+
+
 def main() -> None:
     legacy = json.loads((WEB / "src" / "i18n" / "legacy.json").read_text(encoding="utf-8"))
     manifest = read_json("glimpse_manifest.json")
     retirement = SC.alpha_retirement()
+    beta = beta_offers(manifest)
     versions = read_json("data/versions.json")
     with contextlib.redirect_stdout(_quiet):
         alpha_facts = BAL.facts()
@@ -1058,6 +1091,7 @@ def main() -> None:
         "skinGate": read_json("data/skin_gate.json"),
         "teasers": read_json("data/teasers.json")["teasers"],
         "recipes": recipes_shared(legacy),
+        "beta": beta,
     }
     langs = {lang: with_tiers(lang, say_model(lang, build_lang(lang, ctx))) for lang in LANGS}
     stale = [f"{lang}: {old!r}" for lang in LANGS for old, _ in MODEL_WORDS.get(lang, []) + TIER_LINES.get(lang, [])

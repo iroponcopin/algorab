@@ -129,6 +129,16 @@ CHECKS = [
      "beta/glimpse_manifest.json vs the stable manifest (only agent and corvus6 Windows overridable, newer, files match)"),
     ("beta-tests", "tests/test_beta_manifest.py", [],
      "the beta builder's unit tests: mirror byte-identical, valid and refused overrides, --check"),
+    # 2026-11-17 (owner): no release without notes in New Features / Bug Fixes / Refinements. Every version the stable
+    # and beta manifests name for corvus6 and agent, and every moved baseline block, needs an English entry.
+    ("release-notes", "release_notes_gate.py", [],
+     "every version in the stable and beta manifests (corvus6, agent) has notes; moved baseline blocks have notes"),
+    ("release-notes-tests", "tests/test_release_notes_gate.py", [],
+     "the release-notes gate's unit tests: missing entry, no English, empty sections, beta, baseline, no brand"),
+    ("changelog-text", "check_changelog_text.py", [],
+     "the exported changelog pages and the feed text the page renders: no Corvus/Miau/Glimpse/Alpha/JJK text"),
+    ("changelog-text-controls", "check_changelog_text.py", ["--self-test"],
+     "the changelog text check turns a planted forbidden term red"),
 ]
 
 

@@ -1346,6 +1346,14 @@ def build():
     else:
         print("glimpse_manifest.py: no data/fabric_api.json yet - writing manifest with no 'fabric_api' block")
 
+    # 2026-11-17 (owner: every release lists New Features / Bug Fixes / Refinements): no notes, no release. The
+    # stable manifest and the beta view it produces must name only versions that have written notes (or, for the
+    # other blocks, unchanged versions). Checked before anything is written, so a failed build leaves no file behind.
+    import release_notes_gate  # noqa: E402  (scripts/ is on sys.path)
+    notes_errors = release_notes_gate.check_build(manifest, ROOT)
+    if notes_errors:
+        raise SystemExit("ERROR: release notes gate (scripts/release_notes_gate.py). Nothing was written:\n  "
+                         + "\n  ".join(notes_errors))
     out_path = ROOT / "glimpse_manifest.json"
     out_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"wrote {out_path} (pack version {version}, sha256 {sha256_hex[:12]}...)")

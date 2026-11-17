@@ -389,6 +389,10 @@ def main(argv):
     feeds_only = "--feeds-only" in argv
     world = load_world(feeds_only)
     fails = check(world, feeds_only)
+    # 2026-11-17: the release-notes gate (every version the manifests name has notes; scripts/release_notes_gate.py)
+    # runs here too, in both modes, because it reads data and feeds, not pages.
+    import release_notes_gate  # noqa: E402  (scripts/ is on sys.path)
+    fails += [f"[N] {e}" for e in release_notes_gate.check_repo()]
     for f in fails:
         print("FAIL " + f)
     pages = len(world["langs"])

@@ -242,11 +242,13 @@ function brandWords(where, text) {
     problem(where, `shows "${m[0]}" (say "model"): …${around.replace(/\s+/g, " ").trim()}…`);
   }
 }
-// Corvus Island is abolished on every OS (owner decision): the words "Island" and "Perch" are not in any Next page, in its
-// text, its attributes or its client data. "perché" and "perchlorate" are other words, so the rule takes whole words only.
+// Corvus Island is abolished on every OS (owner decision): the product name and the word "Perch" are not in any Next page,
+// in its text, its attributes or its client data. "perché" and "perchlorate" are other words, so the rule takes whole words only.
 // The recipe book names the Halia relay block "Perch" (halia:perch, a game item in data/recipes*.json). That item name is the
-// one allowed use of the word, on the recipe pages only, until the owner decides whether the item is renamed. Island is never allowed.
-const ISLAND_WORD = /(?<!\p{L})islands?(?!\p{L})/giu;
+// one allowed use of the word, on the recipe pages only, until the owner decides whether the item is renamed.
+// Owner decision 2026-11-17: only the product name is refused, under the old and the new studio name. The plain word stays
+// allowed, because release notes name the ARK: Survival Ascended map "The Island" and the End's outer islands.
+const ISLAND_WORD = /(?<!\p{L})(?:corvus|algorab)[\s 　-]*islands?(?!\p{L})/giu;
 const PERCH_WORD = /(?<!\p{L})perch(?!\p{L})/giu;
 const PERCH_ITEM_PAGES = /(?:^|\/)recipes\//;
 function retiredWords(where, text) {

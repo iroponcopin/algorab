@@ -547,6 +547,66 @@
         "date": "2026-11-02",
         "type": "release"
       }
+    ],
+    "corvus6": [
+      {
+        "id": "corvus6-v6.2.1",
+        "release": "6.2.1",
+        "date": "2026-11-08",
+        "type": "release"
+      },
+      {
+        "id": "corvus6-v6.2.2",
+        "release": "6.2.2",
+        "date": "2026-11-10",
+        "type": "release"
+      },
+      {
+        "id": "corvus6-v6.2.3",
+        "release": "6.2.3",
+        "date": "2026-11-10",
+        "type": "release"
+      },
+      {
+        "id": "corvus6-v6.3.0",
+        "release": "6.3.0",
+        "date": "2026-11-16",
+        "type": "release",
+        "channel": "beta"
+      }
+    ],
+    "agent": [
+      {
+        "id": "agent-v6.5.0",
+        "release": "6.5.0",
+        "date": "2026-11-10",
+        "type": "release"
+      },
+      {
+        "id": "agent-v6.5.1",
+        "release": "6.5.1",
+        "date": "2026-11-10",
+        "type": "release"
+      },
+      {
+        "id": "agent-v6.6.0",
+        "release": "6.6.0",
+        "date": "2026-11-14",
+        "type": "release"
+      },
+      {
+        "id": "agent-v6.6.1",
+        "release": "6.6.1",
+        "date": "2026-11-15",
+        "type": "release"
+      },
+      {
+        "id": "agent-v6.7.0",
+        "release": "6.7.0",
+        "date": "2026-11-16",
+        "type": "release",
+        "channel": "beta"
+      }
     ]
   }
 }

@@ -36,6 +36,16 @@
    "id": "halia",
    "name": "Halia",
    "feed": "changelog_feed/halia/{lang}.json"
+  },
+  {
+   "id": "corvus6",
+   "name": "Algorab",
+   "feed": "changelog_feed/corvus6/{lang}.json"
+  },
+  {
+   "id": "agent",
+   "name": "Algorab Agents",
+   "feed": "changelog_feed/agent/{lang}.json"
   }
  ]
 }

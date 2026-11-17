@@ -44,6 +44,42 @@ SECTIONS = (
     ("warnings", "changelog_warnings_label"),
     ("known_limitations", "changelog_limitations_label"),
 )
+# 2026-11-17: every release of an Algorab product lists what changed under exactly these three headings, in
+# this order, before any other section. The "kind" key is the machine name of the heading; only these three
+# sections carry it, so an app that reads the feed can tell them apart from Highlights and Warnings.
+KIND_SECTIONS = (
+    ("new_features", "changelog_new_features_label", "new_features"),
+    ("bug_fixes", "changelog_bug_fixes_label", "bug_fixes"),
+    ("refinements", "changelog_refinements_label", "refinements"),
+)
+
+
+def sections_for(entry, c):
+    sections = []
+    for field, label_key, kind in KIND_SECTIONS:
+        items = [str(x) for x in (entry.get(field) or [])]
+        if items:
+            sections.append({"title": c[label_key], "kind": kind, "items": items})
+    for field, label_key in SECTIONS:
+        items = [str(x) for x in (entry.get(field) or [])]
+        if items:
+            sections.append({"title": c[label_key], "items": items})
+    return sections
+
+
+def release_for(e, c):
+    rel = {
+        "version": e["release"],
+        "date": e["date"],
+        "type": e.get("type", "release"),
+        "title": e.get("title", ""),
+        "summary": e.get("summary", ""),
+        "sections": sections_for(e, c),
+    }
+    # Additive: only the brand entries that are a beta carry it (the app ignores keys it does not know).
+    if e.get("channel"):
+        rel["channel"] = e["channel"]
+    return rel
 
 
 def feed_for(lang):
@@ -54,19 +90,7 @@ def feed_for(lang):
     for label, entries in group_entries(entries_desc):
         releases = []
         for e in entries:
-            sections = []
-            for field, label_key in SECTIONS:
-                items = [str(x) for x in (e.get(field) or [])]
-                if items:
-                    sections.append({"title": c[label_key], "items": items})
-            releases.append({
-                "version": e["release"],
-                "date": e["date"],
-                "type": e.get("type", "release"),
-                "title": e.get("title", ""),
-                "summary": e.get("summary", ""),
-                "sections": sections,
-            })
+            releases.append(release_for(e, c))
         groups.append({
             "label": label,
             # Same rule the page uses: the newest release's own title.
@@ -105,19 +129,7 @@ def brand_feed_for(lang, brand, structural):
     for label, entries in group_brand_entries(entries_desc):
         releases = []
         for e in entries:
-            sections = []
-            for field, label_key in SECTIONS:
-                items = [str(x) for x in (e.get(field) or [])]
-                if items:
-                    sections.append({"title": c[label_key], "items": items})
-            releases.append({
-                "version": e["release"],
-                "date": e["date"],
-                "type": e.get("type", "release"),
-                "title": e.get("title", ""),
-                "summary": e.get("summary", ""),
-                "sections": sections,
-            })
+            releases.append(release_for(e, c))
         groups.append({"label": label, "summary": entries[0].get("title", ""), "releases": releases})
     newest = entries_desc[0]["date"] if entries_desc else ""
     payload = {

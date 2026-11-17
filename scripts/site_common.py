@@ -251,6 +251,9 @@ NAV_LABEL_FALLBACK = {
     # to fall back this way (see build_aureum.py's header for why every other
     # string on that page has a real translation in all 13 languages).
     "aureum": "Aureum",
+    # 2026-11-17: the two feed-only brands (build_changelog.FEED_ONLY_BRANDS). Product names, never translated.
+    "corvus6": "Algorab",
+    "agent": "Algorab Agents",
     # Same reasoning as "aureum": a brand name, not a description. Translating
     # it into 11 more scripts would produce 11 wrong answers, not 11 right ones.
     "cherry": "Cherry",

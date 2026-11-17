@@ -34,7 +34,7 @@ from site_common import (  # noqa: E402
 from build_ouka import COPY as OUKA_COPY  # noqa: E402
 
 PROSE_KEYS = ("title", "summary", "highlights", "balance_changes", "warnings",
-              "known_limitations")
+              "known_limitations", "new_features", "bug_fixes", "refinements")
 
 
 def merged_entries(bundle, lang=None):
@@ -273,6 +273,8 @@ BRAND_DATA = ROOT / "data" / "changelog_brands.json"
 # page (the Download page, the Alpha page, the 404 page, the roadmap) still
 # lands on the history it always showed.
 DEFAULT_BRAND = "alpha"
+# Brands with release notes that live only in the feeds (changelog_feed/<brand>/), not on the Store menu.
+FEED_ONLY_BRANDS = ("corvus6", "agent")
 # Brands whose releases quote gameplay numbers, which is what the config note
 # ("the numbers shown are the defaults at release") speaks about. Aureum quotes
 # measured memory, which no server config changes; OUKA has no releases.
@@ -293,6 +295,13 @@ def brand_order():
     # the notice that ended it, keeps its tab, in its old place: after Cherry, before Aureum.
     if DEFAULT_BRAND not in order:
         order.insert(order.index("cherry") + 1, DEFAULT_BRAND)
+    # 2026-11-17 (owner: every release lists New Features / Bug Fixes / Refinements): the two Algorab
+    # products that have release notes but are not on the Store line. They are feed-only: they are appended
+    # after the Store line, so the order of every existing brand row in changelog_feed/brands.json is kept,
+    # and they never enter NAV_GROUPS, so no menu changes.
+    for brand in FEED_ONLY_BRANDS:
+        if brand not in order:
+            order.append(brand)
     return order
 
 

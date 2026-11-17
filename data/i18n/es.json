@@ -107,7 +107,11 @@
    "changelog_updated": "Actualizado el {date}",
    "changelog_show_more": "Mostrar más",
    "changelog_show_fewer": "Mostrar menos",
-   "changelog_brand_label": "Marca"
+   "changelog_brand_label": "Marca",
+   "changelog_new_features_label": "Novedades",
+   "changelog_bug_fixes_label": "Correcciones de errores",
+   "changelog_refinements_label": "Mejoras",
+   "changelog_beta_label": "Beta"
   },
   "page_titles": {
    "home": "",
@@ -1825,6 +1829,151 @@
      "Los ataques destruyen el terreno de forma permanente y a muy gran escala; no se puede deshacer. SS-01 elimina todo lo que hay a menos de 200 bloques del objetivo, desde el límite de construcción hasta el vacío. Gungnir arrasa, a menos de 400 bloques del impacto, todo lo que queda por encima de la altura del impacto, y excava un cráter en el centro. Seven Stars excava 7 cráteres y 7 zanjas a lo largo de unos 1440 bloques. Haz antes una copia de seguridad de tu mundo, y no uses el Stellar Remote en un mundo o servidor del que no estés dispuesto a perder partes.",
      "Un ataque mata a todo ser vivo dentro de su zona, incluido el jugador que lo lanzó; solo se salvan los jugadores en modo Creativo o Espectador. Las construcciones, los cofres y los objetos sueltos de la zona destruida se pierden. Fuera de su zona, el choque de Gungnir todavía lanza y hiere a las criaturas hasta a 1000 bloques del impacto.",
      "Un solo ataque carga y reescribe de cientos a miles de chunks; el juego puede ir a tirones mientras dura."
+    ]
+   }
+  ],
+  "corvus6": [
+   {
+    "id": "corvus6-v6.2.1",
+    "title": "Fixes for Windows and Linux",
+    "summary": "For Windows and Linux.",
+    "new_features": [
+     "On Windows and Linux, you can now choose a server folder, set up Algorab Agents and start your Minecraft server without leaving the app; before, this part was marked as in development."
+    ],
+    "bug_fixes": [
+     "The Optimize tabs no longer disappear when you press them; they now switch.",
+     "Saving a diagnostic report now works; before, the save window did not open.",
+     "Choosing a folder now works; before, the folder window did not open.",
+     "Product pages now scroll, so Get and Version history can be reached even when the description is long, and Version history is easy to read.",
+     "Back from a product you opened in Arcade now returns to Arcade; before, it went to Discover."
+    ],
+    "refinements": [
+     "If your Java is too old, the app now says that Java 25 or later is required and offers Get Java 25 as the main button; before, it showed only an English error.",
+     "On Windows, folder paths are now shown the Windows way (D:\\...) instead of with forward slashes.",
+     "Old product names that were still showing in Settings and in error messages now read Algorab."
+    ]
+   },
+   {
+    "id": "corvus6-v6.2.2",
+    "title": "ARK: Survival Ascended servers on Windows, and server controls on Windows and macOS",
+    "summary": "For Windows and macOS.",
+    "new_features": [
+     "On Windows, you can install, start and stop an ARK: Survival Ascended server from the Algorab Agents screen, and it starts by itself after installing.",
+     "On Windows, you can change 199 ARK: Survival Ascended game settings, search them, show only the ones you changed and reset one to its default.",
+     "On Windows, you can use an ARK: Survival Ascended server you set up by hand by pointing the app at its folder.",
+     "On Windows, the Minecraft server controls from the earlier app are back: difficulty (Hard / XHard / Pro), enemy strength and spawns, creatures, view distance, updates, backup and restore, tunnel and whitelist.",
+     "On Windows, you switch between Minecraft and ARK: Survival Ascended with tabs in the dock (tap, or press and hold and slide).",
+     "On macOS, the Algorab Agents screen now has difficulty (Hard / XHard / Pro), sliders for enemy strength and spawns, and view distance, with a prompt to restart after you change it."
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "On Windows, no command prompt window pops up any more when Algorab Agents, a Minecraft server or an ARK: Survival Ascended server runs.",
+     "On macOS, the name now reads Algorab Agents everywhere, in all 13 languages."
+    ]
+   },
+   {
+    "id": "corvus6-v6.2.3",
+    "title": "Windows: choose an ARK: Survival Ascended map",
+    "summary": "For Windows.",
+    "new_features": [
+     "On Windows, the ARK tab has a Map row: pick the map from a list, see a note on paid maps, and, while the server runs, see that the change applies from the next start with a Restart now button."
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "On Windows, while an ARK: Survival Ascended server is saving and shutting down, the app shows 'Stopping' with the reason instead of a Start button, and Restart now waits until the stop has finished.",
+     "On Windows, when an ARK: Survival Ascended action is refused, the app now shows the reason that Algorab Agents gives."
+    ]
+   },
+   {
+    "id": "corvus6-v6.3.0",
+    "title": "Beta: Algorab 6.3 for Windows",
+    "summary": "For Windows.",
+    "new_features": [
+     "Settings has a 'Receive beta versions' switch with a confirmation screen; when it is on, the app and Algorab Agents read the beta update information.",
+     "A Players card on the Minecraft server page lists players and lets you manage the whitelist, bans, kicks and operators; it warns that operators can join even when they are not on the whitelist.",
+     "A server memory slider sets how much memory the Minecraft server may use; it applies at the next start.",
+     "Optimize has an 'Older than' slider (1 hour to 7 days) that sets how old scratch files must be before Clean Up moves them.",
+     "A button beside the server log explains the log with an AI model that runs on your computer and rates it Normal, Attention or Action; there is no chat.",
+     "Settings has a Servers card with three switches, all off by default: keep the computer awake while a server runs, join alerts, and Reduce Motion."
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "The automatic-backup interval and the number of backups to keep are now sliders instead of rows of buttons.",
+     "The ARK: Survival Ascended card shows 'Updating to the latest build before starting' with progress and a Cancel start button, and shows the reason in your language under 'Could not start' if a start fails.",
+     "Japanese now covers much more of the app, including messages from Algorab Agents, dates and sizes, tier names and ARK: Survival Ascended setting names."
+    ]
+   }
+  ],
+  "agent": [
+   {
+    "id": "agent-v6.5.0",
+    "title": "ARK: Survival Ascended servers (Windows)",
+    "summary": "For Windows, macOS and Linux.",
+    "new_features": [
+     "On Windows, Algorab Agents can install, start and stop an ARK: Survival Ascended server.",
+     "On Windows, 199 ARK: Survival Ascended game settings can be read and changed through Algorab Agents.",
+     "On Windows, Algorab Agents can take over an ARK: Survival Ascended server folder you created by hand."
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "On Windows, the ARK: Survival Ascended server's own window is hidden.",
+     "On Windows, if another program has the settings file open for a moment, Algorab Agents now waits briefly and then saves instead of failing."
+    ]
+   },
+   {
+    "id": "agent-v6.5.1",
+    "title": "ARK: Survival Ascended saves before it stops, and map choice",
+    "summary": "For Windows.",
+    "new_features": [
+     "On Windows, you can choose the ARK: Survival Ascended map from nine (The Island, Scorched Earth, The Center, Extinction, Astraeos, Ragnarok, Valguero, Lost Colony, Genesis); each map keeps its own world, and an adopted server uses the map of its newest save.",
+     "On Windows, two flying-creature speed levelling settings were added to the ARK: Survival Ascended game settings; Algorab Agents writes them without changing the other lines of the settings file."
+    ],
+    "bug_fixes": [
+     "On Windows, stopping or restarting an ARK: Survival Ascended server now saves the world first; before, 6.5.0 closed it without saving. If the save is not possible it closes as before and the activity log says it stopped without saving."
+    ],
+    "refinements": []
+   },
+   {
+    "id": "agent-v6.6.0",
+    "title": "Algorab Agents 6.6.0",
+    "summary": "For Windows.",
+    "new_features": [
+     "On Windows, the ARK: Survival Ascended game settings grow to 304 settings, including 11 breeding settings."
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "On Windows, an ARK: Survival Ascended server is now updated to the current Steam build before it starts."
+    ]
+   },
+   {
+    "id": "agent-v6.6.1",
+    "title": "ARK: Survival Ascended start fix and Japanese setting names",
+    "summary": "For Windows.",
+    "new_features": [],
+    "bug_fixes": [
+     "A start of an ARK: Survival Ascended server no longer fails when Steam reports that the server is already up to date.",
+     "Pressing Start on an ARK: Survival Ascended server that is already running no longer produces an error; nothing happens, as before 6.6.0."
+    ],
+    "refinements": [
+     "If Steam cannot be reached to update the ARK: Survival Ascended server, it now starts the version that is already installed and writes the reason in the server log; before, it did not start.",
+     "ARK: Survival Ascended game setting names (304) now appear in Japanese in app 6.2.3 when the app language is Japanese, or when no language is chosen and the PC is set to Japanese; the new groups are named Breeding, Per-level stats and Genesis and missions in Japanese. Reopen the Game settings row or the app to see them."
+    ]
+   },
+   {
+    "id": "agent-v6.7.0",
+    "title": "Beta: creature strength, automatic ARK: Survival Ascended updates and the beta channel",
+    "summary": "For Windows, macOS and Linux.",
+    "new_features": [
+     "The ARK: Survival Ascended game settings have a Creature strength group (32 settings): damage dealt and taken for 15 creature kinds, the wild maximum level, and automatic balancing for 6 kinds. Lines you wrote by hand in the settings file are left alone.",
+     "A running ARK: Survival Ascended server can update itself: when a newer Steam build is confirmed twice, Algorab Agents warns in chat 10, 5 and 1 minutes ahead, saves and restarts. It is on by default and can be switched off.",
+     "Algorab Agents can be switched between the stable and beta channels (and a custom address); the change needs no restart. Switching from the app needs Algorab Agents 6.7.0.",
+     "On the beta channel only, Algorab Agents sends Algorab a limited, scrubbed report (allowed fields and cleaned Steam lines); the Algorab Agents log itself and server log text are not sent. Other channels send nothing."
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "Starting ARK: Survival Ascended right after installing no longer runs the Steam update step twice.",
+     "A start that is still waiting can be cancelled with Stop, and a failed start is now kept in the log and in the server status.",
+     "Algorab Agents keeps running when the published latest version is not a plain number such as 6.7.0."
     ]
    }
   ]

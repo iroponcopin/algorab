@@ -127,7 +127,11 @@
    "changelog_updated": "最終更新 {date}",
    "changelog_show_more": "もっと見る",
    "changelog_show_fewer": "閉じる",
-   "changelog_brand_label": "ブランド"
+   "changelog_brand_label": "ブランド",
+   "changelog_new_features_label": "新機能",
+   "changelog_bug_fixes_label": "不具合の修正",
+   "changelog_refinements_label": "改良",
+   "changelog_beta_label": "ベータ版"
   },
   "page_titles": {
    "home": "",
@@ -1961,6 +1965,151 @@
      "攻撃は、地形を非常に広い範囲で、元に戻せない形で破壊します。取り消す手段はありません。SS-01 は、狙った地点から 200 ブロック以内を、建築限界から奈落まですべて消します。グングニルは、着弾点から 400 ブロック以内で着弾した高さより上にあるものをすべて削り取り、中心にクレーターを掘ります。七星は、約 1,440 ブロックにわたって 7 つのクレーターと 7 本の溝を掘ります。使う前に必ずワールドのバックアップを取ってください。一部を失ってもかまわないワールドやサーバー以外では、ステラ・リモートを使わないでください。",
      "攻撃の範囲内にいる生き物はすべて死にます。範囲内に立っていれば、発動した本人も同じです。助かるのは、クリエイティブかスペクテイターのプレイヤーだけです。壊された範囲にあった建物、チェスト、落ちているアイテムは失われます。グングニルの衝撃は範囲の外でも、着弾点から 1,000 ブロック先まで、生き物を吹き飛ばして傷つけます。",
      "1 回の攻撃で、数百から数千のチャンクを読み込んで書き換えます。その間、ゲームがカクつくことがあります。"
+    ]
+   }
+  ],
+  "corvus6": [
+   {
+    "id": "corvus6-v6.2.1",
+    "title": "Windows・Linux の修正版",
+    "summary": "対象：WindowsとLinux",
+    "new_features": [
+     "WindowsとLinuxで、サーバーのフォルダーを選び、Algorab Agentsをセットアップし、Minecraftサーバーを起動するところまで、アプリの中だけで行えるようになりました。以前はこの部分が「開発中」と表示されていました。"
+    ],
+    "bug_fixes": [
+     "Optimizeのタブを押しても消えなくなり、きちんと切り替わるようになりました。",
+     "診断レポートを保存できるようになりました。以前は保存の画面が開きませんでした。",
+     "フォルダーを選べるようになりました。以前はフォルダー選択の画面が開きませんでした。",
+     "製品ページがスクロールできるようになりました。説明が長くても「入手」と「バージョン履歴」に届き、バージョン履歴も読みやすくなりました。",
+     "Arcadeから開いた製品で「戻る」を押すと、Arcadeに戻るようになりました。以前は「見つける」に戻っていました。"
+    ],
+    "refinements": [
+     "Javaが古いときは、「Java 25 以降が必要です」と表示し、「Java 25 を入手」を主なボタンとして案内するようになりました。以前は英語のエラーが出るだけでした。",
+     "Windowsで、フォルダーの場所がWindowsの書き方（D:\\…）で表示されるようになりました。以前は「/」区切りでした。",
+     "設定画面とエラーメッセージに残っていた古い製品名が、Algorabに統一されました。"
+    ]
+   },
+   {
+    "id": "corvus6-v6.2.2",
+    "title": "Windows の ARK: Survival Ascended サーバー対応と、Windows・macOS のサーバー操作",
+    "summary": "対象：WindowsとmacOS",
+    "new_features": [
+     "Windowsで、ARK: Survival AscendedのサーバーをAlgorab Agentsの画面から導入・起動・停止できるようになりました。導入が終わると自動で起動します。",
+     "Windowsで、ARK: Survival Ascendedのゲーム設定199項目を変更できます。検索、変更した項目だけの表示、初期値に戻す操作にも対応しています。",
+     "Windowsで、手作業で作ったARK: Survival Ascendedのサーバーを、フォルダーを指定してそのまま使えるようになりました。",
+     "Windowsで、以前のアプリにあったMinecraftサーバーの操作が戻りました。難易度（Hard / XHard / Pro）、敵の強さと湧き、生き物、描画距離、更新、バックアップと復元、トンネル、ホワイトリストです。",
+     "Windowsで、MinecraftとARK: Survival Ascendedの切り替えを、ドックのタブ（タップ、または長押ししてスライド）で行えるようになりました。",
+     "macOSで、Algorab Agentsの画面に、難易度（Hard / XHard / Pro）、敵の強さと湧きのスライダー、描画距離（変更後に再起動の案内つき）が加わりました。"
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "Windowsで、Algorab Agents、Minecraftサーバー、ARK: Survival Ascendedサーバーを動かしても、コマンドプロンプトの窓が出なくなりました。",
+     "macOSで、名称が13言語すべてでAlgorab Agentsに統一されました。"
+    ]
+   },
+   {
+    "id": "corvus6-v6.2.3",
+    "title": "Windows：ARK: Survival Ascended のマップ選択",
+    "summary": "対象：Windows",
+    "new_features": [
+     "Windowsで、ARKタブに「マップ」の行が加わりました。一覧からマップを選べます。課金マップには注記が付き、サーバーの起動中は「次の起動から」の案内と「今すぐ再起動」が表示されます。"
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "Windowsで、ARK: Survival Ascendedサーバーが保存して停止している間は、「開始」ではなく「停止中」と理由を表示し、「今すぐ再起動」は停止が終わってから起動するようになりました。",
+     "Windowsで、ARK: Survival Ascendedの操作が受け付けられなかったとき、Algorab Agentsが返した理由が表示されるようになりました。"
+    ]
+   },
+   {
+    "id": "corvus6-v6.3.0",
+    "title": "ベータ版：Algorab 6.3（Windows）",
+    "summary": "対象：Windows",
+    "new_features": [
+     "設定に「ベータ版を受け取る」のスイッチが加わりました（確認画面つき）。オンにすると、アプリとAlgorab Agentsがベータ用の更新情報を読みます。",
+     "Minecraftサーバーのページに「プレイヤー」のカードが加わり、プレイヤーの一覧と、ホワイトリスト、BAN、キック、オペレーターの管理ができます。オペレーターはホワイトリストに載っていなくても参加できることも案内されます。",
+     "Minecraftサーバーが使うメモリの量をスライダーで決められます。次の起動から反映されます。",
+     "Optimizeに「Older than」のスライダー（1時間〜7日）が加わり、クリーンアップで移動する一時ファイルの古さを決められます。",
+     "サーバーのログの横のボタンで、お使いのPC上で動くAIモデルがログを説明し、「正常」「注意」「対応が必要」の目安を示します。チャットはありません。",
+     "設定に「サーバー」のカードが加わり、サーバー稼働中にスリープさせない、参加の通知、動きを減らす、の3つのスイッチがあります。どれも初期状態はオフです。"
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "自動バックアップの間隔と保存数が、ボタンの切り替えからスライダーに変わりました。",
+     "ARK: Survival Ascendedのカードに、起動前の最新ビルドへの更新の進み具合と「起動を取り消す」ボタンが表示され、起動できなかったときは理由が「起動できませんでした」の下にお使いの言語で表示されます。",
+     "日本語の表示が広がり、Algorab Agentsからのメッセージ、日付と大きさ、段階の名前、ARK: Survival Ascendedの設定名なども日本語で表示されます。"
+    ]
+   }
+  ],
+  "agent": [
+   {
+    "id": "agent-v6.5.0",
+    "title": "ARK: Survival Ascended サーバー対応（Windows）",
+    "summary": "対象：Windows・macOS・Linux",
+    "new_features": [
+     "Windowsで、Algorab AgentsがARK: Survival Ascendedのサーバーを導入・起動・停止できるようになりました。",
+     "Windowsで、ARK: Survival Ascendedのゲーム設定199項目を、Algorab Agents経由で読み書きできます。",
+     "Windowsで、手作業で作ったARK: Survival Ascendedのサーバーのフォルダーを、Algorab Agentsが引き継げます。"
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "Windowsで、ARK: Survival Ascendedサーバー自身の窓が表示されなくなりました。",
+     "Windowsで、ほかのプログラムが設定ファイルを一瞬開いていても、Algorab Agentsが少し待ってから保存するようになりました。"
+    ]
+   },
+   {
+    "id": "agent-v6.5.1",
+    "title": "ARK: Survival Ascended は保存してから止まります。マップ選択にも対応",
+    "summary": "対象：Windows",
+    "new_features": [
+     "Windowsで、ARK: Survival Ascendedのマップを9種（The Island、Scorched Earth、The Center、Extinction、Astraeos、Ragnarok、Valguero、Lost Colony、Genesis）から選べます。マップごとに世界は別で、引き継いだサーバーは最新のセーブのマップを使います。",
+     "Windowsで、飛行生物の速度レベリングの2つの設定が、ARK: Survival Ascendedのゲーム設定に加わりました。設定ファイルのほかの行は変更されません。"
+    ],
+    "bug_fixes": [
+     "Windowsで、ARK: Survival Ascendedサーバーを停止・再起動するときに、先に世界を保存するようになりました。以前の6.5.0は保存せずに強制終了していました。保存できなかった場合は従来どおり終了し、アクティビティに「保存せずに停止した」と記録します。"
+    ],
+    "refinements": []
+   },
+   {
+    "id": "agent-v6.6.0",
+    "title": "Algorab Agents 6.6.0",
+    "summary": "対象：Windows",
+    "new_features": [
+     "Windowsで、ARK: Survival Ascendedのゲーム設定が304項目に増え、ブリーディングの設定11項目が含まれます。"
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "Windowsで、ARK: Survival Ascendedのサーバーが、起動の前にSteamの最新ビルドへ更新されるようになりました。"
+    ]
+   },
+   {
+    "id": "agent-v6.6.1",
+    "title": "ARK: Survival Ascended の起動の修正と、設定名の日本語対応",
+    "summary": "対象：Windows",
+    "new_features": [],
+    "bug_fixes": [
+     "ARK: Survival Ascendedサーバーの起動が、Steamが「すでに最新」と答えたときに失敗しなくなりました。",
+     "すでに起動しているARK: Survival Ascendedサーバーで「開始」を押してもエラーにならず、何も起きないようになりました（6.6.0より前の動作に戻りました）。"
+    ],
+    "refinements": [
+     "Steamに届かずARK: Survival Ascendedサーバーを更新できないときは、入っている版をそのまま起動し、理由をサーバーのログに書くようになりました。以前は起動しませんでした。",
+     "アプリの言語が日本語のとき（言語を選んでいない場合はPCの表示言語が日本語のとき）、アプリ6.2.3のまま、ARK: Survival Ascendedのゲーム設定名（304項目）が日本語で表示されます。新しいグループは「ブリーディング」「レベルごとのステータス」「ジェネシスとミッション」です。表示するには「ゲーム設定」の行を開き直すか、アプリを開き直してください。"
+    ]
+   },
+   {
+    "id": "agent-v6.7.0",
+    "title": "ベータ版：生き物の強さ、ARK: Survival Ascended の自動更新、ベータのチャンネル",
+    "summary": "対象：Windows・macOS・Linux",
+    "new_features": [
+     "ARK: Survival Ascendedのゲーム設定に「Creature strength」のグループ（32項目）が加わりました。15種の生き物の与えるダメージと受けるダメージ、野生の最大レベル、6種の自動バランスを設定できます。設定ファイルに手で書いた行は変更されません。",
+     "起動中のARK: Survival Ascendedサーバーが自動で更新できるようになりました。Steamの新しいビルドを2回確認すると、10分前・5分前・1分前にチャットで知らせ、保存して開始し直します。初期状態ではオンで、オフにもできます。",
+     "Algorab Agentsのチャンネルを、安定版とベータ版（とカスタムのアドレス）で切り替えられます。切り替えに再起動は要りません。アプリから切り替えるにはAlgorab Agents 6.7.0が必要です。",
+     "ベータのチャンネルにいるときだけ、Algorab Agentsは、許可した項目と洗い出したSteamの行だけの限られたレポートをAlgorabに送ります。Algorab Agents自身のログや動作ログの文章は送りません。ほかのチャンネルでは何も送りません。"
+    ],
+    "bug_fixes": [],
+    "refinements": [
+     "ARK: Survival Ascendedを導入した直後に起動しても、Steamの更新の手順が2回走らなくなりました。",
+     "待機中の起動は「停止」で取り消せます。起動に失敗したときは、ログとサーバーの状態に残るようになりました。",
+     "公開されている最新版の番号が「6.7.0」のような数字だけでなくても、Algorab Agentsは落ちずに動き続けます。"
     ]
    }
   ]

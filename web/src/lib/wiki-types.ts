@@ -98,6 +98,12 @@ export interface Release {
   series: string;
   title: string;
   summary: string;
+  /** 2026-11-17: "stable" or "beta" (a beta is labelled Beta on the page). */
+  channel?: string;
+  /** The three headings every Algorab release lists, in this order. */
+  newFeatures: string[];
+  bugFixes: string[];
+  refinements: string[];
   highlights: string[];
   balance: string[];
   warnings: string[];
@@ -191,6 +197,11 @@ export interface ChangelogLabels {
   corvusNote: string;
   types: Record<string, string>;
   none: string;
+  /** 2026-11-17: the headings of the three sections, and the Beta badge. */
+  newFeatures: string;
+  bugFixes: string;
+  refinements: string;
+  beta: string;
 }
 
 export interface SkinLabels {

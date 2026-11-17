@@ -81,6 +81,7 @@ with contextlib.redirect_stdout(_quiet):
     import build_discord as BDC  # noqa: E402
     import build_changelog as BCL  # noqa: E402
     import build_skin_gate as BSG  # noqa: E402
+    import changelog_filter as CF  # noqa: E402  (2026-11-17: the forbidden-text rule, one list shared with the checker)
 
 SCHEMA = "corvus.wiki/4"
 BASE_URL = SC.SITE_BASE_URL
@@ -429,44 +430,35 @@ def series_of(release: str) -> str:
     return BCL.brand_group_label(release)
 
 
+def _release_row(brand: str, e: dict) -> dict:
+    """One release of the page. The three sections of 2026-11-17 come first in the page's own order; a beta is marked."""
+    return {
+        "id": e["id"], "brand": brand, "version": e["release"], "date": e.get("date"),
+        "type": e.get("type", "release"), "channel": e.get("channel", "stable"), "series": series_of(e["release"]),
+        "title": e.get("title", ""), "summary": e.get("summary", ""),
+        "newFeatures": e.get("new_features") or [], "bugFixes": e.get("bug_fixes") or [],
+        "refinements": e.get("refinements") or [],
+        "highlights": e.get("highlights") or [], "balance": e.get("balance_changes") or [],
+        "warnings": e.get("warnings") or [], "limits": e.get("known_limitations") or [],
+    }
+
+
 def changelog_lang(lang: str, bundle: dict, launcher_notes: dict, launcher_notes_i18n: dict | None = None) -> list[dict]:
+    """The brands the changelog page offers, newest first, with every forbidden release removed in every language
+    (scripts/changelog_filter.py). Alpha's root feed and the legacy Java launcher notes are not offered at all, and a
+    brand with no release left is not offered (nothing is invented for it)."""
     structural = BCL.load_brand_structural()
+    hidden = CF.hidden_keys(WIKI)
     brands = []
     with contextlib.redirect_stdout(_quiet):
         for brand in BCL.brand_order():
-            if brand == BCL.DEFAULT_BRAND:
-                entries = BCL.merged_entries(bundle, lang)
-                releases = []
-                for e in reversed(entries):
-                    releases.append({
-                        "id": e["id"], "brand": brand, "version": e["release"], "date": e.get("date"),
-                        "type": e.get("type", "release"), "series": series_of(e["release"]),
-                        "title": e.get("title", ""), "summary": e.get("summary", ""),
-                        "highlights": e.get("highlights") or [], "balance": e.get("balance_changes") or [],
-                        "warnings": e.get("warnings") or [], "limits": e.get("known_limitations") or [],
-                    })
-            else:
-                entries = BCL.merged_brand_entries(bundle, lang, brand, structural[brand])
-                releases = []
-                for e in reversed(entries):
-                    releases.append({
-                        "id": e["id"], "brand": brand, "version": e["release"], "date": e.get("date"),
-                        "type": e.get("type", "release"), "series": series_of(e["release"]),
-                        "title": e.get("title", ""), "summary": e.get("summary", ""),
-                        "highlights": e.get("highlights") or [], "balance": e.get("balance_changes") or [],
-                        "warnings": e.get("warnings") or [], "limits": e.get("known_limitations") or [],
-                    })
-            brands.append({"id": brand, "name": SC.NAV_LABEL_FALLBACK[brand], "releases": releases})
-    corvus = []
-    for version in sorted(launcher_notes, key=SC.launcher_version_key, reverse=True):
-        notes = ((launcher_notes_i18n or {}).get(lang) or {}).get(version) or launcher_notes[version]
-        corvus.append({
-            "id": f"corvus-{version}", "brand": "corvus", "version": version, "date": None, "type": "release",
-            "series": series_of(version), "title": corvus_title(notes), "summary": "",
-            "highlights": [], "balance": [], "warnings": [], "limits": [],
-            "paragraphs": [p.strip() for p in re.split(r"\n\s*\n", notes.strip()) if p.strip()],
-        })
-    brands.append({"id": "corvus", "name": "Algorab Store", "releases": corvus})
+            if brand in CF.NEVER_OFFERED:
+                continue
+            entries = BCL.merged_brand_entries(bundle, lang, brand, structural[brand])
+            releases = [_release_row(brand, e) for e in reversed(entries)
+                        if (brand, e["release"]) not in hidden]
+            if releases:
+                brands.append({"id": brand, "name": SC.NAV_LABEL_FALLBACK[brand], "releases": releases})
     return brands
 
 
@@ -931,6 +923,13 @@ def build_lang(lang: str, ctx: dict) -> dict:
 
     common = ui["common"]
     cl_labels = dict(leg["changelog"]["labels"])
+    # 2026-11-17: the three headings of every release, and the Beta badge, from the same ui.common keys the feeds use.
+    cl_labels.update({
+        "newFeatures": common["changelog_new_features_label"],
+        "bugFixes": common["changelog_bug_fixes_label"],
+        "refinements": common["changelog_refinements_label"],
+        "beta": common["changelog_beta_label"],
+    })
     changelog = {
         "title": ui["page_titles"]["changelog"],
         "description": SITE_COPY[lang]["changelog"],

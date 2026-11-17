@@ -7,12 +7,8 @@ import type { ChangelogBrand, ChangelogLabels, Release } from "@/lib/wiki-types"
 import { Icon } from "../Icon";
 import { Rich } from "../Rich";
 import { asset } from "@/lib/site";
-import { ENDED_MODELS, MODEL_ORDER } from "@/lib/models";
-
-/** The live models, in MODEL_ORDER (the order the chips show them). Algorab Store is the launcher's own feed. */
-const LIVE: readonly string[] = [...MODEL_ORDER.filter((id) => !ENDED_MODELS.includes(id)), "corvus"];
-/** The models that have ended: they appear under the Ended filter only, never in All. */
-const ENDED: readonly string[] = [...ENDED_MODELS, "alpha"];
+/** The brands that have an icon of their own in the portal's icon set; any other brand shows the Store icon. */
+const ICON_BRANDS: readonly string[] = ["ouka", "cherry", "aureum", "astraea", "tsubomi", "halia", "noctua"];
 const COLLAPSE_AFTER = 8;
 
 type Filter = "all" | "ended" | string;
@@ -42,9 +38,9 @@ function transition(update: () => void): void {
 }
 
 /**
- * The update history of every model. Glass filter bar: All (live models only), one chip per live
- * model, and an Ended chip whose sub-chips are the ended models. `?model=` and `#cl-p-<id>` deep
- * links are read on mount; chip clicks rewrite `?model=` in place. Free-text search over every
+ * The update history of every brand that has releases (the page offers only those, in the order given).
+ * Glass filter bar: All, then one chip per brand. `?model=<brand id>` and `#cl-p-<id>` deep links are read on
+ * mount; chip clicks rewrite `?model=` in place. Free-text search over every
  * field; a series select; the first eight rows until "Show more". Every row stays in the DOM:
  * filtering only hides, so the list animates between states with a View Transition.
  */
@@ -68,7 +64,7 @@ export function Changelog({
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const b = params.get("model") ?? params.get("brand");
-    const known = (id: string): boolean => (LIVE as readonly string[]).includes(id) || (ENDED as readonly string[]).includes(id) || id === "ended";
+    const known = (id: string): boolean => brands.some((brand) => brand.id === id);
     if (b !== null && known(b)) setFilter(b);
     if (params.has("brand")) {
       // The links before 4.2.2 said ?brand=; the address bar says ?model= from here on.
@@ -83,7 +79,7 @@ export function Changelog({
       setOpen(new Set([hash.slice(5)]));
       window.setTimeout(() => document.getElementById(hash)?.closest("article")?.scrollIntoView({ block: "center" }), 0);
     }
-  }, []);
+  }, [brands]);
 
   const names = useMemo(() => Object.fromEntries(brands.map((b) => [b.id, b.name])), [brands]);
   const all = useMemo(() => {
@@ -95,9 +91,10 @@ export function Changelog({
       .map((x) => x.r);
   }, [brands]);
 
-  const isEnded = (id: string): boolean => (ENDED as readonly string[]).includes(id);
-  const liveChips = LIVE.filter((id) => brands.some((b) => b.id === id));
-  const endedChips = ENDED.filter((id) => brands.some((b) => b.id === id));
+  // No brand is ended on this page; the Ended filter is kept for a brand that ends later.
+  const isEnded = (_id: string): boolean => false;
+  const liveChips = brands.map((b) => b.id);
+  const endedChips: string[] = [];
   const counts = useMemo(() => {
     const c: Record<string, number> = {
       all: all.filter((r) => !isEnded(r.brand)).length,
@@ -123,7 +120,7 @@ export function Changelog({
       inFilter.filter((r) => {
         if (series !== "" && r.series !== series) return false;
         if (q === "") return true;
-        const hay = [r.version, r.title, r.summary, ...r.highlights, ...r.balance, ...r.warnings, ...r.limits, ...(r.paragraphs ?? []), r.brand]
+        const hay = [r.version, r.title, r.summary, ...r.newFeatures, ...r.bugFixes, ...r.refinements, ...r.highlights, ...r.balance, ...r.warnings, ...r.limits, ...(r.paragraphs ?? []), r.brand]
           .join("\n")
           .toLowerCase();
         return hay.includes(q);
@@ -155,7 +152,7 @@ export function Changelog({
     });
 
   const endedActive = filter === "ended" || isEnded(filter);
-  const icon = filter === "all" || filter === "corvus" ? "icons/store.png" : filter === "ended" ? "icons/alpha.png" : `icons/${filter}.png`;
+  const icon = filter === "all" || filter === "ended" || !ICON_BRANDS.includes(filter) ? "icons/store.png" : `icons/${filter}.png`;
 
   const chip = (id: Filter, label: string, count: number, group?: string) => (
     <button key={id} type="button" className="cn-seg cn-btn" aria-pressed={filter === id} data-group={group} onClick={() => choose(id)}>
@@ -213,11 +210,6 @@ export function Changelog({
           </p>
           {filter === "all" || noteBrands.includes(filter) ? <p className="cn-cl-note">{labels.note}</p> : null}
           {filter === "ended" ? <p className="cn-cl-note">{ui.endedNote}</p> : null}
-          {filter === "corvus" ? (
-            <p className="cn-cl-note" lang="en" data-note-lang="en">
-              {labels.corvusNote}
-            </p>
-          ) : null}
         </div>
       </div>
 
@@ -230,6 +222,10 @@ export function Changelog({
           const isOpen = open.has(r.id);
           const corvus = r.brand === "corvus";
           const sections: [string, string[], boolean][] = [
+            // The three headings every release lists, in this order, before the older sections.
+            [labels.newFeatures, r.newFeatures, false],
+            [labels.bugFixes, r.bugFixes, false],
+            [labels.refinements, r.refinements, false],
             [labels.highlights, r.highlights, false],
             [labels.balance, r.balance, false],
             [labels.warnings, r.warnings, true],
@@ -246,12 +242,14 @@ export function Changelog({
                       <Rich text={r.title} />
                     </span>
                   </span>
+                  {r.channel === "beta" ? <span className="cn-pill">{labels.beta}</span> : null}
                   <span className="cn-rel-date ac-ltr">{r.date ?? labels.none}</span>
                   <Icon name="chevronDown" size={16} className="cn-rel-chev" />
                 </button>
               </h3>
               <div className="cn-rel-detail" id={`cl-p-${r.id}`} data-panel={r.id} hidden={!isOpen} lang={corvus ? "en" : undefined}>
                 <span className="cn-pill">{labels.types[r.type] ?? r.type}</span>
+                {r.channel === "beta" ? <span className="cn-pill">{labels.beta}</span> : null}
                 {r.summary ? (
                   <p className="cn-rel-lede">
                     <Rich text={r.summary} />

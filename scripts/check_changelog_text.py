@@ -46,6 +46,7 @@ def text_of_payload(txt):
     txt = re.sub(r'"/[^"\s]*"', " ", txt)     # quoted paths
     txt = re.sub(r"/[\w./?=&%+-]+", " ", txt)  # bare paths
     txt = re.sub(r"__corvus\w*|corvus-[\w-]+", " ", txt, flags=re.I)  # the portal's own script identifiers
+    txt = re.sub(r'\\?"[A-Za-z_][\w-]*\\?":', " ", txt)  # JSON keys (machine names of the page data, not text)
     return txt
 
 

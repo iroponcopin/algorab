@@ -1352,7 +1352,8 @@ def build():
     import release_notes_gate  # noqa: E402  (scripts/ is on sys.path)
     notes_errors = release_notes_gate.check_build(manifest, ROOT)
     if notes_errors:
-        raise SystemExit("ERROR: release notes gate (scripts/release_notes_gate.py). Nothing was written:\n  "
+        raise SystemExit("ERROR: release notes gate (scripts/release_notes_gate.py). glimpse_manifest.json was NOT "
+                         "written (the feed files above were):\n  "
                          + "\n  ".join(notes_errors))
     out_path = ROOT / "glimpse_manifest.json"
     out_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

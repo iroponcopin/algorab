@@ -50,8 +50,11 @@ def text_of_payload(txt):
     return txt
 
 
+LANG_DIRS = ("ja", "en", "es", "fr", "zh", "ko", "pt-br", "it", "ar", "ru", "id", "de", "tr")
+
+
 def export_pages(export_dir):
-    """The exported changelog pages: <lang>/changelog/**.html and .txt (and the root one)."""
+    """The changelog pages of one tree: <lang>/changelog/** and changelog/** (.html and .txt)."""
     out = []
     if not export_dir.exists():
         return out
@@ -64,28 +67,54 @@ def export_pages(export_dir):
     return out
 
 
-def scan_export(export_dir):
+def scan_pages(pages, base):
     problems = []
-    for p in export_pages(export_dir):
+    for p in pages:
         raw = p.read_text(encoding="utf-8", errors="replace")
         text = visible_text_of_html(raw) if p.suffix == ".html" else text_of_payload(raw)
         clean = F.strip_machine_tokens(text)
         for cat, rx in F._COMPILED:
             m = rx.search(clean)
             if m:
-                problems.append(f"{p.relative_to(export_dir)}: {cat} term {m.group(0)!r} in the exported changelog page")
+                problems.append(f"{p.relative_to(base)}: {cat} term {m.group(0)!r} in the changelog page")
     return problems
 
 
+def scan_export(export_dir):
+    return scan_pages(export_pages(export_dir), export_dir)
+
+
+def page_paths(base):
+    """The 13 changelog HTML pages of one tree: Japanese at the root, the others under their language."""
+    return [base / ("" if lang == "ja" else lang) / "changelog" / "index.html" for lang in LANG_DIRS]
+
+
+def published_pages(root):
+    """The published changelog pages (HTML and .txt payloads) of the root tree."""
+    pages = []
+    for base in [root / ("" if lang == "ja" else lang) / "changelog" for lang in LANG_DIRS]:
+        for name in ("index.html", "index.txt"):
+            if (base / name).exists():
+                pages.append(base / name)
+    return pages
+
+
 def check(export_dir=EXPORT, root=ROOT):
+    """Scans the exported tree (web/out) AND the published tree (the root). A tree that does not hold the 13 changelog
+    HTML pages is a failure: nothing is reported as scanned without them."""
     problems = []
     report = root / "data" / "changelog_hidden_entries.md"
     expected = F.report_text(F.scan(root), root)
     if not report.exists() or report.read_text(encoding="utf-8") != expected:
         problems.append("data/changelog_hidden_entries.md is missing or out of date: run "
                         "python3 scripts/check_changelog_text.py --write and commit it")
-    if export_dir.exists():
-        problems += scan_export(export_dir)
+    for label, base, pages in (("export", export_dir, export_pages(export_dir)),
+                               ("published", root, published_pages(root))):
+        found = [p for p in page_paths(base) if p.exists()]
+        if len(found) != len(LANG_DIRS):
+            problems.append(f"{label} tree {base}: found {len(found)} of the 13 changelog HTML pages; "
+                            f"run the export (web: npm run build) first")
+        problems += scan_pages(pages, base)
     return problems
 
 
@@ -126,8 +155,9 @@ def main(argv):
     for p in problems:
         print("FAIL " + p)
     hits = F.scan(ROOT)
-    print(f"changelog text: {len(hits)} hidden release(s), {len(export_pages(export))} exported changelog page(s): "
-          + ("GREEN" if not problems else f"RED ({len(problems)})"))
+    scanned = len(export_pages(export)) + len(published_pages(ROOT))
+    print(f"changelog text: {len(hits)} hidden release(s), {scanned} changelog page file(s) scanned "
+          f"(exported tree {export.name}/ and the published root): " + ("GREEN" if not problems else f"RED ({len(problems)})"))
     return 0 if not problems else 1
 
 

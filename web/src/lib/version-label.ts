@@ -31,3 +31,21 @@ export function versionLabel(text: string): string | null {
 export function displayVersion(text: string): string {
   return versionLabel(text) ?? text;
 }
+
+/**
+ * A beta tile's tag: the section's word for Beta, then the version. A V7 beta label already says "Beta"
+ * ("V7.0 Beta 1"), so the word is not said twice ("Beta V7.0 Beta 1", "ベータ版 V7.0 Beta 1").
+ */
+export function betaTag(betaWord: string, version: string): string {
+  const shown = displayVersion(version);
+  const label = versionLabel(version);
+  return label !== null && label !== version && label.includes(" Beta ") ? shown : `${betaWord} ${shown}`;
+}
+
+/**
+ * One system's tile of the Algorab app: system, its own version, file type ("Windows · V7.0 · .msi",
+ * "macOS · 6.2.2 · .dmg"). Each system has its own version, so a Windows-first V7.0 never reads as macOS or Linux 7.0.
+ */
+export function platformTag(system: string, version: string | undefined, ext: string): string {
+  return version ? `${system} · ${displayVersion(version)} · .${ext}` : `${system} · .${ext}`;
+}

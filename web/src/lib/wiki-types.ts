@@ -19,6 +19,8 @@ export interface NativeFile extends FileFacts {
   platform: string;
   label: string;
   ext: string;
+  /** The version of this one file (the Algorab app: each system has its own). Absent where the block has one version. */
+  version?: string;
 }
 
 /** A standalone Algorab app (not a mod) and its files, from its own manifest block. */

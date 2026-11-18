@@ -782,7 +782,9 @@ def build_lang(lang: str, ctx: dict) -> dict:
         "native": native,
         "jar": file_facts(launcher["file_name"], launcher["download_url"], launcher["file_size"], launcher["sha256"]),
         "notes": [p for p in launcher["notes"].split("\n\n") if p.strip()],
-        "corvus6": [{"platform": pid, "label": label, "ext": ext, **file_facts(f["file_name"], f["download_url"], f["file_size"], f["sha256"])}
+        # "version": each system has its own (Windows-first V7.0 beside macOS 6.2.2); the page shows its label.
+        "corvus6": [{"platform": pid, "label": label, "ext": ext, "version": str(f.get("version") or ""),
+                     **file_facts(f["file_name"], f["download_url"], f["file_size"], f["sha256"])}
                     for pid, label, ext in (("macos", "macOS", "dmg"), ("windows", "Windows", "msi"), ("linux", "Linux", "AppImage"))
                     for f in [(man.get("corvus6") or {}).get("native", {}).get(pid)] if f],
         "apps": _native_apps(man),

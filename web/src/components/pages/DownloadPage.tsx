@@ -5,7 +5,7 @@ import { NATIVE_APPS } from "@/i18n/native-apps";
 import { BETA_CHANNEL } from "@/i18n/beta-channel";
 import Link from "next/link";
 import { asset, pathOf } from "@/lib/site";
-import { displayVersion } from "@/lib/version-label";
+import { betaTag, displayVersion, platformTag } from "@/lib/version-label";
 import { langData, wiki } from "@/lib/wiki";
 import type { Lang, LangData } from "@/lib/wiki-types";
 import { FileCard, type FileCardLabels } from "../FileCard";
@@ -24,7 +24,7 @@ export function LauncherFiles({ d, lang }: { d: LangData; lang: Lang }) {
       {d.launcherFiles.corvus6.map((file) => (
         <FileCard
           key={file.platform}
-          tag={`${file.label} · .${file.ext}`}
+          tag={platformTag(file.label, file.version, file.ext)}
           file={file}
           note={file.platform === "macos" ? `${n.macSystem} · ${n.macStack}` : `${file.platform === "windows" ? n.winSystem : n.linuxSystem} · ${n.qtStack}`}
           cta={`${n.download} (${file.label})`}
@@ -115,7 +115,7 @@ function BetaSection({ d, lang }: { d: LangData; lang: Lang }) {
       <div className="cn-tiles cn-tiles--two">
         {beta.windows ? (
           <FileCard
-            tag={`${c.title} ${displayVersion(beta.windows.version)} · Windows`}
+            tag={`${betaTag(c.title, beta.windows.version)} · Windows`}
             file={beta.windows.file}
             cta={`${d.chrome.primaryCta} (Windows)`}
             labels={labels}
@@ -123,7 +123,7 @@ function BetaSection({ d, lang }: { d: LangData; lang: Lang }) {
         ) : null}
         {beta.agent ? (
           <article className="cn-tile cn-glass cn-glass--lite" data-glass="">
-            <span className="cn-tile-hero">{`${c.title} ${displayVersion(beta.agent.version)}`}</span>
+            <span className="cn-tile-hero">{betaTag(c.title, beta.agent.version)}</span>
             <span className="cn-tile-name ac-ltr">{FRESH[lang].agent.title}</span>
             <p className="cn-tile-note">{c.agentLine}</p>
           </article>

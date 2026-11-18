@@ -91,7 +91,9 @@ writes them. A release (a new pack, a new brand version, a new launcher) is:
    manifest is checked by `check_site.py beta` (and `beta-tests`).
 4. **Rebuild the pages:** `cd web && npm ci && npm run build` (it reads this checkout's data, the same files and
    copy tables as before, through `web/scripts/extract_wiki.py`; nothing in it writes outside `web/`), then
-   `npm run typecheck && npm run lint && npm run check:export`. The Download, Corvus Store and brand pages print the
+   `npm run typecheck && npm run lint && npm test && npm run check:export` (`npm test`: the version label shared with
+   the Python rule, and the guard that turns red when a V7 build is on the stable manifest while the copy still says
+   "Algorab 6"). The Download, Corvus Store and brand pages print the
    manifest's names, sizes and SHA-256 **at build time**: a release that rebuilds the manifest but not the portal
    leaves pages that describe files that are no longer the ones served.
 5. **Lay the export over this tree:** `npm run apply` (in `web/`). It runs `check:export` first, replaces `_next/`

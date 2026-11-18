@@ -65,6 +65,10 @@ CHECKS = [
     # without the pages, whose markup is the portal's now.
     ("changelog-feeds", "check_changelog_brands.py", ["--feeds-only"],
      "data/changelog_brands.json + changelog_feed/brands.json and every brand feed (the pages are not read)"),
+    # 2026-11-18: the controls of the line above. The full --self-test was retired with the page checks, so from the
+    # cutover until this date no planted feed defect (F, G, H, I) was ever shown to turn --feeds-only red.
+    ("changelog-feeds-controls", "check_changelog_brands.py", ["--self-test", "--feeds-only"],
+     "the feed half of the brand-changelog gate turns every planted feed defect red (V7 order included)"),
     # 2026-09-20: レシピ集は配布物(pack zip とブランド zip)から作られる。新しい版を
     # 配り始めたのに作り直していなければ、サイトは新しい zip を配りながら古い作り方を
     # 表示し続ける —— 出力は正常に見え、リンクも切れないので誰も気づかない。
@@ -149,7 +153,7 @@ CHECKS = [
 # and each printed SHA-256 against the file actually served). What stays is what reads DATA.
 RETIRED_AT_PORTAL = {"defects", "404", "lang", "discord", "skin", "cherry", "ouka", "changelog-brands",
                      "changelog-brands-controls"}
-PORTAL_ONLY = {"changelog-feeds"}
+PORTAL_ONLY = {"changelog-feeds", "changelog-feeds-controls"}
 
 
 def portal_is_in_place():

@@ -86,7 +86,7 @@ writes them. A release (a new pack, a new brand version, a new launcher) is:
    whether the archive is behind the board.
 3. **The wiki's data gates:** `python3 scripts/check_site.py` (with the portal in place it runs only the data checks:
    `figures`, `recipe-sources` and `changelog-feeds` — the brand-changelog checker's feed half, `check_changelog_brands.py
-   --feeds-only` — and says which page checkers it retired) and
+   --feeds-only`, with its planted-defect controls `changelog-feeds-controls` — and says which page checkers it retired) and
    `python3 scripts/check_release_version_switch.py --baseline scripts/release_history_baseline_26.2.json`. The beta
    manifest is checked by `check_site.py beta` (and `beta-tests`).
 4. **Rebuild the pages:** `cd web && npm ci && npm run build` (it reads this checkout's data, the same files and

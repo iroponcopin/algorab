@@ -350,6 +350,19 @@ def _panel_rows_swapped(w):
     w["pages"]["zh"] = html[:start] + swapped + html[start + len(body):]
 
 
+def _v7_release_below_its_beta(w):
+    """2026-11-18 (VERSION_DESIGN.md D7): "V7.0" (7.0.100) stored before "V7.0 Beta 9" (7.0.9) on the same date. The
+    digits rule read them as (7,0) < (7,0,9), so this stored order looked right; ordered by number it is newest-first."""
+    rows = [{"id": "corvus6-v7.0.100", "release": "V7.0", "version": "7.0.100", "date": "2099-01-01", "type": "release"},
+            {"id": "corvus6-v7.0.9", "release": "V7.0 Beta 9", "version": "7.0.9", "date": "2099-01-01",
+             "type": "release", "channel": "beta"}]
+    w["brands"]["corvus6"] = list(w["brands"]["corvus6"]) + rows
+
+
+# The plants that need no page markup: since the portal cutover (2026-09-29) these are the controls of --feeds-only.
+FEED_LETTERS = ("F", "G", "H", "I")
+FEED_ONLY_PLANTS = {"_panel_rows_swapped"}  # an [I] plant that edits a page
+
 PLANTS = [
     ("A", "the tab row swaps OUKA and Cherry", _swap_first_two_tabs),
     ("A", "OUKA opens instead of Alpha", _select_ouka),
@@ -367,34 +380,49 @@ PLANTS = [
     ("I", "Cherry's ja feed lists its oldest release first", _feed_oldest_first),
     ("I", "Cherry's id feed is dated by its oldest release", _feed_dated_by_oldest),
     ("I", "two of Cherry's rows swap places in the zh panel", _panel_rows_swapped),
+    ("I", "V7.0 is stored before V7.0 Beta 9 on one date", _v7_release_below_its_beta),
 ]
 
 
-def self_test():
-    world = load_world()
-    clean = check(world)
+def self_test(feeds_only=False):
+    world = load_world(feeds_only)
+    clean = check(world, feeds_only)
     if clean:
         print("SELF-TEST REFUSED: the real site is not green, so a red plant would prove nothing:")
         for f in clean[:10]:
             print("  " + f)
         return 1
     problems = 0
-    for letter, what, plant in PLANTS:
+    plants = [p for p in PLANTS if not feeds_only or (p[0] in FEED_LETTERS and p[2].__name__ not in FEED_ONLY_PLANTS)]
+    for letter, what, plant in plants:
         w = copy.deepcopy(world)
         plant(w)
-        reds = check(w)
+        reds = check(w, feeds_only)
         mine = [r for r in reds if r.startswith(f"[{letter}]")]
         ok = bool(mine)
         problems += 0 if ok else 1
         print(f"  self-test [{'ok' if ok else 'MISSED'}] {letter}: {what}: " + (mine[0] if mine else f"no [{letter}] failure; saw {reds[:2]}"))
-    print(f"SELF-TEST VERDICT: {'PASS' if problems == 0 else 'FAIL'} ({len(PLANTS) - problems}/{len(PLANTS)} plants caught, clean run green)")
+    mode = " (feeds only)" if feeds_only else ""
+    print(f"SELF-TEST VERDICT{mode}: {'PASS' if problems == 0 else 'FAIL'} "
+          f"({len(plants) - problems}/{len(plants)} plants caught, clean run green)")
     return 0 if problems == 0 else 1
 
 
+def portal_is_in_place():
+    return (ROOT / "portal" / "build.json").exists()
+
+
 def main(argv):
-    if "--self-test" in argv:
-        return self_test()
     feeds_only = "--feeds-only" in argv
+    if not feeds_only and portal_is_in_place():
+        # Since the portal cutover (01f480863, 2026-09-29) the changelog pages are the portal's (web/), not the markup the
+        # page checks A-E read; run that way they report 39 reds about pages that no longer exist. check_site.py retires
+        # this mode; refusing here keeps a hand run from mistaking those reds for a real result.
+        print("REFUSED: the portal is the site (portal/build.json), so the page checks (A-E) have no pages to read. "
+              "Run --feeds-only (and --self-test --feeds-only for its controls); the portal's gates judge the pages.")
+        return 2
+    if "--self-test" in argv:
+        return self_test(feeds_only)
     world = load_world(feeds_only)
     fails = check(world, feeds_only)
     # 2026-11-17: the release-notes gate (every version the manifests name has notes; scripts/release_notes_gate.py)

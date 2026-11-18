@@ -52,6 +52,13 @@ class BetaV7Numbers(unittest.TestCase):
         _, _, errors = self.resolve(agent_block("algorab-agents-7.0.0.zip", "7.0.0", data))
         self.assertTrue(any("has no label" in e for e in errors), errors)
 
+    def test_v7_file_name_must_carry_the_number(self):
+        # 2026-11-18 review: agent 7.0.2 pointing at the 7.0.1 zip (or the msi of another number) is refused.
+        _, _, errors = self.resolve(agent_block("algorab-agents-7.0.1.zip", "7.0.2", AGENT_ZIP),
+                                    windows_block("algorab-7.0.1-windows.msi", "7.0.2", WIN_MSI))
+        self.assertTrue(any("agent: file_name 'algorab-agents-7.0.1.zip' must be" in e for e in errors), errors)
+        self.assertTrue(any("windows: file_name 'algorab-7.0.1-windows.msi' must be" in e for e in errors), errors)
+
     def test_below_seven_is_untouched(self):
         (self.root / "downloads" / "beta" / "algorab-agents-6.7.0.zip").write_bytes(AGENT_ZIP)
         _, _, errors = self.resolve(agent_block())

@@ -80,6 +80,15 @@ def version_problem(new, stable) -> str | None:
     return None
 
 
+def v7_name_problem(where: str, version, name, expected: str) -> str | None:
+    """From 7 on the file name carries the number exactly (algorab-agents-X.Y.P.zip, algorab-X.Y.P-windows.msi).
+    Otherwise an override "7.0.2" could point at the 7.0.1 file: every agent would download it, refuse it (its jar
+    says 7.0.1) and download it again on the next poll."""
+    if version_label.is_v7_or_later(version) and name != expected:
+        return f"{where}: file_name {name!r} must be {expected!r} for version {version!r}"
+    return None
+
+
 def v7_problem(new) -> str | None:
     """From major 7 on the version must have a label (exactly X.Y.P, P from 1 to 199; scripts/version_label.py).
     A refusal here is an error, not an ignored override: a V7 number that cannot be labelled must never reach a user."""
@@ -162,7 +171,10 @@ def resolve(stable: dict, overrides, root: Path = ROOT) -> tuple[dict, list[str]
         stable_agent = (stable.get("agent") or {})
         why = version_problem(agent["latest"], stable_agent.get("latest"))
         bad = v7_problem(agent["latest"])
-        if bad:
+        named = v7_name_problem("agent", agent["latest"], agent["file_name"], f"algorab-agents-{agent['latest']}.zip")
+        if named:
+            errors.append(named)
+        elif bad:
             errors.append(f"agent: {bad}")
         elif why:
             report.append(f"agent: override {agent['latest']!r} ignored: {why}; the stable value is used")
@@ -176,7 +188,11 @@ def resolve(stable: dict, overrides, root: Path = ROOT) -> tuple[dict, list[str]
         stable_win = ((stable.get("corvus6") or {}).get("native") or {}).get("windows") or {}
         why = version_problem(win["version"], stable_win.get("version"))
         bad = v7_problem(win["version"])
-        if bad:
+        named = v7_name_problem("corvus6.native.windows", win["version"], win["file_name"],
+                                f"algorab-{win['version']}-windows.msi")
+        if named:
+            errors.append(named)
+        elif bad:
             errors.append(f"corvus6.native.windows: {bad}")
         elif why:
             report.append(f"corvus6.native.windows: override {win['version']!r} ignored: {why}; the stable value is used")

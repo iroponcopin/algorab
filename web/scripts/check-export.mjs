@@ -248,8 +248,9 @@ function brandWords(where, text) {
 // one allowed use of the word, on the recipe pages only, until the owner decides whether the item is renamed.
 // Owner decision 2026-11-17: only the product name is refused, under the old and the new studio name. The plain word stays
 // allowed, because release notes name the ARK: Survival Ascended map "The Island" and the End's outer islands.
-// The Japanese name is refused in every form: no release note uses the katakana word for anything else.
-const ISLAND_WORD = /(?<!\p{L})(?:corvus|algorab)[\s 　-]*islands?(?!\p{L})|アイランド/giu;
+// Owner 2026-11-18: the word itself is not forbidden in any language; Corvus Island is an abolished feature and is not listed.
+// So the product name is refused in its English and its Japanese spelling, and the plain word (Island, アイランド) passes.
+const ISLAND_WORD = /(?<!\p{L})(?:corvus|algorab|コルヴス|コルウス|アルゴラブ)[\s 　・-]*(?:islands?(?!\p{L})|アイランド)/giu;
 const PERCH_WORD = /(?<!\p{L})perch(?!\p{L})/giu;
 const PERCH_ITEM_PAGES = /(?:^|\/)recipes\//;
 function retiredWords(where, text) {

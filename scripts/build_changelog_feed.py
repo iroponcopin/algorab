@@ -79,6 +79,13 @@ def release_for(e, c):
     # Additive: only the brand entries that are a beta carry it (the app ignores keys it does not know).
     if e.get("channel"):
         rel["channel"] = e["channel"]
+    # 2026-11-18 (VERSION_DESIGN.md S3): from 7 on "version" stays the label text, and "number" carries the numeric
+    # version the bot and the gate match on. "covers" names the other product sharing the one entry (agent). Old apps
+    # read only "version" and ignore both.
+    if e.get("version"):
+        rel["number"] = str(e["version"])
+    if e.get("covers"):
+        rel["covers"] = [str(x) for x in e["covers"]]
     return rel
 
 

@@ -42,6 +42,8 @@ import re
 import sys
 from pathlib import Path
 
+import version_label  # same folder; the one V7 rule (scripts/version_label.py)
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 DEFAULT_DIR = ROOT / "beta"
@@ -75,6 +77,16 @@ def version_problem(new, stable) -> str | None:
         return tuple(parts + [0] * (3 - len(parts)))
     if pad(new) <= pad(stable):
         return f"{new} is not newer than the stable {stable}"
+    return None
+
+
+def v7_problem(new) -> str | None:
+    """From major 7 on the version must have a label (exactly X.Y.P, P from 1 to 199; scripts/version_label.py).
+    A refusal here is an error, not an ignored override: a V7 number that cannot be labelled must never reach a user."""
+    if not version_label.is_v7_or_later(new):
+        return None
+    if version_label.label(new) is None:
+        return f"{new!r} has no label: from 7 on it must be exactly X.Y.P with P from 1 to 199"
     return None
 
 
@@ -149,7 +161,10 @@ def resolve(stable: dict, overrides, root: Path = ROOT) -> tuple[dict, list[str]
     if agent is not None and _shape("agent", agent, AGENT_KEYS, errors):
         stable_agent = (stable.get("agent") or {})
         why = version_problem(agent["latest"], stable_agent.get("latest"))
-        if why:
+        bad = v7_problem(agent["latest"])
+        if bad:
+            errors.append(f"agent: {bad}")
+        elif why:
             report.append(f"agent: override {agent['latest']!r} ignored: {why}; the stable value is used")
         elif _file("agent", agent, ".zip", root, errors):
             for k in AGENT_KEYS:
@@ -160,12 +175,23 @@ def resolve(stable: dict, overrides, root: Path = ROOT) -> tuple[dict, list[str]
     if win is not None and _shape("corvus6_windows", win, WINDOWS_KEYS, errors):
         stable_win = ((stable.get("corvus6") or {}).get("native") or {}).get("windows") or {}
         why = version_problem(win["version"], stable_win.get("version"))
-        if why:
+        bad = v7_problem(win["version"])
+        if bad:
+            errors.append(f"corvus6.native.windows: {bad}")
+        elif why:
             report.append(f"corvus6.native.windows: override {win['version']!r} ignored: {why}; the stable value is used")
         elif _file("corvus6.native.windows", win, ".msi", root, errors):
             for k in WINDOWS_KEYS:
                 beta["corvus6"]["native"]["windows"][k] = win[k]
             report.append(f"corvus6.native.windows: beta {win['version']} (stable {stable_win.get('version')})")
+
+    # One number for the Windows app and Algorab Agents from 7 on (VERSION_DESIGN.md G7). Checked on the RESOLVED beta
+    # manifest, so an override that was ignored (not newer) cannot leave the two numbers apart.
+    agent_now = (beta.get("agent") or {}).get("latest")
+    win_now = (((beta.get("corvus6") or {}).get("native") or {}).get("windows") or {}).get("version")
+    if agent_now != win_now and (version_label.is_v7_or_later(agent_now) or version_label.is_v7_or_later(win_now)):
+        errors.append(f"agent {agent_now} and the Windows app {win_now} must be the same number from 7 on "
+                      f"(VERSION_DESIGN.md G7): override both in one commit")
 
     notes = overrides.get("notes", {})
     if not isinstance(notes, dict):

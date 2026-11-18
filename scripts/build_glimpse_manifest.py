@@ -117,6 +117,7 @@ from site_common import (  # noqa: E402
     PACK_NAME, pack_zip_path, retirement,
 )
 import build_beta_manifest  # noqa: E402  (the beta copy is rebuilt in the same step, always)
+import version_label  # noqa: E402  (the one V7 version rule; from 7 on an agent version is exactly X.Y.P with a label)
 from build_download import _aureum_facts  # noqa: E402  (single source of truth
 # for which Aureum jar is current -- same import build_aureum.py already makes)
 
@@ -902,8 +903,10 @@ def _agent_block():
                          f"({', '.join(z.name for z in zips)}). Publish exactly one.")
     zpath = zips[0]
     version = zpath.name[len(AGENT_ZIP_PREFIX):-len(AGENT_ZIP_SUFFIX)]
-    if not re.fullmatch(r"\d+(\.\d+){2,3}", version):
-        raise SystemExit(f"ERROR: {zpath.name} is not named algorab-agents-<major.minor.patch[.build]>.zip.")
+    problem = version_label.zip_version_problem(version)
+    if problem:
+        raise SystemExit(f"ERROR: {zpath.name} is not a usable Algorab Agents package name: {problem}. "
+                         f"From 7 on the name is algorab-agents-X.Y.P.zip.")
     inner = f"{AGENT_INNER_PREFIX}{version}/{AGENT_INNER_PREFIX}{version}.jar"
     try:
         with zipfile.ZipFile(zpath) as zf:

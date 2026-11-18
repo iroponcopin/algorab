@@ -21,6 +21,7 @@ scripts/tests/test_version_label.py). Change nothing in that file in one reposit
 """
 import json
 import re
+import unicodedata
 from pathlib import Path
 
 VECTORS = Path(__file__).resolve().parent / "version-labels.v1.json"
@@ -28,7 +29,9 @@ VECTORS = Path(__file__).resolve().parent / "version-labels.v1.json"
 # Three groups, each "0" or a number without leading zeros. [0-9] and fullmatch: \d would accept other digits and a
 # trailing newline would slip through "$".
 _CANON = re.compile(r"(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)")
-_MAJOR = re.compile(r"\s*[Vv]?([0-9]+)")
+# \d on purpose (Unicode digits): "７.0.1" typed through a Japanese IME must be held to the V7 rules and refused, not
+# waved through as "not V7". label() itself accepts only ASCII digits.
+_MAJOR = re.compile(r"\s*[Vv]?(\d+)")
 _BETA = re.compile(r"V([1-9][0-9]*)\.(0|[1-9][0-9]*) Beta ([1-9][0-9]?)")
 _RELEASE = re.compile(r"V([1-9][0-9]*)\.(0|[1-9][0-9]*)")
 _HOTFIX = re.compile(r"V([1-9][0-9]*)\.(0|[1-9][0-9]*)\.([1-9][0-9]?)")
@@ -48,7 +51,12 @@ def is_v7_or_later(text):
     if not isinstance(text, str):
         return False
     m = _MAJOR.match(text)
-    return bool(m) and int(m.group(1)) >= 7
+    if not m:
+        return False
+    # Compared as text, never with int(): Python refuses int() on more than 4300 digits, and the rule must answer for
+    # every string (the TypeScript copy does).
+    digits = "".join(str(unicodedata.digit(c)) for c in m.group(1)).lstrip("0")
+    return len(digits) > 1 or (digits != "" and digits >= "7")
 
 
 def label(text):
@@ -57,8 +65,10 @@ def label(text):
     if parts is None:
         return None
     major, minor, patch = parts
-    if int(major) < 7:
+    if len(major) == 1 and major < "7":  # canonical: no leading zeros, so one digit below 7 is exactly "major < 7"
         return text
+    if len(patch) > 3:  # 1000 or more: no label (and int() is never called on an unbounded digit run)
+        return None
     p = int(patch)
     if p == 0 or p >= 200:
         return None
@@ -97,7 +107,10 @@ def order_key(text):
     number = number_of_label(text)
     if number is None:
         return None
-    return tuple(int(x) for x in number.split("."))
+    fields = number.split(".")
+    if any(len(x) > 4000 for x in fields):  # beyond Python's int() digit limit: no order rather than a crash
+        return None
+    return tuple(int(x) for x in fields)
 
 
 def zip_version_problem(version):

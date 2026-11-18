@@ -85,5 +85,31 @@ class ZipVersion(unittest.TestCase):
         self.assertIsNotNone(V.zip_version_problem("6.7"))
 
 
+class NeverRaises(unittest.TestCase):
+    """2026-11-18 review: int() on more than 4300 digits raised ValueError where the TypeScript copy answers."""
+
+    def test_huge_numbers_answer_like_typescript(self):
+        self.assertEqual(V.label("1" * 5000 + ".0.1"), "V" + "1" * 5000 + ".0 Beta 1")
+        self.assertIsNone(V.label("7.0." + "1" * 5000))
+        self.assertEqual(V.label("6.0." + "9" * 5000), "6.0." + "9" * 5000)
+        self.assertTrue(V.is_v7_or_later("9" * 5000 + ".0.1"))
+        self.assertIsNotNone(V.zip_version_problem("7.0." + "1" * 5000))
+        self.assertIsNone(V.order_key("1" * 5000 + ".0.1"))
+
+    def test_unicode_digits_are_held_to_the_v7_rule_and_have_no_label(self):
+        for text in ("\uff17.0.1", "\u0667.\u0660.\u0661", "7.0.\uff11"):
+            with self.subTest(text=text):
+                self.assertIsNone(V.label(text))
+        self.assertTrue(V.is_v7_or_later("\uff17.0.1"))
+        self.assertTrue(V.is_v7_or_later("\u0667.\u0660.\u0661"))
+        self.assertFalse(V.is_v7_or_later("\u0666.0.1"))
+
+    def test_other_spellings_have_no_label(self):
+        for text in ("v7.0.1", "V7.0.1", " 7.0.1", "7.0.1 ", "7.0.100.0", "-7.0.1", "7.0.+1", "7.0.-1", "7.0.1\r"):
+            with self.subTest(text=text):
+                self.assertIsNone(V.label(text))
+                self.assertTrue(V.is_v7_or_later(text) or text.startswith("-"))
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -4,12 +4,14 @@ import { join, relative } from "node:path";
 import { test } from "node:test";
 
 /**
- * Corvus Island is abolished on every OS (owner decision). The word must not return to the portal's source:
+ * Corvus Island is an abolished feature (owner decision) and is not listed. Its name must not return to the portal's source:
  * the export gate (scripts/check-export.mjs) checks the built pages, and this test checks the source tree.
- * Both use the same rule: "Island"/"Islands" and "Perch" as whole words, not "perché" or "perchlorate".
+ * Owner 2026-11-18: the plain word (Island, アイランド) is not forbidden; only the feature's name is, in English and Japanese.
+ * "Perch" stays refused as a whole word, not "perché" or "perchlorate".
  */
 const SRC = join(import.meta.dirname, "..");
-const WORD = /(?<!\p{L})(?:islands?|perch)(?!\p{L})/giu;
+const WORD =
+  /(?<!\p{L})(?:corvus|algorab|コルヴス|コルウス|アルゴラブ)[\s\u00a0\u3000・-]*(?:islands?(?!\p{L})|アイランド)|(?<!\p{L})perch(?!\p{L})/giu;
 const THIS = "design/no-island.test.ts";
 
 function walk(dir: string, out: string[] = []): string[] {

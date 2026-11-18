@@ -54,6 +54,7 @@ from build_changelog import (  # noqa: E402
     DEFAULT_BRAND, brand_order, brand_name, load_brand_structural, rich,
 )
 from build_ouka import COPY as OUKA_COPY  # noqa: E402
+import version_label  # noqa: E402
 
 ALPHA_FEED_KEYS = {"lang", "updated", "title", "updated_label", "note", "groups"}
 TAB = re.compile(r'<button class="cl__brandTab"[^>]*?data-brand="([a-z]+)"[^>]*?aria-selected="(true|false)"')
@@ -62,9 +63,16 @@ ROW = '<div class="cl__release"'
 RELEASE_ROW = re.compile(r'<div class="cl__release"[^>]*?data-version="([^"]*)".*?<span class="cl__date">([^<]*)</span>', re.S)
 
 
-def release_key(date, release):
-    """(date, numeric version): two releases on one day (Cherry V1.1.3 and V1.1.4) are ordered by version."""
-    return str(date), tuple(int(n) for n in re.findall(r"\d+", str(release)))
+def release_key(date, release, number=None):
+    """(date, version key): two releases on one day are ordered by version. A V7-or-later release is ordered by
+    the number its label stands for ("V7.0" = 7.0.100 after "V7.0 Beta 9" = 7.0.9), or by its stored number when
+    it has one. Every other text keeps the digits rule (Cherry V1.1.3 and V1.1.4)."""
+    key = version_label.order_key(number) if number else None
+    if key is None:
+        key = version_label.order_key(release)
+    if key is None:
+        key = tuple(int(n) for n in re.findall(r"\d+", str(release)))
+    return str(date), key
 
 
 def newest_first(keys):
@@ -116,7 +124,7 @@ def check(world, feeds_only=False):
         if b == DEFAULT_BRAND:
             continue
         stored = world["brands"][b]
-        if not newest_first([release_key(e["date"], e["release"]) for e in reversed(stored)]):
+        if not newest_first([release_key(e["date"], e["release"], e.get("version")) for e in reversed(stored)]):
             fails.append(f"[I] data/changelog_brands.json: {b}'s releases are not stored oldest-first "
                          f"{[e['release'] for e in stored]} -- the builders reverse this list")
     for lang in world["langs"]:
@@ -208,7 +216,7 @@ def check(world, feeds_only=False):
             if total != len(entries):
                 fails.append(f"[F] changelog_feed/{key}.json holds {total} releases, the structural file has {len(entries)}")
             flat = [r for g in bf.get("groups", []) for r in g.get("releases", [])]
-            if not newest_first([release_key(r.get("date"), r.get("version")) for r in flat]):
+            if not newest_first([release_key(r.get("date"), r.get("version"), r.get("number")) for r in flat]):
                 fails.append(f"[I] changelog_feed/{key}.json does not list its newest release first: "
                              f"{[r.get('version') for r in flat]}")
             if entries and bf.get("updated") != max(e["date"] for e in entries):

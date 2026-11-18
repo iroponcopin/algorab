@@ -5,6 +5,7 @@ import { NATIVE_APPS } from "@/i18n/native-apps";
 import { BETA_CHANNEL } from "@/i18n/beta-channel";
 import Link from "next/link";
 import { asset, pathOf } from "@/lib/site";
+import { displayVersion } from "@/lib/version-label";
 import { langData, wiki } from "@/lib/wiki";
 import type { Lang, LangData } from "@/lib/wiki-types";
 import { FileCard, type FileCardLabels } from "../FileCard";
@@ -52,7 +53,7 @@ function NativeApps({ d, lang }: { d: LangData; lang: Lang }) {
         <section key={app.id} className="ac-wrap cn-dl-block" aria-labelledby={`dl-${app.id}`}>
           <header className="cn-dl-head">
             <h3 id={`dl-${app.id}`} className="cn-dl-title">
-              {app.name} <span className="ac-ltr">{app.version}</span>
+              {app.name} <span className="ac-ltr">{displayVersion(app.version)}</span>
             </h3>
             {c.lines[app.id] ? <p className="cn-dl-line">{c.lines[app.id]}</p> : null}
           </header>
@@ -114,7 +115,7 @@ function BetaSection({ d, lang }: { d: LangData; lang: Lang }) {
       <div className="cn-tiles cn-tiles--two">
         {beta.windows ? (
           <FileCard
-            tag={`${c.title} ${beta.windows.version} · Windows`}
+            tag={`${c.title} ${displayVersion(beta.windows.version)} · Windows`}
             file={beta.windows.file}
             cta={`${d.chrome.primaryCta} (Windows)`}
             labels={labels}
@@ -122,7 +123,7 @@ function BetaSection({ d, lang }: { d: LangData; lang: Lang }) {
         ) : null}
         {beta.agent ? (
           <article className="cn-tile cn-glass cn-glass--lite" data-glass="">
-            <span className="cn-tile-hero">{`${c.title} ${beta.agent.version}`}</span>
+            <span className="cn-tile-hero">{`${c.title} ${displayVersion(beta.agent.version)}`}</span>
             <span className="cn-tile-name ac-ltr">{FRESH[lang].agent.title}</span>
             <p className="cn-tile-note">{c.agentLine}</p>
           </article>
@@ -238,7 +239,7 @@ export function DownloadPage({ lang }: { lang: Lang }) {
 
       {dl.agent ? (
         <ModelDownload id="dl-agent" heading={f.agent.title} line={f.agent.body} aside={<Aside icon="store"><p className="cn-aside-line">{f.agent.note}</p></Aside>}>
-          <FileCard tag={`${d.chrome.version} ${dl.agent.version}`} file={dl.agent.file} cta={d.chrome.primaryCta} labels={labels} />
+          <FileCard tag={`${d.chrome.version} ${displayVersion(dl.agent.version)}`} file={dl.agent.file} cta={d.chrome.primaryCta} labels={labels} />
         </ModelDownload>
       ) : null}
 

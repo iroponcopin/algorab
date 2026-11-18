@@ -236,6 +236,48 @@ class V7Gate(unittest.TestCase):
         self.assertEqual(out["agent"], [{"release": "6.6.1", "channel": "stable", "english_ok": True}])
 
 
+class V7BetaMark(unittest.TestCase):
+    """2026-11-18 review: the Beta mark must tell the truth, and one number has one entry."""
+
+    def test_beta_number_without_the_beta_mark_fails(self):
+        bad = {k: v for k, v in GOOD_ENTRY.items() if k != "channel"}
+        errs = v7_structure({"corvus6": [bad]})
+        self.assertTrue(any('is a beta: it needs "channel": "beta"' in x for x in errs), errs)
+
+    def test_two_entries_for_one_number_fail(self):
+        twin = dict(GOOD_ENTRY, id="corvus6-v7.0.1-again")
+        errs = v7_structure({"corvus6": [GOOD_ENTRY, twin]})
+        self.assertTrue(any("one release, one entry" in x for x in errs), errs)
+
+    def test_release_on_beta_first_is_beta_marked_then_promoted_unmarked(self):
+        rel = {"id": "corvus6-v7.0.100", "release": "V7.0", "version": "7.0.100", "covers": ["agent"],
+               "date": "2026-12-01", "type": "release"}
+        cb = lambda e: {"brands": {"corvus6": [e], "agent": []}}  # noqa: E731
+        six = v7_manifest("6.6.1", "6.2.3")
+        on_stable = v7_manifest("7.0.100", "7.0.100")
+        self.assertEqual(G.channel_errors(cb(dict(rel, channel="beta")), six), [])
+        self.assertTrue(G.channel_errors(cb(rel), six))
+        self.assertEqual(G.channel_errors(cb(rel), on_stable), [])
+        self.assertTrue(G.channel_errors(cb(dict(rel, channel="beta")), on_stable))
+
+    def test_a_beta_number_never_goes_on_the_stable_manifest(self):
+        errs = G.channel_errors({"brands": {"corvus6": [GOOD_ENTRY], "agent": []}}, v7_manifest("7.0.1", "7.0.1"))
+        self.assertTrue(any("a beta number never goes on the stable manifest" in x for x in errs), errs)
+
+    def test_windows_first_release_keeps_macos_and_linux_on_their_six_notes(self):
+        e = {"corvus6": [{"release": "6.2.2", "channel": "stable", "english_ok": True},
+                         v7_row("V7.0", "7.0.100", channel="stable")], "agent": []}
+        errs = G.check_manifest(v7_manifest("7.0.100", "7.0.100"), e, "stable")
+        self.assertTrue(any("corvus6 6.2.1 has no changelog entry" in x for x in errs), errs)
+        self.assertEqual(G.check_manifest(v7_manifest("7.0.100", "7.0.100"),
+                                          {"corvus6": LEGACY + e["corvus6"][1:], "agent": []}, "stable"), [])
+
+    def test_unicode_digits_in_a_manifest_are_refused(self):
+        errs = G.check_manifest(v7_manifest(agent="\uff17.0.1", windows="\uff17.0.1"), {"corvus6": LEGACY, "agent": []},
+                                "beta")
+        self.assertTrue(any("is not a valid V7 number" in x for x in errs), errs)
+
+
 class RepositoryIsGreen(unittest.TestCase):
     def test_committed_files_pass_the_gate(self):
         self.assertEqual(G.check_repo(), [])

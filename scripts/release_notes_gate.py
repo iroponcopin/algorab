@@ -29,6 +29,8 @@ FROM VERSION 7 ON (VERSION_DESIGN.md G7, owner 2026-11-18: one entry and one bot
     label, not the number 7.0.1). Agent matches only an entry that covers agent.
   * Every entry from 7 on must have a title and at least one item in one of the three sections in ALL 13 languages
     (data/i18n/<lang>.json, changelog_brands), not only in English.
+  * The Beta mark is true (channel_errors): Beta N (P 1 to 99) is "channel": "beta" and never on the stable manifest;
+    V7.0 and its hotfixes are "beta" until the stable manifest names them, then not. One entry per number.
   * Below major 7 nothing changes: entries match by "release" text as before.
 
 The functions are pure (they take dicts), so the unit tests run on fixtures: scripts/tests/test_release_notes_gate.py.
@@ -100,6 +102,7 @@ def structure_errors(changelog_brands, en_bundle, bundles):
     """Errors in the shape of the entries of the gated brands from 7 on (see the header), and the missing languages.
     bundles is {lang: data/i18n bundle} for the 13 languages; the English bundle is en_bundle."""
     errors = []
+    numbers_seen = {}
     for brand in GATED_BRANDS:
         for r in changelog_brands["brands"].get(brand, []):
             rid = r.get("id", "?")
@@ -126,6 +129,13 @@ def structure_errors(changelog_brands, en_bundle, bundles):
                 errors.append(f"agent {rid}: from 7 on the notes are one entry under corvus6 with "
                               f"\"covers\": [\"agent\"]; remove this agent entry")
                 continue
+            seen = numbers_seen.setdefault(number, rid)
+            if seen != rid:
+                errors.append(f"corvus6 {rid}: version {number!r} already has the entry {seen}; one release, one entry")
+            patch = int(number.split(".")[2])
+            if patch <= 99 and r.get("channel") != "beta":
+                errors.append(f"corvus6 {rid}: {lab} is a beta: it needs \"channel\": \"beta\" (the Beta mark on the "
+                              f"changelog and in the feed)")
             if r.get("covers") != ["agent"]:
                 errors.append(f"corvus6 {rid}: from 7 on it must declare \"covers\": [\"agent\"] "
                               f"(one entry for Algorab and Algorab Agents)")
@@ -136,6 +146,33 @@ def structure_errors(changelog_brands, en_bundle, bundles):
                 if not english_ok(prose):
                     errors.append(f"corvus6 {rid}: no notes in {lang} (title and at least one of New Features, "
                                   f"Bug Fixes, Refinements in data/i18n/{lang}.json)")
+    return errors
+
+
+def channel_errors(changelog_brands, stable):
+    """From 7 on, the Beta mark tells the truth about the stable manifest (VERSION_DESIGN.md section 4, step 7):
+    a release on the stable manifest is not marked beta, a V7 release not on it is, and a beta number (P 1 to 99) is
+    never on the stable manifest. The same entry serves the beta manifest first and stable after promotion: the
+    promotion commit drops its "channel"."""
+    errors = []
+    on_stable = {norm_version(v) for b in GATED_BRANDS for v in gated_versions(stable, b)}
+    for v in sorted(on_stable):
+        lab = version_label.label(v)
+        if version_label.is_v7_or_later(v) and lab is not None and int(v.split(".")[2]) <= 99:
+            errors.append(f"stable: {v} is {lab}: a beta number never goes on the stable manifest")
+    for r in changelog_brands["brands"].get("corvus6", []):
+        number = norm_version(r.get("version") or "")
+        if not version_label.is_v7_or_later(number) or version_label.label(number) is None:
+            continue
+        if int(number.split(".")[2]) <= 99:
+            continue  # structure_errors requires its beta mark
+        beta = r.get("channel") == "beta"
+        if number in on_stable and beta:
+            errors.append(f"corvus6 {r.get('id')}: {number} is on the stable manifest but still marked "
+                          f"\"channel\": \"beta\"; drop it in the promotion commit")
+        if number not in on_stable and not beta:
+            errors.append(f"corvus6 {r.get('id')}: {number} is not on the stable manifest yet: mark it "
+                          f"\"channel\": \"beta\" until it is promoted")
     return errors
 
 
@@ -241,7 +278,7 @@ def check_repo(root=ROOT):
     en = json.loads((root / "data" / "i18n" / "en.json").read_text(encoding="utf-8"))
     baseline = json.loads((root / "data" / "release_notes_baseline.json").read_text(encoding="utf-8"))["blocks"]
     entries = load_entries(brands, en)
-    return (structure_errors(brands, en, load_bundles(root))
+    return (structure_errors(brands, en, load_bundles(root)) + channel_errors(brands, stable)
             + check_manifest(stable, entries, "stable", baseline) + check_manifest(beta, entries, "beta"))
 
 
@@ -253,7 +290,7 @@ def check_build(manifest, root=ROOT):
     baseline = json.loads((root / "data" / "release_notes_baseline.json").read_text(encoding="utf-8"))["blocks"]
     overrides = json.loads((root / "beta" / "overrides.json").read_text(encoding="utf-8"))
     entries = load_entries(brands, en)
-    return (structure_errors(brands, en, load_bundles(root))
+    return (structure_errors(brands, en, load_bundles(root)) + channel_errors(brands, manifest)
             + check_manifest(manifest, entries, "stable", baseline)
             + check_manifest(apply_beta_overrides(manifest, overrides), entries, "beta"))
 

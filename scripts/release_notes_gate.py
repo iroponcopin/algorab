@@ -17,6 +17,20 @@ WHAT IS REQUIRED
     version has moved needs the same notes as above, from that version on; a block with no brand and no feed fails
     with a message that a brand and a feed must be created first.
 
+FROM VERSION 7 ON (VERSION_DESIGN.md G7, owner 2026-11-18: one entry and one bot post per release)
+  * The Windows app and Algorab Agents carry ONE number from 7 on (scripts/version_label.py): agent.latest and
+    corvus6.native.windows.version must be equal whenever either of them is 7 or more (combined_errors).
+  * ONE changelog entry covers both. It lives under corvus6 (Algorab) with the mandatory numeric "version" (for
+    example "7.0.1"), "release" equal to the label of that number ("V7.0 Beta 1") and "covers": ["agent"].
+    Example: {"id": "corvus6-v7.0.1", "release": "V7.0 Beta 1", "version": "7.0.1", "covers": ["agent"],
+              "date": "...", "type": "release", "channel": "beta"}
+    An agent entry from 7 on is refused: the notes are never written twice.
+  * A V7-or-later block is matched by the entry's "version" only (never by the text of "release"; "V7.0.1" is a hotfix
+    label, not the number 7.0.1). Agent matches only an entry that covers agent.
+  * Every entry from 7 on must have a title and at least one item in one of the three sections in ALL 13 languages
+    (data/i18n/<lang>.json, changelog_brands), not only in English.
+  * Below major 7 nothing changes: entries match by "release" text as before.
+
 The functions are pure (they take dicts), so the unit tests run on fixtures: scripts/tests/test_release_notes_gate.py.
 Run the repository check with `python3 scripts/release_notes_gate.py`.
 """
@@ -25,6 +39,9 @@ import json
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import version_label  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "glimpse_manifest.json"
@@ -36,6 +53,8 @@ BASELINE = ROOT / "data" / "release_notes_baseline.json"
 
 GATED_BRANDS = ("corvus6", "agent")
 NOTE_KEYS = ("new_features", "bug_fixes", "refinements")
+# The 13 languages of the site and the app (build_beta_manifest.LANGS); every entry from 7 on needs notes in each.
+LANGUAGES = ("ja", "en", "es", "fr", "zh", "ko", "pt-br", "it", "ar", "ru", "id", "de", "tr")
 
 
 def norm_version(v):
@@ -56,17 +75,68 @@ def english_ok(entry):
 
 
 def load_entries(changelog_brands, en_bundle):
-    """{brand: [{"release", "channel", "english_ok"}]} from the structural file and the English prose."""
+    """{brand: [{"release", "channel", "english_ok"}]} from the structural file and the English prose.
+    An entry that carries a numeric "version" (from 7 on) also gets "number" and, when it has one, "covers"."""
     en = en_bundle.get("changelog_brands") or {}
     out = {}
     for brand, rows in changelog_brands["brands"].items():
         by_id = {e.get("id"): e for e in (en.get(brand) or [])}
-        out[brand] = [{
-            "release": norm_version(r.get("release")),
-            "channel": r.get("channel", "stable"),
-            "english_ok": english_ok(by_id.get(r.get("id"))),
-        } for r in rows]
+        out[brand] = []
+        for r in rows:
+            row = {
+                "release": norm_version(r.get("release")),
+                "channel": r.get("channel", "stable"),
+                "english_ok": english_ok(by_id.get(r.get("id"))),
+            }
+            if r.get("version"):
+                row["number"] = norm_version(r["version"])
+            if r.get("covers"):
+                row["covers"] = list(r["covers"])
+            out[brand].append(row)
     return out
+
+
+def structure_errors(changelog_brands, en_bundle, bundles):
+    """Errors in the shape of the entries of the gated brands from 7 on (see the header), and the missing languages.
+    bundles is {lang: data/i18n bundle} for the 13 languages; the English bundle is en_bundle."""
+    errors = []
+    for brand in GATED_BRANDS:
+        for r in changelog_brands["brands"].get(brand, []):
+            rid = r.get("id", "?")
+            rel = str(r.get("release") or "")
+            if r.get("version") is None:
+                if version_label.is_v7_or_later(rel):
+                    errors.append(f"{brand} {rid}: from 7 on the entry needs a numeric \"version\" "
+                                  f"(for example \"7.0.1\"); \"release\" alone is not enough")
+                if r.get("covers") is not None:
+                    errors.append(f"{brand} {rid}: \"covers\" is only allowed on a numeric V7-or-later entry")
+                continue
+            number = str(r["version"])
+            lab = version_label.label(number)
+            if lab is None:
+                errors.append(f"{brand} {rid}: version {number!r} is not a valid number (its label is null)")
+                continue
+            if rel != lab:
+                errors.append(f"{brand} {rid}: release {rel!r} must be the label {lab!r} of version {number!r}")
+            if not version_label.is_v7_or_later(number):
+                if r.get("covers") is not None:
+                    errors.append(f"{brand} {rid}: \"covers\" is only allowed from 7 on")
+                continue
+            if brand == "agent":
+                errors.append(f"agent {rid}: from 7 on the notes are one entry under corvus6 with "
+                              f"\"covers\": [\"agent\"]; remove this agent entry")
+                continue
+            if r.get("covers") != ["agent"]:
+                errors.append(f"corvus6 {rid}: from 7 on it must declare \"covers\": [\"agent\"] "
+                              f"(one entry for Algorab and Algorab Agents)")
+            for lang in LANGUAGES:
+                own = bundles.get(lang) if lang != "en" else en_bundle
+                prose = next((t for t in ((own or {}).get("changelog_brands", {}).get(brand) or [])
+                              if t.get("id") == r.get("id")), None)
+                if not english_ok(prose):
+                    errors.append(f"corvus6 {rid}: no notes in {lang} (title and at least one of New Features, "
+                                  f"Bug Fixes, Refinements in data/i18n/{lang}.json)")
+    return errors
 
 
 def gated_versions(manifest, brand):
@@ -95,20 +165,45 @@ def apply_beta_overrides(stable, overrides):
     return view
 
 
+def _matches(brand, version, entries):
+    """The entries that answer for one brand's version. From 7 on: by number, and agent only through an entry
+    that covers agent (the one combined entry under corvus6). Below 7: by the release text, as before."""
+    if version_label.is_v7_or_later(version):
+        pool = entries.get("corvus6", []) if brand == "agent" else entries.get(brand, [])
+        return [r for r in pool if r.get("number") == version
+                and (brand != "agent" or "agent" in r.get("covers", []))]
+    return [r for r in entries.get(brand, []) if r["release"] == version]
+
+
 def _need(brand, version, entries, label):
-    rows = [r for r in entries.get(brand, []) if r["release"] == version]
+    if version_label.is_v7_or_later(version) and version_label.label(version) is None:
+        return [f"{label}: {brand} {version!r} is not a valid V7 number (its label is null); "
+                f"from 7 on it must be exactly X.Y.P with P from 1 to 199"]
+    rows = _matches(brand, version, entries)
     if not rows:
-        return [f"{label}: {brand} {version} has no changelog entry (data/changelog_brands.json, "
-                f"data/i18n/en.json changelog_brands.{brand}); write its notes before it is released"]
+        home = "the corvus6 entry that covers agent" if (brand == "agent" and version_label.is_v7_or_later(version)) \
+            else f"data/changelog_brands.json, data/i18n/en.json changelog_brands.{brand}"
+        return [f"{label}: {brand} {version} has no changelog entry ({home}); write its notes before it is released"]
     if not any(r["english_ok"] for r in rows):
         return [f"{label}: {brand} {version} has no English text, or none of New Features, Bug Fixes and "
                 f"Refinements has an item"]
     return []
 
 
+def combined_errors(manifest, label):
+    """From 7 on the Algorab Agents number and the Windows app number are the same (VERSION_DESIGN.md G7). macOS and
+    Linux are not compared: they stay on 6.x until their own V7 builds exist."""
+    agent = norm_version((manifest.get("agent") or {}).get("latest") or "")
+    win = norm_version((((manifest.get("corvus6") or {}).get("native") or {}).get("windows") or {}).get("version") or "")
+    if (version_label.is_v7_or_later(agent) or version_label.is_v7_or_later(win)) and agent != win:
+        return [f"{label}: Algorab Agents {agent or '-'} and the Windows app {win or '-'} must be the same number "
+                f"from 7 on (VERSION_DESIGN.md G7)"]
+    return []
+
+
 def check_manifest(manifest, entries, label, baseline=None):
     """Errors for one manifest view ('stable' or 'beta'). baseline is {block: version} or None."""
-    errors = []
+    errors = combined_errors(manifest, label)
     for brand in GATED_BRANDS:
         for version in gated_versions(manifest, brand):
             errors += _need(brand, version, entries, label)
@@ -129,6 +224,15 @@ def check_manifest(manifest, entries, label, baseline=None):
     return errors
 
 
+def load_bundles(root=ROOT):
+    """{lang: data/i18n/<lang>.json} for the 13 languages; a missing file is an error in structure_errors."""
+    out = {}
+    for lang in LANGUAGES:
+        path = root / "data" / "i18n" / f"{lang}.json"
+        out[lang] = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    return out
+
+
 def check_repo(root=ROOT):
     """The repository's own check (used by check_changelog_brands.py and by this file's CLI)."""
     stable = json.loads((root / "glimpse_manifest.json").read_text(encoding="utf-8"))
@@ -137,7 +241,8 @@ def check_repo(root=ROOT):
     en = json.loads((root / "data" / "i18n" / "en.json").read_text(encoding="utf-8"))
     baseline = json.loads((root / "data" / "release_notes_baseline.json").read_text(encoding="utf-8"))["blocks"]
     entries = load_entries(brands, en)
-    return check_manifest(stable, entries, "stable", baseline) + check_manifest(beta, entries, "beta")
+    return (structure_errors(brands, en, load_bundles(root))
+            + check_manifest(stable, entries, "stable", baseline) + check_manifest(beta, entries, "beta"))
 
 
 def check_build(manifest, root=ROOT):
@@ -148,7 +253,8 @@ def check_build(manifest, root=ROOT):
     baseline = json.loads((root / "data" / "release_notes_baseline.json").read_text(encoding="utf-8"))["blocks"]
     overrides = json.loads((root / "beta" / "overrides.json").read_text(encoding="utf-8"))
     entries = load_entries(brands, en)
-    return (check_manifest(manifest, entries, "stable", baseline)
+    return (structure_errors(brands, en, load_bundles(root))
+            + check_manifest(manifest, entries, "stable", baseline)
             + check_manifest(apply_beta_overrides(manifest, overrides), entries, "beta"))
 
 

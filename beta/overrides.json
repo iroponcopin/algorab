@@ -1,17 +1,17 @@
 {
   "agent": {
-    "latest": "6.7.0",
-    "download_url": "https://algorab.uk/downloads/beta/algorab-agents-6.7.0.zip",
-    "file_name": "algorab-agents-6.7.0.zip",
-    "file_size": 990938,
-    "sha256": "eb3b9012742df1a8f0fce892d6042813a87fc6b705595019050a4593b891b358"
+    "latest": "7.0.1",
+    "download_url": "https://algorab.uk/downloads/beta/algorab-agents-7.0.1.zip",
+    "file_name": "algorab-agents-7.0.1.zip",
+    "file_size": 1107410,
+    "sha256": "20612d39372530b691a9a296861be8fc8b6dbf655b48dc2ee4ba4c795b871066"
   },
   "corvus6_windows": {
-    "version": "6.3.0",
-    "download_url": "https://algorab.uk/downloads/beta/algorab-6.3.0-windows.msi",
-    "file_name": "algorab-6.3.0-windows.msi",
-    "file_size": 36771328,
-    "sha256": "341ef8b0c4d976a83ff032ccb559fe2352d0485446a02e1e2f8a29c4e573efb2"
+    "version": "7.0.1",
+    "download_url": "https://algorab.uk/downloads/beta/algorab-7.0.1-windows.msi",
+    "file_name": "algorab-7.0.1-windows.msi",
+    "file_size": 37381120,
+    "sha256": "443b2185d23231adc7aa4ea54d617d95dcdf211c6d19dff715bb4b4898c6a1ea"
   },
   "notes": {}
 }

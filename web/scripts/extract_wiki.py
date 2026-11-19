@@ -37,8 +37,10 @@ _MODELS_TS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src
 with open(_MODELS_TS, encoding="utf-8") as _fh:
     _m = re.search(r"MODEL_ORDER[^=]*=\s*\[([^\]]*)\]", _fh.read())
 MODEL_ORDER_IDS = re.findall(r'"([a-z]+)"', _m.group(1)) if _m else []
-_MODEL_SPELL = {"halia": "Halia", "ouka": "OUKA", "cherry": "Cherry", "tsubomi": "Tsubomi", "noctua": "Noctua", "aureum": "Aureum", "astraea": "ASTRAEA"}
-_NAME = "(?:" + "|".join(_MODEL_SPELL.values()) + ")"
+# 2026-11-19 (owner 11-18): Halia is shown as Iliad; a run that still spells Halia (history) keeps the same rank.
+_MODEL_SPELL = {"halia": "Iliad", "ouka": "OUKA", "cherry": "Cherry", "tsubomi": "Tsubomi", "noctua": "Noctua", "aureum": "Aureum", "astraea": "ASTRAEA"}
+_SPELL_ALIAS = {"Halia": "halia"}
+_NAME = "(?:" + "|".join(list(_MODEL_SPELL.values()) + list(_SPELL_ALIAS)) + ")"
 _RUN = re.compile(_NAME + r"(?:(?:[^\"A-Za-z]{1,3}|[^\"A-Za-z]{0,2}(?:and|und|et|e|y|ve|и|dan|和|与)[^\"A-Za-z]{1,2}|[^\"A-Za-z]{0,2}و)" + _NAME + "){2,}")
 
 
@@ -51,6 +53,7 @@ def in_model_order(text: str) -> str:
         names = re.findall(_NAME, run)
         seps = re.split(_NAME, run)
         rank = {_MODEL_SPELL[i]: n for n, i in enumerate(MODEL_ORDER_IDS)}
+        rank.update({alias: rank[_MODEL_SPELL[i]] for alias, i in _SPELL_ALIAS.items() if _MODEL_SPELL.get(i) in rank})
         ordered = sorted(names, key=lambda x: rank.get(x, len(rank)))
         return "".join(seps[i] + ordered[i] for i in range(len(ordered))) + seps[-1]
 

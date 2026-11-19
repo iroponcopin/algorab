@@ -118,6 +118,19 @@ def brand_name_fails():
             cat_names = json.loads(rec.read_text(encoding="utf-8")).get("cat_names")
             if cat_names is not None and "Halia" in cat_names:
                 fails.append(f"{rec.relative_to(ROOT)} cat_names still says 'Halia' (must be 'Iliad')")
+    # 2026-11-19 (verifier): the portal's own copy that lists the models (the Algorab Store line on the home card
+    # and the launcher page's description, the changelog description) said Halia and "Algorab Agent" in 13 languages.
+    site_copy = ROOT / "web" / "scripts" / "site_copy.py"
+    if site_copy.exists():
+        scope = {}
+        exec(compile(site_copy.read_text(encoding="utf-8"), str(site_copy), "exec"), scope)
+        for lang, copy_ in sorted(scope["SITE_COPY"].items()):
+            for key in ("store", "changelog"):
+                text = copy_.get(key, "")
+                if "Halia" in text:
+                    fails.append(f"web/scripts/site_copy.py {lang}.{key} still says 'Halia' (must be 'Iliad')")
+                if re.search(r"Algorab Agent(?!s)", text):
+                    fails.append(f"web/scripts/site_copy.py {lang}.{key} says 'Algorab Agent' (the name is 'Algorab Agents')")
     return fails
 
 

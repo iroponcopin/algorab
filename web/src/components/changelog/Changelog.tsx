@@ -76,6 +76,9 @@ export function Changelog({
     // A deep link from the palette (#cl-p-<release id>) opens that entry and brings it into view.
     const hash = decodeURIComponent(window.location.hash.slice(1));
     if (hash.startsWith("cl-p-")) {
+      // A covered brand's copy is not listed under All: its link opens that brand's chip instead.
+      const target = brands.flatMap((brand) => brand.releases).find((r) => r.id === hash.slice(5));
+      if (target?.copyOf && (b === null || !known(b))) setFilter(target.brand);
       setOpen(new Set([hash.slice(5)]));
       window.setTimeout(() => document.getElementById(hash)?.closest("article")?.scrollIntoView({ block: "center" }), 0);
     }
@@ -97,7 +100,7 @@ export function Changelog({
   const endedChips: string[] = [];
   const counts = useMemo(() => {
     const c: Record<string, number> = {
-      all: all.filter((r) => !isEnded(r.brand)).length,
+      all: all.filter((r) => !isEnded(r.brand) && !r.copyOf).length,
       ended: all.filter((r) => isEnded(r.brand)).length,
     };
     for (const b of brands) c[b.id] = b.releases.length;
@@ -107,7 +110,8 @@ export function Changelog({
   const inFilter = useMemo(
     () =>
       all.filter((r) => {
-        if (filter === "all") return !isEnded(r.brand);
+        // One shared release (Algorab and Algorab Agents) is listed once under All: the owner's entry, not the copy.
+        if (filter === "all") return !isEnded(r.brand) && !r.copyOf;
         if (filter === "ended") return isEnded(r.brand);
         return r.brand === filter;
       }),
@@ -237,7 +241,11 @@ export function Changelog({
                 <button type="button" aria-expanded={isOpen} aria-controls={`cl-p-${r.id}`} onClick={() => toggle(r.id)}>
                   <span className="cn-rel-ver ac-ltr">{r.version}</span>
                   <span className="cn-rel-main">
-                    <span className="cn-rel-brand">{names[r.brand]}</span>
+                    {r.sharedWith && r.sharedWith.length > 1 ? (
+                      <span className="cn-rel-brand ac-ltr">{r.sharedWith.map((id) => names[id] ?? id).join(" + ")}</span>
+                    ) : (
+                      <span className="cn-rel-brand">{names[r.brand]}</span>
+                    )}
                     <span className="cn-rel-title" lang={corvus ? "en" : undefined}>
                       <Rich text={r.title} />
                     </span>
@@ -250,6 +258,7 @@ export function Changelog({
               <div className="cn-rel-detail" id={`cl-p-${r.id}`} data-panel={r.id} hidden={!isOpen} lang={corvus ? "en" : undefined}>
                 <span className="cn-pill">{labels.types[r.type] ?? r.type}</span>
                 {r.channel === "beta" ? <span className="cn-pill">{labels.beta}</span> : null}
+                {r.sharedWith && r.sharedWith.length > 1 ? <p className="cn-rel-lede cn-rel-shared">{labels.shared}</p> : null}
                 {r.summary ? (
                   <p className="cn-rel-lede">
                     <Rich text={r.summary} />

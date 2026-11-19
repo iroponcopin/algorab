@@ -111,7 +111,8 @@
    "changelog_new_features_label": "Novità",
    "changelog_bug_fixes_label": "Correzioni di bug",
    "changelog_refinements_label": "Miglioramenti",
-   "changelog_beta_label": "Beta"
+   "changelog_beta_label": "Beta",
+   "changelog_shared_label": "Un'unica versione per Algorab e Algorab Agents."
   },
   "page_titles": {
    "home": "",

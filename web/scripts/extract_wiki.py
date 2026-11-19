@@ -432,7 +432,7 @@ def series_of(release: str) -> str:
 
 def _release_row(brand: str, e: dict) -> dict:
     """One release of the page. The three sections of 2026-11-17 come first in the page's own order; a beta is marked."""
-    return {
+    row = {
         "id": e["id"], "brand": brand, "version": e["release"], "date": e.get("date"),
         "type": e.get("type", "release"), "channel": e.get("channel", "stable"), "series": series_of(e["release"]),
         "title": e.get("title", ""), "summary": e.get("summary", ""),
@@ -441,6 +441,14 @@ def _release_row(brand: str, e: dict) -> dict:
         "highlights": e.get("highlights") or [], "balance": e.get("balance_changes") or [],
         "warnings": e.get("warnings") or [], "limits": e.get("known_limitations") or [],
     }
+    # 2026-11-19: one entry for Algorab and Algorab Agents (build_changelog.load_brand_structural lists it under each
+    # brand it covers). sharedWith names every product of the one release, owner first; copyOf marks the covered
+    # brand's copy, which the page shows under that brand's chip only (never twice under All).
+    if e.get("covers"):
+        row["sharedWith"] = [e.get("owner") or brand] + [c for c in e["covers"] if c != (e.get("owner") or brand)]
+    if e.get("owner") and e.get("owner") != brand:
+        row["copyOf"] = e.get("prose_id")
+    return row
 
 
 def changelog_lang(lang: str, bundle: dict, launcher_notes: dict, launcher_notes_i18n: dict | None = None) -> list[dict]:
@@ -931,6 +939,8 @@ def build_lang(lang: str, ctx: dict) -> dict:
         "bugFixes": common["changelog_bug_fixes_label"],
         "refinements": common["changelog_refinements_label"],
         "beta": common["changelog_beta_label"],
+        # 2026-11-19: the line on an entry shared by Algorab and Algorab Agents (one release, one entry).
+        "shared": common["changelog_shared_label"],
     })
     changelog = {
         "title": ui["page_titles"]["changelog"],

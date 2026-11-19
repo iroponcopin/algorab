@@ -111,7 +111,8 @@
    "changelog_new_features_label": "새 기능",
    "changelog_bug_fixes_label": "버그 수정",
    "changelog_refinements_label": "개선",
-   "changelog_beta_label": "베타"
+   "changelog_beta_label": "베타",
+   "changelog_shared_label": "Algorab과 Algorab Agents의 공통 릴리스입니다."
   },
   "page_titles": {
    "home": "",

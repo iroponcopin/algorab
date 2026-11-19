@@ -111,7 +111,8 @@
    "changelog_new_features_label": "Fitur Baru",
    "changelog_bug_fixes_label": "Perbaikan Bug",
    "changelog_refinements_label": "Penyempurnaan",
-   "changelog_beta_label": "Beta"
+   "changelog_beta_label": "Beta",
+   "changelog_shared_label": "Satu rilis untuk Algorab dan Algorab Agents."
   },
   "page_titles": {
    "home": "",

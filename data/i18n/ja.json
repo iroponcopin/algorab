@@ -131,7 +131,8 @@
    "changelog_new_features_label": "新機能",
    "changelog_bug_fixes_label": "不具合の修正",
    "changelog_refinements_label": "改良",
-   "changelog_beta_label": "ベータ版"
+   "changelog_beta_label": "ベータ版",
+   "changelog_shared_label": "Algorab と Algorab Agents に共通のリリースです。"
   },
   "page_titles": {
    "home": "",

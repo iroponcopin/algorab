@@ -111,7 +111,8 @@
    "changelog_new_features_label": "Novedades",
    "changelog_bug_fixes_label": "Correcciones de errores",
    "changelog_refinements_label": "Mejoras",
-   "changelog_beta_label": "Beta"
+   "changelog_beta_label": "Beta",
+   "changelog_shared_label": "Una sola versión para Algorab y Algorab Agents."
   },
   "page_titles": {
    "home": "",
@@ -1927,7 +1928,7 @@
      "El mod Halia ahora se llama Iliad. Tus mundos y ajustes no cambian.",
      "Los ajustes muestran las versiones de la aplicación y de Algorab Agents en un solo lugar.",
      "Las hojas y las listas se muestran correctamente en árabe.",
-     "Las notas de la versión ahora se dividen en tres partes: Nuevas funciones, Correcciones de errores y Mejoras."
+     "Las notas de la versión ahora se dividen en tres partes: Novedades, Correcciones de errores y Mejoras."
     ]
    }
   ],

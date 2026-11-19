@@ -111,7 +111,8 @@
    "changelog_new_features_label": "Novidades",
    "changelog_bug_fixes_label": "Correções de bugs",
    "changelog_refinements_label": "Melhorias",
-   "changelog_beta_label": "Beta"
+   "changelog_beta_label": "Beta",
+   "changelog_shared_label": "Uma só versão para o Algorab e o Algorab Agents."
   },
   "page_titles": {
    "home": "",
@@ -1926,7 +1927,7 @@
      "A aba de servidores agora faz parte da página do Algorab Agents, e o dock lista seus servidores em ordem alfabética.",
      "O mod Halia agora se chama Iliad. Seus mundos e configurações não mudam.",
      "As configurações mostram as versões do aplicativo e do Algorab Agents em um só lugar.",
-     "Planilhas e listas ficam corretamente organizadas em árabe.",
+     "Painéis e listas ficam corretamente organizados em árabe.",
      "As notas de versão agora vêm em três partes: Novidades, Correções de bugs e Melhorias."
     ]
    }

@@ -111,6 +111,10 @@ export interface Release {
   warnings: string[];
   limits: string[];
   paragraphs?: string[];
+  /** 2026-11-19: the products one shared release covers, owner first (Algorab and Algorab Agents from V7 on). */
+  sharedWith?: string[];
+  /** 2026-11-19: on a covered brand's copy, the id of the owner's entry; the copy is never listed twice under All. */
+  copyOf?: string;
 }
 
 export interface ChangelogBrand {
@@ -204,6 +208,8 @@ export interface ChangelogLabels {
   bugFixes: string;
   refinements: string;
   beta: string;
+  /** 2026-11-19: "One release for Algorab and Algorab Agents" on a shared entry. */
+  shared: string;
 }
 
 export interface SkinLabels {

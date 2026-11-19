@@ -156,14 +156,18 @@ def check(world, feeds_only=False):
             if b == DEFAULT_BRAND:
                 continue
             entries = world["brands"][b]
-            prose = {t.get("id"): t for t in ((bundle.get("changelog_brands") or {}).get(b) or [])}
-            extra = sorted(set(prose) - {e["id"] for e in entries} - {None})
+            def prose_of(owner):
+                return {t.get("id"): t for t in ((bundle.get("changelog_brands") or {}).get(owner) or [])}
+            # A covered copy (agent's view of an entry owned by corvus6) takes its prose from its owner.
+            prose = prose_of(b)
+            owned = {e.get("prose_id", e["id"]) for e in entries if e.get("owner", b) == b}
+            extra = sorted(set(prose) - owned - {None})
             if extra:
                 fails.append(f"[H] data/i18n/{lang}.json: changelog_brands.{b} has id(s) the structural file does not: {extra}")
             if not feeds_only and rows[b] != len(entries):
                 fails.append(f"[C] {rel}: {b}'s panel holds {rows[b]} releases, data/changelog_brands.json has {len(entries)}")
             for e in entries:
-                t = prose.get(e["id"])
+                t = prose_of(e.get("owner", b)).get(e.get("prose_id", e["id"]))
                 if not t or not t.get("title"):
                     fails.append(f"[H] data/i18n/{lang}.json: no translated title for {b} release {e['id']}")
                     continue

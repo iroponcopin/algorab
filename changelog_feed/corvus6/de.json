@@ -1,11 +1,65 @@
 {
  "lang": "de",
  "brand": "corvus6",
- "updated": "2026-11-16",
+ "updated": "2026-11-19",
  "title": "Änderungsprotokoll",
- "updated_label": "Aktualisiert am 2026-11-16",
+ "updated_label": "Aktualisiert am 2026-11-19",
  "note": "",
  "groups": [
+  {
+   "label": "V7.0",
+   "summary": "Algorab V7.0 Beta 1",
+   "releases": [
+    {
+     "version": "V7.0 Beta 1",
+     "date": "2026-11-19",
+     "type": "release",
+     "title": "Algorab V7.0 Beta 1",
+     "summary": "Die App und Algorab Agents haben jetzt eine gemeinsame Version. Diese Beta bringt Core-Keeper-Server, einen Schalter für den automatischen Start jedes Servers und einen sichereren Umgang mit Ihren Welten.",
+     "sections": [
+      {
+       "title": "Neue Funktionen",
+       "kind": "new_features",
+       "items": [
+        "Eine Version für die App und Algorab Agents: Beide heißen jetzt „V7.0 Beta 1“.",
+        "Core-Keeper-Server (Beta-Kanal, Windows). Die Seite zeigt die Game-ID, die Ihre Freunde zum Beitreten eingeben.",
+        "„Automatisch starten“ für jeden Server: Wählen Sie, welche Server zusammen mit Algorab Agents starten.",
+        "ARK: Survival Ascended: Mehrere Karten in einem Cluster betreiben und Ihre Kreaturen zwischen ihnen verschieben.",
+        "Wenn Sie einen Spielserver entfernen, bleibt seine Welt erhalten. Die Welt wird beiseitegelegt, auf der Seite des Servers aufgeführt und wieder eingesetzt, wenn Sie den Server erneut installieren – oder wann immer Sie möchten.",
+        "Der Speicherbedarf jeder ARK: Survival Ascended-Karte wird angezeigt, bevor Sie sie hinzufügen. Ist der Wert unbekannt, sagt die App das."
+       ]
+      },
+      {
+       "title": "Fehlerbehebungen",
+       "kind": "bug_fixes",
+       "items": [
+        "Algorab Agents konnte sich unter Windows nach einem früheren Update nicht selbst aktualisieren. Behoben. Wenn Algorab Agents seit dem letzten Update nicht neu gestartet wurde, starten Sie es einmal neu, damit es diese Version übernehmen kann.",
+        "Ein Update von Algorab Agents stoppt keinen laufenden Spielserver mehr. Das Update wartet, bis Ihre Server gestoppt sind und niemand spielt, und die App zeigt an, dass sie wartet.",
+        "Wenn Algorab Agents läuft, aber nicht antwortet, sagt die App das jetzt, statt einen erneuten Start anzubieten.",
+        "Ein Server, dessen automatischer Start ausgeschaltet wurde, bleibt nach Updates ausgeschaltet.",
+        "Seitenüberschriften und Schaltflächenbeschriftungen werden bei schmalen Fenstern auf Japanisch, Arabisch und in anderen Sprachen nicht mehr abgeschnitten."
+       ]
+      },
+      {
+       "title": "Verbesserungen",
+       "kind": "refinements",
+       "items": [
+        "Der Server-Tab ist jetzt Teil der Algorab-Agents-Seite, und das Dock listet Ihre Server alphabetisch.",
+        "Die Mod Halia heißt jetzt Iliad. Ihre Welten und Einstellungen bleiben unverändert.",
+        "Die Einstellungen zeigen die Versionen von App und Algorab Agents an einer Stelle.",
+        "Tabellen und Listen werden auf Arabisch korrekt ausgerichtet.",
+        "Versionshinweise erscheinen jetzt in drei Teilen: Neue Funktionen, Fehlerbehebungen und Verbesserungen."
+       ]
+      }
+     ],
+     "channel": "beta",
+     "number": "7.0.1",
+     "covers": [
+      "agent"
+     ]
+    }
+   ]
+  },
   {
    "label": "6.3",
    "summary": "Beta: Algorab 6.3 for Windows",

@@ -1902,6 +1902,33 @@
      "The ARK: Survival Ascended card shows 'Updating to the latest build before starting' with progress and a Cancel start button, and shows the reason in your language under 'Could not start' if a start fails.",
      "Japanese now covers much more of the app, including messages from Algorab Agents, dates and sizes, tier names and ARK: Survival Ascended setting names."
     ]
+   },
+   {
+    "id": "corvus6-v7.0.1",
+    "title": "Algorab V7.0 Beta 1",
+    "summary": "应用和 Algorab Agents 现在共用同一个版本。本次测试版新增 Core Keeper 服务器、每台服务器的自动启动开关，并让您的世界得到更安全的处理。",
+    "new_features": [
+     "应用和 Algorab Agents 使用同一个版本：两者现在都是「V7.0 Beta 1」。",
+     "支持 Core Keeper 服务器（测试版频道，Windows）。页面会显示朋友加入时需要输入的游戏 ID。",
+     "每台服务器都可以设置「自动启动」：选择哪些服务器与 Algorab Agents 一同启动。",
+     "ARK: Survival Ascended：可在同一集群中运行多张地图，并在地图之间转移您的生物。",
+     "删除游戏服务器时会保留它的世界。世界会被单独保存，并列在服务器页面上；重新安装服务器时或您选择时，都可以恢复。",
+     "添加每张 ARK: Survival Ascended 地图之前，会先显示它所需的内存。如果不知道具体数值，应用会明确告知。"
+    ],
+    "bug_fixes": [
+     "在 Windows 上，Algorab Agents 在某次更新后可能无法自行更新。已修复。如果自上次更新后尚未重新启动过 Algorab Agents，请重新启动一次，以便它接收此版本。",
+     "更新 Algorab Agents 不再会停止正在运行的游戏服务器。更新会等待，直到服务器停止且无人游戏；应用会提示您正在等待。",
+     "Algorab Agents 正在运行但无响应时，应用现在会明确说明，而不是提供再次启动的选项。",
+     "关闭了自动启动的服务器在更新后保持关闭。",
+     "在窄窗口中，日文、阿拉伯文等语言的页面标题和按钮文字不再被截断。"
+    ],
+    "refinements": [
+     "服务器标签页现已并入 Algorab Agents 页面，程序坞中的服务器按字母顺序排列。",
+     "模组 Halia 现在称为 Iliad。您的世界和设置不会改变。",
+     "设置中可在一处查看应用和 Algorab Agents 的版本。",
+     "阿拉伯文的表格和列表现已正确排版。",
+     "发行说明现分为三部分：新功能、错误修复和优化改进。"
+    ]
    }
   ],
   "agent": [

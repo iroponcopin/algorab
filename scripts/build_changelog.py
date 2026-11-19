@@ -331,6 +331,20 @@ def load_brand_structural(path=None):
     dupes = sorted(i for i, n in seen.items() if n > 1)
     if dupes:
         raise SystemExit(f"ERROR: {p.name} has duplicate id(s) {dupes}")
+    # 2026-11-19 (owner 11-18: one entry for the app and Algorab Agents): an entry with "covers" is also listed
+    # under each covered brand, as a copy whose id carries that brand's prefix (no HTML id repeats on the page)
+    # and whose prose is still the owner's (prose_id / owner). The copy keeps "covers", so the feed says so.
+    additions = []
+    for brand, entries in data.items():
+        for e in entries:
+            for other in e.get("covers") or []:
+                if other == brand or other not in data:
+                    raise SystemExit(f"ERROR: {p.name} {brand}: {e['id']} covers {other!r}, which is not a brand "
+                                     f"of the line other than its own")
+                tail = e["id"][len(brand) + 1:]
+                additions.append((other, dict(e, id=f"{other}-{tail}", owner=brand, prose_id=e["id"])))
+    for other, copy in additions:
+        data[other].append(copy)
     return data
 
 
@@ -350,17 +364,28 @@ def merged_brand_entries(bundle, lang, brand, structural):
     bundle's changelog_brands[brand], matched on id. A missing translation falls
     back to the Japanese source (visible on the page), with a warning -- the
     same rule merged_entries() follows for Alpha."""
-    own = _brand_prose(bundle, brand, lang)
-    ja = own if lang == "ja" else _brand_prose(load_bundle("ja"), brand, "ja")
+    prose = {}
+
+    def maps_for(owner):
+        # A covered copy (load_brand_structural) takes its prose from the brand that owns the entry.
+        if owner not in prose:
+            own = _brand_prose(bundle, owner, lang)
+            ja = own if lang == "ja" else _brand_prose(load_bundle("ja"), owner, "ja")
+            prose[owner] = (own, ja)
+        return prose[owner]
+
     out, fallback = [], []
     for s in structural:
-        t = own.get(s["id"])
+        owner = s.get("owner", brand)
+        pid = s.get("prose_id", s["id"])
+        own, ja = maps_for(owner)
+        t = own.get(pid)
         if t is None:
-            t = ja.get(s["id"])
+            t = ja.get(pid)
             if t is None:
-                raise SystemExit(f"ERROR: {brand} release {s['id']} has no prose, not even in ja -- it would "
+                raise SystemExit(f"ERROR: {owner} release {pid} has no prose, not even in ja -- it would "
                                  f"render as a bare version number")
-            fallback.append(s["id"])
+            fallback.append(pid)
         merged = dict(s)
         for k in PROSE_KEYS:
             if k in t:

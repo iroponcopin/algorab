@@ -1,11 +1,65 @@
 {
  "lang": "tr",
  "brand": "corvus6",
- "updated": "2026-11-16",
+ "updated": "2026-11-19",
  "title": "Güncelleme Geçmişi",
- "updated_label": "2026-11-16 tarihinde güncellendi",
+ "updated_label": "2026-11-19 tarihinde güncellendi",
  "note": "",
  "groups": [
+  {
+   "label": "V7.0",
+   "summary": "Algorab V7.0 Beta 1",
+   "releases": [
+    {
+     "version": "V7.0 Beta 1",
+     "date": "2026-11-19",
+     "type": "release",
+     "title": "Algorab V7.0 Beta 1",
+     "summary": "Uygulama ve Algorab Agents artık tek bir sürümü paylaşıyor. Bu beta; Core Keeper sunucularını, her sunucu için otomatik başlatma anahtarını ve dünyalarınızın daha güvenli yönetilmesini ekliyor.",
+     "sections": [
+      {
+       "title": "Yeni Özellikler",
+       "kind": "new_features",
+       "items": [
+        "Uygulama ve Algorab Agents için tek sürüm: ikisi de artık \"V7.0 Beta 1\".",
+        "Core Keeper sunucuları (beta kanalı, Windows). Sayfa, arkadaşlarınızın katılmak için yazdığı Oyun Kimliğini gösterir.",
+        "\"Otomatik başlat\": Her sunucu için, Algorab Agents ile birlikte hangi sunucuların başlayacağını seçin.",
+        "ARK: Survival Ascended: aynı kümede birden çok harita çalıştırın ve yaratıklarınızı haritalar arasında taşıyın.",
+        "Bir oyun sunucusunu kaldırmak dünyasını korur. Dünya kenara alınır, sunucunun sayfasında listelenir ve sunucuyu yeniden kurduğunuzda ya da istediğiniz zaman geri yüklenir.",
+        "Her ARK: Survival Ascended haritasının ihtiyaç duyduğu bellek, haritayı eklemeden önce gösterilir. Değer bilinmiyorsa uygulama bunu belirtir."
+       ]
+      },
+      {
+       "title": "Hata Düzeltmeleri",
+       "kind": "bug_fixes",
+       "items": [
+        "Algorab Agents, önceki bir güncellemeden sonra Windows'ta kendini güncelleyemeyebiliyordu. Düzeltildi. Algorab Agents son güncellemesinden beri hiç yeniden başlatılmadıysa, bu sürümü alabilmesi için bir kez yeniden başlatın.",
+        "Algorab Agents'ı güncellemek artık çalışan bir oyun sunucusunu durdurmaz. Güncelleme, sunucularınız durana ve kimse oynamayana kadar bekler; uygulama beklediğini size bildirir.",
+        "Algorab Agents çalışıyor ama yanıt vermiyorsa, uygulama bunu artık belirtir; yeniden başlatmayı önermez.",
+        "Otomatik başlatması kapatılmış bir sunucu, güncellemelerden sonra da kapalı kalır.",
+        "Dar pencerelerde Japonca, Arapça ve diğer dillerde sayfa başlıkları ile düğme yazıları artık kesilmez."
+       ]
+      },
+      {
+       "title": "İyileştirmeler",
+       "kind": "refinements",
+       "items": [
+        "Sunucu sekmesi artık Algorab Agents sayfasının bir parçası ve dock, sunucularınızı alfabetik sırayla listeliyor.",
+        "Halia modunun adı artık Iliad. Dünyalarınız ve ayarlarınız değişmedi.",
+        "Ayarlar, uygulama ve Algorab Agents sürümlerini tek bir yerde gösterir.",
+        "Arapçada tablolar ve listeler doğru biçimde görüntülenir.",
+        "Sürüm notları artık üç bölümde: Yeni Özellikler, Hata Düzeltmeleri ve İyileştirmeler."
+       ]
+      }
+     ],
+     "channel": "beta",
+     "number": "7.0.1",
+     "covers": [
+      "agent"
+     ]
+    }
+   ]
+  },
   {
    "label": "6.3",
    "summary": "Beta: Algorab 6.3 for Windows",

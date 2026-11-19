@@ -1902,6 +1902,33 @@
      "The ARK: Survival Ascended card shows 'Updating to the latest build before starting' with progress and a Cancel start button, and shows the reason in your language under 'Could not start' if a start fails.",
      "Japanese now covers much more of the app, including messages from Algorab Agents, dates and sizes, tier names and ARK: Survival Ascended setting names."
     ]
+   },
+   {
+    "id": "corvus6-v7.0.1",
+    "title": "Algorab V7.0 Beta 1",
+    "summary": "Aplikasi dan Algorab Agents kini memakai satu versi yang sama. Beta ini menambahkan server Core Keeper, sakelar mulai otomatis untuk setiap server, dan penanganan dunia Anda yang lebih aman.",
+    "new_features": [
+     "Satu versi untuk aplikasi dan Algorab Agents: keduanya kini \"V7.0 Beta 1\".",
+     "Server Core Keeper (kanal beta, Windows). Halaman menampilkan Game ID yang diketik teman Anda untuk bergabung.",
+     "\"Mulai otomatis\" untuk setiap server: pilih server mana yang ikut dimulai bersama Algorab Agents.",
+     "ARK: Survival Ascended: jalankan beberapa peta dalam satu klaster dan pindahkan makhluk Anda di antara peta-peta itu.",
+     "Menghapus server game tidak menghapus dunianya. Dunia disisihkan, tercantum di halaman server, dan dikembalikan saat Anda memasang ulang server, atau kapan pun Anda memilih.",
+     "Memori yang dibutuhkan setiap peta ARK: Survival Ascended ditampilkan sebelum Anda menambahkannya. Jika angkanya belum diketahui, aplikasi menyatakannya."
+    ],
+    "bug_fixes": [
+     "Algorab Agents bisa gagal memperbarui dirinya di Windows setelah pembaruan sebelumnya. Sudah diperbaiki. Jika Algorab Agents belum dimulai ulang sejak pembaruan terakhirnya, mulai ulang sekali agar bisa menerima versi ini.",
+     "Memperbarui Algorab Agents tidak lagi menghentikan server game yang sedang berjalan. Pembaruan menunggu sampai server berhenti dan tidak ada yang bermain, dan aplikasi memberi tahu bahwa ia sedang menunggu.",
+     "Saat Algorab Agents berjalan tetapi tidak merespons, aplikasi kini menyatakannya, bukan menawarkan untuk memulainya lagi.",
+     "Server yang mulai otomatisnya dimatikan tetap mati setelah pembaruan.",
+     "Judul halaman dan label tombol tidak lagi terpotong dalam bahasa Jepang, Arab, dan bahasa lain saat jendela sempit."
+    ],
+    "refinements": [
+     "Tab server kini menjadi bagian dari halaman Algorab Agents, dan dok mencantumkan server Anda menurut abjad.",
+     "Mod Halia kini bernama Iliad. Dunia dan pengaturan Anda tidak berubah.",
+     "Pengaturan menampilkan versi aplikasi dan Algorab Agents di satu tempat.",
+     "Lembar dan daftar tampil dengan benar dalam bahasa Arab.",
+     "Catatan rilis kini terbagi menjadi tiga bagian: Fitur Baru, Perbaikan Bug, dan Penyempurnaan."
+    ]
    }
   ],
   "agent": [

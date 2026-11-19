@@ -1,11 +1,65 @@
 {
  "lang": "en",
  "brand": "agent",
- "updated": "2026-11-16",
+ "updated": "2026-11-19",
  "title": "Changelog",
- "updated_label": "Updated 2026-11-16",
+ "updated_label": "Updated 2026-11-19",
  "note": "",
  "groups": [
+  {
+   "label": "V7.0",
+   "summary": "Algorab V7.0 Beta 1",
+   "releases": [
+    {
+     "version": "V7.0 Beta 1",
+     "date": "2026-11-19",
+     "type": "release",
+     "title": "Algorab V7.0 Beta 1",
+     "summary": "The app and Algorab Agents now share one version. This beta adds Core Keeper servers, a switch for each server's automatic start, and safer handling of your worlds.",
+     "sections": [
+      {
+       "title": "New Features",
+       "kind": "new_features",
+       "items": [
+        "One version for the app and Algorab Agents: both are now \"V7.0 Beta 1\".",
+        "Core Keeper servers (beta channel, Windows). The page shows the Game ID your friends type to join.",
+        "\"Start automatically\" for each server: choose which servers start together with Algorab Agents.",
+        "ARK: Survival Ascended: run several maps in one cluster and move your creatures between them.",
+        "Removing a game server keeps its world. The world is set aside, listed on the server's page, and put back when you install the server again — or whenever you choose.",
+        "The memory each ARK: Survival Ascended map needs is shown before you add it. Where no figure is known, the app says so."
+       ]
+      },
+      {
+       "title": "Bug Fixes",
+       "kind": "bug_fixes",
+       "items": [
+        "Algorab Agents could fail to update itself on Windows after an earlier update. Fixed. If your Algorab Agents has not been restarted since its last update, restart it once so it can take this version.",
+        "Updating Algorab Agents no longer stops a game server that is running. The update waits until your servers are stopped and no one is playing, and the app tells you it is waiting.",
+        "When Algorab Agents is running but does not answer, the app now says so instead of offering to start it again.",
+        "A server switched off from automatic start stays off after updates.",
+        "Page headings and button labels are no longer cut off in Japanese, Arabic and other languages at narrow window sizes."
+       ]
+      },
+      {
+       "title": "Refinements",
+       "kind": "refinements",
+       "items": [
+        "The server tab is now part of the Algorab Agents page, and the dock lists your servers in alphabetical order.",
+        "The mod Halia is now called Iliad. Your worlds and settings are not changed.",
+        "Settings shows the versions of the app and Algorab Agents in one place.",
+        "Sheets and lists are laid out correctly in Arabic.",
+        "Release notes now come in three parts: New Features, Bug Fixes and Refinements."
+       ]
+      }
+     ],
+     "channel": "beta",
+     "number": "7.0.1",
+     "covers": [
+      "agent"
+     ]
+    }
+   ]
+  },
   {
    "label": "6.7",
    "summary": "Beta: creature strength, automatic ARK: Survival Ascended updates and the beta channel",

@@ -114,6 +114,10 @@ parts) and strictly newer than the stable value; a file sits in `downloads/beta/
 - To offer a beta: add the new file under `downloads/beta/`, fill the override (the five keys of its block), write the
   Japanese and other notes if wanted, then `python3 scripts/build_beta_manifest.py` and `python3 scripts/check_site.py beta`.
   The Download page shows a Beta section only while an override is valid; the page is built by `web/` (step 4 above).
+  From V7 on the release's changelog entry (`data/changelog_brands.json`, corvus6, `"version"` = the number) must be
+  dated the day the beta is offered, in UTC: the builder refuses the first write that offers a new V7 number when the
+  date differs. Set the date, run `python3 scripts/build.py --feeds` and rebuild the export, so the notes, the feeds
+  and the beta manifest go out in the same push.
 - To promote a beta: the same bytes go to `downloads/` under the stable name, the stable manifest is rebuilt
   (`build.py --feeds`), and both overrides go back to `null` (which makes the beta copy a mirror again).
 - The app and the agent read the beta copy only after the user turns on "Receive beta versions" (Settings in Algorab).

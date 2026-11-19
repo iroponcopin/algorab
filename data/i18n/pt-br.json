@@ -1910,7 +1910,7 @@
     "summary": "O aplicativo e o Algorab Agents agora compartilham uma só versão. Esta beta traz servidores do Core Keeper, uma chave para o início automático de cada servidor e um tratamento mais seguro dos seus mundos.",
     "new_features": [
      "Uma só versão para o aplicativo e para o Algorab Agents: os dois agora são \"V7.0 Beta 1\".",
-     "Servidores do Core Keeper (canal beta, Windows). A página mostra o Game ID que seus amigos digitam para entrar.",
+     "Servidores do Core Keeper (canal beta, Windows). A página mostra o ID do jogo que seus amigos digitam para entrar.",
      "\"Iniciar automaticamente\" para cada servidor: escolha quais servidores iniciam junto com o Algorab Agents.",
      "ARK: Survival Ascended: rode vários mapas em um mesmo cluster e mova suas criaturas entre eles.",
      "Remover um servidor de jogo mantém o seu mundo. O mundo fica guardado de lado, aparece listado na página do servidor e volta quando você instala o servidor de novo, ou sempre que quiser.",

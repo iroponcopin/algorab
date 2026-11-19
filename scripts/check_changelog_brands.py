@@ -87,6 +87,40 @@ def _json_or_none(path):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
 
 
+def brand_name_fails():
+    """[B] 2026-11-19 (owner 11-18: 「Haliaは無くなります。なので新しい名称を使います。」): the brand Halia is shown as
+    Iliad everywhere a person reads it. Checked: the brand line's display name (changelog_feed/brands.json), the
+    recipes category in the data and in every language, and the copy that names the brands (recipes intro and
+    the changelog and recipes page descriptions) in every language. Past release titles are history and are not
+    checked; the in-game item names are the mod's own and are not checked either."""
+    fails = []
+    index = json.loads((ROOT / "changelog_feed" / "brands.json").read_text(encoding="utf-8"))
+    names = {b["id"]: b["name"] for b in index["brands"]}
+    if names.get("halia") != "Iliad":
+        fails.append(f"changelog_feed/brands.json: the halia display name is {names.get('halia')!r}, not 'Iliad'")
+    cats = json.loads((ROOT / "data" / "recipes.json").read_text(encoding="utf-8"))["cats"]
+    if not any(c[1].startswith("halia:") and c[0] == "Iliad" for c in cats):
+        fails.append("data/recipes.json: the halia recipes category is not labelled 'Iliad'")
+    for lang in LANG_CODES:
+        i18n = ROOT / "data" / "i18n" / f"{lang}.json"
+        if i18n.exists():
+            ui = json.loads(i18n.read_text(encoding="utf-8"))["ui"]
+            for where, text in (("common.recipes_intro", ui["common"]["recipes_intro"]),
+                                ("page_descriptions.changelog", ui["page_descriptions"]["changelog"]),
+                                ("page_descriptions.recipes", ui["page_descriptions"]["recipes"])):
+                if "Halia" in text:
+                    fails.append(f"data/i18n/{lang}.json ui.{where} still says 'Halia' (must be 'Iliad')")
+            cn = (json.loads(i18n.read_text(encoding="utf-8")).get("recipes") or {}).get("cat_names")
+            if cn is not None and "Halia" in cn:
+                fails.append(f"data/i18n/{lang}.json recipes.cat_names still says 'Halia' (must be 'Iliad')")
+        rec = ROOT / "data" / ("recipes.json" if lang == "ja" else f"recipes.{lang}.json")
+        if rec.exists():
+            cat_names = json.loads(rec.read_text(encoding="utf-8")).get("cat_names")
+            if cat_names is not None and "Halia" in cat_names:
+                fails.append(f"{rec.relative_to(ROOT)} cat_names still says 'Halia' (must be 'Iliad')")
+    return fails
+
+
 def load_world(feeds_only=False):
     langs = [c for c in LANG_CODES if (ROOT / "data" / "i18n" / f"{c}.json").exists()]
     order = brand_order()
@@ -433,6 +467,7 @@ def main(argv):
     # runs here too, in both modes, because it reads data and feeds, not pages.
     import release_notes_gate  # noqa: E402  (scripts/ is on sys.path)
     fails += [f"[N] {e}" for e in release_notes_gate.check_repo()]
+    fails += [f"[B] {e}" for e in brand_name_fails()]
     for f in fails:
         print("FAIL " + f)
     pages = len(world["langs"])

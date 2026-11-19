@@ -24,7 +24,7 @@ export interface Theatre {
 export const THEATRE: Record<Lang, Theatre> = {
   ja: {
     title: ["すべてのリリースが、", "ここに戻る。"],
-    lede: "Halia、OUKA、Cherry、Tsubomi。Algorab Store ひとつで、すべてのモデルを入れて、更新して、遊べます。",
+    lede: "Iliad、OUKA、Cherry、Tsubomi。Algorab Store ひとつで、すべてのモデルを入れて、更新して、遊べます。",
     cta: "Algorab Store をダウンロード",
     chapter: "章",
     open: "詳しく見る",
@@ -34,7 +34,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   en: {
     title: ["Every release.", "Returns here."],
-    lede: "Halia, OUKA, Cherry, Tsubomi. One Algorab Store installs, updates and launches every model.",
+    lede: "Iliad, OUKA, Cherry, Tsubomi. One Algorab Store installs, updates and launches every model.",
     cta: "Download Algorab Store",
     chapter: "Chapter",
     open: "Explore",
@@ -44,7 +44,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   es: {
     title: ["Cada versión.", "Vuelve aquí."],
-    lede: "Halia, OUKA, Cherry, Tsubomi. Una sola Algorab Store instala, actualiza y abre cada modelo.",
+    lede: "Iliad, OUKA, Cherry, Tsubomi. Una sola Algorab Store instala, actualiza y abre cada modelo.",
     cta: "Descargar Algorab Store",
     chapter: "Capítulo",
     open: "Explorar",
@@ -54,7 +54,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   fr: {
     title: ["Chaque version.", "Revient ici."],
-    lede: "Halia, OUKA, Cherry, Tsubomi. Un seul Algorab Store installe, met à jour et lance chaque modèle.",
+    lede: "Iliad, OUKA, Cherry, Tsubomi. Un seul Algorab Store installe, met à jour et lance chaque modèle.",
     cta: "Télécharger Algorab Store",
     chapter: "Chapitre",
     open: "Découvrir",
@@ -64,7 +64,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   zh: {
     title: ["每一次发布，", "都回到这里。"],
-    lede: "Halia、OUKA、Cherry、Tsubomi。一个 Algorab Store 即可安装、更新并启动所有模型。",
+    lede: "Iliad、OUKA、Cherry、Tsubomi。一个 Algorab Store 即可安装、更新并启动所有模型。",
     cta: "下载 Algorab Store",
     chapter: "章节",
     open: "了解更多",
@@ -74,7 +74,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   ko: {
     title: ["모든 릴리스가", "이곳으로 돌아옵니다."],
-    lede: "Halia, OUKA, Cherry, Tsubomi. Algorab Store 하나로 모든 모델을 설치하고, 업데이트하고, 실행합니다.",
+    lede: "Iliad, OUKA, Cherry, Tsubomi. Algorab Store 하나로 모든 모델을 설치하고, 업데이트하고, 실행합니다.",
     cta: "Algorab Store 다운로드",
     chapter: "챕터",
     open: "자세히 보기",
@@ -84,7 +84,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   "pt-br": {
     title: ["Cada versão.", "Volta para cá."],
-    lede: "Halia, OUKA, Cherry, Tsubomi. Uma só Algorab Store instala, atualiza e abre cada modelo.",
+    lede: "Iliad, OUKA, Cherry, Tsubomi. Uma só Algorab Store instala, atualiza e abre cada modelo.",
     cta: "Baixar a Algorab Store",
     chapter: "Capítulo",
     open: "Explorar",
@@ -94,7 +94,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   it: {
     title: ["Ogni versione.", "Torna qui."],
-    lede: "Halia, OUKA, Cherry, Tsubomi. Un solo Algorab Store installa, aggiorna e avvia ogni modello.",
+    lede: "Iliad, OUKA, Cherry, Tsubomi. Un solo Algorab Store installa, aggiorna e avvia ogni modello.",
     cta: "Scarica Algorab Store",
     chapter: "Capitolo",
     open: "Scopri",
@@ -104,7 +104,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   ar: {
     title: ["كل إصدارة", "تعود إلى هنا."],
-    lede: "Halia وOUKA وCherry وTsubomi. متجر Algorab Store واحد يثبّت كل نموذج ويحدّثه ويشغّله.",
+    lede: "Iliad وOUKA وCherry وTsubomi. متجر Algorab Store واحد يثبّت كل نموذج ويحدّثه ويشغّله.",
     cta: "تنزيل Algorab Store",
     chapter: "الفصل",
     open: "استكشف",
@@ -114,7 +114,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   ru: {
     title: ["Каждый релиз", "возвращается сюда."],
-    lede: "Halia, OUKA, Cherry, Tsubomi. Один Algorab Store устанавливает, обновляет и запускает каждую модель.",
+    lede: "Iliad, OUKA, Cherry, Tsubomi. Один Algorab Store устанавливает, обновляет и запускает каждую модель.",
     cta: "Скачать Algorab Store",
     chapter: "Глава",
     open: "Подробнее",
@@ -124,7 +124,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   id: {
     title: ["Setiap rilis.", "Kembali ke sini."],
-    lede: "Halia, OUKA, Cherry, Tsubomi. Satu Algorab Store memasang, memperbarui, dan menjalankan setiap model.",
+    lede: "Iliad, OUKA, Cherry, Tsubomi. Satu Algorab Store memasang, memperbarui, dan menjalankan setiap model.",
     cta: "Unduh Algorab Store",
     chapter: "Bab",
     open: "Jelajahi",
@@ -134,7 +134,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   de: {
     title: ["Jede Version.", "Kehrt hierher zurück."],
-    lede: "Halia, OUKA, Cherry, Tsubomi. Ein einziger Algorab Store installiert, aktualisiert und startet jedes Modell.",
+    lede: "Iliad, OUKA, Cherry, Tsubomi. Ein einziger Algorab Store installiert, aktualisiert und startet jedes Modell.",
     cta: "Algorab Store herunterladen",
     chapter: "Kapitel",
     open: "Entdecken",
@@ -144,7 +144,7 @@ export const THEATRE: Record<Lang, Theatre> = {
   },
   tr: {
     title: ["Her sürüm", "buraya döner."],
-    lede: "Halia, OUKA, Cherry, Tsubomi. Tek bir Algorab Store her modeli kurar, günceller ve başlatır.",
+    lede: "Iliad, OUKA, Cherry, Tsubomi. Tek bir Algorab Store her modeli kurar, günceller ve başlatır.",
     cta: "Algorab Store'u indir",
     chapter: "Bölüm",
     open: "Keşfet",

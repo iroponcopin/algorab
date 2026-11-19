@@ -18,7 +18,7 @@ export function modelRank(id: string): number {
  */
 /** Each model's name as the copy spells it in every language. */
 export const MODEL_NAMES: Readonly<Record<string, string>> = {
-  halia: "Halia",
+  halia: "Iliad",
   ouka: "OUKA",
   cherry: "Cherry",
   tsubomi: "Tsubomi",

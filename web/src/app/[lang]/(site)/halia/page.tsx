@@ -7,7 +7,7 @@ import { langData } from "@/lib/wiki";
 export async function generateMetadata({ params }: LangParams): Promise<Metadata> {
   const lang = await langOf(params);
   const p = langData(lang).products.halia;
-  return pageMeta(lang, "halia/", p?.name ?? "Halia", p?.tagline ?? "");
+  return pageMeta(lang, "halia/", p?.name ?? "Iliad", p?.tagline ?? "");
 }
 
 export default async function Page({ params }: LangParams) {

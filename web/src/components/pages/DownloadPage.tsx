@@ -210,7 +210,7 @@ export function DownloadPage({ lang }: { lang: Lang }) {
       </header>
 
       {dl.halia ? (
-        <ModelDownload id="dl-halia" heading={`Halia ${d.products.halia?.jp ?? ""}`.trim()} line={d.products.halia?.tagline} aside={<Aside icon="halia">{mcLine}</Aside>}>
+        <ModelDownload id="dl-halia" heading={`Iliad ${d.products.halia?.jp ?? ""}`.trim()} line={d.products.halia?.tagline} aside={<Aside icon="halia">{mcLine}</Aside>}>
           <FileCard tag={`${d.chrome.version} ${dl.halia.version}`} file={dl.halia.file} cta={d.chrome.primaryCta} labels={labels} />
         </ModelDownload>
       ) : null}

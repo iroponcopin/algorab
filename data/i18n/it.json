@@ -75,7 +75,7 @@
    "changelog_balance_label": "Bilanciamento",
    "changelog_warnings_label": "Avvertenze",
    "changelog_limitations_label": "Cosa non era ancora implementato o verificato a questo punto",
-   "recipes_intro": "Ricette di creazione di ogni oggetto di OUKA, Cherry, Tsubomi e Halia, {count} in totale. Clicca su un oggetto per vedere la sua ricetta sulla stessa griglia 3×3 di un vero banco da lavoro. OUKA, Cherry, Tsubomi e Halia sono mod separate e ciascuna ha qui una scheda propria. ",
+   "recipes_intro": "Ricette di creazione di ogni oggetto di OUKA, Cherry, Tsubomi e Iliad, {count} in totale. Clicca su un oggetto per vedere la sua ricetta sulla stessa griglia 3×3 di un vero banco da lavoro. OUKA, Cherry, Tsubomi e Iliad sono mod separate e ciascuna ha qui una scheda propria. ",
    "guide_intro": "Qui trovi tutti i passaggi, dall'attivazione delle mod fino all'inizio del gioco. Se vuoi solo partecipare come giocatore, ti basta leggere il capitolo «Per i giocatori».",
    "audience_player": "Per i giocatori",
    "audience_admin": "Per gli amministratori del server",
@@ -121,8 +121,8 @@
    "aureum": "Aureum"
   },
   "page_descriptions": {
-   "changelog": "La cronologia degli aggiornamenti di OUKA, Cherry, Aureum, ASTRAEA, Tsubomi e Halia, e l'avviso della fine di Alpha. Scegli un marchio per vedere cosa è cambiato in ogni versione, dalla più recente.",
-   "recipes": "Una tabella di consultazione rapida con le ricette di creazione di ogni oggetto di OUKA, Cherry, Tsubomi e Halia. Con ricerca e filtro per categoria.",
+   "changelog": "La cronologia degli aggiornamenti di OUKA, Cherry, Aureum, ASTRAEA, Tsubomi e Iliad, e l'avviso della fine di Alpha. Scegli un marchio per vedere cosa è cambiato in ogni versione, dalla più recente.",
+   "recipes": "Una tabella di consultazione rapida con le ricette di creazione di ogni oggetto di OUKA, Cherry, Tsubomi e Iliad. Con ricerca e filtro per categoria.",
    "download": "Alpha non viene più distribuito. La sua ultima versione, V{pack_version}, disattiva Alpha; è qui con dimensione del file e SHA-256, accanto ai download di Algorab e Aureum.",
    "aureum": "Aureum: una mod di ottimizzazione leggera, indipendente e misurata onestamente. Non sostituisce Sodium: ottimizza il lato che Sodium non tocca."
   }
@@ -171,7 +171,7 @@
    "OUKA",
    "Cherry",
    "Tsubomi",
-   "Halia"
+   "Iliad"
   ],
   "items": {
    "minecraft:iron_ingot": "Lingotto di ferro",

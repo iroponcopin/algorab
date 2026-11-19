@@ -125,14 +125,14 @@ BRAND_CATEGORY = {
     "tsubomi": "Tsubomi",
     # Halia V1.1.0 (2026-10-12): the Halia Blade brought its first recipes. One bare jar, like Tsubomi. Its items
     # are drawn by code, so their pictures and readings come from data/halia_icons/ (see the Halia section).
-    "halia": "Halia",
+    "halia": "Iliad",
 }
 BRAND_TAB_ICON = {
     "Cherry": "cherry:apex1_rocket",
     "OUKA": "ouka:ouka_caster",
     "ASTRAEA": "astraea:celestial_blade",
     "Tsubomi": "tsubomi:teleport_elevator",
-    "Halia": "halia:halia_blade",
+    "Iliad": "halia:halia_blade",
 }
 # Manifest blocks that are published as a bare jar AND have no recipe at all, so they are deliberately not a
 # recipe source. This is a CLAIM, not an exemption: stage_published_brands() opens each such jar and counts its

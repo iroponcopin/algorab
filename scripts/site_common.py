@@ -269,7 +269,7 @@ NAV_LABEL_FALLBACK = {
     # does; the portal shows 蕾 itself, so the label never needs it.
     "tsubomi": "Tsubomi",
     # Halia (V1.0.0, 2026-10-11), the top line ("The Max Model").
-    "halia": "Halia",
+    "halia": "Iliad",
     "upcoming": "Coming next",
     # Same arrangement as "upcoming": the nav label falls back to English
     # until the bundles carry ui.nav.discord, while the page itself is fully

@@ -131,8 +131,10 @@ OUKA_ZIP_SUFFIX = f"+mc{MC_VERSION}.zip"
 ASTRAEA_ZIP_PREFIX = "ASTRAEA_MODs_v"
 ASTRAEA_ZIP_SUFFIX = f"+mc{MC_VERSION}.zip"
 TSUBOMI_JAR_PREFIX = "tsubomi-"
+HOKKU_JAR_PREFIX = "hokku-"
 TSUBOMI_JAR_SUFFIX = ".jar"
 TSUBOMI_MOD_ID = "tsubomi"
+HOKKU_MOD_ID = "hokku"
 HALIA_JAR_PREFIX = "halia-"
 HALIA_JAR_SUFFIX = ".jar"
 HALIA_MOD_ID = "halia"
@@ -674,24 +676,32 @@ def _astraea_block():
 
 
 def _tsubomi_block():
-    """The `tsubomi` block, or None when no Tsubomi jar has been published.
+    """The `tsubomi` block (Hokku from V3.5, formerly Tsubomi), or None when no jar has been published.
 
     Aureum's shape (a bare jar: no `jars`, no notes), in a function of its own so that
-    adding Tsubomi can never change a byte of another block (see the module docstring).
-    The mod id and the version are read out of the jar, never typed: the id must be
-    "tsubomi" and the version must equal the file name's, or an installed Tsubomi would
-    be matched or compared against the wrong thing. The same never-drop rule applies in
-    build().
+    updating this brand can never change a byte of another block (see the module docstring).
+    The manifest block key stays "tsubomi" because installed Store and Agents releases look up
+    this brand under that key, and match the installed jar via `mod_id` ("hokku" from V3.5,
+    with `provides: ["tsubomi"]` inside the jar). The mod id and version are read out of the
+    jar, never typed, and the version must equal the file name's. The same never-drop rule
+    applies in build().
     """
-    jars = sorted(p for p in DOWNLOAD_DIR.glob(f"{TSUBOMI_JAR_PREFIX}*{TSUBOMI_JAR_SUFFIX}") if p.is_file())
+    jars = sorted(
+        p for prefix in (HOKKU_JAR_PREFIX, TSUBOMI_JAR_PREFIX)
+        for p in DOWNLOAD_DIR.glob(f"{prefix}*{TSUBOMI_JAR_SUFFIX}") if p.is_file()
+    )
     if not jars:
         return None
     if len(jars) > 1:
         raise SystemExit(
-            f"ERROR: more than one Tsubomi jar in {DOWNLOAD_DIR} ({', '.join(j.name for j in jars)}). "
+            f"ERROR: more than one Hokku/Tsubomi jar in {DOWNLOAD_DIR} ({', '.join(j.name for j in jars)}). "
             f"The manifest describes the current build only - publish exactly one.")
     jpath = jars[0]
-    name_version = jpath.name[len(TSUBOMI_JAR_PREFIX):-len(TSUBOMI_JAR_SUFFIX)]
+    if jpath.name.startswith(HOKKU_JAR_PREFIX):
+        prefix, expected_mod_id = HOKKU_JAR_PREFIX, HOKKU_MOD_ID
+    else:
+        prefix, expected_mod_id = TSUBOMI_JAR_PREFIX, TSUBOMI_MOD_ID
+    name_version = jpath.name[len(prefix):-len(TSUBOMI_JAR_SUFFIX)]
     try:
         with zipfile.ZipFile(jpath) as zf:
             meta = json.loads(zf.read("fabric.mod.json").decode("utf-8"))
@@ -700,14 +710,18 @@ def _tsubomi_block():
             f"ERROR: could not read fabric.mod.json out of {jpath} ({exc}). The manifest's "
             f"tsubomi.mod_id and tsubomi.latest must come from the jar itself - do not type them.")
     mod_id, version = meta.get("id"), meta.get("version")
-    if mod_id != TSUBOMI_MOD_ID:
+    if mod_id != expected_mod_id:
         raise SystemExit(
-            f"ERROR: {jpath.name} declares the mod id {mod_id!r}, not {TSUBOMI_MOD_ID!r}. The Store and the "
+            f"ERROR: {jpath.name} declares the mod id {mod_id!r}, not {expected_mod_id!r}. The Store and the "
             f"Discord bot know the brand by that id, so an installed copy would never be matched.")
+    if expected_mod_id == HOKKU_MOD_ID and TSUBOMI_MOD_ID not in (meta.get("provides") or []):
+        raise SystemExit(
+            f"ERROR: {jpath.name} declares mod id 'hokku' without 'tsubomi' in provides. Existing Tsubomi "
+            f"worlds and Fabric dependency checks require provides: ['tsubomi'].")
     if version != name_version:
         raise SystemExit(
             f"ERROR: {jpath.name} is named for version {name_version}, but its fabric.mod.json declares "
-            f"{version!r}. An installed Tsubomi would compare itself against the wrong number.")
+            f"{version!r}. An installed Hokku/Tsubomi would compare itself against the wrong number.")
     return {
         "mod_id": mod_id,
         "latest": version,

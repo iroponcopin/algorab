@@ -15,7 +15,7 @@ export interface NextStoreLabels {
 }
 
 /** The sizes (MB) of the real files, so the simulated speed reads like the real thing. */
-const SIZE_MB: Record<string, number> = { ouka: 4.7, cherry: 3.7, aureum: 0.03, tsubomi: 1.9, halia: 10.2 };
+const SIZE_MB: Record<string, number> = { ouka: 4.7, cherry: 3.7, aureum: 0.03, tsubomi: 22.7, halia: 10.2 };
 const SECONDS = 3.6;
 
 function fill(t: string, ...v: (string | number)[]): string {

@@ -30,8 +30,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # 2026-11-19: a tab is named by its display name, which is not always the block id (owner 11-18: Halia is shown as
-# Iliad; the block id stays "halia"). Mirrors scripts/extract_recipes.py BRAND_CATEGORY for the names that differ.
-TAB_NAME = {"halia": "Iliad"}
+# Iliad; Hokku V3.5: Tsubomi is shown as Hokku; internal block ids stay "halia" and "tsubomi"). Mirrors
+# scripts/extract_recipes.py BRAND_CATEGORY for the names that differ.
+TAB_NAME = {"halia": "Iliad", "tsubomi": "Hokku"}
 
 
 def is_tab_of(cat_name, block):

@@ -37,9 +37,9 @@ _MODELS_TS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src
 with open(_MODELS_TS, encoding="utf-8") as _fh:
     _m = re.search(r"MODEL_ORDER[^=]*=\s*\[([^\]]*)\]", _fh.read())
 MODEL_ORDER_IDS = re.findall(r'"([a-z]+)"', _m.group(1)) if _m else []
-# 2026-11-19 (owner 11-18): Halia is shown as Iliad; a run that still spells Halia (history) keeps the same rank.
-_MODEL_SPELL = {"halia": "Iliad", "ouka": "OUKA", "cherry": "Cherry", "tsubomi": "Tsubomi", "noctua": "Noctua", "aureum": "Aureum", "astraea": "ASTRAEA"}
-_SPELL_ALIAS = {"Halia": "halia"}
+# 2026-11-19: Halia is shown as Iliad and Tsubomi as Hokku; history runs that still spell the old names keep the same rank.
+_MODEL_SPELL = {"halia": "Iliad", "ouka": "OUKA", "cherry": "Cherry", "tsubomi": "Hokku", "noctua": "Noctua", "aureum": "Aureum", "astraea": "ASTRAEA"}
+_SPELL_ALIAS = {"Halia": "halia", "Tsubomi": "tsubomi"}
 _NAME = "(?:" + "|".join(list(_MODEL_SPELL.values()) + list(_SPELL_ALIAS)) + ")"
 _RUN = re.compile(_NAME + r"(?:(?:[^\"A-Za-z]{1,3}|[^\"A-Za-z]{0,2}(?:and|und|et|e|y|ve|и|dan|和|与)[^\"A-Za-z]{1,2}|[^\"A-Za-z]{0,2}و)" + _NAME + "){2,}")
 
@@ -59,6 +59,7 @@ def in_model_order(text: str) -> str:
 
     out = _RUN.sub(fix, text)
     out = re.sub(r"Tsubomi(['’])(daki|nın)", lambda m: "Tsubomi" + m.group(1) + {"daki": "deki", "nın": "nin"}[m.group(2)], out)
+    out = re.sub(r"Hokku(['’])nın", r"Hokku\1nun", out)
     return out
 
 
@@ -367,6 +368,8 @@ def recipes_shared(legacy: dict) -> dict:
                     "stonecutter": "minecraft:stonecutter",
                     # Halia 1.3.0 (2026-10-18): the Vigil's false buckets are brewed.
                     "brewing": "minecraft:brewing_stand",
+                    # Hokku V3.5 (2026-11-19): Sculk Soul Harvester infusion recipes, stated in data/recipes_how.json.
+                    "soul_harvester": "hokku:sculk_soul_harvester",
                     **{st["id"]: st["item"] for st in m["stations"]}}
     # 2026-10-05: the "tsubomi" placeholder chip (a brewing station that never had a recipe, with the
     # message "Tsubomi has not been released") is gone: Tsubomi is released and has its own tab.
@@ -753,8 +756,8 @@ def build_lang(lang: str, ctx: dict) -> dict:
         cat_key = "store.category.archive" if pid == "alpha" else f"store.{pid}.category"
         p = {
             "id": pid,
-            "name": legp["name"] or SC.NAV_LABEL_FALLBACK.get(pid, pid),
-            "jp": legp.get("jp"),
+            "name": SC.NAV_LABEL_FALLBACK.get(pid, pid) if pid == "tsubomi" else (legp["name"] or SC.NAV_LABEL_FALLBACK.get(pid, pid)),
+            "jp": None if pid == "tsubomi" else legp.get("jp"),
             "availability": avail,
             "category": store.get(cat_key) or legp["category"],
             "badge": store.get(f"store.{pid}.badge"),

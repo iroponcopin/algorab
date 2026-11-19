@@ -265,9 +265,9 @@ NAV_LABEL_FALLBACK = {
     "ouka": "OUKA",
     # And for "ASTRAEA" (V1.0.0, 2026-09-30): the brand's own name, never translated.
     "astraea": "ASTRAEA",
-    # And "Tsubomi" (V1.0.0, 2026-09-30): the Latin name goes in the navigation, as OUKA's
-    # does; the portal shows 蕾 itself, so the label never needs it.
-    "tsubomi": "Tsubomi",
+    # Hokku (formerly Tsubomi; renamed in Hokku V3.5, 2026-11-19): internal id stays "tsubomi",
+    # display name is "Hokku" across every language.
+    "tsubomi": "Hokku",
     # Halia (V1.0.0, 2026-10-11), the top line ("The Max Model").
     "halia": "Iliad",
     "upcoming": "Coming next",

@@ -216,7 +216,7 @@ export function DownloadPage({ lang }: { lang: Lang }) {
       ) : null}
 
       {dl.tsubomi ? (
-        <ModelDownload id="dl-tsubomi" heading={`Tsubomi ${d.products.tsubomi?.jp ?? ""}`.trim()} line={d.products.tsubomi?.tagline} aside={<Aside icon="tsubomi">{mcLine}</Aside>}>
+        <ModelDownload id="dl-tsubomi" heading={`Hokku ${d.products.tsubomi?.jp ?? ""}`.trim()} line={d.products.tsubomi?.tagline} aside={<Aside icon="tsubomi">{mcLine}</Aside>}>
           <FileCard tag={`${d.chrome.version} ${dl.tsubomi.version}`} file={dl.tsubomi.file} cta={d.chrome.primaryCta} labels={labels} />
         </ModelDownload>
       ) : null}

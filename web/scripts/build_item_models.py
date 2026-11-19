@@ -713,7 +713,13 @@ def main():
     files = Files()
     sources = json.loads((ROOT / "data" / "recipes.json").read_text())["sources"]
     dl = ROOT / "downloads"
-    pick = {"ouka": f"OUKA_MODs_v{sources['ouka']}+mc26.3.zip", "cherry": f"Cherry_MODs_v{sources['cherry']}+mc26.3.zip", "tsubomi": f"tsubomi-{sources['tsubomi']}.jar", "halia": f"halia-{sources['halia']}.jar"}
+    manifest = json.loads((ROOT / "glimpse_manifest.json").read_text())
+    pick = {
+        "ouka": manifest["ouka"]["file_name"],
+        "cherry": manifest["cherry"]["file_name"],
+        "tsubomi": manifest["tsubomi"]["file_name"],
+        "halia": manifest["halia"]["file_name"],
+    }
     for name in pick.values():
         files.add_zip(zipfile.ZipFile(dl / name))
     files.add_zip(zipfile.ZipFile(CLIENT))

@@ -7,7 +7,7 @@ import { langData } from "@/lib/wiki";
 export async function generateMetadata({ params }: LangParams): Promise<Metadata> {
   const lang = await langOf(params);
   const p = langData(lang).products.tsubomi;
-  return pageMeta(lang, "tsubomi/", p?.name ?? "Tsubomi", p?.tagline ?? "");
+  return pageMeta(lang, "tsubomi/", p?.name ?? "Hokku", p?.tagline ?? "");
 }
 
 export default async function Page({ params }: LangParams) {

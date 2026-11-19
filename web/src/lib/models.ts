@@ -21,12 +21,21 @@ export const MODEL_NAMES: Readonly<Record<string, string>> = {
   halia: "Iliad",
   ouka: "OUKA",
   cherry: "Cherry",
-  tsubomi: "Tsubomi",
+  tsubomi: "Hokku",
   noctua: "Noctua",
   aureum: "Aureum",
   // ASTRAEA's service ended on 2026-10-16: it stays in the menu, last, with its service-ended label.
   astraea: "ASTRAEA",
 };
+
+/** Maps a mod's in-game namespace to its portal model id (Hokku V3.5 uses namespace "hokku" under model id "tsubomi"). */
+const NAMESPACE_TO_MODEL: Readonly<Record<string, string>> = {
+  hokku: "tsubomi",
+};
+
+export function modelIdOfNamespace(ns: string): string {
+  return NAMESPACE_TO_MODEL[ns] ?? ns;
+}
 
 /** The tier each model is sold as on the site (owner, 2026-11-02). The mod keeps its own name on its page. */
 export const MODEL_TIERS: Readonly<Record<string, string>> = { halia: "Ultra", ouka: "Max", cherry: "Pro", tsubomi: "Free" };

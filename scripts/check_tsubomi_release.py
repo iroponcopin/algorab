@@ -45,7 +45,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 LANGS = ["ja", "en", "es", "fr", "zh", "ko", "pt-br", "it", "ar", "ru", "id", "de", "tr"]
-JAR_RE = re.compile(r"^tsubomi-(\d+(?:\.\d+)*)\.jar$")
+# Hokku V3.5 (2026-11-19): renamed from Tsubomi -> Hokku. The manifest block key and feed path stay
+# "tsubomi" for installed Store/Agents/bot compatibility, while the shipped jar is hokku-<ver>.jar with
+# id "hokku", provides ["tsubomi"], and custom.hokku.brand.incompatible_with == ["Alpha"].
+JAR_RE = re.compile(r"^(hokku|tsubomi)-(\d+(?:\.\d+)*)\.jar$")
 SITE = "https://algorab.uk"
 ALLOWED_DEPENDS = {"fabricloader", "minecraft", "java", "fabric-api"}
 ALLOWED_SOFT = {"cherry"}          # recommends / suggests may name Cherry, and nothing else
@@ -81,16 +84,16 @@ def check(root: Path, tracked=git_tracked):
     """(problems, facts). A problem is a string; an empty list is green."""
     problems = []
     downloads = root / "downloads"
-    jars = sorted(p for p in downloads.glob("tsubomi-*.jar") if p.is_file())
+    jars = sorted(p for pat in ("hokku-*.jar", "tsubomi-*.jar") for p in downloads.glob(pat) if p.is_file())
     if not jars:
-        return ["no downloads/tsubomi-<ver>.jar: nothing to check (the gate cannot pass on absence)"], {}
+        return ["no downloads/hokku-<ver>.jar or tsubomi-<ver>.jar: nothing to check (the gate cannot pass on absence)"], {}
     if len(jars) > 1:
-        return [f"more than one Tsubomi jar in downloads/ ({', '.join(j.name for j in jars)}); the manifest describes one"], {}
+        return [f"more than one Hokku/Tsubomi jar in downloads/ ({', '.join(j.name for j in jars)}); the manifest describes one"], {}
     jpath = jars[0]
     m = JAR_RE.match(jpath.name)
     if not m:
-        return [f"downloads/{jpath.name} does not parse as tsubomi-<numeric.version>.jar"], {}
-    version = m.group(1)
+        return [f"downloads/{jpath.name} does not parse as (hokku|tsubomi)-<numeric.version>.jar"], {}
+    brand_id, version = m.group(1), m.group(2)
     rel = f"downloads/{jpath.name}"
     if not tracked(root, rel):
         problems.append(f"{rel} is not tracked by git: the live site would serve a 404 for it")
@@ -100,31 +103,33 @@ def check(root: Path, tracked=git_tracked):
             meta = json.loads(jar.read("fabric.mod.json").decode("utf-8"))
     except (zipfile.BadZipFile, KeyError, ValueError) as exc:
         return problems + [f"{jpath.name} cannot be read as a Fabric jar ({exc})"], {}
-    if meta.get("id") != "tsubomi":
-        problems.append(f"{jpath.name} declares the mod id {meta.get('id')!r}, not 'tsubomi'")
+    if meta.get("id") != brand_id:
+        problems.append(f"{jpath.name} declares the mod id {meta.get('id')!r}, not {brand_id!r}")
+    if brand_id == "hokku" and "tsubomi" not in (meta.get("provides") or []):
+        problems.append(f"{jpath.name} declares mod id 'hokku' without 'tsubomi' in provides")
     if meta.get("version") != version:
         problems.append(f"{jpath.name} is named for {version}, but its fabric.mod.json declares {meta.get('version')!r}")
     extra = sorted(set(meta.get("depends") or {}) - ALLOWED_DEPENDS)
     if extra:
-        problems.append(f"the tsubomi jar depends on {extra}: it may depend only on {sorted(ALLOWED_DEPENDS)}")
+        problems.append(f"the {brand_id} jar depends on {extra}: it may depend only on {sorted(ALLOWED_DEPENDS)}")
     for field in ("recommends", "suggests"):
         soft = sorted(set(meta.get(field) or {}) - ALLOWED_SOFT)
         if soft:
-            problems.append(f"the tsubomi jar names {soft} under {field}: only {sorted(ALLOWED_SOFT)} may appear there")
+            problems.append(f"the {brand_id} jar names {soft} under {field}: only {sorted(ALLOWED_SOFT)} may appear there")
     for field in ("breaks", "conflicts"):
         wrong = sorted(k for k in (meta.get(field) or {}) if not k.startswith(ALPHA_PREFIX))
         if wrong:
-            problems.append(f"the tsubomi jar declares {field} against {wrong}: only Alpha's modules ({ALPHA_PREFIX}*) may be refused")
-    declared = (((meta.get("custom") or {}).get("tsubomi") or {}).get("brand") or {}).get("incompatible_with")
+            problems.append(f"the {brand_id} jar declares {field} against {wrong}: only Alpha's modules ({ALPHA_PREFIX}*) may be refused")
+    declared = (((meta.get("custom") or {}).get(brand_id) or {}).get("brand") or {}).get("incompatible_with")
     if declared != INCOMPATIBLE_WITH:
-        problems.append(f"the tsubomi jar declares custom.tsubomi.brand.incompatible_with = {declared!r}, "
-                        f"not {INCOMPATIBLE_WITH!r} (Tsubomi is not compatible with Alpha; the Store reads this)")
+        problems.append(f"the {brand_id} jar declares custom.{brand_id}.brand.incompatible_with = {declared!r}, "
+                        f"not {INCOMPATIBLE_WITH!r} (Hokku/Tsubomi is not compatible with Alpha; the Store reads this)")
     try:
         block = json.loads((root / "glimpse_manifest.json").read_text(encoding="utf-8")).get("tsubomi")
     except (OSError, ValueError) as exc:
         return problems + [f"glimpse_manifest.json cannot be read ({exc})"], {}
     expected = {
-        "mod_id": "tsubomi",
+        "mod_id": brand_id,
         "latest": version,
         "download_url": f"{SITE}/downloads/{jpath.name}",
         "file_name": jpath.name,
@@ -143,7 +148,7 @@ def check(root: Path, tracked=git_tracked):
         brands = json.loads((root / "changelog_feed" / "brands.json").read_text(encoding="utf-8"))["brands"]
         entry = [b for b in brands if b.get("id") == "tsubomi"]
         if not entry or entry[0].get("feed") != "changelog_feed/tsubomi/{lang}.json":
-            problems.append("changelog_feed/brands.json does not list Tsubomi with changelog_feed/tsubomi/{lang}.json")
+            problems.append("changelog_feed/brands.json does not list Hokku/Tsubomi with changelog_feed/tsubomi/{lang}.json")
     except (OSError, ValueError, KeyError) as exc:
         problems.append(f"changelog_feed/brands.json cannot be read ({exc})")
     for lang in LANGS:
@@ -160,7 +165,7 @@ def check(root: Path, tracked=git_tracked):
             if three:
                 hint = f" or V{three.group(1)}.{three.group(2)} {three.group(3)}"
             problems.append(f"changelog_feed/tsubomi/{lang}.json leads with {newest!r}, but the site publishes V{version}{hint}")
-    return problems, {"jar": jpath.name, "version": version, "size": len(data), "sha256": expected["sha256"]}
+    return problems, {"jar": jpath.name, "brand_id": brand_id, "version": version, "size": len(data), "sha256": expected["sha256"]}
 
 
 # --- self-test ----------------------------------------------------------------------------------
@@ -174,11 +179,13 @@ def self_test() -> int:
         for p in base:
             print("  " + p)
         return 2
-    jname = sorted((ROOT / "downloads").glob("tsubomi-*.jar"))[0].name
+    jname = sorted(p for pat in ("hokku-*.jar", "tsubomi-*.jar") for p in (ROOT / "downloads").glob(pat) if p.is_file())[0].name
+    jm = JAR_RE.match(jname)
+    brand_id = jm.group(1)
     # The controls and plants below are derived from the jar under test, never from a build number written here:
     # the notation "V<a>.<b> <c>" and the dotted "V<a>.<b>.<c>" must stay green; the same notation with <c> minus one
     # must be red; the format variants are red for their format alone (on the jar's own numbers).
-    three = THREE_PART_RE.fullmatch(JAR_RE.match(jname).group(1))
+    three = THREE_PART_RE.fullmatch(jm.group(2))
     if three is None:
         print(f"SELF-TEST CANNOT JUDGE: {jname} is not a three-part version a.b.c, so the notation rule has no controls")
         return 2
@@ -230,7 +237,7 @@ def self_test() -> int:
         p.write_text(json.dumps(f, ensure_ascii=False), encoding="utf-8")
 
     def brand(meta, **kv):
-        meta.setdefault("custom", {}).setdefault("tsubomi", {}).setdefault("brand", {}).update(kv)
+        meta.setdefault("custom", {}).setdefault(brand_id, {}).setdefault("brand", {}).update(kv)
 
     def second_jar(dst: Path):
         shutil.copy2(dst / "downloads" / jname, dst / "downloads" / "tsubomi-0.9.0.jar")
@@ -240,28 +247,30 @@ def self_test() -> int:
         ("clean copy", lambda d: None, True, False),
         ("Cherry as a suggestion is allowed (control)", lambda d: rewrite_jar(d, lambda m: m.update(suggests={"cherry": "*"})), True, False),
         ("the jar is untracked (the live 404)", lambda d: None, False, True),
-        ("a second Tsubomi jar in downloads/", second_jar, True, True),
+        ("a second Hokku/Tsubomi jar in downloads/", second_jar, True, True),
         ("the manifest has no tsubomi block", lambda d: edit_manifest(d, lambda m: m.pop("tsubomi")), True, True),
         ("the manifest's sha256 is stale", lambda d: edit_manifest(d, lambda m: m["tsubomi"].update(sha256="0" * 64)), True, True),
         ("the manifest's block carries 'jars' (a package's shape)",
-         lambda d: edit_manifest(d, lambda m: m["tsubomi"].update(jars={"tsubomi": {"version": "1.0.0"}})), True, True),
+         lambda d: edit_manifest(d, lambda m: m["tsubomi"].update(jars={brand_id: {"version": "1.0.0"}})), True, True),
         ("the jar is replaced after the manifest was built",
          lambda d: rewrite_jar(d, extra_inner={"extra.txt": b"x"}, sync_manifest=False), True, True),
-        ("the jar declares another mod id", lambda d: rewrite_jar(d, lambda m: m.update(id="tsubomi_x")), True, True),
+        ("the jar declares another mod id", lambda d: rewrite_jar(d, lambda m: m.update(id="hokku_x")), True, True),
+        *([("the hokku jar drops provides: ['tsubomi']",
+            lambda d: rewrite_jar(d, lambda m: m.pop("provides", None)), True, True)] if brand_id == "hokku" else []),
         ("the jar's version differs from its name", lambda d: rewrite_jar(d, lambda m: m.update(version="0.9.9")), True, True),
         ("Cherry as a hard dependency", lambda d: rewrite_jar(d, lambda m: m["depends"].update(cherry="*")), True, True),
         ("an Alpha module as a dependency", lambda d: rewrite_jar(d, lambda m: m["depends"].update(sorakaze_guns="*")), True, True),
         ("another mod suggested", lambda d: rewrite_jar(d, lambda m: m.update(suggests={"ouka": "*"})), True, True),
         ("breaks names Cherry (a false incompatibility)",
          lambda d: rewrite_jar(d, lambda m: m.setdefault("breaks", {}).update(cherry="*")), True, True),
-        ("incompatible_with is missing", lambda d: rewrite_jar(d, lambda m: m["custom"]["tsubomi"]["brand"].pop("incompatible_with")), True, True),
+        ("incompatible_with is missing", lambda d: rewrite_jar(d, lambda m: m["custom"][brand_id]["brand"].pop("incompatible_with")), True, True),
         ("incompatible_with names the wrong brand", lambda d: rewrite_jar(d, lambda m: brand(m, incompatible_with=["Cherry"])), True, True),
         ("one language's feed lags the release", lambda d: edit_feed(d, "ar", "V0.9.0"), True, True),
         (f"the owner's notation {notation} in one feed (control)", lambda d: edit_feed(d, "ja", notation), True, False),
         (f"the dotted form {dotted} in one feed (control)", lambda d: edit_feed(d, "de", dotted), True, False),
         (f"the zero-padded build {padded} (control)", lambda d: edit_feed(d, "it", f"V{part_a}.{part_b} {padded}"), True, False),
         (f"a wrong build, zero-padded: V{part_a}.{part_b} {padded_below}", lambda d: edit_feed(d, "en", f"V{part_a}.{part_b} {padded_below}"), True, True),
-        (f"a build over-padded to five digits: V{part_a}.{part_b} {over_padded}", lambda d: edit_feed(d, "es", f"V{part_a}.{part_b} {over_padded}"), True, True),
+        (f"a build over-padded: V{part_a}.{part_b} {over_padded}", lambda d: edit_feed(d, "es", f"V{part_a}.{part_b} {over_padded}"), True, True),
         (f"a wrong build in the new notation: {below}", lambda d: edit_feed(d, "en", below), True, True),
         (f"the new notation with two spaces: V{part_a}.{part_b}  {part_c}", lambda d: edit_feed(d, "fr", f"V{part_a}.{part_b}  {part_c}"), True, True),
         (f"the new notation with a lowercase v: v{part_a}.{part_b} {part_c}", lambda d: edit_feed(d, "ko", f"v{part_a}.{part_b} {part_c}"), True, True),

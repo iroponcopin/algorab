@@ -1,3 +1,4 @@
+import { modelIdOfNamespace } from "@/lib/models";
 import type { RecipeShared } from "@/lib/wiki-types";
 
 /**
@@ -90,7 +91,7 @@ export function modelOfCat(data: { recipes: readonly { cat: number; result: stri
   let best = "";
   let n = 0;
   for (const [ns, c] of counts) if (c > n) [best, n] = [ns, c];
-  return best;
+  return modelIdOfNamespace(best);
 }
 
 /** `rank` is the chapter's place in the owner's order of the models. */

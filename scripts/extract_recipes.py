@@ -120,9 +120,9 @@ BRAND_CATEGORY = {
     "ouka": "OUKA",
     # ASTRAEA V1.0.0 (2026-09-30): its own product, its own tab, like Cherry and OUKA.
     "astraea": "ASTRAEA",
-    # Tsubomi V1.0.1 (2026-10-05): its own product, its own tab. Unlike the three above it is published as ONE
-    # bare jar (downloads/tsubomi-<v>.jar), not a zip of jars - see stage_published_brands().
-    "tsubomi": "Tsubomi",
+    # Hokku (formerly Tsubomi; renamed in Hokku V3.5, 2026-11-19): its own product, its own tab. Published as ONE
+    # bare jar (downloads/hokku-<v>.jar), not a zip of jars - see stage_published_brands().
+    "tsubomi": "Hokku",
     # Halia V1.1.0 (2026-10-12): the Halia Blade brought its first recipes. One bare jar, like Tsubomi. Its items
     # are drawn by code, so their pictures and readings come from data/halia_icons/ (see the Halia section).
     "halia": "Iliad",
@@ -131,7 +131,7 @@ BRAND_TAB_ICON = {
     "Cherry": "cherry:apex1_rocket",
     "OUKA": "ouka:ouka_caster",
     "ASTRAEA": "astraea:celestial_blade",
-    "Tsubomi": "tsubomi:teleport_elevator",
+    "Hokku": "hokku:teleport_elevator",
     "Iliad": "halia:halia_blade",
 }
 # Manifest blocks that are published as a bare jar AND have no recipe at all, so they are deliberately not a
@@ -2796,20 +2796,52 @@ INTENDED_REMOVALS = {
 }
 
 
-def icon_problems(old_items, new_items, allowed=None, removals=None):
+# Mod namespace and item renames (2026-11-19, Hokku V3.5: tsubomi -> hokku). Every item under the old id must
+# reappear under the new id with the exact same texture key (still checked byte-for-byte below).
+RENAMED_NAMESPACES = {
+    "tsubomi": "hokku",
+}
+RENAMED_ITEMS = {
+    "tsubomi:tsubomi_totem_base": "hokku:hokku_totem_base",
+}
+
+
+def _remap_item_namespace(item, renamed_ns, renamed_items=None):
+    if renamed_items and item in renamed_items:
+        return renamed_items[item]
+    if not renamed_ns:
+        return None
+    prefix = "#" if item.startswith("#") else ""
+    body = item[len(prefix):]
+    if ":" not in body:
+        return None
+    ns, rest = body.split(":", 1)
+    if ns in renamed_ns:
+        return f"{prefix}{renamed_ns[ns]}:{rest}"
+    return None
+
+
+def icon_problems(old_items, new_items, allowed=None, removals=None, renamed_ns=None, renamed_items=None):
     """Compare the items of the published sheet with the new one. Returns (problems, keys whose old PNG must still be byte-identical)."""
     allowed = INTENDED_ICON_CHANGES if allowed is None else allowed
     removals = INTENDED_REMOVALS if removals is None else removals
+    renamed_ns = RENAMED_NAMESPACES if renamed_ns is None else renamed_ns
+    renamed_items = RENAMED_ITEMS if renamed_items is None else renamed_items
     problems, keep = [], []
     for item, entry in old_items.items():
-        if item not in new_items and item in removals:
+        target = item
+        if target not in new_items:
+            remapped = _remap_item_namespace(item, renamed_ns, renamed_items)
+            if remapped and remapped in new_items:
+                target = remapped
+        if target not in new_items and item in removals:
             continue
-        if item not in new_items:
+        if target not in new_items:
             problems.append(f"{item} was on the published sheet and is gone")
             continue
-        key_old, key_new = entry[2], new_items[item][2]
+        key_old, key_new = entry[2], new_items[target][2]
         if key_old != key_new:
-            grant = allowed.get(item)
+            grant = allowed.get(item) or allowed.get(target)
             if not (grant and grant[0] == key_old and grant[1] == key_new):
                 problems.append(f"{item}: texture {key_old} became {key_new}")
                 continue
@@ -2832,21 +2864,29 @@ def icon_guard_self_test():
     ]
     bad = []
     for name, new_items, expect_green in cases:
-        problems, _keep = icon_problems(old, new_items, grant, {})
+        problems, _keep = icon_problems(old, new_items, grant, {}, {})
         if bool(problems) == expect_green:
             bad.append(name)
     # An item named in the removals table may vanish; one that is not named still reddens, and a named one that
     # stays on the sheet is not "removed": its texture is still compared.
     only_a = {"ouka:a": ["a", "A", "t269"], "ouka:c": ["c", "C", None]}
-    if icon_problems(old, only_a, grant, {"ouka:b": "test"})[0]:
+    if icon_problems(old, only_a, grant, {"ouka:b": "test"}, {})[0]:
         bad.append("a named removal must pass")
-    if not icon_problems(old, only_a, grant, {"ouka:c": "test"})[0]:
+    if not icon_problems(old, only_a, grant, {"ouka:c": "test"}, {})[0]:
         bad.append("an unnamed vanished item must still redden")
     kept = {"ouka:a": ["a", "A", "t269"], "ouka:b": ["b", "B", "t6"], "ouka:c": ["c", "C", None]}
-    if not icon_problems(old, kept, grant, {"ouka:b": "test"})[0]:
+    if not icon_problems(old, kept, grant, {"ouka:b": "test"}, {})[0]:
         bad.append("a named item that stays with a changed picture must still redden")
+    # Namespace rename: same texture under new namespace passes, changed texture or vanished item still reddens.
+    old_ns = {"tsubomi:x": ["x", "X", "t9"], "#tsubomi:tag": ["t", "T", "t10"]}
+    if icon_problems(old_ns, {"hokku:x": ["x", "X", "t9"], "#hokku:tag": ["t", "T", "t10"]}, {}, {}, {"tsubomi": "hokku"})[0]:
+        bad.append("a namespace-renamed item keeping its texture must pass")
+    if not icon_problems(old_ns, {"hokku:x": ["x", "X", "t99"], "#hokku:tag": ["t", "T", "t10"]}, {}, {}, {"tsubomi": "hokku"})[0]:
+        bad.append("a namespace-renamed item with a changed texture must redden")
+    if not icon_problems(old_ns, {"#hokku:tag": ["t", "T", "t10"]}, {}, {}, {"tsubomi": "hokku"})[0]:
+        bad.append("a namespace-renamed item that vanished must redden")
     # 表が空なら、ふつうの見張りと同じ(許しは何も効かない)
-    problems, _keep = icon_problems(old, {"ouka:a": ["a", "A", "t269"], "ouka:b": ["b", "B", "t5"], "ouka:c": ["c", "C", None]}, {})
+    problems, _keep = icon_problems(old, {"ouka:a": ["a", "A", "t269"], "ouka:b": ["b", "B", "t5"], "ouka:c": ["c", "C", None]}, {}, {}, {})
     if not problems:
         bad.append("an empty allowance table must not pass the changed icon")
     return bad
@@ -3621,8 +3661,9 @@ class ItemRegistry:
                 en = " or ".join(mem_en)
             b64 = vanilla_texture_b64(vanilla_zip(), members[0].split(":", 1)[1])
         else:
+            lookup_ns = RENAMED_NAMESPACES.get(ns, ns)
             for mod_dir, modid, _cat in MODS:
-                if modid == ns:
+                if modid == lookup_ns:
                     lang_key = (halia_index().get("items") or {}).get(item_id, {}).get("lang") if modid == "halia" else None
                     if lang_key:
                         ja = self.lang_by_modid[modid].get(lang_key)
@@ -3886,6 +3927,30 @@ def parse_cooking_recipe(path, reg):
     result = data["result"]
     res_id = result["id"] if isinstance(result, dict) else result
     return res_id, ja_fmt % (ing_ja, secs_txt), en_fmt % (ing_en, secs_txt), station, [ing], station_item
+
+
+def parse_soul_harvesting_recipe(path, reg):
+    """A `hokku:sculk_soul_harvesting` recipe -> (result id, count, ja, en, ingredient ids, station item), else None.
+
+    Hokku V3.5 (2026-11-19) introduces the Soul Harvester (`hokku:sculk_soul_harvester`), which infuses an input item
+    using souls harvested from mobs killed nearby (`healthRequired` total mob HP). The sentence is assembled directly
+    from the recipe JSON fields."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data.get("type") != "hokku:sculk_soul_harvesting":
+        return None
+    ing_ids = [ingredient_id(i) for i in data.get("ingredients") or []]
+    ing_jas, ing_ens = [], []
+    for ing in ing_ids:
+        ja, en, _t = reg.register(ing)
+        ing_jas.append(ja)
+        ing_ens.append(en)
+    out = data["output"]
+    res_id = out["id"] if isinstance(out, dict) else out
+    count = int(out.get("count", 1)) if isinstance(out, dict) else 1
+    health = int(data.get("healthRequired", 0))
+    how_ja = "魂の収穫機で、%sに魂(体力合計 %d)を宿す(作業台では作れない)" % ("・".join(ing_jas), health)
+    how_en = "Infuse %s in a Soul Harvester (%d total mob health; it cannot be made at a workbench)" % (", ".join(ing_ens), health)
+    return res_id, count, how_ja, how_en, ing_ids, "hokku:sculk_soul_harvester"
 
 
 def cat_tokens(cat):
@@ -7707,9 +7772,13 @@ def _main_body():
                         tokens.append(cen)
                     cards.append({"cat": cat, "id": cut_id, "cells": None, "count": cut_count,
                                   "how": cut_how, "s": search_blob(tokens)})
-                    if cut_id in HALIA_HOW:
-                        raise SystemExit(f"ERROR: two how-to cards are keyed {cut_id!r}; one would show the other's text.")
-                    HALIA_HOW[cut_id] = {"station": "stonecutter", "inputs": cut_ids, "ja": cut_how, "en": cut_how_en}
+                    key, n = cut_id, 1
+                    while key in HALIA_HOW:
+                        if HALIA_HOW[key]["ja"] == cut_how:
+                            raise SystemExit(f"ERROR: two how-to cards for {cut_id!r} say the same thing: {cut_how}")
+                        n += 1
+                        key = f"{cut_id}@{n}"
+                    HALIA_HOW[key] = {"station": "stonecutter", "inputs": cut_ids, "ja": cut_how, "en": cut_how_en}
                     cards_per_mod[mod_dir] = cards_per_mod.get(mod_dir, 0) + 1
                 elif (cook := parse_cooking_recipe(path, reg)) is not None:
                     # かまど・溶鉱炉: 3x3 ではないので「入手方法」カード。同じ品に両方あるので、キーは <id>, <id>@2 と続ける
@@ -7734,6 +7803,28 @@ def _main_body():
                         n += 1
                         key = f"{ck_id}@{n}"
                     HALIA_HOW[key] = {"station": ck_station, "inputs": ck_ids, "ja": ck_how, "en": ck_how_en}
+                    cards_per_mod[mod_dir] = cards_per_mod.get(mod_dir, 0) + 1
+                elif (sh := parse_soul_harvesting_recipe(path, reg)) is not None:
+                    sh_id, sh_count, sh_how, sh_how_en, sh_ids, sh_item = sh
+                    ja, en, _tex = reg.register(sh_id)
+                    cat = category_of(mod_cat, sh_id.split(":", 1)[1])
+                    _, unknown = reading_of(ja)
+                    if unknown:
+                        no_yomi.append((cat, ja, "".join(sorted(set(unknown)))))
+                    tokens = cat_tokens(cat) + item_tokens(sh_id, ja) + [en, sh_how]
+                    for cid in sh_ids + [sh_item]:
+                        cja, cen, _ = reg.register(cid)
+                        tokens += item_tokens(cid, cja)
+                        tokens.append(cen)
+                    cards.append({"cat": cat, "id": sh_id, "cells": None, "count": sh_count,
+                                  "how": sh_how, "s": search_blob(tokens)})
+                    key, n = sh_id, 1
+                    while key in HALIA_HOW:
+                        if HALIA_HOW[key]["ja"] == sh_how:
+                            raise SystemExit(f"ERROR: two how-to cards for {sh_id!r} say the same thing: {sh_how}")
+                        n += 1
+                        key = f"{sh_id}@{n}"
+                    HALIA_HOW[key] = {"station": "soul_harvester", "inputs": sh_ids, "ja": sh_how, "en": sh_how_en}
                     cards_per_mod[mod_dir] = cards_per_mod.get(mod_dir, 0) + 1
                 elif mod_dir in EVERY_RECIPE_SHOWN:
                     raise SystemExit(

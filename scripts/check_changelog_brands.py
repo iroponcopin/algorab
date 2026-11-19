@@ -88,8 +88,8 @@ def _json_or_none(path):
 
 
 def brand_name_fails():
-    """[B] 2026-11-19 (owner 11-18: 「Haliaは無くなります。なので新しい名称を使います。」): the brand Halia is shown as
-    Iliad everywhere a person reads it. Checked: the brand line's display name (changelog_feed/brands.json), the
+    """[B] 2026-11-19: the renamed brands (Halia -> Iliad, Tsubomi -> Hokku) are shown under their new display names
+    everywhere a person reads them. Checked: the brand line's display name (changelog_feed/brands.json), the
     recipes category in the data and in every language, and the copy that names the brands (recipes intro and
     the changelog and recipes page descriptions) in every language. Past release titles are history and are not
     checked; the in-game item names are the mod's own and are not checked either."""
@@ -98,28 +98,36 @@ def brand_name_fails():
     names = {b["id"]: b["name"] for b in index["brands"]}
     if names.get("halia") != "Iliad":
         fails.append(f"changelog_feed/brands.json: the halia display name is {names.get('halia')!r}, not 'Iliad'")
+    if names.get("tsubomi") != "Hokku":
+        fails.append(f"changelog_feed/brands.json: the tsubomi display name is {names.get('tsubomi')!r}, not 'Hokku'")
     cats = json.loads((ROOT / "data" / "recipes.json").read_text(encoding="utf-8"))["cats"]
     if not any(c[1].startswith("halia:") and c[0] == "Iliad" for c in cats):
         fails.append("data/recipes.json: the halia recipes category is not labelled 'Iliad'")
+    if not any(c[1].startswith("hokku:") and c[0] == "Hokku" for c in cats):
+        fails.append("data/recipes.json: the tsubomi/hokku recipes category is not labelled 'Hokku'")
+    renamed = (("Halia", "Iliad"), ("Tsubomi", "Hokku"))
     for lang in LANG_CODES:
         i18n = ROOT / "data" / "i18n" / f"{lang}.json"
         if i18n.exists():
-            ui = json.loads(i18n.read_text(encoding="utf-8"))["ui"]
-            for where, text in (("common.recipes_intro", ui["common"]["recipes_intro"]),
-                                ("page_descriptions.changelog", ui["page_descriptions"]["changelog"]),
-                                ("page_descriptions.recipes", ui["page_descriptions"]["recipes"])):
-                if "Halia" in text:
-                    fails.append(f"data/i18n/{lang}.json ui.{where} still says 'Halia' (must be 'Iliad')")
-            cn = (json.loads(i18n.read_text(encoding="utf-8")).get("recipes") or {}).get("cat_names")
-            if cn is not None and "Halia" in cn:
-                fails.append(f"data/i18n/{lang}.json recipes.cat_names still says 'Halia' (must be 'Iliad')")
+            bundle = json.loads(i18n.read_text(encoding="utf-8"))
+            ui = bundle["ui"]
+            for old_name, new_name in renamed:
+                for where, text in (("common.recipes_intro", ui["common"]["recipes_intro"]),
+                                    ("page_descriptions.changelog", ui["page_descriptions"]["changelog"]),
+                                    ("page_descriptions.recipes", ui["page_descriptions"]["recipes"])):
+                    if old_name in text:
+                        fails.append(f"data/i18n/{lang}.json ui.{where} still says {old_name!r} (must be {new_name!r})")
+                cn = (bundle.get("recipes") or {}).get("cat_names")
+                if cn is not None and old_name in cn:
+                    fails.append(f"data/i18n/{lang}.json recipes.cat_names still says {old_name!r} (must be {new_name!r})")
         rec = ROOT / "data" / ("recipes.json" if lang == "ja" else f"recipes.{lang}.json")
         if rec.exists():
             cat_names = json.loads(rec.read_text(encoding="utf-8")).get("cat_names")
-            if cat_names is not None and "Halia" in cat_names:
-                fails.append(f"{rec.relative_to(ROOT)} cat_names still says 'Halia' (must be 'Iliad')")
+            for old_name, new_name in renamed:
+                if cat_names is not None and old_name in cat_names:
+                    fails.append(f"{rec.relative_to(ROOT)} cat_names still says {old_name!r} (must be {new_name!r})")
     # 2026-11-19 (verifier): the portal's own copy that lists the models (the Algorab Store line on the home card
-    # and the launcher page's description, the changelog description) said Halia and "Algorab Agent" in 13 languages.
+    # and the launcher page's description, the changelog description) must use the current names in all 13 languages.
     site_copy = ROOT / "web" / "scripts" / "site_copy.py"
     if site_copy.exists():
         scope = {}
@@ -127,8 +135,9 @@ def brand_name_fails():
         for lang, copy_ in sorted(scope["SITE_COPY"].items()):
             for key in ("store", "changelog"):
                 text = copy_.get(key, "")
-                if "Halia" in text:
-                    fails.append(f"web/scripts/site_copy.py {lang}.{key} still says 'Halia' (must be 'Iliad')")
+                for old_name, new_name in renamed:
+                    if old_name in text:
+                        fails.append(f"web/scripts/site_copy.py {lang}.{key} still says {old_name!r} (must be {new_name!r})")
                 if re.search(r"Algorab Agent(?!s)", text):
                     fails.append(f"web/scripts/site_copy.py {lang}.{key} says 'Algorab Agent' (the name is 'Algorab Agents')")
     return fails

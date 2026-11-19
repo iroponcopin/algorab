@@ -29,6 +29,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
+# 2026-11-19: a tab is named by its display name, which is not always the block id (owner 11-18: Halia is shown as
+# Iliad; the block id stays "halia"). Mirrors scripts/extract_recipes.py BRAND_CATEGORY for the names that differ.
+TAB_NAME = {"halia": "Iliad"}
+
+
+def is_tab_of(cat_name, block):
+    """True when a sheet tab (recipes.json cats[i][0]) is the tab of this manifest block."""
+    name = str(cat_name).lower()
+    return name == block or name == TAB_NAME.get(block, block).lower()
+
 
 # The set-aside rules, mirrored from scripts/extract_recipes.py (halia_cards). Each kind is counted and printed, never
 # silently absent. Returns None for a recipe that owes the sheet a card.
@@ -243,7 +253,7 @@ def main():
     for block in sorted(retired_blocks & set(manifest)):
         if block in sources:
             bad.append(f"{block}: retired (data/retirement.json), but the sheet still names it as a source")
-        tabs = [i for i, c in enumerate(recipes.get("cats", [])) if str(c[0]).lower() == block]
+        tabs = [i for i, c in enumerate(recipes.get("cats", [])) if is_tab_of(c[0], block)]
         if tabs:
             bad.append(f"{block}: retired, but the sheet still has its tab {[recipes['cats'][i][0] for i in tabs]}")
         cards = [c for c in recipes.get("cards", []) if c[0] in tabs or str(c[1]).split(":", 1)[0] == block]
@@ -258,7 +268,7 @@ def main():
     # jar and from the sheet, so a sheet that recorded the right version but lost the revived Teleport Elevator
     # (or any other recipe) goes RED.
     for block, (results, n_json) in sorted(bare_checked.items()):
-        tab = [i for i, c in enumerate(recipes.get("cats", [])) if str(c[0]).lower() == block]
+        tab = [i for i, c in enumerate(recipes.get("cats", [])) if is_tab_of(c[0], block)]
         if len(tab) != 1:
             bad.append(f"{block}: its jar carries {n_json} recipe json but the sheet has no single tab named "
                        f"{block!r} (tabs: {[c[0] for c in recipes.get('cats', [])]})")

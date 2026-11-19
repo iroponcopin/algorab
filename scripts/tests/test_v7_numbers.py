@@ -65,6 +65,65 @@ class BetaV7Numbers(unittest.TestCase):
         self.assertEqual(errors, [])
 
 
+class BetaReleaseDate(unittest.TestCase):
+    """2026-11-19: the changelog date of a V7 release is the day the beta manifest first offers it (build, write mode)."""
+
+    def setUp(self):
+        import json
+        self.json = json
+        self._tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self._tmp.name)
+        (self.root / "downloads" / "beta").mkdir(parents=True)
+        (self.root / "downloads" / "beta" / "algorab-agents-7.0.1.zip").write_bytes(AGENT_ZIP)
+        (self.root / "downloads" / "beta" / "algorab-7.0.1-windows.msi").write_bytes(WIN_MSI)
+        (self.root / "beta").mkdir()
+        (self.root / "data").mkdir()
+        self.stable_path = self.root / "glimpse_manifest.json"
+        self.stable_path.write_text(json.dumps(stable_manifest()), encoding="utf-8")
+        (self.root / "beta" / "overrides.json").write_text(json.dumps({
+            "agent": agent_block("algorab-agents-7.0.1.zip", "7.0.1", AGENT_ZIP),
+            "corvus6_windows": windows_block("algorab-7.0.1-windows.msi", "7.0.1", WIN_MSI), "notes": {}}),
+            encoding="utf-8")
+
+    def tearDown(self):
+        self._tmp.cleanup()
+
+    def entry(self, date):
+        self.json.dump({"brands": {"corvus6": [{"id": "corvus6-v7.0.1", "release": "V7.0 Beta 1", "version": "7.0.1",
+                                                "covers": ["agent"], "date": date, "type": "release",
+                                                "channel": "beta"}]}},
+                       (self.root / "data" / "changelog_brands.json").open("w", encoding="utf-8"))
+
+    def build(self, write_file=True, today="2026-11-21"):
+        return B.build(self.root / "beta", self.root, self.stable_path, write_file, today=today)
+
+    def test_no_entry_is_refused(self):
+        code, lines = self.build()
+        self.assertEqual(code, 1)
+        self.assertTrue(any("has no changelog entry" in x for x in lines), lines)
+
+    def test_wrong_date_is_refused_on_the_day_of_offering(self):
+        self.entry("2026-11-19")
+        code, lines = self.build()
+        self.assertEqual(code, 1)
+        self.assertTrue(any('set its "date" to "2026-11-21"' in x for x in lines), lines)
+        self.assertFalse((self.root / "beta" / "glimpse_manifest.json").exists())
+
+    def test_right_date_writes(self):
+        self.entry("2026-11-21")
+        code, lines = self.build()
+        self.assertEqual(code, 0, lines)
+        self.assertEqual(self.json.loads((self.root / "beta" / "glimpse_manifest.json").read_text())["agent"]["latest"],
+                         "7.0.1")
+
+    def test_later_days_and_check_mode_do_not_turn_red(self):
+        self.entry("2026-11-21")
+        self.assertEqual(self.build()[0], 0)
+        # A later write (a stable publish of another block) and the --check mode keep passing on later days.
+        self.assertEqual(self.build(today="2026-12-05")[0], 0)
+        self.assertEqual(self.build(write_file=False, today="2026-12-05")[0], 0)
+
+
 class StableAgentName(unittest.TestCase):
     def test_four_parts_refused_from_seven_on(self):
         self.assertIsNotNone(V.zip_version_problem("7.0.1.5"))

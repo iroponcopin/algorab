@@ -36,6 +36,7 @@ beta manifest behind. The README's release steps say the same.
 from __future__ import annotations
 
 import copy
+import datetime
 import hashlib
 import json
 import re
@@ -236,10 +237,41 @@ def load_overrides(directory: Path):
         raise SystemExit(f"ERROR: {path} is not valid JSON: {exc}")
 
 
-def build(directory: Path, root: Path, stable_path: Path, write_file: bool) -> tuple[int, list[str]]:
+def release_date_problem(beta: dict, out_path: Path, root: Path, today: str) -> str | None:
+    """2026-11-19: the date of a V7 release's changelog entry is the day the beta manifest first offers it (UTC).
+    The entry's "date" in data/changelog_brands.json is the one place that sets it (the page, the feeds of Algorab
+    and Algorab Agents and the bot all read it). Checked only at the moment of offering, when a write makes the beta
+    manifest name a V7 number that the beta manifest on disk does not name yet; never in --check mode, so the check
+    does not turn red on later days."""
+    number = (beta.get("agent") or {}).get("latest")
+    if not version_label.is_v7_or_later(number):
+        return None
+    if out_path.is_file():
+        previous = (json.loads(out_path.read_text(encoding="utf-8")).get("agent") or {}).get("latest")
+        if previous == number:
+            return None
+    path = root / "data" / "changelog_brands.json"
+    rows = (json.loads(path.read_text(encoding="utf-8")).get("brands") or {}).get("corvus6", []) if path.is_file() else []
+    entry = next((r for r in rows if str(r.get("version")) == number), None)
+    if entry is None:
+        return f"{number} has no changelog entry in {path} (corvus6, \"version\": \"{number}\"); write its notes first"
+    if entry.get("date") != today:
+        return (f"{number} is offered today ({today} UTC) but its changelog entry {entry.get('id')} says "
+                f"{entry.get('date')!r}: set its \"date\" to \"{today}\" in data/changelog_brands.json, rebuild the "
+                f"feeds (python3 scripts/build.py --feeds) and the export, then run this again")
+    return None
+
+
+def build(directory: Path, root: Path, stable_path: Path, write_file: bool,
+          today: str | None = None) -> tuple[int, list[str]]:
     stable = json.loads(stable_path.read_text(encoding="utf-8"))
     beta, report, errors = resolve(stable, load_overrides(directory), root)
     out_path = directory / "glimpse_manifest.json"
+    if write_file and not errors:
+        day = today or datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+        dated = release_date_problem(beta, out_path, root, day)
+        if dated:
+            errors.append(dated)
     if errors:
         return 1, ["ERROR: " + e for e in errors] + report
     text = dump(beta)
